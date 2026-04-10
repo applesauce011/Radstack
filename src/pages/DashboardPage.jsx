@@ -5,8 +5,6 @@ import { useProgressStore, CARD_STATE } from '../store/progressStore'
 import { SUBSPECIALTIES, getCardsBySubspecialty } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
 import { TriProgressBar } from '../components/ui/ProgressBar'
-import { Modal } from '../components/ui/Modal'
-import { Button } from '../components/ui/Button'
 
 // ============================================================
 // Continue Studying logic
@@ -56,106 +54,55 @@ function getSuggestion(subspecialties, getStatsForCards, getLastStudiedTimestamp
   return null
 }
 
-function ResetDeckModal({ isOpen, onClose, sub, onConfirm }) {
-  return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Reset Deck Progress">
-      <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
-        This will reset all cards in <strong style={{ color: 'var(--text-primary)' }}>{sub?.label}</strong> back to <strong style={{ color: 'var(--text-primary)' }}>Unseen</strong>. Got It and Flagged states will be cleared.
-      </p>
-      <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>
-        This cannot be undone.
-      </p>
-      <div style={{ display: 'flex', gap: '10px' }}>
-        <Button variant="secondary" onClick={onClose} fullWidth>Cancel</Button>
-        <Button variant="danger" onClick={onConfirm} fullWidth>Reset Deck</Button>
-      </div>
-    </Modal>
-  )
-}
 
 function SubspecialtyCard({ sub }) {
   const navigate = useNavigate()
-  const { getStatsForCards, resetDeck } = useProgressStore()
+  const { getStatsForCards } = useProgressStore()
   const cards = getCardsBySubspecialty(sub.id)
   const stats = getStatsForCards(cards)
   const pctDone = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
-  const [resetModalOpen, setResetModalOpen] = useState(false)
-  const hasProgress = stats.gotIt > 0 || stats.flagged > 0
 
   return (
-    <>
-      <div style={{
+    <div
+      onClick={() => navigate(`/decks/${sub.id}`)}
+      style={{
         background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
         borderRadius: 'var(--radius-lg)', padding: '20px',
         display: 'flex', flexDirection: 'column', gap: '12px',
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <button
-            onClick={() => navigate(`/decks/${sub.id}`)}
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left',
-              display: 'flex', alignItems: 'center', gap: '10px', flex: 1, padding: 0,
-            }}
-          >
-            <span style={{ fontSize: '22px' }}>{sub.icon}</span>
-            <div>
-              <div style={{
-                fontFamily: 'var(--font-display)', fontSize: '15px',
-                fontWeight: '700', color: 'var(--text-primary)',
-              }}>{sub.label}</div>
-              <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '2px' }}>
-                {sub.subsections.length} section{sub.subsections.length !== 1 ? 's' : ''} · {stats.total} cards
-              </div>
+        cursor: 'pointer', transition: 'border-color var(--transition)',
+      }}
+      onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border-default)'}
+      onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-subtle)'}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
+          <span style={{ fontSize: '22px' }}>{sub.icon}</span>
+          <div>
+            <div style={{
+              fontFamily: 'var(--font-display)', fontSize: '15px',
+              fontWeight: '700', color: 'var(--text-primary)',
+            }}>{sub.label}</div>
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '2px' }}>
+              {sub.subsections.length} section{sub.subsections.length !== 1 ? 's' : ''} · {stats.total} cards
             </div>
-          </button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-            <span style={{
-              fontSize: '13px', fontWeight: '700', color: sub.color,
-              background: sub.colorDim, padding: '3px 10px', borderRadius: '999px',
-            }}>
-              {pctDone}%
-            </span>
-            {hasProgress && (
-              <button
-                onClick={() => setResetModalOpen(true)}
-                title="Reset deck progress"
-                style={{
-                  background: 'none', border: '1px solid var(--border-subtle)',
-                  borderRadius: 'var(--radius-sm)', padding: '4px 8px',
-                  cursor: 'pointer', color: 'var(--text-muted)', fontSize: '12px',
-                  fontFamily: 'var(--font-body)', transition: 'all var(--transition)',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'var(--accent-rose)'
-                  e.currentTarget.style.color = 'var(--accent-rose)'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'var(--border-subtle)'
-                  e.currentTarget.style.color = 'var(--text-muted)'
-                }}
-              >
-                ↺ Reset
-              </button>
-            )}
           </div>
         </div>
-
-        <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
-
-        <div style={{ display: 'flex', gap: '12px', fontSize: '12px' }}>
-          <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt} got it</span>
-          <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged} flagged</span>
-          <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen} unseen</span>
-        </div>
+        <span style={{
+          fontSize: '13px', fontWeight: '700', color: sub.color,
+          background: sub.colorDim, padding: '3px 10px', borderRadius: '999px', flexShrink: 0,
+        }}>
+          {pctDone}%
+        </span>
       </div>
 
-      <ResetDeckModal
-        isOpen={resetModalOpen}
-        onClose={() => setResetModalOpen(false)}
-        sub={sub}
-        onConfirm={() => { resetDeck(cards.map(c => c.id)); setResetModalOpen(false) }}
-      />
-    </>
+      <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
+
+      <div style={{ display: 'flex', gap: '12px', fontSize: '12px' }}>
+        <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt} got it</span>
+        <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged} flagged</span>
+        <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen} unseen</span>
+      </div>
+    </div>
   )
 }
 

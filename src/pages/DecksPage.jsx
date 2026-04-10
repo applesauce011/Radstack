@@ -10,48 +10,77 @@ import { Modal } from '../components/ui/Modal'
 import { Button } from '../components/ui/Button'
 
 function SubsectionRow({ section, subspecialtyColor, onStudy }) {
-  const { getStatsForCards } = useProgressStore()
+  const { getStatsForCards, resetDeck } = useProgressStore()
+  const [resetOpen, setResetOpen] = useState(false)
   const cards = getCardsBySubsection(section.id)
   const stats = getStatsForCards(cards)
   const pct = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
+  const hasProgress = stats.gotIt > 0 || stats.flagged > 0
 
   return (
-    <div style={{
-      padding: '16px 20px', background: 'var(--bg-elevated)',
-      border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
-      display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap',
-    }}>
-      <div style={{ flex: 1, minWidth: '180px' }}>
-        <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '6px' }}>
-          {section.label}
+    <>
+      <div style={{
+        padding: '16px 20px', background: 'var(--bg-elevated)',
+        border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
+        display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap',
+      }}>
+        <div style={{ flex: 1, minWidth: '180px' }}>
+          <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '6px' }}>
+            {section.label}
+          </div>
+          <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
+          <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '11px' }}>
+            <span style={{ color: 'var(--text-muted)' }}>{stats.total} cards</span>
+            <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
+            <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
+            <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen}</span>
+          </div>
         </div>
-        <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
-        <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '11px' }}>
-          <span style={{ color: 'var(--text-muted)' }}>{stats.total} cards</span>
-          <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
-          <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
-          <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen}</span>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <span style={{
+            fontSize: '13px', fontWeight: '700',
+            color: subspecialtyColor, minWidth: '36px', textAlign: 'right',
+          }}>{pct}%</span>
+          {hasProgress && (
+            <button
+              onClick={() => setResetOpen(true)}
+              title="Reset section progress"
+              style={{
+                background: 'none', border: '1px solid var(--border-subtle)',
+                borderRadius: 'var(--radius-sm)', padding: '6px 10px',
+                cursor: 'pointer', color: 'var(--text-muted)', fontSize: '12px',
+                fontFamily: 'var(--font-body)', transition: 'all var(--transition)',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-rose)'; e.currentTarget.style.color = 'var(--accent-rose)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-subtle)'; e.currentTarget.style.color = 'var(--text-muted)' }}
+            >↺</button>
+          )}
+          <button
+            onClick={() => onStudy(cards, { type: 'subsection', id: section.id, label: section.label })}
+            style={{
+              padding: '8px 16px', borderRadius: 'var(--radius-sm)',
+              background: 'var(--accent-cyan)', border: 'none',
+              color: 'var(--bg-primary)', fontSize: '13px', fontWeight: '600',
+              cursor: 'pointer', fontFamily: 'var(--font-body)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Study →
+          </button>
         </div>
       </div>
-      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-        <span style={{
-          fontSize: '13px', fontWeight: '700',
-          color: subspecialtyColor, minWidth: '36px', textAlign: 'right',
-        }}>{pct}%</span>
-        <button
-          onClick={() => onStudy(cards, { type: 'subsection', id: section.id, label: section.label })}
-          style={{
-            padding: '8px 16px', borderRadius: 'var(--radius-sm)',
-            background: 'var(--accent-cyan)', border: 'none',
-            color: 'var(--bg-primary)', fontSize: '13px', fontWeight: '600',
-            cursor: 'pointer', fontFamily: 'var(--font-body)',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Study →
-        </button>
-      </div>
-    </div>
+      <Modal isOpen={resetOpen} onClose={() => setResetOpen(false)} title="Reset Section Progress">
+        <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>
+          Reset all cards in <strong style={{ color: 'var(--text-primary)' }}>{section.label}</strong> back to <strong style={{ color: 'var(--text-primary)' }}>Unseen</strong>?
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>This cannot be undone.</p>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <Button variant="secondary" onClick={() => setResetOpen(false)} fullWidth>Cancel</Button>
+          <Button variant="danger" onClick={() => { resetDeck(cards.map(c => c.id)); setResetOpen(false) }} fullWidth>Reset</Button>
+        </div>
+      </Modal>
+    </>
   )
 }
 
@@ -95,7 +124,7 @@ export function DecksPage() {
 
   const handleStudy = (cards, source) => {
     setModalCards(cards)
-    setModalSource(source)
+    setModalSource({ ...source, subspecialtyId: activeSub.id })
     setModalOpen(true)
   }
 

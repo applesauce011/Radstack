@@ -1,9 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useStudyStore } from '../../store/studyStore'
 import { useProgressStore, CARD_STATE } from '../../store/progressStore'
 import { useAuthStore } from '../../store/authStore'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
+
+// Split text into list items if it contains a list-like pattern.
+// Returns array of strings, or null if no list detected.
+function splitListItems(text) {
+  if (!text) return null
+
+  // Pattern 0a: Newline-separated lines starting with bullet chars (•, -, *)
+  const lines = text.split(/\n/).map(l => l.trim()).filter(Boolean)
+  if (lines.length >= 2 && lines.filter(l => /^[•\-\*]\s/.test(l)).length >= 2) {
+    return lines.map(l => l.replace(/^[•\-\*]\s*/, ''))
+  }
+
+  // Pattern 0b: Inline bullet separator (• Item1 • Item2)
+  if (text.includes('•')) {
+    const parts0 = text.split('•').map(s => s.trim()).filter(Boolean)
+    if (parts0.length >= 2) return parts0
+  }
+
+  // Pattern 1: (1), (2), (3) ... numbered items
+  const parenNums = text.match(/\(\d+\)/g)
+  if (parenNums && parenNums.length >= 2) {
+    const items = text.split(/(?=\(\d+\))/).map(s => s.trim()).filter(Boolean)
+    if (items.length >= 2) return items
+  }
+
+  // Pattern 2: "Label: content. Label2: content2." where labels are 1-3 capitalized words
+  const LABEL = '[A-Z][A-Za-z]*(?:\\s+[A-Za-z]+){0,2}'
+  const labelAtStart = new RegExp(`^${LABEL}\\s*:`)
+  const splitRx = new RegExp(`\\.\\s+(?=${LABEL}\\s*:)`)
+  const parts = text.split(splitRx).map(s => s.trim()).filter(Boolean)
+  if (
+    parts.length >= 2 &&
+    labelAtStart.test(parts[0]) &&
+    parts.filter(p => labelAtStart.test(p)).length >= 2
+  ) return parts
+
+  return null
+}
 
 // Image component with fallback
 function CardImage({ src, alt, caption, maxHeight = '220px', maskSides }) {
@@ -127,8 +165,15 @@ function CardFront({ card, onFlip }) {
 // Card Back
 function CardBack({ card, onFlip, cardState, onSetState }) {
   const { next } = useStudyStore()
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [card.id])
+
   return (
     <div
+      ref={scrollRef}
       className="card-face card-back"
       style={{
         background: 'var(--bg-card)',
@@ -145,13 +190,32 @@ function CardBack({ card, onFlip, cardState, onSetState }) {
       }}>
         Answer
       </div>
-      <h2 style={{
-        fontFamily: 'var(--font-display)', fontSize: '22px',
-        fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px',
-        lineHeight: '1.3',
-      }}>
-        {card.back.answer}
-      </h2>
+      {(() => {
+        const items = splitListItems(card.back.answer)
+        if (items) return (
+          <ul style={{ marginBottom: '16px', paddingLeft: '0', listStyle: 'none' }}>
+            {items.map((item, i) => (
+              <li key={i} style={{ display: 'flex', gap: '8px', margin: i > 0 ? '6px 0 0' : '0' }}>
+                <span style={{
+                  fontFamily: 'var(--font-display)', fontSize: '18px',
+                  fontWeight: '700', color: 'var(--accent-cyan)', flexShrink: 0,
+                }}>•</span>
+                <span style={{
+                  fontFamily: 'var(--font-display)', fontSize: '18px',
+                  fontWeight: '700', color: 'var(--text-primary)', lineHeight: '1.35',
+                }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )
+        return (
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: '22px',
+            fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px',
+            lineHeight: '1.3',
+          }}>{card.back.answer}</h2>
+        )
+      })()}
 
       {/* Back images */}
       {card.back.images?.length > 0 && (
@@ -197,12 +261,28 @@ function CardBack({ card, onFlip, cardState, onSetState }) {
       )}
 
       {/* Explanation */}
-      <p style={{
-        fontSize: '14px', lineHeight: '1.65', color: 'var(--text-secondary)',
-        marginBottom: '16px',
-      }}>
-        {card.back.explanation}
-      </p>
+      {(() => {
+        const items = splitListItems(card.back.explanation)
+        if (items) return (
+          <ul style={{ marginBottom: '16px', paddingLeft: '0', listStyle: 'none' }}>
+            {items.map((item, i) => (
+              <li key={i} style={{
+                fontSize: '14px', lineHeight: '1.65', color: 'var(--text-secondary)',
+                margin: i > 0 ? '6px 0 0' : '0',
+                display: 'flex', gap: '8px',
+              }}>
+                <span style={{ color: 'var(--accent-cyan)', flexShrink: 0, marginTop: '2px' }}>•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )
+        return (
+          <p style={{ fontSize: '14px', lineHeight: '1.65', color: 'var(--text-secondary)', marginBottom: '16px' }}>
+            {card.back.explanation}
+          </p>
+        )
+      })()}
 
       {/* Key Fact lightbulb */}
       <div style={{

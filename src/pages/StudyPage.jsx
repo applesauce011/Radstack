@@ -10,9 +10,13 @@ import { SessionComplete } from '../components/cards/SessionComplete'
 export function StudyPage() {
   const navigate = useNavigate()
   const {
-    cards, currentIndex, isComplete, isFlipped,
+    cards, currentIndex, isComplete, isFlipped, sessionSource,
     flip, next, prev, reset, getCurrentCard,
   } = useStudyStore()
+
+  const exitUrl = sessionSource
+    ? `/decks/${sessionSource.subspecialtyId || sessionSource.id}`
+    : '/decks'
   const { setCardState, isAuthenticated: _auth } = useProgressStore()
   const { isAuthenticated } = useAuthStore()
 
@@ -79,7 +83,7 @@ export function StudyPage() {
         <div style={{ maxWidth: '680px', margin: '0 auto', padding: '24px' }}>
           <SessionComplete
             onRestart={() => reset()}
-            onExit={() => navigate('/decks')}
+            onExit={() => navigate(exitUrl)}
           />
         </div>
       </div>
@@ -91,7 +95,7 @@ export function StudyPage() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)', padding: '0 0 40px' }}>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '24px' }}>
-        <StudyControls onExit={() => navigate('/decks')} />
+        <StudyControls onExit={() => navigate(exitUrl)} />
 
         <div style={{ marginTop: '20px' }}>
           <Flashcard card={currentCard} />

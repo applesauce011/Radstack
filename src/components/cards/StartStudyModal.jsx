@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Modal } from '../ui/Modal'
 import { Button } from '../ui/Button'
@@ -13,7 +13,7 @@ export function StartStudyModal({ isOpen, onClose, cards, source }) {
   const { getStatsForCards, recordStudied } = useProgressStore()
   const { isAuthenticated } = useAuthStore()
   const [mode, setMode] = useState(STUDY_MODE.ALL)
-  const [shuffle, setShuffle] = useState(false)
+  const [shuffle, setShuffle] = useState(true)
 
   const stats = getStatsForCards(cards)
 
@@ -22,6 +22,18 @@ export function StartStudyModal({ isOpen, onClose, cards, source }) {
     if (mode === STUDY_MODE.UNSEEN) return stats.unseen
     return stats.total
   }
+
+  const maxCount = filteredCount()
+  const [cardCount, setCardCount] = useState(() => Math.min(20, stats.total || 20))
+
+  useEffect(() => {
+    setCardCount(prev => {
+      const max = filteredCount()
+      if (max === 0) return prev
+      const target = prev === 0 ? 20 : prev
+      return Math.min(Math.max(1, target), max)
+    })
+  }, [mode, stats.total, stats.flagged, stats.unseen])
 
   const getFilteredCards = () => {
     if (mode === STUDY_MODE.FLAGGED) {
@@ -45,7 +57,17 @@ export function StartStudyModal({ isOpen, onClose, cards, source }) {
       return
     }
 
-    startSession({ cards: sessionCards, mode, shuffle, source })
+    if (shuffle) {
+      const arr = [...sessionCards]
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      sessionCards = arr
+    }
+    sessionCards = sessionCards.slice(0, cardCount)
+
+    startSession({ cards: sessionCards, mode, shuffle: false, source })
     // Record this subspecialty as last studied (for Continue Studying logic)
     if (isAuthenticated && source?.type === 'subspecialty') {
       recordStudied(source.id)
@@ -124,6 +146,50 @@ export function StartStudyModal({ isOpen, onClose, cards, source }) {
         </div>
       </div>
 
+      {/* Card count */}
+      <div style={{ marginBottom: '20px' }}>
+        <label style={{
+          display: 'block', fontSize: '12px', fontWeight: '600',
+          letterSpacing: '0.06em', textTransform: 'uppercase',
+          color: 'var(--text-muted)', marginBottom: '10px',
+        }}>Number of Cards</label>
+        <div style={{
+          padding: '12px 16px', borderRadius: 'var(--radius-md)',
+          border: '1px solid var(--border-default)', background: 'var(--bg-elevated)',
+          display: 'flex', alignItems: 'center', gap: '12px',
+        }}>
+          <input
+            type="range"
+            min={1}
+            max={maxCount || 1}
+            value={Math.min(cardCount, maxCount || 1)}
+            onChange={e => setCardCount(Number(e.target.value))}
+            disabled={maxCount === 0}
+            style={{ flex: 1, accentColor: 'var(--accent-cyan)', cursor: maxCount === 0 ? 'not-allowed' : 'pointer' }}
+          />
+          <input
+            type="number"
+            min={1}
+            max={maxCount || 1}
+            value={Math.min(cardCount, maxCount || 1)}
+            onChange={e => {
+              const v = Math.max(1, Math.min(Number(e.target.value), maxCount))
+              setCardCount(v)
+            }}
+            disabled={maxCount === 0}
+            style={{
+              width: '56px', padding: '4px 8px', borderRadius: 'var(--radius-sm)',
+              border: '1px solid var(--border-default)', background: 'var(--bg-primary)',
+              color: 'var(--text-primary)', fontSize: '14px', fontWeight: '600',
+              fontFamily: 'var(--font-body)', textAlign: 'center',
+            }}
+          />
+          <span style={{ fontSize: '12px', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
+            of {maxCount}
+          </span>
+        </div>
+      </div>
+
       {/* Shuffle toggle */}
       <button
         onClick={() => setShuffle(!shuffle)}
@@ -165,7 +231,7 @@ export function StartStudyModal({ isOpen, onClose, cards, source }) {
           fullWidth
           disabled={count === 0}
         >
-          Start {count} Card{count !== 1 ? 's' : ''}
+          Start {Math.min(cardCount, count)} Card{Math.min(cardCount, count) !== 1 ? 's' : ''}
         </Button>
       </div>
     </Modal>

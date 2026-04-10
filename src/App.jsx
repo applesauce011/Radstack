@@ -63,13 +63,15 @@ export default function App() {
       async (event, session) => {
         setSessionUser(session?.user ?? null)
 
-        if (session?.user) {
-          // Load progress whenever a session is established
-          await loadForUser(session.user.id)
-        } else {
-          // Clear progress on sign-out
+        if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
+          // Load progress on actual sign-in (not token refreshes, which can briefly
+          // emit SIGNED_OUT then SIGNED_IN and would clear optimistic state)
+          if (session?.user) await loadForUser(session.user.id)
+        } else if (event === 'SIGNED_OUT') {
           loadForUser(null)
         }
+        // TOKEN_REFRESHED: user identity already updated via setSessionUser above;
+        // no need to reload progress from DB.
       }
     )
 
