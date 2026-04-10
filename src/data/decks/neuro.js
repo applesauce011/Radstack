@@ -6,6 +6,21 @@
 // Naming convention: neuro-[section]-[###]
 // ============================================================
 
+import skull01 from './images_neuro/skull01.png'
+import skull02 from './images_neuro/skull02.png'
+import skull03 from './images_neuro/skull03.png'
+import skull04 from './images_neuro/skull04.png'
+import skull05 from './images_neuro/skull05.png'
+import skull06 from './images_neuro/skull06.png'
+import skull07 from './images_neuro/skull07.png'
+import skull08 from './images_neuro/skull08.png'
+import skull09 from './images_neuro/skull09.png'
+import skull10 from './images_neuro/skull10.png'
+import skull11 from './images_neuro/skull11.png'
+import skull12 from './images_neuro/skull12.png'
+import skull13 from './images_neuro/skull13.png'
+import skull14 from './images_neuro/skull14.png'
+
 export const neuroSubsections = [
   {
     id: 'neuro-anatomy',
@@ -1324,6 +1339,216 @@ export const neuroSubsections = [
           tags: ['anatomy', 'head-neck', 'cavernous-sinus', 'mri', 'cranial-nerves'],
         },
       },
+      {
+        id: 'neuro-head-neck-026',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull04,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Inferior orbital fissure',
+        },
+      },
+      {
+        id: 'neuro-head-neck-027',
+        front: {
+          question: 'Name the structure',
+          image: {
+            src: skull05,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Eustachian tube',
+        },
+      },
+      {
+        id: 'neuro-head-neck-028',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull06,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Foramen lacerum',
+        },
+      },
+      {
+        id: 'neuro-head-neck-029',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull07,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Pterygopalatine fossa',
+        },
+      },
+      {
+        id: 'neuro-head-neck-030',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull08,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Uncinate process',
+            },
+      },
+      {
+        id: 'neuro-head-neck-031',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull09,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Middle meatus',
+        },
+      },
+      {
+        id: 'neuro-head-neck-032',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull10,
+            alt: 'Axial CT skull base at pterygopalatine fossa level',
+            caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
+            maskSides: { left: '24%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Foramen spinosum',
+        },
+      },
+      {
+        id: 'neuro-head-neck-033',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull11,
+            alt: 'Axial CT facial bones at inferior orbital fissure level',
+            caption: 'Axial CT — Facial Bones (Inferior Orbital Fissure Level)',
+            maskSides: { left: '20%', right: '22%' },
+          },
+        },
+        back: {
+          answer: 'Foramen ovale',
+        },
+      },
+      {
+        id: 'neuro-head-neck-034',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull12,
+            alt: 'Axial CT orbital apex level showing superior orbital fissure',
+            caption: 'Axial CT — Orbital Apex Level',
+            maskSides: { left: '22%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Sphenoid bone',
+        },
+      },
+      {
+        id: 'neuro-head-neck-034',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull13,
+            alt: 'Axial CT orbital apex level showing superior orbital fissure',
+            caption: 'Axial CT — Orbital Apex Level',
+            maskSides: { left: '22%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Vidian canal',
+        },
+      },
+      {
+        id: 'neuro-head-neck-034',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull14,
+            alt: 'Axial CT orbital apex level showing superior orbital fissure',
+            caption: 'Axial CT — Orbital Apex Level',
+            maskSides: { left: '22%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Pterygopalatine fossa',
+        },
+      },
+      {
+        id: 'neuro-head-neck-034',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull01,
+            alt: 'Axial CT orbital apex level showing superior orbital fissure',
+            caption: 'Axial CT — Orbital Apex Level',
+            maskSides: { left: '22%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Lamina papyracea',
+        },
+      },
+      {
+        id: 'neuro-head-neck-035',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull02,
+            alt: 'Axial CT skull base at sella turcica level',
+            caption: 'Axial CT — Skull Base (Sella Turcica Level)',
+            maskSides: { left: '24%', right: '22%' },
+          },
+        },
+        back: {
+          answer: 'Superior orbital fissure',
+        },
+      },
+      {
+        id: 'neuro-head-neck-036',
+        front: {
+          question: 'Name the structure.',
+          image: {
+            src: skull03,
+            alt: 'Axial CT orbital level showing lamina papyracea',
+            caption: 'Axial CT — Orbital Level',
+            maskSides: { left: '22%', right: '24%' },
+          },
+        },
+        back: {
+          answer: 'Sella turcica',
+        },
+      },
     ],
   },
   {
@@ -2312,6 +2537,338 @@ export const neuroSubsections = [
           tags: ['spine', 'xray', 'mri', 'inflammatory', 'spondylarthropathy'],
         },
       },
+      // ============================================================
+// RadStack – Neuro Spine Flashcards
+// New cards: neuro-spine-009 through neuro-spine-030
+// Insert these into the neuro-spine subsection of src/data/decks/neuro.js
+// ============================================================
+
+// --- PASTE THESE CARDS INTO THE neuro-spine subsection cards[] array ---
+
+      {
+        id: 'neuro-spine-009',
+        front: {
+          question: 'What are the three compartments used to localize spinal lesions, and what is the significance of each?',
+        },
+        back: {
+          answer: 'Intramedullary (within cord), intradural extramedullary (within thecal sac but outside cord), and extradural (outside thecal sac).',
+          explanation: 'Compartment localization is the first and most critical step in evaluating any spinal mass, because the differential diagnosis differs dramatically between compartments. Intramedullary lesions expand the cord; intradural extramedullary lesions displace/compress the cord with a CSF cleft visible between lesion and cord; extradural lesions compress the thecal sac from outside. Note that epidural = extradural in location.',
+          keyFact: 'The CSF cleft sign (CSF visible between mass and cord) confirms an intradural extramedullary location. No cleft = intramedullary; thecal sac compressed from without = extradural.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-cord-lesion-localization',
+          tags: ['spine', 'mri', 'localization', 'tumor', 'anatomy'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-010',
+        front: {
+          question: 'What are the classic MRI features of spinal ependymoma, and how does it differ from astrocytoma?',
+          hint: 'Think: central vs eccentric, cap sign, hemorrhage',
+        },
+        back: {
+          answer: 'Ependymoma: central, well-defined, homogeneous enhancement, hemorrhagic cap sign (T2 hypointense poles). Astrocytoma: eccentric, ill-defined, heterogeneous/patchy enhancement, hemorrhage uncommon.',
+          explanation: 'Ependymoma is the most common intramedullary tumor in adults, while astrocytoma is most common in children. Ependymomas arise centrally within the cord, are well-demarcated, and frequently hemorrhage — producing the classic hemosiderin cap (dark T2 poles). Astrocytomas have infiltrative margins making complete resection difficult. Both can cause cord expansion and associated syrinx.',
+          keyFact: 'Hemosiderin cap sign = hypointense poles on T2 = ependymoma until proven otherwise. Ependymoma is central + well-defined; astrocytoma is eccentric + infiltrative.',
+          differentials: [
+            { dx: 'Ependymoma (most common intramedullary tumor in adults)' },
+            { dx: 'Astrocytoma (most common intramedullary tumor in children)' },
+            { dx: 'Hemangioblastoma (associated with VHL; intense homogeneous enhancement)' },
+          ],
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-ependymoma',
+          tags: ['spine', 'mri', 'intramedullary', 'ependymoma', 'tumor'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-011',
+        front: {
+          question: 'Where is myxopapillary ependymoma found, and what are its classic imaging features?',
+        },
+        back: {
+          answer: 'Exclusively at the conus medullaris/filum terminale (cauda equina region). Classic: sausage-shaped, lobulated, T2 bright, avid enhancement, peripheral hemosiderin blooming on GRE.',
+          explanation: 'Myxopapillary ependymoma (WHO grade I) is the most common tumor of the cauda equina region, arising from ependymal glia of the conus and filum terminale. It grows slowly, often becoming large before diagnosis. Hemorrhage is common, causing T2 hypointense peripheral rim and GRE blooming. Vertebral scalloping from chronic pressure erosion may be seen. Leptomeningeal dissemination can occur.',
+          keyFact: 'Myxopapillary ependymoma = conus/filum location, sausage-shaped, bleeds → GRE blooming rim. It is the #1 tumor at the cauda equina.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/myxopapillary-ependymoma',
+          tags: ['spine', 'mri', 'ependymoma', 'conus', 'cauda-equina'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-012',
+        front: {
+          question: 'What syndrome is associated with spinal hemangioblastoma, and what are the classic MRI findings?',
+        },
+        back: {
+          answer: 'Von Hippel-Lindau (VHL) syndrome — 30% of spinal hemangioblastomas. MRI: small, intensely and homogeneously enhancing nodule, usually posteriorly located in thoracic cord, with surrounding edema and serpentine perimedullary flow voids.',
+          explanation: 'Hemangioblastomas are benign (WHO grade I) vascular tumors that are the third most common intramedullary tumor. Spinal involvement occurs in ~25% of VHL cases (cerebellum 75%). Despite small size, they cause disproportionate edema and can be associated with syrinx. When multiple lesions are found in the neuraxis (cord, retina, cerebellum), VHL should be suspected. The pial vascular supply creates the characteristic flow voids around the lesion.',
+          keyFact: 'Small enhancing nodule + large surrounding edema + flow voids = hemangioblastoma. Multiple lesions → think VHL (pheochromocytoma, clear cell RCC, endolymphatic sac tumor also associated).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-cord-haemangioblastoma',
+          tags: ['spine', 'mri', 'hemangioblastoma', 'vhl', 'intramedullary'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-013',
+        front: {
+          question: 'What are the MRI features that distinguish MS cord lesions from NMO cord lesions?',
+        },
+        back: {
+          answer: 'MS: short segment (<2 vertebral levels), peripheral/partial cord, no/mild swelling, cervical predominance. NMO: long segment (>3 levels), central, full transverse diameter, cord swelling, optic nerve involvement.',
+          explanation: 'MS cord lesions are typically short, occupy less than half the cord cross-section, are peripherally located, and preferentially involve the cervical cord. NMO (associated with aquaporin-4 antibodies) produces longitudinally extensive transverse myelitis (LETM) involving the majority of the cord in cross-section, often with cord swelling acutely and atrophy chronically. The cervicothoracic cord is predominantly involved in NMO. Brain lesions in NMO are periependymal (area postrema, ventricles).',
+          keyFact: 'MS = Short + Peripheral + Partial cord. NMO = Long (>3 levels) + Central + Full transverse + Optic nerve + AQP4 antibody positive.',
+          differentials: [
+            { dx: 'MS (short, peripheral, partial)' },
+            { dx: 'NMOSD (long, central, full transverse, optic nerve)' },
+            { dx: 'Transverse myelitis (long, bilateral, swollen cord)' },
+            { dx: 'Spinal cord infarct (long, restricted diffusion, owl-eye)' },
+          ],
+          radiopaediaUrl: 'https://radiopaedia.org/articles/neuromyelitis-optica',
+          tags: ['spine', 'mri', 'ms', 'nmo', 'demyelinating'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-014',
+        front: {
+          question: 'What is subacute combined degeneration, what causes it, and what is the classic MRI appearance?',
+        },
+        back: {
+          answer: 'Myelopathy from vitamin B12 deficiency (also copper deficiency, nitrous oxide). MRI: bilateral symmetric T2 hyperintensity in dorsal columns, "inverted V sign" on axial images. No enhancement.',
+          explanation: 'Subacute combined degeneration (SCD) involves the dorsal and lateral columns of the cord. Causes include pernicious anemia, gastrointestinal surgery, strict vegetarian diet, and drugs (nitrous oxide, proton pump inhibitors, metformin). The T2 signal preferentially affects the posterior columns, creating an inverted V or inverted U shape on axial images. The cervical and thoracic cord are most commonly involved. HIV vacuolar myelopathy mimics B12 deficiency with similar posterior column T2 signal.',
+          keyFact: 'Inverted V sign on axial T2 = dorsal column signal = B12 deficiency (SCD) until proven otherwise. Also think copper deficiency and nitrous oxide toxicity.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/subacute-combined-degeneration-of-the-spinal-cord',
+          tags: ['spine', 'mri', 'b12', 'metabolic', 'dorsal-columns'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-015',
+        front: {
+          question: 'What is the owl-eye sign in the spine, and what does it indicate?',
+        },
+        back: {
+          answer: 'Bilateral symmetric T2 hyperintensity of the anterior horn cells on axial MRI, resembling owl eyes — classic sign of anterior spinal artery infarction.',
+          explanation: 'Anterior spinal artery (ASA) infarction preferentially affects the central gray matter (anterior horns) because gray matter is more vulnerable to ischemia than white matter. The resulting bilateral symmetric T2 hyperintensity in the ventral horns creates the owl-eye appearance on axial imaging. ASA infarcts are typically long segment (>2 vertebral body levels), show restricted diffusion acutely, and spare the dorsal columns (posterior spinal arteries). The artery of Adamkiewicz (usually left-sided, T9–12) supplies the distal cord.',
+          keyFact: 'Owl-eye sign = bilateral anterior horn T2 signal = anterior spinal artery infarct. Dorsal columns spared = preserved proprioception (anterior cord syndrome clinically).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-cord-infarction',
+          tags: ['spine', 'mri', 'infarct', 'anterior-spinal-artery', 'cord'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-016',
+        front: {
+          question: 'What is a spinal dural arteriovenous fistula (dAVF), what are the MRI findings, and what eponym is associated with its myelopathy?',
+        },
+        back: {
+          answer: 'Type 1 spinal AVM (most common, 85%): fistula between radiculomedullary artery and radicular vein causing venous hypertension. MRI: long segment T2 cord edema + serpentine perimedullary flow voids (dorsal). Foix-Alajouanine syndrome.',
+          explanation: 'Dural AVFs cause progressive congestive myelopathy via venous hypertension rather than direct arterial steal. They are acquired lesions seen in older males, most commonly in the thoracic spine. On MRI the cord is swollen with T2 edema, and dorsal perimedullary flow voids (serpiginous, NOT blob-like) represent dilated veins. Catheter angiography is the gold standard; CTA/MRA may miss them. Foix-Alajouanine syndrome is the eponym for the subacute progressive myelopathy caused by a dAVF.',
+          keyFact: 'Serpentine flow voids (dorsal, punctate/serpiginous) + long cord edema in older male = dAVF = Foix-Alajouanine. Flow voids are NOT blob-like (that is CSF pulsation artifact).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-dural-arteriovenous-fistula',
+          tags: ['spine', 'mri', 'avf', 'vascular', 'foix-alajouanine'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-017',
+        front: {
+          question: 'What is a syrinx, what are the most common causes, and what MRI features suggest it requires further workup?',
+        },
+        back: {
+          answer: 'Syrinx = fluid-filled cavity within the spinal cord. Most common cause: Chiari I malformation (90% of congenital cases). Features requiring workup: cord signal abnormality surrounding the cavity, cord atrophy, eccentric shape, or enhancement.',
+          explanation: 'Hydromyelia (ependyma-lined central canal dilatation) and syringomyelia (gliosis-lined parenchymal cavity) are collectively called syrinx. Up to 2 mm central canal dilation is within normal limits. Congenital causes: Chiari I & II, Klippel-Feil, myelomeningocele. Acquired causes: post-traumatic, post-inflammatory, tumor (ependymoma and hemangioblastoma most commonly). A simple central T2 hyperintensity surrounded by normal-appearing cord = benign central cord dilation. Surrounding cord signal abnormality or atrophy = myelopathic changes requiring investigation.',
+          keyFact: 'Central cord dilation + normal surrounding cord = likely benign. Add surrounding cord T2 signal or atrophy = myelopathy. Always look for Chiari I, tethered cord, or intramedullary tumor as cause.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/syringohydromyelia',
+          tags: ['spine', 'mri', 'syrinx', 'chiari', 'cord'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-018',
+        front: {
+          question: 'What are the Modic classification types for vertebral endplate changes, and which type mimics osteomyelitis?',
+        },
+        back: {
+          answer: 'Type 1: T1 dark / T2 bright (edema) — mimics osteomyelitis. Type 2: T1 bright / T2 bright (fatty metaplasia). Type 3: T1 dark / T2 dark (sclerosis/fibrosis).',
+          explanation: 'Modic changes reflect the progression of degenerative endplate injury. Type 1 (edema/inflammation) is clinically active, associated with back pain, and can appear indistinguishable from discitis/osteomyelitis on MRI — clinical correlation and sometimes biopsy are required. Type 2 (fatty metaplasia) is stable and less symptomatic. Type 3 (sclerosis) is burned-out and of unclear clinical significance. The sequence follows: inflammation → fat → sclerosis.',
+          keyFact: 'Modic 1 (T1↓T2↑ = edema) looks like infection — clinical correlation required. Mnemonic: 1=edema/inflammatory, 2=fat/fatty, 3=sclerosis/scar.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/modic-changes',
+          tags: ['spine', 'mri', 'modic', 'degenerative', 'endplate'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-019',
+        front: {
+          question: 'What is the difference between a disc protrusion and a disc extrusion? What defines a disc bulge?',
+        },
+        back: {
+          answer: 'Protrusion: herniation (<25% circumference) where base is WIDER than the dome. Extrusion: herniation where dome is WIDER than the neck (like a saccular aneurysm). Bulge: disc material extending >180° of circumference (>25% of disc).',
+          explanation: 'Per consensus nomenclature, herniation refers to focal disc displacement covering less than 90° of circumference. A protrusion has a wider base than apex (broad-based focal herniation). An extrusion has a narrower neck than dome — it may migrate cranially or caudally and can become a sequestered (free) fragment. A bulge is circumferential and symmetric/asymmetric extension >180°. The term "herniation" alone should not appear in radiology reports; use protrusion or extrusion.',
+          keyFact: 'Protrusion = base wider (contained). Extrusion = dome wider than neck (like an aneurysm — may migrate). Sequestration = free fragment. Bulge = >180°, not a herniation.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/lumbar-disc-herniation',
+          tags: ['spine', 'mri', 'disc', 'herniation', 'degenerative'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-020',
+        front: {
+          question: 'An L4-5 disc herniation at the foraminal level will compress which nerve root? What about a central/subarticular herniation at the same level?',
+        },
+        back: {
+          answer: 'Foraminal L4-5 herniation compresses the EXITING L4 nerve root. Central/subarticular L4-5 herniation compresses the DESCENDING (traversing) L5 nerve root.',
+          explanation: 'In the lumbar spine, each nerve exits below its same-numbered vertebra. At L4-5, the L4 nerve root exits through the L4-5 foramen; the L5 root is still descending through the lateral recess toward the L5-S1 foramen. A foraminal disc catches the exiting nerve (named for the disc level above); a central or subarticular disc catches the descending nerve (named for the disc level below). Over 90% of lumbar disc herniations occur at L4-5 and L5-S1.',
+          keyFact: 'Rule: Foraminal disc = exiting nerve (same level number as disc above). Central/subarticular disc = traversing/descending nerve (same level number as disc below). At L4-5: foraminal = L4, central = L5.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/lumbar-disc-herniation',
+          tags: ['spine', 'disc', 'nerve-root', 'lumbar', 'radiculopathy'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-021',
+        front: {
+          question: 'What is the classic MRI appearance of spinal schwannoma, and what distinguishes it from neurofibroma?',
+        },
+        back: {
+          answer: 'Both: T2 bright, enhancing intradural mass. Schwannoma: does NOT envelop the parent nerve, cystic change/hemorrhage common, multiple → NF-2. Neurofibroma: envelops the nerve, target sign (T2 bright rim + dark center), plexiform = pathognomonic NF-1.',
+          explanation: 'Schwannoma and neurofibroma are the most common intradural extramedullary tumors. Schwannomas arise from the nerve sheath (Schwann cells) and are encapsulated — enabling nerve-sparing resection. Neurofibromas infiltrate between nerve fascicles, requiring nerve sacrifice. Dumbbell morphology (waist at the neural foramen) is classic for both. The target sign (T2 hypointense center + hyperintense rim) favors neurofibroma. Central necrosis/hemorrhage favors schwannoma.',
+          keyFact: 'Target sign (T2 dark center + bright rim) = neurofibroma → NF-1. Cystic change/hemorrhage = schwannoma → NF-2. Plexiform neurofibroma = pathognomonic NF-1.',
+          differentials: [
+            { dx: 'Schwannoma (does not envelop nerve, cystic/hemorrhagic)' },
+            { dx: 'Neurofibroma (envelops nerve, target sign, NF-1)' },
+            { dx: 'Meningioma (posterior/lateral thoracic, dural tail, women)' },
+          ],
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-schwannoma',
+          tags: ['spine', 'mri', 'schwannoma', 'neurofibroma', 'intradural'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-022',
+        front: {
+          question: 'What are the classic imaging features of spinal meningioma, and what is the typical location and demographic?',
+        },
+        back: {
+          answer: 'Older women (70%), posterior/lateral thoracic spine most common (also anterior cervical). MRI: intensely and homogeneously enhancing intradural extramedullary mass with dural tail. T1 iso-to-hypo, slightly T2 bright. May calcify.',
+          explanation: 'Spinal meningiomas are WHO grade I benign tumors that adhere to but do not originate from the dura. They comprise ~25% of intradural extramedullary tumors. The thoracic spine is the most common location (posterior/lateral), followed by the cervical spine (anterior). Associated with NF-2 (especially if multiple or in young patients) and prior radiation. The dural tail sign and intense homogeneous enhancement are characteristic. Calcification may be seen.',
+          keyFact: 'Spinal meningioma = older woman + posterior/lateral thoracic + avid homogeneous enhancement + dural tail. Multiple spinal meningiomas → think NF-2.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-meningioma',
+          tags: ['spine', 'mri', 'meningioma', 'intradural', 'thoracic'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-023',
+        front: {
+          question: 'What are the MRI features of discitis/osteomyelitis, and what is the most sensitive finding for early spinal infection?',
+        },
+        back: {
+          answer: 'Most sensitive sign: paraspinal or epidural inflammatory change (enhancement). Other features: endplate erosion/destruction, disc T2 signal increase, disc enhancement, fluid signal across disc space.',
+          explanation: 'Discitis/osteomyelitis most commonly results from hematogenous spread to the endplates (in adults, the disc is avascular but the endplates receive end-capillary branches). In adults, one endplate is usually infected first; spread occurs through the disc to adjacent endplates. MRI is the optimal imaging modality. Endplate edema (T1 low, T2 high with enhancement) and disc enhancement are hallmarks. Fat-suppressed post-contrast T1 sequences are critical — epidural fat is normally bright on T1, making fat suppression essential to detect early epidural spread.',
+          keyFact: 'Paraspinal/epidural enhancement = most sensitive MRI sign of spinal infection. Key risk factors: diabetes, IV drug use, prior spine surgery. Modic 1 changes can mimic discitis.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-discitis-osteomyelitis',
+          tags: ['spine', 'mri', 'infection', 'discitis', 'osteomyelitis'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-024',
+        front: {
+          question: 'What is Pott disease, how does it differ from pyogenic discitis/osteomyelitis on imaging, and what is a gibbus deformity?',
+        },
+        back: {
+          answer: 'Pott disease = spinal tuberculosis (Mycobacterium tuberculosis). Key difference: discs usually SPARED (TB lacks proteolytic enzymes). Gibbus deformity = acute focal kyphosis from anterior vertebral compression, classic for TB.',
+          explanation: 'Unlike pyogenic infection (which starts in the endplate and readily crosses the disc), TB preferentially affects the vertebral body and spares the disc because M. tuberculosis lacks disc-degrading enzymes. Anterior vertebral body wedging leads to gibbus deformity (acute angled kyphosis). Large paraspinal abscesses (psoas abscess) are characteristic. Approximately 10% of Pott disease patients have active pulmonary TB. Gibbus deformity also occurs in achondroplasia and mucopolysaccharidoses.',
+          keyFact: 'TB spine (Pott) = disc SPARED + anterior vertebral body + gibbus deformity + psoas abscess. Pyogenic = disc involved. Disc preservation = think TB.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-tuberculosis',
+          tags: ['spine', 'infection', 'tuberculosis', 'pott', 'ct'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-025',
+        front: {
+          question: 'What are the imaging features of a vertebral hemangioma, and what makes one "aggressive"?',
+        },
+        back: {
+          answer: 'Classic: T1 bright + T2 bright (fat-containing), "jail bar/corduroy" trabecular pattern on CT/X-ray. Aggressive: lacks fat (isointense T1), has epidural soft tissue component capable of causing cord compression — more common in women and the thoracic spine.',
+          explanation: 'Vertebral hemangiomas are the most common benign "tumor" of the spine, found incidentally in ~10% of the population. They are actually low-flow cavernous vascular malformations. The thickened vertical trabeculae create the corduroy (sagittal) or stippled (axial CT) appearance. On MRI they are bright on both T1 and T2 due to fat and slow-flow blood. Aggressive variants lose their fat content (T1 isointense), may expand the vertebral body, and develop an extradural component threatening the cord.',
+          keyFact: 'Hemangioma = T1 bright + T2 bright + corduroy on CT = incidental. T1 isointense hemangioma with epidural extension = aggressive variant = can cause cord compression.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/vertebral-haemangioma',
+          tags: ['spine', 'mri', 'ct', 'hemangioma', 'extradural'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-026',
+        front: {
+          question: 'What is arachnoiditis, what are the two classic MRI patterns, and what are the common causes?',
+        },
+        back: {
+          answer: 'Inflammation/scarring of leptomeninges causing cauda equina nerve root adhesions. Pattern 1: Empty thecal sac sign (roots clumped peripherally). Pattern 2: Central clumping (roots fused centrally). Causes: lumbar surgery (most common), infection, intrathecal injection.',
+          explanation: 'Arachnoiditis occurs in 10–15% of patients after spine surgery and can cause failed back surgery syndrome. The fibrous adhesions cause the cauda equina roots to clump either peripherally (empty thecal sac — no roots visible centrally) or centrally (central matted cord). Enhancement for 6 weeks post-op is considered normal; after 6 weeks, enhancement suggests infection or inflammation. Arachnoiditis is also seen after TB meningitis and chemical injury (intrathecal steroids, anesthetics).',
+          keyFact: 'Empty thecal sac sign (peripheral root clumping) OR central root clumping = arachnoiditis. Post-op enhancement >6 weeks = suspect infection or arachnoiditis.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/arachnoiditis',
+          tags: ['spine', 'mri', 'arachnoiditis', 'cauda-equina', 'post-op'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-027',
+        front: {
+          question: 'How do you differentiate post-surgical scar tissue from recurrent disc herniation on MRI?',
+        },
+        back: {
+          answer: 'Post-contrast T1 MRI: scar enhances homogeneously (immediately and on delayed images). Recurrent disc does NOT enhance or enhances only peripherally (rim enhancement from granulation tissue at margins).',
+          explanation: 'On pre-contrast T1, both scar and recurrent disc appear as non-specific soft tissue at the operative site. Post-contrast imaging is essential. Epidural fibrosis/scar tissue enhances intensely and homogeneously because it is well-vascularized granulation tissue. A recurrent disc herniation does not enhance centrally (avascular), though its periphery may show rim enhancement from surrounding granulation tissue. This distinction is critical because recurrent disc may be re-operated on, while scar is managed conservatively.',
+          keyFact: 'Post-contrast MRI: Scar = homogeneous enhancement. Disc = no enhancement (or peripheral rim only). Pre-contrast: both look the same — always give contrast.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/failed-back-surgery-syndrome',
+          tags: ['spine', 'mri', 'post-op', 'scar', 'disc'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-028',
+        front: {
+          question: 'What is the Torg-Pavlov ratio and what does it measure?',
+        },
+        back: {
+          answer: 'Torg-Pavlov ratio = cervical canal diameter / vertebral body width. Ratio <0.85 indicates developmental cervical canal stenosis.',
+          explanation: 'The Torg-Pavlov ratio is used on lateral radiographs (or CT) to assess for congenital narrowing of the cervical spinal canal. A ratio less than 0.85 suggests significant narrowing and predisposition to spinal cord injury, particularly central cord syndrome with hyperextension. The cervical epidural space is predominantly filled with venous plexus (not fat), making it more prone to cord compromise with even mild stenosis. Symptomatic stenosis is most common in the cervical spine.',
+          keyFact: 'Torg-Pavlov ratio <0.85 = cervical stenosis. Canal/vertebral body width ratio measured on lateral X-ray or CT. Predisposes to central cord syndrome with hyperextension.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/torg-pavlov-ratio',
+          tags: ['spine', 'ct', 'xray', 'stenosis', 'cervical'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-029',
+        front: {
+          question: 'What is the conus medullaris normal termination level, and below what level should a low-lying conus raise concern for tethered cord?',
+        },
+        back: {
+          answer: 'Normal conus terminates at L1 (range T12–L1/L2 superior endplate). Conus below the inferior endplate of L2 raises concern for tethered cord syndrome.',
+          explanation: 'Tethered cord syndrome occurs when the caudal spinal cord is abnormally fixed, causing progressive neurological deficits from traction. Common causes include spinal lipomas, tight/fatty filum terminale (>2 mm thick), and post-repair myelomeningocele. A fatty filum appears as T1 hyperintensity in the filum. For lumbar puncture or myelography, the needle must be placed below the conus — awareness of a low-lying conus is critical to avoid cord injury.',
+          keyFact: 'Conus at or below L2 inferior endplate = possible tethered cord. Tight/fatty filum terminale (>2 mm, T1 bright) = most common cause. Association with lipomyelomeningocele and spinal dysraphism.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/tethered-spinal-cord-syndrome',
+          tags: ['spine', 'mri', 'tethered-cord', 'conus', 'anatomy'],
+        },
+      },
+
+      {
+        id: 'neuro-spine-030',
+        front: {
+          question: 'Describe the spinal cord syndromes: central cord, anterior cord, Brown-Séquard, and posterior cord. What causes each?',
+        },
+        back: {
+          answer: 'Central cord: UE > LE weakness, hyperextension in elderly with spondylosis. Anterior cord: bilateral motor loss + pain/temp loss, spared proprioception; ASA infarct or flexion injury. Brown-Séquard: ipsilateral motor + contralateral pain/temp loss; penetrating trauma or rotation. Posterior cord: loss of proprioception/vibration; hyperextension (rare).',
+          explanation: 'Central cord syndrome is the most common incomplete cord syndrome, resulting from injury around the central canal. Upper extremity weakness predominates because corticospinal fibers serving the arms are more central/medial. Anterior cord syndrome (the most devastating) spares dorsal columns — proprioception and vibration remain intact while motor function and pain/temperature are lost. Brown-Séquard results from hemicord injury with ipsilateral corticospinal (motor) and contralateral spinothalamic (pain/temp) deficits due to tract decussation patterns.',
+          keyFact: 'Anterior cord (worst): motor paralysis + pain/temp gone, BUT proprioception INTACT. Central cord: UE worse than LE. Brown-Séquard: ipsilateral motor, contralateral pain/temp. Hemorrhagic cord injury = worst prognosis on MRI.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/spinal-cord-syndromes',
+          tags: ['spine', 'mri', 'cord-syndrome', 'trauma', 'anatomy'],
+        },
+      },
     ],
   },
   {
@@ -2538,6 +3095,1131 @@ export const neuroSubsections = [
           tags: ['metabolic', 'mri', 'toxic', 'putamen', 'bilateral'],
         },
       },
+    ],
+  },
+  {
+    id: 'neuro-hn',
+    label: 'Head & Neck — Clinical Cases',
+    cards: [
+  // ── CONGENITAL / DEVELOPMENTAL NECK MASSES ──────────────
+
+  {
+    id: 'neuro-hn-001',
+    front: {
+      question: 'A 40-year-old man has a well-circumscribed midline cystic neck mass embedded within the strap muscles, between the hyoid bone and thyroid cartilage. What is the diagnosis?',
+      hint: 'Think embryologic descent of the thyroid primordium.',
+    },
+    back: {
+      answer: 'Thyroglossal duct cyst (TGDC)',
+      explanation: 'The thyroid primordium descends from the foramen cecum to its normal pre-laryngeal position by the 7th week of gestation, connected by the thyroglossal duct which normally involutes by weeks 8–10. Persistence of duct epithelium gives rise to a TGDC. The cyst is midline (or slightly off-midline) and closely related to the hyoid bone because the duct is intimately associated with it. On CT it appears as a well-circumscribed homogeneous low-attenuation mass; MRI shows T1 hypointense, T2 hyperintense signal.',
+      keyFact: '65% of TGDCs are in the strap muscles just inferior to the hyoid; 15% are at the hyoid level. Any chunky calcifications or nodularity → think thyroid carcinoma arising in the cyst.',
+      differentials: [
+        { dx: 'Thyroglossal duct cyst' },
+        { dx: 'Dermoid/epidermoid cyst' },
+        { dx: 'Delphian lymph node' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/thyroglossal-duct-cyst',
+      tags: ['ct', 'mri', 'neck', 'congenital', 'cyst'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-002',
+    front: {
+      question: 'In 70–75% of patients with a lingual thyroid, what important anatomical fact must the radiologist report?',
+    },
+    back: {
+      answer: 'Absence of a normal orthotopic thyroid gland in the thyroid bed',
+      explanation: 'Ectopic lingual thyroid results from failure of the thyroid primordium to descend from the foramen cecum. It appears as a well-circumscribed midline mass at the base of the tongue, hyperdense on non-contrast CT (similar to normal thyroid), with avid enhancement and uptake on Tc-99m pertechnetate scan. In 70–75% of cases it represents the only functioning thyroid tissue.',
+      keyFact: 'Always look at the thyroid bed when you see a hyperdense midline base-of-tongue mass — if empty, the lingual thyroid is the patient\'s only thyroid. Do NOT remove without this check.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/lingual-thyroid',
+      tags: ['ct', 'nuclear-medicine', 'thyroid', 'congenital', 'base-of-tongue'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-003',
+    front: {
+      question: 'A cystic well-circumscribed mass is seen along the anterior margin of the sternocleidomastoid muscle at the angle of the mandible. How does patient age change your leading diagnosis?',
+    },
+    back: {
+      answer: 'Young patient → second branchial cleft cyst; older patient (>40–60) → necrotic SCC lymph node (HPV-related or otherwise)',
+      explanation: 'Second branchial cleft cysts classically occur along the anteromedial border of the SCM at the level of the mandibular angle (level II). However, in patients over 40–60, a cystic-appearing mass at this location is a necrotic metastatic lymph node from SCC until proven otherwise — the primary is almost always the ipsilateral palatine tonsil or base of tongue. Even a lesion that looks like a simple cyst can be a met.',
+      keyFact: 'Rule: cystic level-II neck mass in a patient >40 = necrotic SCC node (NOT a branchial cleft cyst) until proven otherwise. Any node with central necrosis = metastatic SCC regardless of size.',
+      differentials: [
+        { dx: 'Necrotic SCC lymph node (HPV-related)' },
+        { dx: 'Second branchial cleft cyst' },
+        { dx: 'Cystic schwannoma' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/second-branchial-cleft-cyst',
+      tags: ['ct', 'neck', 'lymph-node', 'scc', 'branchial-cleft'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-004',
+    front: {
+      question: 'What are the imaging hallmarks of a ranula, and what term is used when it extends below the mylohyoid muscle?',
+    },
+    back: {
+      answer: 'Simple ranula: unilocular cyst in the sublingual space. When it herniates below the mylohyoid → "plunging ranula"',
+      explanation: 'A ranula is a mucous retention cyst arising from the sublingual gland or space. Simple ranulas are confined above the mylohyoid (sublingual space); plunging ranulas extend through or around the posterior free margin of the mylohyoid into the submandibular or parapharyngeal space. They are typically lateral, thin-walled, and follow fluid signal (T2 bright, T1 dark). The key testable facts are sublingual gland origin and the term "plunging" once below the mylohyoid.',
+      keyFact: 'Ranula = sublingual gland origin, lateral location. "Plunging" = below the mylohyoid muscle. Floor-of-mouth dermoid is midline with "sack of marbles" fat globules — don\'t confuse.',
+      differentials: [
+        { dx: 'Ranula (plunging)' },
+        { dx: 'Dermoid/epidermoid cyst' },
+        { dx: 'Submandibular gland cyst' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/ranula',
+      tags: ['ct', 'mri', 'sublingual', 'cyst', 'floor-of-mouth'],
+    },
+  },
+
+  // ── SALIVARY GLANDS ──────────────────────────────────────
+
+  {
+    id: 'neuro-hn-005',
+    front: {
+      question: 'Sialolithiasis occurs most commonly in which salivary gland, and why?',
+    },
+    back: {
+      answer: 'Submandibular gland (80% of cases)',
+      explanation: 'The submandibular gland has a wider duct lumen but a tighter orifice, lies in a dependent position, and its duct (Wharton\'s duct) follows an uphill course to drain at the sublingual papilla. These anatomical features, combined with more viscous, calcium-rich secretions, predispose it to calculus formation. 10–20% of submandibular sialoliths are not radiopaque on plain films; CT and ultrasound are the modalities of choice.',
+      keyFact: 'Sialolithiasis mnemonic — "SMG gets stones" (80%). Chronic obstruction → acute enhancement/enlargement → later fatty atrophy. Calcifications can extend anywhere along the duct into the sublingual space.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/sialolithiasis',
+      tags: ['ct', 'ultrasound', 'salivary-gland', 'submandibular', 'calculus'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-006',
+    front: {
+      question: 'What are the salivary duct names for the parotid, submandibular, and sublingual glands?',
+    },
+    back: {
+      answer: 'Parotid = Stensen\'s duct; Submandibular = Wharton\'s duct; Sublingual = Rivinus ducts',
+      explanation: 'Stensen\'s duct opens opposite the upper second molar. Wharton\'s duct runs from the submandibular gland, curves around the posterior free edge of the mylohyoid, and drains into the sublingual papilla at the anterior floor of the mouth. The sublingual gland drains via multiple small Rivinus ducts (some join Wharton\'s duct as the duct of Bartholin).',
+      keyFact: 'Memory trick: "Parotid = Stensen (S for Stensen, P for Parotid — they share nothing); Sub-mandibular = Wharton\'s; Sub-lingual = Rivinus."',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/parotid-gland',
+      tags: ['anatomy', 'salivary-gland', 'duct', 'head-neck'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-007',
+    front: {
+      question: 'What is the most common benign salivary gland tumor, and what are its characteristic MRI features?',
+    },
+    back: {
+      answer: 'Pleomorphic adenoma (benign mixed tumor — BMT)',
+      explanation: 'Pleomorphic adenoma accounts for 60–70% of parotid tumors and 90% occur in the superficial lobe. It is slow-growing, well-circumscribed, and arises in middle-aged patients with a slight female predominance. The hallmark MRI feature is markedly T2 hyperintense signal (as bright as or brighter than CSF) due to myxoid stroma. Patchy enhancement is typical. It displaces rather than invades adjacent structures.',
+      keyFact: 'BMT key fact: T2 as bright as CSF + crosses stylomandibular tunnel (dumbbell shape). It has small malignant potential → surgical resection required. If spilled during surgery → ugly recurrence.',
+      differentials: [
+        { dx: 'Pleomorphic adenoma (BMT)' },
+        { dx: 'Warthin tumor' },
+        { dx: 'Mucoepidermoid carcinoma' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/pleomorphic-adenoma',
+      tags: ['mri', 'parotid', 'salivary-gland', 'benign-tumor'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-008',
+    front: {
+      question: 'What features distinguish Warthin tumor from pleomorphic adenoma of the parotid?',
+    },
+    back: {
+      answer: 'Warthin tumor: cystic, bilateral (15%), occurs exclusively in the parotid, seen in male smokers, takes up Tc-99m pertechnetate',
+      explanation: 'Warthin tumor (papillary cystadenoma lymphomatosum) is the second most common benign parotid tumor. Unlike pleomorphic adenoma (solid, usually unilateral), Warthin tumors are often cystic and may be bilateral in 15% of cases. They occur almost exclusively in the parotid (the only salivary gland with intraglandular lymph nodes) and are strongly associated with smoking. They uniquely take up Tc-99m pertechnetate, similar to thyroid tissue.',
+      keyFact: 'Warthin = Wet (cystic), bilateral (15%), Male smoker, Tc-99m avid. The ONLY parotid tumor to take up pertechnetate (excluding the ultra-rare oncocytoma).',
+      differentials: [
+        { dx: 'Warthin tumor' },
+        { dx: 'Pleomorphic adenoma' },
+        { dx: 'Parotid lymph node' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/warthin-tumour',
+      tags: ['mri', 'ct', 'parotid', 'salivary-gland', 'benign-tumor'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-009',
+    front: {
+      question: 'What is the most common malignant tumor of the minor salivary glands, and what is the most important imaging feature of adenoid cystic carcinoma?',
+    },
+    back: {
+      answer: 'Most common minor salivary gland malignancy: mucoepidermoid carcinoma. Key feature of adenoid cystic carcinoma: perineural spread.',
+      explanation: 'The general rule in salivary gland tumors: the smaller the gland, the higher the proportion of malignant tumors. Mucoepidermoid carcinoma is the most common malignant tumor of minor salivary glands and also of the parotid. Adenoid cystic carcinoma strongly favors minor glands and is notorious for perineural spread along cranial nerve branches, which can extend intracranially along V3 or VII and may widen neural foramina.',
+      keyFact: '"Adenoid cystic = perineural spread." Look for enhancement tracking along V3 into foramen ovale or along the facial nerve. Neural foramen widening on imaging should raise suspicion for schwannoma first, then adenoid cystic carcinoma.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/adenoid-cystic-carcinoma-of-the-salivary-glands',
+      tags: ['mri', 'salivary-gland', 'malignancy', 'perineural-spread'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-010',
+    front: {
+      question: 'Bilateral parotid enlargement with multiple cystic and solid lesions in a painless presentation should raise suspicion for which condition?',
+    },
+    back: {
+      answer: 'Benign lymphoepithelial disease (BLED) — associated with HIV',
+      explanation: 'Benign lymphoepithelial disease presents with bilateral diffusely enlarged parotid glands containing multiple mixed solid and cystic lesions. It is painless (unlike acute parotitis) and is strongly associated with HIV infection. Sjögren syndrome can also cause bilateral parotid involvement, appearing as a honeycombed gland, but is typically seen in women in their 60s and carries a markedly elevated risk (~1000×) of non-Hodgkin MALT lymphoma.',
+      keyFact: 'Bilateral parotid cystic/solid masses, painless → HIV (BLED). Bilateral parotid + dry eyes/dry mouth + older woman → Sjögren (risk of MALT lymphoma). Bilateral parotid lymphoma → think Sjögren.',
+      differentials: [
+        { dx: 'Benign lymphoepithelial disease (HIV)' },
+        { dx: 'Sjögren syndrome' },
+        { dx: 'Sarcoidosis' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/hiv-parotid-disease',
+      tags: ['ct', 'mri', 'parotid', 'hiv', 'sjogren'],
+    },
+  },
+
+  // ── DEEP NECK SPACES ─────────────────────────────────────
+
+  {
+    id: 'neuro-hn-011',
+    front: {
+      question: 'What are the contents of the parotid space, and what is the imaging landmark that divides the superficial from deep lobe of the parotid gland?',
+    },
+    back: {
+      answer: 'Contents: parotid gland, CN VII (facial nerve), retromandibular vein. Superficial/deep division: the retromandibular vein (which runs just medial to the facial nerve)',
+      explanation: 'The parotid space contains the parotid gland, CN VII, and the retromandibular vein. The facial nerve itself is not directly visible on imaging, but the retromandibular vein is a reliable surrogate — it runs just medial to the nerve. A line connecting the lateral surface of the posterior belly of the digastric and the lateral mandibular ramus separates superficial (lateral to CN VII) from deep (medial to CN VII) lobe; 90% of pleomorphic adenomas arise in the superficial lobe. The parotid is the only salivary gland with intraglandular lymph nodes.',
+      keyFact: 'Retromandibular vein = surrogate marker for CN VII in the parotid. Parotid Mass Pushes parapharyngeal fat Medially (PMPM mnemonic).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/parotid-space',
+      tags: ['anatomy', 'parotid', 'cn7', 'deep-neck-space'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-012',
+    front: {
+      question: 'What are the contents of the parapharyngeal space, and which direction does a parotid mass displace the parapharyngeal fat?',
+    },
+    back: {
+      answer: 'Contents: fat, branches of CN V3 (trigeminal), pterygoid veins. Parotid mass → medial displacement of parapharyngeal fat.',
+      explanation: 'The parapharyngeal space (PPS; also called "pre-styloid" PPS) is primarily a fat-filled space with branches of V3 and pterygoid venous plexus. It acts as a crossroads surrounded by other spaces. The direction of parapharyngeal fat displacement identifies the space of origin: parotid → medial; masticator → posteromedial; carotid → anterior; superficial mucosal space → lateral.',
+      keyFact: 'Parapharyngeal fat displacement map: Parotid Mass Pushes Medially (PMPM). Carotid space = anterior. Masticator space = posterior-medial. Superficial mucosal space = lateral.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/parapharyngeal-space',
+      tags: ['anatomy', 'deep-neck-space', 'parapharyngeal', 'ct'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-013',
+    front: {
+      question: 'What are the contents of the carotid space, and what are the three classic tumors that arise there?',
+    },
+    back: {
+      answer: 'Contents: carotid artery, internal jugular vein, CN IX, CN X, CN XI, internal jugular chain lymph nodes. Classic tumors: (1) paraganglioma, (2) schwannoma, (3) neurofibroma.',
+      explanation: 'The carotid space (also called "post-styloid" or "retro-styloid" parapharyngeal space) runs from the skull base to the aortic arch. Carotid space masses displace the parapharyngeal fat anteriorly. Paragangliomas are hypervascular with salt-and-pepper MRI appearance. Schwannomas enhance intensely but are considered hypovascular (enhancement from extravascular leakage). Neurofibromas show a T2 target sign (bright rim, dark center) and are NF-1 associated.',
+      keyFact: 'Carotid space mass → anterior parapharyngeal fat displacement. Three tumors: Para-Salt-Neuro. Schwannoma vs. paraganglioma: schwannoma is avascular on angio (no tumor blush); paraganglioma has intense tumor blush.',
+      differentials: [
+        { dx: 'Paraganglioma (glomus vagale)' },
+        { dx: 'Schwannoma (vagal)' },
+        { dx: 'Neurofibroma' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-space',
+      tags: ['anatomy', 'deep-neck-space', 'carotid-space', 'paraganglioma'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-014',
+    front: {
+      question: 'What are the contents of the masticator space, and what is the most common mass lesion there in an adult?',
+    },
+    back: {
+      answer: 'Contents: muscles of mastication (masseter, temporalis, medial and lateral pterygoids), mandibular ramus/angle, inferior alveolar nerve (V3 branch). Most common adult mass: odontogenic abscess.',
+      explanation: 'The masticator space extends superiorly along the temporalis muscle to the infratemporal fossa and skull base, which is a key route for aggressive spread of infection or neoplasm. On imaging, masticator space masses displace the parapharyngeal fat posteriorly and medially. In adults, the most common pathology is odontogenic abscess; other lesions include sarcomas (children), nerve sheath tumors of V3, and perineural spread from head and neck malignancies.',
+      keyFact: 'Masticator space: "muscles + mandibular ramus + V3." Adult mass = odontogenic abscess first. Masticator mass displaces PPF posterior-medially. Perineural spread along V3 = think adenoid cystic carcinoma or melanoma.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/masticator-space',
+      tags: ['anatomy', 'deep-neck-space', 'masticator', 'infection'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-015',
+    front: {
+      question: 'A retropharyngeal abscess is dangerous because of its relationship to which space, and where can infection spread?',
+    },
+    back: {
+      answer: 'The danger space lies immediately posterior to the retropharyngeal space; infection can spread inferiorly through the danger space into the mediastinum.',
+      explanation: 'The retropharyngeal space is a midline space deep to the oral and nasal pharynx extending from the skull base to about C6–C7. The alar fascia separates the true retropharyngeal space anteriorly from the danger space posteriorly. The danger space extends from the skull base all the way into the posterior mediastinum, making descending necrotizing mediastinitis a feared complication. Most retropharyngeal infections spread from tonsillar tissue.',
+      keyFact: 'Danger space = potential route to mediastinum. Retropharyngeal abscess: midline, centrally low density, must evaluate for mediastinal extension on CT. Contrast with longus colli tendinitis: non-enhancing lenticular effusion + amorphous calcification anterior to C1-C2.',
+      differentials: [
+        { dx: 'Retropharyngeal abscess' },
+        { dx: 'Longus colli tendinitis (calcific tendinitis)' },
+        { dx: 'Suppurative nodes of Rouvière' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/retropharyngeal-abscess',
+      tags: ['ct', 'deep-neck-space', 'infection', 'retropharyngeal'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-016',
+    front: {
+      question: 'What is the classic CT/MRI appearance of longus colli tendinitis, and what is the clinical triad?',
+    },
+    back: {
+      answer: 'CT: amorphous calcium hydroxyapatite deposits anterior to C1-C2 + non-enhancing lenticular prevertebral fluid collection. Clinical triad: acute neck pain, odynophagia, low-grade fever.',
+      explanation: 'Acute longus colli (retropharyngeal) tendinitis results from calcium hydroxyapatite deposition in the superior oblique fibers of the longus colli, which lie inferior to the anterior arch of C1. The calcification coupled with a smooth, non-enhancing prevertebral effusion is nearly pathognomonic. The absence of rim enhancement (unlike an abscess) is the critical distinguishing feature.',
+      keyFact: 'Key differentiator: longus colli tendinitis → non-enhancing effusion + calcification anterior to C1-C2. Retropharyngeal abscess → rim-enhancing collection, usually no calcification. Non-enhancement = benign fluid, not pus.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/longus-colli-tendinitis',
+      tags: ['ct', 'prevertebral', 'calcification', 'tendinitis', 'neck'],
+    },
+  },
+
+  // ── PARAGANGLIOMAS ───────────────────────────────────────
+
+  {
+    id: 'neuro-hn-017',
+    front: {
+      question: 'What are the four types of head and neck paragangliomas, and how are they distinguished by location?',
+    },
+    back: {
+      answer: 'Carotid body tumor (carotid bifurcation, splays ICA/ECA); glomus vagale (carotid space, ~2 cm below jugular foramen); glomus jugulare (jugular foramen, destroys middle ear floor); glomus tympanicum (cochlear promontory, middle ear floor intact)',
+      explanation: 'All four are histologically identical paragangliomas but named by location. Carotid body tumors splay the ICA and ECA on angiography. Glomus vagale tumors are in the high carotid space. Glomus jugulare erodes the jugular foramen and floor of the middle ear. Glomus tympanicum is confined to the cochlear promontory. All are hypervascular with salt-and-pepper T1/T2 MRI appearance (flow voids = pepper; subacute hemorrhage = salt) in lesions >2 cm.',
+      keyFact: 'Location = name: Bifurcation=carotid body; 2cm below skull base=vagale; At jugular foramen + middle ear floor destroyed=jugulare; Middle ear floor intact=tympanicum. Middle ear floor status is the key CT discriminator between jugulare and tympanicum.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/paraganglioma-of-the-head-and-neck',
+      tags: ['ct', 'mri', 'paraganglioma', 'carotid-space', 'skull-base'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-018',
+    front: {
+      question: 'What genetic syndromes are associated with multiple or bilateral paragangliomas, and what nuclear medicine agent targets them?',
+    },
+    back: {
+      answer: 'Syndromes: Von Hippel-Lindau, NF-1, MEN 2A/2B, and familial paraganglioma syndromes (SDH mutations). Nuclear agent: In-111 octreotide (somatostatin analog). Also FDG-PET avid.',
+      explanation: 'Sporadic paragangliomas are multicentric in 2–10% of cases; in familial cases, 25–75% are multiple. Look for bilateral carotid body tumors, contralateral carotid bifurcation lesions, or synchronous glomus jugulare/tympanicum lesions. Paragangliomas express somatostatin receptors, allowing octreotide scintigraphy for detection. They are also FDG-PET avid. The most common presenting symptom is hoarseness from vagal nerve involvement.',
+      keyFact: 'Multiple/bilateral paragangliomas → hereditary syndrome (VHL, NF-1, MEN2, SDH mutations). 40% of all paragangliomas are hereditary. Octreotide scan or FDG-PET for staging multifocal disease.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/paraganglioma-of-the-head-and-neck',
+      tags: ['mri', 'nuclear-medicine', 'paraganglioma', 'vhl', 'hereditary'],
+    },
+  },
+
+  // ── VOCAL CORD / LARYNX ──────────────────────────────────
+
+  {
+    id: 'neuro-hn-019',
+    front: {
+      question: 'What constellation of CT findings indicates vocal cord paralysis on the affected side?',
+    },
+    back: {
+      answer: 'Paramedian cord position, ballooning (dilation) of the ipsilateral laryngeal ventricle (spinnaker sail sign), anteromedial rotation of the arytenoid, thickened/medialized aryepiglottic fold, enlarged ipsilateral pyriform sinus, ± posterior cricoarytenoid muscle atrophy.',
+      explanation: 'Vocal cord paralysis (VCP) results from dysfunction of CN X or the recurrent laryngeal nerve (RLN). The right RLN loops around the subclavian artery; the left RLN loops around the aortic arch at the aortopulmonary window. A key imaging task is tracing the nerve from brainstem to larynx looking for causative lesions. The ipsilateral laryngeal ventricle dilates (spinnaker sail sign on axial CT) as the primary sign of cord paralysis.',
+      keyFact: 'Spinnaker sail sign = ipsilateral dilated laryngeal ventricle = VCP. Left-sided VCP → scan the chest to the AP window. Right-sided VCP → scan to the right subclavian. VCP + ipsilateral pyriform sinus dilation = classic.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/vocal-cord-palsy',
+      tags: ['ct', 'larynx', 'vocal-cord', 'cranial-nerve', 'cn10'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-020',
+    front: {
+      question: 'How are laryngeal cancers subdivided, and which subtype has the best prognosis and why?',
+    },
+    back: {
+      answer: 'Supraglottic, glottic, and subglottic. Glottic (true vocal cord) has the best prognosis because it has a sparse lymphatic supply, causing late nodal metastasis.',
+      explanation: 'Supraglottic tumors are more aggressive (early nodal mets, rich lymphatics in pre-epiglottic fat) and don\'t cause hoarseness until late. Glottic tumors arise at the true cords, present with early hoarseness, and metastasize late. Subglottic tumors are least common, often small compared to nodal burden, and can have bilateral nodal disease. Invasion of the cricoid cartilage is a contraindication to conservation laryngeal surgery. Anterior commissure soft tissue >2 mm suggests glottic involvement.',
+      keyFact: 'Glottic = best prognosis (sparse lymphatics, early hoarseness = early detection). Supraglottic = worst (early mets, no hoarseness). Cricoid invasion = contraindication to partial laryngectomy.',
+      differentials: [
+        { dx: 'Glottic SCC' },
+        { dx: 'Supraglottic SCC' },
+        { dx: 'Subglottic SCC' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/laryngeal-squamous-cell-carcinoma',
+      tags: ['ct', 'mri', 'larynx', 'scc', 'staging'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-021',
+    front: {
+      question: 'What is a laryngocele, and what is the most common cause of saccular dilation?',
+    },
+    back: {
+      answer: 'Dilation of the laryngeal saccule (appendix of the laryngeal ventricle). Most common cause: 15% are due to an underlying laryngeal tumor causing obstruction.',
+      explanation: 'The laryngeal saccule is the blind-ending appendix of the laryngeal ventricle extending anterosuperiorly. When dilated with air it is called a laryngocele; with fluid it may still be called a laryngocele or a saccular cyst. When infected, it is a laryngopyocele. Internal laryngoceles remain within the thyrohyoid membrane; external types herniate through it. The key clinical point is that 15% are caused by an underlying laryngeal tumor obstructing the saccule neck.',
+      keyFact: '15% of laryngoceles are caused by an underlying laryngeal carcinoma. Always look for a mass at the saccule neck when you see a laryngocele. Internal = inside thyrohyoid membrane; external = herniates through it.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/laryngocele',
+      tags: ['ct', 'larynx', 'cyst', 'laryngocele', 'scc'],
+    },
+  },
+
+  // ── LYMPH NODES ──────────────────────────────────────────
+
+  {
+    id: 'neuro-hn-022',
+    front: {
+      question: 'What are the cervical lymph node levels I through VII, and which level is separated by the jugular vein (spinal accessory nerve) into 2A and 2B?',
+    },
+    back: {
+      answer: 'Level I: submental (IA) and submandibular (IB); II: upper internal jugular (IIA = abutting/anterior to IJV, IIB = posterior with fat plane); III: mid jugular; IV: lower jugular; V: posterior triangle; VI: anterior compartment; VII: superior mediastinal. The IJV (= spinal accessory nerve) separates IIA from IIB.',
+      explanation: 'Key anatomical borders: anterior belly of digastric separates IA from IB; stylohyoid muscle separates IB from IIA; lower hyoid separates II from III; lower cricoid separates III from IV. Level IIA nodes abut or are anterior/medial/lateral to the internal jugular vein; IIB nodes are posterior to the IJV with a fat plane between them.',
+      keyFact: 'Level separators: Digastric (IA/IB), Stylohyoid (IB/IIA), IJV/spinal accessory (IIA/IIB), hyoid (II/III), cricoid (III/IV). HPV-SCC → necrotic level IIA node; Nasopharyngeal SCC → retropharyngeal nodes first.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/cervical-lymph-node-levels',
+      tags: ['anatomy', 'lymph-node', 'neck', 'nodal-levels'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-023',
+    front: {
+      question: 'What imaging features of a cervical lymph node indicate extracapsular spread, and why is this clinically significant?',
+    },
+    back: {
+      answer: 'Irregular/indistinct nodal margins with infiltration into adjacent fat/structures, loss of fat plane between node and carotid artery. Significance: reduces prognosis by ~50%.',
+      explanation: 'Extracapsular spread (ECS) is defined radiologically as irregular or hazy nodal borders with infiltration of adjacent structures. Loss of the fat plane between a suspicious node and the carotid artery, and the degree of tumor circumferentially surrounding the arterial wall, indicates carotid invasion. Any node with central necrosis is considered metastatic from SCC regardless of size. ECS is a critical staging finding that changes surgical and treatment planning.',
+      keyFact: 'Any necrotic node = SCC met (regardless of size). Irregular border + hazy fat = extracapsular spread = 50% worse prognosis. >270° carotid encasement = carotid invasion (unresectable).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/cervical-lymph-node-metastasis',
+      tags: ['ct', 'mri', 'lymph-node', 'scc', 'extracapsular-spread'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-024',
+    front: {
+      question: 'What is the most common location of nasopharyngeal SCC, what are the earliest imaging signs, and what nodal level is first involved?',
+    },
+    back: {
+      answer: 'Most common location: fossa of Rosenmüller. Earliest sign: effacement of fat in the fossa of Rosenmüller. First nodal involvement: retropharyngeal nodes.',
+      explanation: 'Nasopharyngeal carcinoma (NPC) has a bimodal age distribution (15–30 years Chinese/Asian, and >40 years) and is EBV-associated. The fossa of Rosenmüller (lateral pharyngeal recess) is the most common primary site. Effacement of the normally present fat pad there is the earliest imaging sign. Unilateral mastoid effusion should prompt careful evaluation of the fossa of Rosenmüller. Skull base erosion occurs in ~30% of cases; MRI > CT for assessing marrow invasion (loss of T1 bright marrow signal in the clivus).',
+      keyFact: 'NPC triad: fossa of Rosenmüller → retropharyngeal nodes → bilateral neck nodes. Unilateral mastoid effusion in an adult = look at the fossa of Rosenmüller (Eustachian tube obstruction). Nodal mets in 90% at presentation.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/nasopharyngeal-carcinoma',
+      tags: ['mri', 'ct', 'nasopharynx', 'scc', 'skull-base'],
+    },
+  },
+
+  // ── TEMPORAL BONE ────────────────────────────────────────
+
+  {
+    id: 'neuro-hn-025',
+    front: {
+      question: 'What are the three middle ear compartments, and what is the "attic"?',
+    },
+    back: {
+      answer: 'Epitympanum (attic) = above the scutum; mesotympanum = directly behind the eardrum; hypotympanum = below the tympanic membrane, where the Eustachian tube arises.',
+      explanation: 'The middle ear has three vertical subdivisions based on the tympanic membrane and scutum. The epitympanum ("attic") is everything above the tip of the scutum and is where acquired cholesteatomas from pars flaccida most often grow, entering Prussak\'s space. The mesotympanum is the region directly behind the eardrum. The hypotympanum is below the tympanic membrane and is where the Eustachian tube opens.',
+      keyFact: 'Attic = epitympanum. Pars flaccida cholesteatoma → attic/Prussak\'s space → scutum erosion first. Pars tensa cholesteatoma is less common and involves inner ear structures earlier.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/middle-ear',
+      tags: ['ct', 'temporal-bone', 'middle-ear', 'anatomy'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-026',
+    front: {
+      question: 'What are the CT and MRI features of an acquired cholesteatoma, and what is the most commonly eroded ossicle?',
+    },
+    back: {
+      answer: 'CT: non-dependent soft tissue mass in the epitympanum/Prussak\'s space with scutum erosion; MRI: T1 dark, T2 bright, restricted diffusion (DWI). Most commonly eroded ossicle: long process of the incus.',
+      explanation: 'Acquired cholesteatoma is exfoliated epithelial debris growing in the wrong place. Pars flaccida type (more common) grows through a perforation into Prussak\'s space (between the incus and the lateral tympanic bone). The scutum is eroded early — a very specific sign of acquired cholesteatoma. The malleus head is displaced medially. On DWI, cholesteatoma restricts diffusion, which is the key MRI distinguishing feature from other middle ear opacities.',
+      keyFact: 'Cholesteatoma = T1 dark, T2 bright, RESTRICTS diffusion. Scutum erosion = first and most specific CT sign. Long process of incus = most commonly eroded ossicle. Labyrinthine fistula most commonly involves the lateral semicircular canal.',
+      differentials: [
+        { dx: 'Acquired cholesteatoma' },
+        { dx: 'Chronic otitis media' },
+        { dx: 'Congenital cholesteatoma' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/cholesteatoma',
+      tags: ['ct', 'mri', 'temporal-bone', 'cholesteatoma', 'dwi'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-027',
+    front: {
+      question: 'How do you distinguish cholesterol granuloma from cholesteatoma of the petrous apex on MRI?',
+    },
+    back: {
+      answer: 'Cholesterol granuloma: T1 bright AND T2 bright, does NOT restrict diffusion. Cholesteatoma: T1 dark, T2 bright, RESTRICTS diffusion.',
+      explanation: 'Both lesions cause smooth expansile bony change and can be similar on CT. The MRI distinction is critical: cholesterol granuloma contains chronic blood products (methemoglobin) making it T1 bright; cholesteatoma lacks these products and is T1 dark. Both are T2 bright. DWI is the key differentiator — cholesteatoma restricts, cholesterol granuloma does not. Cholesterol granuloma is the most common primary petrous apex lesion.',
+      keyFact: 'Memory: CG (Cholesterol Granuloma) = Glowing on T1 (T1 AND T2 bright, no restriction). Cholesteatoma = T1 Dark + restricts. Both cause smooth expansile bony change on CT.',
+      differentials: [
+        { dx: 'Cholesterol granuloma' },
+        { dx: 'Congenital cholesteatoma (petrous apex)' },
+        { dx: 'Mucocele' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/cholesterol-granuloma-of-the-petrous-apex',
+      tags: ['mri', 'temporal-bone', 'petrous-apex', 'dwi'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-028',
+    front: {
+      question: 'What is otosclerosis (otospongiosis), and what are its two forms with their characteristic locations and hearing loss types?',
+    },
+    back: {
+      answer: 'Fenestral otosclerosis: hypodense plaque at the fissula ante fenestram (anterior to oval window) → conductive hearing loss. Retrofenestral (cochlear): demineralization surrounding the cochlea → mixed hearing loss.',
+      explanation: 'Otosclerosis (better termed otospongiosis) involves replacement of normal dense endochondral otic capsule bone with vascular spongy bone. The fissula ante fenestram is the pathognomonic site for fenestral disease, causing stapes fixation to the oval window. Retrofenestral disease is more severe and almost always coexists with fenestral disease. It is bilateral in 80% and presents in the 2nd–3rd decade. The otic capsule normally appears as the densest bone in the body — any lucency there is abnormal.',
+      keyFact: 'Fenestral otosclerosis = hypodense plaque at fissula ante fenestram (anterior to oval window) = pathognomonic. Bilateral 80% of the time. Retrofenestral = cochlear demineralization = sensorineural component added. Otic capsule should always be the brightest bone on CT.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/otosclerosis',
+      tags: ['ct', 'temporal-bone', 'hearing-loss', 'otosclerosis'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-029',
+    front: {
+      question: 'What is the most common cause of congenital sensorineural hearing loss on imaging, and what is the diagnostic threshold?',
+    },
+    back: {
+      answer: 'Large endolymphatic sac anomaly (LESA) / large vestibular aqueduct syndrome (LVAS). Diagnostic threshold: vestibular aqueduct diameter >1.5 mm on CT midway between the crus communis and intracranial aperture.',
+      explanation: 'LESA results from arrested development at the 7th gestational week, causing enlargement of the endolymphatic duct and sac. On MRI it appears as an enlarged endolymphatic sac (T2 bright); on CT there is a corresponding enlarged bony vestibular aqueduct. The vestibular aqueduct should never be larger than the adjacent posterior semicircular canal. The classic clinical scenario is progressive SNHL in a child or young adult exacerbated by minor head trauma (fragile cochlea). It is bilateral in most cases and associated with absence of the cochlear modiolus (>90%).',
+      keyFact: 'LESA/LVAS: vestibular aqueduct >1.5 mm = abnormal. Classic: progressive SNHL in child worsened by minor trauma. Most common congenital inner ear anomaly on imaging. Association with cochlear modiolus absence (>90%).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/large-vestibular-aqueduct',
+      tags: ['ct', 'mri', 'temporal-bone', 'inner-ear', 'hearing-loss', 'congenital'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-030',
+    front: {
+      question: 'What is superior semicircular canal dehiscence, and what are its clinical manifestations?',
+    },
+    back: {
+      answer: 'Absence/extreme thinning of the bony roof over the superior semicircular canal, creating a "third mobile window." Manifests as Tullio phenomenon (vertigo/nystagmus induced by loud sounds) and sound/pressure-induced vestibular symptoms.',
+      explanation: 'Superior semicircular canal dehiscence (SSCD) is best demonstrated on high-resolution CT of the temporal bones in the coronal and Poschl (short-axis, perpendicular to the petrous ridge) planes; a dehiscence ≥2 mm is diagnostic. The third mobile window allows abnormal pressure transmission into the inner ear. Associated thinning of the tegmen tympani may be present. Radiological findings may be present without clinical symptoms (similar to degenerative spine disease).',
+      keyFact: 'SSCD: coronal and Poschl CT planes are essential. Dehiscence ≥2 mm. Tullio phenomenon = vertigo/nystagmus with loud noises. Can cause apparent conductive hearing loss despite normal ossicles. "Third window" = the key pathophysiology.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/superior-semicircular-canal-dehiscence',
+      tags: ['ct', 'temporal-bone', 'semicircular-canal', 'dehiscence'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-031',
+    front: {
+      question: 'What are the six segments of the facial nerve (CN VII), and which segments can normally enhance on MRI?',
+    },
+    back: {
+      answer: 'Segments: (1) intracranial/cisternal, (2) meatal/canalicular (IAC), (3) labyrinthine (IAC to geniculate ganglion), (4) tympanic (GG to pyramidal eminence), (5) mastoid (pyramidal eminence to stylomastoid foramen), (6) extratemporal. Normal enhancement: tympanic, mastoid, and geniculate ganglion segments (and sometimes labyrinthine). NO normal enhancement: cisternal, canalicular, extratemporal.',
+      explanation: 'The facial nerve exits the stylomastoid foramen and divides in the parotid. The anterior genu is where the nerve makes its turn at the geniculate ganglion on axial CT. Abnormal enhancement in the cisternal or canalicular segment is the classic finding in Bell\'s palsy. In Ramsay Hunt syndrome (herpes zoster reactivation), CN V is usually also involved. Nodular enhancement suggests tumor (schwannoma or malignancy) rather than inflammatory enhancement.',
+      keyFact: 'Normal CN7 enhancement: Tympanic + Mastoid + Geniculate ganglion. Abnormal: Cisternal + Canalicular + Extratemporal. Bell\'s palsy → abnormal canalicular segment enhancement. Nodular enhancement → think tumor. T-bone fracture → transverse > longitudinal for facial nerve damage.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/facial-nerve',
+      tags: ['mri', 'temporal-bone', 'cn7', 'facial-nerve'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-032',
+    front: {
+      question: 'What are the differences between longitudinal and transverse temporal bone fractures?',
+    },
+    back: {
+      answer: 'Longitudinal: along the long axis, more common, more ossicular dislocation, less facial nerve damage (~20%), more conductive hearing loss. Transverse: crosses the short axis, less common, more vascular injury, more facial nerve damage (>30%), more SNHL.',
+      explanation: 'Longitudinal fractures run parallel to the long axis of the petrous bone and account for the majority of temporal bone fractures. They preferentially disrupt the ossicular chain and cause conductive hearing loss. Transverse fractures are less common but more likely to violate the otic capsule (otic capsule-violating fractures have a worse prognosis for hearing and facial nerve function). The otic capsule violation status is more clinically predictive than the fracture orientation itself.',
+      keyFact: 'Otic capsule violation = worst prognostic finding in temporal bone fractures (overrides longitudinal vs. transverse classification). Transverse fractures: more facial nerve palsy (>30%), more SNHL. Longitudinal: more conductive loss, ossicular dislocation.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/temporal-bone-fracture',
+      tags: ['ct', 'temporal-bone', 'fracture', 'trauma'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-033',
+    front: {
+      question: 'What is necrotizing (malignant) otitis externa, who gets it, and what is the causative organism?',
+    },
+    back: {
+      answer: 'Aggressive infection of the external auditory canal spreading to the skull base. Patient: diabetic (95%). Causative organism: Pseudomonas aeruginosa (98%).',
+      explanation: 'Necrotizing otitis externa (NOE) begins in the EAC and spreads to the soft tissues and skull base via the fissures of Santorini. CT shows EAC soft tissue swelling and adjacent bony destruction. MRI is better for evaluating intracranial complications (osteomyelitis, venous sinus thrombosis, meningitis). It may involve CN VII at the stylomastoid foramen causing facial nerve palsy. Distinguishing NOE from exostosis: exostosis is bilateral, bone-density, in surfers/swimmers without diabetes.',
+      keyFact: 'NOE = Diabetic + Pseudomonas (98%) + bone destruction. CT for bony involvement, MRI for soft tissue/intracranial extension. EAC exostosis (surfer\'s ear) = bilateral, chronic cold water exposure, immunocompetent — do not confuse.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/malignant-necrotizing-otitis-externa',
+      tags: ['ct', 'mri', 'temporal-bone', 'infection', 'external-ear'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-034',
+    front: {
+      question: 'What is Gradenigo syndrome, and what is the anatomy of Dorello\'s canal?',
+    },
+    back: {
+      answer: 'Gradenigo syndrome: triad of otomastoiditis + facial pain (trigeminal neuropathy) + lateral rectus palsy (CN VI). Dorello\'s canal: the most medial point of the petrous ridge between the pontine cistern and cavernous sinus — where CN VI is vulnerable.',
+      explanation: 'Apical petrositis is a rare complication of otomastoiditis/mastoid surgery. When infection involves the petrous apex, it can involve Dorello\'s canal where CN VI runs, causing lateral rectus palsy. The triad (otomastoiditis + trigeminal pain + abducens palsy) = Gradenigo syndrome. Complications of untreated apical petrositis include skull base osteomyelitis, ICA vasospasm, venous sinus thrombosis, and descending mediastinitis.',
+      keyFact: 'Gradenigo = Otomastoiditis + Facial pain (V) + Lateral rectus palsy (CN VI) from Dorello\'s canal involvement. CN VI is the longest intracranial course nerve → most vulnerable to apical petrositis.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/gradenigo-syndrome',
+      tags: ['ct', 'mri', 'petrous-apex', 'cn6', 'skull-base', 'infection'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-035',
+    front: {
+      question: 'What is the most common CPA (cerebellopontine angle) mass, and what MRI feature helps determine surgical approach?',
+    },
+    back: {
+      answer: 'Most common CPA mass: vestibular schwannoma (80–90%). A fundal cap of CSF ≥2 mm between the lateral tumor margin and the cochlear canal enables a hearing-preservation surgical approach.',
+      explanation: 'Vestibular schwannomas arise most commonly from the inferior vestibular division of CN VIII near the Obersteiner-Redlich zone (transition from central glial to peripheral Schwann cells). When small they conform to the IAC ("ice cream cone" appearance when they extend into the CPA). They are isointense to brain on T1, hyperintense on T2, with intense enhancement. Bilateral vestibular schwannomas are pathognomonic for NF-2 (MISME: Multiple Intracranial Schwannomas, Meningiomas, and Ependymomas).',
+      keyFact: 'Fundal cap ≥2 mm CSF = hearing preservation surgery possible. Ice cream cone shape = schwannoma extending from IAC into CPA. Bilateral vestibular schwannomas = NF-2 (MISME). NF-2 also causes meningiomas, ependymomas, and ocular changes.',
+      differentials: [
+        { dx: 'Vestibular schwannoma' },
+        { dx: 'Meningioma' },
+        { dx: 'Epidermoid' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/vestibular-schwannoma',
+      tags: ['mri', 'cpa', 'schwannoma', 'cn8', 'nf2'],
+    },
+  },
+
+  // ── SKULL BASE & SINUSES ─────────────────────────────────
+
+  {
+    id: 'neuro-hn-036',
+    front: {
+      question: 'What cranial nerves pass through the following foramina: foramen ovale, foramen rotundum, jugular foramen, hypoglossal canal?',
+    },
+    back: {
+      answer: 'Foramen ovale: CN V3 (mandibular). Foramen rotundum: CN V2 (maxillary). Jugular foramen: CN IX, X, XI. Hypoglossal canal: CN XII.',
+      explanation: 'Skull base foraminal anatomy is one of the most highly tested topics on boards. Additional key foramina: superior orbital fissure (CN III, IV, V1, VI); internal auditory canal (CN VII, VIII); stylomastoid foramen (CN VII exit); foramen lacerum (no major nerve but ICA passes through). Perineural spread along V3 to foramen ovale or V2 to foramen rotundum is a key finding in adenoid cystic carcinoma and should be specifically sought on MRI.',
+      keyFact: 'Mnemonic for jugular foramen: "Golf Club Joint" = CN IX (Glossopharyngeal), CN X (vaguS/Swallowing), CN XI (Spinal accessory). Foramen ovale = V3 (think "O" for Oral/mandibular). Foramen rotundum = V2 (think "R" for Round = maxiRRary).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/skull-base-foramina-and-their-contents',
+      tags: ['anatomy', 'skull-base', 'cranial-nerve', 'foramen'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-037',
+    front: {
+      question: 'What are the essential elements that define each LeFort fracture type, and what structure is common to all three?',
+    },
+    back: {
+      answer: 'All LeFort types include pterygoid process fracture. LeFort 1: lateral nasal aperture ("floating palate"). LeFort 2: inferior orbital rim and orbital floor ("pyramidal"). LeFort 3: zygomatic arch and lateral orbital rim/wall ("craniofacial dissociation/separated face").',
+      explanation: 'The pterygoid process must be fractured for any LeFort classification. LeFort 1 is the most inferior, separating the palate from the maxilla. LeFort 2 separates the maxilla from the face in a pyramidal pattern. LeFort 3 (craniofacial dissociation) separates the entire face from the cranium and involves the zygomatic arches. Facial fractures can disrupt the frontal sinus outflow tract, leading to mucocele formation (buzzword: "expanded, airless sinus").',
+      keyFact: 'All LeForts = pterygoid process fracture. Without pterygoid involvement → it\'s not a LeFort. Unique features: LeFort 1 = lateral nasal aperture; LeFort 2 = orbital floor/rim; LeFort 3 = zygomatic arch. CSF leak → anterior skull base fracture is most common site.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/le-fort-fractures',
+      tags: ['ct', 'facial-fracture', 'lefort', 'trauma'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-038',
+    front: {
+      question: 'What is the most common sinonasal cancer by location, and how does allergic fungal sinusitis differ from acute invasive fungal sinusitis on CT?',
+    },
+    back: {
+      answer: 'Most common location: maxillary antrum (SCC). Allergic fungal: hyperdense sinus contents + normal immune system + no fat stranding (no invasion). Acute invasive: fat stranding in orbit/masticator/pterygopalatine fossa, immunocompromised patient, necrotic mucosa (non-enhancing on MRI).',
+      explanation: 'Allergic fungal sinusitis (AFS) occurs in immunocompetent patients (often with asthma). The fungal mucin is hyperdense on CT and T1/T2 dark on MRI due to high protein and metal content. It does not invade but can expand/remodel sinus walls. Acute invasive fungal sinusitis (AIFS) requires an immunocompromised host (neutropenic = Aspergillus; diabetic in DKA = Mucor/Zygomycetes). Key CT finding of AIFS = fat stranding outside the sinus (not bone destruction — that\'s late). MRI mucosa may not enhance (necrotic).',
+      keyFact: 'Invasive fungal sinusitis key CT sign = fat stranding OUTSIDE the sinus (orbital fat, masticator fat, PPF) — this does NOT require bone destruction. AFS = hyperdense centrally, normal immunity. DKA + sinus disease = Mucor until proven otherwise.',
+      differentials: [
+        { dx: 'Acute invasive fungal sinusitis' },
+        { dx: 'Allergic fungal sinusitis' },
+        { dx: 'Bacterial sinusitis' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/fungal-sinusitis',
+      tags: ['ct', 'mri', 'sinusitis', 'fungal', 'immunocompromised'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-039',
+    front: {
+      question: 'What is a mucocele, what is the most common sinus affected, and how does it differ from a tumor on imaging?',
+    },
+    back: {
+      answer: 'Mucocele = obstructed sinus that expands circumferentially with mucus accumulation. Most common: frontal sinus. Key difference from tumor: mucocele does NOT enhance centrally (peripheral mucosal enhancement only); tumors have solid enhancement.',
+      explanation: 'Mucocele results from sinus outflow obstruction (trauma, chronic sinusitis, prior surgery, CF). The sinus expands circumferentially ("expanded, airless sinus" buzzword), eroding and remodeling (not destroying) the walls. On CT it is filled with soft tissue density; on MRI it may be T1 bright (inspissated secretions) or T1 dark with T2 bright signal. The periphery may enhance from inflamed mucosa but central enhancement should not occur.',
+      keyFact: 'Mucocele = "expanded, airless sinus" — no central enhancement (vs. tumor). Frontal sinus is most common (often post-trauma). Sinonasal polyposis = widening of the infundibulum (bony remodeling, not destruction). Inverted papilloma = lateral nasal wall at middle turbinate + focal hyperostosis at origin + cerebriform MRI pattern.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/mucocele-paranasal-sinus',
+      tags: ['ct', 'mri', 'sinusitis', 'mucocele', 'frontal-sinus'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-040',
+    front: {
+      question: 'What is juvenile nasopharyngeal angiofibroma (JNA), and what are its classic imaging features?',
+    },
+    back: {
+      answer: 'Vascular fibrous tumor arising in the sphenopalatine foramen in male teenagers. CT/MRI: centered at sphenopalatine foramen, bone remodeling (not destruction), extremely vascular with flow voids on MRI, intense enhancement. Pre-surgical embolization via internal maxillary artery is standard.',
+      explanation: 'JNA is the most common benign nasopharyngeal tumor in adolescent males. It classically presents with unilateral nasal obstruction and recurrent epistaxis. The tumor arises from the sphenopalatine foramen and can extend into the pterygomaxillary fissure, pterygopalatine fossa, infratemporal fossa, and intracranially. Bone remodeling (not destruction) distinguishes it from malignancy. The clinical history (male teenager + nosebleeds) is often the key.',
+      keyFact: 'JNA = Male teenager + epistaxis + sphenopalatine foramen mass + bone remodeling + flow voids. Primary supply = internal maxillary artery (terminal branch) ± ascending pharyngeal artery. DO NOT biopsy without angiography. Pre-surgical embolization is routine.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/juvenile-nasopharyngeal-angiofibroma',
+      tags: ['ct', 'mri', 'nasopharynx', 'vascular', 'benign-tumor'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-041',
+    front: {
+      question: 'What is esthesioneuroblastoma, and what is its classic imaging appearance?',
+    },
+    back: {
+      answer: 'Olfactory neuroblastoma arising from olfactory epithelium at the cribiform plate. Classic appearance: dumbbell shape straddling the cribiform plate with a "waist" at the plate; intracranial posterior cyst(s) are a diagnostic finding.',
+      explanation: 'Esthesioneuroblastoma (olfactory neuroblastoma) has a bimodal age distribution (teens and 50–60s). It originates at the cribiform plate and grows both upward (intracranially) and downward (into the nasal cavity and sinuses), creating a dumbbell shape. Intracranial cysts adjacent to the tumor are characteristic and help distinguish it from other sinonasal tumors. Octreotide scintigraphy is positive (neural crest origin). The Kadish staging system is used.',
+      keyFact: 'Esthesioneuroblastoma = cribiform plate origin + dumbbell shape + intracranial peripheral cysts (diagnostic). Octreotide positive. Bimodal age (teens and 50s). Can resemble inverted papilloma but the cribiform location and dumbbell shape are key.',
+      differentials: [
+        { dx: 'Esthesioneuroblastoma' },
+        { dx: 'Sinonasal SCC/SNUC' },
+        { dx: 'Inverted papilloma' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/olfactory-neuroblastoma',
+      tags: ['mri', 'ct', 'sinonasal', 'tumor', 'skull-base'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-042',
+    front: {
+      question: 'What is Wegener\'s granulomatosis (GPA), and what is the classic triad plus the serology and imaging findings in the nose?',
+    },
+    back: {
+      answer: 'GPA triad: renal masses + sinus mucosal thickening with nasal septal erosion + cavitary lung nodules/fibrosis. Serology: c-ANCA positive. Nasal: cartilaginous septal erosion (vs. syphilis which affects bony septum).',
+      explanation: 'Granulomatosis with polyangiitis (formerly Wegener\'s) is a necrotizing vasculitis affecting the upper and lower respiratory tracts and kidneys. Sinonasal involvement causes mucosal thickening and nasal septal perforation affecting the cartilaginous (anterior) septum. Syphilis, surgery, and cocaine use also cause septal perforation but involve the cartilage predominantly; syphilis uniquely affects the bony septum. c-ANCA (anti-PR3) is the serologic marker.',
+      keyFact: 'GPA: c-ANCA + renal disease + saddle nose deformity + cavitary lung nodules. Nasal septal perforation: GPA/cocaine/surgery = cartilaginous; Syphilis = bony septum. "When I say GPA, you say c-ANCA."',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/granulomatosis-with-polyangiitis',
+      tags: ['ct', 'mri', 'vasculitis', 'sinonasal', 'wegener'],
+    },
+  },
+
+  // ── ORBIT ────────────────────────────────────────────────
+
+  {
+    id: 'neuro-hn-043',
+    front: {
+      question: 'What is the most common intraocular malignancy in children vs. adults?',
+    },
+    back: {
+      answer: 'Children: retinoblastoma (calcification within the globe of a child = retinoblastoma). Adults: uveal melanoma (most common intraocular lesion in adults).',
+      explanation: 'Retinoblastoma is caused by RB1 tumor suppressor gene mutation (chromosome 13 — "unlucky 13"). It presents before age 3 (rare after 6), with a normal-sized or larger globe, and intraocular calcification on CT. It can be bilateral (30%) or trilateral (pineal involvement). Uveal melanoma in adults presents as an enhancing soft tissue mass in the posterior globe with a collar-button shape (constricted by Bruch\'s membrane); it has a strong predilection for liver metastases.',
+      keyFact: 'Calcification in child\'s globe = retinoblastoma. Globe size: retinoblastoma = normal; PHPV = small; Coats\' = smaller. Adult posterior globe enhancing mass = melanoma → get liver MRI. Collar-button shape = Bruch\'s membrane constriction.',
+      differentials: [
+        { dx: 'Retinoblastoma (child)' },
+        { dx: 'Coats\' disease' },
+        { dx: 'PHPV' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/retinoblastoma',
+      tags: ['ct', 'mri', 'orbit', 'globe', 'pediatric'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-044',
+    front: {
+      question: 'What is the classic imaging appearance of optic nerve sheath meningioma, and what syndrome is associated with it?',
+    },
+    back: {
+      answer: 'Tram-track sign: enhancement or calcification running parallel to and surrounding the optic nerve on axial CT (or T1+C FS MRI). Associated with NF-2.',
+      explanation: 'Optic nerve sheath meningiomas arise from meningothelial cells of the arachnoid surrounding the optic nerve. The tram-track sign represents two enhancing tumor strips separated by the central hypodense optic nerve on axial imaging. Calcification occurs in 20–50% of cases and can also create this appearance on CT. NF-2 association should prompt a search for other MISME lesions (schwannomas, meningiomas, ependymomas). Unlike optic glioma (which enlarges the nerve itself), optic sheath meningioma surrounds the nerve.',
+      keyFact: 'Tram-track = optic nerve sheath meningioma. The nerve is dark (negative defect), the tumor flanks it. NF-2 = MISME (Multiple Intracranial and Spinal Meningiomas, schwannomas, Ependymomas). Optic glioma enlarges the nerve; meningioma surrounds it.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/optic-nerve-sheath-meningioma',
+      tags: ['ct', 'mri', 'orbit', 'optic-nerve', 'meningioma', 'nf2'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-045',
+    front: {
+      question: 'How does thyroid orbitopathy (Graves\' ophthalmopathy) differ from orbital pseudotumor on imaging, and what is the order of extraocular muscle involvement in Graves\'?',
+    },
+    back: {
+      answer: 'Graves: muscle belly enlargement SPARING the tendinous insertion, painless, bilateral, T2 bright early; Pseudotumor (IgG4 sclerosing): involves muscle AND tendon, painful, usually unilateral, T2 dark. Graves order: IR > MR > SR > LR > SO/IO (I\'M Slow, Like Running Slowly).',
+      explanation: 'Thyroid orbitopathy is caused by TSH receptor antibodies activating orbital fibroblasts and adipocytes, causing muscle belly fibrosis. The classic feature is myotendinous insertion sparing — the tendon is not involved. Orbital pseudotumor (IgG4 disease) involves the entire muscle including tendons, causes pain, and responds to steroids. Graves\' is bilateral and can cause proptosis leading to compressive optic neuropathy.',
+      keyFact: 'Graves\' = tendon SPARED, painless, bilateral. Pseudotumor = tendon INVOLVED, painful, responds to steroids. Muscle order: "I\'M SLow Like Running" = Inferior, Medial, Superior, Lateral, Superior Oblique/Inferior Oblique.',
+      differentials: [
+        { dx: 'Thyroid orbitopathy (Graves\')' },
+        { dx: 'Orbital pseudotumor (IgG4)' },
+        { dx: 'Orbital metastasis' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/thyroid-eye-disease',
+      tags: ['ct', 'mri', 'orbit', 'thyroid', 'graves'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-046',
+    front: {
+      question: 'What is the most common benign congenital orbital mass, and what is the most common extra-ocular orbital malignancy in children?',
+    },
+    back: {
+      answer: 'Most common benign congenital orbital mass: dermoid cyst (superior lateral orbit, frontozygomatic suture, fat-containing). Most common extra-ocular malignancy in children: rhabdomyosarcoma (superior medial orbit, bone destruction, "bulky orbital mass in a 7-year-old").',
+      explanation: 'Orbital dermoid arises from the frontozygomatic suture in the superolateral orbit and contains fat ± calcium. It presents in the first decade. Rhabdomyosarcoma is the most common extra-ocular malignancy in children and classically involves the superior medial orbit with bone destruction. It is a bulky, aggressive-looking lesion. Both dermoid (benign) and rhabdomyosarcoma are more common than orbital metastases in children.',
+      keyFact: 'Dermoid: superolateral, fat-containing, frontozygomatic suture, first decade, BENIGN. Rhabdomyosarcoma: superomedial, bone destruction, aggressive, 7-year-old. Adult orbital malignancy: lymphoma (upper outer, lacrimal gland, MALT type).',
+      differentials: [
+        { dx: 'Orbital dermoid' },
+        { dx: 'Rhabdomyosarcoma' },
+        { dx: 'Orbital metastasis' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/orbital-dermoid-cyst',
+      tags: ['mri', 'ct', 'orbit', 'pediatric', 'congenital'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-047',
+    front: {
+      question: 'What differentiates pre-septal (periorbital) from post-septal (orbital) cellulitis on imaging, and what is the clinical significance?',
+    },
+    back: {
+      answer: 'Pre-septal: infection anterior to the orbital septum → treated medically. Post-septal: infection posterior to the orbital septum (within the orbit) → surgical drainage.',
+      explanation: 'The orbital septum originates from the periosteum and inserts in the eyelid along the tarsal plate. Pre-septal infections usually start from adjacent teeth or face infection. Post-septal infections typically arise from paranasal sinusitis (especially ethmoid sinusitis → subperiosteal abscess along the medial orbit wall). Subperiosteal abscess has a classic look as a rim-enhancing collection between the periorbita and the medial orbital wall, associated with adjacent ethmoid opacification.',
+      keyFact: 'Pre-septal = medical management. Post-septal = surgical. Ethmoid sinusitis → medial subperiosteal orbital abscess. Cavernous sinus thrombosis is a feared complication of post-septal cellulitis.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/orbital-cellulitis',
+      tags: ['ct', 'orbit', 'infection', 'cellulitis'],
+    },
+  },
+
+  // ── VASCULAR / NECK PATHOLOGY ────────────────────────────
+
+  {
+    id: 'neuro-hn-048',
+    front: {
+      question: 'What is Lemierre\'s syndrome, and what is the causative organism?',
+    },
+    back: {
+      answer: 'Thrombophlebitis of the internal jugular vein with septic pulmonary emboli, following oropharyngeal infection. Causative organism: Fusobacterium necrophorum.',
+      explanation: 'Lemierre\'s syndrome classically follows pharyngitis or tonsillitis (or recent ENT surgery) and involves septic thrombophlebitis of the internal jugular vein with septic emboli to the lungs (and less commonly other organs). CT shows intraluminal filling defect in the IJV, perivascular fat stranding, and multiple peripheral pulmonary nodules (septic emboli). Fusobacterium necrophorum is the classic anaerobic organism.',
+      keyFact: 'Lemierre\'s = post-tonsillitis + IJV thrombophlebitis + septic pulmonary emboli. Organism = Fusobacterium necrophorum. CT: intraluminal filling defect + perivascular stranding + lung nodules. Different from Grisel\'s syndrome (torticollis + atlantoaxial instability after H&N surgery).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/lemierre-syndrome',
+      tags: ['ct', 'vascular', 'infection', 'jugular-vein', 'neck'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-049',
+    front: {
+      question: 'What is fibrous dysplasia of the skull base, and how does it differ from Paget\'s disease on imaging?',
+    },
+    back: {
+      answer: 'Fibrous dysplasia: ground-glass matrix, age <30, spares the otic capsule, favors the outer table, associated with McCune-Albright syndrome. Paget\'s: osteolysis circumscripta (lytic phase) or mixed sclerotic phase, age >50–60, involves inner table, can have basilar invagination.',
+      explanation: 'Fibrous dysplasia replaces normal marrow with fibro-osseous tissue, appearing as a ground-glass matrix on CT. It commonly involves the skull base and facial bones and can expand foramina causing cranial neuropathies. Critically, fibrous dysplasia of the skull SPARES the otic capsule (unlike Paget\'s which can narrow the otic capsule and cause deafness). McCune-Albright syndrome = multifocal fibrous dysplasia + café-au-lait spots + precocious puberty.',
+      keyFact: 'Fibrous dysplasia vs. Paget\'s: FD = young (<30), ground-glass, outer table, SPARES otic capsule, McCune-Albright. Paget\'s = old, osteolysis circumscripta (frontal/occipital), inner table, deafness most common complication. Both can have giant "cotton wool" sclerotic phase.',
+      differentials: [
+        { dx: 'Fibrous dysplasia' },
+        { dx: 'Paget\'s disease' },
+        { dx: 'Meningioma (hyperostosis)' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/fibrous-dysplasia',
+      tags: ['ct', 'skull-base', 'fibrous-dysplasia', 'pagets'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-050',
+    front: {
+      question: 'What is an aberrant internal carotid artery in the middle ear, and why is it critical to recognize?',
+    },
+    back: {
+      answer: 'The C1 (cervical) ICA segment is aplastic/hypoplastic; an enlarged caroticotympanic artery traverses the middle ear tympanic cavity and joins the horizontal petrous ICA. It mimics a glomus tympanicum on otoscopy. DO NOT BIOPSY.',
+      explanation: 'Aberrant ICA results from involution of the cervical ICA with compensatory hypertrophy of the caroticotympanic artery, which runs through the tympanic cavity (causing pulsatile tinnitus and a vascular mass behind the eardrum). The key CT finding is connection to the horizontal petrous carotid canal — this confirms the diagnosis. The oldest trick is confusing it with a glomus tympanicum paraganglioma. Biopsy would cause catastrophic hemorrhage.',
+      keyFact: 'Aberrant ICA: pulsatile tinnitus + vascular retrotympanic mass + connection to horizontal carotid canal on CT. Classic mimic of glomus tympanicum. The connection to the horizontal petrous ICA canal is the diagnostic key. DO NOT BIOPSY.',
+      differentials: [
+        { dx: 'Aberrant internal carotid artery' },
+        { dx: 'Glomus tympanicum' },
+        { dx: 'High-riding dehiscent jugular bulb' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/aberrant-internal-carotid-artery',
+      tags: ['ct', 'temporal-bone', 'vascular', 'ica', 'middle-ear'],
+    },
+  },
+
+  // ── THYROID & PARATHYROID ────────────────────────────────
+
+  {
+    id: 'neuro-hn-051',
+    front: {
+      question: 'What imaging features of a thyroid nodule on ultrasound require FNA biopsy per ACR TI-RADS, and what CT feature should prompt suspicion for thyroid carcinoma in a TGDC?',
+    },
+    back: {
+      answer: 'Sonographic features favoring malignancy: marked hypoechogenicity, microcalcifications, taller-than-wide shape, irregular margin, extrathyroidal extension. In TGDC: irregular nodularity, chunky calcifications, or enhancing solid components → suspect thyroid carcinoma in the cyst.',
+      explanation: 'Thyroid carcinoma arising within a thyroglossal duct cyst is uncommon but must be considered when a TGDC contains solid nodularity or dystrophic calcifications that appear irregular or chunky (rather than thin-walled). On ultrasound, ACR TI-RADS assigns points for composition, echogenicity, shape, margin, and echogenic foci to guide FNA decisions. The most common primary thyroid carcinoma is papillary (RET/PTC rearrangements, "Orphan Annie" nuclei).',
+      keyFact: 'Malignant TGDC features: irregular nodularity + chunky calcifications. Normal TGDC: thin-walled, homogeneous fluid. Psammomatous calcifications in a thyroid nodule = papillary carcinoma. Medullary thyroid carcinoma = calcitonin marker, amyloid stroma, RET mutation, MEN2A/2B.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/thyroid-nodule',
+      tags: ['ultrasound', 'thyroid', 'carcinoma', 'tgdc'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-052',
+    front: {
+      question: 'What is the typical location and imaging appearance of a parathyroid adenoma on sestamibi scintigraphy and MRI?',
+    },
+    back: {
+      answer: 'Parathyroid adenoma: most commonly inferior to the lower thyroid pole (most common ectopic site = tracheoesophageal groove or mediastinum). Sestamibi (Tc-99m): persistent focal uptake at 2 hours (thyroid washes out). MRI: T2 hyperintense oval mass posterior to lower thyroid.',
+      explanation: 'Parathyroid adenomas are the most common cause of primary hyperparathyroidism. They are typically small (~1–2 cm), oval, T2 hyperintense on MRI, and located posterior to the inferior thyroid pole. Ectopic glands may be in the tracheoesophageal groove, retroesophageal, intrathyroidal, or in the mediastinum (following the thymopharyngeal tract). Sestamibi early phase shows both thyroid and parathyroid uptake; delayed (2-hour) phase shows thyroid washout with persistent parathyroid uptake.',
+      keyFact: 'Sestamibi 2-hour delayed = parathyroid adenoma (thyroid washes out, adenoma persists). MRI: T2 bright oval mass posterior to inferior thyroid. Most common ectopic site: tracheoesophageal groove → mediastinum (following thymopharyngeal tract). 4D-CT (3-phase + morphology) is increasingly used.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/parathyroid-adenoma',
+      tags: ['nuclear-medicine', 'mri', 'parathyroid', 'thyroid', 'neck'],
+    },
+  },
+
+  // ── ADDITIONAL HIGH-YIELD CARDS ──────────────────────────
+
+  {
+    id: 'neuro-hn-053',
+    front: {
+      question: 'What is the mylohyoid rule for spread of odontogenic infection, and which space does infection from the second and third molar roots enter?',
+    },
+    back: {
+      answer: 'The attachment of the mylohyoid muscle to the mylohyoid ridge determines spread: anterior mandibular tooth roots (above mylohyoid line) → sublingual space; second and third molar roots (below mylohyoid line) → submandibular space.',
+      explanation: 'The mylohyoid muscle forms the floor of the mouth and its attachment to the mylohyoid ridge divides drainage pathways. Most anterior tooth infections exit above the mylohyoid attachment and enter the sublingual space. Second and third molar roots typically extend below the mylohyoid attachment and drain into the submandibular space. Ludwig\'s angina is a severe polymicrobial cellulitis of the floor of the mouth involving all these spaces, with characteristic gas on CT.',
+      keyFact: 'Mylohyoid rule: Anterior teeth → sublingual space. 2nd/3rd molars → submandibular space. Ludwig\'s angina = floor-of-mouth cellulitis with gas, starting from odontogenic source — gas is the CT hallmark.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/odontogenic-infection',
+      tags: ['ct', 'infection', 'odontogenic', 'floor-of-mouth', 'spaces'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-054',
+    front: {
+      question: 'What is the most common odontogenic cyst, and how does it differ from a dentigerous cyst?',
+    },
+    back: {
+      answer: 'Most common odontogenic cyst: periapical (radicular) cyst — at the APEX of a non-vital tooth, round with well-corticated border, usually <2 cm. Dentigerous cyst: around the CROWN of an unerupted tooth, can displace the tooth distally.',
+      explanation: 'Periapical cysts result from inflammation (dental caries/trauma) causing cystic degeneration around the periodontal ligament at the tooth apex. They are acquired lesions. Dentigerous cysts are developmental, form around the crown of an unerupted tooth, and can displace teeth to unusual positions (condylar region, orbital floor). The keratocystic odontogenic tumor (KOT/OKC) is multilocular with "daughter cysts," occurs at the mandibular ramus/body, and when multiple suggests Gorlin syndrome.',
+      keyFact: 'Periapical cyst = apex of non-vital tooth (acquired). Dentigerous cyst = crown of unerupted tooth (developmental), displaces tooth. KOT/OKC = multilocular "daughter cysts" at mandibular ramus/body → Gorlin syndrome if multiple.',
+      differentials: [
+        { dx: 'Periapical (radicular) cyst' },
+        { dx: 'Dentigerous (follicular) cyst' },
+        { dx: 'Keratocystic odontogenic tumor' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/periapical-cyst',
+      tags: ['ct', 'odontogenic', 'jaw', 'cyst'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-055',
+    front: {
+      question: 'What imaging features distinguish ameloblastoma from an odontogenic keratocyst in the mandible?',
+    },
+    back: {
+      answer: 'Ameloblastoma: multi-cystic "soap bubbles," extensive tooth root resorption, mandibular expansion, solid components on CT/MRI (favors ameloblastoma diagnosis). KOT: multilocular with daughter cysts, grows ALONG bone without significant expansion, no solid component.',
+      explanation: 'Ameloblastoma is a locally aggressive odontogenic tumor. It is multi-cystic with a soap-bubble appearance and causes significant mandibular expansion and tooth root resorption. The presence of a solid component on MRI or CT strongly favors ameloblastoma over a simple cystic lesion. KOT tends to grow along the length of the mandible without significant cortical expansion and may have daughter cysts. About 5% of ameloblastomas arise from dentigerous cysts.',
+      keyFact: 'Ameloblastoma = aggressive, multi-cystic soap bubbles, tooth root resorption, solid component, mandibular expansion. KOT = along-the-bone growth, daughter cysts, minimal expansion, Gorlin syndrome if multiple. Solid component on MRI = ameloblastoma.',
+      differentials: [
+        { dx: 'Ameloblastoma' },
+        { dx: 'Keratocystic odontogenic tumor' },
+        { dx: 'Dentigerous cyst' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/ameloblastoma',
+      tags: ['ct', 'mri', 'jaw', 'mandible', 'odontogenic', 'tumor'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-056',
+    front: {
+      question: 'What is inverted papilloma of the nasal cavity, and what are its key imaging features?',
+    },
+    back: {
+      answer: 'Benign sinonasal tumor at the lateral nasal wall (middle turbinate). Key features: focal hyperostosis at tumor origin, cerebriform (convoluted) MRI pattern on T1+C and T2, impaired ipsilateral maxillary drainage. 10% harbor concurrent SCC.',
+      explanation: 'Inverted papilloma (Schneiderian papilloma) is uncommon but highly testable due to its distinctive imaging features. Its classic location is the lateral nasal wall, most often related to the middle turbinate. A focal area of hyperostosis (bony thickening/sclerosis) at the attachment site is characteristic. The cerebriform/convoluted striated pattern on MRI (alternating bright and dark striations on T2 and T1+C) reflects the inverted growth pattern of epithelium. It requires wide surgical resection because 10% harbor SCC.',
+      keyFact: 'Inverted papilloma = lateral nasal wall + focal hyperostosis at origin + cerebriform MRI pattern. 10% concurrent SCC → wide resection required. Cerebriform = looks like brain convolutions on T2/T1+C. Primary location: middle turbinate attachment.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/inverted-papilloma-sinonasal',
+      tags: ['ct', 'mri', 'sinonasal', 'papilloma', 'lateral-nasal-wall'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-057',
+    front: {
+      question: 'What is the antrochoanal polyp, what is its buzzword, and how is it distinguished from other nasal masses?',
+    },
+    back: {
+      answer: 'Inflammatory polyp arising from the maxillary sinus, extending through the ostium into the nasopharynx. Buzzword: "widening of the maxillary ostium." No bony destruction (smooth sinus enlargement).',
+      explanation: 'Antrochoanal polyps occur in young adults (30s–40s), originate from the maxillary antrum, and extend through the sinus ostium (or accessory ostium) into the choana and nasopharynx. They are thin-stalked and benign. The key distinguishing features are widening of the maxillary ostium without bone destruction, smooth enlargement, and extension to the nasopharynx. They are more unilateral and larger than typical inflammatory polyps.',
+      keyFact: 'Antrochoanal polyp buzzword = "widening of the maxillary ostium" without bone destruction. Young adult, unilateral, extends from antrum through ostium to nasopharynx. Thin stalk from maxillary sinus. Contrast: sinonasal polyposis = bilateral, widening of infundibulum, bony remodeling.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/antrochoanal-polyp',
+      tags: ['ct', 'sinonasal', 'polyp', 'maxillary-sinus'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-058',
+    front: {
+      question: 'A carotid-cavernous fistula (CCF) presents with pulsatile exophthalmos and an enlarged superior ophthalmic vein. How do direct and indirect CCF differ?',
+    },
+    back: {
+      answer: 'Direct CCF: high-flow fistula between intracavernous ICA and cavernous sinus (usually trauma). Indirect CCF: low-flow dural arteriovenous fistula between meningeal ECA branches and cavernous sinus (spontaneous, postmenopausal women).',
+      explanation: 'Direct CCF (Barrow type A) typically results from trauma and causes high-flow arteriovenous shunting with dramatic proptosis, chemosis, and pulsatile tinnitus. Imaging shows a markedly dilated superior ophthalmic vein and enlarged cavernous sinus. Indirect CCF (Barrow types B-D) involves small dural branches of the ECA/ICA; presentation is more indolent and can mimic orbital pseudotumor. Both types show arterialization of the superior ophthalmic vein on angiography.',
+      keyFact: 'Pulsatile exophthalmos + enlarged superior ophthalmic vein = CCF. Direct = trauma, high-flow, dramatic. Indirect = spontaneous, low-flow, postmenopausal women. Treatment: endovascular embolization. Enlarged SOV is also a sign of cavernous sinus thrombosis — distinguish clinically.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-cavernous-fistula',
+      tags: ['ct', 'mri', 'orbit', 'vascular', 'fistula', 'cavernous-sinus'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-059',
+    front: {
+      question: 'What is Tolosa-Hunt syndrome, and how does it differ from orbital pseudotumor?',
+    },
+    back: {
+      answer: 'Tolosa-Hunt: IgG4 inflammatory process involving the cavernous sinus → painful ophthalmoplegia from multiple CN palsies (III, IV, VI, V1). Responds to steroids. Orbital pseudotumor: same IgG4 process but involving the orbit\'s extraocular muscles (painful, T2 dark, steroid-responsive).',
+      explanation: 'Tolosa-Hunt syndrome is histologically identical to orbital pseudotumor (IgG4 sclerosing inflammation) but affects the cavernous sinus rather than the orbital cone. Both are painful and steroid-responsive, distinguishing them from Graves\' (painless, not steroid-responsive). MRI shows enhancing soft tissue in the cavernous sinus that may extend to the superior orbital fissure. The differential includes cavernous sinus meningioma, metastasis, and lymphoma (all less steroid-responsive).',
+      keyFact: 'Tolosa-Hunt = cavernous sinus pseudotumor → painful multiple CN palsies (III, IV, VI) → steroid-responsive. Orbital pseudotumor = same IgG4 process in the orbit, painful, steroid-responsive, T2 dark muscle. Painless + T2 dark = pseudotumor/TH; Painless + T2 dark but NOT steroid-responsive = lymphoma.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/tolosa-hunt-syndrome',
+      tags: ['mri', 'orbit', 'cavernous-sinus', 'inflammatory', 'cranial-nerve'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-060',
+    front: {
+      question: 'What are the key imaging features of labyrinthitis ossificans, and why is early detection critical?',
+    },
+    back: {
+      answer: 'CT: new calcification/ossification within the cochlea (membranous labyrinth). MRI: loss of normal T2 bright fluid signal in the cochlea. Classic history: child with prior bacterial meningitis. Critical because cochlear calcification is a contraindication to cochlear implant.',
+      explanation: 'Labyrinthitis ossificans results from post-inflammatory ossification of the membranous labyrinth, most commonly following bacterial meningitis (ages 2–18 months). MRI (T2) is more sensitive than CT for early disease — loss of the normally bright fluid signal in the cochlea precedes visible calcification on CT. Early cochlear implantation is often recommended before complete ossification, because dense calcification makes implantation technically impossible.',
+      keyFact: 'Labyrinthitis ossificans = history of childhood meningitis + cochlear ossification on CT. MRI detects early loss of T2 cochlear signal BEFORE CT shows calcification. Cochlear calcification = contraindication to cochlear implant. Act fast.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/labyrinthitis-ossificans',
+      tags: ['ct', 'mri', 'temporal-bone', 'inner-ear', 'meningitis'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-061',
+    front: {
+      question: 'What is the pterygopalatine fossa (PPF), and what are the key routes of tumor spread to and from it?',
+    },
+    back: {
+      answer: 'PPF: small fat-filled space between the posterior maxillary wall, pterygoid process, and palatine bone. It is a crossroads for spread: anteriorly (inferior orbital fissure → orbit), superiorly (foramen rotundum → middle cranial fossa via V2), posteriorly (pterygoid canal → foramen lacerum), inferiorly (greater palatine canal → hard palate), laterally (pterygomaxillary fissure → infratemporal fossa).',
+      explanation: 'The PPF is a critical anatomical crossroads for perineural and direct spread of head and neck malignancies. Obliteration of the normal fat signal within the PPF on CT or MRI is an important finding suggesting tumor involvement. Adenoid cystic carcinoma and squamous cell carcinoma can spread via V2 into the foramen rotundum, gaining intracranial access. Invasion of the PPF fat is also a key sign of acute invasive fungal sinusitis.',
+      keyFact: 'PPF fat obliteration = tumor involvement. Routes: foramen rotundum → V2 → middle fossa (intracranial). Inferior orbital fissure → orbit. Fat stranding in PPF on CT in immunocompromised patient = invasive fungal sinusitis. Perineural spread signature tumor = adenoid cystic carcinoma.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/pterygopalatine-fossa',
+      tags: ['ct', 'mri', 'skull-base', 'pterygopalatine-fossa', 'perineural-spread'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-062',
+    front: {
+      question: 'What is the endolymphatic sac tumor, and what syndrome should you immediately consider?',
+    },
+    back: {
+      answer: 'Rare vascular tumor of the endolymphatic sac. Imaging: internal amorphous calcifications on CT + T2 bright with intense enhancement + flow voids on MRI + tumor blush on angiography. Classic association: Von Hippel-Lindau (VHL) syndrome.',
+      explanation: 'Endolymphatic sac tumors (ELSTs) are papillary adenomatous tumors arising from the endolymphatic sac, located posterior to the posterior semicircular canal near the vestibular aqueduct. Although most are sporadic, they are strongly associated with VHL disease — bilateral or multifocal ELSTs are essentially pathognomonic for VHL. They present with progressive SNHL, tinnitus, and vertigo. The classic CT finding is amorphous intratumoral calcification.',
+      keyFact: 'Endolymphatic sac tumor = VHL disease. Classic CT = amorphous internal calcifications posterior to the semicircular canal. T2 bright + intense enhancement + flow voids. Bilateral ELSTs = VHL until proven otherwise. Location: aperture of the vestibular aqueduct.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/endolymphatic-sac-tumour',
+      tags: ['ct', 'mri', 'temporal-bone', 'vhl', 'inner-ear', 'tumor'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-063',
+    front: {
+      question: 'What is the zygomaticomaxillary complex (tripod) fracture, and what structures are involved?',
+    },
+    back: {
+      answer: 'Tripod fracture: involves the zygoma at three "legs": (1) zygomatic arch, (2) inferior orbital rim/orbital floor, (3) lateral orbital wall (frontozygomatic suture). It is the most common complex facial fracture pattern.',
+      explanation: 'The zygomaticomaxillary complex (ZMC or tripod) fracture results from a blow to the cheek. The three legs of the tripod are the zygomatic arch, the infraorbital rim/orbital floor, and the frontozygomatic suture at the lateral orbital wall. CT shows fractures at all three sites with rotation/displacement of the zygoma. Orbital floor involvement can cause inferior rectus entrapment and enophthalmos. Nasal bone fractures are the most common facial bone fractures overall but ZMC is the most common complex pattern.',
+      keyFact: 'ZMC (tripod) = most common complex facial fracture. Three sites: zygomatic arch + orbital floor/rim + frontozygomatic suture. Check for orbital fat herniation → inferior rectus entrapment. Nasal bone = most common individual facial fracture.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/zygomaticomaxillary-complex-fracture',
+      tags: ['ct', 'facial-fracture', 'trauma', 'orbit'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-064',
+    front: {
+      question: 'What are the imaging features of a carotid body tumor on MRI and catheter angiography, and what is the classic angiographic pattern?',
+    },
+    back: {
+      answer: 'MRI: avidly enhancing mass at carotid bifurcation, salt-and-pepper T1 appearance (lesions >2 cm), flow voids. Angiography: splaying of ICA and ECA (Lyre sign), prolonged tumor blush, early draining veins. Primary supply: ascending pharyngeal artery.',
+      explanation: 'Carotid body tumors arise from chemoreceptor tissue at the carotid bifurcation. The "lyre sign" on angiography describes the characteristic widening (splaying) of the ICA and ECA by the tumor. As the lesion enlarges, it encases but does not narrow the carotid arteries. Salt = T1 bright subacute hemorrhage; pepper = T1/T2 dark flow voids from high-flow vessels. Bilateral in 5–10% (sporadic) or up to 25–75% (familial).',
+      keyFact: 'Carotid body tumor = Lyre sign on angiography (splaying of ICA and ECA). Salt = subacute hemorrhage (T1 bright); Pepper = flow voids (T1/T2 dark). Bilateral in familial cases (25–75%). Primary supply = ascending pharyngeal artery.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-body-tumour',
+      tags: ['mri', 'angiography', 'paraganglioma', 'carotid', 'neck'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-065',
+    front: {
+      question: 'What imaging features on neck MRI indicate carotid artery invasion by a head and neck tumor, and when is it considered unresectable?',
+    },
+    back: {
+      answer: 'Loss of fat plane between the node/tumor and carotid artery suggests invasion. Tumor encasing >270° (three-quarters) of the circumference = carotid artery invasion; considered unresectable when >270° encasement is present.',
+      explanation: 'Carotid artery assessment is critical in surgical planning for head and neck cancers. An intact fat plane between the tumor and the artery argues against invasion. The degree of circumferential encasement is the most important metric: <180° = likely resectable; 180–270° = borderline (may need vascular surgeon); >270° = carotid invasion, typically unresectable without reconstruction. MRI is superior to CT for soft tissue detail, but both are used.',
+      keyFact: '>270° carotid encasement = invasion = typically unresectable. Loss of fat plane = concerning but not definitive. Pre-surgical balloon occlusion test may be needed when resection of the ICA is contemplated.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-artery-invasion-head-and-neck-cancer',
+      tags: ['mri', 'ct', 'neck', 'scc', 'carotid', 'staging'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-066',
+    front: {
+      question: 'What is Coats\' disease, and how is it distinguished from retinoblastoma on imaging?',
+    },
+    back: {
+      answer: 'Coats\' disease: retinal telangiectasia with subretinal exudate and detachment. NOT calcified (retinoblastoma IS calcified). Globe is SMALLER than normal (retinoblastoma is normal-to-larger). CT/MRI: hyperdense T1/T2 bright (due to proteinaceous/lipid subretinal fluid). Typically unilateral, young boys.',
+      explanation: 'Coats\' disease is caused by abnormal leaky retinal vessels leading to exudative retinal detachment. The key MRI features are T1 and T2 hyperintensity from subretinal lipid/protein-rich exudate, with a smaller-than-normal globe. Critically, Coats\' is NOT calcified. Retinoblastoma has a normal or enlarged globe with intraocular calcification on CT. PHPV also lacks calcification and presents with a small globe (microphthalmos).',
+      keyFact: 'Globe size differentials: Retinoblastoma = normal; Coats = smaller; PHPV = small (microphthalmos). Calcification: Retinoblastoma = YES; Coats = NO; PHPV = NO. Coats = boy, unilateral, T1/T2 bright (proteinaceous fluid), no calcification.',
+      differentials: [
+        { dx: 'Coats\' disease' },
+        { dx: 'Retinoblastoma' },
+        { dx: 'PHPV' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/coats-disease',
+      tags: ['ct', 'mri', 'orbit', 'globe', 'pediatric'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-067',
+    front: {
+      question: 'What are the three sinonasal disease patterns on CT, and which is most common?',
+    },
+    back: {
+      answer: 'Most common: infundibular pattern (unilateral maxillary disease from ipsilateral ostial obstruction). Second: ostiomeatal unit pattern (bilateral, multiple sinuses from middle meatus disease). Third: sinonasal polyposis pattern (bilateral pansinusitis with polyps, widening of the infundibulum, bony remodeling — associated with CF and aspirin sensitivity).',
+      explanation: 'The infundibular pattern shows disease isolated to one maxillary sinus from blockage at the ipsilateral infundibulum — the most common pattern. The ostiomeatal unit (OMU) pattern involves the ipsilateral maxillary, frontal, and anterior ethmoid sinuses from middle meatus disease. Sinonasal polyposis causes diffuse bilateral disease with bony remodeling (not destruction) and widening of the infundibulum. CF and aspirin sensitivity (Samter\'s triad) are testable associations with polyposis.',
+      keyFact: 'Most common sinusitis pattern: infundibular (unilateral maxillary). Sinonasal polyposis: bilateral pansinusitis + soft tissue polyps + widened infundibulum + CF/Samter\'s triad (ASA sensitivity + asthma + polyposis). Polyposis causes remodeling; tumor causes destruction.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/inflammatory-sinonasal-disease',
+      tags: ['ct', 'sinusitis', 'sinonasal', 'polyposis'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-068',
+    front: {
+      question: 'What is the imaging appearance and clinical presentation of a glomus tympanicum vs. a high-riding jugular bulb, and how are they distinguished?',
+    },
+    back: {
+      answer: 'Glomus tympanicum: enhancing mass ON the cochlear promontory, middle ear floor is INTACT, pulsatile tinnitus, vascular mass on otoscopy. High-riding jugular bulb: the bulb rides high, no mass on the promontory, middle ear floor may be thinned or dehiscent, incidental vascular "mass" behind the eardrum.',
+      explanation: 'Both cause a vascular-appearing retrotympanic mass. Glomus tympanicum is a paraganglioma confined to the cochlear promontory; it is small, enhancing, and the osseous floor of the middle ear is intact (distinguishing it from glomus jugulare which destroys the floor). A high-riding jugular bulb is a normal variant where the jugular bulb extends superior to the floor of the internal auditory canal, occasionally protruding into the middle ear. CT clearly shows the bulb as an extension of the jugular vein, not a mass on the promontory.',
+      keyFact: 'Glomus tympanicum = mass ON cochlear promontory + middle ear floor INTACT. Glomus jugulare = middle ear floor DESTROYED. High-riding jugular bulb = normal vein anatomy, no promontory mass. Aberrant ICA = connects to horizontal petrous ICA canal.',
+      differentials: [
+        { dx: 'Glomus tympanicum' },
+        { dx: 'Aberrant internal carotid artery' },
+        { dx: 'High-riding dehiscent jugular bulb' },
+      ],
+      radiopaediaUrl: 'https://radiopaedia.org/articles/glomus-tympanicum',
+      tags: ['ct', 'temporal-bone', 'paraganglioma', 'middle-ear'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-069',
+    front: {
+      question: 'What is the classic imaging appearance and location of a second branchial cleft cyst, and where do first and fourth branchial anomalies occur?',
+    },
+    back: {
+      answer: 'Second BCC: cystic mass at the anteromedial SCM border (level II), between the carotid bifurcation and adjacent SCM. First branchial anomaly: near the external auditory canal / parotid. Fourth branchial anomaly (sinus): left side, piriform sinus → thyroid.',
+      explanation: 'Branchial cleft anomalies arise from incomplete obliteration of the pharyngeal pouches/clefts during embryogenesis. Second BCCs are by far the most common (95%) and present as smooth cystic masses at the angle of the mandible along the SCM — they can track medially between the internal and external carotid arteries toward the lateral pharyngeal wall (Bailey type II classification). First branchial anomalies appear near the parotid or EAC (CN VII risk during surgery). Fourth branchial sinus tracts almost always occur on the left, track from the piriform sinus to the thyroid.',
+      keyFact: 'Second BCC = most common (95%), level II, anteromedial SCM. In patient >40 → rule out necrotic SCC node first. Fourth branchial sinus = left piriform sinus → thyroid (causes suppurative thyroiditis). First BCC = near EAC/parotid, CN VII risk at surgery.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/branchial-cleft-cyst',
+      tags: ['ct', 'mri', 'congenital', 'neck', 'branchial-cleft'],
+    },
+  },
+
+  {
+    id: 'neuro-hn-070',
+    front: {
+      question: 'What key imaging findings should always be reported when evaluating a neck CT for a head and neck primary malignancy?',
+    },
+    back: {
+      answer: 'Primary tumor extent and T-stage features; nodal morphology (size, necrosis, extracapsular spread); carotid artery encasement (>270° = invasion); retropharyngeal nodal involvement; skull base invasion; perineural spread along named cranial nerve branches; pre-epiglottic or paraglottic space involvement (for laryngeal tumors); distant disease.',
+      explanation: 'Staging CT for head and neck SCC requires a systematic approach. Nodal factors affecting prognosis include size (>1 cm for most levels), central necrosis (pathognomonic for SCC), extracapsular spread, and bilateral/contralateral disease. Surgical planning requires knowledge of carotid encasement, skull base involvement, and the extent of pre-epiglottic/paraglottic invasion for laryngeal conservation planning. MRI is preferred for assessing perineural spread, marrow invasion, and cavernous sinus involvement.',
+      keyFact: 'Checklist for H&N cancer CT: (1) primary site and T-stage, (2) necrotic nodes/ECS, (3) carotid encasement (>270° = unresectable), (4) pre-epiglottic fat invasion (laryngeal), (5) skull base erosion (nasopharyngeal), (6) perineural spread (adenoid cystic), (7) retropharyngeal nodes (nasopharyngeal primary).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/head-and-neck-cancer-staging',
+      tags: ['ct', 'mri', 'neck', 'scc', 'staging', 'lymph-node'],
+    },
+  },
     ],
   },
 ]

@@ -6,7 +6,7 @@ import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
 
 // Image component with fallback
-function CardImage({ src, alt, caption, maxHeight = '220px' }) {
+function CardImage({ src, alt, caption, maxHeight = '220px', maskSides }) {
   const [failed, setFailed] = useState(false)
 
   if (failed || !src) {
@@ -26,15 +26,33 @@ function CardImage({ src, alt, caption, maxHeight = '220px' }) {
 
   return (
     <div style={{ width: '100%' }}>
-      <img
-        src={src}
-        alt={alt}
-        onError={() => setFailed(true)}
-        style={{
-          width: '100%', maxHeight, objectFit: 'cover',
-          borderRadius: 'var(--radius-md)', display: 'block',
-        }}
-      />
+      <div style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
+        <img
+          src={src}
+          alt={alt}
+          onError={() => setFailed(true)}
+          style={{
+            width: '100%', maxHeight, objectFit: 'contain',
+            borderRadius: 'var(--radius-md)', display: 'block',
+          }}
+        />
+        {maskSides?.left && (
+          <div style={{
+            position: 'absolute', top: 0, left: 0, bottom: 0,
+            width: maskSides.left, background: '#000',
+            borderRadius: 'var(--radius-md) 0 0 var(--radius-md)',
+            pointerEvents: 'none',
+          }} />
+        )}
+        {maskSides?.right && (
+          <div style={{
+            position: 'absolute', top: 0, right: 0, bottom: 0,
+            width: maskSides.right, background: '#000',
+            borderRadius: '0 var(--radius-md) var(--radius-md) 0',
+            pointerEvents: 'none',
+          }} />
+        )}
+      </div>
       {caption && (
         <p style={{
           fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center',
