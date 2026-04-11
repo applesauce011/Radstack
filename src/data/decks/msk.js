@@ -7,7 +7,345 @@ export const mskSubsections = [
   {
     id: 'msk-anatomy',
     label: 'MSK Anatomy',
-    cards: [ /* existing sample cards — DO NOT MODIFY */ ],
+    cards: [ 
+
+      {
+        id: 'msk-shoulder-anat-001',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label A?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure A',
+          },
+          hint: 'Anterior compartment; two-headed muscle',
+        },
+        back: {
+          answer: 'Biceps brachii — short head',
+          explanation: 'The short head of the biceps brachii originates from the coracoid process alongside the coracobrachialis. On axial MRI it lies anteromedial to the long head at the level of the proximal humerus. It does not pass through the bicipital groove.',
+          keyFact: 'Short head = coracoid origin (with coracobrachialis). Long head = supraglenoid tubercle, travels through bicipital groove.',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'biceps', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-002',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label B?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure B',
+          },
+          hint: 'Anterior deltoid; clavicular origin',
+        },
+        back: {
+          answer: 'Deltoid — clavicular part (anterior deltoid)',
+          explanation: 'The deltoid has three parts: clavicular (anterior), acromial (middle), and spinal (posterior). The clavicular fibers originate from the anterior border of the lateral clavicle and are visible anterolaterally on axial shoulder MRI.',
+          keyFact: 'Deltoid: C (clavicular/anterior) → A (acromial/middle) → S (spinal/posterior) from front to back.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/deltoid-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'deltoid', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-003',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label C?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure C',
+          },
+          hint: 'Rotator cuff tendon; anterior insertion',
+        },
+        back: {
+          answer: 'Subscapularis tendon',
+          explanation: 'The subscapularis tendon inserts onto the lesser tuberosity of the humerus. It is the only rotator cuff tendon that lies anterior to the glenohumeral joint. On axial MRI it appears as a low-signal band anterior to the humeral head, superficial to the subscapularis muscle.',
+          keyFact: 'Subscapularis = only ANTERIOR rotator cuff tendon; inserts lesser tuberosity; best evaluated on axial MRI.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/subscapularis-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'rotator cuff', 'subscapularis', 'tendon'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-004',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label D?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure D',
+          },
+          hint: 'Intra-articular tendon within the bicipital groove',
+        },
+        back: {
+          answer: 'Long head of biceps tendon',
+          explanation: 'The long head biceps tendon (LHBT) originates from the supraglenoid tubercle and superior labrum, courses intra-articularly over the humeral head, then exits through the bicipital groove between the lesser and greater tuberosities. It is held in the groove by the transverse humeral ligament.',
+          keyFact: 'LHBT is intra-articular but extrasynovial; tenosynovitis appears as fluid around the tendon within the groove on axial MRI.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/long-head-of-biceps-tendon',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'biceps', 'tendon', 'bicipital groove'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-005',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label E?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure E',
+          },
+          hint: 'Holds the biceps tendon in its groove',
+        },
+        back: {
+          answer: 'Transverse humeral ligament',
+          explanation: 'The transverse humeral ligament is a fibrous band spanning the bicipital groove between the lesser and greater tuberosities. It acts as a retinaculum that keeps the LHBT within the groove. Disruption leads to medial subluxation or dislocation of the LHBT, commonly associated with subscapularis tears.',
+          keyFact: 'Transverse humeral ligament tear → medial LHBT subluxation/dislocation; almost always associated with subscapularis tendon tear.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/transverse-humeral-ligament',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'bicipital groove', 'ligament', 'biceps'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-006',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label F?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure F',
+          },
+          hint: 'Capsuloligamentous structure; seen on superior axial cuts',
+        },
+        back: {
+          answer: 'Superior glenohumeral ligament (SGHL)',
+          explanation: 'The SGHL runs from the superior labrum (near the biceps anchor) to the lesser tuberosity, forming the roof of the rotator interval. It is the primary restraint to inferior translation and external rotation with the arm adducted. It also stabilizes the LHBT within the groove.',
+          keyFact: 'SGHL = roof of rotator interval; primary stabilizer of LHBT at groove entrance; injury seen with rotator interval tears.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/glenohumeral-ligaments',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'glenohumeral ligament', 'rotator interval', 'ligament'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-007',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label G?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure G',
+          },
+          hint: 'Middle portion of a three-part muscle',
+        },
+        back: {
+          answer: 'Deltoid — acromial part (middle deltoid)',
+          explanation: 'The acromial part of the deltoid originates from the acromion and is the largest and most powerful of the three parts, responsible for the majority of shoulder abduction. It lies lateral on axial cuts between the clavicular and spinal parts.',
+          keyFact: 'Middle/acromial deltoid = primary abductor; denervation (axillary nerve, C5–C6) causes atrophy seen as fatty infiltration on MRI.',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'deltoid', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-008',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label H?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure H',
+          },
+          hint: 'Posterior rotator cuff tendon inserting on the greater tuberosity',
+        },
+        back: {
+          answer: 'Infraspinatus tendon',
+          explanation: 'The infraspinatus tendon inserts on the middle facet of the greater tuberosity. It is a primary external rotator of the shoulder. On axial MRI it is seen posterolaterally, superficial to the posterior joint capsule. Tears appear as signal abnormality or discontinuity at the footprint.',
+          keyFact: 'Infraspinatus = external rotation; middle facet of greater tuberosity; best seen on axial and oblique sagittal MRI.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/infraspinatus-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'rotator cuff', 'infraspinatus', 'tendon'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-009',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label I?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure I',
+          },
+          hint: 'Posterior deltoid; scapular spine origin',
+        },
+        back: {
+          answer: 'Deltoid — spinal part (posterior deltoid)',
+          explanation: 'The spinal part of the deltoid originates from the scapular spine and is responsible for shoulder extension and external rotation. It is the most posterior of the three deltoid parts, seen posterolaterally on axial MRI.',
+          keyFact: 'Posterior deltoid = scapular spine origin; extension + external rotation; all three parts innervated by axillary nerve (C5–C6).',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'deltoid', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-010',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label J?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure J',
+          },
+          hint: 'Shares coracoid origin with short head biceps; anterior medial compartment',
+        },
+        back: {
+          answer: 'Coracobrachialis (muscle of Casserio)',
+          explanation: 'The coracobrachialis originates from the coracoid process alongside the short head of biceps, forming the medial boundary of the anterior compartment. It is a weak arm flexor and adductor. The musculocutaneous nerve penetrates it to reach the anterior compartment.',
+          keyFact: 'Musculocutaneous nerve pierces coracobrachialis; coracoid origin shared with short head biceps — both avulse in coracoid fractures.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/coracobrachialis-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'coracobrachialis', 'muscle', 'coracoid'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-011',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label K?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure K',
+          },
+          hint: 'Large anterior chest wall muscle; broad fan-shaped',
+        },
+        back: {
+          answer: 'Pectoralis major',
+          explanation: 'Pectoralis major has clavicular and sternocostal heads that converge to insert on the lateral lip of the bicipital groove. On axial MRI it is seen as the large anterior chest wall muscle. Tears occur at the musculotendinous junction or humeral insertion, typically during weight-lifting.',
+          keyFact: 'Pec major tears: most common at musculotendinous junction; mechanism = eccentric bench press load; MRI shows gap or retraction of fibers.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pectoralis-major-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'pectoralis major', 'muscle', 'chest wall'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-012',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label L?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure L',
+          },
+          hint: 'Small muscle directly inferior to clavicle; costoclavicular space',
+        },
+        back: {
+          answer: 'Subclavius muscle',
+          explanation: 'The subclavius originates from the first rib and costal cartilage and inserts on the inferior surface of the clavicle. It depresses and protracts the clavicle and provides minor protection to the subclavian vessels. On axial MRI it is seen as a small muscle directly inferior to the clavicle.',
+          keyFact: 'Subclavius = 1st rib → undersurface of clavicle; enlargement or calcification can compress the costoclavicular space causing TOS.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/subclavius-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'subclavius', 'muscle', 'clavicle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-013',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label M?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure M',
+          },
+          hint: 'Deep to pectoralis major; medial chest wall; rib origin',
+        },
+        back: {
+          answer: 'Pectoralis minor',
+          explanation: 'Pectoralis minor originates from the anterior surfaces of ribs 3–5 and inserts on the coracoid process. It lies deep to pectoralis major and acts to protract and depress the scapula. It forms the anterior wall of the axilla and lies anterior to the brachial plexus and axillary vessels.',
+          keyFact: 'Pec minor inserts on coracoid; forms anterior axillary wall; key landmark for brachial plexus and axillary vessel anatomy.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pectoralis-minor-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'pectoralis minor', 'muscle', 'coracoid'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-014',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label N?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure N',
+          },
+          hint: 'Anterior rotator cuff muscle belly; subscapular fossa',
+        },
+        back: {
+          answer: 'Subscapularis muscle',
+          explanation: 'The subscapularis muscle fills the subscapular fossa on the anterior surface of the scapula. It is the largest and strongest rotator cuff muscle and is the primary internal rotator of the shoulder. Its tendon inserts on the lesser tuberosity. Fatty infiltration is graded using the Goutallier classification.',
+          keyFact: 'Subscapularis = largest rotator cuff muscle; primary internal rotator; Goutallier grade ≥3 (>50% fat) predicts poor surgical outcome.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/subscapularis-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'subscapularis', 'rotator cuff', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-015',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label O?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure O',
+          },
+          hint: 'Lateral chest wall muscle; scapular stabilizer; "boxer\'s muscle"',
+        },
+        back: {
+          answer: 'Serratus anterior',
+          explanation: 'Serratus anterior originates from the lateral surfaces of ribs 1–8 and inserts on the medial border of the scapula. It is innervated by the long thoracic nerve (C5–C7). It is the primary protractor of the scapula and rotates it upward during arm elevation. Palsy causes winging of the scapula.',
+          keyFact: 'Serratus anterior palsy (long thoracic nerve) = medial scapular winging; "Saturday night palsy" misnomer — more from radical neck dissection or backpack neuritis.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/serratus-anterior-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'serratus anterior', 'muscle', 'scapular winging'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-016',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label P?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure P',
+          },
+          hint: 'Superior rotator cuff muscle belly; supraspinous fossa',
+        },
+        back: {
+          answer: 'Supraspinatus muscle',
+          explanation: 'The supraspinatus muscle belly occupies the supraspinous fossa above the scapular spine. Its tendon passes under the coracoacromial arch to insert on the superior facet of the greater tuberosity. It is the most commonly torn rotator cuff tendon. The critical zone near the insertion is relatively avascular.',
+          keyFact: 'Supraspinatus = most commonly torn rotator cuff tendon; critical zone 1 cm proximal to insertion is avascular — site of most full-thickness tears.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/supraspinatus-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'supraspinatus', 'rotator cuff', 'muscle'],
+        },
+      },
+
+      {
+        id: 'msk-shoulder-anat-017',
+        front: {
+          question: 'Axial shoulder MRI. What structure is indicated by label Q?',
+          image: {
+            src: '/src/data/decks/images_msk/shoulder01.png',
+            alt: 'Axial shoulder MRI with labeled structures',
+            caption: 'Identify structure Q',
+          },
+          hint: 'Posterior rotator cuff muscle belly; infraspinous fossa',
+        },
+        back: {
+          answer: 'Infraspinatus muscle',
+          explanation: 'The infraspinatus muscle fills the infraspinous fossa below the scapular spine. It is innervated by the suprascapular nerve (C5–C6) in the spinoglenoid notch. Its tendon inserts on the middle facet of the greater tuberosity. Isolated atrophy suggests suprascapular neuropathy at the spinoglenoid notch.',
+          keyFact: 'Isolated infraspinatus atrophy (supraspinatus normal) = spinoglenoid notch compression of suprascapular nerve (e.g. paralabral cyst).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/infraspinatus-muscle',
+          tags: ['MRI', 'shoulder', 'anatomy', 'MSK', 'infraspinatus', 'rotator cuff', 'suprascapular nerve'],
+        },
+      },
+ ],
   },
 
   // ──────────────────────────────────────────────────────────
