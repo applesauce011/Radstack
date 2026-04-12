@@ -24,6 +24,8 @@ import { pediatricSubsections }  from './decks/pediatric'
 import { nucsSubsections }       from './decks/nucs'
 import { irSubsections }         from './decks/ir'
 import { emergencySubsections }  from './decks/emergency'
+import { cardiacSubsections }    from './decks/cardiac'
+import { physicsSubsections }    from './decks/physics'
 
 // ── Map: subspecialty id → its subsections array ─────────────
 const DECK_MODULES = {
@@ -37,6 +39,8 @@ const DECK_MODULES = {
   nucs:       nucsSubsections,
   ir:         irSubsections,
   emergency:  emergencySubsections,
+  cardiac:    cardiacSubsections,
+  physics:    physicsSubsections,
 }
 
 // ── Assemble full SUBSPECIALTIES array ───────────────────────

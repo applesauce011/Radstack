@@ -81,4 +81,18 @@ export const SUBSPECIALTY_CONFIG = [
     color: '#EF4444',
     colorDim: 'rgba(239,68,68,0.15)',
   },
+  {
+    id: 'cardiac',
+    label: 'Cardiac Radiology',
+    icon: '❤️',
+    color: '#DC2626',
+    colorDim: 'rgba(220,38,38,0.15)',
+  },
+  {
+    id: 'physics',
+    label: 'Imaging Physics',
+    icon: '⚛️',
+    color: '#6366F1',
+    colorDim: 'rgba(99,102,241,0.15)',
+  },
 ]

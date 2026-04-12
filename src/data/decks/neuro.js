@@ -27,655 +27,1604 @@ export const neuroSubsections = [
     label: 'Brain Anatomy',
     cards: [
       {
-        id: 'neuro-anatomy-001',
+        id: 'neuro-branat-001',
         front: {
-          question: 'Identify the labeled structure: the C-shaped commissure connecting the two cerebral hemispheres, visible on midline sagittal MRI.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #1?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #1',
+          },
+          hint: 'Anterior-most part of the corpus callosum',
         },
         back: {
-          answer: 'Corpus callosum',
-          explanation: 'The corpus callosum is the largest white matter commissure. It develops anterior-to-posterior: genu and body first, then splenium, then rostrum last. Agenesis therefore affects posterior parts first (absent splenium before genu).',
-          keyFact: 'Order A→P: Rostrum → Genu → Body → Splenium. Mnemonic: "Really Good Body Shape". Splenium = thickest, last to develop, first absent in agenesis.',
+          answer: 'Rostrum of the Corpus Callosum',
+          explanation: 'The rostrum is the thin, inferior-most anterior portion of the corpus callosum, connecting the genu to the lamina terminalis. It is the thinnest part of the corpus callosum and lies just above the anterior commissure. Absence or thinning of the rostrum is an early marker of corpus callosum agenesis/dysgenesis.',
+          keyFact: 'In corpus callosum agenesis, the parts disappear in order: posterior body and splenium first, then genu, then rostrum last — the rostrum is the final part to form and first to be missing on imaging.',
           radiopaediaUrl: 'https://radiopaedia.org/articles/corpus-callosum',
-          tags: ['mri', 'anatomy', 'white-matter', 'commissure'],
+          tags: ['MRI', 'neuro', 'anatomy', 'corpus callosum', 'midline', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-002',
+        id: 'neuro-branat-002',
         front: {
-          question: 'Identify the four parts of the corpus callosum on this sagittal MRI, from anterior to posterior. Which part develops last?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #2?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #2',
+          },
+          hint: 'Knee-shaped anterior bend of the corpus callosum',
         },
         back: {
-          answer: 'Rostrum (most anterior-inferior), Genu, Body, Splenium (most posterior). Rostrum develops last.',
-          explanation: 'The genu connects the frontal lobes; the body connects parietal lobes; the splenium connects occipital lobes; the rostrum is the thin inferior reflection. In complete agenesis, Probst bundles run parallel to the interhemispheric fissure instead of crossing. Partial agenesis spares the genu/anterior body.',
-          keyFact: '"Really Good Body Shape" (Rostrum, Genu, Body, Splenium). Rostrum = last to develop, first absent in partial agenesis. Splenium = thickest part.',
+          answer: 'Genu of the Corpus Callosum',
+          explanation: 'The genu is the anteriorly curved "knee" of the corpus callosum. It contains fibers connecting the prefrontal cortices bilaterally (forceps minor). On sagittal MRI, it is the most anterior rounded portion before it narrows into the rostrum. It is a common site for white matter changes in MS and small vessel disease.',
+          keyFact: 'The genu connects the prefrontal lobes via forceps minor; the splenium connects the occipital lobes via forceps major — remember G for Genu = front, S for Splenium = back.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/genu-of-corpus-callosum',
+          tags: ['MRI', 'neuro', 'anatomy', 'corpus callosum', 'midline', 'sagittal'],
+        },
+      },
+      {
+        id: 'neuro-branat-003',
+        front: {
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #3?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #3',
+          },
+        },
+        back: {
+          answer: 'Body of the Corpus Callosum',
+          explanation: 'The body (trunk) is the long middle segment of the corpus callosum running in the anteroposterior direction between the genu and splenium. It lies superior to the fornix and third ventricle. The body connects the motor and premotor cortices bilaterally and is well seen on midline sagittal MRI as a broad white matter band.',
+          keyFact: 'The corpus callosum from anterior to posterior: Rostrum → Genu → Body → Splenium. A useful mnemonic: "Really Good Brain Stuff."',
           radiopaediaUrl: 'https://radiopaedia.org/articles/corpus-callosum',
-          tags: ['mri', 'anatomy', 'white-matter'],
+          tags: ['MRI', 'neuro', 'anatomy', 'corpus callosum', 'midline', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-003',
+        id: 'neuro-branat-004',
         front: {
-          question: 'On this axial brain MRI, identify the paired gray matter structures forming the floor of the lateral ventricles. Name all basal ganglia components.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #4?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #4',
+          },
+          hint: 'Thickest, most posterior part of the corpus callosum',
         },
         back: {
-          answer: 'Striatum (caudate + putamen), globus pallidus, subthalamic nucleus, substantia nigra. Lenticular nucleus = putamen + globus pallidus.',
-          explanation: 'The caudate head bulges into the frontal horn of the lateral ventricle. The caudate and putamen are separated by the internal capsule but connected anteriorly at the nucleus accumbens. The putamen + GP form the lenticular nucleus visible as a wedge-shaped structure on axial MRI.',
-          keyFact: 'Caudate + Putamen = Striatum. Putamen + GP = Lenticular nucleus. Internal capsule separates caudate from putamen. Caudate head = landmark for lateral ventricle frontal horn.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/basal-ganglia',
-          tags: ['anatomy', 'mri', 'basal-ganglia', 'gray-matter'],
+          answer: 'Splenium of the Corpus Callosum',
+          explanation: 'The splenium is the posterior bulbous thickening of the corpus callosum. It contains fibers connecting the occipital and posterior parietal cortices (forceps major). It is the most commonly involved segment in various pathologies including MS plaques, lymphoma, Marchiafava-Bignami disease, and osmotic demyelination. It is also the last segment to mature myelinate (~6 months of age).',
+          keyFact: 'Splenium lesions: MS (most common), lymphoma, Marchiafava-Bignami (alcohol), osmotic demyelination, and "MERS" (mild encephalitis/encephalopathy with reversible splenium lesion).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/splenium-of-corpus-callosum',
+          tags: ['MRI', 'neuro', 'anatomy', 'corpus callosum', 'midline', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-004',
+        id: 'neuro-branat-005',
         front: {
-          question: 'Diagram the basal ganglia direct and indirect pathways. Which nuclei are the output stations, and what neurotransmitter is lost in Parkinson disease?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #5?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #5',
+          },
+          hint: 'Small grey matter bridge connecting the two thalami',
         },
         back: {
-          answer: 'Output: GPi + SNr → thalamus → cortex. Direct pathway: striatum → GPi (inhibitory, facilitates movement). Indirect: striatum → GPe → STN → GPi (inhibitory, suppresses movement). Lost in PD: dopamine from substantia nigra pars compacta (SNc).',
-          explanation: 'In PD, loss of dopaminergic SNc neurons reduces direct pathway activation and increases indirect pathway activity → increased GPi output → thalamic suppression → reduced cortical motor activation (bradykinesia, rigidity). DBS target: STN or GPi. The "hummingbird sign" on sagittal MRI (midbrain atrophy) is seen in PSP, not PD.',
-          keyFact: 'PD: loss of SNc dopamine → GPi overactive → thalamic suppression. DBS targets: STN or GPi. GPi + SNr = output stations. Direct = facilitatory; Indirect = inhibitory to movement.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/basal-ganglia',
-          tags: ['anatomy', 'basal-ganglia', 'pathways', 'parkinson'],
+          answer: 'Massa Intermedia of the Thalami (Interthalamic Adhesion)',
+          explanation: 'The massa intermedia (interthalamic adhesion) is a grey matter bridge connecting the two thalami across the third ventricle. It is present in approximately 70–80% of individuals and absent in ~20% as a normal variant. It is not a commissure (no axonal crossing). Its absence is associated with certain congenital anomalies including corpus callosum agenesis.',
+          keyFact: 'The massa intermedia is absent in ~20% of normal individuals — do not mistake its absence for pathology. It is NOT a commissure; it contains no crossing axons.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/interthalamic-adhesion',
+          tags: ['MRI', 'neuro', 'anatomy', 'thalamus', 'midline', 'sagittal', 'third ventricle'],
         },
       },
       {
-        id: 'neuro-anatomy-005',
+        id: 'neuro-branat-006',
         front: {
-          question: 'Identify the structure on this coronal MRI: crescent-shaped gray matter forming the medial wall of the temporal horn. What sequence best evaluates it for epilepsy?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #6?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #6',
+          },
+          hint: 'Most superior part of the brainstem, between the diencephalon and pons',
         },
         back: {
-          answer: 'Hippocampus. Best evaluated on thin-section coronal T2 and FLAIR perpendicular to its long axis. In mesial temporal sclerosis: T2 hyperintensity + volume loss + loss of internal architecture.',
-          explanation: 'Hippocampal subfields CA1–CA4: CA1 most vulnerable to ischemia; CA2 relatively spared in MTS. The dentate gyrus and subiculum complete the hippocampal formation. Papez circuit: hippocampus → fornix → mammillary bodies → anterior thalamus → cingulate → back to hippocampus. The fornix is the major output tract.',
-          keyFact: 'MTS: CA1, CA3, CA4 lost; CA2 spared. Coronal thin-section T2/FLAIR = best sequence. MTS triad: T2↑ + atrophy + loss of internal architecture. Bilateral MTS → bilateral coronal cuts essential.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/hippocampus',
-          tags: ['anatomy', 'mri', 'temporal-lobe', 'epilepsy', 'hippocampus'],
+          answer: 'Midbrain (Mesencephalon)',
+          explanation: 'The midbrain is the most superior brainstem segment, connecting to the diencephalon above and the pons below. On sagittal MRI, it is identified by the tectum (quadrigeminal plate) posteriorly and the cerebral peduncles anteriorly. It houses the oculomotor (CN III) and trochlear (CN IV) nuclei. The midbrain-pons junction is at the level of the inferior colliculi.',
+          keyFact: 'Midbrain landmarks: tectum (quadrigeminal plate) posteriorly, tegmentum centrally, cerebral peduncles anteriorly. "Hummingbird sign" of midbrain atrophy = PSP (progressive supranuclear palsy).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/midbrain',
+          tags: ['MRI', 'neuro', 'anatomy', 'brainstem', 'midbrain', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-006',
+        id: 'neuro-branat-007',
         front: {
-          question: 'Name the CSF space visible on this axial MRI between the cerebral peduncles. Which cranial nerve exits into it, and what pathology causes its effacement?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #7?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #7',
+          },
+          hint: 'Middle brainstem segment, contains the basis pontis',
         },
         back: {
-          answer: 'Interpeduncular cistern. CN III (oculomotor) exits here. Effacement = transtentorial herniation or diffuse cerebral edema.',
-          explanation: 'The interpeduncular cistern contains the basilar artery tip, posterior communicating arteries, and CN III. Adjacent cisterns: ambient (lateral, CN IV, PCA, SCA) and quadrigeminal (posterior, vein of Galen). Effacement of perimesencephalic cisterns on CT/MRI is a critical sign of imminent herniation. A PComm aneurysm here causes a pupil-involving CN III palsy.',
-          keyFact: 'Interpeduncular cistern: CN III + basilar tip + PComm arteries. PComm aneurysm → pupil-involving CN III palsy. Effaced cisterns = herniation. Quadrigeminal cistern contains vein of Galen.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/interpeduncular-cistern',
-          tags: ['anatomy', 'cisterns', 'mri', 'herniation', 'cn3'],
+          answer: 'Pons',
+          explanation: 'The pons is the middle segment of the brainstem, lying between the midbrain superiorly and medulla oblongata inferiorly. On sagittal MRI, it is characterized by the prominent ventral bulge of the basis pontis. It contains CN V–VIII nuclei and the pontine micturition centre. The fourth ventricle lies dorsal to the pons and medulla.',
+          keyFact: '"Hot cross bun sign" on axial MRI = cruciform T2 hyperintensity in pons = multiple system atrophy (MSA-C). Central pontine myelinolysis (osmotic demyelination) causes characteristic "trident" shape on axial imaging.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pons',
+          tags: ['MRI', 'neuro', 'anatomy', 'brainstem', 'pons', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-007',
+        id: 'neuro-branat-008',
         front: {
-          question: 'Name the five major intracranial cisterns, their key contents, and where LP is performed to sample CSF.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #8?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #8',
+          },
+          hint: 'Most inferior brainstem segment, continuous with the spinal cord',
         },
         back: {
-          answer: '(1) Interpeduncular: basilar tip, CN III. (2) Chiasmatic: optic chiasm, A1 ACA. (3) Quadrigeminal: vein of Galen, pineal. (4) Ambient: CN IV, PCA, SCA. (5) Pontine: basilar artery, CN V–VII. LP: lumbar cistern at L3–L4.',
-          explanation: 'The cisterna magna (cerebellomedullary cistern) is the largest cistern posterior to medulla; communicates with 4th ventricle via Magendie. Normal CSF: clear, opening pressure 6–20 cmH2O, protein <45 mg/dL, glucose >60% serum. LP at L3–L4 avoids the conus (ends at L1–L2). Cisternal SAH: blood in perimesencephalic cisterns on CT in the first hours.',
-          keyFact: 'LP at L3–L4 (below conus). Cisterna magna = largest. Quadrigeminal cistern: vein of Galen thrombosis → bilateral thalamic infarcts. SAH: blood fills basal cisterns first on CT.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/subarachnoid-cisterns',
-          tags: ['anatomy', 'cisterns', 'csf', 'mri'],
+          answer: 'Medulla Oblongata',
+          explanation: 'The medulla oblongata is the most caudal brainstem segment, continuous with the cervical spinal cord at the foramen magnum. It contains the cardiac, respiratory, and vasomotor centres as well as CN IX–XII nuclei. On sagittal MRI, it is identified as the tapering inferior brainstem below the pons. The medullary pyramids (corticospinal tracts) are on its ventral surface.',
+          keyFact: 'Lateral medullary (Wallenberg) syndrome = PICA or vertebral artery occlusion → crossed findings: ipsilateral face + contralateral body sensory loss, ipsilateral Horner, dysphagia, vertigo.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/medulla-oblongata',
+          tags: ['MRI', 'neuro', 'anatomy', 'brainstem', 'medulla', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-008',
+        id: 'neuro-branat-009',
         front: {
-          question: 'Identify the ventricular system and foramina of communication on this MRI. What is the Evans ratio and what value indicates hydrocephalus?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #9?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #9',
+          },
+          hint: 'Four bumps on the dorsal midbrain surface',
         },
         back: {
-          answer: 'Lateral ventricles → foramina of Monro → 3rd ventricle → aqueduct of Sylvius → 4th ventricle → foramina of Magendie (midline) + Luschka (lateral) → subarachnoid space. Evans ratio >0.3 = hydrocephalus.',
-          explanation: 'Evans ratio = frontal horn width / inner skull width at same level. The aqueduct (narrowest point) is the most common site of obstruction. Temporal horns >2 mm wide indicate hydrocephalus when not due to atrophy. In NPH (normal pressure hydrocephalus): dilated ventricles + gait apraxia + urinary incontinence + dementia (Hakim triad), with disproportionately large ventricles vs. sulci.',
-          keyFact: 'Evans ratio >0.3 = hydrocephalus. Aqueduct = most common obstruction site. NPH triad: wet, wobbly, wacky (incontinence, gait, dementia). Temporal horn >2 mm = significant hydrocephalus.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/ventricular-system',
-          tags: ['anatomy', 'ventricles', 'mri', 'hydrocephalus'],
+          answer: 'Quadrigeminal Plate of the Midbrain (Tectum)',
+          explanation: 'The quadrigeminal plate (tectum) forms the dorsal surface of the midbrain and consists of two pairs of colliculi: the superior colliculi (visual reflexes) and inferior colliculi (auditory reflexes). On sagittal MRI, it appears as a four-bump contour on the dorsal midbrain. The pineal gland sits just superior and posterior to the quadrigeminal plate.',
+          keyFact: 'Parinaud syndrome (dorsal midbrain syndrome) = compression of superior colliculi by pineal region mass → upgaze palsy, convergence-retraction nystagmus, and light-near dissociation.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/quadrigeminal-plate',
+          tags: ['MRI', 'neuro', 'anatomy', 'midbrain', 'tectum', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-009',
+        id: 'neuro-branat-010',
         front: {
-          question: 'Identify the thin membrane between the frontal horns on this axial MRI. What is the cavum septum pellucidum, and what condition requires an absent septum pellucidum?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #10?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #10',
+          },
+          hint: 'Master endocrine gland, sits in the sella turcica',
         },
         back: {
-          answer: 'Septum pellucidum. Cavum septum pellucidum = CSF-filled space between two leaflets (normal in neonates, incidental in adults). Absent septum pellucidum = septo-optic dysplasia (de Morsier syndrome) or holoprosencephaly.',
-          explanation: 'CSP extends anteriorly; cavum vergae = extension posterior to foramen of Monro. Both are normal variants. Septo-optic dysplasia (de Morsier): absent septum + optic nerve hypoplasia + pituitary dysfunction. In holoprosencephaly the septum is always absent because the hemispheres fail to separate. A "box-shaped" monoventricle is characteristic of alobar HPE.',
-          keyFact: 'Absent septum pellucidum: think septo-optic dysplasia (+ optic hypoplasia + hypopituitarism) or holoprosencephaly. CSP = normal variant; extends posteriorly = cavum vergae.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/septum-pellucidum',
-          tags: ['anatomy', 'mri', 'septum-pellucidum', 'variant'],
+          answer: 'Pituitary Gland',
+          explanation: 'The pituitary gland sits within the sella turcica of the sphenoid bone. On sagittal MRI, the anterior lobe (adenohypophysis) is isointense to grey matter on T1, while the posterior lobe (neurohypophysis) shows characteristic T1 hyperintensity due to ADH-containing neurosecretory granules. Normal height is ≤8 mm in adults (up to 10–12 mm in pregnant/lactating women).',
+          keyFact: 'Loss of the posterior pituitary T1 bright spot = diabetes insipidus until proven otherwise. Normal pituitary height: ≤8 mm adults, ≤10–12 mm in pregnancy/lactation, ≤6 mm in children.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pituitary-gland',
+          tags: ['MRI', 'neuro', 'anatomy', 'pituitary', 'sella', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-010',
+        id: 'neuro-branat-011',
         front: {
-          question: 'What is the blood supply of the internal capsule? A small infarct in the posterior limb causes what classic syndrome?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #11?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #11',
+          },
+          hint: 'Posterior slope of the sella turcica, formed by the basilar part of the occipital bone',
         },
         back: {
-          answer: 'Posterior limb: lenticulostriate arteries (M1 MCA branches). Anterior limb: recurrent artery of Heubner (ACA). Genu: anterior choroidal artery. Posterior limb infarct → pure motor hemiplegia (lacunar syndrome).',
-          explanation: 'Lenticulostriate arteries are end arteries → vulnerable to hypertensive lipohyalinosis → lacunar infarcts. The posterior limb contains the corticospinal tract (motor fibers). The genu contains corticobulbar fibers (central facial palsy). The anterior limb connects prefrontal cortex to thalamus. Classic lacunar syndromes: pure motor, pure sensory, sensorimotor, ataxic hemiparesis, dysarthria-clumsy hand.',
-          keyFact: 'Posterior limb IC = corticospinal tract → pure motor lacune. Lenticulostriates = perforators from M1, hypertension → lacunes. Genu = corticobulbar → central facial palsy. Anterior limb: recurrent artery of Heubner (ACA).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/internal-capsule',
-          tags: ['anatomy', 'internal-capsule', 'stroke', 'vascular', 'lacunar'],
+          answer: 'Clivus',
+          explanation: 'The clivus is a bony structure formed by the basilar part of the occipital bone (lower two-thirds) and the body of the sphenoid (upper one-third), forming the posterior wall of the nasopharynx and floor of the posterior cranial fossa. On T1 MRI, the clivus is normally hyperintense due to fatty marrow. T1 hypointensity of the clivus is a red flag for marrow replacement by tumour or infection.',
+          keyFact: 'Chordoma is the classic primary tumour of the clivus — midline, T2 hyperintense, lobulated, destructive, with characteristic "honeycomb" or physaliphorous cells. T1 hypointensity of clivus = marrow replacement until proven otherwise.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/clivus',
+          tags: ['MRI', 'neuro', 'anatomy', 'clivus', 'skull base', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-011',
+        id: 'neuro-branat-012',
         front: {
-          question: 'Identify the white matter tract on this axial MRI that fans out from the internal capsule to all cortical areas. What pathology preferentially affects it in hypertension?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #12?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #12',
+          },
+          hint: 'Central foliated lobule of the cerebellum on the midline',
         },
         back: {
-          answer: 'Corona radiata. Hypertension → small vessel disease → white matter hyperintensities (leukoaraiosis) in the corona radiata and periventricular white matter on FLAIR.',
-          explanation: 'The corona radiata is the fan-shaped white matter projection fiber system connecting the internal capsule to all cortical regions. It includes corticospinal, corticobulbar, and thalamocortical fibers. Leukoaraiosis (white matter hyperintensities) in the corona radiata and deep white matter is the hallmark of chronic small vessel disease and is associated with stroke risk, cognitive impairment, and gait disturbance.',
-          keyFact: 'Corona radiata = projection fibers fanning out above IC. Hypertension → leukoaraiosis (periventricular + deep WMH on FLAIR). CADASIL: WMH characteristically in anterior temporal poles + external capsule.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/corona-radiata',
-          tags: ['anatomy', 'white-matter', 'corona-radiata', 'small-vessel'],
+          answer: 'Cerebellar Vermis',
+          explanation: 'The cerebellar vermis is the midline unpaired portion of the cerebellum, flanked by the two cerebellar hemispheres. On sagittal midline MRI, its distinct lobules (lingula, centralis, culmen, declive, folium, tuber, pyramis, uvula, and nodulus) are visible. The vermis coordinates truncal balance and gait; isolated vermis lesions cause truncal ataxia.',
+          keyFact: 'Vermis hypoplasia/dysgenesis = key feature of Dandy-Walker malformation (triad: vermis hypoplasia, enlarged 4th ventricle, posterior fossa cyst communicating with 4th ventricle). Nodulus + uvula of vermis = flocculonodular lobe (vestibulocerebellum).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/cerebellar-vermis',
+          tags: ['MRI', 'neuro', 'anatomy', 'cerebellum', 'vermis', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-012',
+        id: 'neuro-branat-013',
         front: {
-          question: 'What is the ACA territory and what deficits result from ACA infarction? Identify the ACA on this CT angiogram.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #13?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #13',
+          },
+          hint: 'Inferior tip of the cerebellar hemisphere that extends toward the foramen magnum',
         },
         back: {
-          answer: 'ACA supplies medial frontal/parietal lobes, anterior corpus callosum. Infarct: contralateral leg > arm weakness (leg area medial), frontal lobe syndrome (abulia, disinhibition), urinary incontinence.',
-          explanation: 'A1 = from ICA to Acomm; A2 = from Acomm to distal. Recurrent artery of Heubner (RAH) = first branch of A2, supplies anterior limb IC and head of caudate. Bilateral ACA infarct (from single Acomm aneurysm/spasm): bilateral leg weakness + severe abulia. ACA infarct spares the hand/face area (which is lateral/MCA territory).',
-          keyFact: 'ACA infarct: leg > arm weakness (medial homunculus). Bilateral ACA: akinetic mutism/abulia. RAH = ACA branch to anterior limb IC + caudate head. ACA spares hand/face (MCA territory).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/anterior-cerebral-artery',
-          tags: ['anatomy', 'vascular', 'aca', 'stroke', 'territory'],
+          answer: 'Cerebellar Tonsil',
+          explanation: 'The cerebellar tonsils are the most inferior portions of the cerebellar hemispheres, normally positioned at or above the level of the foramen magnum. On sagittal MRI, they appear as rounded structures just posterior to the medulla. Tonsillar position is measured relative to the McRae line (basion to opisthion). Herniation >5 mm below the foramen magnum = Chiari I malformation.',
+          keyFact: 'Chiari I = cerebellar tonsils >5 mm below foramen magnum on sagittal MRI. Associated with syringomyelia in ~30–70%. Chiari II = tonsillar herniation + myelomeningocele + beaked tectum + lückenschädel skull.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/cerebellar-tonsils',
+          tags: ['MRI', 'neuro', 'anatomy', 'cerebellum', 'tonsil', 'Chiari', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-013',
+        id: 'neuro-branat-014',
         front: {
-          question: 'What territory does the MCA supply? Identify the MCA on this CT angiogram and name the deficits of complete MCA territory infarction.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #14?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #14',
+          },
+          hint: 'CSF-filled space dorsal to the pons and medulla, anterior to the cerebellum',
         },
         back: {
-          answer: 'MCA supplies lateral frontal, parietal, temporal, and insular cortex + deep white matter + basal ganglia (via lenticulostriates). Complete MCA infarct: contralateral hemiplegia (arm/face > leg), hemisensory loss, aphasia (dominant) or neglect (non-dominant), hemianopia.',
-          explanation: 'M1 = horizontal segment (gives lenticulostriate perforators); M2 = insular segments; M3 = opercular; M4 = cortical. The MCA territory is the largest — complete MCA stroke is devastating. Hyperdense MCA sign on CT = acute thrombus. The insular ribbon sign (loss of cortical gray/white differentiation at insula) is an early CT ischemia sign. ASPECTS score assesses MCA territory ischemia.',
-          keyFact: 'Complete MCA: arm/face > leg weakness + aphasia (dominant) or neglect (non-dominant) + hemianopia. M1 perforators = lenticulostriates → lacunes. Hyperdense MCA sign = CT marker of acute thrombus.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/middle-cerebral-artery',
-          tags: ['anatomy', 'vascular', 'mca', 'stroke', 'territory'],
+          answer: 'Fourth Ventricle',
+          explanation: 'The fourth ventricle is a diamond-shaped CSF space lying between the brainstem (pons and medulla) anteriorly and the cerebellum posteriorly. It communicates with the third ventricle via the cerebral aqueduct (of Sylvius) and with the subarachnoid space via the foramina of Magendie (median) and Luschka (lateral). Obstruction at the level of the fourth ventricle causes obstructive hydrocephalus.',
+          keyFact: 'Choroid plexus papilloma in children: most common in the lateral ventricle (atrium). In adults: most common in the fourth ventricle. Ependymoma in children: "plastic" tumour of 4th ventricle that squeezes through foramina — best distinguishing feature from medulloblastoma.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/fourth-ventricle',
+          tags: ['MRI', 'neuro', 'anatomy', 'fourth ventricle', 'posterior fossa', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-014',
+        id: 'neuro-branat-015',
         front: {
-          question: 'What is the PCA territory? A PCA infarct causes what classic visual deficit? Identify the PCA on this image.',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #15?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #15',
+          },
+          hint: 'Large CSF-filled space between the cerebellum and the inner surface of the occipital bone',
         },
         back: {
-          answer: 'PCA supplies occipital lobe (primary visual cortex), posterior temporal lobe, thalamus (via thalamoperforators), midbrain. PCA infarct: contralateral homonymous hemianopia (with macular sparing if calcarine collaterals intact).',
-          explanation: 'P1 = precommunicating PCA (thalamoperforators, including artery of Percheron from a common trunk); P2 = postcommunicating. Bilateral PCA infarcts (basilar top) → cortical blindness (Anton syndrome — patient denies blindness). PCA + posterior thalamic infarct: visual field defect + thalamic pain syndrome. Dominant PCA: alexia without agraphia (splenium + dominant occipital lobe).',
-          keyFact: 'PCA infarct: homonymous hemianopia (macular sparing common). Bilateral PCA: Anton syndrome (cortical blindness, patient unaware). Artery of Percheron (common P1 trunk) → bilateral paramedian thalamic infarcts.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-cerebral-artery',
-          tags: ['anatomy', 'vascular', 'pca', 'stroke', 'vision'],
+          answer: 'Cisterna Magna (Cerebellomedullary Cistern)',
+          explanation: 'The cisterna magna is the largest subarachnoid cistern, lying posterior to the medulla and inferior to the cerebellum. It communicates with the fourth ventricle via the foramen of Magendie. A prominent cisterna magna (>10 mm) may be a normal variant ("mega cisterna magna") or associated with Dandy-Walker spectrum. Unlike Dandy-Walker, mega cisterna magna has a normal vermis and no communication with the 4th ventricle.',
+          keyFact: 'Dandy-Walker vs. mega cisterna magna: in Dandy-Walker, the posterior fossa cyst communicates with the 4th ventricle and the vermis is hypoplastic; in mega cisterna magna, the vermis is normal and the 4th ventricle is separate.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/cisterna-magna',
+          tags: ['MRI', 'neuro', 'anatomy', 'cisterna magna', 'posterior fossa', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-015',
+        id: 'neuro-branat-016',
         front: {
-          question: 'Identify the dural venous sinuses on this MR venogram. Which sinus is most commonly thrombosed, and what is the "empty delta" sign?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #16?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #16',
+          },
+          hint: 'CSF cistern posterior to the quadrigeminal plate',
         },
         back: {
-          answer: 'Main sinuses: superior sagittal (SSS), inferior sagittal, straight sinus, transverse (bilateral), sigmoid → IJV, cavernous (bilateral). Most commonly thrombosed: SSS (then transverse). Empty delta sign: triangular filling defect in SSS on contrast CT (thrombus with surrounding enhancing collaterals).',
-          explanation: 'The SSS drains into the right transverse sinus in most people. Torcular Herophili = confluence of sinuses. CVT risk factors: pregnancy/OCP, dehydration, hypercoagulable states, infection. MRI: T1 bright clot in sinus; MRV: flow gap. The straight sinus receives the vein of Galen and inferior sagittal sinus. Thrombosis of straight sinus → bilateral thalamic and deep venous infarcts.',
-          keyFact: 'Empty delta sign = SSS thrombus on contrast CT. Most common sinus thrombosed: SSS. Straight sinus thrombosis → bilateral thalamic infarcts. MRV: filling defect = thrombus.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/dural-venous-sinus-thrombosis',
-          tags: ['anatomy', 'venous', 'dural-sinuses', 'mri', 'cvt'],
+          answer: 'Quadrigeminal Plate Cistern (Superior Cistern / Ambient Cistern)',
+          explanation: 'The quadrigeminal plate cistern (also called the superior cistern or quadrigeminal cistern) is the subarachnoid space posterior to the quadrigeminal plate of the midbrain. It communicates with the ambient cisterns laterally and the cisterna magna inferiorly. It is a key landmark on sagittal MRI and is the location of the pineal gland and vein of Galen. Arachnoid cysts and pineal region masses arise here.',
+          keyFact: 'Pineal region masses occupying the quadrigeminal cistern: germ cell tumour (most common in young males), pineocytoma, pineoblastoma, and arachnoid cyst. All can compress the tectum and cause Parinaud syndrome + obstructive hydrocephalus.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/quadrigeminal-cistern',
+          tags: ['MRI', 'neuro', 'anatomy', 'cistern', 'pineal', 'midbrain', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-016',
+        id: 'neuro-branat-017',
         front: {
-          question: 'Identify the circle of Willis on this CT angiogram. Which segments are most commonly absent/hypoplastic?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #17?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #17',
+          },
+          hint: 'Dural fold separating the cerebellum from the occipital lobes',
         },
         back: {
-          answer: 'Circle of Willis: bilateral ICA → ACA (A1) + MCA (M1) → PCA (P1), connected by anterior communicating (Acomm) and posterior communicating (Pcomm) arteries. Most commonly absent/hypoplastic: A1 segment (ACA) and P1 segment (PCA), and Pcomm.',
-          explanation: 'A complete circle of Willis is present in only ~20–25% of the population. Fetal PCA = PCA primarily supplied by Pcomm rather than basilar (normal variant in 20–30%). When one ICA occludes, a complete circle allows collateral flow. The Acomm is the most common site of berry aneurysm (30–35%), followed by PComm junction (25%), MCA bifurcation (20%), and basilar tip (10%).',
-          keyFact: 'Acomm = most common aneurysm site (30–35%). Fetal PCA = PCA from Pcomm (normal variant, 20–30%). Complete circle only in 20–25% of people. Berry aneurysm rupture → subarachnoid hemorrhage.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/circle-of-willis',
-          tags: ['anatomy', 'vascular', 'circle-of-willis', 'aneurysm'],
+          answer: 'Tentorium Cerebelli',
+          explanation: 'The tentorium cerebelli is a crescent-shaped dural fold that separates the cerebellum (infratentorial compartment) from the occipital lobes (supratentorial compartment). It is attached to the posterior clinoid processes anteriorly and the transverse sinuses posteriorly. The tentorial incisura is the opening through which the midbrain passes. Uncal herniation (transtentorial herniation) occurs when the medial temporal lobe is forced through this opening.',
+          keyFact: 'Supratentorial vs. infratentorial lesions: the tentorium is the dividing line. Tentorial incisura transmits CN III — ipsilateral CN III palsy ("blown pupil") is the classic sign of uncal transtentorial herniation compressing CN III.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/tentorium-cerebelli',
+          tags: ['MRI', 'neuro', 'anatomy', 'tentorium', 'dura', 'posterior fossa', 'sagittal'],
         },
       },
       {
-        id: 'neuro-anatomy-017',
+        id: 'neuro-branat-018',
         front: {
-          question: 'Identify the thalamus on this axial MRI. Name its key nuclei and their clinical functions. Which thalamic structure is visible as the "massa intermedia"?',
+          question: 'On this mid-sagittal T1 MRI, what structure is labeled #18?',
+          image: {
+            src: '/src/data/decks/images_neuro/brain01.png',
+            alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
+            caption: 'Identify structure #18',
+          },
+          hint: 'C-shaped gyrus arching over the corpus callosum on the medial surface',
         },
         back: {
-          answer: 'Key thalamic nuclei: VPL (body sensation), VPM (face sensation), LGN (vision), MGN (hearing), VA/VL (motor, cerebellothalamic), pulvinar (association), anterior (Papez/memory), DM (prefrontal, emotion). Massa intermedia = interthalamic adhesion bridging 3rd ventricle.',
-          explanation: 'The thalamus is the relay station for nearly all sensory input to cortex. Pure thalamic strokes cause contralateral hemisensory loss ± thalamic pain (Dejerine-Roussy syndrome). Bilateral paramedian thalamic infarcts (artery of Percheron) cause sudden coma + vertical gaze palsy. The pulvinar sign (T2 hyperintensity in pulvinar) is characteristic of variant CJD.',
-          keyFact: 'VPL = body sensation (lateral lemniscus input). LGN = vision relay. Bilateral thalamic infarcts → coma (artery of Percheron). Pulvinar sign (T2↑) = variant CJD. Dejerine-Roussy = thalamic pain syndrome.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/thalamus',
-          tags: ['anatomy', 'thalamus', 'mri', 'vascular'],
+          answer: 'Cingulate Gyrus',
+          explanation: 'The cingulate gyrus is a C-shaped cortical gyrus on the medial surface of each cerebral hemisphere, arching above and around the corpus callosum. It is a core component of the limbic system and is involved in emotion, learning, and memory. The cingulate sulcus separates it from the medial frontal and parietal cortex. The posterior cingulate cortex connects to the precuneus and is a key node in the default mode network.',
+          keyFact: 'Subfalcine herniation = cingulate gyrus displaced under the falx cerebri by an ipsilateral mass. It is the most common type of intracranial herniation and can compress the anterior cerebral artery causing ACA territory infarction.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/cingulate-gyrus',
+          tags: ['MRI', 'neuro', 'anatomy', 'cingulate', 'limbic', 'medial cortex', 'sagittal'],
         },
       },
+
+  {
+    id: 'neuro-branat-019',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #1?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #1',
+      },
+      hint: 'White matter commissure spanning the interhemispheric fissure — superior-most labeled structure',
+    },
+    back: {
+      answer: 'Body of the Corpus Callosum',
+      explanation: 'The corpus callosum is the largest white matter commissure connecting the cerebral hemispheres. Its body is the long middle segment between the genu anteriorly and splenium posteriorly. On sagittal T1, it appears as a broad hypointense band (relative to cortex) arching over the lateral ventricles. Agenesis or dysgenesis of the corpus callosum is associated with Chiari II, Dandy-Walker, and holoprosencephaly.',
+      keyFact: 'The corpus callosum develops from anterior to posterior — genu first, splenium last. Partial agenesis therefore always spares the genu and affects the splenium/posterior body.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/corpus-callosum',
+      tags: ['MRI', 'neuroanatomy', 'midline', 'white matter', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-020',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #2?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #2',
+      },
+      hint: 'Posterior bulbous end of the largest white matter commissure',
+    },
+    back: {
+      answer: 'Splenium of the Corpus Callosum',
+      explanation: 'The splenium is the thickest and most posterior part of the corpus callosum. It contains fibers interconnecting the occipital and posterior parietal lobes. The splenium is particularly vulnerable to osmotic demyelination and is the last segment to develop embryologically. Isolated splenium lesions are seen with Marchiafava-Bignami disease, MERS (mild encephalitis with reversible splenium lesion), and hypoglycemia.',
+      keyFact: 'Splenium restricted diffusion with clinical encephalopathy → think MERS or hypoglycemia. Splenium + alcohol/malnutrition → Marchiafava-Bignami.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/splenium-of-the-corpus-callosum',
+      tags: ['MRI', 'neuroanatomy', 'midline', 'white matter', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-021',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #3?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #3',
+      },
+      hint: 'Arched white matter bundle running beneath the corpus callosum, connecting hippocampus to mammillary bodies',
+    },
+    back: {
+      answer: 'Fornix',
+      explanation: 'The fornix is a paired C-shaped white matter tract that forms the main efferent pathway of the hippocampus, projecting to the mammillary bodies (via the postcommissural fornix) and septal nuclei (precommissural fornix). It runs along the inferior surface of the corpus callosum as the body, then arches downward as the columns into the hypothalamus. Damage to the fornix causes anterograde amnesia similar to hippocampal injury.',
+      keyFact: 'Fornix → mammillary bodies → anterior thalamus → cingulate cortex = Papez circuit. Disruption at any point = anterograde amnesia.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/fornix-brain',
+      tags: ['MRI', 'neuroanatomy', 'midline', 'limbic', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-022',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #4?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #4',
+      },
+      hint: 'Gray matter bridge crossing the third ventricle between the two thalami — absent in ~20% of people',
+    },
+    back: {
+      answer: 'Massa Intermedia (Interthalamic Adhesion)',
+      explanation: 'The massa intermedia is a midline gray matter connection across the third ventricle between the two thalami. It is a normal anatomical variant absent in approximately 20–25% of individuals (more often absent in males). It is not a true commissure (does not carry decussating fibers). On sagittal MRI it appears as a round soft-tissue nodule projecting into the third ventricle, which should not be mistaken for a colloid cyst or third ventricular mass.',
+      keyFact: 'Massa intermedia is absent in ~20% of normals. Do not mistake it for a third ventricular mass — it lacks rim enhancement and is isointense to gray matter.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/interthalamic-adhesion',
+      tags: ['MRI', 'neuroanatomy', 'thalamus', 'third ventricle', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-023',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #5?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #5',
+      },
+      hint: 'Small white matter commissure at the anterior wall of the third ventricle, just above the lamina terminalis',
+    },
+    back: {
+      answer: 'Anterior Commissure',
+      explanation: 'The anterior commissure is a compact white matter bundle crossing the midline at the anterior wall of the third ventricle, anterior to the columns of the fornix. It interconnects the olfactory bulbs, amygdalae, and temporal lobes bilaterally. On sagittal MRI it appears as a small round hypointense nodule. It is a key landmark on axial MRI for identifying the AC-PC plane used in stereotactic neurosurgery.',
+      keyFact: 'Anterior commissure is the key landmark for the AC-PC line used in stereotactic surgery and brain atlases. It connects the olfactory bulbs and temporal lobes.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/anterior-commissure',
+      tags: ['MRI', 'neuroanatomy', 'midline', 'white matter', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-024',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #6?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #6',
+      },
+      hint: 'Commissure at the posterior wall of the third ventricle, just above the superior colliculi — marks the junction of diencephalon and midbrain',
+    },
+    back: {
+      answer: 'Posterior Commissure',
+      explanation: 'The posterior commissure is a white matter bundle crossing the dorsal midline at the junction of the diencephalon and midbrain, at the level of the superior colliculi. It carries fibers involved in the pupillary light reflex (pretectal-Edinger-Westphal pathway). Compression or infiltration of this region (e.g., by a pineal mass) causes Parinaud syndrome: upgaze palsy, convergence-retraction nystagmus, and light-near dissociation.',
+      keyFact: 'Posterior commissure compression = Parinaud syndrome (dorsal midbrain syndrome): upgaze palsy + convergence-retraction nystagmus + light-near dissociation. Classic cause: pineal region mass.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-commissure',
+      tags: ['MRI', 'neuroanatomy', 'midbrain', 'pineal', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-025',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #7?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #7',
+      },
+      hint: 'Small commissure at the posterior roof of the third ventricle, just anterior to the pineal gland',
+    },
+    back: {
+      answer: 'Habenular Commissure',
+      explanation: 'The habenular commissure connects the habenular nuclei bilaterally and runs just anterior to the pineal gland at the posterior roof of the third ventricle. The habenular nuclei are part of the epithalamus and are involved in limbic-to-brainstem connections, modulating serotonin and dopamine pathways. The habenular commissure and posterior commissure together form the pineal gland stalk region, important for identifying pineal masses.',
+      keyFact: 'Habenular commissure lies just anterior to the pineal gland. Calcification of the habenular commissure is a normal aging finding and should not be confused with a pineal mass.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/habenular-commissure',
+      tags: ['MRI', 'neuroanatomy', 'epithalamus', 'pineal', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-026',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #8?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #8',
+      },
+      hint: 'Midline epithalamic gland known for calcification in adults; tumors here cause Parinaud syndrome',
+    },
+    back: {
+      answer: 'Pineal Gland',
+      explanation: 'The pineal gland is a midline neuroendocrine structure in the epithalamus that secretes melatonin and regulates circadian rhythm. Physiologic calcification occurs in >50% of adults on CT. Pineal masses include germinoma (most common, elevated β-hCG or PLAP), pineocytoma, pineoblastoma, and teratoma. Masses >1 cm or asymmetric calcification warrant MRI workup. Compression of the dorsal midbrain causes Parinaud syndrome.',
+      keyFact: 'Pineal germinoma is the most common pineal mass; elevates β-hCG/PLAP, occurs in young males, and is exquisitely radiosensitive. Pineoblastoma is aggressive and associated with bilateral retinoblastoma (trilateral retinoblastoma).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/pineal-gland',
+      tags: ['MRI', 'neuroanatomy', 'pineal', 'epithalamus', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-027',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #9?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #9',
+      },
+      hint: 'Upper paired midbrain tectal bumps involved in visual reflexes',
+    },
+    back: {
+      answer: 'Superior Colliculi',
+      explanation: 'The superior colliculi are paired dorsal midbrain (tectum) structures that mediate visual orienting reflexes and saccadic eye movements. They receive direct retinal input via the optic tract. The superior colliculi are part of the quadrigeminal plate. Compression by pineal region masses or hypertrophic olivary degeneration can cause visual disturbances and upgaze palsy (Parinaud syndrome).',
+      keyFact: 'Superior colliculi = visual reflexes (optic tectum). Inferior colliculi = auditory relay. Both visible as the quadrigeminal plate on sagittal MRI. "Tectal gliomas" are usually indolent low-grade tumors.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/superior-colliculus',
+      tags: ['MRI', 'neuroanatomy', 'midbrain', 'tectum', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-028',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #10?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #10',
+      },
+      hint: 'Lower paired midbrain tectal bumps serving as auditory relay',
+    },
+    back: {
+      answer: 'Inferior Colliculi',
+      explanation: 'The inferior colliculi are the lower pair of the quadrigeminal plate (midbrain tectum), serving as an important relay station in the auditory pathway between the cochlear nuclei/lateral lemniscus and the medial geniculate nucleus of the thalamus. They are smaller than the superior colliculi on sagittal MRI. Lesions here cause auditory processing deficits rather than deafness.',
+      keyFact: 'Quadrigeminal plate mnemonic: superior (bigger) = visual, inferior (smaller) = auditory. "2 eyes above, 2 ears below."',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/inferior-colliculus',
+      tags: ['MRI', 'neuroanatomy', 'midbrain', 'tectum', 'auditory', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-029',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #11?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #11',
+      },
+      hint: 'CSF channel connecting the third and fourth ventricles, running through the midbrain tegmentum',
+    },
+    back: {
+      answer: 'Cerebral Aqueduct (Aqueduct of Sylvius)',
+      explanation: 'The cerebral aqueduct is the narrow CSF channel (~1–2 mm diameter) connecting the third ventricle superiorly to the fourth ventricle inferiorly, running through the midbrain tectum/tegmentum. It is the most common site of congenital obstruction causing hydrocephalus (aqueductal stenosis). On sagittal T2 MRI, normal aqueductal flow void is visible. Absence of this flow void suggests aqueductal stenosis or obstruction.',
+      keyFact: 'Aqueductal stenosis is the most common cause of congenital obstructive hydrocephalus. On sagittal T2, absent flow void through the aqueduct is a key finding. Tectal gliomas and pineal masses are acquired causes.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/cerebral-aqueduct',
+      tags: ['MRI', 'neuroanatomy', 'midbrain', 'CSF', 'hydrocephalus', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-030',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #12?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #12',
+      },
+      hint: 'Paired CSF passageways between the lateral and third ventricles, one on each side of the massa intermedia',
+    },
+    back: {
+      answer: 'Foramen of Monro (Interventricular Foramen)',
+      explanation: 'The foramina of Monro are the paired openings connecting each lateral ventricle to the third ventricle. They are bordered anteriorly by the columns of the fornix and posteriorly by the anterior pole of the thalamus. Obstruction at the foramen of Monro causes unilateral or asymmetric hydrocephalus of the affected lateral ventricle. The classic obstructing lesion is a colloid cyst, which sits at the foramen and can cause sudden death from acute hydrocephalus.',
+      keyFact: 'Colloid cyst at the foramen of Monro → intermittent positional headache, acute hydrocephalus, sudden death. On MRI: T1 hyperintense, T2 variable round lesion at the anterior third ventricle/foramen of Monro.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/interventricular-foramen-of-monro',
+      tags: ['MRI', 'neuroanatomy', 'ventricles', 'CSF', 'hydrocephalus', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-031',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #13?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #13',
+      },
+      hint: 'CSF-filled cistern between the cerebral peduncles, anterior to the midbrain',
+    },
+    back: {
+      answer: 'Interpeduncular Cistern',
+      explanation: 'The interpeduncular cistern is a subarachnoid space cistern situated between the cerebral peduncles of the midbrain anteriorly. It contains the basilar artery bifurcation, posterior cerebral arteries, superior cerebellar arteries, and CN III (oculomotor nerve). It communicates with the prepontine cistern inferiorly and the ambient cistern laterally. A posterior communicating artery aneurysm can compress CN III within this region.',
+      keyFact: 'CN III runs through the interpeduncular cistern — PCom aneurysm here causes a painful CN III palsy with pupil involvement (surgical emergency). This differentiates it from microvascular CN III palsy (pupil spared).',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/interpeduncular-cistern',
+      tags: ['MRI', 'neuroanatomy', 'cistern', 'subarachnoid', 'midbrain', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-032',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #14?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #14',
+      },
+      hint: 'Paired round hypothalamic nuclei at the floor of the third ventricle, part of the Papez circuit',
+    },
+    back: {
+      answer: 'Mammillary Body',
+      explanation: 'The mammillary bodies are paired round hypothalamic nuclei at the posterior floor of the third ventricle. They are major components of the Papez circuit, receiving input from the hippocampus via the fornix and projecting to the anterior thalamic nuclei. They are exquisitely sensitive to thiamine deficiency — mammillary body T2 signal and enhancement is the hallmark of Wernicke encephalopathy. Atrophy of the mammillary bodies is also seen in chronic alcoholism and chronic amnesia.',
+      keyFact: 'Wernicke encephalopathy: mammillary body T2 hyperintensity and enhancement + periaqueductal gray + medial thalami. Triad: ophthalmoplegia, ataxia, confusion. Treat immediately with IV thiamine.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/mammillary-bodies',
+      tags: ['MRI', 'neuroanatomy', 'hypothalamus', 'limbic', 'Wernicke', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-033',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #15?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #15',
+      },
+      hint: 'X-shaped decussation of the optic nerves at the base of the brain, just above the sella',
+    },
+    back: {
+      answer: 'Optic Chiasm',
+      explanation: 'The optic chiasm is where the nasal fibers of each optic nerve decussate to join the contralateral optic tract, while temporal fibers remain ipsilateral. It lies just above the sella turcica and pituitary gland, anterior to the hypothalamus. Compression from below (pituitary macroadenoma) causes bitemporal hemianopia due to preferential injury to the crossing nasal fibers. On MRI the chiasm appears as a flat H-shaped structure on coronal imaging.',
+      keyFact: 'Pituitary macroadenoma compressing the chiasm from below → bitemporal hemianopia (loss of temporal fields bilaterally). "Crossing nasal fibers = central field blind." Field defect confirms chiasmal rather than optic nerve or tract lesion.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/optic-chiasm',
+      tags: ['MRI', 'neuroanatomy', 'optic pathway', 'sellar', 'visual field', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-034',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #16?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #16',
+      },
+      hint: 'Endocrine gland within the sella turcica, composed of anterior and posterior lobes with distinct MRI signal',
+    },
+    back: {
+      answer: 'Pituitary Gland',
+      explanation: 'The pituitary gland occupies the sella turcica and consists of the adenohypophysis (anterior lobe, 80%) and neurohypophysis (posterior lobe). On T1 MRI, the posterior pituitary normally has a characteristic T1 hyperintense "bright spot" due to stored vasopressin granules — absence of this is a key finding in central diabetes insipidus. Normal height is up to 8 mm in women of reproductive age (10 mm in pregnancy/lactation) and 6 mm in men/post-menopausal women.',
+      keyFact: 'Posterior pituitary T1 bright spot = normal. Loss of bright spot → central DI. Pituitary height >10–12 mm in non-pregnant adult + mass effect on chiasm → macroadenoma (>1 cm). Microadenoma <1 cm.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/pituitary-gland',
+      tags: ['MRI', 'neuroanatomy', 'pituitary', 'sellar', 'endocrine', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-035',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #17?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #17',
+      },
+      hint: 'Slender connection between the hypothalamus and posterior pituitary, passing through the diaphragma sellae',
+    },
+    back: {
+      answer: 'Infundibular Stalk (Pituitary Stalk)',
+      explanation: 'The infundibular stalk connects the hypothalamus to the posterior pituitary, transmitting axons of magnocellular neurons (AVP/oxytocin) and the hypophyseal portal system (hypothalamic releasing hormones to anterior pituitary). Normal stalk width is ≤3.5 mm at the base (narrows inferiorly). Stalk thickening >3.5 mm or with nodular morphology raises concern for germinoma, Langerhans cell histiocytosis, sarcoidosis, lymphocytic hypophysitis, or metastasis.',
+      keyFact: 'Thickened pituitary stalk (>3.5 mm) DDx: germinoma > LCH > sarcoidosis > lymphocytic hypophysitis > metastasis. In a child with DI and stalk thickening → biopsy for germinoma vs LCH before empiric treatment.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/pituitary-stalk',
+      tags: ['MRI', 'neuroanatomy', 'pituitary', 'infundibulum', 'sellar', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-036',
+    front: {
+      question: 'On this mid-sagittal T1 MRI, what structure is labeled #18?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain02.png',
+        alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
+        caption: 'Identify structure #18',
+      },
+      hint: 'CSF-filled subarachnoid cistern immediately superior to the sella, surrounding the infundibulum',
+    },
+    back: {
+      answer: 'Suprasellar Cistern',
+      explanation: 'The suprasellar cistern is a subarachnoid space cistern lying above the sella turcica, containing the optic chiasm, infundibular stalk, proximal internal carotid arteries, A1 segments, and the circle of Willis anteriorly. On axial CT/MRI it has a characteristic pentagonal or star-shaped configuration. Key pathologies arising here include craniopharyngioma (most common suprasellar mass in children), germinoma, hypothalamic glioma, meningioma (adults), and aneurysm.',
+      keyFact: 'Suprasellar mass in a child with calcification + cystic + motor oil fluid = craniopharyngioma (adamantinomatous type). In an adult, calcification + suprasellar = meningioma until proven otherwise.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/suprasellar-cistern',
+      tags: ['MRI', 'neuroanatomy', 'cistern', 'suprasellar', 'sellar', 'sagittal', 'anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-037',
+    front: {
+      question: 'Identify structure #1 on this MRV. What is its clinical significance in raised intracranial pressure?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #1',
+      },
+    },
+    back: {
+      answer: 'Superior Sagittal Sinus (SSS)',
+      explanation: 'The SSS runs in the superior margin of the falx cerebri from the crista galli to the torcular Herophili (confluence of sinuses). It drains the superficial cerebral veins and is the primary site of CSF reabsorption via arachnoid granulations. Thrombosis causes parasagittal hemorrhagic infarcts and raised ICP. It is the most commonly thrombosed dural sinus.',
+      keyFact: 'SSS thrombosis → parasagittal bilateral cortical venous infarcts + raised ICP. Most common dural sinus thrombosis site.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/superior-sagittal-sinus',
+      tags: ['MRV', 'MRI', 'neuro', 'venous anatomy', 'dural sinuses', 'cerebral veins'],
+    },
+  },
+  {
+    id: 'neuro-branat-038',
+    front: {
+      question: 'Identify structure #2 on this MRV. What vessels converge to form it, and what does it drain into?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #2',
+      },
+    },
+    back: {
+      answer: 'Vein of Galen (Great Cerebral Vein)',
+      explanation: 'The vein of Galen is formed by the union of the two internal cerebral veins and the basal veins of Rosenthal. It is a short midline vessel that drains into the straight sinus. A vein of Galen malformation (VOGM) is an arteriovenous fistula where arterial flow directly enters this vein, causing it to massively dilate — classically presenting with neonatal high-output cardiac failure.',
+      keyFact: 'Vein of Galen = junction of internal cerebral veins + basal veins of Rosenthal → straight sinus. VOGM causes neonatal cardiac failure.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/great-cerebral-vein',
+      tags: ['MRV', 'MRI', 'neuro', 'venous anatomy', 'vein of Galen', 'deep veins'],
+    },
+  },
+  {
+    id: 'neuro-branat-039',
+    front: {
+      question: 'Identify structure #3 on this MRV. What do they drain, and what is the significance of asymmetry or non-visualization?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #3',
+      },
+    },
+    back: {
+      answer: 'Internal Cerebral Veins (ICVs)',
+      explanation: 'The ICVs are paired deep medullary veins running in the roof of the third ventricle within the tela choroidea. They drain the deep white matter, basal ganglia, thalami, and choroid plexus, converging posteriorly to form the vein of Galen. Thrombosis of the ICVs causes deep cerebral venous thrombosis — bilateral thalamic hemorrhagic infarcts are the hallmark imaging finding.',
+      keyFact: 'ICV thrombosis → bilateral thalamic hemorrhagic infarcts. Paired veins in roof of 3rd ventricle draining basal ganglia and thalami.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/internal-cerebral-vein',
+      tags: ['MRV', 'MRI', 'neuro', 'deep cerebral veins', 'thalamus', 'venous thrombosis'],
+    },
+  },
+  {
+    id: 'neuro-branat-040',
+    front: {
+      question: 'Identify structure #4 on this MRV. What two structures does it connect, and what runs alongside it in the tentorium?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #4',
+      },
+    },
+    back: {
+      answer: 'Straight Sinus (Sinus Rectus)',
+      explanation: 'The straight sinus runs in the junction of the falx cerebri and tentorium cerebelli, connecting the vein of Galen anteriorly to the confluence of sinuses (torcular Herophili) posteriorly. The inferior sagittal sinus joins it anteriorly. It is bordered by the falcotentorial junction. Isolated straight sinus thrombosis is rare but causes deep venous infarction similar to ICV thrombosis.',
+      keyFact: 'Straight sinus = vein of Galen + inferior sagittal sinus → torcular Herophili; runs in falcotentorial junction.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/straight-sinus',
+      tags: ['MRV', 'MRI', 'neuro', 'dural sinuses', 'venous anatomy', 'tentorium'],
+    },
+  },
+  {
+    id: 'neuro-branat-041',
+    front: {
+      question: 'Identify structure #5 on this MRV. What territory does it drain, and what is its eponymous clinical relevance?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #5',
+      },
+    },
+    back: {
+      answer: 'Vein of Labbé (Inferior Anastomotic Vein)',
+      explanation: 'The vein of Labbé is a large superficial cortical vein connecting the superficial middle cerebral vein to the transverse sinus. It drains the lateral temporal lobe. Along with the vein of Trolard superiorly, it forms an anastomotic network between the SSS and transverse sinus. Thrombosis causes temporal lobe venous infarction, often hemorrhagic, and is a feared complication of sigmoid/transverse sinus thrombosis.',
+      keyFact: 'Vein of Labbé: superficial middle cerebral vein → transverse sinus; thrombosis = temporal lobe hemorrhagic infarct.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/vein-of-labbe',
+      tags: ['MRV', 'MRI', 'neuro', 'cortical veins', 'temporal lobe', 'venous anatomy'],
+    },
+  },
+  {
+    id: 'neuro-branat-042',
+    front: {
+      question: 'Identify structure #6 on this MRV. Where does it begin and terminate, and what is the clinical significance of its bilateral absence on MRV?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #6',
+      },
+    },
+    back: {
+      answer: 'Internal Jugular Vein (IJV)',
+      explanation: 'The IJV begins at the jugular foramen as the continuation of the sigmoid sinus and descends in the carotid sheath to join the subclavian vein, forming the brachiocephalic vein. It carries most of the cerebral venous drainage. Bilateral non-visualization on MRV suggests severe bilateral sigmoid/IJV thrombosis. Unilateral aplasia/hypoplasia is a common normal variant (more often on the left).',
+      keyFact: 'IJV = sigmoid sinus continuation from jugular foramen. Left IJV hypoplasia is a common normal variant — do not overcall thrombosis.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/internal-jugular-vein',
+      tags: ['MRV', 'MRI', 'neuro', 'jugular vein', 'venous drainage', 'normal variant'],
+    },
+  },
+  {
+    id: 'neuro-branat-043',
+    front: {
+      question: 'Identify structure #7 on this MRV. What is the significance of unilateral hypoplasia, and what finding on non-contrast CT suggests its thrombosis?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #7',
+      },
+    },
+    back: {
+      answer: 'Transverse Sinus',
+      explanation: 'The transverse sinuses run laterally in the attached margin of the tentorium cerebelli from the torcular Herophili to the sigmoid sinuses. The right is dominant in ~60% and absent/hypoplastic on the left is a common normal variant. Thrombosis causes raised ICP and may be masked by normal asymmetry. On non-contrast CT, the "dense clot sign" in the sinus is a direct sign of thrombosis; on MRV, absent flow signal confirms it.',
+      keyFact: 'Right transverse sinus dominant in 60%; left hypoplasia is a normal variant. Thrombosis = dense sinus sign on NCCT + absent flow on MRV.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/transverse-sinuses',
+      tags: ['MRV', 'MRI', 'neuro', 'dural sinuses', 'transverse sinus', 'venous thrombosis'],
+    },
+  },
+  {
+    id: 'neuro-branat-044',
+    front: {
+      question: 'Identify structure #8 on this MRV. What is its course, and what is the "empty delta sign"?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #8',
+      },
+    },
+    back: {
+      answer: 'Sigmoid Sinus',
+      explanation: 'The sigmoid sinus is the S-shaped continuation of the transverse sinus, coursing in the posterior cranial fossa groove on the mastoid to exit at the jugular foramen as the IJV. The "empty delta sign" (or delta sign) on contrast CT refers to enhancement of the dural walls surrounding a non-enhancing thrombus within the superior sagittal sinus — this is not specific to the sigmoid but is the classic CT sign of dural sinus thrombosis.',
+      keyFact: 'Empty delta sign on contrast CT = enhancing sinus wall surrounding non-enhancing thrombus — classic sign of dural venous sinus thrombosis.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/sigmoid-sinus',
+      tags: ['MRV', 'MRI', 'neuro', 'sigmoid sinus', 'dural sinuses', 'delta sign'],
+    },
+  },
+  {
+    id: 'neuro-branat-045',
+    front: {
+      question: 'Identify structure #9 on this MRV. What four sinuses converge here, and what is its eponymous alternative name?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #9',
+      },
+    },
+    back: {
+      answer: 'Confluence of Sinuses (Torcular Herophili)',
+      explanation: 'The torcular Herophili is the confluence of the superior sagittal sinus, straight sinus, and bilateral occipital sinuses at the internal occipital protuberance, diverging into the bilateral transverse sinuses. It is highly variable in morphology — asymmetric drainage is common. Hypoplasia or asymmetry should not be mistaken for thrombosis on MRV. The name "torcular" refers to its wine-press shape described by Herophilus.',
+      keyFact: 'Torcular Herophili = SSS + straight sinus + occipital sinuses → bilateral transverse sinuses. Highly variable anatomy — asymmetry is normal.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/confluence-of-sinuses',
+      tags: ['MRV', 'MRI', 'neuro', 'confluence of sinuses', 'torcular', 'dural sinuses'],
+    },
+  },
+  {
+    id: 'neuro-branat-046',
+    front: {
+      question: 'Identify structure #10 on this MRV. What does it anastomose, and how does it differ from the vein of Labbé in location and drainage?',
+      image: {
+        src: '/src/data/decks/images_neuro/brain03.png',
+        alt: 'Brain MRV with labeled dural venous sinuses',
+        caption: 'MRV — identify structure #10',
+      },
+    },
+    back: {
+      answer: 'Vein of Trolard (Superior Anastomotic Vein)',
+      explanation: 'The vein of Trolard is the largest superficial cortical anastomotic vein, connecting the superficial middle cerebral vein to the superior sagittal sinus over the parietal convexity. It is the superior counterpart to the vein of Labbé (which drains inferiorly to the transverse sinus). Together they form a collateral network. Trolard thrombosis causes parietal lobe cortical venous infarction.',
+      keyFact: 'Trolard (superior) → SSS over parietal convexity; Labbé (inferior) → transverse sinus via temporal lobe. Mirror-image anastomotic veins.',
+      radiopaediaUrl: 'https://radiopaedia.org/articles/superior-anastomotic-vein-of-trolard',
+      tags: ['MRV', 'MRI', 'neuro', 'cortical veins', 'vein of Trolard', 'venous anatomy'],
+    },
+  },
+
+
+{
+  id: 'neuro-branat-047',
+  front: {
+    question: 'Identify the cranial nerve highlighted on this MRI. Describe its cisternal course and what foramen it traverses.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN23.png',
+      alt: 'Axial MRI showing cranial nerve II',
+      caption: 'Identify the highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN II — Optic Nerve',
+    explanation: 'The optic nerve travels from the retina through the optic canal (not a true foramen of the skull base — it is within the lesser wing of sphenoid) to the optic chiasm. It is surrounded by meningeal sheaths (dura, arachnoid, pia) and subarachnoid CSF, making it susceptible to raised ICP (papilledema). It is a CNS tract, not a peripheral nerve.',
+    keyFact: 'CN II is the only cranial nerve surrounded by meningeal sheaths — optic nerve sheath meningiomas enhance along the nerve producing the "tram-track" sign on MRI.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN23a.png',
+      alt: 'Annotated MRI identifying CN II — Optic Nerve',
+      caption: 'CN II — Optic Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/optic-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'optic nerve', 'skull base'],
+  },
+},
+
+// CN III — Oculomotor Nerve
+{
+  id: 'neuro-branat-048',
+  front: {
+    question: 'On this same MRI, identify the second cranial nerve visible. What is its course from the midbrain to the orbit, and what is the clinical significance of its relationship to the posterior communicating artery?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN23.png',
+      alt: 'Axial MRI showing cranial nerve III',
+      caption: 'Identify the second highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN III — Oculomotor Nerve',
+    explanation: 'CN III exits the midbrain at the interpeduncular fossa, passes between the posterior cerebral artery (PCA) and superior cerebellar artery (SCA), then runs along the lateral wall of the cavernous sinus before entering the orbit via the superior orbital fissure. Its close proximity to the PcomA means an aneurysm at this junction classically causes a pupil-involving CN III palsy.',
+    keyFact: 'Pupil-involving CN III palsy = compressive lesion (PcomA aneurysm) until proven otherwise — the parasympathetic pupillomotor fibres run on the outside of the nerve and are first affected by extrinsic compression.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN23a.png',
+      alt: 'Annotated MRI identifying CN III — Oculomotor Nerve',
+      caption: 'CN III — Oculomotor Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/oculomotor-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'oculomotor', 'skull base'],
+  },
+},
+
+// CN IV — Trochlear Nerve
+{
+  id: 'neuro-branat-049',
+  front: {
+    question: 'Identify the cranial nerve shown on this MRI. What unique anatomical features distinguish it from all other cranial nerves?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN4.png',
+      alt: 'MRI showing cranial nerve IV',
+      caption: 'Identify the highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN IV — Trochlear Nerve',
+    explanation: 'CN IV is the only cranial nerve to exit the dorsal brainstem (dorsal midbrain, below the inferior colliculi), the only one to fully decussate before exiting, and the thinnest and longest intracranial cranial nerve. It wraps around the brainstem, passes between PCA and SCA (like CN III), runs in the lateral cavernous sinus wall, and enters the orbit via the superior orbital fissure to innervate the superior oblique.',
+    keyFact: 'CN IV: only dorsal exit, only complete decussation, thinnest/longest intracranial CN — causes vertical diplopia (hypertropia) with head tilt toward the affected side (Bielschowsky).',
+    image: {
+      src: '/src/data/decks/images_neuro/CN4a.png',
+      alt: 'Annotated MRI identifying CN IV — Trochlear Nerve',
+      caption: 'CN IV — Trochlear Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/trochlear-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'trochlear', 'skull base'],
+  },
+},
+
+// CN V — Trigeminal Nerve
+{
+  id: 'neuro-branat-050',
+  front: {
+    question: 'Identify the cranial nerve on this MRI. Name its three divisions and the foramina each traverses to exit the skull.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN5.png',
+      alt: 'MRI showing cranial nerve V',
+      caption: 'Identify the highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN V — Trigeminal Nerve (V1/V2/V3)',
+    explanation: 'The trigeminal nerve is the largest cranial nerve. V1 (ophthalmic) exits via the superior orbital fissure; V2 (maxillary) via foramen rotundum; V3 (mandibular) via foramen ovale. The Gasserian (trigeminal) ganglion sits in Meckel\'s cave, a CSF-containing dural recess at the petrous apex, which is visible on MRI as a T2-hyperintense structure.',
+    keyFact: 'V1 = superior orbital fissure, V2 = foramen rotundum, V3 = foramen ovale — "Standing Room Only" mnemonic. Perineural spread of head/neck tumours follows CN V proximally toward Meckel\'s cave.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN5a.png',
+      alt: 'Annotated MRI identifying CN V — Trigeminal Nerve',
+      caption: 'CN V — Trigeminal Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/trigeminal-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'trigeminal', 'skull base'],
+  },
+},
+
+// CN VI — Abducens Nerve
+{
+  id: 'neuro-branat-051',
+  front: {
+    question: 'Identify the cranial nerve on this MRI. Why is this nerve particularly vulnerable to raised intracranial pressure despite its distant exit from the foramen?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN6.png',
+      alt: 'MRI showing cranial nerve VI',
+      caption: 'Identify the highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN VI — Abducens Nerve',
+    explanation: 'CN VI exits the pontomedullary junction, takes the longest intradural course of any cranial nerve (ascending the clivus), and makes a sharp bend over the petrous apex (Dorello\'s canal) before entering the cavernous sinus and exiting via the superior orbital fissure to innervate the lateral rectus. Its long course and sharp angulation over the petrous apex make it vulnerable to downward brainstem displacement from raised ICP — a "false localizing sign."',
+    keyFact: 'CN VI palsy as a false localizing sign of raised ICP: the long clival course and acute bend at Dorello\'s canal cause traction/compression even when the pathology is remote.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN6a.png',
+      alt: 'Annotated MRI identifying CN VI — Abducens Nerve',
+      caption: 'CN VI — Abducens Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/abducens-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'abducens', 'skull base'],
+  },
+},
+
+// CN VII — Facial Nerve
+{
+  id: 'neuro-branat-052',
+  front: {
+    question: 'Identify the first of two cranial nerves visible on this MRI. Describe the three segments of its intratemporal course.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN78.png',
+      alt: 'MRI showing cranial nerves VII and VIII',
+      caption: 'Identify CN VII on this image',
+    },
+  },
+  back: {
+    answer: 'CN VII — Facial Nerve',
+    explanation: 'CN VII and VIII travel together through the internal auditory canal (IAC). CN VII then enters the facial canal with three intratemporal segments: (1) labyrinthine — shortest, no blood supply, most vulnerable to ischemia; (2) tympanic (horizontal); (3) mastoid (vertical), exiting at the stylomastoid foramen. The geniculate ganglion (where the labyrinthine and tympanic segments meet) is the most common site of schwannoma and enhancement in Bell\'s palsy.',
+    keyFact: 'Three intratemporal CN VII segments: labyrinthine → tympanic → mastoid. Geniculate ganglion = key landmark; normal enhancement here can be physiologic due to rich vascular plexus.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN78a.png',
+      alt: 'Annotated MRI identifying CN VII — Facial Nerve',
+      caption: 'CN VII — Facial Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/facial-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'facial nerve', 'temporal bone'],
+  },
+},
+
+// CN VIII — Vestibulocochlear Nerve
+{
+  id: 'neuro-branat-053',
+  front: {
+    question: 'Identify the second cranial nerve on this MRI. What are its two functional divisions, and what pathology most commonly arises from this nerve?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN78.png',
+      alt: 'MRI showing cranial nerves VII and VIII',
+      caption: 'Identify CN VIII on this image',
+    },
+  },
+  back: {
+    answer: 'CN VIII — Vestibulocochlear Nerve',
+    explanation: 'CN VIII has two divisions: the cochlear nerve (hearing) and vestibular nerve (balance). Both travel through the IAC alongside CN VII. Vestibular schwannoma (acoustic neuroma) arises most commonly from the superior vestibular division of CN VIII at the glial-Schwann cell junction near the porus acusticus. On MRI it appears as an enhancing CPA-IAC mass that "ices" the porus acusticus.',
+    keyFact: 'Vestibular schwannoma: enhancing CPA-IAC mass widening the porus acusticus — bilateral = NF2 (look for other schwannomas, meningiomas, ependymomas).',
+    image: {
+      src: '/src/data/decks/images_neuro/CN78a.png',
+      alt: 'Annotated MRI identifying CN VIII — Vestibulocochlear Nerve',
+      caption: 'CN VIII — Vestibulocochlear Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/vestibulocochlear-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'vestibulocochlear', 'CPA', 'schwannoma'],
+  },
+},
+
+// CN IX — Glossopharyngeal Nerve
+{
+  id: 'neuro-branat-054',
+  front: {
+    question: 'Identify the first of two cranial nerves on this MRI. What foramen does it traverse, and what structures share this foramen?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN910.png',
+      alt: 'MRI showing cranial nerves IX and X',
+      caption: 'Identify CN IX on this image',
+    },
+  },
+  back: {
+    answer: 'CN IX — Glossopharyngeal Nerve',
+    explanation: 'CN IX exits the lateral medulla and passes through the jugular foramen (pars nervosa, anteromedial compartment) alongside CN X and XI, and the sigmoid sinus/jugular bulb (pars vascularis). CN IX carries taste from the posterior 1/3 of the tongue, sensation from the pharynx/middle ear, and provides parasympathetic innervation to the parotid via the lesser petrosal nerve. Jugular foramen schwannomas and glomus jugulare tumours affect these nerves.',
+    keyFact: 'Jugular foramen contents: CN IX, X, XI + jugular vein. Pulsatile tinnitus + jugular foramen mass = glomus jugulare (paraganglioma). CN IX in pars nervosa, CN X/XI also pass through.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN910a.png',
+      alt: 'Annotated MRI identifying CN IX — Glossopharyngeal Nerve',
+      caption: 'CN IX — Glossopharyngeal Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/glossopharyngeal-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'glossopharyngeal', 'jugular foramen'],
+  },
+},
+
+// CN X — Vagus Nerve
+{
+  id: 'neuro-branat-055',
+  front: {
+    question: 'Identify the second cranial nerve on this MRI. What is its course from the brainstem to the thorax, and what is the clinical significance of its asymmetric recurrent laryngeal nerve anatomy?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN910.png',
+      alt: 'MRI showing cranial nerves IX and X',
+      caption: 'Identify CN X on this image',
+    },
+  },
+  back: {
+    answer: 'CN X — Vagus Nerve',
+    explanation: 'CN X exits the medulla via the lateral sulcus, passes through the jugular foramen (pars vascularis), descends in the carotid sheath, and gives rise to the recurrent laryngeal nerve (RLN). The left RLN loops under the aortic arch (making it vulnerable to mediastinal pathology), while the right loops under the subclavian artery. CN X palsy causes ipsilateral vocal cord paralysis (paramedian cord on CT/MRI) and dysphagia.',
+    keyFact: 'Left RLN loops under aortic arch — left vocal cord paralysis raises concern for aortopulmonary window lymphadenopathy, lung cancer, or aortic aneurysm. Always image the entire course.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN910a.png',
+      alt: 'Annotated MRI identifying CN X — Vagus Nerve',
+      caption: 'CN X — Vagus Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/vagus-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'vagus nerve', 'jugular foramen'],
+  },
+},
+
+// CN XI — Accessory Nerve (bonus — exits same foramen as IX/X, no dedicated image provided)
+// Per user key, CN11 is NOT listed — skipping to CN XII
+
+// CN XII — Hypoglossal Nerve
+{
+  id: 'neuro-branat-056',
+  front: {
+    question: 'Identify the cranial nerve on this MRI. What foramen does it traverse, and what imaging finding on tongue MRI indicates a chronic ipsilateral lesion of this nerve?',
+    image: {
+      src: '/src/data/decks/images_neuro/CN12.png',
+      alt: 'MRI showing cranial nerve XII',
+      caption: 'Identify the highlighted cranial nerve',
+    },
+  },
+  back: {
+    answer: 'CN XII — Hypoglossal Nerve',
+    explanation: 'CN XII exits the medulla via the preolivary sulcus and passes through the hypoglossal canal (anterior condylar canal) at the occipital condyle. It provides motor supply to all intrinsic and most extrinsic tongue muscles (except palatoglossus). Acute CN XII palsy shows T2 hyperintensity and swelling of the ipsilateral tongue on MRI; chronic palsy shows ipsilateral fatty atrophy (T1 hyperintense, small hemitongue) with tongue deviation toward the side of the lesion on protrusion.',
+    keyFact: 'Chronic CN XII palsy → ipsilateral hemitongue fatty atrophy (T1 bright, volume loss). Tongue deviates toward the weak/atrophic side on protrusion. Hypoglossal canal is the key landmark.',
+    image: {
+      src: '/src/data/decks/images_neuro/CN12a.png',
+      alt: 'Annotated MRI identifying CN XII — Hypoglossal Nerve',
+      caption: 'CN XII — Hypoglossal Nerve (annotated)',
+    },
+    radiopaediaUrl: 'https://radiopaedia.org/articles/hypoglossal-nerve',
+    tags: ['MRI', 'cranial nerve', 'neuro anatomy', 'hypoglossal', 'skull base'],
+  },
+},
+
+      // ── skull1.png ──────────────────────────────────────────
+
       {
-        id: 'neuro-anatomy-018',
+        id: 'neuro-branat-057',
         front: {
-          question: 'Identify the posterior fossa structures on this sagittal MRI. Name the key boundaries of the posterior fossa and its major contents.',
+          question: 'Name the structure labeled A on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label A.',
+          },
         },
         back: {
-          answer: 'Posterior fossa bounded: anteriorly by clivus, superiorly by tentorium cerebelli, posteriorly by occipital bone, inferiorly by foramen magnum. Contains: brainstem (midbrain, pons, medulla), cerebellum, 4th ventricle, basilar artery, cranial nerves V–XII.',
-          explanation: 'The tentorium cerebelli separates the posterior fossa (infratentorial) from the supratentorial compartment. Transtentorial herniation compresses the midbrain. The foramen magnum transmits the medulla, vertebral arteries, CN XI, and the spinal cord. Posterior fossa masses in children: medulloblastoma (vermis, 4th ventricle), pilocytic astrocytoma (cerebellar hemisphere), ependymoma (4th ventricle floor).',
-          keyFact: 'Posterior fossa (infratentorial): brainstem + cerebellum + 4th ventricle. Bounded superiorly by tentorium. Pediatric posterior fossa masses: medulloblastoma > pilocytic astrocytoma > ependymoma. Transtentorial herniation compresses CN III.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-cranial-fossa',
-          tags: ['anatomy', 'posterior-fossa', 'mri', 'cerebellum'],
+          answer: 'Pterygomaxillary fissure',
+          explanation: 'The pterygomaxillary fissure is a vertical gap between the posterior wall of the maxillary sinus and the pterygoid process of the sphenoid. It communicates medially with the pterygopalatine fossa (PPF) and laterally with the infratemporal fossa. On axial CT it appears as a thin lucent cleft just posterior to the maxillary sinus. It is the lateral gateway to the PPF and a key route for perineural tumor spread.',
+          keyFact: 'Pterygomaxillary fissure = lateral door to the pterygopalatine fossa; widening or erosion signals perineural spread (e.g., adenoid cystic carcinoma).',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pterygomaxillary-fissure',
+          tags: ['CT', 'skull base', 'anatomy', 'pterygopalatine fossa', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-019',
+        id: 'neuro-branat-058',
         front: {
-          question: 'Name the three cerebellar peduncles, their fiber directions, and the key tracts they carry.',
+          question: 'Name the structure labeled B on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label B.',
+          },
         },
         back: {
-          answer: 'Superior cerebellar peduncle (SCP/brachium conjunctivum): output from dentate nucleus → thalamus (crosses in midbrain). Middle cerebellar peduncle (MCP/brachium pontis): largest, input from contralateral pontine nuclei (corticopontocerebellar). Inferior cerebellar peduncle (ICP/restiform body): input from spinal cord (spinocerebellar) + vestibular nuclei.',
-          explanation: 'The SCP decussation is in the tegmentum of the caudal midbrain — lesion here causes ipsilateral cerebellar ataxia contralateral to the crossing. MCP atrophy is the MRI hallmark of MSA-C (multiple system atrophy-cerebellar type) and causes the "hot cross bun" sign on axial pons imaging. ICP carries spinocerebellar and cuneocerebellar tracts for proprioception.',
-          keyFact: 'SCP = cerebellar output (dentate → thalamus, crosses in midbrain). MCP = largest, corticopontocerebellar input. ICP = spinocerebellar proprioception. MCP + "hot cross bun" pons sign = MSA-C.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/cerebellar-peduncles',
-          tags: ['anatomy', 'cerebellum', 'peduncles', 'mri'],
+          answer: 'Foramen spinosum',
+          explanation: 'The foramen spinosum is a small oval foramen in the greater wing of the sphenoid, posterolateral to foramen ovale. It transmits the middle meningeal artery (and vein) and the meningeal branch of the mandibular nerve. On CT it is the smallest of the three foramina in the middle cranial fossa floor (ovale > spinosum > lacerum). Enlargement raises concern for dural arteriovenous fistula or meningioma.',
+          keyFact: 'Foramen spinosum transmits the middle meningeal artery — rupture causes an epidural hematoma with a classic "lens-shaped" collection.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-spinosum',
+          tags: ['CT', 'skull base', 'anatomy', 'foramen', 'middle meningeal artery'],
         },
       },
+
       {
-        id: 'neuro-anatomy-020',
+        id: 'neuro-branat-059',
         front: {
-          question: 'Identify the brainstem levels and cranial nerve exit points on this sagittal MRI. Which CN exits from the dorsal brainstem?',
+          question: 'Name the structure labeled C on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label C.',
+          },
         },
         back: {
-          answer: 'Midbrain: CN III (ventral interpeduncular fossa), CN IV (only dorsal exit — from inferior colliculi). Pons: CN V (lateral), VI (ventral pontomedullary), VII+VIII (lateral pontomedullary). Medulla: CN IX, X, XI (lateral sulcus), XII (ventral sulcus). CN IV = only CN to exit dorsally and cross.',
-          explanation: 'CN IV is the only cranial nerve to exit dorsally and completely decussate — a dorsal midbrain lesion (pineal region) can cause bilateral CN IV palsy (bilateral superior oblique palsy → bilateral extorsion). CN VI has the longest intracranial course → frequently injured with raised ICP (false localizing sign). CN VII and VIII travel together through the IAC.',
-          keyFact: 'CN IV = only dorsal exit + completely crosses. CN VI = longest intracranial course → false localizing sign in raised ICP. CN III exits ventrally from interpeduncular fossa. VII + VIII = travel together in IAC.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/cranial-nerves',
-          tags: ['anatomy', 'brainstem', 'cranial-nerves', 'mri'],
+          answer: 'Carotid canal',
+          explanation: 'The carotid canal is a bony channel in the petrous temporal bone that transmits the internal carotid artery (ICA) and the carotid sympathetic plexus. It enters the skull base inferiorly and curves anteromedially to emerge at the foramen lacerum. On CT it appears as a well-corticated tubular channel. Dehiscence, irregular walls, or soft-tissue within the canal suggests paraganglioma, metastasis, or ICA dissection.',
+          keyFact: 'Carotid canal transmits the ICA and sympathetic plexus; a pulsatile middle ear mass abutting it = glomus jugulare/tympanicum until proven otherwise.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-canal',
+          tags: ['CT', 'skull base', 'anatomy', 'carotid canal', 'internal carotid artery', 'petrous temporal bone'],
         },
       },
+
       {
-        id: 'neuro-anatomy-021',
+        id: 'neuro-branat-060',
         front: {
-          question: 'What is the normal position of the cerebellar tonsils relative to the foramen magnum? What defines Chiari I vs Chiari II malformation?',
+          question: 'Name the structure labeled D on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label D.',
+          },
         },
         back: {
-          answer: 'Normal: cerebellar tonsils at or ≤5 mm above foramen magnum. Chiari I: tonsils ≥5 mm below foramen magnum (tonsillar herniation only, no brainstem descent). Chiari II: tonsils + vermis + brainstem descend; always with open neural tube defect (myelomeningocele).',
-          explanation: 'Chiari I: often incidental, may cause headache worse with Valsalva, syringomyelia (25–65%), scoliosis. Treatment: posterior fossa decompression if symptomatic. Chiari II: "lemon sign" (frontal scalloping) + "banana sign" (curved cerebellum) on prenatal US; associated with hydrocephalus, tectal beaking (fused superior colliculi), absent corpus callosum (partial). The tonsils must be ≥5 mm below FM on sagittal MRI to diagnose Chiari I.',
-          keyFact: 'Chiari I: tonsils ≥5 mm below FM, syrinx in 25–65%, no NTD. Chiari II: tonsils + vermis + brainstem descent + myelomeningocele + hydrocephalus + tectal beaking. Lemon + banana signs on prenatal US.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/chiari-i-malformation',
-          tags: ['anatomy', 'chiari', 'mri', 'posterior-fossa', 'syrinx'],
+          answer: 'Foramen ovale',
+          explanation: 'Foramen ovale is an oval opening in the greater wing of the sphenoid transmitting V3 (mandibular division of trigeminal nerve), the accessory meningeal artery, and the lesser petrosal nerve. It is the largest of the paired foramina in the posterior middle cranial fossa floor and lies posteromedial to foramen spinosum. Asymmetric enlargement is the hallmark of perineural spread from oral cavity or oropharyngeal malignancy along V3.',
+          keyFact: 'Foramen ovale transmits V3. Asymmetric enlargement on CT = perineural tumor spread along the mandibular nerve — always compare sides.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-ovale-skull',
+          tags: ['CT', 'skull base', 'anatomy', 'foramen ovale', 'trigeminal nerve', 'perineural spread'],
         },
       },
+
       {
-        id: 'neuro-anatomy-022',
+        id: 'neuro-branat-061',
         front: {
-          question: 'Identify the limbic system structures on this coronal MRI and describe the Papez circuit.',
+          question: 'Name the structure labeled E on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label E.',
+          },
         },
         back: {
-          answer: 'Papez circuit: Hippocampus → Fornix → Mammillary bodies → Mammillothalamic tract → Anterior thalamus → Cingulate cortex → Entorhinal cortex → Hippocampus. Key limbic structures: hippocampus, amygdala, cingulate gyrus, parahippocampal gyrus.',
-          explanation: 'The fornix is the major output tract of the hippocampus, running beneath the corpus callosum to the mammillary bodies. Bilateral fornix lesion = anterograde amnesia. The amygdala lies anterior to the hippocampus in the medial temporal lobe; bilateral amygdala damage causes Klüver-Bucy syndrome (hypersexuality, hyperorality, placidity). The cingulate gyrus sits above the corpus callosum on medial surface.',
-          keyFact: 'Papez circuit: Hippo → Fornix → Mamm. bodies → Mamm.thal. tract → Ant. thalamus → Cingulate → Hippo. Fornix lesion = amnesia. Amygdala damage = Klüver-Bucy syndrome.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/papez-circuit',
-          tags: ['anatomy', 'limbic', 'memory', 'mri'],
+          answer: 'Vidian canal (pterygoid canal)',
+          explanation: 'The Vidian canal (pterygoid canal) runs anteroposteriorly through the base of the pterygoid process, connecting the foramen lacerum posteriorly with the pterygopalatine fossa anteriorly. It transmits the Vidian nerve (nerve of the pterygoid canal = greater petrosal nerve + deep petrosal nerve) and the Vidian artery. On axial CT it appears as a small round canal at the base of the pterygoid plates. It is a key route for skull base tumor spread between the middle cranial fossa and the PPF.',
+          keyFact: 'Vidian canal connects foramen lacerum → pterygopalatine fossa; transmits the Vidian nerve. Obliteration or expansion = perineural/direct tumor spread along this corridor.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pterygoid-canal',
+          tags: ['CT', 'skull base', 'anatomy', 'vidian canal', 'pterygoid canal', 'pterygopalatine fossa'],
         },
       },
+
       {
-        id: 'neuro-anatomy-023',
+        id: 'neuro-branat-062',
         front: {
-          question: 'Describe the normal myelination pattern on MRI: what does the brain look like at birth vs. 2 years? Which sequences are most useful?',
+          question: 'Name the structure labeled F on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label F.',
+          },
         },
         back: {
-          answer: 'At birth: T1 bright in deep white matter (posterior limb IC, posterior brainstem). T2 dark in same regions. By 2 years: adult-like myelination on T1. By 3 years: adult-like on T2. Myelination proceeds posterior→anterior, inferior→superior, central→peripheral.',
-          explanation: 'Key milestones: Posterior limb IC (T1 bright) at birth. Anterior limb IC myelinated by 6–12 months. Subcortical white matter myelination complete by 2 years on T1, 3 years on T2. T1 is best in the first year; T2 is better in the second year. Delayed myelination (T2 white matter too bright for age) is a key finding in leukodystrophies, metabolic disorders, and hypothyroidism.',
-          keyFact: 'Myelination: posterior→anterior, inferior→superior, central→peripheral. Posterior limb IC bright on T1 at birth. Adult-like: T1 by 2y, T2 by 3y. Delayed myelination: T2 WM hyperintensity for age → leukodystrophy.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/myelination-of-the-brain',
-          tags: ['anatomy', 'myelination', 'mri', 'pediatric', 'white-matter'],
+          answer: 'Pterygopalatine fossa (PPF)',
+          explanation: 'The pterygopalatine fossa is a small pyramidal fat-containing space deep to the infratemporal fossa, bounded by the maxillary sinus anteriorly, pterygoid plates posteriorly, and palatine bone medially. It is a critical crossroads communicating with 7 spaces: orbit (inferior orbital fissure), middle cranial fossa (foramen rotundum/Vidian canal), nasopharynx (palatovaginal canal), nasal cavity (sphenopalatine foramen), oral cavity (greater/lesser palatine canals), infratemporal fossa (pterygomaxillary fissure), and cavernous sinus (via V2). Fat obliteration on CT/MRI = perineural spread.',
+          keyFact: 'PPF is the "Grand Central Station" of skull base — communicates with 7 spaces. Fat obliteration = perineural tumor spread; always check foramen rotundum and V2.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pterygopalatine-fossa',
+          tags: ['CT', 'skull base', 'anatomy', 'pterygopalatine fossa', 'perineural spread', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-024',
+        id: 'neuro-branat-063',
         front: {
-          question: 'Identify the primary motor cortex on this brain diagram. What is the precentral gyrus homunculus, and where are the leg, arm, and face areas located?',
+          question: 'Name the structure labeled G on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label G.',
+          },
         },
         back: {
-          answer: 'Primary motor cortex = precentral gyrus (anterior to central sulcus). Homunculus: leg area = medial (ACA territory); trunk = parasagittal; arm/hand = lateral/superior; face = most lateral inferior (MCA territory). Primary sensory cortex = postcentral gyrus.',
-          explanation: 'The central sulcus separates frontal (motor) from parietal (sensory) lobes. The "knob" of the precentral gyrus = hand motor area — easily identified on axial MRI as an inverted Omega or hook shape. ACA territory infarct → leg weakness sparing face/arm. MCA territory → arm/face weakness sparing leg. The supplementary motor area (SMA, medial frontal lobe) mediates bimanual coordination; SMA lesion → transient contralateral weakness.',
-          keyFact: 'Precentral gyrus = motor cortex. "Omega sign" = hand motor area on axial MRI. Leg medial (ACA), arm/face lateral (MCA). Postcentral gyrus = sensory cortex. Lesion planning: identify central sulcus before surgery.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/precentral-gyrus',
-          tags: ['anatomy', 'motor-cortex', 'mri', 'homunculus'],
+          answer: 'Middle turbinate',
+          explanation: 'The middle turbinate is a bony projection from the ethmoid bone forming the lateral nasal wall in the middle third of the nasal cavity. It is the inferior boundary of the middle meatus. Pneumatization of the middle turbinate is called a concha bullosa, the most common anatomic variant of the sinonasal tract. The middle turbinate is a key surgical landmark in functional endoscopic sinus surgery (FESS).',
+          keyFact: 'Pneumatized middle turbinate = concha bullosa — most common sinonasal anatomic variant; can narrow the middle meatus and predispose to sinusitis.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/middle-turbinate',
+          tags: ['CT', 'sinonasal', 'anatomy', 'turbinate', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-025',
+        id: 'neuro-branat-064',
         front: {
-          question: 'What is the "H" or "bat-wing" appearance on axial MRI at the level of the pons, and what pathology causes the "hot cross bun" sign?',
+          question: 'Name the structure labeled H on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull1.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label H.',
+          },
         },
         back: {
-          answer: '"H" shape on axial pons MRI = normal basilar pons architecture (gray pontine nuclei + transverse pontocerebellar fibers). "Hot cross bun" sign = cruciform T2 hyperintensity in pons due to degeneration of pontocerebellar fibers, sparing corticospinal tracts → MSA-C (multiple system atrophy, cerebellar type).',
-          explanation: 'The normal pons has a characteristic H-shaped gray matter pattern on axial MRI. In MSA-C, selective degeneration of pontine nuclei and MCP produces the "hot cross bun" sign — a cross of T2 bright signal in the pons. Other MSA-C features: putaminal T2 hypointensity + lateral rim hyperintensity ("putaminal slit sign"), cerebellar and MCP atrophy. The "hummingbird sign" (midbrain atrophy) is seen in PSP, not MSA.',
-          keyFact: '"Hot cross bun" sign = MSA-C (cruciform T2↑ pons). "Hummingbird sign" (midbrain dorsal atrophy on sagittal) = PSP. "Putaminal slit sign" (lateral rim T2↑) = MSA. Normal pons: H-shaped gray matter on axial T2.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/hot-cross-bun-sign-brain',
-          tags: ['anatomy', 'pons', 'msa', 'mri', 'hot-cross-bun'],
+          answer: 'Nasolacrimal duct',
+          explanation: 'The nasolacrimal duct is a membranous canal that drains tears from the lacrimal sac inferiorly through the nasolacrimal canal in the maxilla to open into the inferior meatus of the nasal cavity. On CT it appears as a tubular bony canal along the anteromedial orbit/maxillary face. Obstruction causes epiphora and dacryocystitis. Dacryocystorhinostomy (DCR) creates a bypass opening into the nasal cavity.',
+          keyFact: 'Nasolacrimal duct drains into the inferior meatus (not middle meatus). Obstruction → dacryocystitis; medial canthal mass in this context = dacryocele.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/nasolacrimal-duct',
+          tags: ['CT', 'orbit', 'sinonasal', 'anatomy', 'nasolacrimal duct', 'head and neck'],
         },
       },
+
+      // ── skull2.png ──────────────────────────────────────────
+
       {
-        id: 'neuro-anatomy-026',
+        id: 'neuro-branat-065',
         front: {
-          question: 'What is the normal signal of the posterior pituitary on T1 MRI, and what does its absence indicate?',
+          question: 'Name the structure labeled A on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull2.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label A.',
+          },
         },
         back: {
-          answer: 'Posterior pituitary = T1 bright spot (neurohypophysis, stores ADH/vasopressin). Absent bright spot indicates central diabetes insipidus (DI) — loss of ADH storage. Ectopic bright spot = ectopic posterior pituitary (at median eminence), associated with panhypopituitarism.',
-          explanation: 'The T1 bright spot is due to ADH-containing neurosecretory granules in the posterior pituitary. It is present in ~80% of normal subjects. Absent bright spot + DI symptoms → look for pituitary stalk thickening (Langerhans cell histiocytosis, germinoma, sarcoidosis, lymphocytic hypophysitis). Ectopic posterior pituitary occurs when pituitary descent is arrested during fetal development, always causing pituitary stalk absence/thinning + anterior pituitary hypoplasia.',
-          keyFact: 'Posterior pituitary T1 bright spot = ADH granules, present in 80% normal. Absent: central DI. Ectopic bright spot at median eminence = ectopic post pituitary + panhypopituitarism. Stalk thickening + absent bright spot = LCH/germinoma/sarcoid.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-pituitary-bright-spot',
-          tags: ['anatomy', 'pituitary', 'mri', 'diabetes-insipidus'],
+          answer: 'Inferior orbital fissure',
+          explanation: 'The inferior orbital fissure is a horizontal gap in the floor and lateral wall of the orbit, separating the orbital floor (maxilla/palatine) from the greater wing of the sphenoid. It communicates between the orbit and the pterygopalatine fossa (medially) and the infratemporal fossa (laterally). It transmits the maxillary nerve (V2), the zygomatic nerve, the infraorbital vessels, and parasympathetic fibers from the pterygopalatine ganglion. Tumors from the PPF can extend into the orbit via this fissure.',
+          keyFact: 'Inferior orbital fissure transmits V2 (maxillary nerve) and connects the orbit to the pterygopalatine fossa — a key perineural spread pathway.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/inferior-orbital-fissure',
+          tags: ['CT', 'orbit', 'skull base', 'anatomy', 'inferior orbital fissure', 'perineural spread'],
         },
       },
+
       {
-        id: 'neuro-anatomy-027',
+        id: 'neuro-branat-066',
         front: {
-          question: 'What are the normal MRI signal characteristics of the major brain structures on T1 and T2? Which structures are T1 bright normally?',
+          question: 'Name the structure labeled B on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull2.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label B.',
+          },
         },
         back: {
-          answer: 'T1 bright (hyperintense): fat, blood products (met-Hb, protein-rich fluid), melanin, calcium (sometimes), gadolinium enhancement, posterior pituitary. T2 bright: CSF, edema, most pathology. Gray matter: slightly T2 brighter than white matter. White matter: T1 brighter than gray matter (myelin).',
-          explanation: 'White matter appears brighter than gray matter on T1 due to myelin lipid content. On T2, gray matter appears slightly brighter. The globus pallidus and substantia nigra are naturally T2 dark due to iron deposition (increases with age). T1 bright lesions to know: subacute hemorrhage (met-Hb), lipoma, dermoid, melanoma mets, protein-rich cyst, calcification (variable), Wernicke (mammillary bodies), neurofibromatosis (plexiform enhancement).',
-          keyFact: 'T1 bright: fat, met-Hb, melanin, gadolinium, protein, posterior pituitary. WM brighter than GM on T1 (myelin). GM slightly brighter than WM on T2. GP + SN: T2 dark (iron). Calcification: T1 variable, T2 dark, CT bright.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/mri-signal-characteristics',
-          tags: ['mri', 'physics', 'signal', 'anatomy'],
+          answer: 'Pterygopalatine fossa (PPF)',
+          explanation: 'The pterygopalatine fossa is a small pyramidal fat-containing space deep to the infratemporal fossa, bounded by the maxillary sinus anteriorly, pterygoid plates posteriorly, and palatine bone medially. It is a critical crossroads communicating with 7 spaces: orbit (inferior orbital fissure), middle cranial fossa (foramen rotundum/Vidian canal), nasopharynx (palatovaginal canal), nasal cavity (sphenopalatine foramen), oral cavity (greater/lesser palatine canals), infratemporal fossa (pterygomaxillary fissure), and cavernous sinus (via V2). Fat obliteration on CT/MRI = perineural spread.',
+          keyFact: 'PPF is the "Grand Central Station" of skull base — communicates with 7 spaces. Fat obliteration = perineural tumor spread; always check foramen rotundum and V2.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pterygopalatine-fossa',
+          tags: ['CT', 'skull base', 'anatomy', 'pterygopalatine fossa', 'head and neck'],
         },
       },
+
+      // ── skull3.png ──────────────────────────────────────────
+
       {
-        id: 'neuro-anatomy-028',
+        id: 'neuro-branat-067',
         front: {
-          question: 'Identify the paired structures at the junction of midbrain and diencephalon. What is the "hummingbird sign" and what disease causes it?',
+          question: 'Name the structure labeled A on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label A.',
+          },
         },
         back: {
-          answer: 'Red nuclei (paired, at midbrain level). "Hummingbird sign" = midbrain atrophy on sagittal MRI causing the midbrain-pons junction to look like a hummingbird in profile → Progressive Supranuclear Palsy (PSP).',
-          explanation: 'The red nucleus is T2 hypointense due to iron and is visible as a paired round structure at the midbrain level. PSP causes selective midbrain tegmentum atrophy (AP diameter <17 mm) → "hummingbird" silhouette on sagittal MRI (also called "penguin sign"). The "morning glory sign" is the corresponding axial midbrain appearance. PSP clinical: vertical gaze palsy, falls, axial rigidity, early dysphagia.',
-          keyFact: 'Hummingbird sign = sagittal midbrain atrophy → PSP (midbrain AP <17 mm). Red nuclei = paired T2 dark structures in midbrain tegmentum. Morning glory sign = axial midbrain PSP. Vertical gaze palsy + falls = PSP clinically.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/hummingbird-sign-brain',
-          tags: ['anatomy', 'midbrain', 'psp', 'mri', 'atrophy'],
+          answer: 'Inferior turbinate',
+          explanation: 'The inferior turbinate is an independent bone (not part of the ethmoid) forming the most inferior and largest of the nasal turbinates. It projects from the lateral nasal wall and forms the lateral boundary of the inferior meatus, which receives the nasolacrimal duct. Hypertrophy of the inferior turbinate is the most common cause of nasal airway obstruction. It is separated from the middle turbinate by the middle meatus.',
+          keyFact: 'Inferior turbinate is a separate bone (not ethmoid); the nasolacrimal duct drains into the inferior meatus beneath it — the only turbinate to receive a duct.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/inferior-turbinate',
+          tags: ['CT', 'sinonasal', 'anatomy', 'turbinate', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-029',
+        id: 'neuro-branat-068',
         front: {
-          question: 'What are the normal MRI dimensions of the pituitary gland? How is a microadenoma detected on dynamic gadolinium MRI?',
+          question: 'Name the structure labeled B on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label B.',
+          },
         },
         back: {
-          answer: 'Normal height: ≤8 mm (men), ≤10 mm (women), ≤12 mm (puberty/pregnancy). Microadenoma (<10 mm): T1 hypointense relative to enhancing normal gland on dynamic gadolinium (gland enhances first, adenoma enhances later/less). Macroadenoma >10 mm.',
-          explanation: 'Dynamic pituitary MRI: thin coronal slices, rapid gadolinium injection, images at 30s intervals. Normal gland enhances avidly → microadenoma appears as hypointense focus. Prolactinoma = most common microadenoma (elevated prolactin). Cushing disease = ACTH-secreting microadenoma (often very small). Knosp grade (0–4) assesses macroadenoma cavernous sinus invasion: grade ≥3 = encasement of ICA, not surgically resectable.',
-          keyFact: 'Normal pituitary: ≤8 mm (M), ≤10 mm (F), ≤12 mm (pregnant). Microadenoma: T1 dark spot in enhancing gland on dynamic MRI. Prolactinoma = most common. Knosp ≥3 = cavernous sinus encasement (unresectable).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/pituitary-microadenoma',
-          tags: ['anatomy', 'pituitary', 'mri', 'adenoma', 'sella'],
+          answer: 'Foramen of Vesalius (sphenoidal emissary foramen)',
+          explanation: 'The foramen of Vesalius is an inconstant emissary foramen in the greater wing of the sphenoid, located anteromedial to foramen ovale. When present (~40% of individuals), it transmits an emissary vein connecting the cavernous sinus to the pterygoid venous plexus, and sometimes the accessory meningeal artery. It is important because it can be mistaken for foramen ovale on imaging, and emissary veins through it are a route for spread of extracranial infection intracranially.',
+          keyFact: 'Foramen of Vesalius is anteromedial to foramen ovale; it is inconstant (~40%). Transmits an emissary vein between cavernous sinus and pterygoid plexus.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-of-vesalius',
+          tags: ['CT', 'skull base', 'anatomy', 'foramen of vesalius', 'emissary vein', 'sphenoid'],
         },
       },
+
       {
-        id: 'neuro-anatomy-030',
+        id: 'neuro-branat-069',
         front: {
-          question: 'What is the "flow void" on MRI and in which sequences is it most prominent? What structures produce flow voids in the brain?',
+          question: 'Name the structure labeled C on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label C.',
+          },
         },
         back: {
-          answer: 'Flow void = signal loss from rapidly moving protons (blood) that leave the imaging slice before echo. Most prominent on T2 and gradient echo. Normal flow voids: ICA, MCA, basilar artery, dural sinuses, large veins.',
-          explanation: 'In vascular tumors (e.g., paraganglioma, hemangioblastoma) and AVMs, prominent flow voids are a key diagnostic feature — "bag of worms" appearance. Loss of a normal flow void in a vessel suggests slow flow or thrombosis. In AVM, the nidus appears as a tangle of flow voids on T2. Dural AVF: perimedullary/intracranial flow voids from arterialized veins. Slow flow in venous structures may not produce a void.',
-          keyFact: 'Flow void: T2 dark signal = fast-flowing blood (arteries + large veins). "Bag of worms" flow voids = AVM nidus or paraganglioma. Loss of normal flow void = thrombosis or slow flow. Prominent perimedullary flow voids = spinal dural AVF.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/flow-void',
-          tags: ['mri', 'physics', 'flow-void', 'vascular'],
+          answer: 'Foramen spinosum',
+          explanation: 'The foramen spinosum is a small oval foramen in the greater wing of the sphenoid, posterolateral to foramen ovale. It transmits the middle meningeal artery (and vein) and the meningeal branch of the mandibular nerve. On CT it is the smallest of the three foramina in the middle cranial fossa floor (ovale > spinosum > lacerum). Enlargement raises concern for dural arteriovenous fistula or meningioma.',
+          keyFact: 'Spinosum is always posterolateral to ovale. Mnemonic: "SO" — Spinosum is Outside (lateral to) Ovale.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-spinosum',
+          tags: ['CT', 'skull base', 'anatomy', 'foramen spinosum', 'middle meningeal artery'],
         },
       },
+
       {
-        id: 'neuro-anatomy-031',
+        id: 'neuro-branat-070',
         front: {
-          question: 'Identify the major cerebral sulci and lobes on this axial MRI. Name the sulcus that separates the frontal from parietal lobe.',
+          question: 'Name the structure labeled D on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label D.',
+          },
         },
         back: {
-          answer: 'Central sulcus separates frontal (precentral = motor) from parietal (postcentral = sensory) lobe. Lateral sulcus (Sylvian fissure) separates frontal/parietal from temporal lobe. Parieto-occipital sulcus = parietal from occipital. Calcarine sulcus = primary visual cortex location.',
-          explanation: 'Key identifiers on axial MRI: the superior frontal sulcus and precentral sulcus help identify the central sulcus. The "hand knob" (omega/epsilon shape) on axial MRI marks the hand motor area of the precentral gyrus. Broca area = inferior frontal gyrus (dominant hemisphere, language production). Wernicke area = posterior superior temporal gyrus (dominant hemisphere, language comprehension).',
-          keyFact: 'Central sulcus = motor (precentral) vs sensory (postcentral). Sylvian fissure = frontal/parietal from temporal. Broca (IFG) = speech production; Wernicke (posterior STG) = comprehension. Both dominant hemisphere. Hand knob = Omega/epsilon sign on axial MRI.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/cerebral-lobes',
-          tags: ['anatomy', 'cortex', 'sulci', 'mri', 'lobes'],
+          answer: 'Eustachian tube (pharyngotympanic tube)',
+          explanation: 'The Eustachian tube connects the nasopharynx to the middle ear cavity (tympanic cavity), equalizing pressure and draining mucus. The lateral one-third is bony (within the petrous temporal bone) and the medial two-thirds is cartilaginous. On axial CT it appears as a bony canal running anterolaterally from the nasopharyngeal wall toward the middle ear. Obstruction (e.g., by nasopharyngeal carcinoma or adenoid hypertrophy) causes otitis media with effusion.',
+          keyFact: 'Unilateral otitis media with effusion in an adult = nasopharyngeal carcinoma until proven otherwise — always examine the Eustachian tube orifice and fossa of Rosenmüller.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/eustachian-tube',
+          tags: ['CT', 'skull base', 'temporal bone', 'anatomy', 'eustachian tube', 'nasopharynx'],
         },
       },
+
       {
-        id: 'neuro-anatomy-032',
+        id: 'neuro-branat-071',
         front: {
-          question: 'What is the "insular ribbon sign" on CT in acute MCA stroke, and why is the insula an early ischemia target?',
+          question: 'Name the structure labeled E on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label E.',
+          },
         },
         back: {
-          answer: 'Insular ribbon sign = loss of the normal gray-white differentiation at the insular cortex on CT in acute MCA ischemia. Indicates cytotoxic edema. The insula is affected early because it is the deepest MCA territory cortex with no collateral supply from ACA or PCA.',
-          explanation: 'The insula receives blood exclusively from MCA branches with no leptomeningeal collaterals. Early CT signs of acute MCA stroke: loss of insular ribbon, sulcal effacement, hyperdense MCA sign, loss of lentiform nucleus definition. ASPECTS score systematically assesses these changes in 10 MCA territory regions. ASPECTS ≥6 predicts favorable outcome with thrombectomy; <6 predicts poor prognosis.',
-          keyFact: 'Insular ribbon sign = earliest CT sign of MCA territory ischemia (loss of cortical gray-white distinction at insula). ASPECTS score: 10 = normal; subtract 1 per affected region. ASPECTS <6 = poor prognosis with large core infarct.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/insular-ribbon-sign',
-          tags: ['anatomy', 'insula', 'stroke', 'ct', 'early-signs'],
+          answer: 'Carotid canal',
+          explanation: 'The carotid canal is a bony channel in the petrous temporal bone that transmits the internal carotid artery (ICA) and the carotid sympathetic plexus. It enters the skull base inferiorly and curves anteromedially to emerge at the foramen lacerum. On CT it appears as a well-corticated tubular channel. Dehiscence, irregular walls, or soft-tissue within the canal suggests paraganglioma, metastasis, or ICA dissection.',
+          keyFact: 'Carotid canal transmits the ICA and sympathetic plexus; a pulsatile middle ear mass abutting it = glomus jugulare/tympanicum until proven otherwise.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/carotid-canal',
+          tags: ['CT', 'skull base', 'anatomy', 'carotid canal', 'internal carotid artery', 'petrous temporal bone'],
         },
       },
+
       {
-        id: 'neuro-anatomy-033',
+        id: 'neuro-branat-072',
         front: {
-          question: 'Identify the claustrum on this axial MRI. What is its significance in MRI pattern recognition?',
+          question: 'Name the structure labeled F on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label F.',
+          },
         },
         back: {
-          answer: 'Claustrum = thin sheet of gray matter between the putamen and insular cortex, separated by the external capsule (medially) and extreme capsule (laterally). Key diagnostic role: T2 hyperintensity of claustrum is a sensitive marker of heroin leukoencephalopathy (chasing the dragon).',
-          explanation: 'The claustrum is sandwiched between two white matter layers: external capsule (between claustrum and putamen) and extreme capsule (between claustrum and insula). In heroin-induced spongiform leukoencephalopathy ("chasing the dragon"), there is symmetric T2 hyperintensity in the posterior white matter + claustrum involvement. Anatomically, the external capsule is commonly involved in MCA lenticulostriate infarcts alongside the putamen.',
-          keyFact: 'Claustrum = thin gray matter between external capsule (medial) and extreme capsule (lateral). T2 hyperintensity of claustrum = heroin leukoencephalopathy ("chasing the dragon") pattern. External capsule ± putamen = lenticulostriate infarct.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/claustrum',
-          tags: ['anatomy', 'claustrum', 'mri', 'white-matter'],
+          answer: 'Foramen lacerum',
+          explanation: 'Foramen lacerum is an irregular, cartilage-filled opening at the junction of the petrous apex, sphenoid body, and occipital bone. In life it is largely occluded by fibrocartilage and does not transmit major structures through its full extent — the ICA passes over (not through) it. The Vidian nerve and the greater petrosal nerve pass through its upper portion. It is a common site of perineural tumor spread and is assessed on MRI for asymmetric T2 signal or enhancement.',
+          keyFact: 'Foramen lacerum is filled with fibrocartilage in vivo — the ICA passes OVER it, not through it. It is a route for skull base tumor extension assessed on MRI.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-lacerum',
+          tags: ['CT', 'MRI', 'skull base', 'anatomy', 'foramen lacerum', 'internal carotid artery'],
         },
       },
+
       {
-        id: 'neuro-anatomy-034',
+        id: 'neuro-branat-073',
         front: {
-          question: 'Identify the pineal gland on this sagittal MRI. What is normal pineal size, when is calcification abnormal, and what tumor arises here?',
+          question: 'Name the structure labeled G on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label G.',
+          },
         },
         back: {
-          answer: 'Normal pineal: <10 mm. Calcification: normal in adults, abnormal in children <6 years. Key tumor: germinoma (most common pineal region tumor, teen males, hCG+/-). Also: pineocytoma, pineoblastoma, teratoma.',
-          explanation: 'The pineal gland sits in the quadrigeminal cistern. A large pineal mass compresses the aqueduct (hydrocephalus) and tectal plate (Parinaud syndrome: upgaze palsy, convergence-retraction nystagmus, lid retraction). Germinoma: isointense T1, T2, avid enhancement, bifocal (pineal + suprasellar). Teratoma: heterogeneous, fat + calcification, AFP↑. Pineoblastoma: aggressive, drop mets, young children.',
-          keyFact: 'Pineal mass → Parinaud syndrome (upgaze palsy) + hydrocephalus. Germinoma = most common pineal tumor (teen male, bifocal). Calcification in child <6 = abnormal → pineal mass. Normal size <10 mm.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/pineal-region-tumours',
-          tags: ['anatomy', 'pineal', 'mri', 'tumor', 'parinaud'],
+          answer: 'Foramen ovale',
+          explanation: 'Foramen ovale is an oval opening in the greater wing of the sphenoid transmitting V3 (mandibular division of trigeminal nerve), the accessory meningeal artery, and the lesser petrosal nerve. It is the largest of the paired foramina in the posterior middle cranial fossa floor and lies posteromedial to foramen spinosum. Asymmetric enlargement is the hallmark of perineural spread from oral cavity or oropharyngeal malignancy along V3.',
+          keyFact: 'Foramen ovale transmits V3. Asymmetric enlargement on CT = perineural tumor spread along the mandibular nerve — always compare sides.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/foramen-ovale-skull',
+          tags: ['CT', 'skull base', 'anatomy', 'foramen ovale', 'trigeminal nerve', 'perineural spread'],
         },
       },
+
       {
-        id: 'neuro-anatomy-035',
+        id: 'neuro-branat-074',
         front: {
-          question: 'Identify the meningeal layers and the types of intracranial hemorrhage associated with each space.',
+          question: 'Name the structure labeled H on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label H.',
+          },
         },
         back: {
-          answer: 'Layers outside-in: periosteum → dura → epidural space → subdural space → arachnoid → subarachnoid space (CSF) → pia → brain. Epidural hematoma (EDH): between skull and dura (biconvex). Subdural hematoma (SDH): between dura and arachnoid (crescent). SAH: subarachnoid space.',
-          explanation: 'EDH: usually arterial (middle meningeal artery), biconvex (lenticular), doesn\'t cross suture lines, does cross midline. SDH: usually venous (bridging veins), crescent-shaped, crosses sutures, doesn\'t cross midline falx. SAH: fills sulci/cisterns (star-shaped). Intraparenchymal: within brain substance. Subdural "lucid interval" followed by deterioration = classic EDH presentation.',
-          keyFact: 'EDH = biconvex, arterial, MMA, doesn\'t cross sutures. SDH = crescent, venous bridging veins, crosses sutures, doesn\'t cross midline. EDH: lucid interval. SAH: worst headache of life, fills cisterns.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/meninges',
-          tags: ['anatomy', 'meninges', 'hemorrhage', 'ct', 'edh', 'sdh'],
+          answer: 'Pterygopalatine fossa (PPF)',
+          explanation: 'The pterygopalatine fossa is a small pyramidal fat-containing space deep to the infratemporal fossa, bounded by the maxillary sinus anteriorly, pterygoid plates posteriorly, and palatine bone medially. It is a critical crossroads communicating with 7 spaces: orbit (inferior orbital fissure), middle cranial fossa (foramen rotundum/Vidian canal), nasopharynx (palatovaginal canal), nasal cavity (sphenopalatine foramen), oral cavity (greater/lesser palatine canals), infratemporal fossa (pterygomaxillary fissure), and cavernous sinus (via V2). Fat obliteration on CT/MRI = perineural spread.',
+          keyFact: 'PPF is the "Grand Central Station" of skull base — communicates with 7 spaces. Fat obliteration = perineural tumor spread; always check foramen rotundum and V2.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/pterygopalatine-fossa',
+          tags: ['CT', 'skull base', 'anatomy', 'pterygopalatine fossa', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-036',
+        id: 'neuro-branat-075',
         front: {
-          question: 'What is the normal width of the temporal horn of the lateral ventricle, and what finding indicates temporal lobe atrophy?',
+          question: 'Name the structure labeled I on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label I.',
+          },
         },
         back: {
-          answer: 'Normal temporal horn: <2 mm or virtually slit-like. Temporal horn width >2 mm without raised ICP indicates temporal lobe (hippocampal) atrophy. Hippocampal volume loss → temporal horn enlargement is a key MRI marker of Alzheimer disease.',
-          explanation: 'The temporal horn of the lateral ventricle is normally slit-like and barely visible. Dilation indicates hippocampal/parahippocampal atrophy (or hydrocephalus if all ventricles enlarged). In Alzheimer disease, medial temporal lobe atrophy (MTA) can be scored on coronal MRI: 0 = normal to 4 = severe (MTA scale). Unilateral temporal horn dilation + ipsilateral hippocampal T2 signal = MTS.',
-          keyFact: 'Normal temporal horn: <2 mm (slit-like). >2 mm = hippocampal atrophy. Medial temporal atrophy scale (0-4) for Alzheimer MRI. Unilateral temporal horn dilation + hippocampal T2↑ = MTS (epilepsy).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/medial-temporal-lobe-atrophy',
-          tags: ['anatomy', 'temporal-horn', 'atrophy', 'mri', 'alzheimer'],
+          answer: 'Middle turbinate',
+          explanation: 'The middle turbinate is a bony projection from the ethmoid bone forming the lateral nasal wall in the middle third of the nasal cavity. It is the inferior boundary of the middle meatus. Pneumatization of the middle turbinate is called a concha bullosa, the most common anatomic variant of the sinonasal tract. The middle turbinate is a key surgical landmark in functional endoscopic sinus surgery (FESS).',
+          keyFact: 'Pneumatized middle turbinate = concha bullosa — most common sinonasal anatomic variant; can narrow the middle meatus and predispose to sinusitis.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/middle-turbinate',
+          tags: ['CT', 'sinonasal', 'anatomy', 'turbinate', 'head and neck'],
         },
       },
+
       {
-        id: 'neuro-anatomy-037',
+        id: 'neuro-branat-076',
         front: {
-          question: 'What imaging features distinguish obstructive (non-communicating) from communicating hydrocephalus on CT/MRI?',
+          question: 'Name the structure labeled J on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label J.',
+          },
         },
         back: {
-          answer: 'Obstructive: dilated ventricles upstream from blockage (e.g., lateral+3rd but not 4th = aqueductal stenosis). Communicating: all four ventricles dilated. Periventricular lucency/edema = transependymal flow of CSF (active hydrocephalus). NPH: enlarged ventricles disproportionate to sulcal atrophy.',
-          explanation: 'Transependymal edema appears as periventricular FLAIR/T2 hyperintensity ("halo") around the ventricles — indicates active CSF transudation under pressure. Key obstructive causes: aqueductal stenosis (congenital or acquired), 4th ventricle outlet obstruction (Dandy-Walker), intraventricular tumor/colloid cyst. Communicating causes: post-SAH/meningitis adhesions, leptomeningeal carcinomatosis, NPH.',
-          keyFact: 'Obstructive: asymmetric ventricular dilation upstream of block. Communicating: all ventricles dilated. Transependymal edema (periventricular FLAIR↑) = active hydrocephalus under pressure. NPH: Evans >0.3, enlarged ventricles > sulci, Hakim triad.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/hydrocephalus',
-          tags: ['anatomy', 'hydrocephalus', 'ct', 'mri', 'ventricles'],
+          answer: 'Middle meatus',
+          explanation: 'The middle meatus is the air-containing space between the middle and inferior turbinates on the lateral nasal wall. It is the most important drainage pathway of the sinonasal tract, receiving secretions from the frontal sinus (via the frontal recess/nasofrontal duct), the anterior ethmoid cells, and the maxillary sinus (via the ostiomeatal unit/infundibulum). Obstruction of the middle meatus is the common final pathway in chronic rhinosinusitis.',
+          keyFact: 'Middle meatus drains frontal sinus, anterior ethmoid, and maxillary sinus. Ostiomeatal unit (OMU) obstruction → chronic sinusitis in these three sinuses.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/ostiomeatal-unit',
+          tags: ['CT', 'sinonasal', 'anatomy', 'middle meatus', 'ostiomeatal unit', 'sinusitis'],
         },
       },
+
       {
-        id: 'neuro-anatomy-038',
+        id: 'neuro-branat-077',
         front: {
-          question: 'What are the Brodmann areas for primary motor (4), primary somatosensory (3/1/2), primary visual (17), and primary auditory (41/42) cortex? Where are Broca and Wernicke areas?',
+          question: 'Name the structure labeled K on this CT skull base image.',
+          image: {
+            src: '/src/data/decks/images_neuro/skull3.png',
+            alt: 'Axial CT skull base with labeled structures',
+            caption: 'Axial CT — skull base window. Identify label K.',
+          },
         },
         back: {
-          answer: 'BA 4 = primary motor (precentral gyrus). BA 3/1/2 = primary sensory (postcentral gyrus). BA 17 = primary visual (calcarine cortex). BA 41/42 = primary auditory (Heschl gyrus, superior temporal). Broca = BA 44/45 (inferior frontal, dominant). Wernicke = BA 22 (posterior superior temporal, dominant).',
-          explanation: 'These areas are critical for surgical planning and interpreting functional MRI (fMRI). BA 6 = premotor/supplementary motor area (SMA). BA 44/45 Broca = expressive aphasia if lesioned (dominant IFG). BA 22 Wernicke = receptive aphasia (posterior STG). Damage to arcuate fasciculus (connects Broca + Wernicke) = conduction aphasia (poor repetition, preserved comprehension and fluency).',
-          keyFact: 'Motor = BA4 (precentral). Sensory = BA 3/1/2 (postcentral). Visual = BA17 (calcarine). Auditory = BA41/42 (Heschl). Broca = BA44/45 = expressive aphasia. Wernicke = BA22 = receptive aphasia. Arcuate fasciculus lesion = conduction aphasia.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/brodmann-areas',
-          tags: ['anatomy', 'brodmann', 'cortex', 'aphasia', 'functional'],
+          answer: 'Inferior meatus',
+          explanation: 'The inferior meatus is the space between the inferior turbinate and the floor of the nasal cavity. It is the largest of the three meatuses. It receives the opening of the nasolacrimal duct at its anterosuperior aspect (valve of Hasner). The inferior meatus is used clinically as the route for nasal endoscopy and antral lavage. No sinuses drain into the inferior meatus.',
+          keyFact: 'Inferior meatus receives only the nasolacrimal duct (via valve of Hasner) — no sinuses drain here. The largest meatus but the least complex sinusitis-wise.',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/inferior-meatus',
+          tags: ['CT', 'sinonasal', 'anatomy', 'inferior meatus', 'nasolacrimal duct', 'head and neck'],
         },
       },
-      {
-        id: 'neuro-anatomy-039',
-        front: {
-          question: 'What does the AICA supply, and how does AICA territory infarction differ from PICA territory infarction? Identify both on this posterior fossa MRI.',
-        },
-        back: {
-          answer: 'AICA: anterior inferior cerebellum + lateral inferior pons + inner ear (cochlea/labyrinth). AICA infarct: lateral inferior pontine syndrome + sensorineural hearing loss + vertigo. PICA: posterior inferior cerebellum + lateral medulla. PICA infarct: Wallenberg syndrome (no hearing loss).',
-          explanation: 'AICA arises from the basilar artery at the pontomedullary junction; it gives the internal auditory artery to the labyrinth. AICA infarct = lateral inferior pons + anterior inferior cerebellum + hearing loss (labyrinthine artery). PICA arises from vertebral artery; PICA infarct = lateral medulla (Wallenberg) + posterior inferior cerebellum. Both cause ipsilateral facial numbness and contralateral body pain/temp loss, but AICA adds hearing loss.',
-          keyFact: 'AICA infarct = lateral inferior pons + hearing loss + vertigo (labyrinthine artery from AICA). PICA infarct = Wallenberg (lateral medulla) + posterior inferior cerebellum, NO hearing loss. Key distinction: AICA causes SNHL, PICA does not.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/anterior-inferior-cerebellar-artery',
-          tags: ['anatomy', 'aica', 'pica', 'posterior-fossa', 'stroke'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-040',
-        front: {
-          question: 'What does the MLF (medial longitudinal fasciculus) connect, and what is internuclear ophthalmoplegia (INO)? Where is the lesion on MRI?',
-        },
-        back: {
-          answer: 'MLF connects CN VI nucleus (pons) to contralateral CN III nucleus (midbrain), mediating conjugate horizontal gaze. INO: lesion of ipsilateral MLF → ipsilateral adduction failure on contralateral gaze + contralateral abducting nystagmus. Bilateral INO in young patient = MS until proven otherwise.',
-          explanation: 'The MLF is a paired white matter tract in the dorsal brainstem tegmentum. In right INO: right MLF lesion → right eye cannot adduct on left gaze; left eye abducts with nystagmus. The "WEBINO" syndrome = wall-eyed bilateral INO (bilateral MLF lesion + exotropia). One-and-a-half syndrome = ipsilateral MLF + ipsilateral PPRF lesion → ipsilateral complete gaze palsy + contralateral INO; only the contralateral eye can abduct.',
-          keyFact: 'MLF: CN VI nucleus (pons) → contralateral CN III (midbrain). INO = ipsilateral adduction failure + contralateral ABducting nystagmus. Bilateral INO in young = MS. One-and-a-half = MLF + PPRF ipsilateral lesion.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/internuclear-ophthalmoplegia',
-          tags: ['anatomy', 'mlf', 'ino', 'brainstem', 'mri', 'ms'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-041',
-        front: {
-          question: 'Describe the normal MRI appearance of the choroid plexus. Where is it found, and what pathology causes unilateral choroid plexus enlargement?',
-        },
-        back: {
-          answer: 'Choroid plexus: T1 iso, T2 iso/bright, enhances avidly on post-contrast MRI. Located in: atria of lateral ventricles (largest glomus), roof of 3rd ventricle, roof of 4th ventricle. Absent from frontal and occipital horns. Unilateral enlargement → choroid plexus papilloma (child) or meningioma (adult).',
-          explanation: 'The choroid plexus produces CSF (500 mL/day); total CSF volume ~150 mL (turned over ~3× daily). Choroid plexus cysts are common normal variants (T2 bright, follow CSF, no enhancement). Choroid plexus papilloma: most common in children under 5, causes communicating hydrocephalus from overproduction. Xanthogranulomas are common benign calcified lesions in the glomus of the choroid plexus.',
-          keyFact: 'Choroid plexus: avid enhancement, in atria (largest) + 3rd + 4th ventricles (NOT in frontal/occipital horns). Papilloma = unilateral enlargement in child + communicating hydrocephalus. CP cysts = normal variants (T2 bright, CSF signal, no enhancement).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/choroid-plexus',
-          tags: ['anatomy', 'choroid-plexus', 'mri', 'csf'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-042',
-        front: {
-          question: 'What is the Sylvian fissure (lateral sulcus), what structures does it contain, and what does its asymmetry or filling indicate?',
-        },
-        back: {
-          answer: 'Sylvian fissure = lateral sulcus separating frontal/parietal lobes (superiorly) from temporal lobe (inferiorly). Contains: MCA branches (M2-M3), superficial middle cerebral vein. Filling with blood on CT (dense Sylvian fissure) = SAH. Effacement = mass effect. Asymmetry = normal variant or parasylvian lesion.',
-          explanation: 'The Sylvian fissure is the deepest and most prominent brain sulcus. The MCA main trunk (M1) runs in the Sylvian fissure. In SAH, blood fills the Sylvian fissure bilaterally (especially prominent with MCA aneurysm rupture). The insular cortex is visible deep within the Sylvian fissure. Sylvian fissure epidermoid (CPA) extends along the fissure — insinuating T2-bright, DWI-positive mass.',
-          keyFact: 'Sylvian fissure = deepest sulcus, contains MCA (M2-M3) branches. Blood in Sylvian fissure = SAH. Insular cortex is visible deep within it. Effacement = mass effect/edema. Epidermoid can extend along Sylvian fissure.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/lateral-sulcus',
-          tags: ['anatomy', 'sylvian', 'mca', 'sah', 'mri'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-043',
-        front: {
-          question: 'What are the key structures visible on axial MRI at the midbrain level? Name the substantia nigra appearance and its significance.',
-        },
-        back: {
-          answer: 'Midbrain structures: cerebral peduncles (anteriorly, corticospinal tracts), substantia nigra (T2 dark, between peduncles and tegmentum), red nucleus (T2 dark, round, paired in tegmentum), periaqueductal gray (PAG), superior colliculi (posteriorly).',
-          explanation: 'Substantia nigra: normally T2 dark due to neuromelanin and iron. Loss of T2 hypointensity (SN pallor) or loss of the normal nigrosomes on SWI/neuromelanin MRI indicates neurodegeneration (PD). The "swallow tail sign" on SWI = normal nigrosome-1 bright spot in dorsolateral SN — absent in PD. Tectal plate (superior + inferior colliculi) compression by pineal mass → Parinaud syndrome (upgaze palsy).',
-          keyFact: 'Substantia nigra: normally T2 dark (iron + neuromelanin). "Swallow tail sign" on SWI = normal nigrosome-1; absent in PD. Red nucleus: paired, T2 dark, tegmentum. Tectal plate compression = Parinaud syndrome (pineal mass). Cerebral peduncles = corticospinal tracts.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/substantia-nigra',
-          tags: ['anatomy', 'midbrain', 'substantia-nigra', 'parkinson', 'mri'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-044',
-        front: {
-          question: 'What are the three cerebellar arterial territories and which syndrome results from the most clinically important one?',
-        },
-        back: {
-          answer: 'SCA (superior cerebellar artery): superior cerebellum + dentate nuclei. AICA: anterior inferior cerebellum + lateral inferior pons + cochlea. PICA (largest, most important): posterior inferior cerebellum + lateral medulla → Wallenberg syndrome.',
-          explanation: 'Wallenberg syndrome (lateral medullary syndrome, PICA infarct): ipsilateral face numbness (CN V), ipsilateral Horner (descending sympathetics), ipsilateral ataxia (cerebellum), ipsilateral palatal/pharyngeal palsy (CN IX/X, dysphagia/dysarthria), contralateral body pain/temperature loss (STT). Spares: motor strength, vibration. The mnemonic: AICA infarct = same features but ADD hearing loss.',
-          keyFact: 'Wallenberg (PICA): ipsilateral face numbness, Horner, ataxia, dysphagia; contralateral body pain/temp loss. NO weakness, NO hearing loss. AICA = same + hearing loss. SCA = superior cerebellum + dentate. PICA from vertebral artery.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-inferior-cerebellar-artery',
-          tags: ['anatomy', 'cerebellum', 'pica', 'wallenberg', 'stroke'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-045',
-        front: {
-          question: 'What are the key measurements of the craniovertebral junction on MRI/radiograph? What is basilar invagination?',
-        },
-        back: {
-          answer: 'Key CVJ measurements: McGregor line: dens tip ≤4.5 mm above. Atlantodental interval (ADI): ≤3 mm adult, ≤5 mm child. Basion-dens interval (BDI): ≤12 mm. Basion-axial interval (BAI): ≤12 mm. Basilar invagination = dens >4.5 mm above McGregor line → foramen magnum compression.',
-          explanation: 'McGregor line runs from posterior hard palate to inner occipital curve. Basilar invagination causes dens to project upward through foramen magnum, compressing the medulla/upper cord. Causes: Paget disease, osteomalacia, OI, rheumatoid arthritis (pannus erosion of dens), Chiari malformation. ADI >3 mm in adult indicates atlantoaxial instability (TAL rupture or RA pannus). Os odontoideum = separate ossicle at dens tip, associated with instability.',
-          keyFact: 'McGregor line: dens >4.5 mm above = basilar invagination. ADI >3 mm (adult) = atlantoaxial instability (TAL rupture, RA). Causes of BI: Paget, RA, OI. BDI + BAI: both ≤12 mm normal. Os odontoideum → instability.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/craniovertebral-junction',
-          tags: ['anatomy', 'craniovertebral', 'mri', 'measurement', 'basilar-invagination'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-046',
-        front: {
-          question: 'What is the normal MRI appearance of white matter on FLAIR? What pattern of WMH is characteristic of CADASIL?',
-        },
-        back: {
-          answer: 'Normal: periventricular "caps" at frontal/occipital horn tips = normal. Punctate subcortical/periventricular WMH increase with age (small vessel disease/leukoaraiosis). CADASIL (cerebral autosomal dominant arteriopathy): WMH characteristically in anterior temporal poles + external capsule — >95% specific.',
-          explanation: 'CADASIL is caused by NOTCH3 mutations. The anterior temporal lobe and external capsule involvement distinguishes it from other small vessel diseases. Other patterns: MS = periventricular + juxtacortical + infratentorial (Dawson fingers). CSVD = subcortical + basal ganglia. Migraine = punctate, non-specific. WMH grading: Fazekas scale (0–3). Confluent periventricular WMH = Fazekas 3 = significant.',
-          keyFact: 'CADASIL: anterior temporal pole + external capsule WMH = >95% specific (NOTCH3 mutation). MS: periventricular + juxtacortical + infratentorial. CSVD: subcortical + deep WM. Fazekas 3 (confluent) = significant leukoaraiosis.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/white-matter-hyperintensities',
-          tags: ['mri', 'white-matter', 'flair', 'cadasil', 'small-vessel'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-047',
-        front: {
-          question: 'Identify the mammillary bodies on this MRI. What acute and chronic changes are seen in Wernicke encephalopathy?',
-        },
-        back: {
-          answer: 'Mammillary bodies: paired round structures at floor of 3rd ventricle/hypothalamus, relay hippocampal memory output. Acute Wernicke: T2/FLAIR hyperintensity + enhancement of mammillary bodies + periaqueductal gray + dorsomedial thalami. Chronic: mammillary body atrophy (Korsakoff syndrome).',
-          explanation: 'Wernicke encephalopathy = thiamine (B1) deficiency, usually alcoholism or malnutrition. Classic triad: ataxia, ophthalmoplegia, confusion (only 10–30% present with full triad). MRI hallmarks: symmetric T2 bright + enhancement around aqueduct, mammillary bodies, medial thalami, and tectal plate. Mammillary body atrophy = chronic, irreversible marker of Korsakoff psychosis (anterograde amnesia + confabulation).',
-          keyFact: 'Wernicke: symmetric T2↑ + enhancement of periaqueductal gray + mammillary bodies + medial thalami. Thiamine deficiency, alcoholism. Korsakoff (chronic) = mammillary atrophy + amnesia + confabulation. Only 10–30% have full clinical triad.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/wernicke-encephalopathy',
-          tags: ['anatomy', 'mammillary', 'wernicke', 'mri', 'thiamine'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-048',
-        front: {
-          question: 'What causes FLAIR hyperintensity in the subarachnoid space (sulcal FLAIR hyperintensity), and how do you distinguish SAH from meningitis?',
-        },
-        back: {
-          answer: 'Sulcal FLAIR hyperintensity causes: SAH (most common), meningitis/encephalitis, leptomeningeal carcinomatosis, PRES, supplemental O2 artifact. SAH: follows cisterns + sulci, often most prominent at base/vertex. Meningitis: sulcal FLAIR + pial enhancement (leptomeningeal enhancement) on T1 post-contrast.',
-          explanation: 'Normally CSF is suppressed on FLAIR. Protein/blood in CSF impairs suppression → bright sulci. Supplemental O2 also causes sulcal FLAIR signal (high O2 tension affects T1 of CSF). SAH is confirmed by: LP (xanthochromia if >12h after onset), CT (94% sensitive in first 6h), FLAIR (sensitive for small SAH). Pial enhancement (sulcal T1 enhancement) = leptomeningeal carcinomatosis or meningitis — not seen in simple SAH unless complicated.',
-          keyFact: 'Sulcal FLAIR bright: SAH first (most common), then meningitis, then leptomeningeal mets, then PRES. Supplemental O2 = artifact. SAH on CT: 94% sensitive <6h. Pial enhancement = meningitis/leptomeningeal carcinomatosis.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/sulcal-flair-hyperintensity',
-          tags: ['mri', 'flair', 'sah', 'meningitis', 'subarachnoid'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-049',
-        front: {
-          question: 'What is DWI (diffusion-weighted imaging)? Describe true restricted diffusion vs T2 shine-through, and name three conditions that cause restricted diffusion.',
-        },
-        back: {
-          answer: 'Restricted diffusion = DWI bright + ADC dark (true restriction, e.g., acute ischemia). T2 shine-through = DWI bright + ADC bright (T2 effect carried through, not true restriction). Key causes: acute ischemia, brain abscess (central DWI bright), epidermoid cyst, CJD (cortical ribboning), hypercellular tumors (lymphoma).',
-          explanation: 'ADC (apparent diffusion coefficient) map must always be checked to confirm true restriction vs shine-through. In acute stroke, DWI changes within minutes; ADC values drop to <700 × 10⁻⁶ mm²/s. Pseudonormalization of DWI occurs at ~1–2 weeks (DWI returns to isointense while ADC remains dark). DWI is also sensitive for epidermoid (distinguishes from arachnoid cyst: epidermoid DWI bright, arachnoid DWI dark). CJD: cortical ribboning DWI pattern.',
-          keyFact: 'True restriction: DWI↑ + ADC↓. Shine-through: DWI↑ + ADC↑. Acute ischemia: DWI changes within minutes. Abscess central DWI↑ (pus). Epidermoid DWI↑ (vs arachnoid cyst DWI–). CJD: cortical ribboning. Lymphoma: DWI↑ (hypercellular).',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/diffusion-weighted-imaging-of-the-brain',
-          tags: ['mri', 'dwi', 'adc', 'stroke', 'physics'],
-        },
-      },
-      {
-        id: 'neuro-anatomy-050',
-        front: {
-          question: 'What is SWI (susceptibility-weighted imaging)? Which structures appear dark, and what is the clinical significance of microbleed distribution?',
-        },
-        back: {
-          answer: 'SWI: most sensitive sequence for blood products (deoxyhemoglobin, hemosiderin) and iron/calcium. Appears dark (blooming artifact). Microbleed distribution: lobar (cortical/subcortical) = CAA; deep (basal ganglia, thalamus, brainstem, cerebellum) = hypertensive small vessel disease.',
-          explanation: 'Cerebral amyloid angiopathy (CAA) causes amyloid deposition in cortical vessels → lobar microbleeds + lobar ICH. Boston criteria for CAA require ≥2 lobar microbleeds on MRI. CAA can cause cortical superficial siderosis (sulcal hemosiderin). Hypertensive microbleeds are in deep structures (lenticulostriate territory). Cavernous malformations: "popcorn" lesion on T2 with complete hemosiderin rim, very conspicuous on SWI.',
-          keyFact: 'Lobar microbleeds (cortical/subcortical) = CAA. Deep microbleeds (BG/thalamus/brainstem) = hypertensive SVD. Boston criteria CAA: ≥2 lobar microbleeds. SWI = most sensitive for microbleeds (more than T2*). Cavernoma = "popcorn" + complete hemosiderin ring on SWI.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/susceptibility-weighted-imaging',
-          tags: ['mri', 'swi', 'microbleeds', 'caa', 'hemorrhage'],
-        },
-      },
+      // ============================================================
+// Cards: Brain Neurovascular Anatomy — Diagram Set 01
+// IDs: neuro-branat-078 to neuro-branat-081
+// ============================================================
+
+{
+  id: 'neuro-branat-078',
+  front: {
+    question: 'Name the structure labeled A in this diagram of the brain neurovascular anatomy.',
+    image: {
+      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
+    },
+  },
+  back: {
+    answer: 'Recurrent artery of Heubner (medial striate artery)',
+    explanation: 'The recurrent artery of Heubner is the largest medial perforating branch of the ACA, arising near the A1–A2 junction and coursing back toward the ICA before entering the anterior perforated substance. It supplies the head of the caudate, anterior limb of the internal capsule, and anteromedial putamen. Occlusion causes contralateral hemiparesis (arm > leg), dysarthria, and facial weakness mimicking MCA territory infarct.',
+    keyFact: 'Heubner = largest ACA perforator; arises at A1/A2 junction; supplies caudate head + anterior internal capsule. Infarct → arm-predominant hemiparesis.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/recurrent-artery-of-heubner',
+    tags: ['anatomy', 'neuroradiology', 'vascular', 'ACA', 'perforators', 'brain'],
+  },
+},
+
+{
+  id: 'neuro-branat-079',
+  front: {
+    question: 'Name the structure labeled B in this diagram of the brain neurovascular anatomy.',
+    image: {
+      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
+    },
+  },
+  back: {
+    answer: 'Lateral lenticulostriate arteries',
+    explanation: 'The lateral lenticulostriates are perforating branches arising from the M1 segment of the MCA. They supply the superior putamen, globus pallidus, posterior limb of the internal capsule, and corona radiata. They are the classic site of hypertensive hemorrhage and lacunar infarction.',
+    keyFact: 'Lateral lenticulostriates = MCA perforators; classic site of hypertensive basal ganglia hemorrhage and lacunar infarcts of the posterior limb of the internal capsule.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/lenticulostriate-arteries',
+    tags: ['anatomy', 'neuroradiology', 'vascular', 'MCA', 'perforators', 'brain'],
+  },
+},
+
+{
+  id: 'neuro-branat-080',
+  front: {
+    question: 'Name the structure labeled C in this diagram of the brain neurovascular anatomy.',
+    image: {
+      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
+    },
+  },
+  back: {
+    answer: 'Anterior choroidal artery (AChA)',
+    explanation: 'The anterior choroidal artery arises from the ICA (occasionally MCA) just distal to the PComA. It supplies the posterior limb of the internal capsule (retrolenticular), optic tract, lateral geniculate body, hippocampus, amygdala, and choroid plexus of the temporal horn. AChA infarction produces the classic triad of contralateral hemiplegia, hemisensory loss, and homonymous hemianopia.',
+    keyFact: 'AChA classic triad: contralateral hemiplegia + hemisensory loss + homonymous hemianopia. Arises from ICA distal to PComA; supplies posterior limb IC + optic tract.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/anterior-choroidal-artery',
+    tags: ['anatomy', 'neuroradiology', 'vascular', 'ICA', 'choroidal', 'brain'],
+  },
+},
+
+{
+  id: 'neuro-branat-081',
+  front: {
+    question: 'Name the structure labeled D in this diagram of the brain neurovascular anatomy.',
+    image: {
+      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
+    },
+  },
+  back: {
+    answer: 'Medial lenticulostriate arteries',
+    explanation: 'The medial lenticulostriates arise from the A1 segment of the ACA (and sometimes directly from the ICA). They supply the anterior limb of the internal capsule, anteromedial caudate, and adjacent anterior perforated substance. They are smaller and fewer in number than the lateral lenticulostriates.',
+    keyFact: 'Medial lenticulostriates = ACA (A1) perforators; supply anterior limb of internal capsule and caudate head. Lateral lenticulostriates = MCA perforators.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/lenticulostriate-arteries',
+    tags: ['anatomy', 'neuroradiology', 'vascular', 'ACA', 'perforators', 'brain'],
+  },
+},
+
     ],
   },
 
@@ -1008,6 +1957,181 @@ export const neuroSubsections = [
           tags: ['anatomy', 'spine', 'sacrum', 'cyst', 'mri', 'tarlov'],
         },
       },
+      // ============================================================
+// SPINE RADIOGRAPH ANATOMY — Image-based flashcards
+// IDs: neuro-spine-anatomy-026 through neuro-spine-anatomy-034
+// ============================================================
+
+{
+  id: 'neuro-spine-anatomy-026',
+  front: {
+    question: 'Structure #1 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #1',
+    },
+  },
+  back: {
+    answer: 'Transverse Process',
+    explanation: 'The transverse process projects laterally from the junction of the pedicle and lamina. In the lumbar spine, the transverse processes are large and serve as attachment points for the psoas and quadratus lumborum muscles. On AP radiograph, they project laterally from the vertebral body like wings.',
+    keyFact: 'Transverse process fractures in the lumbar spine are associated with significant retroperitoneal injury — always assess for associated visceral or vascular trauma.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/transverse-process',
+    tags: ['XR', 'spine', 'anatomy', 'lumbar', 'posterior elements'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-027',
+  front: {
+    question: 'Structure #2 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #2',
+    },
+  },
+  back: {
+    answer: 'Pedicle',
+    explanation: 'The pedicle connects the vertebral body anteriorly to the posterior elements (lamina, transverse and articular processes). On AP radiograph, pedicles appear as oval densities ("owl eyes") on either side of the midline. Pedicle integrity is critical in assessing spinal metastatic disease.',
+    keyFact: '"Winking owl sign" on AP radiograph = absent pedicle shadow, classically from osteolytic metastasis destroying the pedicle.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/pedicle-of-vertebral-arch',
+    tags: ['XR', 'spine', 'anatomy', 'pedicle', 'posterior elements', 'metastasis'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-028',
+  front: {
+    question: 'Structure #3 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #3',
+    },
+  },
+  back: {
+    answer: 'Superior Articular Process',
+    explanation: 'The superior articular process projects superiorly from the junction of the pedicle and lamina, forming the superior facet of the zygapophyseal (facet) joint. It articulates with the inferior articular process of the vertebra above. Facet joint osteoarthritis commonly involves these processes.',
+    keyFact: 'The superior articular process faces posteriorly in the lumbar spine — it "hugs" the inferior articular process of the level above, forming the facet joint.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/zygapophyseal-joint',
+    tags: ['XR', 'spine', 'anatomy', 'facet joint', 'posterior elements', 'lumbar'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-029',
+  front: {
+    question: 'Structure #4 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #4',
+    },
+  },
+  back: {
+    answer: 'Pars Interarticularis',
+    explanation: 'The pars interarticularis (isthmus) is the segment of bone between the superior and inferior articular processes, connecting them within the lamina. It is the site of stress fracture in spondylolysis. On oblique radiograph, the pars forms the "neck" of the Scottie dog — a break here = spondylolysis.',
+    keyFact: 'Scottie dog sign on oblique lumbar XR: collar on the dog\'s neck = pars defect (spondylolysis). Most common at L4–L5 and L5–S1.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/pars-interarticularis',
+    tags: ['XR', 'spine', 'anatomy', 'pars interarticularis', 'spondylolysis', 'lumbar'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-030',
+  front: {
+    question: 'Structure #5 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #5',
+    },
+  },
+  back: {
+    answer: 'Lamina',
+    explanation: 'The lamina is a flat plate of bone forming the posterior wall of the vertebral foramen, connecting the spinous process medially to the pedicle and articular processes laterally. The two laminae fuse posteriorly to form the base of the spinous process. Laminectomy involves surgical removal of the lamina to decompress the canal.',
+    keyFact: 'Absent lamina on XR/CT post-laminectomy creates the "open roof" appearance — a normal post-surgical finding not to be mistaken for fracture.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/vertebral-lamina',
+    tags: ['XR', 'spine', 'anatomy', 'lamina', 'posterior elements', 'vertebral arch'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-031',
+  front: {
+    question: 'Structure #6 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #6',
+    },
+  },
+  back: {
+    answer: 'Inferior Articular Process',
+    explanation: 'The inferior articular process projects inferiorly from the lamina and forms the inferior facet of the zygapophyseal joint, articulating with the superior articular process of the vertebra below. In the lumbar spine it faces anteriorly, complementing the posteriorly-facing superior articular process above.',
+    keyFact: 'Locked facets (jumped facets) occur when the inferior articular process dislocates anterior to the superior articular process below — indicates severe ligamentous injury and instability.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/zygapophyseal-joint',
+    tags: ['XR', 'spine', 'anatomy', 'facet joint', 'posterior elements', 'trauma'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-032',
+  front: {
+    question: 'Structure #7 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #7',
+    },
+  },
+  back: {
+    answer: 'Spinous Process',
+    explanation: 'The spinous process projects posteriorly from the junction of the two laminae and is palpable along the midline of the back. On AP radiograph it appears as a teardrop-shaped midline density. Spinous process fractures ("clay shoveler\'s fracture") classically occur at C6–T1 from forceful flexion.',
+    keyFact: 'Clay shoveler\'s fracture = avulsion of spinous process (C6–T1) from sudden flexion with muscle contraction — stable injury, no neurological deficit expected.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/clay-shovellers-fracture',
+    tags: ['XR', 'spine', 'anatomy', 'spinous process', 'posterior elements', 'trauma'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-033',
+  front: {
+    question: 'Structure #8 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #8',
+    },
+  },
+  back: {
+    answer: 'Interlaminar Space',
+    explanation: 'The interlaminar space is the gap between adjacent laminae, bounded superiorly and inferiorly by laminae, laterally by the facet joints, and covered by the ligamentum flavum posteriorly. It is the window used for epidural and intrathecal injections and is the target for interlaminar epidural steroid injections.',
+    keyFact: 'The interlaminar space is the access point for epidural steroid injections and lumbar puncture — ligamentum flavum hypertrophy narrows this space and contributes to lumbar spinal stenosis.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/lumbar-spinal-stenosis',
+    tags: ['XR', 'spine', 'anatomy', 'interlaminar space', 'lumbar', 'stenosis'],
+  },
+},
+
+{
+  id: 'neuro-spine-anatomy-034',
+  front: {
+    question: 'Structure #9 on this spine radiograph — name this labeled structure.',
+    image: {
+      src: '/src/data/decks/images_neuro/spine_radio.png',
+      alt: 'Spine radiograph with labeled anatomical structures',
+      caption: 'Identify structure #9',
+    },
+  },
+  back: {
+    answer: 'Intervertebral Disc',
+    explanation: 'The intervertebral disc consists of a central nucleus pulposus (gelatinous) surrounded by the annulus fibrosus (fibrocartilaginous rings). On radiograph, the disc appears as a radiolucent space between vertebral endplates. Disc height loss, endplate irregularity, and vacuum disc phenomenon are key XR findings of disc degeneration.',
+    keyFact: 'Vacuum disc phenomenon (nitrogen gas in disc on XR/CT) = degenerative disc disease; if seen in the setting of infection (discitis), gas is unusual and suggests gas-forming organism.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/intervertebral-disc',
+    tags: ['XR', 'spine', 'anatomy', 'intervertebral disc', 'degeneration', 'discitis'],
+  },
+},
     ],
   },
   {
@@ -1475,7 +2599,7 @@ export const neuroSubsections = [
         },
       },
       {
-        id: 'neuro-head-neck-034',
+        id: 'neuro-head-neck-037',
         front: {
           question: 'Name the structure.',
           image: {
@@ -1490,7 +2614,7 @@ export const neuroSubsections = [
         },
       },
       {
-        id: 'neuro-head-neck-034',
+        id: 'neuro-head-neck-038',
         front: {
           question: 'Name the structure.',
           image: {
@@ -1505,7 +2629,7 @@ export const neuroSubsections = [
         },
       },
       {
-        id: 'neuro-head-neck-034',
+        id: 'neuro-head-neck-039',
         front: {
           question: 'Name the structure.',
           image: {

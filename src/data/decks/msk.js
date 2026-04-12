@@ -5,8 +5,8 @@
 
 export const mskSubsections = [
   {
-    id: 'msk-anatomy',
-    label: 'MSK Anatomy',
+    id: 'msk-shoulder-anatomy',
+    label: 'Shoulder Anatomy',
     cards: [ 
 
       {
@@ -346,6 +346,988 @@ export const mskSubsections = [
         },
       },
  ],
+  },
+
+    {
+    id: 'msk-knee-anatomy',
+    label: 'Knee Anatomy',
+    cards: [ 
+// ============================================================
+// MSK Knee MRI Anatomy — Axial Cross-Section Cards
+// Image: /src/data/decks/images_msk/knee01.png
+// Labels A–M on axial knee MRI
+// ============================================================
+
+{
+  id: 'msk-knee-anat-001',
+  front: {
+    question: 'Identify structure A on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Vastus lateralis',
+    explanation: 'The vastus lateralis is the largest of the four quadriceps muscles, lying on the lateral aspect of the thigh. It originates from the greater trochanter and lateral lip of the linea aspera, inserting via the quadriceps tendon into the patella. On axial MRI it appears as a large muscle belly lateral to the femur in the suprapatellar region.',
+    keyFact: 'Largest quadriceps muscle; lateral thigh; part of the extensor mechanism.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/vastus-lateralis',
+    tags: ['MRI', 'knee', 'anatomy', 'muscle', 'msk', 'quadriceps'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-002',
+  front: {
+    question: 'Identify structure B on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Iliotibial (IT) band',
+    explanation: 'The iliotibial band is a thick longitudinal band of fascia lata running along the lateral thigh and knee, inserting on Gerdy\'s tubercle of the tibia. On axial MRI it appears as a low-signal linear structure at the lateral aspect of the knee. IT band syndrome causes lateral knee pain from repetitive friction over the lateral femoral epicondyle.',
+    keyFact: 'IT band inserts on Gerdy\'s tubercle; IT band syndrome = lateral knee pain at 30° flexion.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/iliotibial-band',
+    tags: ['MRI', 'knee', 'anatomy', 'fascia', 'msk', 'lateral'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-003',
+  front: {
+    question: 'Identify structure C on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Biceps femoris (short and long heads)',
+    explanation: 'The biceps femoris has two heads: the long head originates from the ischial tuberosity (common hamstring origin with semitendinosus), and the short head from the lateral lip of the linea aspera. Both insert on the fibular head. It is the lateral hamstring and a key landmark in the posterolateral corner of the knee.',
+    keyFact: 'Only hamstring with dual heads; inserts on fibular head; lateral hamstring. Short head supplied by common peroneal nerve (not tibial).',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/biceps-femoris',
+    tags: ['MRI', 'knee', 'anatomy', 'hamstring', 'muscle', 'msk', 'posterolateral'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-004',
+  front: {
+    question: 'Identify structure D on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Common peroneal nerve',
+    explanation: 'The common peroneal (fibular) nerve is a branch of the sciatic nerve, coursing lateral to the popliteal fossa along the medial border of the biceps femoris tendon, then wrapping around the fibular neck. It is the most commonly injured nerve at the knee due to its superficial position at the fibular neck. Injury causes foot drop and loss of dorsiflexion/eversion.',
+    keyFact: 'Winds around fibular neck → vulnerable to injury → foot drop. Most commonly injured nerve at the knee.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/common-fibular-nerve',
+    tags: ['MRI', 'knee', 'anatomy', 'nerve', 'msk', 'peroneal', 'popliteal fossa'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-005',
+  front: {
+    question: 'Identify structure E on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Tibial nerve',
+    explanation: 'The tibial nerve is the larger terminal branch of the sciatic nerve, running through the center of the popliteal fossa superficial to the popliteal vessels. It supplies the posterior compartment of the leg and plantar foot. On axial MRI it appears as a small round structure in the posterior popliteal fat, most superficial of the neurovascular structures.',
+    keyFact: 'Tibial nerve is most superficial in popliteal fossa (superficial to artery and vein); supplies plantar flexors and foot intrinsics.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/tibial-nerve',
+    tags: ['MRI', 'knee', 'anatomy', 'nerve', 'msk', 'popliteal fossa', 'tibial'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-006',
+  front: {
+    question: 'Identify structure F on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Popliteal artery and vein',
+    explanation: 'The popliteal artery and vein course through the popliteal fossa between the femoral condyles, deep to the tibial nerve and popliteal vein. The artery is the deepest structure in the fossa, directly posterior to the knee joint capsule, making it vulnerable in posterior knee dislocations. On MRI, the artery appears as a flow-void (dark) structure.',
+    keyFact: 'Popliteal artery is deepest structure in fossa — at risk in posterior knee dislocation; always assess vascular status after knee dislocation.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/popliteal-artery',
+    tags: ['MRI', 'knee', 'anatomy', 'vascular', 'msk', 'popliteal fossa', 'artery'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-007',
+  front: {
+    question: 'Identify structure G on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Semitendinosus',
+    explanation: 'The semitendinosus is a posteromedial hamstring muscle arising from the ischial tuberosity. It has a long tendon that inserts on the medial surface of the proximal tibia as part of the pes anserinus (with gracilis and sartorius). On axial MRI it appears as a round tendon-like structure in the posteromedial compartment, medial to semimembranosus.',
+    keyFact: 'Semitendinosus = medial hamstring; pes anserinus = Sartorius + Gracilis + Semitendinosus (Say Grace before Supper); used as graft for ACL reconstruction.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/semitendinosus',
+    tags: ['MRI', 'knee', 'anatomy', 'hamstring', 'muscle', 'msk', 'posteromedial', 'pes anserinus'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-008',
+  front: {
+    question: 'Identify structure H on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Semimembranosus',
+    explanation: 'The semimembranosus is the deeper and more anterior of the two posteromedial hamstrings, identifiable by its flat membranous proximal tendon (hence the name). It inserts primarily on the posterior medial tibial condyle with expansions forming the posteromedial capsule and oblique popliteal ligament. On axial MRI it lies deep to semitendinosus and anterolateral to it.',
+    keyFact: 'Semimembranosus lies anterior/deep to semitendinosus on axial MRI; its bursa (between semimembranosus and medial gastrocnemius) is the most common cause of a popliteal (Baker\'s) cyst.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/semimembranosus',
+    tags: ['MRI', 'knee', 'anatomy', 'hamstring', 'muscle', 'msk', 'posteromedial'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-009',
+  front: {
+    question: 'Identify structure I on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Gracilis',
+    explanation: 'The gracilis is a long slender muscle of the medial thigh, arising from the inferior pubic ramus and inserting on the medial tibial surface as part of the pes anserinus. It is an adductor of the hip and weak flexor of the knee. On axial MRI it appears as a small round structure on the medial aspect, medial to semitendinosus.',
+    keyFact: 'Part of pes anserinus (Say Grace before Supper); gracilis tendon used as autograft for ACL reconstruction alongside semitendinosus.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/gracilis-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'muscle', 'msk', 'medial', 'pes anserinus'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-010',
+  front: {
+    question: 'Identify structure J on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Sartorius',
+    explanation: 'The sartorius is the longest muscle in the body, running obliquely from the ASIS across the anterior thigh to insert on the medial tibia as the most superficial component of the pes anserinus. On axial MRI at the knee level it appears as a small superficial oval structure on the anteromedial aspect. It flexes, abducts, and externally rotates the hip.',
+    keyFact: 'Most superficial pes anserinus tendon; longest muscle in body (ASIS → medial tibia). Pes anserinus bursitis: pain/swelling over medial proximal tibia, common in obese patients with OA.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/sartorius-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'muscle', 'msk', 'medial', 'pes anserinus'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-011',
+  front: {
+    question: 'Identify structure K on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Gastrocnemius medial head',
+    explanation: 'The medial head of gastrocnemius originates from the posterior medial femoral condyle and is larger than the lateral head. It forms the posteromedial boundary of the popliteal fossa. The semimembranosus-gastrocnemius bursa lies between it and the semimembranosus tendon, and when distended communicates with the joint to form a Baker\'s cyst.',
+    keyFact: 'Baker\'s cyst arises between medial gastrocnemius and semimembranosus tendons — best seen on axial/sagittal MRI in posteromedial popliteal fossa.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/gastrocnemius',
+    tags: ['MRI', 'knee', 'anatomy', 'muscle', 'msk', 'posteromedial', 'gastrocnemius'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-012',
+  front: {
+    question: 'Identify structure L on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures A–M',
+    },
+  },
+  back: {
+    answer: 'Vastus medialis',
+    explanation: 'The vastus medialis is the most medial of the quadriceps muscles, with its distal fibers (vastus medialis oblique, VMO) running obliquely to insert on the superomedial patella. The VMO is critical for maintaining patellar tracking — weakness leads to lateral patellar maltracking and patellofemoral syndrome. On axial MRI it lies anteromedial to the femur.',
+    keyFact: 'VMO (oblique fibers) maintains medial patellar stability; VMO atrophy → lateral patellar tilt/subluxation. Last to recover after knee injury/surgery.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/vastus-medialis',
+    tags: ['MRI', 'knee', 'anatomy', 'muscle', 'msk', 'quadriceps', 'medial', 'patella'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-013',
+  front: {
+    question: 'Identify structure M on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee01.png',
+      alt: 'Axial knee MRI with labeled structures AM',
+    },
+  },
+  back: {
+    answer: 'Quadriceps femoris tendon',
+    explanation: 'The quadriceps tendon is the combined tendon of all four quadriceps muscles (rectus femoris, vastus lateralis, vastus medialis, vastus intermedius), inserting on the superior pole of the patella. It has a trilaminar structure on MRI. Tears typically occur at the patellar insertion in patients >40 years old and are associated with systemic conditions (renal failure, hyperparathyroidism, fluoroquinolone use).',
+    keyFact: 'Quadriceps tendon tears: >40 yo, at superior patellar pole, patella baja; vs patellar tendon tears: <40 yo, at inferior pole, patella alta.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/quadriceps-tendon',
+    tags: ['MRI', 'knee', 'anatomy', 'tendon', 'msk', 'quadriceps', 'extensor mechanism'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-014',
+  front: {
+    question: 'Identify structure A on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Soleus',
+    explanation: 'The soleus arises from the posterior head and proximal shaft of the fibula and the soleal line of the tibia. It lies deep to the gastrocnemius and together they form the triceps surae. On axial MRI at the level of the proximal tibia/fibula, the soleus is the broad, flat muscle posterior to the tibiofibular interosseous membrane.',
+    keyFact: 'Soleus is deep to gastrocnemius; soleal veins are a common site of DVT.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/soleus-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'posterior compartment', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-015',
+  front: {
+    question: 'Identify structure B on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Gastrocnemius — lateral head',
+    explanation: 'The lateral head of gastrocnemius originates from the lateral femoral condyle. On axial MRI at the level of the knee joint or proximal leg, it is the posterolateral muscle belly. It is separated from the medial head by a fat plane through which the popliteal vessels and tibial nerve course.',
+    keyFact: 'Lateral gastrocnemius origin (lateral femoral condyle) is a common site for the fabella and for periosteal ganglion cysts.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/gastrocnemius-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'posterior compartment', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-016',
+  front: {
+    question: 'Identify structure C on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Popliteal artery and vein',
+    explanation: 'The popliteal artery is the deepest (most anterior) neurovascular structure in the popliteal fossa, lying directly against the posterior joint capsule. The popliteal vein is posterior to the artery. This relationship is clinically important as posterior knee dislocations can injure the artery.',
+    keyFact: 'Popliteal fossa from superficial to deep: Nerve → Vein → Artery (NVA). Artery is most anterior and most vulnerable in knee dislocation.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/popliteal-artery',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'vascular', 'popliteal fossa', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-017',
+  front: {
+    question: 'Identify structure D on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Tibial nerve',
+    explanation: 'The tibial nerve is the most superficial (posterior) neurovascular structure in the popliteal fossa. It runs superficial and lateral to the popliteal vessels before passing deep to the soleus. It supplies all muscles of the posterior leg and plantar foot.',
+    keyFact: 'Popliteal fossa from superficial to deep: Nerve → Vein → Artery. The tibial nerve is the larger terminal branch of the sciatic nerve (vs. common peroneal).',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/tibial-nerve',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'nerve', 'popliteal fossa', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-018',
+  front: {
+    question: 'Identify structure E on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Plantaris',
+    explanation: 'The plantaris is a small, inconstant muscle with a long thin tendon originating from the lateral supracondylar line of the femur. It runs obliquely between the gastrocnemius and soleus before inserting on the calcaneus. On axial MRI it appears as a small oval structure between the lateral gastrocnemius and soleus.',
+    keyFact: 'Plantaris tendon rupture ("tennis leg") mimics DVT clinically. Absent in ~7% of people; its tendon is a common autograft source for ligament reconstruction.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/plantaris-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'posterior compartment', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-019',
+  front: {
+    question: 'Identify structure F on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Popliteus',
+    explanation: 'The popliteus originates from the lateral femoral condyle and inserts on the posterior tibia above the soleal line. It forms the floor of the popliteal fossa. Its tendon passes through the popliteal hiatus, a gap in the lateral meniscus attachment that should not be mistaken for a meniscal tear.',
+    keyFact: 'Popliteus injury is a key marker of posterolateral corner injury. The popliteal hiatus (where the tendon passes) is a normal gap in the lateral meniscus — do not overcall as a tear.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/popliteus-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'posterolateral corner', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-020',
+  front: {
+    question: 'Identify structure G on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Gastrocnemius — medial head',
+    explanation: 'The medial head of gastrocnemius originates from the medial femoral condyle and is larger than the lateral head. A bursa between its tendon and the semimembranosus tendon, when distended, forms a Baker\'s (popliteal) cyst.',
+    keyFact: 'Baker\'s cyst forms between the medial gastrocnemius tendon and the semimembranosus tendon — posteromedial location is the key to identifying it on MRI.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/gastrocnemius-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'posterior compartment', "baker's cyst", 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-021',
+  front: {
+    question: 'Identify structure H on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Semitendinosus tendon',
+    explanation: 'The semitendinosus tendon is long and slender, inserting on the medial surface of the proximal tibia as part of the pes anserinus. On axial MRI it appears as a small round low-signal structure in the posteromedial soft tissues, posterior to gracilis and sartorius.',
+    keyFact: 'Pes anserinus from anterior to posterior: Sartorius → Gracilis → Semitendinosus ("Say Grace before Tea"). Semitendinosus is commonly harvested for ACL reconstruction.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/semitendinosus-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'hamstring', 'pes anserinus', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-022',
+  front: {
+    question: 'Identify structure I on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Sartorius tendon',
+    explanation: 'The sartorius is the longest muscle in the body, originating from the ASIS and inserting via a broad aponeurosis on the medial proximal tibia. It is the most anterior of the pes anserinus tendons, curving anteromedially as a thin low-signal structure on axial MRI.',
+    keyFact: 'Pes anserinus order anterior to posterior: Sartorius → Gracilis → Semitendinosus. Pes anserine bursitis causes medial knee pain below the joint line, classically in obese patients with OA.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/sartorius-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'pes anserinus', 'medial knee', 'identification'],
+  },
+},
+
+{
+  id: 'msk-knee-anat-023',
+  front: {
+    question: 'Identify structure J on this axial knee MRI.',
+    image: {
+      src: '/src/data/decks/images_msk/knee02.png',
+      alt: 'Axial knee MRI with structures labeled A through J',
+    },
+  },
+  back: {
+    answer: 'Gracilis tendon',
+    explanation: 'The gracilis is a thin strap muscle of the medial thigh (adductor group) inserting on the medial proximal tibia between the sartorius and semitendinosus as part of the pes anserinus. Its tendon is slender and lies between sartorius anteriorly and semitendinosus posteriorly on axial MRI.',
+    keyFact: 'Gracilis is the middle pes anserinus tendon (Sartorius → Gracilis → Semitendinosus). Co-harvested with semitendinosus for hamstring-graft ACL reconstruction.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/gracilis-muscle',
+    tags: ['MRI', 'knee', 'anatomy', 'msk', 'pes anserinus', 'medial knee', 'identification'],
+  },
+},
+
+    ]
+  },
+
+      {
+    id: 'msk-ankle-anatomy',
+    label: 'Ankle Anatomy',
+    cards: [ 
+// ============================================================
+// MSK — Ankle MRI Anatomy: Image-Based Identification Cards
+// ankle01.png — Axial MRI ankle, structures A–G
+// IDs: msk-ankle-anat-001 to msk-ankle-anat-007
+// ============================================================
+
+{
+  id: 'msk-ankle-anat-001',
+  front: {
+    question: 'Ankle MRI axial image — identify structure A.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Tibialis posterior tendon',
+    explanation: 'The tibialis posterior tendon is the most medial and largest of the three medial ankle tendons. It runs posterior to the medial malleolus and inserts primarily onto the navicular tuberosity. It is the most commonly torn tendon in the ankle, causing adult-acquired flatfoot deformity.',
+    keyFact: 'Tom, Dick, And Nervous Harry: Tibialis posterior → Flexor Digitorum Longus → Artery/Vein → Nerve → Flexor Hallucis Longus, from anterior to posterior behind the medial malleolus.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/tibialis-posterior-tendon',
+    tags: ['MRI', 'ankle', 'anatomy', 'tendon', 'medial', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-002',
+  front: {
+    question: 'Ankle MRI axial image — identify structure B.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Flexor digitorum longus tendon',
+    explanation: 'The flexor digitorum longus (FDL) tendon is the middle of the three medial compartment tendons. It lies between tibialis posterior anteriorly and the neurovascular bundle posteriorly. Isolated FDL tears are uncommon and often associated with tibialis posterior pathology.',
+    keyFact: 'FDL is the "D" in Tom, Dick, And Nervous Harry — second from anterior in the medial retromalleolar groove.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/flexor-digitorum-longus-tendon-of-foot',
+    tags: ['MRI', 'ankle', 'anatomy', 'tendon', 'medial', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-003',
+  front: {
+    question: 'Ankle MRI axial image — identify structure C.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Flexor hallucis longus tendon',
+    explanation: 'The flexor hallucis longus (FHL) tendon is the most posterior and lateral of the medial compartment tendons. It runs in a fibro-osseous tunnel between the medial and lateral talar tubercles. FHL tenosynovitis is common in ballet dancers ("dancer\'s tendinitis") and presents with posteromedial ankle pain.',
+    keyFact: 'FHL is the most posterior medial tendon ("Harry" in the mnemonic) — runs between the talar tubercles. Stenosing tenosynovitis = classic ballet dancer injury.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/flexor-hallucis-longus-tendon',
+    tags: ['MRI', 'ankle', 'anatomy', 'tendon', 'medial', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-004',
+  front: {
+    question: 'Ankle MRI axial image — identify structure D.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Peroneus longus tendon',
+    explanation: 'The peroneus longus tendon lies posterior to peroneus brevis at the level of the lateral malleolus, then crosses the plantar foot to insert on the medial cuneiform and base of the first metatarsal. On axial MRI, peroneus longus is typically posterolateral to peroneus brevis in the retromalleolar groove.',
+    keyFact: 'Peroneus longus is posterior/lateral to brevis at the fibular groove. Longitudinal split tears of peroneus longus often occur at the peroneal tubercle of the calcaneus.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/peroneus-longus-muscle',
+    tags: ['MRI', 'ankle', 'anatomy', 'tendon', 'lateral', 'peroneal', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-005',
+  front: {
+    question: 'Ankle MRI axial image — identify structure E.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Peroneus brevis tendon',
+    explanation: 'The peroneus brevis tendon is anteromedial to peroneus longus in the retromalleolar groove and inserts on the base of the 5th metatarsal. It is more commonly torn than peroneus longus, typically showing a C-shaped or split morphology wrapping around the fibula. Peroneus brevis tears are strongly associated with superior peroneal retinaculum tears.',
+    keyFact: 'Brevis is anterior/medial to longus at the fibula — inserts on base of 5th MT. C-shaped or split tendon on axial MRI = longitudinal split tear of peroneus brevis.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/peroneus-brevis-muscle',
+    tags: ['MRI', 'ankle', 'anatomy', 'tendon', 'lateral', 'peroneal', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-006',
+  front: {
+    question: 'Ankle MRI axial image — identify structure F.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Posterior tibial artery and vein',
+    explanation: 'The posterior tibial neurovascular bundle (artery, paired veins, and tibial nerve) runs between the FDL and FHL tendons in the medial compartment. The artery is the "A" in "Tom, Dick, And Nervous Harry." It provides the dominant blood supply to the plantar foot and heel.',
+    keyFact: '"And" in Tom, Dick, And Nervous Harry = Artery (posterior tibial) + paired veins, between FDL and FHL. Tarsal tunnel syndrome compresses the tibial nerve here.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/posterior-tibial-artery',
+    tags: ['MRI', 'ankle', 'anatomy', 'vascular', 'medial', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-007',
+  front: {
+    question: 'Ankle MRI axial image — identify structure G.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle01.png',
+      alt: 'Axial ankle MRI with labeled structures A–G',
+    },
+  },
+  back: {
+    answer: 'Posterior tibial vein',
+    explanation: 'The posterior tibial veins (typically paired) accompany the posterior tibial artery in the medial compartment tarsal tunnel. They are identified as low-signal tubular structures flanking the artery on MRI. Deep vein thrombosis of the posterior tibial veins is a recognized cause of medial ankle pain and tarsal tunnel syndrome.',
+    keyFact: 'Paired posterior tibial veins bracket the artery in the medial compartment — DVT here can mimic or cause tarsal tunnel syndrome.',
+    tags: ['MRI', 'ankle', 'anatomy', 'vascular', 'medial', 'msk'],
+  },
+},
+
+{
+  id: 'msk-ankle-anat-008',
+  front: {
+    question: 'Name the structure labeled A on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Tibialis posterior tendon',
+    explanation: 'The tibialis posterior is the largest and most medial tendon in the posteromedial compartment, immediately posterior to the medial malleolus. It is the most commonly injured ankle tendon. On MRI it should be round and 2× the size of the adjacent FDL. Rupture causes adult-acquired flatfoot deformity.',
+    keyFact: 'TP tendon is the most common tendon to rupture at the ankle; look for it medial to FDL — mnemonic "Tom, Dick, AND Very Nervous Harry" (TP, FDL, posterior tibial artery/vein, nerve, FHL).',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/tibialis-posterior-tendon',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk'],
+  },
+},
+{
+  id: 'msk-ankle-anat-009',
+  front: {
+    question: 'Name the structure labeled B on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Flexor digitorum longus (FDL) tendon',
+    explanation: 'FDL lies in the posteromedial compartment, between tibialis posterior and the neurovascular bundle. It passes behind the medial malleolus and divides to insert into the distal phalanges of digits 2–5. It is the thinnest of the three posteromedial tendons.',
+    keyFact: 'Mnemonic for posteromedial order (medial → lateral): "Tom, Dick, AND Very Nervous Harry" — Tibialis posterior, Digitorum longus, posterior tibial Artery, Vein, Nerve, Hallucis longus.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/flexor-digitorum-longus',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk'],
+  },
+},
+{
+  id: 'msk-ankle-anat-010',
+  front: {
+    question: 'Name the structure labeled C on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Flexor hallucis longus (FHL) tendon',
+    explanation: 'FHL is the most lateral of the posteromedial tendons, running in a groove on the posterior talus and sustentaculum tali before inserting on the distal phalanx of the great toe. It is the largest posteromedial tendon. FHL tenosynovitis is common in ballet dancers ("dancer\'s tendinitis").',
+    keyFact: 'FHL runs in a fibro-osseous tunnel between the medial and lateral talar tubercles; a os trigonum can compress it posteriorly — key association with posterior ankle impingement.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/flexor-hallucis-longus',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk'],
+  },
+},
+{
+  id: 'msk-ankle-anat-011',
+  front: {
+    question: 'Name the structure labeled D on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Plantaris tendon',
+    explanation: 'The plantaris is a small, vestigial muscle with a long thin tendon that runs medial to the Achilles between the gastrocnemius and soleus. On MRI it appears as a tiny round low-signal focus anteromedial to the Achilles. It is absent in ~10% of individuals and is commonly harvested for tendon grafts.',
+    keyFact: 'Plantaris rupture can mimic a partial Achilles tear clinically — on MRI, look for fluid/hematoma between the Achilles and soleus with an intact Achilles; the plantaris is the culprit.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/plantaris',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk'],
+  },
+},
+{
+  id: 'msk-ankle-anat-012',
+  front: {
+    question: 'Name the structure labeled E on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Achilles tendon',
+    explanation: 'The Achilles is the largest and strongest tendon in the body, formed by the gastrocnemius and soleus. It lacks a true synovial sheath (surrounded instead by a paratenon). Normal MRI appearance: uniform low T2 signal, flat or concave anterior margin. The critical zone of relative avascularity is 2–6 cm proximal to insertion.',
+    keyFact: 'Achilles tendon rupture most often occurs 2–6 cm proximal to the calcaneal insertion (watershed zone); MRI shows discontinuity, T2 hyperintensity, and tendon thickening or gap.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/achilles-tendon',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk'],
+  },
+},
+{
+  id: 'msk-ankle-anat-013',
+  front: {
+    question: 'Name the structure labeled F on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Peroneus brevis tendon',
+    explanation: 'Peroneus brevis lies anterior to peroneus longus in the retromalleolar groove posterior to the lateral malleolus, and inserts on the base of the 5th metatarsal. It is the more medial/anterior of the two peroneal tendons at the level of the lateral malleolus. Brevis tears are more common than longus tears.',
+    keyFact: 'Peroneus brevis tears classically appear as a C-shaped or split tendon ("boomerang" sign) wrapping around the peroneus longus on axial MRI — most common site is at the lateral malleolus.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/peroneus-brevis',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk', 'lateral'],
+  },
+},
+{
+  id: 'msk-ankle-anat-014',
+  front: {
+    question: 'Name the structure labeled G on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Peroneus longus tendon',
+    explanation: 'Peroneus longus lies posterior to peroneus brevis in the retromalleolar groove at the level of the lateral malleolus, then passes inferior to the peroneal trochlea and under the cuboid to insert on the base of the 1st metatarsal and medial cuneiform. It everts and plantarflexes the foot.',
+    keyFact: 'Peroneus longus is the posterior/lateral peroneal tendon at the fibula; it passes under the cuboid — a "os peroneum" (sesamoid in the tendon) that fractures is a clue to a peroneus longus tear.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/peroneus-longus',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk', 'lateral'],
+  },
+},
+{
+  id: 'msk-ankle-anat-015',
+  front: {
+    question: 'Name the structure labeled H on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Extensor digitorum longus (EDL) tendon',
+    explanation: 'EDL is in the anterior compartment, lateral to extensor hallucis longus. It passes under the superior and inferior extensor retinacula and inserts via four slips into the dorsal aspects of digits 2–5. On axial MRI it appears as multiple small oval tendons lateral to EHL.',
+    keyFact: 'Anterior compartment order (medial → lateral): Tibialis anterior, EHL, EDL, peroneus tertius — anterior tendons rarely tear in isolation; injury usually follows severe ankle trauma or forced plantarflexion.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/extensor-digitorum-longus',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk', 'anterior'],
+  },
+},
+{
+  id: 'msk-ankle-anat-016',
+  front: {
+    question: 'Name the structure labeled I on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Extensor hallucis longus (EHL) tendon',
+    explanation: 'EHL lies in the anterior compartment between tibialis anterior (medially) and EDL (laterally). It passes under the extensor retinacula and inserts on the dorsal base of the distal phalanx of the great toe. EHL tenosynovitis is associated with tight footwear and overuse.',
+    keyFact: 'EHL is the middle anterior tendon — between tibialis anterior and EDL. Isolated EHL rupture is rare but can occur from lacerations or direct trauma to the dorsum of the foot.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/extensor-hallucis-longus',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk', 'anterior'],
+  },
+},
+{
+  id: 'msk-ankle-anat-017',
+  front: {
+    question: 'Name the structure labeled J on this ankle MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/ankle02.png',
+      alt: 'Axial ankle MRI with labeled tendons A-J',
+    },
+  },
+  back: {
+    answer: 'Tibialis anterior tendon',
+    explanation: 'Tibialis anterior is the largest and most medial anterior compartment tendon. It passes under the superior and inferior extensor retinacula and inserts on the medial cuneiform and base of the 1st metatarsal. It is the primary dorsiflexor of the foot. Rupture causes foot drop and a palpable gap at the ankle.',
+    keyFact: 'Tibialis anterior is the most commonly ruptured anterior ankle tendon — spontaneous rupture occurs in older patients (>60) with minimal trauma; presents with foot drop and visible bulge from tendon retraction.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/tibialis-anterior',
+    tags: ['MRI', 'ankle', 'tendon', 'anatomy', 'msk', 'anterior'],
+  },
+},
+    ]
+  },
+
+
+      {
+    id: 'msk-wrist-anatomy',
+    label: 'Wrist Anatomy',
+    cards: [
+       // ============================================================
+// MSK — Wrist MRI Anatomy: Extensor Compartments
+// Cards: msk-wrist-anat-001 to msk-wrist-anat-006
+// ============================================================
+
+{
+  id: 'msk-wrist-anat-001',
+  front: {
+    question: 'Name the structure(s) labeled I on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label I',
+    },
+    hint: 'First extensor compartment — radial side',
+  },
+  back: {
+    answer: 'Extensor Pollicis Brevis (EPB) & Abductor Pollicis Longus (APL)',
+    explanation: 'The 1st extensor compartment lies over the radial styloid and contains APL and EPB. These tendons travel through a shared fibro-osseous tunnel and are the structures involved in de Quervain tenosynovitis. On axial MRI they appear as two small oval low-signal tendons at the radial margin of the wrist.',
+    keyFact: '1st compartment = APL + EPB → de Quervain tenosynovitis. APL is the more volar/radial of the two.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/de-quervain-tenosynovitis',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK'],
+  },
+},
+
+{
+  id: 'msk-wrist-anat-002',
+  front: {
+    question: 'Name the structure(s) labeled II on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label II',
+    },
+    hint: 'Second extensor compartment — just ulnar to the radial styloid',
+  },
+  back: {
+    answer: 'Extensor Carpi Radialis Longus (ECRL) & Extensor Carpi Radialis Brevis (ECRB)',
+    explanation: 'The 2nd extensor compartment contains ECRL and ECRB, which insert on the bases of the 2nd and 3rd metacarpals respectively. They run dorsal to the radial styloid in the groove between the radial styloid and Lister\'s tubercle. ECRB is the more ulnar and slightly more volar tendon.',
+    keyFact: '2nd compartment = ECRL + ECRB. ECRL → 2nd MC base; ECRB → 3rd MC base.',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK'],
+  },
+},
+
+{
+  id: 'msk-wrist-anat-003',
+  front: {
+    question: 'Name the structure labeled III on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label III',
+    },
+    hint: 'Passes around Lister\'s tubercle',
+  },
+  back: {
+    answer: 'Extensor Pollicis Longus (EPL)',
+    explanation: 'The 3rd extensor compartment contains only EPL. It uses Lister\'s tubercle as a pulley to change direction radially toward the thumb. EPL rupture is a classic complication of non-displaced distal radius fractures and long-term corticosteroid use, due to ischemia at the tubercle.',
+    keyFact: 'EPL wraps around Lister\'s tubercle → rupture after distal radius fracture (even non-displaced). Sole occupant of 3rd compartment.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/extensor-pollicis-longus',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK', 'EPL rupture'],
+  },
+},
+
+{
+  id: 'msk-wrist-anat-004',
+  front: {
+    question: 'Name the structure(s) labeled IV on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label IV',
+    },
+    hint: 'Largest extensor compartment — central dorsum',
+  },
+  back: {
+    answer: 'Extensor Digitorum (ED) & Extensor Indicis (EI)',
+    explanation: 'The 4th extensor compartment is the largest and most central, lying just ulnar to Lister\'s tubercle. It contains the four slips of extensor digitorum communis and the extensor indicis, which lies ulnar and deep to ED. EI allows independent index finger extension.',
+    keyFact: '4th compartment = ED (×4 slips) + EI. EI is ulnar and deep to ED; enables independent index extension.',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK'],
+  },
+},
+
+{
+  id: 'msk-wrist-anat-005',
+  front: {
+    question: 'Name the structure labeled V on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label V',
+    },
+    hint: 'Overlies the distal radioulnar joint',
+  },
+  back: {
+    answer: 'Extensor Digiti Minimi (EDM)',
+    explanation: 'The 5th extensor compartment contains the extensor digiti minimi, which runs over the distal radioulnar joint (DRUJ). Its position directly over the DRUJ makes it a landmark on axial wrist MRI. EDM tenosynovitis or tears are associated with rheumatoid arthritis.',
+    keyFact: '5th compartment = EDM, overlies the DRUJ. Landmark for DRUJ on axial wrist MRI; affected early in RA.',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK', 'DRUJ'],
+  },
+},
+
+{
+  id: 'msk-wrist-anat-006',
+  front: {
+    question: 'Name the structure labeled VI on this wrist MRI axial image.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist01.png',
+      alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
+      caption: 'Identify label VI',
+    },
+    hint: 'Most ulnar extensor compartment — groove on the ulnar head',
+  },
+  back: {
+    answer: 'Extensor Carpi Ulnaris (ECU)',
+    explanation: 'The 6th extensor compartment contains only the ECU, held in a groove on the dorsum of the ulnar head by the ECU subsheath. ECU instability or subsheath tears cause painful snapping on forearm rotation and are common in racquet sport athletes. The tendon inserts at the base of the 5th metacarpal.',
+    keyFact: '6th compartment = ECU. Held by ECU subsheath in ulnar groove. Subsheath tear → ECU instability (snapping, ulnar-sided wrist pain in athletes).',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/extensor-carpi-ulnaris',
+    tags: ['MRI', 'wrist', 'anatomy', 'extensor tendons', 'MSK', 'ECU instability'],
+  },
+},
+// ============================================================
+// MSK Wrist Anatomy — Hand XR Carpal Bones (hand01.jpg)
+// Cards: msk-wrist-anat-007 through msk-wrist-anat-013
+// ============================================================
+
+{
+  id: 'msk-wrist-anat-007',
+  front: {
+    question: 'Name the carpal bone labeled #1 on this hand XR.',
+  image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Scaphoid',
+    explanation: 'The scaphoid is the largest bone of the proximal carpal row and the most commonly fractured carpal bone. It articulates with the radius proximally and bridges both carpal rows, making it biomechanically vulnerable. Its blood supply enters distally, so waist/proximal pole fractures risk avascular necrosis.',
+    keyFact: 'Most commonly fractured carpal bone; proximal pole AVN risk due to retrograde blood supply.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/scaphoid',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-008',
+  front: {
+    question: 'Name the carpal bone labeled #2 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Lunate',
+    explanation: 'The lunate is the central bone of the proximal carpal row and is the most commonly dislocated carpal bone. On lateral XR, it has a crescent (moon-like) shape. Perilunate and lunate dislocations are high-yield trauma findings; in lunate dislocation the lunate tilts volarly and loses its articulation with the capitate.',
+    keyFact: 'Most commonly dislocated carpal bone; "spilled teacup" sign on lateral XR indicates lunate dislocation.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/lunate',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-009',
+  front: {
+    question: 'Name the carpal bone(s) labeled #3 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Triquetrum (+ Pisiform)',
+    explanation: 'The triquetrum is the most ulnar bone of the proximal carpal row, best seen on oblique views. The pisiform is a sesamoid bone embedded in the flexor carpi ulnaris tendon and overlies the triquetrum on PA views. Triquetral chip fractures (dorsal cortical avulsions) are the second most common carpal fracture.',
+    keyFact: 'Triquetral dorsal chip fracture = 2nd most common carpal fracture; best seen on lateral XR.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/triquetrum',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-010',
+  front: {
+    question: 'Name the carpal bone labeled #4 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Trapezium',
+    explanation: 'The trapezium is the most radial bone of the distal carpal row, articulating with the first metacarpal at the carpometacarpal (CMC) joint — the most mobile CMC joint. This joint is the classic site of basal joint osteoarthritis (Bennett/Rolando fractures occur here). The trapezium also forms the lateral wall of the carpal tunnel.',
+    keyFact: 'Trapezium = thumb CMC joint; site of Bennett fracture-dislocation and basal joint OA.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/trapezium-bone',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-011',
+  front: {
+    question: 'Name the carpal bone labeled #5 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Trapezoid',
+    explanation: 'The trapezoid is the smallest distal carpal bone, wedge-shaped and tightly articulating with the second metacarpal. It is the least commonly fractured carpal bone due to its protected position. It lies between the trapezium radially and the capitate ulnarly.',
+    keyFact: 'Trapezoid = least commonly fractured carpal bone; articulates with 2nd metacarpal.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/trapezoid-bone',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-012',
+  front: {
+    question: 'Name the carpal bone labeled #6 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Capitate',
+    explanation: 'The capitate is the largest carpal bone and the keystone of the wrist, located centrally in the distal row. It articulates with the lunate proximally and the third metacarpal distally. In perilunate dislocations, the capitate dislocates relative to the lunate. The capitate is also a site of avascular necrosis (though rarer than the scaphoid).',
+    keyFact: 'Largest carpal bone; central keystone of the wrist; involved in perilunate dislocation.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/capitate',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+{
+  id: 'msk-wrist-anat-013',
+  front: {
+    question: 'Name the carpal bone labeled #7 on this hand XR.',
+    image: {
+      src: '/src/data/decks/images_msk/wrist02.png',
+    },  
+  },
+  back: {
+    answer: 'Hamate',
+    explanation: 'The hamate is the most ulnar bone of the distal carpal row, identifiable by its hook (hamulus) projecting volarly. Hook of hamate fractures occur in racket/club sports (golf, tennis, baseball) and are occult on PA XR — best seen on carpal tunnel view or CT. The ulnar nerve and artery pass through Guyon\'s canal immediately adjacent to the hook.',
+    keyFact: 'Hook of hamate fracture = racket/club sports; occult on PA XR, use CT or carpal tunnel view.',
+    radiopaediaUrl: 'https://radiopaedia.org/articles/hamate',
+    tags: ['XR', 'wrist', 'anatomy', 'carpals', 'msk'],
+  },
+},
+
+    ]
   },
 
   // ──────────────────────────────────────────────────────────

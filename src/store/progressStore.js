@@ -49,6 +49,7 @@ export const useProgressStore = create((set, get) => ({
       .from('card_progress')
       .select('card_id, state')
       .eq('user_id', userId)
+      .limit(10000)
 
     // Fetch meta (last studied timestamps)
     const { data: metaRow, error: metaError } = await supabase
@@ -86,16 +87,24 @@ export const useProgressStore = create((set, get) => ({
 
     if (state === CARD_STATE.UNSEEN) {
       // Remove the row entirely — absence = unseen
-      await supabase
+      const { error } = await supabase
         .from('card_progress')
         .delete()
         .eq('user_id', userId)
         .eq('card_id', cardId)
+      if (error) {
+        console.error('setCardState delete failed:', error)
+        set({ progress }) // revert optimistic update
+      }
     } else {
       // Upsert: insert or update on conflict
-      await supabase
+      const { error } = await supabase
         .from('card_progress')
         .upsert({ user_id: userId, card_id: cardId, state }, { onConflict: 'user_id,card_id' })
+      if (error) {
+        console.error('setCardState upsert failed:', error)
+        set({ progress }) // revert optimistic update
+      }
     }
   },
 

@@ -3,7 +3,9 @@
     "allow": [
       "Bash(ls -la /c/radstack/src/data/decks/*.js)",
       "Bash(wc -l /c/radstack/src/data/decks/images/*.jpg)",
-      "Bash(node --input-type=module)"
+      "Bash(node --input-type=module)",
+      "Bash(wc -l /c/radstack/src/data/decks/*.js)",
+      "Bash(xargs wc:*)"
     ]
   }
 }
