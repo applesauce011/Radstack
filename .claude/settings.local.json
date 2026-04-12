@@ -5,7 +5,12 @@
       "Bash(wc -l /c/radstack/src/data/decks/images/*.jpg)",
       "Bash(node --input-type=module)",
       "Bash(wc -l /c/radstack/src/data/decks/*.js)",
-      "Bash(xargs wc:*)"
+      "Bash(xargs wc:*)",
+      "Bash(cp -r C:/radstack/src/data/decks/images_neuro C:/radstack/public/images_neuro)",
+      "Bash(cp -r C:/radstack/src/data/decks/images_msk C:/radstack/public/images_msk)",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force 'C:\\\\radstack\\\\src\\\\data\\\\decks\\\\images_neuro', 'C:\\\\radstack\\\\src\\\\data\\\\decks\\\\images_msk'\")",
+      "Bash(powershell -Command ':*)",
+      "Bash(npm run:*)"
     ]
   }
 }

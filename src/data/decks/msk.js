@@ -14,7 +14,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label A?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure A',
           },
@@ -33,7 +33,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label B?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure B',
           },
@@ -53,7 +53,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label C?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure C',
           },
@@ -73,7 +73,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label D?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure D',
           },
@@ -93,7 +93,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label E?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure E',
           },
@@ -113,7 +113,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label F?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure F',
           },
@@ -133,7 +133,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label G?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure G',
           },
@@ -152,7 +152,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label H?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure H',
           },
@@ -172,7 +172,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label I?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure I',
           },
@@ -191,7 +191,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label J?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure J',
           },
@@ -211,7 +211,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label K?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure K',
           },
@@ -231,7 +231,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label L?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure L',
           },
@@ -251,7 +251,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label M?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure M',
           },
@@ -271,7 +271,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label N?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure N',
           },
@@ -291,7 +291,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label O?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure O',
           },
@@ -311,7 +311,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label P?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure P',
           },
@@ -331,7 +331,7 @@ export const mskSubsections = [
         front: {
           question: 'Axial shoulder MRI. What structure is indicated by label Q?',
           image: {
-            src: '/src/data/decks/images_msk/shoulder01.png',
+            src: '/images_msk/shoulder01.png',
             alt: 'Axial shoulder MRI with labeled structures',
             caption: 'Identify structure Q',
           },
@@ -354,7 +354,7 @@ export const mskSubsections = [
     cards: [ 
 // ============================================================
 // MSK Knee MRI Anatomy — Axial Cross-Section Cards
-// Image: /src/data/decks/images_msk/knee01.png
+// Image: /images_msk/knee01.png
 // Labels A–M on axial knee MRI
 // ============================================================
 
@@ -363,7 +363,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure A on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -381,7 +381,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure B on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -399,7 +399,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure C on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -417,7 +417,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure D on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -435,7 +435,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure E on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -453,7 +453,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure F on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -471,7 +471,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure G on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -489,7 +489,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure H on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -507,7 +507,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure I on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -525,7 +525,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure J on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -543,7 +543,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure K on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -561,7 +561,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure L on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures A–M',
     },
   },
@@ -579,7 +579,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure M on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee01.png',
+      src: '/images_msk/knee01.png',
       alt: 'Axial knee MRI with labeled structures AM',
     },
   },
@@ -597,7 +597,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure A on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -615,7 +615,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure B on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -633,7 +633,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure C on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -651,7 +651,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure D on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -669,7 +669,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure E on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -687,7 +687,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure F on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -705,7 +705,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure G on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -723,7 +723,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure H on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -741,7 +741,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure I on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -759,7 +759,7 @@ export const mskSubsections = [
   front: {
     question: 'Identify structure J on this axial knee MRI.',
     image: {
-      src: '/src/data/decks/images_msk/knee02.png',
+      src: '/images_msk/knee02.png',
       alt: 'Axial knee MRI with structures labeled A through J',
     },
   },
@@ -790,7 +790,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure A.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -808,7 +808,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure B.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -826,7 +826,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure C.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -844,7 +844,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure D.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -862,7 +862,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure E.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -880,7 +880,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure F.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -898,7 +898,7 @@ export const mskSubsections = [
   front: {
     question: 'Ankle MRI axial image — identify structure G.',
     image: {
-      src: '/src/data/decks/images_msk/ankle01.png',
+      src: '/images_msk/ankle01.png',
       alt: 'Axial ankle MRI with labeled structures A–G',
     },
   },
@@ -915,7 +915,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled A on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -932,7 +932,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled B on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -949,7 +949,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled C on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -966,7 +966,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled D on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -983,7 +983,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled E on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1000,7 +1000,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled F on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1017,7 +1017,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled G on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1034,7 +1034,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled H on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1051,7 +1051,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled I on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1068,7 +1068,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled J on this ankle MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/ankle02.png',
+      src: '/images_msk/ankle02.png',
       alt: 'Axial ankle MRI with labeled tendons A-J',
     },
   },
@@ -1098,7 +1098,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure(s) labeled I on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label I',
     },
@@ -1118,7 +1118,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure(s) labeled II on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label II',
     },
@@ -1137,7 +1137,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled III on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label III',
     },
@@ -1157,7 +1157,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure(s) labeled IV on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label IV',
     },
@@ -1176,7 +1176,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled V on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label V',
     },
@@ -1195,7 +1195,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the structure labeled VI on this wrist MRI axial image.',
     image: {
-      src: '/src/data/decks/images_msk/wrist01.png',
+      src: '/images_msk/wrist01.png',
       alt: 'Axial wrist MRI with extensor compartments labeled I–VI',
       caption: 'Identify label VI',
     },
@@ -1219,7 +1219,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #1 on this hand XR.',
   image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1235,7 +1235,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #2 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1251,7 +1251,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone(s) labeled #3 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1267,7 +1267,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #4 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1283,7 +1283,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #5 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1299,7 +1299,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #6 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {
@@ -1315,7 +1315,7 @@ export const mskSubsections = [
   front: {
     question: 'Name the carpal bone labeled #7 on this hand XR.',
     image: {
-      src: '/src/data/decks/images_msk/wrist02.png',
+      src: '/images_msk/wrist02.png',
     },  
   },
   back: {

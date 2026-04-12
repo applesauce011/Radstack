@@ -6,20 +6,6 @@
 // Naming convention: neuro-[section]-[###]
 // ============================================================
 
-import skull01 from './images_neuro/skull01.png'
-import skull02 from './images_neuro/skull02.png'
-import skull03 from './images_neuro/skull03.png'
-import skull04 from './images_neuro/skull04.png'
-import skull05 from './images_neuro/skull05.png'
-import skull06 from './images_neuro/skull06.png'
-import skull07 from './images_neuro/skull07.png'
-import skull08 from './images_neuro/skull08.png'
-import skull09 from './images_neuro/skull09.png'
-import skull10 from './images_neuro/skull10.png'
-import skull11 from './images_neuro/skull11.png'
-import skull12 from './images_neuro/skull12.png'
-import skull13 from './images_neuro/skull13.png'
-import skull14 from './images_neuro/skull14.png'
 
 export const neuroSubsections = [
   {
@@ -31,7 +17,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #1?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #1',
           },
@@ -50,7 +36,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #2?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #2',
           },
@@ -69,7 +55,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #3?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #3',
           },
@@ -87,7 +73,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #4?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #4',
           },
@@ -106,7 +92,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #5?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #5',
           },
@@ -125,7 +111,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #6?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #6',
           },
@@ -144,7 +130,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #7?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #7',
           },
@@ -163,7 +149,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #8?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #8',
           },
@@ -182,7 +168,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #9?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #9',
           },
@@ -201,7 +187,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #10?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #10',
           },
@@ -220,7 +206,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #11?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #11',
           },
@@ -239,7 +225,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #12?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #12',
           },
@@ -258,7 +244,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #13?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #13',
           },
@@ -277,7 +263,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #14?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #14',
           },
@@ -296,7 +282,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #15?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #15',
           },
@@ -315,7 +301,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #16?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #16',
           },
@@ -334,7 +320,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #17?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #17',
           },
@@ -353,7 +339,7 @@ export const neuroSubsections = [
         front: {
           question: 'On this mid-sagittal T1 MRI, what structure is labeled #18?',
           image: {
-            src: '/src/data/decks/images_neuro/brain01.png',
+            src: '/images_neuro/brain01.png',
             alt: 'Mid-sagittal T1 brain MRI with numbered anatomical structures',
             caption: 'Identify structure #18',
           },
@@ -373,7 +359,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #1?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #1',
       },
@@ -392,7 +378,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #2?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #2',
       },
@@ -411,7 +397,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #3?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #3',
       },
@@ -430,7 +416,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #4?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #4',
       },
@@ -449,7 +435,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #5?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #5',
       },
@@ -468,7 +454,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #6?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #6',
       },
@@ -487,7 +473,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #7?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #7',
       },
@@ -506,7 +492,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #8?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #8',
       },
@@ -525,7 +511,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #9?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #9',
       },
@@ -544,7 +530,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #10?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #10',
       },
@@ -563,7 +549,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #11?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #11',
       },
@@ -582,7 +568,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #12?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #12',
       },
@@ -601,7 +587,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #13?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #13',
       },
@@ -620,7 +606,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #14?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #14',
       },
@@ -639,7 +625,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #15?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #15',
       },
@@ -658,7 +644,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #16?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #16',
       },
@@ -677,7 +663,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #17?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #17',
       },
@@ -696,7 +682,7 @@ export const neuroSubsections = [
     front: {
       question: 'On this mid-sagittal T1 MRI, what structure is labeled #18?',
       image: {
-        src: '/src/data/decks/images_neuro/brain02.png',
+        src: '/images_neuro/brain02.png',
         alt: 'Mid-sagittal T1 brain MRI with numbered anatomical labels',
         caption: 'Identify structure #18',
       },
@@ -715,7 +701,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #1 on this MRV. What is its clinical significance in raised intracranial pressure?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #1',
       },
@@ -733,7 +719,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #2 on this MRV. What vessels converge to form it, and what does it drain into?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #2',
       },
@@ -751,7 +737,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #3 on this MRV. What do they drain, and what is the significance of asymmetry or non-visualization?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #3',
       },
@@ -769,7 +755,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #4 on this MRV. What two structures does it connect, and what runs alongside it in the tentorium?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #4',
       },
@@ -787,7 +773,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #5 on this MRV. What territory does it drain, and what is its eponymous clinical relevance?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #5',
       },
@@ -805,7 +791,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #6 on this MRV. Where does it begin and terminate, and what is the clinical significance of its bilateral absence on MRV?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #6',
       },
@@ -823,7 +809,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #7 on this MRV. What is the significance of unilateral hypoplasia, and what finding on non-contrast CT suggests its thrombosis?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #7',
       },
@@ -841,7 +827,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #8 on this MRV. What is its course, and what is the "empty delta sign"?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #8',
       },
@@ -859,7 +845,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #9 on this MRV. What four sinuses converge here, and what is its eponymous alternative name?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #9',
       },
@@ -877,7 +863,7 @@ export const neuroSubsections = [
     front: {
       question: 'Identify structure #10 on this MRV. What does it anastomose, and how does it differ from the vein of Labbé in location and drainage?',
       image: {
-        src: '/src/data/decks/images_neuro/brain03.png',
+        src: '/images_neuro/brain03.png',
         alt: 'Brain MRV with labeled dural venous sinuses',
         caption: 'MRV — identify structure #10',
       },
@@ -897,7 +883,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the cranial nerve highlighted on this MRI. Describe its cisternal course and what foramen it traverses.',
     image: {
-      src: '/src/data/decks/images_neuro/CN23.png',
+      src: '/images_neuro/CN23.png',
       alt: 'Axial MRI showing cranial nerve II',
       caption: 'Identify the highlighted cranial nerve',
     },
@@ -907,7 +893,7 @@ export const neuroSubsections = [
     explanation: 'The optic nerve travels from the retina through the optic canal (not a true foramen of the skull base — it is within the lesser wing of sphenoid) to the optic chiasm. It is surrounded by meningeal sheaths (dura, arachnoid, pia) and subarachnoid CSF, making it susceptible to raised ICP (papilledema). It is a CNS tract, not a peripheral nerve.',
     keyFact: 'CN II is the only cranial nerve surrounded by meningeal sheaths — optic nerve sheath meningiomas enhance along the nerve producing the "tram-track" sign on MRI.',
     image: {
-      src: '/src/data/decks/images_neuro/CN23a.png',
+      src: '/images_neuro/CN23a.png',
       alt: 'Annotated MRI identifying CN II — Optic Nerve',
       caption: 'CN II — Optic Nerve (annotated)',
     },
@@ -922,7 +908,7 @@ export const neuroSubsections = [
   front: {
     question: 'On this same MRI, identify the second cranial nerve visible. What is its course from the midbrain to the orbit, and what is the clinical significance of its relationship to the posterior communicating artery?',
     image: {
-      src: '/src/data/decks/images_neuro/CN23.png',
+      src: '/images_neuro/CN23.png',
       alt: 'Axial MRI showing cranial nerve III',
       caption: 'Identify the second highlighted cranial nerve',
     },
@@ -932,7 +918,7 @@ export const neuroSubsections = [
     explanation: 'CN III exits the midbrain at the interpeduncular fossa, passes between the posterior cerebral artery (PCA) and superior cerebellar artery (SCA), then runs along the lateral wall of the cavernous sinus before entering the orbit via the superior orbital fissure. Its close proximity to the PcomA means an aneurysm at this junction classically causes a pupil-involving CN III palsy.',
     keyFact: 'Pupil-involving CN III palsy = compressive lesion (PcomA aneurysm) until proven otherwise — the parasympathetic pupillomotor fibres run on the outside of the nerve and are first affected by extrinsic compression.',
     image: {
-      src: '/src/data/decks/images_neuro/CN23a.png',
+      src: '/images_neuro/CN23a.png',
       alt: 'Annotated MRI identifying CN III — Oculomotor Nerve',
       caption: 'CN III — Oculomotor Nerve (annotated)',
     },
@@ -947,7 +933,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the cranial nerve shown on this MRI. What unique anatomical features distinguish it from all other cranial nerves?',
     image: {
-      src: '/src/data/decks/images_neuro/CN4.png',
+      src: '/images_neuro/CN4.png',
       alt: 'MRI showing cranial nerve IV',
       caption: 'Identify the highlighted cranial nerve',
     },
@@ -957,7 +943,7 @@ export const neuroSubsections = [
     explanation: 'CN IV is the only cranial nerve to exit the dorsal brainstem (dorsal midbrain, below the inferior colliculi), the only one to fully decussate before exiting, and the thinnest and longest intracranial cranial nerve. It wraps around the brainstem, passes between PCA and SCA (like CN III), runs in the lateral cavernous sinus wall, and enters the orbit via the superior orbital fissure to innervate the superior oblique.',
     keyFact: 'CN IV: only dorsal exit, only complete decussation, thinnest/longest intracranial CN — causes vertical diplopia (hypertropia) with head tilt toward the affected side (Bielschowsky).',
     image: {
-      src: '/src/data/decks/images_neuro/CN4a.png',
+      src: '/images_neuro/CN4a.png',
       alt: 'Annotated MRI identifying CN IV — Trochlear Nerve',
       caption: 'CN IV — Trochlear Nerve (annotated)',
     },
@@ -972,7 +958,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the cranial nerve on this MRI. Name its three divisions and the foramina each traverses to exit the skull.',
     image: {
-      src: '/src/data/decks/images_neuro/CN5.png',
+      src: '/images_neuro/CN5.png',
       alt: 'MRI showing cranial nerve V',
       caption: 'Identify the highlighted cranial nerve',
     },
@@ -982,7 +968,7 @@ export const neuroSubsections = [
     explanation: 'The trigeminal nerve is the largest cranial nerve. V1 (ophthalmic) exits via the superior orbital fissure; V2 (maxillary) via foramen rotundum; V3 (mandibular) via foramen ovale. The Gasserian (trigeminal) ganglion sits in Meckel\'s cave, a CSF-containing dural recess at the petrous apex, which is visible on MRI as a T2-hyperintense structure.',
     keyFact: 'V1 = superior orbital fissure, V2 = foramen rotundum, V3 = foramen ovale — "Standing Room Only" mnemonic. Perineural spread of head/neck tumours follows CN V proximally toward Meckel\'s cave.',
     image: {
-      src: '/src/data/decks/images_neuro/CN5a.png',
+      src: '/images_neuro/CN5a.png',
       alt: 'Annotated MRI identifying CN V — Trigeminal Nerve',
       caption: 'CN V — Trigeminal Nerve (annotated)',
     },
@@ -997,7 +983,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the cranial nerve on this MRI. Why is this nerve particularly vulnerable to raised intracranial pressure despite its distant exit from the foramen?',
     image: {
-      src: '/src/data/decks/images_neuro/CN6.png',
+      src: '/images_neuro/CN6.png',
       alt: 'MRI showing cranial nerve VI',
       caption: 'Identify the highlighted cranial nerve',
     },
@@ -1007,7 +993,7 @@ export const neuroSubsections = [
     explanation: 'CN VI exits the pontomedullary junction, takes the longest intradural course of any cranial nerve (ascending the clivus), and makes a sharp bend over the petrous apex (Dorello\'s canal) before entering the cavernous sinus and exiting via the superior orbital fissure to innervate the lateral rectus. Its long course and sharp angulation over the petrous apex make it vulnerable to downward brainstem displacement from raised ICP — a "false localizing sign."',
     keyFact: 'CN VI palsy as a false localizing sign of raised ICP: the long clival course and acute bend at Dorello\'s canal cause traction/compression even when the pathology is remote.',
     image: {
-      src: '/src/data/decks/images_neuro/CN6a.png',
+      src: '/images_neuro/CN6a.png',
       alt: 'Annotated MRI identifying CN VI — Abducens Nerve',
       caption: 'CN VI — Abducens Nerve (annotated)',
     },
@@ -1022,7 +1008,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the first of two cranial nerves visible on this MRI. Describe the three segments of its intratemporal course.',
     image: {
-      src: '/src/data/decks/images_neuro/CN78.png',
+      src: '/images_neuro/CN78.png',
       alt: 'MRI showing cranial nerves VII and VIII',
       caption: 'Identify CN VII on this image',
     },
@@ -1032,7 +1018,7 @@ export const neuroSubsections = [
     explanation: 'CN VII and VIII travel together through the internal auditory canal (IAC). CN VII then enters the facial canal with three intratemporal segments: (1) labyrinthine — shortest, no blood supply, most vulnerable to ischemia; (2) tympanic (horizontal); (3) mastoid (vertical), exiting at the stylomastoid foramen. The geniculate ganglion (where the labyrinthine and tympanic segments meet) is the most common site of schwannoma and enhancement in Bell\'s palsy.',
     keyFact: 'Three intratemporal CN VII segments: labyrinthine → tympanic → mastoid. Geniculate ganglion = key landmark; normal enhancement here can be physiologic due to rich vascular plexus.',
     image: {
-      src: '/src/data/decks/images_neuro/CN78a.png',
+      src: '/images_neuro/CN78a.png',
       alt: 'Annotated MRI identifying CN VII — Facial Nerve',
       caption: 'CN VII — Facial Nerve (annotated)',
     },
@@ -1047,7 +1033,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the second cranial nerve on this MRI. What are its two functional divisions, and what pathology most commonly arises from this nerve?',
     image: {
-      src: '/src/data/decks/images_neuro/CN78.png',
+      src: '/images_neuro/CN78.png',
       alt: 'MRI showing cranial nerves VII and VIII',
       caption: 'Identify CN VIII on this image',
     },
@@ -1057,7 +1043,7 @@ export const neuroSubsections = [
     explanation: 'CN VIII has two divisions: the cochlear nerve (hearing) and vestibular nerve (balance). Both travel through the IAC alongside CN VII. Vestibular schwannoma (acoustic neuroma) arises most commonly from the superior vestibular division of CN VIII at the glial-Schwann cell junction near the porus acusticus. On MRI it appears as an enhancing CPA-IAC mass that "ices" the porus acusticus.',
     keyFact: 'Vestibular schwannoma: enhancing CPA-IAC mass widening the porus acusticus — bilateral = NF2 (look for other schwannomas, meningiomas, ependymomas).',
     image: {
-      src: '/src/data/decks/images_neuro/CN78a.png',
+      src: '/images_neuro/CN78a.png',
       alt: 'Annotated MRI identifying CN VIII — Vestibulocochlear Nerve',
       caption: 'CN VIII — Vestibulocochlear Nerve (annotated)',
     },
@@ -1072,7 +1058,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the first of two cranial nerves on this MRI. What foramen does it traverse, and what structures share this foramen?',
     image: {
-      src: '/src/data/decks/images_neuro/CN910.png',
+      src: '/images_neuro/CN910.png',
       alt: 'MRI showing cranial nerves IX and X',
       caption: 'Identify CN IX on this image',
     },
@@ -1082,7 +1068,7 @@ export const neuroSubsections = [
     explanation: 'CN IX exits the lateral medulla and passes through the jugular foramen (pars nervosa, anteromedial compartment) alongside CN X and XI, and the sigmoid sinus/jugular bulb (pars vascularis). CN IX carries taste from the posterior 1/3 of the tongue, sensation from the pharynx/middle ear, and provides parasympathetic innervation to the parotid via the lesser petrosal nerve. Jugular foramen schwannomas and glomus jugulare tumours affect these nerves.',
     keyFact: 'Jugular foramen contents: CN IX, X, XI + jugular vein. Pulsatile tinnitus + jugular foramen mass = glomus jugulare (paraganglioma). CN IX in pars nervosa, CN X/XI also pass through.',
     image: {
-      src: '/src/data/decks/images_neuro/CN910a.png',
+      src: '/images_neuro/CN910a.png',
       alt: 'Annotated MRI identifying CN IX — Glossopharyngeal Nerve',
       caption: 'CN IX — Glossopharyngeal Nerve (annotated)',
     },
@@ -1097,7 +1083,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the second cranial nerve on this MRI. What is its course from the brainstem to the thorax, and what is the clinical significance of its asymmetric recurrent laryngeal nerve anatomy?',
     image: {
-      src: '/src/data/decks/images_neuro/CN910.png',
+      src: '/images_neuro/CN910.png',
       alt: 'MRI showing cranial nerves IX and X',
       caption: 'Identify CN X on this image',
     },
@@ -1107,7 +1093,7 @@ export const neuroSubsections = [
     explanation: 'CN X exits the medulla via the lateral sulcus, passes through the jugular foramen (pars vascularis), descends in the carotid sheath, and gives rise to the recurrent laryngeal nerve (RLN). The left RLN loops under the aortic arch (making it vulnerable to mediastinal pathology), while the right loops under the subclavian artery. CN X palsy causes ipsilateral vocal cord paralysis (paramedian cord on CT/MRI) and dysphagia.',
     keyFact: 'Left RLN loops under aortic arch — left vocal cord paralysis raises concern for aortopulmonary window lymphadenopathy, lung cancer, or aortic aneurysm. Always image the entire course.',
     image: {
-      src: '/src/data/decks/images_neuro/CN910a.png',
+      src: '/images_neuro/CN910a.png',
       alt: 'Annotated MRI identifying CN X — Vagus Nerve',
       caption: 'CN X — Vagus Nerve (annotated)',
     },
@@ -1125,7 +1111,7 @@ export const neuroSubsections = [
   front: {
     question: 'Identify the cranial nerve on this MRI. What foramen does it traverse, and what imaging finding on tongue MRI indicates a chronic ipsilateral lesion of this nerve?',
     image: {
-      src: '/src/data/decks/images_neuro/CN12.png',
+      src: '/images_neuro/CN12.png',
       alt: 'MRI showing cranial nerve XII',
       caption: 'Identify the highlighted cranial nerve',
     },
@@ -1135,7 +1121,7 @@ export const neuroSubsections = [
     explanation: 'CN XII exits the medulla via the preolivary sulcus and passes through the hypoglossal canal (anterior condylar canal) at the occipital condyle. It provides motor supply to all intrinsic and most extrinsic tongue muscles (except palatoglossus). Acute CN XII palsy shows T2 hyperintensity and swelling of the ipsilateral tongue on MRI; chronic palsy shows ipsilateral fatty atrophy (T1 hyperintense, small hemitongue) with tongue deviation toward the side of the lesion on protrusion.',
     keyFact: 'Chronic CN XII palsy → ipsilateral hemitongue fatty atrophy (T1 bright, volume loss). Tongue deviates toward the weak/atrophic side on protrusion. Hypoglossal canal is the key landmark.',
     image: {
-      src: '/src/data/decks/images_neuro/CN12a.png',
+      src: '/images_neuro/CN12a.png',
       alt: 'Annotated MRI identifying CN XII — Hypoglossal Nerve',
       caption: 'CN XII — Hypoglossal Nerve (annotated)',
     },
@@ -1151,7 +1137,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled A on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label A.',
           },
@@ -1170,7 +1156,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled B on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label B.',
           },
@@ -1189,7 +1175,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled C on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label C.',
           },
@@ -1208,7 +1194,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled D on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label D.',
           },
@@ -1227,7 +1213,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled E on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label E.',
           },
@@ -1246,7 +1232,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled F on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label F.',
           },
@@ -1265,7 +1251,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled G on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label G.',
           },
@@ -1284,7 +1270,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled H on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull1.png',
+            src: '/images_neuro/skull1.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label H.',
           },
@@ -1305,7 +1291,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled A on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull2.png',
+            src: '/images_neuro/skull2.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label A.',
           },
@@ -1324,7 +1310,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled B on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull2.png',
+            src: '/images_neuro/skull2.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label B.',
           },
@@ -1345,7 +1331,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled A on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label A.',
           },
@@ -1364,7 +1350,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled B on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label B.',
           },
@@ -1383,7 +1369,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled C on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label C.',
           },
@@ -1402,7 +1388,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled D on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label D.',
           },
@@ -1421,7 +1407,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled E on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label E.',
           },
@@ -1440,7 +1426,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled F on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label F.',
           },
@@ -1459,7 +1445,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled G on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label G.',
           },
@@ -1478,7 +1464,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled H on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label H.',
           },
@@ -1497,7 +1483,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled I on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label I.',
           },
@@ -1516,7 +1502,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled J on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label J.',
           },
@@ -1535,7 +1521,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure labeled K on this CT skull base image.',
           image: {
-            src: '/src/data/decks/images_neuro/skull3.png',
+            src: '/images_neuro/skull3.png',
             alt: 'Axial CT skull base with labeled structures',
             caption: 'Axial CT — skull base window. Identify label K.',
           },
@@ -1558,7 +1544,7 @@ export const neuroSubsections = [
   front: {
     question: 'Name the structure labeled A in this diagram of the brain neurovascular anatomy.',
     image: {
-      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      src: '/images_neuro/brain_vasc01.png',
       alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
     },
   },
@@ -1576,7 +1562,7 @@ export const neuroSubsections = [
   front: {
     question: 'Name the structure labeled B in this diagram of the brain neurovascular anatomy.',
     image: {
-      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      src: '/images_neuro/brain_vasc01.png',
       alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
     },
   },
@@ -1594,7 +1580,7 @@ export const neuroSubsections = [
   front: {
     question: 'Name the structure labeled C in this diagram of the brain neurovascular anatomy.',
     image: {
-      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      src: '/images_neuro/brain_vasc01.png',
       alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
     },
   },
@@ -1612,7 +1598,7 @@ export const neuroSubsections = [
   front: {
     question: 'Name the structure labeled D in this diagram of the brain neurovascular anatomy.',
     image: {
-      src: '/src/data/decks/images_neuro/brain_vasc01.png',
+      src: '/images_neuro/brain_vasc01.png',
       alt: 'Brain neurovascular anatomy diagram with structures labeled A–D',
     },
   },
@@ -1967,7 +1953,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #1 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #1',
     },
@@ -1986,7 +1972,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #2 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #2',
     },
@@ -2005,7 +1991,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #3 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #3',
     },
@@ -2024,7 +2010,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #4 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #4',
     },
@@ -2043,7 +2029,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #5 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #5',
     },
@@ -2062,7 +2048,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #6 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #6',
     },
@@ -2081,7 +2067,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #7 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #7',
     },
@@ -2100,7 +2086,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #8 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #8',
     },
@@ -2119,7 +2105,7 @@ export const neuroSubsections = [
   front: {
     question: 'Structure #9 on this spine radiograph — name this labeled structure.',
     image: {
-      src: '/src/data/decks/images_neuro/spine_radio.png',
+      src: '/images_neuro/spine_radio.png',
       alt: 'Spine radiograph with labeled anatomical structures',
       caption: 'Identify structure #9',
     },
@@ -2468,7 +2454,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull04,
+            src: '/images_neuro/skull04.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2483,7 +2469,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure',
           image: {
-            src: skull05,
+            src: '/images_neuro/skull05.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2498,7 +2484,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull06,
+            src: '/images_neuro/skull06.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2513,7 +2499,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull07,
+            src: '/images_neuro/skull07.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2528,7 +2514,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull08,
+            src: '/images_neuro/skull08.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2543,7 +2529,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull09,
+            src: '/images_neuro/skull09.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2558,7 +2544,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull10,
+            src: '/images_neuro/skull10.png',
             alt: 'Axial CT skull base at pterygopalatine fossa level',
             caption: 'Axial CT — Skull Base (Pterygopalatine Fossa Level)',
             maskSides: { left: '24%', right: '24%' },
@@ -2573,7 +2559,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull11,
+            src: '/images_neuro/skull11.png',
             alt: 'Axial CT facial bones at inferior orbital fissure level',
             caption: 'Axial CT — Facial Bones (Inferior Orbital Fissure Level)',
             maskSides: { left: '20%', right: '22%' },
@@ -2588,7 +2574,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull12,
+            src: '/images_neuro/skull12.png',
             alt: 'Axial CT orbital apex level showing superior orbital fissure',
             caption: 'Axial CT — Orbital Apex Level',
             maskSides: { left: '22%', right: '24%' },
@@ -2603,7 +2589,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull13,
+            src: '/images_neuro/skull13.png',
             alt: 'Axial CT orbital apex level showing superior orbital fissure',
             caption: 'Axial CT — Orbital Apex Level',
             maskSides: { left: '22%', right: '24%' },
@@ -2618,7 +2604,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull14,
+            src: '/images_neuro/skull14.png',
             alt: 'Axial CT orbital apex level showing superior orbital fissure',
             caption: 'Axial CT — Orbital Apex Level',
             maskSides: { left: '22%', right: '24%' },
@@ -2633,7 +2619,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull01,
+            src: '/images_neuro/skull01.png',
             alt: 'Axial CT orbital apex level showing superior orbital fissure',
             caption: 'Axial CT — Orbital Apex Level',
             maskSides: { left: '22%', right: '24%' },
@@ -2648,7 +2634,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull02,
+            src: '/images_neuro/skull02.png',
             alt: 'Axial CT skull base at sella turcica level',
             caption: 'Axial CT — Skull Base (Sella Turcica Level)',
             maskSides: { left: '24%', right: '22%' },
@@ -2663,7 +2649,7 @@ export const neuroSubsections = [
         front: {
           question: 'Name the structure.',
           image: {
-            src: skull03,
+            src: '/images_neuro/skull03.png',
             alt: 'Axial CT orbital level showing lamina papyracea',
             caption: 'Axial CT — Orbital Level',
             maskSides: { left: '22%', right: '24%' },
