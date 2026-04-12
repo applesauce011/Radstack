@@ -49,18 +49,16 @@ export default function App() {
   const { loadForUser } = useProgressStore()
 
   useEffect(() => {
-    // getSession() reads from localStorage synchronously — sets isAuthenticated
-    // immediately so the UI never briefly shows "not logged in" while waiting for
-    // the async onAuthStateChange INITIAL_SESSION event.
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSessionUser(session?.user ?? null)
-      if (session?.user) loadForUser(session.user.id)
-      else loadForUser(null)
-    })
-
-    // onAuthStateChange handles sign-in / sign-out / token refresh events.
-    // loadForUser is idempotent — if getSession() already loaded for this user
-    // it returns immediately, so INITIAL_SESSION firing won't cause a race.
+    // We rely solely on onAuthStateChange — NOT getSession().
+    //
+    // Why: getSession() reads from localStorage before the Supabase client has
+    // loaded the JWT into memory. Any Supabase request made during that window
+    // goes out with the anon key instead of the user JWT, so RLS silently blocks
+    // both SELECT (returns empty) and INSERT (writes nothing).
+    //
+    // onAuthStateChange fires INITIAL_SESSION only after the client has loaded
+    // and refreshed the session from storage, so the JWT is guaranteed valid by
+    // the time loadForUser (and any subsequent writes) run.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         setSessionUser(session?.user ?? null)

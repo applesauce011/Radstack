@@ -64,10 +64,6 @@ export const useProgressStore = create((set, get) => {
         return
       }
 
-      // Skip if we already have fresh data for this user
-      const current = get()
-      if (current.isSynced && current.userId === userId) return
-
       set({ userId, isSynced: false })
 
       const [progressResult, metaResult] = await Promise.all([
