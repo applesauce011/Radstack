@@ -4,38 +4,36 @@ import { supabase } from '../lib/supabase'
 // ============================================================
 // Progress Store — backed by Supabase Postgres
 //
-// Tables (created via SQL in supabase/schema.sql):
+// Tables (see supabase/schema.sql):
 //
 //   card_progress
-//     user_id   uuid  references auth.users
-//     card_id   text
-//     state     text  ('got_it' | 'flagged')  -- unseen = row absent
-//     PRIMARY KEY (user_id, card_id)
+//     user_id   uuid  references auth.users  \
+//     card_id   text                          } composite PK
+//     state     text  ('got_it' | 'flagged')
 //
 //   user_meta
-//     user_id       uuid  references auth.users  PRIMARY KEY
+//     user_id       uuid  PRIMARY KEY
 //     last_studied  jsonb  { [subspecialtyId]: timestamp_ms }
 //
-// RLS policies ensure each user can only see/edit their own rows.
-//
-// Local state is the in-memory cache — it's loaded once on login
-// and kept in sync with optimistic local updates + Supabase writes.
+// Local state is an in-memory cache loaded once on login and
+// kept in sync via optimistic updates + async Supabase writes.
+// Writes use INSERT → UPDATE fallback (avoids composite-key
+// upsert issues across PostgREST versions).
 // ============================================================
 
 export const CARD_STATE = {
-  UNSEEN: 'unseen',
-  GOT_IT: 'got_it',
+  UNSEEN:  'unseen',
+  GOT_IT:  'got_it',
   FLAGGED: 'flagged',
 }
 
 export const useProgressStore = create((set, get) => ({
-  userId: null,
-  progress: {},            // { [cardId]: 'got_it' | 'flagged' }  — unseen = absent
-  meta: { lastStudied: {} },
-  isSynced: false,         // true once loaded from Supabase
+  userId:   null,
+  progress: {},              // { [cardId]: 'got_it' | 'flagged' }
+  meta:     { lastStudied: {} },
+  isSynced: false,
 
   // ── Load ────────────────────────────────────────────────────
-  // Called from App.jsx when a user session is established.
   loadForUser: async (userId) => {
     if (!userId) {
       set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: false })
@@ -44,22 +42,20 @@ export const useProgressStore = create((set, get) => ({
 
     set({ userId, isSynced: false })
 
-    // Fetch card progress
     const { data: progressRows, error: progressError } = await supabase
       .from('card_progress')
       .select('card_id, state')
       .eq('user_id', userId)
       .limit(10000)
 
-    // Fetch meta (last studied timestamps)
     const { data: metaRow, error: metaError } = await supabase
       .from('user_meta')
       .select('last_studied')
       .eq('user_id', userId)
       .maybeSingle()
 
-    if (progressError) console.error('Progress load error:', progressError)
-    if (metaError) console.error('Meta load error:', metaError)
+    if (progressError) console.error('[progress] load error:', progressError)
+    if (metaError)     console.error('[progress] meta load error:', metaError)
 
     const progress = {}
     if (progressRows) {
@@ -74,7 +70,7 @@ export const useProgressStore = create((set, get) => ({
   setCardState: async (cardId, state) => {
     const { userId, progress } = get()
 
-    // Optimistic local update first (instant UI)
+    // Optimistic local update (instant UI feedback)
     const updated = { ...progress }
     if (state === CARD_STATE.UNSEEN) {
       delete updated[cardId]
@@ -83,27 +79,43 @@ export const useProgressStore = create((set, get) => ({
     }
     set({ progress: updated })
 
-    if (!userId) return // not logged in, local-only
+    if (!userId) return // not logged in — local only, won't persist
 
     if (state === CARD_STATE.UNSEEN) {
-      // Remove the row entirely — absence = unseen
+      // Delete the row — absence of row means unseen
       const { error } = await supabase
         .from('card_progress')
         .delete()
         .eq('user_id', userId)
         .eq('card_id', cardId)
+
       if (error) {
-        console.error('setCardState delete failed:', error)
-        set({ progress }) // revert optimistic update
+        console.error('[progress] delete failed:', error)
+        set({ progress }) // revert
       }
     } else {
-      // Upsert: insert or update on conflict
-      const { error } = await supabase
+      // Try INSERT first
+      const { error: insertError } = await supabase
         .from('card_progress')
-        .upsert({ user_id: userId, card_id: cardId, state }, { onConflict: 'user_id,card_id' })
-      if (error) {
-        console.error('setCardState upsert failed:', error)
-        set({ progress }) // revert optimistic update
+        .insert({ user_id: userId, card_id: cardId, state })
+
+      if (insertError) {
+        if (insertError.code === '23505') {
+          // Duplicate key — row already exists, UPDATE instead
+          const { error: updateError } = await supabase
+            .from('card_progress')
+            .update({ state })
+            .eq('user_id', userId)
+            .eq('card_id', cardId)
+
+          if (updateError) {
+            console.error('[progress] update failed:', updateError)
+            set({ progress }) // revert
+          }
+        } else {
+          console.error('[progress] insert failed:', insertError)
+          set({ progress }) // revert
+        }
       }
     }
   },
@@ -119,34 +131,36 @@ export const useProgressStore = create((set, get) => ({
 
     if (!userId) return
 
-    await supabase
+    const { error } = await supabase
       .from('user_meta')
       .upsert(
         { user_id: userId, last_studied: updated.lastStudied },
         { onConflict: 'user_id' }
       )
+
+    if (error) console.error('[progress] recordStudied failed:', error)
   },
 
   // ── Reset deck ──────────────────────────────────────────────
   resetDeck: async (cardIds) => {
     const { userId, progress } = get()
 
-    // Optimistic local update
     const updated = { ...progress }
     cardIds.forEach(id => delete updated[id])
     set({ progress: updated })
 
     if (!userId) return
 
-    // Delete all rows for these cards in one query
-    await supabase
+    const { error } = await supabase
       .from('card_progress')
       .delete()
       .eq('user_id', userId)
       .in('card_id', cardIds)
+
+    if (error) console.error('[progress] resetDeck failed:', error)
   },
 
-  // ── Helpers (synchronous, read from local cache) ────────────
+  // ── Helpers (synchronous reads from local cache) ────────────
   getCardState: (cardId) => {
     return get().progress[cardId] || CARD_STATE.UNSEEN
   },
@@ -156,8 +170,8 @@ export const useProgressStore = create((set, get) => ({
     let unseen = 0, gotIt = 0, flagged = 0
     cards.forEach(card => {
       const state = progress[card.id] || CARD_STATE.UNSEEN
-      if (state === CARD_STATE.UNSEEN) unseen++
-      else if (state === CARD_STATE.GOT_IT) gotIt++
+      if      (state === CARD_STATE.UNSEEN)  unseen++
+      else if (state === CARD_STATE.GOT_IT)  gotIt++
       else if (state === CARD_STATE.FLAGGED) flagged++
     })
     return { unseen, gotIt, flagged, total: cards.length }
