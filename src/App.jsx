@@ -25,7 +25,6 @@ function RedirectIfAuth({ children }) {
   return children
 }
 
-// Simple full-screen loader shown while Supabase restores the session
 function AppLoader() {
   return (
     <div style={{
@@ -46,36 +45,27 @@ function AppLoader() {
 }
 
 export default function App() {
-  const { setSessionUser, setLoading } = useAuthStore()
+  const { setSessionUser } = useAuthStore()
   const { loadForUser } = useProgressStore()
 
   useEffect(() => {
-    // 1. Get the existing session on first load (handles page refresh)
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSessionUser(session?.user ?? null)
-      if (session?.user) {
-        loadForUser(session.user.id)
-      }
-    })
-
-    // 2. Listen for any future auth changes (login, logout, token refresh)
+    // onAuthStateChange fires INITIAL_SESSION on mount (reads from localStorage,
+    // no network call needed). This is the single place we react to auth state —
+    // removing the separate getSession() call eliminates a double-load race where
+    // both paths called loadForUser concurrently and could overwrite each other.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         setSessionUser(session?.user ?? null)
 
-        if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
-          // Load progress on actual sign-in (not token refreshes, which can briefly
-          // emit SIGNED_OUT then SIGNED_IN and would clear optimistic state)
-          if (session?.user) await loadForUser(session.user.id)
+        if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
+          await loadForUser(session?.user?.id ?? null)
         } else if (event === 'SIGNED_OUT') {
           loadForUser(null)
         }
-        // TOKEN_REFRESHED: user identity already updated via setSessionUser above;
-        // no need to reload progress from DB.
+        // TOKEN_REFRESHED: identity already updated via setSessionUser; no reload needed.
       }
     )
 
-    // Cleanup listener on unmount
     return () => subscription.unsubscribe()
   }, [])
 

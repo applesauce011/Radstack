@@ -9,16 +9,22 @@ import { supabase } from '../lib/supabase'
 //   card_progress
 //     user_id   uuid  references auth.users  \
 //     card_id   text                          } composite PK
-//     state     text  ('got_it' | 'flagged')
+//     state     text  ('got_it' | 'flagged')  -- absent row = unseen
 //
 //   user_meta
 //     user_id       uuid  PRIMARY KEY
 //     last_studied  jsonb  { [subspecialtyId]: timestamp_ms }
 //
-// Local state is an in-memory cache loaded once on login and
-// kept in sync via optimistic updates + async Supabase writes.
-// Writes use INSERT → UPDATE fallback (avoids composite-key
-// upsert issues across PostgREST versions).
+// Design notes:
+//   - All writes use optimistic local update first for instant UI.
+//   - On write failure, only the affected card is reverted — not the
+//     entire progress object — so concurrent changes are never lost.
+//   - resolveUserId() falls back to the live Supabase session if the
+//     store's userId hasn't been hydrated yet, so writes always work
+//     regardless of auth initialization timing.
+//   - loadForUser() merges DB rows with any optimistic updates that
+//     arrived during the async fetch, then guards against stale loads
+//     by checking the userId hasn't changed mid-flight.
 // ============================================================
 
 export const CARD_STATE = {
@@ -27,157 +33,198 @@ export const CARD_STATE = {
   FLAGGED: 'flagged',
 }
 
-export const useProgressStore = create((set, get) => ({
-  userId:   null,
-  progress: {},              // { [cardId]: 'got_it' | 'flagged' }
-  meta:     { lastStudied: {} },
-  isSynced: false,
+export const useProgressStore = create((set, get) => {
 
-  // ── Load ────────────────────────────────────────────────────
-  loadForUser: async (userId) => {
-    if (!userId) {
-      set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: false })
-      return
-    }
+  // ── Private helper ───────────────────────────────────────────
+  // Returns the active user ID from the store, or falls back to
+  // the live Supabase session. Never throws.
+  const resolveUserId = async () => {
+    const { userId } = get()
+    if (userId) return userId
 
-    set({ userId, isSynced: false })
+    const { data: { session } } = await supabase.auth.getSession()
+    const id = session?.user?.id ?? null
+    if (id) set({ userId: id }) // hydrate for subsequent calls
+    return id
+  }
 
-    const { data: progressRows, error: progressError } = await supabase
-      .from('card_progress')
-      .select('card_id, state')
-      .eq('user_id', userId)
-      .limit(10000)
+  return {
+    userId:   null,
+    progress: {},              // { [cardId]: 'got_it' | 'flagged' }
+    meta:     { lastStudied: {} },
+    isSynced: false,           // true once the initial DB load has completed
 
-    const { data: metaRow, error: metaError } = await supabase
-      .from('user_meta')
-      .select('last_studied')
-      .eq('user_id', userId)
-      .maybeSingle()
+    // ── Load ──────────────────────────────────────────────────
+    // Called once per auth session from App.jsx via onAuthStateChange.
+    // Merges DB rows with any optimistic updates that arrived during
+    // the async fetch so in-flight writes are never overwritten.
+    loadForUser: async (userId) => {
+      if (!userId) {
+        set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: true })
+        return
+      }
 
-    if (progressError) console.error('[progress] load error:', progressError)
-    if (metaError)     console.error('[progress] meta load error:', metaError)
+      set({ userId, isSynced: false })
 
-    const progress = {}
-    if (progressRows) {
-      progressRows.forEach(row => { progress[row.card_id] = row.state })
-    }
+      const [progressResult, metaResult] = await Promise.all([
+        supabase
+          .from('card_progress')
+          .select('card_id, state')
+          .eq('user_id', userId)
+          .limit(10000),
+        supabase
+          .from('user_meta')
+          .select('last_studied')
+          .eq('user_id', userId)
+          .maybeSingle(),
+      ])
 
-    const meta = { lastStudied: metaRow?.last_studied || {} }
-    set({ progress, meta, isSynced: true })
-  },
+      if (progressResult.error) console.error('[progress] load error:', progressResult.error)
+      if (metaResult.error)     console.error('[progress] meta load error:', metaResult.error)
 
-  // ── Card state ──────────────────────────────────────────────
-  setCardState: async (cardId, state) => {
-    const { userId, progress } = get()
+      // Build the persisted progress map from DB rows
+      const dbProgress = {}
+      if (progressResult.data) {
+        progressResult.data.forEach(row => { dbProgress[row.card_id] = row.state })
+      }
 
-    // Optimistic local update (instant UI feedback)
-    const updated = { ...progress }
-    if (state === CARD_STATE.UNSEEN) {
-      delete updated[cardId]
-    } else {
-      updated[cardId] = state
-    }
-    set({ progress: updated })
+      // Guard: if the user changed while we were fetching, discard this result
+      if (get().userId !== userId) return
 
-    if (!userId) return // not logged in — local only, won't persist
+      // Merge: DB is the base; any optimistic updates that happened during the
+      // fetch sit in get().progress and take precedence (they're already in-flight
+      // to Supabase or have already succeeded)
+      set({
+        progress: { ...dbProgress, ...get().progress },
+        meta:     { lastStudied: metaResult.data?.last_studied || {} },
+        isSynced: true,
+      })
+    },
 
-    if (state === CARD_STATE.UNSEEN) {
-      // Delete the row — absence of row means unseen
+    // ── Card state ────────────────────────────────────────────
+    setCardState: async (cardId, state) => {
+      // Capture the card's current state so we can do a targeted revert on failure,
+      // without touching any other concurrent optimistic updates.
+      const originalState = get().progress[cardId] ?? CARD_STATE.UNSEEN
+
+      // Optimistic update
+      set(s => {
+        const next = { ...s.progress }
+        if (state === CARD_STATE.UNSEEN) delete next[cardId]
+        else next[cardId] = state
+        return { progress: next }
+      })
+
+      const userId = await resolveUserId()
+      if (!userId) {
+        console.warn('[progress] setCardState: no active session — change is local only')
+        return
+      }
+
+      // Revert only this card back to its original state on failure
+      const revert = () => {
+        set(s => {
+          const next = { ...s.progress }
+          if (originalState === CARD_STATE.UNSEEN) delete next[cardId]
+          else next[cardId] = originalState
+          return { progress: next }
+        })
+      }
+
+      if (state === CARD_STATE.UNSEEN) {
+        const { error } = await supabase
+          .from('card_progress')
+          .delete()
+          .eq('user_id', userId)
+          .eq('card_id', cardId)
+
+        if (error) { console.error('[progress] delete failed:', error); revert() }
+
+      } else {
+        // INSERT first; fall back to UPDATE on duplicate-key conflict
+        const { error: insertError } = await supabase
+          .from('card_progress')
+          .insert({ user_id: userId, card_id: cardId, state })
+
+        if (insertError) {
+          // '23505' = unique_violation (row already exists)
+          if (insertError.code === '23505') {
+            const { error: updateError } = await supabase
+              .from('card_progress')
+              .update({ state })
+              .eq('user_id', userId)
+              .eq('card_id', cardId)
+
+            if (updateError) { console.error('[progress] update failed:', updateError); revert() }
+          } else {
+            console.error('[progress] insert failed:', insertError)
+            revert()
+          }
+        }
+      }
+    },
+
+    // ── Record last studied timestamp ─────────────────────────
+    recordStudied: async (subspecialtyId) => {
+      set(s => ({
+        meta: {
+          ...s.meta,
+          lastStudied: { ...s.meta.lastStudied, [subspecialtyId]: Date.now() },
+        },
+      }))
+
+      const userId = await resolveUserId()
+      if (!userId) return
+
+      const { error } = await supabase
+        .from('user_meta')
+        .upsert(
+          { user_id: userId, last_studied: get().meta.lastStudied },
+          { onConflict: 'user_id' }
+        )
+
+      if (error) console.error('[progress] recordStudied failed:', error)
+    },
+
+    // ── Reset deck ────────────────────────────────────────────
+    resetDeck: async (cardIds) => {
+      set(s => {
+        const next = { ...s.progress }
+        cardIds.forEach(id => delete next[id])
+        return { progress: next }
+      })
+
+      const userId = await resolveUserId()
+      if (!userId) return
+
       const { error } = await supabase
         .from('card_progress')
         .delete()
         .eq('user_id', userId)
-        .eq('card_id', cardId)
+        .in('card_id', cardIds)
 
-      if (error) {
-        console.error('[progress] delete failed:', error)
-        set({ progress }) // revert
-      }
-    } else {
-      // Try INSERT first
-      const { error: insertError } = await supabase
-        .from('card_progress')
-        .insert({ user_id: userId, card_id: cardId, state })
+      if (error) console.error('[progress] resetDeck failed:', error)
+    },
 
-      if (insertError) {
-        if (insertError.code === '23505') {
-          // Duplicate key — row already exists, UPDATE instead
-          const { error: updateError } = await supabase
-            .from('card_progress')
-            .update({ state })
-            .eq('user_id', userId)
-            .eq('card_id', cardId)
+    // ── Helpers (synchronous, read from local cache) ──────────
+    getCardState: (cardId) => {
+      return get().progress[cardId] || CARD_STATE.UNSEEN
+    },
 
-          if (updateError) {
-            console.error('[progress] update failed:', updateError)
-            set({ progress }) // revert
-          }
-        } else {
-          console.error('[progress] insert failed:', insertError)
-          set({ progress }) // revert
-        }
-      }
-    }
-  },
+    getStatsForCards: (cards) => {
+      const { progress } = get()
+      let unseen = 0, gotIt = 0, flagged = 0
+      cards.forEach(card => {
+        const state = progress[card.id] || CARD_STATE.UNSEEN
+        if      (state === CARD_STATE.UNSEEN)  unseen++
+        else if (state === CARD_STATE.GOT_IT)  gotIt++
+        else if (state === CARD_STATE.FLAGGED) flagged++
+      })
+      return { unseen, gotIt, flagged, total: cards.length }
+    },
 
-  // ── Record last studied timestamp ───────────────────────────
-  recordStudied: async (subspecialtyId) => {
-    const { userId, meta } = get()
-    const updated = {
-      ...meta,
-      lastStudied: { ...meta.lastStudied, [subspecialtyId]: Date.now() },
-    }
-    set({ meta: updated })
-
-    if (!userId) return
-
-    const { error } = await supabase
-      .from('user_meta')
-      .upsert(
-        { user_id: userId, last_studied: updated.lastStudied },
-        { onConflict: 'user_id' }
-      )
-
-    if (error) console.error('[progress] recordStudied failed:', error)
-  },
-
-  // ── Reset deck ──────────────────────────────────────────────
-  resetDeck: async (cardIds) => {
-    const { userId, progress } = get()
-
-    const updated = { ...progress }
-    cardIds.forEach(id => delete updated[id])
-    set({ progress: updated })
-
-    if (!userId) return
-
-    const { error } = await supabase
-      .from('card_progress')
-      .delete()
-      .eq('user_id', userId)
-      .in('card_id', cardIds)
-
-    if (error) console.error('[progress] resetDeck failed:', error)
-  },
-
-  // ── Helpers (synchronous reads from local cache) ────────────
-  getCardState: (cardId) => {
-    return get().progress[cardId] || CARD_STATE.UNSEEN
-  },
-
-  getStatsForCards: (cards) => {
-    const { progress } = get()
-    let unseen = 0, gotIt = 0, flagged = 0
-    cards.forEach(card => {
-      const state = progress[card.id] || CARD_STATE.UNSEEN
-      if      (state === CARD_STATE.UNSEEN)  unseen++
-      else if (state === CARD_STATE.GOT_IT)  gotIt++
-      else if (state === CARD_STATE.FLAGGED) flagged++
-    })
-    return { unseen, gotIt, flagged, total: cards.length }
-  },
-
-  getLastStudiedTimestamp: (subspecialtyId) => {
-    return get().meta.lastStudied[subspecialtyId] || 0
-  },
-}))
+    getLastStudiedTimestamp: (subspecialtyId) => {
+      return get().meta.lastStudied[subspecialtyId] || 0
+    },
+  }
+})
