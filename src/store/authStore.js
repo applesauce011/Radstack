@@ -32,7 +32,7 @@ export const useAuthStore = create((set) => ({
       // name is stored in user_metadata at signup
       name: supabaseUser.user_metadata?.name || supabaseUser.email,
     }
-    set({ user, isAuthenticated: true, isLoading: false })
+    set({ user, isAuthenticated: true })
   },
 
   setLoading: (isLoading) => set({ isLoading }),

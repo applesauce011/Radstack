@@ -45,7 +45,7 @@ function AppLoader() {
 }
 
 export default function App() {
-  const { setSessionUser } = useAuthStore()
+  const { setSessionUser, setLoading } = useAuthStore()
   const { loadForUser } = useProgressStore()
 
   useEffect(() => {
@@ -65,6 +65,7 @@ export default function App() {
 
         if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
           await loadForUser(session?.user?.id ?? null)
+          setLoading(false)
         } else if (event === 'SIGNED_OUT') {
           loadForUser(null)
         }

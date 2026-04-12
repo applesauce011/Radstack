@@ -144,35 +144,14 @@ export const useProgressStore = create((set, get) => {
         if (error) { console.error('[progress] delete failed:', error); revert() }
 
       } else {
-        // INSERT first; fall back to UPDATE on duplicate-key conflict.
-        // .select('card_id') forces PostgREST to return the created row so we
-        // can detect silent RLS blocks (which return empty data with no error).
-        const { data: insertData, error: insertError } = await supabase
+        const { error } = await supabase
           .from('card_progress')
-          .insert({ user_id: userId, card_id: cardId, state })
-          .select('*')
+          .upsert(
+            { user_id: userId, card_id: cardId, state, updated_at: new Date().toISOString() },
+            { onConflict: 'user_id,card_id' }
+          )
 
-        console.log('[progress] insert result:', JSON.stringify({ insertData, insertError }))
-
-        if (insertError) {
-          // '23505' = unique_violation (row already exists — update instead)
-          if (insertError.code === '23505') {
-            const { error: updateError } = await supabase
-              .from('card_progress')
-              .update({ state })
-              .eq('user_id', userId)
-              .eq('card_id', cardId)
-
-            if (updateError) { console.error('[progress] update failed:', updateError); revert() }
-          } else {
-            console.error('[progress] insert failed:', insertError)
-            revert()
-          }
-        } else if (!insertData || insertData.length === 0) {
-          // Insert returned success but wrote nothing — RLS blocked it silently
-          console.error('[progress] insert blocked by RLS (no error, no row). userId:', userId, 'cardId:', cardId)
-          revert()
-        }
+        if (error) { console.error('[progress] upsert failed:', error); revert() }
       }
     },
 
