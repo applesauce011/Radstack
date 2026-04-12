@@ -4,15 +4,17 @@ import { useAuthStore } from '../../store/authStore'
 import { Button } from '../ui/Button'
 
 function FormInput({ label, type, value, onChange, placeholder, error }) {
+  const id = `field-${label.toLowerCase().replace(/\s+/g, '-')}`
   return (
     <div style={{ marginBottom: '16px' }}>
-      <label style={{
+      <label htmlFor={id} style={{
         display: 'block', fontSize: '13px', fontWeight: '500',
         color: 'var(--text-secondary)', marginBottom: '6px',
       }}>
         {label}
       </label>
       <input
+        id={id}
         type={type}
         value={value}
         onChange={onChange}

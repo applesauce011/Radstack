@@ -55,14 +55,18 @@ export const useProgressStore = create((set, get) => {
     isSynced: false,           // true once the initial DB load has completed
 
     // ── Load ──────────────────────────────────────────────────
-    // Called once per auth session from App.jsx via onAuthStateChange.
-    // Merges DB rows with any optimistic updates that arrived during
-    // the async fetch so in-flight writes are never overwritten.
+    // Called from App.jsx on every auth event. Idempotent: if already
+    // synced for this userId, returns immediately (prevents the double-
+    // call race between getSession() and onAuthStateChange both firing).
     loadForUser: async (userId) => {
       if (!userId) {
         set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: true })
         return
       }
+
+      // Skip if we already have fresh data for this user
+      const current = get()
+      if (current.isSynced && current.userId === userId) return
 
       set({ userId, isSynced: false })
 
@@ -103,6 +107,8 @@ export const useProgressStore = create((set, get) => {
 
     // ── Card state ────────────────────────────────────────────
     setCardState: async (cardId, state) => {
+      console.log('[progress] setCardState', cardId, state)
+
       // Capture the card's current state so we can do a targeted revert on failure,
       // without touching any other concurrent optimistic updates.
       const originalState = get().progress[cardId] ?? CARD_STATE.UNSEEN
@@ -116,6 +122,7 @@ export const useProgressStore = create((set, get) => {
       })
 
       const userId = await resolveUserId()
+      console.log('[progress] resolved userId:', userId)
       if (!userId) {
         console.warn('[progress] setCardState: no active session — change is local only')
         return
@@ -141,13 +148,16 @@ export const useProgressStore = create((set, get) => {
         if (error) { console.error('[progress] delete failed:', error); revert() }
 
       } else {
-        // INSERT first; fall back to UPDATE on duplicate-key conflict
-        const { error: insertError } = await supabase
+        // INSERT first; fall back to UPDATE on duplicate-key conflict.
+        // .select('card_id') forces PostgREST to return the created row so we
+        // can detect silent RLS blocks (which return empty data with no error).
+        const { data: insertData, error: insertError } = await supabase
           .from('card_progress')
           .insert({ user_id: userId, card_id: cardId, state })
+          .select('card_id')
 
         if (insertError) {
-          // '23505' = unique_violation (row already exists)
+          // '23505' = unique_violation (row already exists — update instead)
           if (insertError.code === '23505') {
             const { error: updateError } = await supabase
               .from('card_progress')
@@ -160,6 +170,10 @@ export const useProgressStore = create((set, get) => {
             console.error('[progress] insert failed:', insertError)
             revert()
           }
+        } else if (!insertData || insertData.length === 0) {
+          // Insert returned success but wrote nothing — RLS blocked it silently
+          console.error('[progress] insert blocked by RLS (no error, no row). userId:', userId, 'cardId:', cardId)
+          revert()
         }
       }
     },

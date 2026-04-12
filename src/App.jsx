@@ -49,10 +49,18 @@ export default function App() {
   const { loadForUser } = useProgressStore()
 
   useEffect(() => {
-    // onAuthStateChange fires INITIAL_SESSION on mount (reads from localStorage,
-    // no network call needed). This is the single place we react to auth state —
-    // removing the separate getSession() call eliminates a double-load race where
-    // both paths called loadForUser concurrently and could overwrite each other.
+    // getSession() reads from localStorage synchronously — sets isAuthenticated
+    // immediately so the UI never briefly shows "not logged in" while waiting for
+    // the async onAuthStateChange INITIAL_SESSION event.
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSessionUser(session?.user ?? null)
+      if (session?.user) loadForUser(session.user.id)
+      else loadForUser(null)
+    })
+
+    // onAuthStateChange handles sign-in / sign-out / token refresh events.
+    // loadForUser is idempotent — if getSession() already loaded for this user
+    // it returns immediately, so INITIAL_SESSION firing won't cause a race.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         setSessionUser(session?.user ?? null)
