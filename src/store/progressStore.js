@@ -154,7 +154,9 @@ export const useProgressStore = create((set, get) => {
         const { data: insertData, error: insertError } = await supabase
           .from('card_progress')
           .insert({ user_id: userId, card_id: cardId, state })
-          .select('card_id')
+          .select('*')
+
+        console.log('[progress] insert result:', JSON.stringify({ insertData, insertError }))
 
         if (insertError) {
           // '23505' = unique_violation (row already exists — update instead)
