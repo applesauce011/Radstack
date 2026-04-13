@@ -67,7 +67,12 @@ export default function App() {
           await loadForUser(session?.user?.id ?? null)
           setLoading(false)
         } else if (event === 'SIGNED_OUT') {
-          loadForUser(null)
+          // Guard: if user logged back in before async signOut completed,
+          // SIGNED_IN already ran — don't overwrite their loaded progress.
+          const { data: { session: currentSession } } = await supabase.auth.getSession()
+          if (!currentSession) {
+            loadForUser(null)
+          }
         }
         // TOKEN_REFRESHED: identity already updated via setSessionUser; no reload needed.
       }
