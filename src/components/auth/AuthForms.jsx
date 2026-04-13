@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
 import { Button } from '../ui/Button'
 
+// ── Shared sub-components ─────────────────────────────────────
+
 function FormInput({ label, type, value, onChange, placeholder, error }) {
   const id = `field-${label.toLowerCase().replace(/\s+/g, '-')}`
   return (
@@ -19,6 +21,7 @@ function FormInput({ label, type, value, onChange, placeholder, error }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        autoComplete={type === 'password' ? 'current-password' : type === 'email' ? 'email' : 'name'}
         style={{
           width: '100%', background: 'var(--bg-elevated)',
           border: `1px solid ${error ? 'var(--accent-rose)' : 'var(--border-default)'}`,
@@ -26,11 +29,16 @@ function FormInput({ label, type, value, onChange, placeholder, error }) {
           color: 'var(--text-primary)', fontSize: '15px',
           fontFamily: 'var(--font-body)', outline: 'none',
           transition: 'border-color var(--transition)',
+          boxSizing: 'border-box',
         }}
         onFocus={e => { e.target.style.borderColor = 'var(--accent-cyan)' }}
         onBlur={e => { e.target.style.borderColor = error ? 'var(--accent-rose)' : 'var(--border-default)' }}
       />
-      {error && <div style={{ fontSize: '12px', color: 'var(--accent-rose)', marginTop: '4px' }}>{error}</div>}
+      {error && (
+        <div style={{ fontSize: '12px', color: 'var(--accent-rose)', marginTop: '4px' }}>
+          {error}
+        </div>
+      )}
     </div>
   )
 }
@@ -82,23 +90,27 @@ function AuthShell({ children, title, subtitle }) {
   )
 }
 
+// ── Login ─────────────────────────────────────────────────────
+
 export function LoginPage() {
-  const navigate = useNavigate()
-  const { login } = useAuthStore()
-  const [email, setEmail] = useState('')
+  const navigate   = useNavigate()
+  const { login }  = useAuthStore()
+  const [email,    setEmail]    = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [error,    setError]    = useState('')
+  const [loading,  setLoading]  = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!email || !password) return
     setError('')
     setLoading(true)
-    const result = await login(email, password)
+    const result = await login(email.trim(), password)
     if (result.success) {
-      // onAuthStateChange in App.jsx handles the redirect timing —
-      // but we navigate eagerly since we know it succeeded
-      navigate('/dashboard')
+      // onAuthStateChange (SIGNED_IN) fires and triggers loadForUser.
+      // RequireAuth shows the AppLoader while that completes, then
+      // renders the dashboard. Navigate eagerly so the URL updates now.
+      navigate('/dashboard', { replace: true })
     } else {
       setError(result.error)
       setLoading(false)
@@ -107,9 +119,17 @@ export function LoginPage() {
 
   return (
     <AuthShell title="Welcome back" subtitle="Sign in to track your study progress">
-      <form onSubmit={handleSubmit}>
-        <FormInput label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" />
-        <FormInput label="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="••••••••" />
+      <form onSubmit={handleSubmit} noValidate>
+        <FormInput
+          label="Email" type="email"
+          value={email} onChange={e => setEmail(e.target.value)}
+          placeholder="you@example.com"
+        />
+        <FormInput
+          label="Password" type="password"
+          value={password} onChange={e => setPassword(e.target.value)}
+          placeholder="••••••••"
+        />
         <ErrorBanner message={error} />
         <Button type="submit" fullWidth disabled={loading} size="lg">
           {loading ? 'Signing in…' : 'Sign In'}
@@ -117,15 +137,21 @@ export function LoginPage() {
       </form>
       <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: 'var(--text-muted)' }}>
         No account?{' '}
-        <button onClick={() => navigate('/register')}
-          style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}>
+        <button
+          type="button"
+          onClick={() => navigate('/register')}
+          style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}
+        >
           Create one
         </button>
       </p>
       <p style={{ textAlign: 'center', marginTop: '8px', fontSize: '14px', color: 'var(--text-muted)' }}>
         Or{' '}
-        <button onClick={() => navigate('/decks')}
-          style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}>
+        <button
+          type="button"
+          onClick={() => navigate('/decks')}
+          style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}
+        >
           browse decks without signing in
         </button>
       </p>
@@ -133,21 +159,24 @@ export function LoginPage() {
   )
 }
 
+// ── Register ──────────────────────────────────────────────────
+
 export function RegisterPage() {
-  const navigate = useNavigate()
-  const { register } = useAuthStore()
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const navigate      = useNavigate()
+  const { register }  = useAuthStore()
+  const [name,     setName]     = useState('')
+  const [email,    setEmail]    = useState('')
   const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState({})
-  const [loading, setLoading] = useState(false)
+  const [errors,   setErrors]   = useState({})
+  const [formError, setFormError] = useState('')
+  const [loading,  setLoading]  = useState(false)
   const [needsConfirmation, setNeedsConfirmation] = useState(false)
 
   const validate = () => {
     const e = {}
-    if (!name.trim()) e.name = 'Name is required'
-    if (!email.includes('@')) e.email = 'Valid email required'
-    if (password.length < 6) e.password = 'Password must be at least 6 characters'
+    if (!name.trim())          e.name     = 'Name is required'
+    if (!email.includes('@'))  e.email    = 'Valid email required'
+    if (password.length < 6)   e.password = 'Password must be at least 6 characters'
     return e
   }
 
@@ -156,18 +185,18 @@ export function RegisterPage() {
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
     setErrors({})
+    setFormError('')
     setLoading(true)
-    const result = await register(name, email, password)
+    const result = await register(name.trim(), email.trim(), password)
     if (result.success) {
       if (result.needsConfirmation) {
-        // Supabase email confirmation is ON — tell the user
         setNeedsConfirmation(true)
         setLoading(false)
       } else {
-        navigate('/dashboard')
+        navigate('/dashboard', { replace: true })
       }
     } else {
-      setErrors({ email: result.error })
+      setFormError(result.error)
       setLoading(false)
     }
   }
@@ -178,7 +207,8 @@ export function RegisterPage() {
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: '48px', marginBottom: '16px' }}>📬</div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
-            We sent a confirmation link to <strong style={{ color: 'var(--text-primary)' }}>{email}</strong>.
+            We sent a confirmation link to{' '}
+            <strong style={{ color: 'var(--text-primary)' }}>{email}</strong>.
             Click it to activate your account, then sign in.
           </p>
           <Button variant="primary" fullWidth onClick={() => navigate('/login')}>
@@ -191,19 +221,34 @@ export function RegisterPage() {
 
   return (
     <AuthShell title="Create your account" subtitle="Start tracking your radiology study progress">
-      <form onSubmit={handleSubmit}>
-        <FormInput label="Full Name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Dr. Jane Smith" error={errors.name} />
-        <FormInput label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" error={errors.email} />
-        <FormInput label="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Min. 6 characters" error={errors.password} />
-        {errors.email && !errors.email.includes('@') && <ErrorBanner message={errors.email} />}
+      <form onSubmit={handleSubmit} noValidate>
+        <FormInput
+          label="Full Name" type="text"
+          value={name} onChange={e => setName(e.target.value)}
+          placeholder="Dr. Jane Smith" error={errors.name}
+        />
+        <FormInput
+          label="Email" type="email"
+          value={email} onChange={e => setEmail(e.target.value)}
+          placeholder="you@example.com" error={errors.email}
+        />
+        <FormInput
+          label="Password" type="password"
+          value={password} onChange={e => setPassword(e.target.value)}
+          placeholder="Min. 6 characters" error={errors.password}
+        />
+        <ErrorBanner message={formError} />
         <Button type="submit" fullWidth disabled={loading} size="lg">
           {loading ? 'Creating account…' : 'Create Account'}
         </Button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: 'var(--text-muted)' }}>
         Already have an account?{' '}
-        <button onClick={() => navigate('/login')}
-          style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}>
+        <button
+          type="button"
+          onClick={() => navigate('/login')}
+          style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}
+        >
           Sign in
         </button>
       </p>

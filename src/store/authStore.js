@@ -1,80 +1,83 @@
 import { create } from 'zustand'
 import { supabase } from '../lib/supabase'
 
-// ============================================================
-// Auth Store — backed by Supabase Auth
+// ─────────────────────────────────────────────────────────────
+// Auth Store
 //
-// Supabase automatically handles:
-//   - Secure password hashing
-//   - JWT session tokens stored in localStorage
-//   - Silent token refresh
-//   - Cross-device sessions (same account, any browser)
+// State machine:
+//   isLoading:true  → app just opened, waiting for INITIAL_SESSION
+//   isLoading:false + isAuthenticated:false → no session
+//   isLoading:false + isAuthenticated:true  → session active
 //
-// The app listens to onAuthStateChange in App.jsx to keep
-// this store in sync with the Supabase session at all times.
-// ============================================================
+// The ONLY place that sets user/isAuthenticated is _setUser(),
+// which is called exclusively from the onAuthStateChange listener
+// in App.jsx. This guarantees the store is always in sync with
+// the live Supabase session.
+// ─────────────────────────────────────────────────────────────
+
+function parseUser(supabaseUser) {
+  return {
+    id:    supabaseUser.id,
+    email: supabaseUser.email,
+    name:  supabaseUser.user_metadata?.name ?? supabaseUser.email,
+  }
+}
 
 export const useAuthStore = create((set) => ({
-  user: null,           // { id, email, name }
+  user:            null,
   isAuthenticated: false,
-  isLoading: true,      // true until the initial session check completes
+  isLoading:       true, // true until INITIAL_SESSION resolves
 
-  // Called by App.jsx's onAuthStateChange listener.
-  // This is the single source of truth for session state.
-  setSessionUser: (supabaseUser) => {
+  // ── Internal — called only from App.jsx's auth listener ──────
+  // Call with a Supabase user object to mark authenticated,
+  // or null to mark signed out.
+  // When a non-null user is set, isLoading stays true until
+  // _doneLoading() is called (after progress finishes loading).
+  _setUser: (supabaseUser) => {
     if (!supabaseUser) {
       set({ user: null, isAuthenticated: false, isLoading: false })
-      return
+    } else {
+      set({ user: parseUser(supabaseUser), isAuthenticated: true })
+      // isLoading deliberately left as-is; App.jsx calls _doneLoading()
+      // after loadForUser() completes so the app never flashes
+      // an authenticated-but-empty state.
     }
-    const user = {
-      id: supabaseUser.id,
-      email: supabaseUser.email,
-      // name is stored in user_metadata at signup
-      name: supabaseUser.user_metadata?.name || supabaseUser.email,
-    }
-    set({ user, isAuthenticated: true })
   },
 
-  setLoading: (isLoading) => set({ isLoading }),
+  // Called by App.jsx after progress has finished loading.
+  _doneLoading: () => set({ isLoading: false }),
 
-  // Sign in with email + password
+  // ── Public actions ────────────────────────────────────────────
   login: async (email, password) => {
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) return { success: false, error: error.message }
-    // setSessionUser will be called automatically via onAuthStateChange
+    // onAuthStateChange (SIGNED_IN) fires automatically and calls
+    // _setUser() + loadForUser() — no extra work needed here.
     return { success: true }
   },
 
-  // Create a new account — name is stored in Supabase user_metadata
   register: async (name, email, password) => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        data: { name }, // stored in auth.users.raw_user_meta_data
-      },
+      options: { data: { name } }, // stored in auth.users.raw_user_meta_data
     })
     if (error) return { success: false, error: error.message }
-    // Supabase may require email confirmation depending on your project settings.
-    // If email confirmation is OFF (recommended for this app), the user is
-    // signed in immediately and onAuthStateChange fires automatically.
-    if (data.user && !data.session) {
-      // Email confirmation is ON — user needs to verify email first
-      return { success: true, needsConfirmation: true }
-    }
+    // If email confirmation is ON, data.session is null until verified.
+    if (data.user && !data.session) return { success: true, needsConfirmation: true }
     return { success: true }
   },
 
-  logout: () => {
-    // Clear local state immediately — no network call needed for instant UI feedback.
-    // The user is signed out from the app's perspective right now.
+  logout: async () => {
+    // Clear local state immediately for instant UI feedback.
     set({ user: null, isAuthenticated: false, isLoading: false })
-
-    // Best-effort server sign-out in the background.
-    // If this fails or hangs (e.g. after a page refresh with a stale session),
-    // the user is already locally signed out and the JWT will expire naturally.
-    supabase.auth.signOut().catch(err =>
-      console.warn('[auth] server signOut error (local state already cleared):', err?.message)
-    )
+    // Invalidate the server-side session.
+    try {
+      await supabase.auth.signOut()
+    } catch (err) {
+      // Not fatal — the local state is already cleared and the
+      // JWT will expire naturally.
+      console.warn('[auth] signOut error:', err?.message)
+    }
   },
 }))

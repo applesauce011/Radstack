@@ -6,15 +6,18 @@ import { useProgressStore } from '../../store/progressStore'
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuthStore()
   const { loadForUser } = useProgressStore()
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate  = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setMenuOpen(false)
-    logout()          // synchronously clears auth state, fires server signOut in background
-    loadForUser(null) // synchronously clears progress state
     navigate('/')
+    // Clear progress immediately (no flash of stale data if user comes back)
+    await loadForUser(null)
+    // Clear auth state + invalidate server session
+    await logout()
+    // The SIGNED_OUT event fired by supabase.auth.signOut() will also call
+    // loadForUser(null) via App.jsx, but that's a harmless no-op at this point.
   }
 
   return (
@@ -27,6 +30,7 @@ export function Navbar() {
     }}>
       {/* Logo */}
       <button
+        type="button"
         onClick={() => navigate(isAuthenticated ? '/dashboard' : '/')}
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
@@ -54,7 +58,8 @@ export function Navbar() {
         {isAuthenticated ? (
           <div style={{ position: 'relative' }}>
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
+              type="button"
+              onClick={() => setMenuOpen(o => !o)}
               style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
                 background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
@@ -68,59 +73,69 @@ export function Navbar() {
                 background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '12px', fontWeight: '700', color: '#fff',
+                flexShrink: 0,
               }}>
-                {user?.name?.[0]?.toUpperCase() || 'U'}
+                {user?.name?.[0]?.toUpperCase() ?? 'U'}
               </div>
-              <span style={{ display: 'none', '@media (min-width: 640px)': { display: 'block' } }}>
-                {user?.name?.split(' ')[0]}
-              </span>
+              <span>{user?.name?.split(' ')[0]}</span>
               <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             {menuOpen && (
-              <div style={{
-                position: 'absolute', right: 0, top: 'calc(100% + 8px)',
-                background: 'var(--bg-card)', border: '1px solid var(--border-default)',
-                borderRadius: 'var(--radius-md)', minWidth: '180px',
-                boxShadow: 'var(--shadow-lg)', overflow: 'hidden',
-                animation: 'fadeIn 0.15s ease',
-              }}>
+              <>
+                {/* Backdrop to close on outside click */}
+                <div
+                  style={{ position: 'fixed', inset: 0, zIndex: 99 }}
+                  onClick={() => setMenuOpen(false)}
+                />
                 <div style={{
-                  padding: '12px 16px',
-                  borderBottom: '1px solid var(--border-subtle)',
+                  position: 'absolute', right: 0, top: 'calc(100% + 8px)',
+                  background: 'var(--bg-card)', border: '1px solid var(--border-default)',
+                  borderRadius: 'var(--radius-md)', minWidth: '180px',
+                  boxShadow: 'var(--shadow-lg)', overflow: 'hidden',
+                  animation: 'fadeIn 0.15s ease', zIndex: 100,
                 }}>
-                  <div style={{ fontSize: '13px', fontWeight: '600', color: 'var(--text-primary)' }}>
-                    {user?.name}
+                  <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border-subtle)' }}>
+                    <div style={{ fontSize: '13px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                      {user?.name}
+                    </div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                      {user?.email}
+                    </div>
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    {user?.email}
-                  </div>
-                </div>
-                <button
-                  onClick={() => { navigate('/dashboard'); setMenuOpen(false) }}
-                  style={menuItemStyle}
-                >
-                  Dashboard
-                </button>
-                <button
-                  onClick={() => { navigate('/decks'); setMenuOpen(false) }}
-                  style={menuItemStyle}
-                >
-                  Browse Decks
-                </button>
-                <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
-                  <button onClick={handleLogout} style={{ ...menuItemStyle, color: 'var(--accent-rose)' }}>
-                    Sign Out
+                  <button
+                    type="button"
+                    onClick={() => { navigate('/dashboard'); setMenuOpen(false) }}
+                    style={menuItemStyle}
+                  >
+                    Dashboard
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => { navigate('/decks'); setMenuOpen(false) }}
+                    style={menuItemStyle}
+                  >
+                    Browse Decks
+                  </button>
+                  <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
+                    <button
+                      type="button"
+                      onClick={handleLogout}
+                      style={{ ...menuItemStyle, color: 'var(--accent-rose)' }}
+                    >
+                      Sign Out
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         ) : (
           <div style={{ display: 'flex', gap: '8px' }}>
             <button
+              type="button"
               onClick={() => navigate('/login')}
               style={{
                 background: 'none', border: '1px solid var(--border-default)',
@@ -132,6 +147,7 @@ export function Navbar() {
               Sign In
             </button>
             <button
+              type="button"
               onClick={() => navigate('/register')}
               style={{
                 background: 'var(--accent-cyan)', border: 'none',
@@ -153,6 +169,5 @@ const menuItemStyle = {
   display: 'block', width: '100%', padding: '10px 16px',
   textAlign: 'left', background: 'none', border: 'none',
   color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '14px',
-  fontFamily: 'var(--font-body)',
-  transition: 'background var(--transition)',
+  fontFamily: 'var(--font-body)', transition: 'background var(--transition)',
 }
