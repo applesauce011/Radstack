@@ -72,9 +72,14 @@ export const useProgressStore = create((set, get) => ({
       return
     }
 
-    // Reset write queue for this user.
-    _queue       = Promise.resolve()
-    _queueUserId = userId
+    // Reset the write queue ONLY when the user changes.
+    // For same-user reloads (e.g. TOKEN_REFRESHED background sync),
+    // keep the existing queue so any in-flight card-state writes
+    // from the current session aren't orphaned and lost.
+    if (_queueUserId !== userId) {
+      _queue       = Promise.resolve()
+      _queueUserId = userId
+    }
 
     const isNewUser = get().userId !== userId
     if (isNewUser) {

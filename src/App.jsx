@@ -82,11 +82,30 @@ export default function App() {
         }
 
         // ── Authenticated session (initial load or fresh sign-in) ─
-        // We call _setUserPending first, which sets isAuthenticated:true
-        // and keeps isLoading:true. RequireAuth shows AppLoader while
-        // loadForUser runs, so the dashboard never renders with empty
-        // progress data.
         if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
+          // Check BEFORE mutating any state, so we know whether this is
+          // a genuine new login or a re-fire from a tab restore / token
+          // edge case while the user is already active.
+          const { isAuthenticated: alreadyAuthenticated } = useAuthStore.getState()
+
+          if (alreadyAuthenticated) {
+            // The user is already logged in. Supabase sometimes re-fires
+            // SIGNED_IN on tab focus or during certain token refresh paths.
+            // Don't re-run the blocking load sequence — that would:
+            //   1) Set isLoading:true, locking any RequireAuth page with
+            //      AppLoader for the duration of the DB fetch (Bug: infinite load).
+            //   2) Reset the write queue, discarding in-flight card-state
+            //      writes from the current deck (Bug: second deck not saved).
+            // Instead, just update the user object and do a silent background
+            // sync only if progress wasn't synced the first time.
+            _resolveLoading(user)
+            const { isSynced } = useProgressStore.getState()
+            if (!isSynced) loadForUser(user.id)
+            return
+          }
+
+          // Genuine new session — show the loading screen while progress
+          // is fetched so the dashboard never renders with empty data.
           _setUserPending(user)
           try {
             await loadForUser(user.id)
