@@ -65,8 +65,16 @@ export const useAuthStore = create((set) => ({
     return { success: true }
   },
 
-  logout: async () => {
-    await supabase.auth.signOut()
-    // onAuthStateChange will fire and call setSessionUser(null)
+  logout: () => {
+    // Clear local state immediately — no network call needed for instant UI feedback.
+    // The user is signed out from the app's perspective right now.
+    set({ user: null, isAuthenticated: false, isLoading: false })
+
+    // Best-effort server sign-out in the background.
+    // If this fails or hangs (e.g. after a page refresh with a stale session),
+    // the user is already locally signed out and the JWT will expire naturally.
+    supabase.auth.signOut().catch(err =>
+      console.warn('[auth] server signOut error (local state already cleared):', err?.message)
+    )
   },
 }))

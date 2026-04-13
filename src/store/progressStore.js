@@ -15,22 +15,37 @@ import { supabase } from '../lib/supabase'
 //     user_id       uuid  PRIMARY KEY
 //     last_studied  jsonb  { [subspecialtyId]: timestamp_ms }
 //
-// Design notes:
-//   - All writes use optimistic local update first for instant UI.
-//   - On write failure, only the affected card is reverted — not the
-//     entire progress object — so concurrent changes are never lost.
-//   - resolveUserId() falls back to the live Supabase session if the
-//     store's userId hasn't been hydrated yet, so writes always work
-//     regardless of auth initialization timing.
-//   - loadForUser() merges DB rows with any optimistic updates that
-//     arrived during the async fetch, then guards against stale loads
-//     by checking the userId hasn't changed mid-flight.
+// Write strategy:
+//   - Optimistic local update for instant UI feedback.
+//   - All DB writes go through a serial queue (_writeChain) so rapid
+//     card swiping never sends concurrent requests and exhausts the
+//     Supabase free-tier connection pool.
+//   - INSERT with .select('card_id') lets us detect silent RLS blocks
+//     (empty data, no error) that happen when auth.uid() is null.
+//   - On conflict (row exists) we fall back to UPDATE — avoids the
+//     UPSERT path which requires additional PostgREST permissions.
+//   - On silent RLS block we call getUser() to validate the live
+//     session and log whether the block is a userId mismatch or a
+//     true policy denial, so the root cause can be diagnosed.
+//   - On any unrecoverable write failure the affected card is reverted
+//     to its pre-action state without touching any concurrent changes.
 // ============================================================
 
 export const CARD_STATE = {
   UNSEEN:  'unseen',
   GOT_IT:  'got_it',
   FLAGGED: 'flagged',
+}
+
+// ── Write queue ───────────────────────────────────────────────
+// A chained promise that serialises every DB write.
+// Each task runs only after the previous one completes (or errors).
+// Errors are caught per-task so one failure never blocks the queue.
+let _writeChain = Promise.resolve()
+const _enqueue = (task) => {
+  _writeChain = _writeChain
+    .then(() => task())
+    .catch((err) => console.error('[progress] queued write threw:', err?.message ?? err))
 }
 
 export const useProgressStore = create((set, get) => {
@@ -44,7 +59,7 @@ export const useProgressStore = create((set, get) => {
 
     const { data: { session } } = await supabase.auth.getSession()
     const id = session?.user?.id ?? null
-    if (id) set({ userId: id }) // hydrate for subsequent calls
+    if (id) set({ userId: id })
     return id
   }
 
@@ -55,9 +70,7 @@ export const useProgressStore = create((set, get) => {
     isSynced: false,           // true once the initial DB load has completed
 
     // ── Load ──────────────────────────────────────────────────
-    // Called from App.jsx on every auth event. Idempotent: if already
-    // synced for this userId, returns immediately (prevents the double-
-    // call race between getSession() and onAuthStateChange both firing).
+    // Called from App.jsx on every auth event.
     loadForUser: async (userId) => {
       if (!userId) {
         set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: true })
@@ -82,7 +95,6 @@ export const useProgressStore = create((set, get) => {
       if (progressResult.error) console.error('[progress] load error:', progressResult.error)
       if (metaResult.error)     console.error('[progress] meta load error:', metaResult.error)
 
-      // Build the persisted progress map from DB rows
       const dbProgress = {}
       if (progressResult.data) {
         progressResult.data.forEach(row => { dbProgress[row.card_id] = row.state })
@@ -91,9 +103,8 @@ export const useProgressStore = create((set, get) => {
       // Guard: if the user changed while we were fetching, discard this result
       if (get().userId !== userId) return
 
-      // Merge: DB is the base; any optimistic updates that happened during the
-      // fetch sit in get().progress and take precedence (they're already in-flight
-      // to Supabase or have already succeeded)
+      // Merge: DB is the base; any optimistic updates that arrived during the
+      // fetch sit in get().progress and take precedence.
       set({
         progress: { ...dbProgress, ...get().progress },
         meta:     { lastStudied: metaResult.data?.last_studied || {} },
@@ -102,14 +113,14 @@ export const useProgressStore = create((set, get) => {
     },
 
     // ── Card state ────────────────────────────────────────────
-    setCardState: async (cardId, state) => {
+    // Optimistic update is applied synchronously; the DB write is
+    // enqueued and processed serially after any in-flight writes.
+    setCardState: (cardId, state) => {
       console.log('[progress] setCardState', cardId, state)
 
-      // Capture the card's current state so we can do a targeted revert on failure,
-      // without touching any other concurrent optimistic updates.
       const originalState = get().progress[cardId] ?? CARD_STATE.UNSEEN
 
-      // Optimistic update
+      // 1. Optimistic update — immediate UI feedback
       set(s => {
         const next = { ...s.progress }
         if (state === CARD_STATE.UNSEEN) delete next[cardId]
@@ -117,15 +128,9 @@ export const useProgressStore = create((set, get) => {
         return { progress: next }
       })
 
-      const userId = await resolveUserId()
-      console.log('[progress] resolved userId:', userId)
-      if (!userId) {
-        console.warn('[progress] setCardState: no active session — change is local only')
-        return
-      }
-
-      // Revert only this card back to its original state on failure
+      // Revert only this card to its original state on failure
       const revert = () => {
+        console.warn('[progress] reverting card', cardId, 'to', originalState)
         set(s => {
           const next = { ...s.progress }
           if (originalState === CARD_STATE.UNSEEN) delete next[cardId]
@@ -134,25 +139,123 @@ export const useProgressStore = create((set, get) => {
         })
       }
 
-      if (state === CARD_STATE.UNSEEN) {
-        const { error } = await supabase
-          .from('card_progress')
-          .delete()
-          .eq('user_id', userId)
-          .eq('card_id', cardId)
+      // 2. Queue the network write — runs after any in-flight writes finish
+      _enqueue(async () => {
+        const userId = await resolveUserId()
+        console.log('[progress] processing write — userId:', userId, '| card:', cardId, '| state:', state)
 
-        if (error) { console.error('[progress] delete failed:', error); revert() }
+        if (!userId) {
+          console.warn('[progress] no active session — write skipped (local only)')
+          return
+        }
 
-      } else {
-        const { error } = await supabase
+        // ── DELETE for UNSEEN ────────────────────────────────
+        if (state === CARD_STATE.UNSEEN) {
+          const { error } = await supabase
+            .from('card_progress')
+            .delete()
+            .eq('user_id', userId)
+            .eq('card_id', cardId)
+
+          if (error) {
+            console.error('[progress] delete error:', error)
+            revert()
+          }
+          return
+        }
+
+        // ── INSERT (with .select to surface silent RLS blocks) ─
+        // Using .select('card_id') forces PostgREST to return the
+        // created row so we can distinguish a successful write from
+        // an RLS block (both would otherwise return 204 No Content).
+        const { data: insertData, error: insertError } = await supabase
           .from('card_progress')
-          .upsert(
-            { user_id: userId, card_id: cardId, state, updated_at: new Date().toISOString() },
-            { onConflict: 'user_id,card_id' }
+          .insert({ user_id: userId, card_id: cardId, state })
+          .select('card_id')
+
+        console.log('[progress] insert result →', JSON.stringify({
+          data: insertData, code: insertError?.code ?? null,
+        }))
+
+        // ── Insert succeeded ──────────────────────────────────
+        if (!insertError) {
+          if (insertData?.length) return // ✓ row written
+
+          // Insert returned 200 but no row — silent RLS block.
+          // auth.uid() didn't match user_id in the request.
+          // Call getUser() (validates JWT via API) to diagnose.
+          const { data: { user: liveUser } } = await supabase.auth.getUser()
+          const liveId = liveUser?.id ?? null
+
+          console.error(
+            '[progress] silent RLS block detected.\n' +
+            '  store userId :', userId, '\n' +
+            '  live auth.uid:', liveId ?? '(null — not authenticated)'
           )
 
-        if (error) { console.error('[progress] upsert failed:', error); revert() }
-      }
+          if (!liveId) {
+            // Session is gone — user must re-login
+            console.error('[progress] session is invalid. Reverting.')
+            revert()
+            return
+          }
+
+          if (liveId !== userId) {
+            // Store has stale userId — correct it and retry once
+            console.warn('[progress] userId mismatch detected. Correcting store and retrying.')
+            set({ userId: liveId })
+
+            const { data: retryData, error: retryError } = await supabase
+              .from('card_progress')
+              .insert({ user_id: liveId, card_id: cardId, state })
+              .select('card_id')
+
+            if (!retryError && retryData?.length) {
+              console.log('[progress] retry succeeded with corrected userId')
+              return
+            }
+            if (retryError?.code === '23505') {
+              // Row exists under correct userId — update it
+              const { error: retryUpdateError } = await supabase
+                .from('card_progress')
+                .update({ state })
+                .eq('user_id', liveId)
+                .eq('card_id', cardId)
+              if (!retryUpdateError) return
+              console.error('[progress] retry update error:', retryUpdateError)
+            } else {
+              console.error('[progress] retry insert error:', retryError, '| data:', retryData)
+            }
+            revert()
+            return
+          }
+
+          // Same userId but still blocked — genuine RLS policy denial
+          console.error('[progress] RLS denied write for authenticated user:', liveId, '— check policy')
+          revert()
+          return
+        }
+
+        // ── 23505 duplicate key → UPDATE ──────────────────────
+        // Row already exists (e.g. toggled state on same card).
+        if (insertError.code === '23505') {
+          const { error: updateError } = await supabase
+            .from('card_progress')
+            .update({ state })
+            .eq('user_id', userId)
+            .eq('card_id', cardId)
+
+          if (updateError) {
+            console.error('[progress] update error:', updateError)
+            revert()
+          }
+          return
+        }
+
+        // ── Other insert error ────────────────────────────────
+        console.error('[progress] unexpected insert error:', insertError)
+        revert()
+      })
     },
 
     // ── Record last studied timestamp ─────────────────────────
@@ -174,7 +277,7 @@ export const useProgressStore = create((set, get) => {
           { onConflict: 'user_id' }
         )
 
-      if (error) console.error('[progress] recordStudied failed:', error)
+      if (error) console.error('[progress] recordStudied error:', error)
     },
 
     // ── Reset deck ────────────────────────────────────────────
@@ -194,7 +297,7 @@ export const useProgressStore = create((set, get) => {
         .eq('user_id', userId)
         .in('card_id', cardIds)
 
-      if (error) console.error('[progress] resetDeck failed:', error)
+      if (error) console.error('[progress] resetDeck error:', error)
     },
 
     // ── Helpers (synchronous, read from local cache) ──────────

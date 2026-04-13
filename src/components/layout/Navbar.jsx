@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
+import { useProgressStore } from '../../store/progressStore'
 
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuthStore()
+  const { loadForUser } = useProgressStore()
   const navigate = useNavigate()
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleLogout = async () => {
+  const handleLogout = () => {
     setMenuOpen(false)
-    await logout()
+    logout()          // synchronously clears auth state, fires server signOut in background
+    loadForUser(null) // synchronously clears progress state
     navigate('/')
   }
 
