@@ -79,7 +79,7 @@ export const useProgressStore = create((set, get) => {
 
       set({ userId, isSynced: false })
 
-      const [progressResult, metaResult] = await Promise.all([
+      const fetchAll = () => Promise.all([
         supabase
           .from('card_progress')
           .select('card_id, state')
@@ -91,6 +91,18 @@ export const useProgressStore = create((set, get) => {
           .eq('user_id', userId)
           .maybeSingle(),
       ])
+
+      let [progressResult, metaResult] = await fetchAll()
+
+      // On a fresh tab open, Supabase's Web Lock for token refresh can be
+      // "stolen" by a concurrent request, causing queries to fail before the
+      // JWT is in memory. Retry once after a short delay to let the lock settle.
+      const isLockError = (e) => e?.message?.includes('Lock') && e?.message?.includes('stole')
+      if (isLockError(progressResult.error) || isLockError(metaResult.error)) {
+        console.warn('[progress] auth lock contention — retrying in 1 s…')
+        await new Promise(r => setTimeout(r, 1000))
+        ;[progressResult, metaResult] = await fetchAll()
+      }
 
       if (progressResult.error) console.error('[progress] load error:', progressResult.error)
       if (metaResult.error)     console.error('[progress] meta load error:', metaResult.error)
