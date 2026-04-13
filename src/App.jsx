@@ -12,6 +12,8 @@ import { SUBSPECIALTIES } from './data/index'
 
 // ── Route guards ──────────────────────────────────────────────
 
+// Shows AppLoader while the session is being determined, then
+// redirects unauthenticated users to /login.
 function RequireAuth({ children }) {
   const { isAuthenticated, isLoading } = useAuthStore()
   if (isLoading) return <AppLoader />
@@ -19,6 +21,8 @@ function RequireAuth({ children }) {
   return children
 }
 
+// Shows AppLoader while the session is being determined, then
+// redirects authenticated users away from login/register pages.
 function RedirectIfAuth({ children }) {
   const { isAuthenticated, isLoading } = useAuthStore()
   if (isLoading) return <AppLoader />
@@ -49,62 +53,78 @@ function AppLoader() {
 
 export default function App() {
   useEffect(() => {
+    // Single, authoritative subscription to Supabase auth events.
+    // This is the ONLY place that mutates auth or progress state
+    // in response to session changes — no other component does this.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         // Always read from getState() inside async callbacks to avoid
-        // capturing stale closure references.
-        const { _setUser, _doneLoading } = useAuthStore.getState()
-        const { loadForUser, isSynced }  = useProgressStore.getState()
+        // stale closure captures from the outer useEffect scope.
+        const { _setUserPending, _resolveLoading } = useAuthStore.getState()
+        const { loadForUser }                       = useProgressStore.getState()
         const user = session?.user ?? null
 
         // ── Signed out ──────────────────────────────────────────
-        // Covers both explicit logout and automatic session expiry.
+        // Covers explicit logout, session expiry, and sign-out
+        // triggered from another tab.
         if (event === 'SIGNED_OUT') {
-          _setUser(null)
-          await loadForUser(null)
+          _resolveLoading(null)    // clear user + isAuthenticated, isLoading:false
+          loadForUser(null)        // clear progress (non-blocking)
           return
         }
 
-        // ── New session (initial page load or fresh sign-in) ────
-        // _setUser keeps isLoading:true while loadForUser runs so
-        // RequireAuth shows the AppLoader instead of flashing to /login.
+        // ── No session on initial load ──────────────────────────
+        // INITIAL_SESSION with user:null means the stored token was
+        // absent or invalid. Resolve immediately so the app renders.
+        if (event === 'INITIAL_SESSION' && !user) {
+          _resolveLoading(null)
+          return
+        }
+
+        // ── Authenticated session (initial load or fresh sign-in) ─
+        // We call _setUserPending first, which sets isAuthenticated:true
+        // and keeps isLoading:true. RequireAuth shows AppLoader while
+        // loadForUser runs, so the dashboard never renders with empty
+        // progress data.
         if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
-          _setUser(user)
+          _setUserPending(user)
           try {
-            await loadForUser(user?.id ?? null)
-          } finally {
-            // Always unblock the app, even if loadForUser threw.
-            _doneLoading()
-          }
-          return
-        }
-
-        // ── Token refreshed ─────────────────────────────────────
-        // The access token (~1 h TTL) was silently refreshed.
-        // This can also fire on app open when the stored token was
-        // expired — in that case INITIAL_SESSION may have run with
-        // the old token and RLS silently blocked the DB queries,
-        // leaving isSynced:false with empty progress.
-        // We reload progress here to recover from that race.
-        if (event === 'TOKEN_REFRESHED') {
-          _setUser(user)
-          const currentlySynced = useProgressStore.getState().isSynced
-          if (user && !currentlySynced) {
             await loadForUser(user.id)
+          } finally {
+            // Always clear the loading gate — even if loadForUser threw —
+            // so the app doesn't get permanently stuck on the loader.
+            _resolveLoading(user)
           }
           return
         }
 
-        // ── User profile updated ────────────────────────────────
+        // ── Token silently refreshed (~1 h access token TTL) ────
+        // Normal background event during an active session. Don't
+        // show the AppLoader. Just update the user object and, if
+        // progress didn't sync during the initial load (edge case:
+        // RLS blocked the very first fetch with a just-expired token),
+        // retry loading progress now that the token is fresh.
+        if (event === 'TOKEN_REFRESHED') {
+          _resolveLoading(user)    // isLoading unchanged if already false
+          const { isSynced } = useProgressStore.getState()
+          if (user && !isSynced) {
+            loadForUser(user.id)   // background retry — non-blocking
+          }
+          return
+        }
+
+        // ── User profile updated ─────────────────────────────────
+        // Fires when the user changes their email or password.
+        // Re-parse the updated user object.
         if (event === 'USER_UPDATED') {
-          _setUser(user)
+          _resolveLoading(user)
           return
         }
       }
     )
 
     return () => subscription.unsubscribe()
-  }, []) // empty array — subscription is set up once, never needs to re-run
+  }, []) // empty deps — subscription is registered once for the app lifetime
 
   const defaultDeck = SUBSPECIALTIES[0]?.id ?? ''
 

@@ -1,15 +1,22 @@
 -- ============================================================
 -- RadStack — Supabase Schema
+-- ============================================================
 --
--- Run this in: Supabase Dashboard → SQL Editor → New Query
+-- HOW TO APPLY:
+--   Supabase Dashboard → SQL Editor → New Query → paste & run
 --
--- WARNING: This drops and recreates both tables.
--- All existing card progress and user metadata will be erased.
--- Only run this if you need to reset the database from scratch.
+-- REQUIRED SUPABASE SETTINGS (one-time, in the Dashboard):
+--   Authentication → Providers → Email:
+--     • "Confirm email" → OFF   ← users can log in immediately after signup
+--     • "Secure email change" → your preference
+--
+-- WARNING: This script drops and recreates both tables.
+--   All existing card progress and user metadata will be erased.
+--   Only run this when setting up from scratch or doing a full reset.
 -- ============================================================
 
 
--- ── Tear down ─────────────────────────────────────────────────
+-- ── Tear down (safe to re-run) ────────────────────────────────
 DROP TABLE IF EXISTS card_progress CASCADE;
 DROP TABLE IF EXISTS user_meta     CASCADE;
 DROP FUNCTION IF EXISTS update_updated_at CASCADE;
@@ -23,8 +30,8 @@ $$ LANGUAGE plpgsql;
 
 
 -- ── Table 1: card_progress ────────────────────────────────────
--- One row per card that a user has marked (got_it or flagged).
--- No row = unseen. Keeps the table small.
+-- One row per card the user has explicitly marked.
+-- No row = unseen. Keeps the table small regardless of deck size.
 -- Composite PRIMARY KEY (user_id, card_id) is the UPSERT target.
 
 CREATE TABLE card_progress (
@@ -43,7 +50,7 @@ CREATE TRIGGER card_progress_updated_at
 
 ALTER TABLE card_progress ENABLE ROW LEVEL SECURITY;
 
--- Separate policies for each operation (required for UPSERT with RLS)
+-- Four separate policies are required for UPSERT to work with RLS.
 CREATE POLICY "card_progress_select" ON card_progress
   FOR SELECT USING (auth.uid() = user_id);
 
@@ -90,7 +97,7 @@ CREATE POLICY "user_meta_delete" ON user_meta
   FOR DELETE USING (auth.uid() = user_id);
 
 
--- ── Done ──────────────────────────────────────────────────────
--- Expected result in Table Editor:
+-- ── Expected result ───────────────────────────────────────────
+-- Table Editor should show:
 --   card_progress  (RLS enabled, 4 policies)
 --   user_meta      (RLS enabled, 4 policies)

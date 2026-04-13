@@ -17,7 +17,7 @@ export function StudyPage() {
   const exitUrl = sessionSource
     ? `/decks/${sessionSource.subspecialtyId || sessionSource.id}`
     : '/decks'
-  const { setCardState, isAuthenticated: _auth } = useProgressStore()
+  const { setCardState } = useProgressStore()
   const { isAuthenticated } = useAuthStore()
 
   // Redirect if no session active

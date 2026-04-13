@@ -105,6 +105,11 @@ export const useProgressStore = create((set, get) => ({
     if (progressRes.error) console.error('[progress] load error:', progressRes.error.message)
     if (metaRes.error)     console.error('[progress] meta error:', metaRes.error.message)
 
+    // Only mark as synced when both fetches succeeded.
+    // If either failed (e.g. RLS blocked due to a stale token),
+    // isSynced stays false so TOKEN_REFRESHED can retry.
+    const synced = !progressRes.error && !metaRes.error
+
     const progress = {}
     for (const { card_id, state } of progressRes.data ?? []) {
       progress[card_id] = state
@@ -113,7 +118,7 @@ export const useProgressStore = create((set, get) => ({
     set({
       progress,
       meta:     { lastStudied: metaRes.data?.last_studied ?? {} },
-      isSynced: true,
+      isSynced: synced,
     })
   },
 
