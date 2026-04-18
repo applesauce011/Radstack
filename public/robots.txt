@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /study
+Disallow: /settings
+Disallow: /admin
+Disallow: /checkout/
+
+Sitemap: https://radiologystack.com/sitemap.xml

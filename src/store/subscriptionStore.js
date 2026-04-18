@@ -9,8 +9,7 @@ import { supabase } from '../lib/supabase'
 // handler — this store never subscribes to Supabase events itself.
 //
 // hasAnatomyAccess: true when the user can study anatomy decks.
-//   Granted by admin (has_anatomy_access=true on subscription row)
-//   or by having an active paid subscription.
+//   Granted by admin only (has_anatomy_access=true on subscription row).
 // ─────────────────────────────────────────────────────────────
 
 function isAccessActive(sub) {
@@ -26,10 +25,7 @@ function isAccessActive(sub) {
 
 function deriveAnatomyAccess(sub) {
   if (!sub) return false
-  // Admin-granted directly
-  if (sub.has_anatomy_access === true) return true
-  // Paid subscribers get anatomy access too
-  return isAccessActive(sub)
+  return sub.has_anatomy_access === true
 }
 
 export const useSubscriptionStore = create((set, get) => ({

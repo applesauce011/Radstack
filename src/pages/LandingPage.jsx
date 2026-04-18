@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { SUBSPECIALTIES, getPremiumCardCount } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 function StatPill({ value, label }) {
   return (
@@ -152,6 +153,12 @@ function PricingSection({ onSelect }) {
 export function LandingPage() {
   const navigate = useNavigate()
   const { isAuthenticated } = useAuthStore()
+
+  usePageMeta({
+    title: 'RadiologyStack — Radiology Flashcards for FRCPC & ABR Board Exam Prep',
+    description: 'High-yield radiology flashcards for Canadian Royal College (FRCPC) and ABR board exam prep. 1000+ cards across 12 subspecialties — neuro, chest, MSK, abdominal, and more. Free preview available.',
+    canonical: 'https://radiologystack.com/',
+  })
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>

@@ -9,6 +9,7 @@ import { TriProgressBar } from '../components/ui/ProgressBar'
 import { StartStudyModal } from '../components/cards/StartStudyModal'
 import { Modal } from '../components/ui/Modal'
 import { Button } from '../components/ui/Button'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 // ── SubsectionRow ─────────────────────────────────────────────
 
@@ -183,6 +184,12 @@ export function DecksPage() {
   const { getStatsForCards, resetDeck } = useProgressStore()
 
   const activeSub = SUBSPECIALTIES.find(s => s.id === subspecialtyId) || SUBSPECIALTIES[0]
+
+  usePageMeta({
+    title: `${activeSub.label} Flashcards — RadiologyStack | FRCPC & ABR Board Prep`,
+    description: `High-yield ${activeSub.label} flashcards for Canadian Royal College (FRCPC) and ABR board exam prep. Study key facts, track progress, and ace your radiology boards.`,
+    canonical: `https://radiologystack.com/decks/${activeSub.id}`,
+  })
 
   // Subsections visible to this user (anatomy sections hidden if no anatomy access)
   const visibleSubsections = activeSub.subsections.filter(

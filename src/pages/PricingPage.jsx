@@ -6,6 +6,7 @@ import { getPremiumCardCount } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
 import { PricingCard } from '../components/paywall/PricingCard'
 import { supabase } from '../lib/supabase'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 const CARD_COUNT = `${getPremiumCardCount()}+ flashcards`
 
@@ -75,6 +76,11 @@ export function PricingPage() {
   const { hasAccess, subscription } = useSubscriptionStore()
   const [loadingPlan, setLoadingPlan] = useState(null)
   const [error, setError] = useState(null)
+  usePageMeta({
+    title: 'Pricing — RadiologyStack | Radiology Board Exam Flashcards',
+    description: 'Unlock all 12 radiology subspecialty decks. One-time payment, no subscription. Plans from $49. Built for FRCPC and ABR board exam prep.',
+    canonical: 'https://radiologystack.com/pricing',
+  })
 
   const handleSelectPlan = async (plan) => {
     setError(null)

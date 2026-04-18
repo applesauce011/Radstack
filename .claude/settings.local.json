@@ -16,7 +16,9 @@
       "Bash(awk 'NR%2==1{id=$0} NR%2==0{print id, $0}')",
       "Bash(grep -n \"^  {$\\\\|id: '\" C:/radstack/src/data/decks/abdominal.js)",
       "Bash(grep -n \"^  {$\\\\|  id: '\" C:/radstack/src/data/decks/neuro.js)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(xargs grep *)",
+      "Bash(grep -r \"json-ld\\\\|structured\\\\|schema\\\\|JSON\\\\\\\\.stringify.*@context\" /c/radstack/src --include=\"*.jsx\" --include=\"*.js\")"
     ]
   }
 }
