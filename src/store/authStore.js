@@ -84,8 +84,10 @@ export const useAuthStore = create((set) => ({
       // clearing the user and setting isAuthenticated:false.
     } catch (err) {
       console.warn('[auth] signOut error:', err?.message)
-      // Fallback: force local clear if the API call fails.
-      // The JWT will expire naturally on the server side.
+      // Server-side call failed — force a local-scope signout so the
+      // Supabase session is removed from localStorage. Without this,
+      // a page refresh would re-authenticate the user from the cached session.
+      try { await supabase.auth.signOut({ scope: 'local' }) } catch {}
       set({ user: null, isAuthenticated: false, isLoading: false })
     }
   },

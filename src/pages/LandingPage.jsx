@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
-import { SUBSPECIALTIES, getTotalCardCount } from '../data/index'
+import { SUBSPECIALTIES, getPremiumCardCount } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
 
 function StatPill({ value, label }) {
@@ -30,6 +30,122 @@ function SubspecialtyPill({ sub }) {
       <span>{sub.icon}</span>
       {sub.label}
     </div>
+  )
+}
+
+function PricingSection({ onSelect }) {
+  const plans = [
+    {
+      label: '3 Months',
+      price: '$49',
+      highlight: false,
+      badge: null,
+      features: ['Full access for 90 days', 'All 12 subspecialties', 'Progress tracking'],
+    },
+    {
+      label: '12 Months',
+      price: '$99',
+      highlight: true,
+      badge: 'Most Popular',
+      features: ['Full access for 1 year', 'All 12 subspecialties', 'Best value for residency'],
+    },
+    {
+      label: 'Lifetime',
+      price: '$149',
+      highlight: false,
+      badge: null,
+      features: ['Permanent access', 'All future content', 'Never pay again'],
+    },
+  ]
+
+  return (
+    <section style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h2 style={{
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 4vw, 36px)',
+          fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-0.02em',
+          marginBottom: '12px',
+        }}>
+          Simple, one-time pricing
+        </h2>
+        <p style={{ color: 'var(--text-muted)', fontSize: '15px' }}>
+          No subscriptions. No auto-renewal. Pay once, study at your own pace.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', gap: '16px', flexWrap: 'wrap',
+        justifyContent: 'center', alignItems: 'stretch',
+        marginBottom: '28px',
+      }}>
+        {plans.map(plan => (
+          <div
+            key={plan.label}
+            style={{
+              flex: 1, minWidth: '220px', maxWidth: '280px',
+              padding: '28px 24px',
+              background: plan.highlight
+                ? 'linear-gradient(135deg, rgba(34,211,238,0.07), rgba(59,130,246,0.07))'
+                : 'var(--bg-card)',
+              border: `1px solid ${plan.highlight ? 'rgba(34,211,238,0.35)' : 'var(--border-subtle)'}`,
+              borderRadius: 'var(--radius-xl)',
+              display: 'flex', flexDirection: 'column',
+              position: 'relative',
+            }}
+          >
+            {plan.badge && (
+              <div style={{
+                position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)',
+                background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
+                color: '#fff', fontSize: '10px', fontWeight: '700', letterSpacing: '0.06em',
+                textTransform: 'uppercase', padding: '3px 12px', borderRadius: '999px',
+                whiteSpace: 'nowrap',
+              }}>{plan.badge}</div>
+            )}
+            <div style={{
+              fontSize: '15px', fontWeight: '700', color: 'var(--text-primary)',
+              fontFamily: 'var(--font-display)', marginBottom: '8px',
+            }}>{plan.label}</div>
+            <div style={{ marginBottom: '20px' }}>
+              <span style={{
+                fontSize: '36px', fontWeight: '800',
+                color: plan.highlight ? 'var(--accent-cyan)' : 'var(--text-primary)',
+                fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
+              }}>{plan.price}</span>
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)', marginLeft: '4px' }}>one-time</span>
+            </div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
+              {plan.features.map(f => (
+                <li key={f} style={{
+                  display: 'flex', gap: '8px', fontSize: '13px',
+                  color: 'var(--text-secondary)', marginBottom: '8px',
+                }}>
+                  <span style={{ color: 'var(--accent-cyan)', flexShrink: 0 }}>✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <button
+              onClick={onSelect}
+              style={{
+                width: '100%', padding: '11px',
+                background: plan.highlight ? 'var(--accent-cyan)' : 'var(--bg-elevated)',
+                border: plan.highlight ? 'none' : '1px solid var(--border-default)',
+                color: plan.highlight ? 'var(--bg-primary)' : 'var(--text-primary)',
+                borderRadius: 'var(--radius-md)', fontSize: '14px', fontWeight: '700',
+                cursor: 'pointer', fontFamily: 'var(--font-display)',
+              }}
+            >
+              Get Access →
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)' }}>
+        ✓ Secure payment via Stripe &nbsp;·&nbsp; ✓ No auto-renewal &nbsp;·&nbsp; ✓ Free preview always available
+      </div>
+    </section>
   )
 }
 
@@ -79,7 +195,7 @@ export function LandingPage() {
 
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button
-            onClick={() => navigate(isAuthenticated ? '/dashboard' : '/register')}
+            onClick={() => navigate(isAuthenticated ? '/dashboard' : '/decks/neuro')}
             style={{
               padding: '14px 32px', borderRadius: 'var(--radius-md)',
               background: 'var(--accent-cyan)', border: 'none',
@@ -92,10 +208,10 @@ export function LandingPage() {
             onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
             onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
           >
-            {isAuthenticated ? 'Go to Dashboard →' : 'Get Started Free →'}
+            {isAuthenticated ? 'Go to Dashboard →' : 'Try Free →'}
           </button>
           <button
-            onClick={() => navigate('/decks')}
+            onClick={() => navigate('/pricing')}
             style={{
               padding: '14px 32px', borderRadius: 'var(--radius-md)',
               background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
@@ -104,7 +220,7 @@ export function LandingPage() {
               transition: 'all var(--transition)',
             }}
           >
-            Browse Decks
+            View Pricing
           </button>
         </div>
 
@@ -114,16 +230,13 @@ export function LandingPage() {
           marginTop: '60px', flexWrap: 'wrap',
         }}>
           <StatPill value={SUBSPECIALTIES.length} label="Subspecialties" />
-          <StatPill value={getTotalCardCount() + '+'} label="Flashcards" />
+          <StatPill value={getPremiumCardCount() + '+'} label="Flashcards" />
           <StatPill value="2" label="Exams covered" />
         </div>
       </section>
 
       {/* Subspecialties row */}
-      <section style={{
-        padding: '0 24px 60px',
-        overflow: 'hidden',
-      }}>
+      <section style={{ padding: '0 24px 60px', overflow: 'hidden' }}>
         <div style={{
           display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap',
           maxWidth: '800px', margin: '0 auto',
@@ -134,21 +247,65 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Features */}
-      <section style={{
-        maxWidth: '960px', margin: '0 auto', padding: '0 24px 80px',
-      }}>
+      {/* Comprehensive Overview */}
+      <section style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px 80px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 4vw, 32px)',
+            fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-0.02em',
+            marginBottom: '12px',
+          }}>
+            Everything the exams test
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', maxWidth: '520px', margin: '0 auto' }}>
+            Built specifically for the Royal College (FRCPC) and ABR written boards. Every card is mapped to high-yield exam objectives.
+          </p>
+        </div>
+
+        {/* Exam badges */}
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
+          {[
+            {
+              label: 'Royal College FRCPC',
+              desc: 'Aligned with the Royal College Diagnostic Radiology objectives. Covers all 12 subspecialties tested on the written and oral exams.',
+              color: '#8B5CF6',
+              colorDim: 'rgba(139,92,246,0.1)',
+              icon: '🍁',
+            },
+            {
+              label: 'ABR Core & Certifying',
+              desc: 'Covers ABR Core Exam physics, anatomy, and clinical content, plus high-yield topics for the Certifying Exam.',
+              color: '#3B82F6',
+              colorDim: 'rgba(59,130,246,0.1)',
+              icon: '🦅',
+            },
+          ].map(e => (
+            <div key={e.label} style={{
+              flex: 1, minWidth: '260px', maxWidth: '400px',
+              padding: '28px 24px',
+              background: e.colorDim,
+              border: `1px solid ${e.color}30`,
+              borderRadius: 'var(--radius-xl)',
+            }}>
+              <div style={{ fontSize: '28px', marginBottom: '10px' }}>{e.icon}</div>
+              <div style={{
+                fontSize: '15px', fontWeight: '700',
+                color: e.color, fontFamily: 'var(--font-display)', marginBottom: '10px',
+              }}>{e.label}</div>
+              <p style={{ fontSize: '14px', lineHeight: '1.65', color: 'var(--text-secondary)' }}>
+                {e.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Feature grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '16px',
         }}>
           {[
-            {
-              icon: '🖼️',
-              title: 'Image-rich cards',
-              desc: 'Every card includes real radiological images. Learn to recognize findings the way you will on exam day.',
-            },
             {
               icon: '💡',
               title: 'High-yield key facts',
@@ -174,6 +331,11 @@ export function LandingPage() {
               title: 'Radiopaedia linked',
               desc: 'Every card links to the relevant Radiopaedia article for deeper reading.',
             },
+            {
+              icon: '🧪',
+              title: 'Physics & anatomy',
+              desc: 'Dedicated decks for imaging physics and anatomy — the sections most residents under-prepare.',
+            },
           ].map(f => (
             <div key={f.title} style={{
               padding: '24px', background: 'var(--bg-card)',
@@ -192,6 +354,9 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* Pricing section */}
+      <PricingSection onSelect={() => navigate('/pricing')} />
+
       {/* CTA */}
       {!isAuthenticated && (
         <section style={{
@@ -207,23 +372,39 @@ export function LandingPage() {
               fontFamily: 'var(--font-display)', fontSize: '28px',
               fontWeight: '800', color: 'var(--text-primary)', marginBottom: '12px',
             }}>
-              Ready to study?
+              Start with the free preview
             </h2>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '15px' }}>
-              Create a free account to track progress and sync across devices.
+            <p style={{ color: 'var(--text-muted)', marginBottom: '8px', fontSize: '15px' }}>
+              Try Biliary System and Stroke & Vascular — no account required.
             </p>
-            <button
-              onClick={() => navigate('/register')}
-              style={{
-                padding: '14px 32px', borderRadius: 'var(--radius-md)',
-                background: 'var(--accent-cyan)', border: 'none',
-                color: 'var(--bg-primary)', fontSize: '16px', fontWeight: '700',
-                cursor: 'pointer', fontFamily: 'var(--font-display)',
-                boxShadow: '0 0 24px rgba(34,211,238,0.25)',
-              }}
-            >
-              Create Free Account →
-            </button>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '28px', fontSize: '14px' }}>
+              Create a free account to save progress. Go premium to unlock all 12 subspecialties.
+            </p>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => navigate('/decks')}
+                style={{
+                  padding: '13px 28px', borderRadius: 'var(--radius-md)',
+                  background: 'var(--accent-cyan)', border: 'none',
+                  color: 'var(--bg-primary)', fontSize: '15px', fontWeight: '700',
+                  cursor: 'pointer', fontFamily: 'var(--font-display)',
+                  boxShadow: '0 0 24px rgba(34,211,238,0.25)',
+                }}
+              >
+                Try Free Preview →
+              </button>
+              <button
+                onClick={() => navigate('/pricing')}
+                style={{
+                  padding: '13px 28px', borderRadius: 'var(--radius-md)',
+                  background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
+                  color: 'var(--text-primary)', fontSize: '15px', fontWeight: '600',
+                  cursor: 'pointer', fontFamily: 'var(--font-body)',
+                }}
+              >
+                See Pricing
+              </button>
+            </div>
           </div>
         </section>
       )}
@@ -233,7 +414,24 @@ export function LandingPage() {
         borderTop: '1px solid var(--border-subtle)', padding: '24px',
         textAlign: 'center', color: 'var(--text-muted)', fontSize: '13px',
       }}>
-        RadStack · Built for radiology residents · Not for clinical use
+        <div style={{ marginBottom: '8px' }}>
+          RadiologyStack · Built for radiology residents, by radiology residents · Not for clinical use
+        </div>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <button
+            onClick={() => window.location.href = '/terms'}
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit' }}
+          >
+            Terms of Service
+          </button>
+          <button
+            onClick={() => window.location.href = '/privacy'}
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit' }}
+          >
+            Privacy Policy
+          </button>
+          <span>radiologystack@gmail.com</span>
+        </div>
       </footer>
     </div>
   )

@@ -10,7 +10,13 @@
       "Bash(cp -r C:/radstack/src/data/decks/images_msk C:/radstack/public/images_msk)",
       "Bash(powershell -Command \"Remove-Item -Recurse -Force 'C:\\\\radstack\\\\src\\\\data\\\\decks\\\\images_neuro', 'C:\\\\radstack\\\\src\\\\data\\\\decks\\\\images_msk'\")",
       "Bash(powershell -Command ':*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(node -e \" const neuro = require\\('./src/data/decks/neuro.js'\\); const msk = require\\('./src/data/decks/msk.js'\\); const anatomy = neuro.neuroSubsections.find\\(s => s.id === 'neuro-anatomy'\\); const tumors = msk.mskSubsections.find\\(s => s.id === 'msk-tumors'\\); console.log\\('neuro-anatomy:', anatomy?.cards?.length, 'cards'\\); console.log\\('msk-tumors:', tumors?.cards?.length, 'cards'\\); \")",
+      "Bash(node -e \" const { neuroSubsections } = await import\\('./src/data/decks/neuro.js'\\); \")",
+      "Bash(awk 'NR%2==1{id=$0} NR%2==0{print id, $0}')",
+      "Bash(grep -n \"^  {$\\\\|id: '\" C:/radstack/src/data/decks/abdominal.js)",
+      "Bash(grep -n \"^  {$\\\\|  id: '\" C:/radstack/src/data/decks/neuro.js)",
+      "Bash(node -e ' *)"
     ]
   }
 }

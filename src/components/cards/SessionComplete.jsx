@@ -1,12 +1,22 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useStudyStore } from '../../store/studyStore'
 import { useProgressStore, CARD_STATE } from '../../store/progressStore'
+import { useAuthStore } from '../../store/authStore'
+import { ANATOMY_SECTIONS } from '../../data/config'
 import { Button } from '../ui/Button'
 
 export function SessionComplete({ onRestart, onExit }) {
+  const navigate = useNavigate()
   const { cards, sessionSource } = useStudyStore()
   const { getStatsForCards } = useProgressStore()
+  const { isAuthenticated } = useAuthStore()
   const stats = getStatsForCards(cards)
+
+  // Show signup prompt when studying any non-anatomy section without an account
+  const showSignupPrompt = !isAuthenticated &&
+    sessionSource?.type === 'subsection' &&
+    !ANATOMY_SECTIONS.has(sessionSource?.id)
 
   const pctGotIt = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
 
@@ -65,6 +75,48 @@ export function SessionComplete({ onRestart, onExit }) {
         <Button variant="primary" onClick={onRestart}>Restart Deck</Button>
         <Button variant="secondary" onClick={onExit}>Back to Decks</Button>
       </div>
+
+      {showSignupPrompt && (
+        <div style={{
+          marginTop: '40px', padding: '24px', maxWidth: '420px', width: '100%',
+          background: 'linear-gradient(135deg, rgba(34,211,238,0.08), rgba(99,102,241,0.08))',
+          border: '1px solid rgba(34,211,238,0.25)',
+          borderRadius: 'var(--radius-lg)', textAlign: 'center',
+        }}>
+          <div style={{ fontSize: '22px', marginBottom: '8px' }}>🎯</div>
+          <div style={{
+            fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: '700',
+            color: 'var(--text-primary)', marginBottom: '6px',
+          }}>
+            Save your progress
+          </div>
+          <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '20px', lineHeight: '1.5' }}>
+            Create a free account to track what you've learned, flag cards for review, and pick up where you left off.
+          </p>
+          <button
+            onClick={() => navigate('/register')}
+            style={{
+              display: 'block', width: '100%', padding: '12px',
+              background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
+              border: 'none', borderRadius: 'var(--radius-md)',
+              color: '#fff', fontSize: '14px', fontWeight: '700',
+              cursor: 'pointer', fontFamily: 'var(--font-display)',
+              marginBottom: '10px',
+            }}
+          >
+            Create Free Account →
+          </button>
+          <button
+            onClick={() => navigate('/login')}
+            style={{
+              background: 'none', border: 'none', color: 'var(--text-muted)',
+              fontSize: '13px', cursor: 'pointer', fontFamily: 'var(--font-body)',
+            }}
+          >
+            Already have an account? Sign in
+          </button>
+        </div>
+      )}
     </div>
   )
 }

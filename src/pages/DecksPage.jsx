@@ -1,47 +1,91 @@
 import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { SUBSPECIALTIES, getCardsBySubspecialty, getCardsBySubsection } from '../data/index'
+import { SUBSPECIALTIES, ANATOMY_SECTIONS, FREE_SECTIONS, isSectionAccessible, getPremiumCardCount, getCardsBySubspecialty, getCardsBySubsection } from '../data/index'
 import { useProgressStore } from '../store/progressStore'
 import { useAuthStore } from '../store/authStore'
+import { useSubscriptionStore } from '../store/subscriptionStore'
 import { Navbar } from '../components/layout/Navbar'
 import { TriProgressBar } from '../components/ui/ProgressBar'
 import { StartStudyModal } from '../components/cards/StartStudyModal'
 import { Modal } from '../components/ui/Modal'
 import { Button } from '../components/ui/Button'
 
-function SubsectionRow({ section, subspecialtyColor, onStudy }) {
+// ── SubsectionRow ─────────────────────────────────────────────
+
+function SubsectionRow({ section, subspecialtyColor, onStudy, hasAccess, hasAnatomyAccess, navigate }) {
   const { getStatsForCards, resetDeck } = useProgressStore()
   const [resetOpen, setResetOpen] = useState(false)
-  const cards = getCardsBySubsection(section.id)
-  const stats = getStatsForCards(cards)
-  const pct = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
+  const allCards = getCardsBySubsection(section.id)
+
+  const isEmpty      = allCards.length === 0
+  const isPremiumLocked = !isEmpty && !isSectionAccessible(section.id, hasAccess, hasAnatomyAccess)
+
+  const accessibleCards = isPremiumLocked ? [] : allCards
+  const stats = getStatsForCards(accessibleCards.length > 0 ? accessibleCards : allCards)
+  const pct   = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
   const hasProgress = stats.gotIt > 0 || stats.flagged > 0
+
+  const handleStudyClick = () => {
+    onStudy(accessibleCards, { type: 'subsection', id: section.id, label: section.label })
+  }
 
   return (
     <>
       <div style={{
         padding: '16px 20px', background: 'var(--bg-elevated)',
-        border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
+        border: '1px solid var(--border-subtle)',
+        borderRadius: 'var(--radius-md)',
         display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap',
+        opacity: (isPremiumLocked || isEmpty) ? (isEmpty ? 0.5 : 0.7) : 1,
       }}>
         <div style={{ flex: 1, minWidth: '180px' }}>
-          <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '6px' }}>
-            {section.label}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: isEmpty ? 0 : '6px' }}>
+            <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)' }}>
+              {section.label}
+            </div>
+            {isPremiumLocked && (
+              <span style={{
+                fontSize: '10px', fontWeight: '600', letterSpacing: '0.05em',
+                textTransform: 'uppercase', color: 'var(--accent-cyan)',
+                background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.25)',
+                borderRadius: '999px', padding: '2px 8px', whiteSpace: 'nowrap',
+              }}>
+                Premium
+              </span>
+            )}
           </div>
-          <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
-          <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '11px' }}>
-            <span style={{ color: 'var(--text-muted)' }}>{stats.total} cards</span>
-            <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
-            <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
-            <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen}</span>
-          </div>
+          {!isEmpty && (
+            <>
+              <TriProgressBar
+                gotIt={isPremiumLocked ? 0 : stats.gotIt}
+                flagged={isPremiumLocked ? 0 : stats.flagged}
+                total={allCards.length}
+              />
+              <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '11px' }}>
+                <span style={{ color: 'var(--text-muted)' }}>
+                  {isPremiumLocked ? `${allCards.length} cards` : `${accessibleCards.length} cards`}
+                </span>
+                {!isPremiumLocked && (
+                  <>
+                    <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
+                    <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
+                    <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen}</span>
+                  </>
+                )}
+              </div>
+            </>
+          )}
         </div>
+
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          <span style={{
-            fontSize: '13px', fontWeight: '700',
-            color: subspecialtyColor, minWidth: '36px', textAlign: 'right',
-          }}>{pct}%</span>
-          {hasProgress && (
+          {!isEmpty && !isPremiumLocked && (
+            <span style={{
+              fontSize: '13px', fontWeight: '700',
+              color: subspecialtyColor, minWidth: '36px', textAlign: 'right',
+            }}>{pct}%</span>
+          )}
+
+          {!isEmpty && hasProgress && !isPremiumLocked && (
             <button
               onClick={() => setResetOpen(true)}
               title="Reset section progress"
@@ -56,20 +100,46 @@ function SubsectionRow({ section, subspecialtyColor, onStudy }) {
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-subtle)'; e.currentTarget.style.color = 'var(--text-muted)' }}
             >↺</button>
           )}
-          <button
-            onClick={() => onStudy(cards, { type: 'subsection', id: section.id, label: section.label })}
-            style={{
-              padding: '8px 16px', borderRadius: 'var(--radius-sm)',
-              background: 'var(--accent-cyan)', border: 'none',
-              color: 'var(--bg-primary)', fontSize: '13px', fontWeight: '600',
-              cursor: 'pointer', fontFamily: 'var(--font-body)',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Study →
-          </button>
+
+          {isEmpty ? (
+            <span style={{
+              fontSize: '12px', fontWeight: '600', letterSpacing: '0.05em',
+              textTransform: 'uppercase', color: 'var(--text-muted)',
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: '999px', padding: '6px 14px', whiteSpace: 'nowrap',
+            }}>
+              Coming Soon
+            </span>
+          ) : isPremiumLocked ? (
+            <button
+              onClick={() => navigate('/pricing')}
+              style={{
+                fontSize: '12px', fontWeight: '600', letterSpacing: '0.04em',
+                color: 'var(--accent-cyan)',
+                background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.25)',
+                borderRadius: '999px', padding: '6px 14px', whiteSpace: 'nowrap',
+                cursor: 'pointer', fontFamily: 'var(--font-body)',
+              }}
+            >
+              🔒 Unlock
+            </button>
+          ) : (
+            <button
+              onClick={handleStudyClick}
+              style={{
+                padding: '8px 16px', borderRadius: 'var(--radius-sm)',
+                background: 'var(--accent-cyan)', border: 'none',
+                color: 'var(--bg-primary)', fontSize: '13px', fontWeight: '600',
+                cursor: 'pointer', fontFamily: 'var(--font-body)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Study →
+            </button>
+          )}
         </div>
       </div>
+
       <Modal isOpen={resetOpen} onClose={() => setResetOpen(false)} title="Reset Section Progress">
         <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>
           Reset all cards in <strong style={{ color: 'var(--text-primary)' }}>{section.label}</strong> back to <strong style={{ color: 'var(--text-primary)' }}>Unseen</strong>?
@@ -77,7 +147,7 @@ function SubsectionRow({ section, subspecialtyColor, onStudy }) {
         <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>This cannot be undone.</p>
         <div style={{ display: 'flex', gap: '10px' }}>
           <Button variant="secondary" onClick={() => setResetOpen(false)} fullWidth>Cancel</Button>
-          <Button variant="danger" onClick={() => { resetDeck(cards.map(c => c.id)); setResetOpen(false) }} fullWidth>Reset</Button>
+          <Button variant="danger" onClick={() => { resetDeck(accessibleCards.map(c => c.id)); setResetOpen(false) }} fullWidth>Reset</Button>
         </div>
       </Modal>
     </>
@@ -109,11 +179,24 @@ export function DecksPage() {
   const { subspecialtyId } = useParams()
   const navigate = useNavigate()
   const { isAuthenticated } = useAuthStore()
+  const { hasAccess, hasAnatomyAccess } = useSubscriptionStore()
   const { getStatsForCards, resetDeck } = useProgressStore()
 
   const activeSub = SUBSPECIALTIES.find(s => s.id === subspecialtyId) || SUBSPECIALTIES[0]
+
+  // Subsections visible to this user (anatomy sections hidden if no anatomy access)
+  const visibleSubsections = activeSub.subsections.filter(
+    s => hasAnatomyAccess || !ANATOMY_SECTIONS.has(s.id)
+  )
+
+  // Accessible cards for this subspecialty
+  const accessibleCards = visibleSubsections
+    .filter(s => isSectionAccessible(s.id, hasAccess, hasAnatomyAccess))
+    .flatMap(s => getCardsBySubsection(s.id))
+
+  // Total cards (all, for display context on locked sections)
   const allCards = getCardsBySubspecialty(activeSub.id)
-  const stats = getStatsForCards(allCards)
+  const stats = getStatsForCards(accessibleCards)
 
   const [modalOpen, setModalOpen] = useState(false)
   const [modalCards, setModalCards] = useState([])
@@ -122,6 +205,10 @@ export function DecksPage() {
 
   const hasProgress = stats.gotIt > 0 || stats.flagged > 0
 
+  // Whether any visible section is premium-locked (for contextual upgrade note)
+  const hasPremiumLocked = !hasAccess && !hasAnatomyAccess &&
+    visibleSubsections.some(s => !FREE_SECTIONS.has(s.id) && !ANATOMY_SECTIONS.has(s.id))
+
   const handleStudy = (cards, source) => {
     setModalCards(cards)
     setModalSource({ ...source, subspecialtyId: activeSub.id })
@@ -129,7 +216,7 @@ export function DecksPage() {
   }
 
   const handleResetDeck = () => {
-    resetDeck(allCards.map(c => c.id))
+    resetDeck(accessibleCards.map(c => c.id))
     setResetModalOpen(false)
   }
 
@@ -139,9 +226,7 @@ export function DecksPage() {
 
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Subspecialty tabs */}
-        <div style={{
-          overflowX: 'auto', paddingBottom: '4px', marginBottom: '32px',
-        }}>
+        <div style={{ overflowX: 'auto', paddingBottom: '4px', marginBottom: '32px' }}>
           <div style={{ display: 'flex', gap: '8px', width: 'max-content' }}>
             {SUBSPECIALTIES.map(sub => (
               <SubspecialtyTab
@@ -170,7 +255,14 @@ export function DecksPage() {
               </h1>
             </div>
             <div style={{ display: 'flex', gap: '12px', fontSize: '13px' }}>
-              <span style={{ color: 'var(--text-muted)' }}>{stats.total} cards</span>
+              <span style={{ color: 'var(--text-muted)' }}>
+                {accessibleCards.length} card{accessibleCards.length !== 1 ? 's' : ''}
+                {hasPremiumLocked && (
+                  <span style={{ color: 'var(--text-muted)', opacity: 0.6 }}>
+                    {' '}· {allCards.length} total
+                  </span>
+                )}
+              </span>
               <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt} got it</span>
               <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged} flagged</span>
             </div>
@@ -199,37 +291,62 @@ export function DecksPage() {
                 ↺ Reset Deck
               </button>
             )}
-            <button
-              onClick={() => handleStudy(allCards, { type: 'subspecialty', id: activeSub.id, label: activeSub.label })}
-              style={{
-                padding: '12px 24px', borderRadius: 'var(--radius-md)',
-                background: activeSub.color, border: 'none',
-                color: '#fff', fontSize: '15px', fontWeight: '700',
-                cursor: 'pointer', fontFamily: 'var(--font-display)',
-              }}
-            >
-              Study All {stats.total} Cards →
-            </button>
+
+            {accessibleCards.length > 0 && (
+              <button
+                onClick={() => handleStudy(accessibleCards, { type: 'subspecialty', id: activeSub.id, label: activeSub.label })}
+                style={{
+                  padding: '12px 24px', borderRadius: 'var(--radius-md)',
+                  background: activeSub.color, border: 'none',
+                  color: '#fff', fontSize: '15px', fontWeight: '700',
+                  cursor: 'pointer', fontFamily: 'var(--font-display)',
+                }}
+              >
+                Study All {accessibleCards.length} Cards →
+              </button>
+            )}
           </div>
         </div>
 
         {/* Whole deck progress bar */}
-        <div style={{ marginBottom: '32px' }}>
-          <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
+        <div style={{ marginBottom: '24px' }}>
+          <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={accessibleCards.length || allCards.length} />
         </div>
 
-        {!isAuthenticated && (
+        {/* Combined premium / sign-in prompt */}
+        {hasPremiumLocked && (
           <div style={{
-            padding: '12px 16px', background: 'var(--accent-blue-dim)',
-            border: '1px solid rgba(59,130,246,0.3)', borderRadius: 'var(--radius-md)',
-            fontSize: '13px', color: 'var(--accent-blue)', marginBottom: '24px',
+            padding: '14px 18px',
+            background: 'rgba(34,211,238,0.04)',
+            border: '1px solid rgba(34,211,238,0.2)',
+            borderRadius: 'var(--radius-md)',
+            fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap',
           }}>
-            💡 <strong>Sign in</strong> to save your progress, flag cards, and track what you've studied.{' '}
+            <span>
+              🔒 Most sections require a premium subscription — unlock {getPremiumCardCount()}+ cards across all 12 subspecialties.
+              {!isAuthenticated && (
+                <span>
+                  {' '}Already have an account?{' '}
+                  <button
+                    onClick={() => navigate('/login')}
+                    style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600', padding: 0 }}
+                  >
+                    Sign in
+                  </button>
+                </span>
+              )}
+            </span>
             <button
-              onClick={() => navigate('/register')}
-              style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600' }}
+              onClick={() => navigate('/pricing')}
+              style={{
+                background: 'var(--accent-cyan)', border: 'none', color: 'var(--bg-primary)',
+                cursor: 'pointer', fontSize: '13px', fontWeight: '700',
+                fontFamily: 'var(--font-body)', padding: '7px 14px',
+                borderRadius: 'var(--radius-sm)', whiteSpace: 'nowrap',
+              }}
             >
-              Create a free account →
+              View Plans →
             </button>
           </div>
         )}
@@ -242,12 +359,15 @@ export function DecksPage() {
           Sections
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-          {activeSub.subsections.map(section => (
+          {visibleSubsections.map(section => (
             <SubsectionRow
               key={section.id}
               section={section}
               subspecialtyColor={activeSub.color}
               onStudy={handleStudy}
+              hasAccess={hasAccess}
+              hasAnatomyAccess={hasAnatomyAccess}
+              navigate={navigate}
             />
           ))}
         </div>

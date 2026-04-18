@@ -4,11 +4,32 @@
 // Defines the display metadata for each subspecialty deck.
 // Card content lives in ./decks/[subspecialty].js
 //
-// To add a new subspecialty:
-//   1. Add an entry here
-//   2. Create src/data/decks/[id].js  (see any existing file as template)
-//   3. Import and add it to DECK_MODULES in index.js
+// Access model:
+//   ANATOMY_SECTIONS — admin-granted access required
+//   Everything else  — free for all users
 // ============================================================
+
+// ── Free sections ─────────────────────────────────────────────
+// These sections are accessible to all users (no account needed).
+// All other non-anatomy sections require a premium subscription.
+export const FREE_SECTIONS = new Set([
+  'neuro-stroke',  // Stroke & Vascular
+  'abd-biliary',   // Biliary System
+  'msk-tumors',    // Bone & Soft Tissue Tumors
+])
+
+// ── Anatomy-gated sections ────────────────────────────────────
+// Users must be granted anatomy access by an admin to study
+// these decks. These are hidden entirely from users without access.
+export const ANATOMY_SECTIONS = new Set([
+  'neuro-anatomy',        // Brain Anatomy
+  'neuro-spine-anatomy',  // Spine Anatomy
+  'neuro-head-neck',      // Head, Neck & Skull Base Anatomy
+  'msk-shoulder-anatomy', // Shoulder Anatomy
+  'msk-knee-anatomy',     // Knee Anatomy
+  'msk-ankle-anatomy',    // Ankle Anatomy
+  'msk-wrist-anatomy',    // Wrist Anatomy
+])
 
 export const SUBSPECIALTY_CONFIG = [
   {

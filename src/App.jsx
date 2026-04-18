@@ -1,19 +1,33 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { supabase } from './lib/supabase'
 import { useAuthStore } from './store/authStore'
 import { useProgressStore } from './store/progressStore'
+import { useSubscriptionStore } from './store/subscriptionStore'
 import { LandingPage } from './pages/LandingPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { DecksPage } from './pages/DecksPage'
 import { StudyPage } from './pages/StudyPage'
+import { PricingPage } from './pages/PricingPage'
+import { SettingsPage } from './pages/SettingsPage'
+import { CheckoutSuccessPage } from './pages/CheckoutSuccessPage'
+import { CheckoutCancelPage } from './pages/CheckoutCancelPage'
+import { TermsPage } from './pages/TermsPage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { RedeemPage } from './pages/RedeemPage'
+import { AdminPage } from './pages/AdminPage'
 import { LoginPage, RegisterPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 
+// ── Scroll to top on every navigation ────────────────────────
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
 // ── Route guards ──────────────────────────────────────────────
 
-// Shows AppLoader while the session is being determined, then
-// redirects unauthenticated users to /login.
 function RequireAuth({ children }) {
   const { isAuthenticated, isLoading } = useAuthStore()
   if (isLoading) return <AppLoader />
@@ -21,8 +35,6 @@ function RequireAuth({ children }) {
   return children
 }
 
-// Shows AppLoader while the session is being determined, then
-// redirects authenticated users away from login/register pages.
 function RedirectIfAuth({ children }) {
   const { isAuthenticated, isLoading } = useAuthStore()
   if (isLoading) return <AppLoader />
@@ -54,87 +66,62 @@ function AppLoader() {
 export default function App() {
   useEffect(() => {
     // Single, authoritative subscription to Supabase auth events.
-    // This is the ONLY place that mutates auth or progress state
-    // in response to session changes — no other component does this.
+    // This is the ONLY place that mutates auth, progress, or subscription
+    // state in response to session changes.
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        // Always read from getState() inside async callbacks to avoid
-        // stale closure captures from the outer useEffect scope.
-        const { _setUserPending, _resolveLoading } = useAuthStore.getState()
+        const { _resolveLoading } = useAuthStore.getState()
         const { loadForUser }                       = useProgressStore.getState()
+        const { loadSubscription, clear: clearSub } = useSubscriptionStore.getState()
         const user = session?.user ?? null
 
         // ── Signed out ──────────────────────────────────────────
-        // Covers explicit logout, session expiry, and sign-out
-        // triggered from another tab.
         if (event === 'SIGNED_OUT') {
-          _resolveLoading(null)    // clear user + isAuthenticated, isLoading:false
-          loadForUser(null)        // clear progress (non-blocking)
+          _resolveLoading(null)
+          loadForUser(null)
+          clearSub()
           return
         }
 
         // ── No session on initial load ──────────────────────────
-        // INITIAL_SESSION with user:null means the stored token was
-        // absent or invalid. Resolve immediately so the app renders.
         if (event === 'INITIAL_SESSION' && !user) {
           _resolveLoading(null)
+          clearSub()
           return
         }
 
         // ── Authenticated session (initial load or fresh sign-in) ─
         if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
-          // Check BEFORE mutating any state, so we know whether this is
-          // a genuine new login or a re-fire from a tab restore / token
-          // edge case while the user is already active.
           const { isAuthenticated: alreadyAuthenticated } = useAuthStore.getState()
 
-          if (alreadyAuthenticated) {
-            // The user is already logged in. Supabase sometimes re-fires
-            // SIGNED_IN on tab focus or during certain token refresh paths.
-            // Don't re-run the blocking load sequence — that would:
-            //   1) Set isLoading:true, locking any RequireAuth page with
-            //      AppLoader for the duration of the DB fetch (Bug: infinite load).
-            //   2) Reset the write queue, discarding in-flight card-state
-            //      writes from the current deck (Bug: second deck not saved).
-            // Instead, just update the user object and do a silent background
-            // sync only if progress wasn't synced the first time.
-            _resolveLoading(user)
+          // Resolve auth state immediately so RequireAuth never blocks
+          // on a loading spinner waiting for data. Data loads run in the
+          // background and Zustand reactivity updates the UI when ready.
+          _resolveLoading(user)
+
+          if (!alreadyAuthenticated) {
+            // Genuine new session — kick off data loads in background.
+            loadForUser(user.id)
+            loadSubscription(user.id)
+          } else {
+            // Re-fire (tab focus / token edge case) — only sync if stale.
             const { isSynced } = useProgressStore.getState()
             if (!isSynced) loadForUser(user.id)
-            return
-          }
-
-          // Genuine new session — show the loading screen while progress
-          // is fetched so the dashboard never renders with empty data.
-          _setUserPending(user)
-          try {
-            await loadForUser(user.id)
-          } finally {
-            // Always clear the loading gate — even if loadForUser threw —
-            // so the app doesn't get permanently stuck on the loader.
-            _resolveLoading(user)
           }
           return
         }
 
         // ── Token silently refreshed (~1 h access token TTL) ────
-        // Normal background event during an active session. Don't
-        // show the AppLoader. Just update the user object and, if
-        // progress didn't sync during the initial load (edge case:
-        // RLS blocked the very first fetch with a just-expired token),
-        // retry loading progress now that the token is fresh.
         if (event === 'TOKEN_REFRESHED') {
-          _resolveLoading(user)    // isLoading unchanged if already false
+          _resolveLoading(user)
           const { isSynced } = useProgressStore.getState()
           if (user && !isSynced) {
-            loadForUser(user.id)   // background retry — non-blocking
+            loadForUser(user.id)
           }
           return
         }
 
         // ── User profile updated ─────────────────────────────────
-        // Fires when the user changes their email or password.
-        // Re-parse the updated user object.
         if (event === 'USER_UPDATED') {
           _resolveLoading(user)
           return
@@ -143,11 +130,13 @@ export default function App() {
     )
 
     return () => subscription.unsubscribe()
-  }, []) // empty deps — subscription is registered once for the app lifetime
+  }, [])
 
   const defaultDeck = SUBSPECIALTIES[0]?.id ?? ''
 
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/"          element={<LandingPage />} />
       <Route path="/login"     element={<RedirectIfAuth><LoginPage /></RedirectIfAuth>} />
@@ -156,7 +145,16 @@ export default function App() {
       <Route path="/decks"     element={<Navigate to={`/decks/${defaultDeck}`} replace />} />
       <Route path="/decks/:subspecialtyId" element={<DecksPage />} />
       <Route path="/study"     element={<StudyPage />} />
+      <Route path="/pricing"   element={<PricingPage />} />
+      <Route path="/settings"  element={<RequireAuth><SettingsPage /></RequireAuth>} />
+      <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
+      <Route path="/checkout/cancel"  element={<CheckoutCancelPage />} />
+      <Route path="/terms"     element={<TermsPage />} />
+      <Route path="/privacy"   element={<PrivacyPage />} />
+      <Route path="/redeem"    element={<RedeemPage />} />
+      <Route path="/admin"     element={<AdminPage />} />
       <Route path="*"          element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   )
 }

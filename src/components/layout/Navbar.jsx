@@ -1,24 +1,20 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
-import { useProgressStore } from '../../store/progressStore'
 
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuthStore()
-  const { loadForUser } = useProgressStore()
   const navigate  = useNavigate()
+  const location  = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleLogout = async () => {
     setMenuOpen(false)
-    navigate('/')
-    // Clear progress immediately (no flash of stale data if user comes back)
-    await loadForUser(null)
-    // Clear auth state + invalidate server session
     await logout()
-    // The SIGNED_OUT event fired by supabase.auth.signOut() will also call
-    // loadForUser(null) via App.jsx, but that's a harmless no-op at this point.
+    navigate('/')
   }
+
+  const isActive = (path) => location.pathname === path
 
   return (
     <nav style={{
@@ -46,15 +42,33 @@ export function Navbar() {
         }}>R</div>
         <span style={{
           fontFamily: 'var(--font-display)', fontWeight: '700',
-          fontSize: '18px', letterSpacing: '-0.02em',
+          fontSize: '16px', letterSpacing: '-0.02em',
           color: 'var(--text-primary)',
         }}>
-          Rad<span style={{ color: 'var(--accent-cyan)' }}>Stack</span>
+          Radiology<span style={{ color: 'var(--accent-cyan)' }}>Stack</span>
         </span>
       </button>
 
       {/* Right side */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        {/* Pricing link — always visible */}
+        <button
+          type="button"
+          onClick={() => navigate('/pricing')}
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            fontSize: '14px', fontFamily: 'var(--font-body)',
+            color: isActive('/pricing') ? 'var(--accent-cyan)' : 'var(--text-muted)',
+            fontWeight: isActive('/pricing') ? '600' : '400',
+            transition: 'color var(--transition)',
+            padding: '4px 8px',
+          }}
+          onMouseEnter={e => { if (!isActive('/pricing')) e.currentTarget.style.color = 'var(--text-secondary)' }}
+          onMouseLeave={e => { if (!isActive('/pricing')) e.currentTarget.style.color = 'var(--text-muted)' }}
+        >
+          Pricing
+        </button>
+
         {isAuthenticated ? (
           <div style={{ position: 'relative' }}>
             <button
@@ -85,7 +99,6 @@ export function Navbar() {
 
             {menuOpen && (
               <>
-                {/* Backdrop to close on outside click */}
                 <div
                   style={{ position: 'fixed', inset: 0, zIndex: 99 }}
                   onClick={() => setMenuOpen(false)}
@@ -118,6 +131,13 @@ export function Navbar() {
                     style={menuItemStyle}
                   >
                     Browse Decks
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { navigate('/settings'); setMenuOpen(false) }}
+                    style={menuItemStyle}
+                  >
+                    Settings
                   </button>
                   <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
                     <button
