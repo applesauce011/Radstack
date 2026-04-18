@@ -18,6 +18,7 @@ import { RedeemPage } from './pages/RedeemPage'
 import { AdminPage } from './pages/AdminPage'
 import { LoginPage, RegisterPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
+import { Analytics } from '@vercel/analytics/react'
 
 // ── Scroll to top on every navigation ────────────────────────
 function ScrollToTop() {
@@ -136,6 +137,7 @@ export default function App() {
 
   return (
     <>
+    <Analytics />
     <ScrollToTop />
     <Routes>
       <Route path="/"          element={<LandingPage />} />
