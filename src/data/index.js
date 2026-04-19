@@ -23,7 +23,7 @@ import { guSubsections }         from './decks/gu'
 import { pediatricSubsections }  from './decks/pediatric'
 import { nucsSubsections }       from './decks/nucs'
 import { irSubsections }         from './decks/ir'
-import { emergencySubsections }  from './decks/emergency'
+import { obstetricsSubsections } from './decks/obstetrics'
 import { cardiacSubsections }    from './decks/cardiac'
 import { physicsSubsections }    from './decks/physics'
 
@@ -38,7 +38,7 @@ const DECK_MODULES = {
   pediatric:  pediatricSubsections,
   nucs:       nucsSubsections,
   ir:         irSubsections,
-  emergency:  emergencySubsections,
+  obstetrics: obstetricsSubsections,
   cardiac:    cardiacSubsections,
   physics:    physicsSubsections,
 }

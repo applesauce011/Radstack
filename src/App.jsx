@@ -16,7 +16,7 @@ import { TermsPage } from './pages/TermsPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { RedeemPage } from './pages/RedeemPage'
 import { AdminPage } from './pages/AdminPage'
-import { LoginPage, RegisterPage } from './components/auth/AuthForms'
+import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -127,6 +127,12 @@ export default function App() {
           _resolveLoading(user)
           return
         }
+
+        // ── Password recovery link clicked ───────────────────────
+        if (event === 'PASSWORD_RECOVERY') {
+          _resolveLoading(user)
+          return
+        }
       }
     )
 
@@ -141,8 +147,10 @@ export default function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/"          element={<LandingPage />} />
-      <Route path="/login"     element={<RedirectIfAuth><LoginPage /></RedirectIfAuth>} />
-      <Route path="/register"  element={<RedirectIfAuth><RegisterPage /></RedirectIfAuth>} />
+      <Route path="/login"            element={<RedirectIfAuth><LoginPage /></RedirectIfAuth>} />
+      <Route path="/register"         element={<RedirectIfAuth><RegisterPage /></RedirectIfAuth>} />
+      <Route path="/forgot-password"  element={<ForgotPasswordPage />} />
+      <Route path="/reset-password"   element={<ResetPasswordPage />} />
       <Route path="/dashboard" element={<RequireAuth><DashboardPage /></RequireAuth>} />
       <Route path="/decks"     element={<Navigate to={`/decks/${defaultDeck}`} replace />} />
       <Route path="/decks/:subspecialtyId" element={<DecksPage />} />

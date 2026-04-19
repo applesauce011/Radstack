@@ -96,11 +96,11 @@ export const SUBSPECIALTY_CONFIG = [
     colorDim: 'rgba(249,115,22,0.15)',
   },
   {
-    id: 'emergency',
-    label: 'Emergency Radiology',
-    icon: '🚨',
-    color: '#EF4444',
-    colorDim: 'rgba(239,68,68,0.15)',
+    id: 'obstetrics',
+    label: 'Obstetrics & Gynecology',
+    icon: '🤰',
+    color: '#EC4899',
+    colorDim: 'rgba(236,72,153,0.15)',
   },
   {
     id: 'cardiac',

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
+import { supabase } from '../../lib/supabase'
 import { Button } from '../ui/Button'
 
 // ── Shared sub-components ─────────────────────────────────────
@@ -130,6 +131,15 @@ export function LoginPage() {
           value={password} onChange={e => setPassword(e.target.value)}
           placeholder="••••••••"
         />
+        <div style={{ textAlign: 'right', marginBottom: '12px', marginTop: '-8px' }}>
+          <button
+            type="button"
+            onClick={() => navigate('/forgot-password')}
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit' }}
+          >
+            Forgot password?
+          </button>
+        </div>
         <ErrorBanner message={error} />
         <Button type="submit" fullWidth disabled={loading} size="lg">
           {loading ? 'Signing in…' : 'Sign In'}
@@ -155,6 +165,155 @@ export function LoginPage() {
           browse decks without signing in
         </button>
       </p>
+    </AuthShell>
+  )
+}
+
+// ── Forgot Password ───────────────────────────────────────────
+
+export function ForgotPasswordPage() {
+  const navigate = useNavigate()
+  const [email,   setEmail]   = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error,   setError]   = useState('')
+  const [sent,    setSent]    = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!email.includes('@')) { setError('Valid email required'); return }
+    setError('')
+    setLoading(true)
+    const redirectTo = `${window.location.origin}/reset-password`
+    const { error: err } = await supabase.auth.resetPasswordForEmail(email.trim(), { redirectTo })
+    setLoading(false)
+    if (err) { setError(err.message); return }
+    setSent(true)
+  }
+
+  if (sent) {
+    return (
+      <AuthShell title="Check your email" subtitle="Password reset link sent">
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '48px', marginBottom: '16px' }}>📬</div>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
+            We sent a reset link to{' '}
+            <strong style={{ color: 'var(--text-primary)' }}>{email}</strong>.
+            Click the link in the email to set a new password.
+          </p>
+          <Button variant="primary" fullWidth onClick={() => navigate('/login')}>
+            Back to Sign In
+          </Button>
+        </div>
+      </AuthShell>
+    )
+  }
+
+  return (
+    <AuthShell title="Reset your password" subtitle="We'll send you a link to reset it">
+      <form onSubmit={handleSubmit} noValidate>
+        <FormInput
+          label="Email" type="email"
+          value={email} onChange={e => setEmail(e.target.value)}
+          placeholder="you@example.com"
+        />
+        <ErrorBanner message={error} />
+        <Button type="submit" fullWidth disabled={loading} size="lg">
+          {loading ? 'Sending…' : 'Send Reset Link'}
+        </Button>
+      </form>
+      <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: 'var(--text-muted)' }}>
+        <button
+          type="button"
+          onClick={() => navigate('/login')}
+          style={{ background: 'none', border: 'none', color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit' }}
+        >
+          Back to Sign In
+        </button>
+      </p>
+    </AuthShell>
+  )
+}
+
+// ── Reset Password ────────────────────────────────────────────
+
+export function ResetPasswordPage() {
+  const navigate = useNavigate()
+  const [password,  setPassword]  = useState('')
+  const [confirm,   setConfirm]   = useState('')
+  const [loading,   setLoading]   = useState(false)
+  const [error,     setError]     = useState('')
+  const [done,      setDone]      = useState(false)
+  const [ready,     setReady]     = useState(false)
+
+  // Supabase fires PASSWORD_RECOVERY and establishes a session from the URL token.
+  // Wait for that before allowing form interaction.
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') setReady(true)
+    })
+    // Also handle the case where the session is already established on mount
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) setReady(true)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (password.length < 6) { setError('Password must be at least 6 characters'); return }
+    if (password !== confirm) { setError('Passwords do not match'); return }
+    setError('')
+    setLoading(true)
+    const { error: err } = await supabase.auth.updateUser({ password })
+    setLoading(false)
+    if (err) { setError(err.message); return }
+    setDone(true)
+  }
+
+  if (done) {
+    return (
+      <AuthShell title="Password updated" subtitle="You're all set">
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '48px', marginBottom: '16px' }}>✅</div>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
+            Your password has been changed. You can now sign in with your new password.
+          </p>
+          <Button variant="primary" fullWidth onClick={() => navigate('/login')}>
+            Go to Sign In
+          </Button>
+        </div>
+      </AuthShell>
+    )
+  }
+
+  if (!ready) {
+    return (
+      <AuthShell title="Verifying link…" subtitle="Just a moment">
+        <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '14px', padding: '16px 0' }}>
+          Validating your reset link…
+        </div>
+      </AuthShell>
+    )
+  }
+
+  return (
+    <AuthShell title="Set new password" subtitle="Choose a strong password">
+      <form onSubmit={handleSubmit} noValidate>
+        <FormInput
+          label="New Password" type="password"
+          value={password} onChange={e => setPassword(e.target.value)}
+          placeholder="Min. 6 characters"
+        />
+        <FormInput
+          label="Confirm Password" type="password"
+          value={confirm} onChange={e => setConfirm(e.target.value)}
+          placeholder="Repeat new password"
+        />
+        <ErrorBanner message={error} />
+        <Button type="submit" fullWidth disabled={loading} size="lg">
+          {loading ? 'Updating…' : 'Update Password'}
+        </Button>
+      </form>
     </AuthShell>
   )
 }

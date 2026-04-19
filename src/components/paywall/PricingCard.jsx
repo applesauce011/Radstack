@@ -45,6 +45,9 @@ export function PricingCard({ plan, onSelect, loading }) {
         }}>
           {price}
         </span>
+        <span style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-muted)', marginLeft: '5px' }}>
+          USD
+        </span>
         <span style={{ fontSize: '14px', color: 'var(--text-muted)', marginLeft: '6px' }}>
           {period}
         </span>
