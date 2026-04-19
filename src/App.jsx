@@ -19,6 +19,21 @@ import { AdminPage } from './pages/AdminPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
+import { Footer } from './components/layout/Footer'
+
+// ── Footer hidden on study page ──────────────────────────────
+const FOOTER_HIDDEN = [
+  '/study', '/login', '/register',
+  '/forgot-password', '/reset-password',
+  '/checkout/success', '/checkout/cancel',
+  '/redeem', '/admin',
+]
+
+function FooterWithGuard() {
+  const { pathname } = useLocation()
+  if (FOOTER_HIDDEN.includes(pathname)) return null
+  return <Footer />
+}
 
 // ── Scroll to top on every navigation ────────────────────────
 function ScrollToTop() {
@@ -165,6 +180,7 @@ export default function App() {
       <Route path="/admin"     element={<AdminPage />} />
       <Route path="*"          element={<Navigate to="/" replace />} />
     </Routes>
+      <FooterWithGuard />
     </>
   )
 }

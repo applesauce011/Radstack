@@ -19,7 +19,9 @@
       "Bash(node -e ' *)",
       "Bash(xargs grep *)",
       "Bash(grep -r \"json-ld\\\\|structured\\\\|schema\\\\|JSON\\\\\\\\.stringify.*@context\" /c/radstack/src --include=\"*.jsx\" --include=\"*.js\")",
-      "Bash(npm i *)"
+      "Bash(npm i *)",
+      "Bash(find /c/radstack/src/data/decks -name \"*.js\" -exec grep -l \"stroke\\\\|vascular\\\\|biliary\" {} \\\\;)",
+      "Bash(grep -n \"^ *\\\\{$\" /c/radstack/src/data/decks/abdominal.js)"
     ]
   }
 }

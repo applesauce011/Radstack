@@ -183,7 +183,7 @@ export function PricingPage() {
           fontSize: '13px', color: 'var(--text-muted)',
           marginBottom: '32px', textAlign: 'center',
         }}>
-          Not ready? Try <strong style={{ color: 'var(--text-secondary)' }}>Biliary System</strong> and <strong style={{ color: 'var(--text-secondary)' }}>Stroke & Vascular</strong> for free — no account required.
+          Not ready? Try a <strong style={{ color: 'var(--text-secondary)' }}>free deck from every subspecialty</strong> — no account required.
         </div>
 
         {/* Pricing cards */}

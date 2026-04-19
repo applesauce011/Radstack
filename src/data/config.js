@@ -13,9 +13,18 @@
 // These sections are accessible to all users (no account needed).
 // All other non-anatomy sections require a premium subscription.
 export const FREE_SECTIONS = new Set([
-  'neuro-stroke',  // Stroke & Vascular
-  'abd-biliary',   // Biliary System
-  'msk-tumors',    // Bone & Soft Tissue Tumors
+  'msk-tumors',          // Bone & Soft Tissue Tumors  — MSK
+  'neuro-stroke',        // Stroke & Vascular           — Neuroradiology
+  'chest-anatomy',       // Chest Anatomy               — Chest
+  'abd-gi-esophagus',   // Esophagus                   — Abdominal
+  'breast-anatomy',      // Anatomy & Technique         — Breast
+  'gu-retroperitoneum',  // Retroperitoneum & Adrenal   — GU
+  'peds-chest',          // Pediatric Chest             — Pediatric
+  'nucs-physics',        // Radiopharmacy & Physics     — Nuclear Medicine
+  'ir-vasc-anatomy',     // Vascular Anatomy            — IR
+  'ob-early-pregnancy',  // Early Pregnancy & Viability — OB/GYN
+  'cardiac-anatomy',     // Cardiac Anatomy & Physiology — Cardiac
+  'physics-contrast',    // Contrast Media              — Physics
 ])
 
 // ── Anatomy-gated sections ────────────────────────────────────

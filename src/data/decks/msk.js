@@ -1330,14 +1330,6 @@ export const mskSubsections = [
     ]
   },
 
-  // ──────────────────────────────────────────────────────────
-  // FRACTURES & TRAUMA
-  // ──────────────────────────────────────────────────────────
-  {
-    id: 'msk-trauma',
-    label: 'Fractures & Trauma',
-    cards: [ /* existing sample cards — DO NOT MODIFY */ ],
-  },
 
   {
     id: 'msk-trauma-named',

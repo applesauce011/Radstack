@@ -382,10 +382,10 @@ export function LandingPage() {
               Start with the free preview
             </h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '8px', fontSize: '15px' }}>
-              Try Biliary System and Stroke & Vascular — no account required.
+              Try a free deck from every subspecialty — no account required.
             </p>
             <p style={{ color: 'var(--text-muted)', marginBottom: '28px', fontSize: '14px' }}>
-              Create a free account to save progress. Go premium to unlock all 12 subspecialties.
+              Create a free account to save progress. Go premium to unlock every deck across all 12 subspecialties.
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button
@@ -416,30 +416,6 @@ export function LandingPage() {
         </section>
       )}
 
-      {/* Footer */}
-      <footer style={{
-        borderTop: '1px solid var(--border-subtle)', padding: '24px',
-        textAlign: 'center', color: 'var(--text-muted)', fontSize: '13px',
-      }}>
-        <div style={{ marginBottom: '8px' }}>
-          RadiologyStack · Built for radiology residents, by radiology residents · Not for clinical use
-        </div>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <button
-            onClick={() => window.location.href = '/terms'}
-            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit' }}
-          >
-            Terms of Service
-          </button>
-          <button
-            onClick={() => window.location.href = '/privacy'}
-            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit' }}
-          >
-            Privacy Policy
-          </button>
-          <span>radiologystack@gmail.com</span>
-        </div>
-      </footer>
     </div>
   )
 }
