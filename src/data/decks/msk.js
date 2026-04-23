@@ -1869,7 +1869,7 @@ export const mskSubsections = [
             'Aggressive features:\n• Indistinct margins / wide zone of transition\n• Permeative or moth-eaten pattern\n• Aggressive periosteal reaction (lamellated, sunburst, Codman triangle)\n• Soft-tissue mass\n• Endosteal scalloping\n• Cortical destruction',
           explanation: 'A wide zone of transition implies rapid growth. Periosteal reaction morphology reflects rate of growth: solid (slow growing) → lamellated/onion-skin → sunburst → Codman triangle (fastest). Any single aggressive feature may be enough to be alarming. In patients >40 years, aggressive lytic bone lesion = metastasis or myeloma until proven otherwise. In patients <20 years: eosinophilic granuloma, infection, or Ewing sarcoma.',
           keyFact: 'Age rule: >40 with aggressive bone lesion = mets/myeloma. <20 with aggressive lytic lesion = Ewing/EG/infection. Codman triangle = most aggressive periosteal reaction = malignancy.',
-          radiopaediaUrl: 'https://radiopaedia.org/articles/aggressive-bone-lesion',
+          radiopaediaUrl: 'https://radiopaedia.org/articles/aggressive-vs-non-aggressive-bone-lesions-radiographs',
           tags: ['tumor', 'bone', 'malignant', 'radiograph'],
         },
       },
