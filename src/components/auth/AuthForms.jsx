@@ -93,13 +93,39 @@ function AuthShell({ children, title, subtitle }) {
 
 // ── Login ─────────────────────────────────────────────────────
 
+const REMEMBER_EMAIL_KEY = 'radstack-remember-email'
+const supportsCredentials = () =>
+  typeof window !== 'undefined' && 'PasswordCredential' in window && navigator.credentials
+
 export function LoginPage() {
   const navigate   = useNavigate()
   const { login }  = useAuthStore()
-  const [email,    setEmail]    = useState('')
-  const [password, setPassword] = useState('')
-  const [error,    setError]    = useState('')
-  const [loading,  setLoading]  = useState(false)
+  const [email,      setEmail]      = useState('')
+  const [password,   setPassword]   = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
+  const [error,      setError]      = useState('')
+  const [loading,    setLoading]    = useState(false)
+
+  useEffect(() => {
+    if (supportsCredentials()) {
+      navigator.credentials
+        .get({ password: true, mediation: 'silent' })
+        .then(cred => {
+          if (cred) {
+            setEmail(cred.id)
+            setPassword(cred.password)
+            setRememberMe(true)
+          }
+        })
+        .catch(() => {})
+    } else {
+      const saved = localStorage.getItem(REMEMBER_EMAIL_KEY)
+      if (saved) {
+        setEmail(saved)
+        setRememberMe(true)
+      }
+    }
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -108,9 +134,19 @@ export function LoginPage() {
     setLoading(true)
     const result = await login(email.trim(), password)
     if (result.success) {
-      // onAuthStateChange (SIGNED_IN) fires and triggers loadForUser.
-      // RequireAuth shows the AppLoader while that completes, then
-      // renders the dashboard. Navigate eagerly so the URL updates now.
+      if (rememberMe) {
+        if (supportsCredentials()) {
+          const cred = new window.PasswordCredential({ id: email.trim(), password })
+          navigator.credentials.store(cred).catch(() => {})
+        } else {
+          localStorage.setItem(REMEMBER_EMAIL_KEY, email.trim())
+        }
+      } else {
+        localStorage.removeItem(REMEMBER_EMAIL_KEY)
+        if (supportsCredentials()) {
+          navigator.credentials.preventSilentAccess().catch(() => {})
+        }
+      }
       navigate('/dashboard', { replace: true })
     } else {
       setError(result.error)
@@ -131,7 +167,16 @@ export function LoginPage() {
           value={password} onChange={e => setPassword(e.target.value)}
           placeholder="••••••••"
         />
-        <div style={{ textAlign: 'right', marginBottom: '12px', marginTop: '-8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', marginTop: '-4px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', userSelect: 'none' }}>
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={e => setRememberMe(e.target.checked)}
+              style={{ accentColor: 'var(--accent-cyan)', width: '15px', height: '15px', cursor: 'pointer' }}
+            />
+            <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Remember me</span>
+          </label>
           <button
             type="button"
             onClick={() => navigate('/forgot-password')}
