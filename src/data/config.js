@@ -9,6 +9,8 @@
 //   Everything else  — free for all users
 // ============================================================
 
+export const LAST_UPDATED = 'April 2026'
+
 // ── Free sections ─────────────────────────────────────────────
 // These sections are accessible to all users (no account needed).
 // All other non-anatomy sections require a premium subscription.

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LAST_UPDATED } from '../../data/config'
 
 export function Footer() {
   const navigate = useNavigate()
@@ -15,9 +16,14 @@ export function Footer() {
       gap: '12px',
       background: 'var(--bg-primary)',
     }}>
-      <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-        RadiologyStack · Built for radiology residents · Not for clinical use
-      </p>
+      <div>
+        <p style={{ margin: '0 0 2px', fontSize: '12px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+          RadiologyStack · Built for radiology residents · Not for clinical use
+        </p>
+        <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.5', opacity: 0.7 }}>
+          Cards continuously updated to reflect current literature · Last updated: {LAST_UPDATED}
+        </p>
+      </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
         <button
           type="button"

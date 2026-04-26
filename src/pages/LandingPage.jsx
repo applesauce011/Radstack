@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { SUBSPECIALTIES, getPremiumCardCount } from '../data/index'
+import { LAST_UPDATED } from '../data/config'
 import { Navbar } from '../components/layout/Navbar'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -240,6 +241,14 @@ export function LandingPage() {
           <StatPill value={getPremiumCardCount() + '+'} label="Flashcards" />
           <StatPill value="2" label="Exams covered" />
         </div>
+
+        <p style={{
+          marginTop: '20px', marginBottom: 0,
+          fontSize: '12px', color: 'var(--text-muted)',
+          opacity: 0.75,
+        }}>
+          Updated regularly to reflect the latest literature and clinical accuracy · Last updated: {LAST_UPDATED}
+        </p>
 
       </section>
 
