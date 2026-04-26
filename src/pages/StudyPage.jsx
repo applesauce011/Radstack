@@ -84,6 +84,7 @@ export function StudyPage() {
           <SessionComplete
             onRestart={() => reset()}
             onExit={() => navigate(exitUrl)}
+            sectionId={sessionSource?.id}
           />
         </div>
       </div>

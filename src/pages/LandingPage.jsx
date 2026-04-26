@@ -240,6 +240,7 @@ export function LandingPage() {
           <StatPill value={getPremiumCardCount() + '+'} label="Flashcards" />
           <StatPill value="2" label="Exams covered" />
         </div>
+
       </section>
 
       {/* Subspecialties row */}
@@ -250,6 +251,74 @@ export function LandingPage() {
         }}>
           {SUBSPECIALTIES.map(sub => (
             <SubspecialtyPill key={sub.id} sub={sub} />
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 60px' }}>
+        <p style={{
+          textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)',
+          letterSpacing: '0.01em', marginBottom: '24px',
+        }}>
+          Trusted by radiology residents across Canada and the US
+        </p>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '16px',
+        }}>
+          {[
+            {
+              quote: 'I was struggling to keep up with MSK and neuro. RadiologyStack\'s high-yield cards helped me focus on what actually shows up on the boards. Passed my RC exam first try.',
+              initials: 'A.K.',
+              role: 'Radiology Resident',
+              location: 'Toronto, Canada',
+            },
+            {
+              quote: 'Way better than building Anki decks from scratch. Everything is organized by subspecialty and tied to Radiopaedia — exactly how I think about cases.',
+              initials: 'M.R.',
+              role: 'Radiology Resident',
+              location: 'Seattle, WA',
+            },
+            {
+              quote: 'I used RadiologyStack throughout residency to prep for the boards. The structured format made it easy to stay consistent even during busy rotations — it gave me real confidence going into exam day.',
+              initials: 'S.L.',
+              role: 'Radiology Fellow',
+              location: 'New York, NY',
+            },
+          ].map(t => (
+            <div key={t.initials} style={{
+              padding: '24px', background: 'var(--bg-card)',
+              border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-lg)',
+              display: 'flex', flexDirection: 'column', gap: '16px',
+            }}>
+              <p style={{
+                fontSize: '14px', lineHeight: '1.65', color: 'var(--text-secondary)',
+                fontStyle: 'italic', margin: 0, flex: 1,
+              }}>
+                "{t.quote}"
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{
+                  width: '36px', height: '36px', borderRadius: '50%',
+                  background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '12px', fontWeight: '700', color: 'var(--bg-primary)',
+                  flexShrink: 0,
+                }}>
+                  {t.initials}
+                </div>
+                <div>
+                  <div style={{ fontSize: '13px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                    {t.role}
+                  </div>
+                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                    {t.location}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -412,6 +481,19 @@ export function LandingPage() {
                 See Pricing
               </button>
             </div>
+            <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--text-muted)' }}>
+              Buying for your program?{' '}
+              <button
+                onClick={() => navigate('/group')}
+                style={{
+                  background: 'none', border: 'none', color: 'var(--accent-cyan)',
+                  cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600',
+                  padding: 0,
+                }}
+              >
+                Group discounts available →
+              </button>
+            </p>
           </div>
         </section>
       )}

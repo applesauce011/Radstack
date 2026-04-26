@@ -127,6 +127,13 @@ export function Navbar() {
                   </button>
                   <button
                     type="button"
+                    onClick={() => { navigate('/stats'); setMenuOpen(false) }}
+                    style={menuItemStyle}
+                  >
+                    My Stats
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => { navigate('/decks'); setMenuOpen(false) }}
                     style={menuItemStyle}
                   >

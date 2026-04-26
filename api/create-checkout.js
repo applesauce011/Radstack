@@ -77,5 +77,15 @@ export default async function handler(req, res) {
     automatic_tax: { enabled: true },
   })
 
+  // Track checkout_started event (best-effort, non-blocking)
+  const planKey = priceId === process.env.STRIPE_PRICE_3MONTH ? '3month'
+    : priceId === process.env.STRIPE_PRICE_12MONTH ? '12month'
+    : 'lifetime'
+  supabaseAdmin.from('analytics_events').insert({
+    event_name: 'checkout_started',
+    properties: { plan_type: planKey, price_id: priceId },
+    user_id: user.id,
+  }).catch(() => {})
+
   res.status(200).json({ url: session.url })
 }

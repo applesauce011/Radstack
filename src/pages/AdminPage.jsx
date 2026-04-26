@@ -1,6 +1,22 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Navbar } from '../components/layout/Navbar'
 
+const FUNNEL_STEPS = [
+  { key: 'pricing_page_viewed', label: 'Viewed Pricing' },
+  { key: 'pricing_plan_clicked', label: 'Clicked a Plan' },
+  { key: 'checkout_started', label: 'Started Checkout' },
+]
+
+const EVENT_LABELS = {
+  pricing_page_viewed: 'Pricing Page Views',
+  pricing_plan_clicked: 'Plan Button Clicks',
+  checkout_started: 'Checkouts Started',
+  locked_section_hit: 'Locked Section Views',
+  upgrade_banner_viewed: 'Upgrade Banner Views',
+  session_complete_upgrade_cta_shown: 'Post-Session Upgrade CTAs Shown',
+  session_complete_upgrade_clicked: 'Post-Session Upgrade Clicks',
+}
+
 const PLAN_LABELS = { '3month': '3-Month', '12month': '12-Month', lifetime: 'Lifetime' }
 const PLAN_COLORS = { '3month': 'var(--accent-blue)', '12month': 'var(--accent-cyan)', lifetime: 'var(--accent-amber)' }
 
@@ -140,6 +156,16 @@ export function AdminPage() {
   const [grantError, setGrantError]             = useState(null)
   const [grantSuccess, setGrantSuccess]         = useState(null)
 
+  // ── Analytics state ───────────────────────────────────────
+  const [analytics, setAnalytics]               = useState(null)
+  const [analyticsLoading, setAnalyticsLoading] = useState(false)
+  const [analyticsError, setAnalyticsError]     = useState(null)
+
+  // ── Group orders state ────────────────────────────────────
+  const [groupOrders, setGroupOrders]           = useState([])
+  const [groupLoading, setGroupLoading]         = useState(false)
+  const [groupError, setGroupError]             = useState(null)
+
   const headers = { 'Content-Type': 'application/json', 'X-Admin-Secret': secret }
 
   const loadCodes = useCallback(async () => {
@@ -172,6 +198,36 @@ export function AdminPage() {
     }
   }, [secret])
 
+  const loadAnalytics = useCallback(async () => {
+    setAnalyticsLoading(true)
+    setAnalyticsError(null)
+    try {
+      const res = await fetch('/api/admin-analytics', { headers: { 'X-Admin-Secret': secret } })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error || 'Failed to load analytics')
+      setAnalytics(json)
+    } catch (err) {
+      setAnalyticsError(err.message)
+    } finally {
+      setAnalyticsLoading(false)
+    }
+  }, [secret])
+
+  const loadGroupOrders = useCallback(async () => {
+    setGroupLoading(true)
+    setGroupError(null)
+    try {
+      const res = await fetch('/api/admin-group', { headers: { 'X-Admin-Secret': secret } })
+      const json = await res.json()
+      if (!res.ok) throw new Error(json.error || 'Failed to load group orders')
+      setGroupOrders(json.orders)
+    } catch (err) {
+      setGroupError(err.message)
+    } finally {
+      setGroupLoading(false)
+    }
+  }, [secret])
+
   const handleLogin = async (e) => {
     e.preventDefault()
     setAuthError(null)
@@ -185,6 +241,14 @@ export function AdminPage() {
     const aRes = await fetch('/api/admin-anatomy', { headers: { 'X-Admin-Secret': secret } })
     const aJson = await aRes.json()
     if (aRes.ok) setAnatomyUsers(aJson.users)
+    // Load analytics
+    const anRes = await fetch('/api/admin-analytics', { headers: { 'X-Admin-Secret': secret } })
+    const anJson = await anRes.json()
+    if (anRes.ok) setAnalytics(anJson)
+    // Load group orders
+    const grRes = await fetch('/api/admin-group', { headers: { 'X-Admin-Secret': secret } })
+    const grJson = await grRes.json()
+    if (grRes.ok) setGroupOrders(grJson.orders)
   }
 
   const handleCreate = async (e) => {
@@ -548,6 +612,234 @@ export function AdminPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {codes.map(row => (
             <CodeRow key={row.code} row={row} onDeactivate={handleDeactivate} />
+          ))}
+        </div>
+
+        {/* ── Section 3: Analytics ────────────────────────── */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '48px', marginBottom: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-subtle)' }}>
+          <h1 style={{
+            fontFamily: 'var(--font-display)', fontSize: '26px',
+            fontWeight: '800', color: 'var(--text-primary)',
+          }}>
+            Analytics
+          </h1>
+          <button
+            onClick={loadAnalytics}
+            style={{
+              background: 'none', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-sm)', padding: '5px 12px',
+              color: 'var(--text-muted)', cursor: 'pointer', fontSize: '12px',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            ↺ Refresh
+          </button>
+        </div>
+        <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>
+          Last 30 days. Run the SQL migration in Supabase before events will appear here.
+        </p>
+
+        {analyticsError && (
+          <div style={{ color: 'var(--accent-rose)', fontSize: '14px', marginBottom: '16px' }}>{analyticsError}</div>
+        )}
+        {analyticsLoading && (
+          <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '16px' }}>Loading…</div>
+        )}
+
+        {analytics && (
+          <>
+            {/* Conversion funnel */}
+            <div style={{
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-lg)', padding: '24px', marginBottom: '24px',
+            }}>
+              <h2 style={{
+                fontFamily: 'var(--font-display)', fontSize: '16px',
+                fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px',
+              }}>
+                Conversion Funnel
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                {analytics.funnel.map((step, i) => {
+                  const prev = i > 0 ? analytics.funnel[i - 1].count : null
+                  const pct = prev && prev > 0 ? Math.round((step.count / prev) * 100) : null
+                  return (
+                    <div key={step.key} style={{
+                      display: 'flex', alignItems: 'center', gap: '16px',
+                      padding: '12px 0',
+                      borderBottom: i < analytics.funnel.length - 1 ? '1px solid var(--border-subtle)' : 'none',
+                    }}>
+                      <div style={{
+                        width: '24px', height: '24px', borderRadius: '50%',
+                        background: 'rgba(34,211,238,0.15)', border: '1px solid rgba(34,211,238,0.3)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '11px', fontWeight: '700', color: 'var(--accent-cyan)',
+                        flexShrink: 0,
+                      }}>
+                        {i + 1}
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                          {step.label}
+                        </div>
+                        {pct !== null && (
+                          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                            {pct}% from previous step
+                          </div>
+                        )}
+                      </div>
+                      <div style={{
+                        fontFamily: 'var(--font-display)', fontSize: '24px',
+                        fontWeight: '800', color: step.count > 0 ? 'var(--accent-cyan)' : 'var(--text-muted)',
+                      }}>
+                        {step.count.toLocaleString()}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* All events breakdown */}
+            <div style={{
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-lg)', padding: '24px',
+            }}>
+              <h2 style={{
+                fontFamily: 'var(--font-display)', fontSize: '16px',
+                fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px',
+              }}>
+                All Events
+              </h2>
+              {Object.keys(analytics.counts).length === 0 ? (
+                <div style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
+                  No events recorded yet. Make sure the Supabase migration has been run.
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                  {Object.entries(analytics.counts)
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([name, count], i, arr) => (
+                      <div key={name} style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        padding: '10px 0',
+                        borderBottom: i < arr.length - 1 ? '1px solid var(--border-subtle)' : 'none',
+                      }}>
+                        <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                          {EVENT_LABELS[name] || name}
+                        </span>
+                        <span style={{
+                          fontFamily: 'var(--font-display)', fontSize: '16px',
+                          fontWeight: '700', color: 'var(--text-primary)',
+                        }}>
+                          {count.toLocaleString()}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {/* ── Section 4: Group Orders ──────────────────────── */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '48px', marginBottom: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-subtle)' }}>
+          <h1 style={{
+            fontFamily: 'var(--font-display)', fontSize: '26px',
+            fontWeight: '800', color: 'var(--text-primary)',
+          }}>
+            Group Orders
+          </h1>
+          <button
+            onClick={loadGroupOrders}
+            style={{
+              background: 'none', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-sm)', padding: '5px 12px',
+              color: 'var(--text-muted)', cursor: 'pointer', fontSize: '12px',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            ↺ Refresh
+          </button>
+        </div>
+        <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>
+          Automated multi-seat purchases from /group. Codes are generated instantly on payment.
+        </p>
+
+        {groupError && (
+          <div style={{ color: 'var(--accent-rose)', fontSize: '14px', marginBottom: '16px' }}>{groupError}</div>
+        )}
+        {groupLoading && (
+          <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '16px' }}>Loading…</div>
+        )}
+        {!groupLoading && groupOrders.length === 0 && !groupError && (
+          <div style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '16px' }}>No group orders yet.</div>
+        )}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {groupOrders.map(order => (
+            <div key={order.id} style={{
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-lg)', padding: '20px',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap', marginBottom: '12px' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '15px', fontWeight: '700', color: 'var(--text-primary)' }}>
+                    {order.program_name}
+                  </div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                    {order.institution}
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{
+                    padding: '3px 12px', borderRadius: '999px', fontSize: '12px',
+                    fontWeight: '700', background: 'rgba(52,211,153,0.12)',
+                    color: 'var(--accent-emerald)', border: '1px solid rgba(52,211,153,0.3)',
+                  }}>
+                    {order.num_seats} seats
+                  </span>
+                  <span style={{
+                    fontFamily: 'var(--font-display)', fontSize: '15px',
+                    fontWeight: '700', color: 'var(--text-primary)',
+                  }}>
+                    ${((order.amount_paid ?? 0) / 100).toFixed(2)}
+                  </span>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', fontSize: '12px', color: 'var(--text-muted)', marginBottom: '12px' }}>
+                <span>
+                  Contact:{' '}
+                  <a href={`mailto:${order.contact_email}`} style={{ color: 'var(--accent-cyan)' }}>
+                    {order.contact_name} ({order.contact_email})
+                  </a>
+                </span>
+                {order.start_year && <span>Start year: {order.start_year}</span>}
+                <span>Paid: {new Date(order.created_at).toLocaleDateString()}</span>
+              </div>
+              {order.codes?.length > 0 && (
+                <details>
+                  <summary style={{ fontSize: '12px', color: 'var(--text-muted)', cursor: 'pointer', marginBottom: '8px' }}>
+                    View {order.codes.length} codes
+                  </summary>
+                  <div style={{
+                    display: 'flex', flexWrap: 'wrap', gap: '6px',
+                    marginTop: '8px', maxHeight: '120px', overflowY: 'auto',
+                  }}>
+                    {order.codes.map(code => (
+                      <span key={code} style={{
+                        fontFamily: 'var(--font-display)', fontSize: '12px',
+                        fontWeight: '600', letterSpacing: '0.04em',
+                        padding: '3px 10px', background: 'var(--bg-elevated)',
+                        border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-sm)',
+                        color: 'var(--text-primary)',
+                      }}>
+                        {code}
+                      </span>
+                    ))}
+                  </div>
+                </details>
+              )}
+            </div>
           ))}
         </div>
       </div>

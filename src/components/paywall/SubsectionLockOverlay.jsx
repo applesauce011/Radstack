@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { trackEvent } from '../../utils/analytics'
 
-// Renders in place of the Study button for paywalled subsections.
-export function SubsectionLockOverlay() {
+export function SubsectionLockOverlay({ sectionId, subspecialty }) {
   const navigate = useNavigate()
+  useEffect(() => {
+    trackEvent('locked_section_hit', { section_id: sectionId, subspecialty })
+  }, [sectionId, subspecialty])
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
       <button

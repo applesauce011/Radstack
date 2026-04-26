@@ -16,6 +16,9 @@ import { TermsPage } from './pages/TermsPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { RedeemPage } from './pages/RedeemPage'
 import { AdminPage } from './pages/AdminPage'
+import { StatsPage } from './pages/StatsPage'
+import { GroupPage } from './pages/GroupPage'
+import { GroupSuccessPage } from './pages/GroupSuccessPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
@@ -26,7 +29,7 @@ const FOOTER_HIDDEN = [
   '/study', '/login', '/register',
   '/forgot-password', '/reset-password',
   '/checkout/success', '/checkout/cancel',
-  '/redeem', '/admin',
+  '/group/success', '/redeem', '/admin',
 ]
 
 function FooterWithGuard() {
@@ -172,6 +175,9 @@ export default function App() {
       <Route path="/study"     element={<StudyPage />} />
       <Route path="/pricing"   element={<PricingPage />} />
       <Route path="/settings"  element={<RequireAuth><SettingsPage /></RequireAuth>} />
+      <Route path="/stats"     element={<RequireAuth><StatsPage /></RequireAuth>} />
+      <Route path="/group"     element={<GroupPage />} />
+      <Route path="/group/success" element={<GroupSuccessPage />} />
       <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
       <Route path="/checkout/cancel"  element={<CheckoutCancelPage />} />
       <Route path="/terms"     element={<TermsPage />} />

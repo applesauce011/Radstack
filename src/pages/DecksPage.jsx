@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { SUBSPECIALTIES, ANATOMY_SECTIONS, FREE_SECTIONS, isSectionAccessible, getPremiumCardCount, getCardsBySubspecialty, getCardsBySubsection } from '../data/index'
+import { trackEvent } from '../utils/analytics'
 import { useProgressStore } from '../store/progressStore'
 import { useAuthStore } from '../store/authStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
@@ -13,13 +14,19 @@ import { usePageMeta } from '../hooks/usePageMeta'
 
 // ── SubsectionRow ─────────────────────────────────────────────
 
-function SubsectionRow({ section, subspecialtyColor, onStudy, hasAccess, hasAnatomyAccess, navigate }) {
+function SubsectionRow({ section, subspecialtyId, subspecialtyColor, onStudy, hasAccess, hasAnatomyAccess, navigate }) {
   const { getStatsForCards, resetDeck } = useProgressStore()
   const [resetOpen, setResetOpen] = useState(false)
   const allCards = getCardsBySubsection(section.id)
 
   const isEmpty      = allCards.length === 0
   const isPremiumLocked = !isEmpty && !isSectionAccessible(section.id, hasAccess, hasAnatomyAccess)
+
+  useEffect(() => {
+    if (isPremiumLocked) {
+      trackEvent('locked_section_hit', { section_id: section.id, subspecialty: subspecialtyId })
+    }
+  }, [isPremiumLocked, section.id, subspecialtyId])
 
   const accessibleCards = isPremiumLocked ? [] : allCards
   const stats = getStatsForCards(accessibleCards.length > 0 ? accessibleCards : allCards)
@@ -370,6 +377,7 @@ export function DecksPage() {
             <SubsectionRow
               key={section.id}
               section={section}
+              subspecialtyId={activeSub.id}
               subspecialtyColor={activeSub.color}
               onStudy={handleStudy}
               hasAccess={hasAccess}

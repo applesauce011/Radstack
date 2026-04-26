@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
@@ -7,6 +7,7 @@ import { Navbar } from '../components/layout/Navbar'
 import { PricingCard } from '../components/paywall/PricingCard'
 import { supabase } from '../lib/supabase'
 import { usePageMeta } from '../hooks/usePageMeta'
+import { trackEvent } from '../utils/analytics'
 
 const CARD_COUNT = `${getPremiumCardCount()}+ flashcards`
 
@@ -16,6 +17,7 @@ const PLANS = [
     label: '3 Months',
     price: '$49',
     period: 'one-time',
+    perDay: '$0.54 / day',
     priceEnvKey: 'VITE_STRIPE_PRICE_3MONTH',
     badge: null,
     highlight: false,
@@ -32,6 +34,7 @@ const PLANS = [
     label: '12 Months',
     price: '$99',
     period: 'one-time',
+    perDay: '$0.27 / day',
     priceEnvKey: 'VITE_STRIPE_PRICE_12MONTH',
     badge: 'Most Popular',
     highlight: true,
@@ -48,6 +51,7 @@ const PLANS = [
     label: 'Lifetime',
     price: '$149',
     period: 'one-time',
+    perDay: 'pay once, yours forever',
     priceEnvKey: 'VITE_STRIPE_PRICE_LIFETIME',
     badge: null,
     highlight: false,
@@ -76,6 +80,9 @@ export function PricingPage() {
   const { hasAccess, subscription } = useSubscriptionStore()
   const [loadingPlan, setLoadingPlan] = useState(null)
   const [error, setError] = useState(null)
+
+  useEffect(() => { trackEvent('pricing_page_viewed') }, [])
+
   usePageMeta({
     title: 'Pricing — RadiologyStack | Radiology Board Exam Flashcards',
     description: 'Unlock all 12 radiology subspecialty decks. One-time payment, no subscription. Plans from $49. Built for FRCPC and ABR board exam prep.',
@@ -84,6 +91,7 @@ export function PricingPage() {
 
   const handleSelectPlan = async (plan) => {
     setError(null)
+    trackEvent('pricing_plan_clicked', { plan_type: plan.id, price: plan.price })
 
     if (!isAuthenticated) {
       navigate('/register')
@@ -218,12 +226,83 @@ export function PricingPage() {
           display: 'flex', gap: '24px', justifyContent: 'center',
           flexWrap: 'wrap', fontSize: '13px', color: 'var(--text-muted)',
         }}>
-          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', 'Questions? radiologystack@gmail.com'].map(s => (
+          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', '7-day money-back guarantee', 'Questions? radiologystack@gmail.com'].map(s => (
             <span key={s} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ color: 'var(--accent-cyan)' }}>✓</span>
               {s}
             </span>
           ))}
+        </div>
+
+        {/* For Programs / Group pricing */}
+        <div style={{
+          marginTop: '48px', padding: '32px',
+          background: 'linear-gradient(135deg, rgba(59,130,246,0.06), rgba(139,92,246,0.06))',
+          border: '1px solid rgba(99,102,241,0.25)',
+          borderRadius: 'var(--radius-xl)',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
+            <div style={{ flex: 1, minWidth: '240px' }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                padding: '4px 12px', borderRadius: '999px',
+                background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.3)',
+                fontSize: '11px', fontWeight: '700', letterSpacing: '0.06em',
+                textTransform: 'uppercase', color: '#818CF8',
+                marginBottom: '12px',
+              }}>
+                For Residency Programs
+              </div>
+              <h2 style={{
+                fontFamily: 'var(--font-display)', fontSize: '20px',
+                fontWeight: '800', color: 'var(--text-primary)', marginBottom: '10px',
+              }}>
+                Group access for your whole program
+              </h2>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
+                Buying for 3 or more residents? We offer volume discounts — one payment, individual access codes delivered instantly.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
+                {[
+                  { seats: '3–9 seats', discount: '20% off', price: '~$79 / resident' },
+                  { seats: '10–19 seats', discount: '30% off', price: '~$69 / resident' },
+                  { seats: '20+ seats', discount: '35% off', price: '~$64 / resident' },
+                ].map(tier => (
+                  <div key={tier.seats} style={{
+                    display: 'flex', alignItems: 'center', gap: '12px',
+                    fontSize: '13px',
+                  }}>
+                    <span style={{ color: 'var(--text-muted)', minWidth: '90px' }}>{tier.seats}</span>
+                    <span style={{
+                      padding: '2px 10px', borderRadius: '999px', fontSize: '12px',
+                      fontWeight: '700', background: 'rgba(99,102,241,0.12)',
+                      color: '#818CF8', border: '1px solid rgba(99,102,241,0.25)',
+                      whiteSpace: 'nowrap',
+                    }}>{tier.discount}</span>
+                    <span style={{ color: 'var(--text-secondary)', fontWeight: '600' }}>{tier.price}</span>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => navigate('/group')}
+                style={{
+                  padding: '11px 28px', borderRadius: 'var(--radius-md)',
+                  background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
+                  border: 'none', color: '#fff',
+                  fontSize: '14px', fontWeight: '700',
+                  cursor: 'pointer', fontFamily: 'var(--font-display)',
+                }}
+              >
+                Get Group Access →
+              </button>
+            </div>
+            <div style={{
+              flex: '0 0 auto', fontSize: '64px', alignSelf: 'center',
+              opacity: 0.4,
+            }}>
+              🏥
+            </div>
+          </div>
         </div>
 
         {/* Have a code? */}

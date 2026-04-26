@@ -1,7 +1,7 @@
 import React from 'react'
 
 export function PricingCard({ plan, onSelect, loading }) {
-  const { label, price, period, features, highlight, badge } = plan
+  const { label, price, period, perDay, features, highlight, badge } = plan
 
   return (
     <div style={{
@@ -51,6 +51,11 @@ export function PricingCard({ plan, onSelect, loading }) {
         <span style={{ fontSize: '14px', color: 'var(--text-muted)', marginLeft: '6px' }}>
           {period}
         </span>
+        {perDay && (
+          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
+            {perDay}
+          </div>
+        )}
       </div>
 
       <ul style={{

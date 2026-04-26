@@ -53,7 +53,7 @@ function enqueue(userId, task) {
 export const useProgressStore = create((set, get) => ({
   userId:   null,
   progress: {},              // { [cardId]: 'got_it' | 'flagged' }
-  meta:     { lastStudied: {} },
+  meta:     { lastStudied: {}, studyDates: [] },  // studyDates: sorted ISO date strings
   isSynced: false,           // true once the initial DB load has completed
 
   // ── loadForUser ───────────────────────────────────────────────
@@ -68,7 +68,7 @@ export const useProgressStore = create((set, get) => ({
       // Discard any queued writes — the session is gone.
       _queue       = Promise.resolve()
       _queueUserId = null
-      set({ userId: null, progress: {}, meta: { lastStudied: {} }, isSynced: false })
+      set({ userId: null, progress: {}, meta: { lastStudied: {}, studyDates: [] }, isSynced: false })
       return
     }
 
@@ -85,7 +85,7 @@ export const useProgressStore = create((set, get) => ({
     if (isNewUser) {
       // Different user — clear immediately to avoid showing someone
       // else's data while the fetch runs.
-      set({ userId, progress: {}, meta: { lastStudied: {} }, isSynced: false })
+      set({ userId, progress: {}, meta: { lastStudied: {}, studyDates: [] }, isSynced: false })
     } else {
       // Same user (e.g. TOKEN_REFRESHED reload) — keep existing progress
       // visible while we re-fetch so the UI doesn't flash empty.
@@ -120,9 +120,16 @@ export const useProgressStore = create((set, get) => ({
       progress[card_id] = state
     }
 
+    // Extract studyDates from the _study_dates key stored inside last_studied JSONB.
+    // Strip it out so lastStudied only contains subspecialty timestamps.
+    const rawMeta = metaRes.data?.last_studied ?? {}
+    const studyDates = Array.isArray(rawMeta._study_dates) ? rawMeta._study_dates : []
+    const lastStudied = { ...rawMeta }
+    delete lastStudied._study_dates
+
     set({
       progress,
-      meta:     { lastStudied: metaRes.data?.last_studied ?? {} },
+      meta:     { lastStudied, studyDates },
       isSynced: synced,
     })
   },
@@ -182,24 +189,37 @@ export const useProgressStore = create((set, get) => ({
 
   // ── recordStudied ─────────────────────────────────────────────
   // Records the current timestamp as the last time this subspecialty
-  // was studied. Fire-and-forget — progress is never reverted here
-  // since it's non-critical metadata.
+  // was studied, and adds today to the studyDates streak array.
+  // Fire-and-forget — progress is never reverted here.
   recordStudied: (subspecialtyId) => {
     const { userId } = get()
     const now = Date.now()
+    const today = new Date().toISOString().slice(0, 10)
 
-    set(s => ({
-      meta: { ...s.meta, lastStudied: { ...s.meta.lastStudied, [subspecialtyId]: now } },
-    }))
+    set(s => {
+      const prevDates = s.meta.studyDates ?? []
+      const studyDates = prevDates.includes(today)
+        ? prevDates
+        : [...prevDates, today].sort().slice(-90)
+      return {
+        meta: {
+          ...s.meta,
+          lastStudied: { ...s.meta.lastStudied, [subspecialtyId]: now },
+          studyDates,
+        },
+      }
+    })
 
     if (!userId) return
 
-    // Snapshot the full lastStudied map after the optimistic update.
-    const lastStudied = { ...get().meta.lastStudied }
-
+    // Persist lastStudied + studyDates together under the existing last_studied column.
+    const { lastStudied, studyDates } = get().meta
     supabase
       .from('user_meta')
-      .upsert({ user_id: userId, last_studied: lastStudied }, { onConflict: 'user_id' })
+      .upsert(
+        { user_id: userId, last_studied: { ...lastStudied, _study_dates: studyDates } },
+        { onConflict: 'user_id' }
+      )
       .then(({ error }) => {
         if (error) console.error('[progress] recordStudied error:', error.message)
       })
@@ -227,6 +247,27 @@ export const useProgressStore = create((set, get) => ({
 
   // ── Synchronous getters ───────────────────────────────────────
   getCardState: (cardId) => get().progress[cardId] ?? CARD_STATE.UNSEEN,
+
+  getStudyDates: () => get().meta.studyDates ?? [],
+
+  getStreak: () => {
+    const dates = get().meta.studyDates ?? []
+    if (dates.length === 0) return 0
+    const dateSet = new Set(dates)
+    let streak = 0
+    const d = new Date()
+    // Walk backwards from today; stop at first missing day
+    while (true) {
+      const key = d.toISOString().slice(0, 10)
+      if (dateSet.has(key)) {
+        streak++
+        d.setDate(d.getDate() - 1)
+      } else {
+        break
+      }
+    }
+    return streak
+  },
 
   getStatsForCards: (cards) => {
     const { progress } = get()

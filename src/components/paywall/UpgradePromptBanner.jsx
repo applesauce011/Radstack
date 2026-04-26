@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { trackEvent } from '../../utils/analytics'
 
-// Shown at the top of subspecialty pages that have no free content,
-// or as an inline prompt when a free user hits the paywall.
 export function UpgradePromptBanner({ compact = false }) {
   const navigate = useNavigate()
+  useEffect(() => {
+    trackEvent('upgrade_banner_viewed', { context: compact ? 'compact' : 'banner' })
+  }, [compact])
 
   if (compact) {
     return (
@@ -51,7 +53,7 @@ export function UpgradePromptBanner({ compact = false }) {
           🔒 Subscribe to unlock this deck
         </div>
         <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          Get full access to all 12 subspecialties. Plans from $49.
+          Get full access to all 12 subspecialties. Plans from $49. 7-day money-back guarantee.
         </div>
       </div>
       <button

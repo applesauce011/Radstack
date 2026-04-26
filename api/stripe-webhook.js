@@ -57,9 +57,15 @@ export default async function handler(req, res) {
 
   try {
     switch (event.type) {
-      case 'checkout.session.completed':
-        await handleCheckoutCompleted(event.data.object)
+      case 'checkout.session.completed': {
+        const session = event.data.object
+        if (session.metadata?.type === 'group') {
+          await handleGroupCheckoutCompleted(session)
+        } else {
+          await handleCheckoutCompleted(session)
+        }
         break
+      }
       // These fire for Stripe subscriptions (not used in v1 one-time model)
       // but kept here for robustness and future use.
       case 'customer.subscription.updated':
@@ -162,4 +168,91 @@ async function handleSubscriptionDeleted(subscription) {
     .eq('stripe_subscription_id', subscription.id)
 
   if (error) console.error('[webhook] subscription delete error:', error.message)
+}
+
+// ── Group checkout ────────────────────────────────────────────
+// Generates one promo code per seat, inserts them into promo_codes,
+// and saves the order record in group_orders.
+
+function generateGroupCode(prefix, index, total) {
+  const pad = String(index + 1).padStart(String(total).length, '0')
+  return `RS-${prefix}-${pad}`
+}
+
+function randomPrefix() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'  // no confusable chars
+  let s = ''
+  for (let i = 0; i < 4; i++) s += chars[Math.floor(Math.random() * chars.length)]
+  return s
+}
+
+async function handleGroupCheckoutCompleted(session) {
+  const meta = session.metadata ?? {}
+  const numSeats = parseInt(meta.num_seats)
+  const programName = meta.program_name ?? 'Unknown Program'
+  const institution = meta.institution ?? ''
+  const contactEmail = meta.contact_email ?? ''
+  const startYear = meta.start_year ? parseInt(meta.start_year) : null
+  const pricePerSeatCents = parseInt(meta.price_per_seat_cents) || 0
+  const amountPaid = session.amount_total ?? (pricePerSeatCents * numSeats)
+
+  if (!numSeats || numSeats < 1) {
+    console.error('[webhook][group] invalid num_seats in metadata')
+    return
+  }
+
+  // Generate a unique prefix; retry if collision unlikely but possible
+  let prefix = randomPrefix()
+
+  // Generate code strings
+  const codes = Array.from({ length: numSeats }, (_, i) =>
+    generateGroupCode(prefix, i, numSeats)
+  )
+
+  const expiresAt = new Date()
+  expiresAt.setFullYear(expiresAt.getFullYear() + 1)  // 12-month codes
+  expiresAt.setHours(23, 59, 59, 999)
+
+  // Insert all promo codes in one batch
+  const promoRows = codes.map(code => ({
+    code,
+    plan_type: '12month',
+    max_uses: 1,
+    expires_at: expiresAt.toISOString(),
+    note: `Group: ${programName} · ${institution}`,
+  }))
+
+  const { error: codesError } = await supabaseAdmin
+    .from('promo_codes')
+    .insert(promoRows)
+
+  if (codesError) {
+    console.error('[webhook][group] promo_codes insert error:', codesError.message)
+    throw codesError
+  }
+
+  // Save the group order record
+  const { error: orderError } = await supabaseAdmin
+    .from('group_orders')
+    .insert({
+      stripe_session_id: session.id,
+      stripe_payment_intent_id: session.payment_intent ?? null,
+      program_name: programName,
+      institution,
+      num_seats: numSeats,
+      plan_type: '12month',
+      contact_email: contactEmail,
+      contact_name: meta.contact_name ?? '',
+      start_year: startYear,
+      amount_paid: amountPaid,
+      codes,
+      status: 'fulfilled',
+    })
+
+  if (orderError) {
+    console.error('[webhook][group] group_orders insert error:', orderError.message)
+    throw orderError
+  }
+
+  console.log(`[webhook][group] fulfilled: ${numSeats} seats for ${programName}`)
 }
