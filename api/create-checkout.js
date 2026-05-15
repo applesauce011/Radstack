@@ -56,26 +56,32 @@ export default async function handler(req, res) {
 
   const isLifetime = priceId === LIFETIME_PRICE_ID()
 
-  const session = await stripe.checkout.sessions.create({
-    // Reuse existing customer if available, otherwise let Stripe create one
-    customer:       existingSub?.stripe_customer_id ?? undefined,
-    customer_email: existingSub?.stripe_customer_id ? undefined : user.email,
+  let session
+  try {
+    session = await stripe.checkout.sessions.create({
+      // Reuse existing customer if available, otherwise let Stripe create one
+      customer:       existingSub?.stripe_customer_id ?? undefined,
+      customer_email: existingSub?.stripe_customer_id ? undefined : user.email,
 
-    payment_method_types: ['card'],
-    line_items: [{ price: priceId, quantity: 1 }],
-    mode: isLifetime ? 'payment' : 'payment',  // all plans are one-time payments
+      payment_method_types: ['card'],
+      line_items: [{ price: priceId, quantity: 1 }],
+      mode: 'payment',
 
-    success_url: `${process.env.VITE_APP_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url:  `${process.env.VITE_APP_URL}/pricing`,
+      success_url: `${process.env.VITE_APP_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url:  `${process.env.VITE_APP_URL}/pricing`,
 
-    // user_id is stored in metadata so the webhook can write the subscription row
-    metadata: { user_id: user.id },
+      // user_id is stored in metadata so the webhook can write the subscription row
+      metadata: { user_id: user.id },
 
-    allow_promotion_codes: true,
+      allow_promotion_codes: true,
 
-    // Stripe Tax — requires Stripe Tax product to be enabled in dashboard
-    automatic_tax: { enabled: true },
-  })
+      // Stripe Tax — requires Stripe Tax product to be enabled in dashboard
+      automatic_tax: { enabled: true },
+    })
+  } catch (err) {
+    console.error('[create-checkout] stripe error:', err)
+    return res.status(500).json({ error: 'Failed to create checkout session. Please try again.' })
+  }
 
   // Track checkout_started event (best-effort, non-blocking)
   const planKey = priceId === process.env.STRIPE_PRICE_3MONTH ? '3month'
@@ -85,7 +91,7 @@ export default async function handler(req, res) {
     event_name: 'checkout_started',
     properties: { plan_type: planKey, price_id: priceId },
     user_id: user.id,
-  }).catch(() => {})
+  }).then(null, () => {})
 
   res.status(200).json({ url: session.url })
 }

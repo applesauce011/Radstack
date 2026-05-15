@@ -95,7 +95,7 @@ export default async function handler(req, res) {
   if (subError) {
     console.error('[redeem] subscription write error:', subError.message)
     // Best-effort rollback: decrement the use count we just claimed
-    await supabaseAdmin.rpc('rollback_promo_claim', { p_code: promo.code }).catch(() => {})
+    await supabaseAdmin.rpc('rollback_promo_claim', { p_code: promo.code }).then(null, () => {})
     return res.status(500).json({ error: 'Error activating your access. Please contact support@radstack.io.' })
   }
 

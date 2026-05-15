@@ -45,37 +45,43 @@ export default async function handler(req, res) {
   const pricePerSeatCents = getPricePerSeatCents(seats)
   const planLabel = `12-Month Access (${seats} residents)`
 
-  const session = await stripe.checkout.sessions.create({
-    customer_email: contactEmail,
-    payment_method_types: ['card'],
-    line_items: [{
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: `RadiologyStack — ${planLabel}`,
-          description: `${programName} · ${institution} · Individual access codes delivered after payment`,
+  let session
+  try {
+    session = await stripe.checkout.sessions.create({
+      customer_email: contactEmail,
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: `RadiologyStack — ${planLabel}`,
+            description: `${programName} · ${institution} · Individual access codes delivered after payment`,
+          },
+          unit_amount: pricePerSeatCents,
         },
-        unit_amount: pricePerSeatCents,
+        quantity: seats,
+      }],
+      mode: 'payment',
+      invoice_creation: { enabled: true },
+      success_url: `${process.env.VITE_APP_URL}/group/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.VITE_APP_URL}/group`,
+      metadata: {
+        type: 'group',
+        program_name: programName,
+        institution,
+        num_seats: String(seats),
+        start_year: String(startYear ?? ''),
+        contact_name: contactName,
+        contact_email: contactEmail,
+        price_per_seat_cents: String(pricePerSeatCents),
       },
-      quantity: seats,
-    }],
-    mode: 'payment',
-    invoice_creation: { enabled: true },
-    success_url: `${process.env.VITE_APP_URL}/group/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${process.env.VITE_APP_URL}/group`,
-    metadata: {
-      type: 'group',
-      program_name: programName,
-      institution,
-      num_seats: String(seats),
-      start_year: String(startYear ?? ''),
-      contact_name: contactName,
-      contact_email: contactEmail,
-      price_per_seat_cents: String(pricePerSeatCents),
-    },
-    allow_promotion_codes: false,
-    automatic_tax: { enabled: true },
-  })
+      allow_promotion_codes: false,
+      automatic_tax: { enabled: true },
+    })
+  } catch (err) {
+    console.error('[create-group-checkout] stripe error:', err)
+    return res.status(500).json({ error: 'Failed to create checkout session. Please try again.' })
+  }
 
   return res.status(200).json({ url: session.url })
 }
