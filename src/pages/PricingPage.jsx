@@ -25,6 +25,7 @@ const PLANS = [
       'Full access for 90 days',
       'All 12 subspecialties',
       CARD_COUNT,
+      'Unlimited Differential Sprint',
       'Progress tracking & flagging',
       'All study modes',
     ],
@@ -42,6 +43,7 @@ const PLANS = [
       'Full access for 1 year',
       'All 12 subspecialties',
       CARD_COUNT,
+      'Unlimited Differential Sprint',
       'Progress tracking & flagging',
       'Best value for residency',
     ],
@@ -59,6 +61,7 @@ const PLANS = [
       'Permanent access, no expiry',
       'All 12 subspecialties',
       CARD_COUNT,
+      'Unlimited Differential Sprint',
       'All future content included',
       'Never pay again',
     ],
@@ -84,8 +87,8 @@ export function PricingPage() {
   useEffect(() => { trackEvent('pricing_page_viewed') }, [])
 
   usePageMeta({
-    title: 'Pricing — RadiologyStack | Radiology Board Exam Flashcards',
-    description: 'Unlock all 12 radiology subspecialty decks. One-time payment, no subscription. Plans from $49. Built for FRCPC and ABR board exam prep.',
+    title: 'Pricing: RadiologyStack | Flashcards & Differential Sprint',
+    description: 'Unlock all 12 radiology subspecialty decks plus unlimited Differential Sprint. One-time payment, no subscription. Plans from $49. Built for FRCPC and ABR board exam prep.',
     canonical: 'https://radiologystack.com/pricing',
   })
 
@@ -177,10 +180,10 @@ export function PricingPage() {
           </h1>
           <p style={{
             fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.6',
-            maxWidth: '520px', margin: '0 auto',
+            maxWidth: '540px', margin: '0 auto',
           }}>
-            {getPremiumCardCount()}+ high-yield flashcards across all 12 radiology subspecialties.
-            Built for Royal College and ABR exam prep.
+            {getPremiumCardCount()}+ high-yield flashcards across all 12 radiology subspecialties, plus unlimited Differential Sprint:
+            rapid board-style differential diagnosis practice. Built for Royal College and ABR exam prep.
           </p>
         </div>
 
@@ -191,7 +194,8 @@ export function PricingPage() {
           fontSize: '13px', color: 'var(--text-muted)',
           marginBottom: '32px', textAlign: 'center',
         }}>
-          Not ready? Try a <strong style={{ color: 'var(--text-secondary)' }}>free deck from every subspecialty</strong> — no account required.
+          Not ready? Try a <strong style={{ color: 'var(--text-secondary)' }}>free deck from every subspecialty</strong>, plus{' '}
+          <strong style={{ color: 'var(--text-secondary)' }}>4 free Differential Sprint questions</strong>, no account required.
         </div>
 
         {/* Pricing cards */}
@@ -226,7 +230,7 @@ export function PricingPage() {
           display: 'flex', gap: '24px', justifyContent: 'center',
           flexWrap: 'wrap', fontSize: '13px', color: 'var(--text-muted)',
         }}>
-          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', '7-day money-back guarantee', 'Questions? radiologystack@gmail.com'].map(s => (
+          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', 'Questions? radiologystack@gmail.com'].map(s => (
             <span key={s} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ color: 'var(--accent-cyan)' }}>✓</span>
               {s}
@@ -260,7 +264,7 @@ export function PricingPage() {
                 Group access for your whole program
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
-                Buying for 3 or more residents? We offer volume discounts — one payment, individual access codes delivered instantly.
+                Buying for 3 or more residents? We offer volume discounts: one payment, individual access codes delivered instantly.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                 {[

@@ -53,7 +53,13 @@ function enqueue(userId, task) {
 export const useProgressStore = create((set, get) => ({
   userId:   null,
   progress: {},              // { [cardId]: 'got_it' | 'flagged' }
-  meta:     { lastStudied: {}, studyDates: [] },  // studyDates: sorted ISO date strings
+  // { [cardId]: timestamp (ms) } — last state-change time. Additive, used only
+  // by the Stats page mastery-over-time chart; never read by the core study flow.
+  updatedAt: {},
+  // studyDates: sorted ISO date strings. dailyActivity: { [date]: { total, new } } —
+  // total counts every got_it/flagged action that day (repeats included), new counts
+  // only actions on cards that were previously unseen.
+  meta:     { lastStudied: {}, studyDates: [], dailyActivity: {} },
   isSynced: false,           // true once the initial DB load has completed
 
   // ── loadForUser ───────────────────────────────────────────────
@@ -68,7 +74,7 @@ export const useProgressStore = create((set, get) => ({
       // Discard any queued writes — the session is gone.
       _queue       = Promise.resolve()
       _queueUserId = null
-      set({ userId: null, progress: {}, meta: { lastStudied: {}, studyDates: [] }, isSynced: false })
+      set({ userId: null, progress: {}, updatedAt: {}, meta: { lastStudied: {}, studyDates: [], dailyActivity: {} }, isSynced: false })
       return
     }
 
@@ -85,7 +91,7 @@ export const useProgressStore = create((set, get) => ({
     if (isNewUser) {
       // Different user — clear immediately to avoid showing someone
       // else's data while the fetch runs.
-      set({ userId, progress: {}, meta: { lastStudied: {}, studyDates: [] }, isSynced: false })
+      set({ userId, progress: {}, updatedAt: {}, meta: { lastStudied: {}, studyDates: [], dailyActivity: {} }, isSynced: false })
     } else {
       // Same user (e.g. TOKEN_REFRESHED reload) — keep existing progress
       // visible while we re-fetch so the UI doesn't flash empty.
@@ -95,7 +101,7 @@ export const useProgressStore = create((set, get) => ({
     const [progressRes, metaRes] = await Promise.all([
       supabase
         .from('card_progress')
-        .select('card_id, state')
+        .select('card_id, state, updated_at')
         .eq('user_id', userId),
       supabase
         .from('user_meta')
@@ -116,20 +122,27 @@ export const useProgressStore = create((set, get) => ({
     const synced = !progressRes.error && !metaRes.error
 
     const progress = {}
-    for (const { card_id, state } of progressRes.data ?? []) {
+    const updatedAt = {}
+    for (const { card_id, state, updated_at } of progressRes.data ?? []) {
       progress[card_id] = state
+      updatedAt[card_id] = updated_at ? new Date(updated_at).getTime() : Date.now()
     }
 
-    // Extract studyDates from the _study_dates key stored inside last_studied JSONB.
-    // Strip it out so lastStudied only contains subspecialty timestamps.
+    // Extract studyDates/dailyActivity from their keys stored inside last_studied JSONB.
+    // Strip them out so lastStudied only contains subspecialty timestamps.
     const rawMeta = metaRes.data?.last_studied ?? {}
     const studyDates = Array.isArray(rawMeta._study_dates) ? rawMeta._study_dates : []
+    const dailyActivity = (rawMeta._daily_activity && typeof rawMeta._daily_activity === 'object')
+      ? rawMeta._daily_activity
+      : {}
     const lastStudied = { ...rawMeta }
     delete lastStudied._study_dates
+    delete lastStudied._daily_activity
 
     set({
       progress,
-      meta:     { lastStudied, studyDates },
+      updatedAt,
+      meta:     { lastStudied, studyDates, dailyActivity },
       isSynced: synced,
     })
   },
@@ -145,20 +158,44 @@ export const useProgressStore = create((set, get) => ({
     }
 
     const prev = get().progress[cardId] ?? CARD_STATE.UNSEEN
+    const prevAt = get().updatedAt[cardId]
 
     // Optimistic update
     set(s => {
       const next = { ...s.progress }
-      if (state === CARD_STATE.UNSEEN) delete next[cardId]
-      else next[cardId] = state
-      return { progress: next }
+      const nextAt = { ...s.updatedAt }
+      if (state === CARD_STATE.UNSEEN) { delete next[cardId]; delete nextAt[cardId] }
+      else { next[cardId] = state; nextAt[cardId] = Date.now() }
+      return { progress: next, updatedAt: nextAt }
     })
+
+    // Daily activity: any got_it/flagged action counts as "done today", even a
+    // repeat re-flag of a card that was already flagged/mastered. Only cards
+    // that were previously unseen count toward "new" for the day.
+    if (state !== CARD_STATE.UNSEEN) {
+      const today = new Date().toISOString().slice(0, 10)
+      const isNew = prev === CARD_STATE.UNSEEN
+      set(s => {
+        const day = s.meta.dailyActivity[today] ?? { total: 0, new: 0 }
+        return {
+          meta: {
+            ...s.meta,
+            dailyActivity: {
+              ...s.meta.dailyActivity,
+              [today]: { total: day.total + 1, new: day.new + (isNew ? 1 : 0) },
+            },
+          },
+        }
+      })
+      if (userId) get().persistMeta(userId)
+    }
 
     const revert = () => set(s => {
       const next = { ...s.progress }
-      if (prev === CARD_STATE.UNSEEN) delete next[cardId]
-      else next[cardId] = prev
-      return { progress: next }
+      const nextAt = { ...s.updatedAt }
+      if (prev === CARD_STATE.UNSEEN) { delete next[cardId]; delete nextAt[cardId] }
+      else { next[cardId] = prev; if (prevAt) nextAt[cardId] = prevAt; else delete nextAt[cardId] }
+      return { progress: next, updatedAt: nextAt }
     })
 
     enqueue(userId, async () => {
@@ -211,18 +248,26 @@ export const useProgressStore = create((set, get) => ({
     })
 
     if (!userId) return
+    get().persistMeta(userId)
+  },
 
-    // Persist lastStudied + studyDates together under the existing last_studied column.
-    const { lastStudied, studyDates } = get().meta
-    supabase
-      .from('user_meta')
-      .upsert(
-        { user_id: userId, last_studied: { ...lastStudied, _study_dates: studyDates } },
-        { onConflict: 'user_id' }
-      )
-      .then(({ error }) => {
-        if (error) console.error('[progress] recordStudied error:', error.message)
-      })
+  // ── persistMeta ───────────────────────────────────────────────
+  // Persists lastStudied + studyDates + dailyActivity together under the
+  // existing last_studied JSONB column. Routed through the same per-user
+  // serial queue as card writes so rapid card actions (each of which bumps
+  // dailyActivity) never race each other and clobber the row out of order.
+  persistMeta: (userId) => {
+    enqueue(userId, async () => {
+      if (get().userId !== userId) return
+      const { lastStudied, studyDates, dailyActivity } = get().meta
+      const { error } = await supabase
+        .from('user_meta')
+        .upsert(
+          { user_id: userId, last_studied: { ...lastStudied, _study_dates: studyDates, _daily_activity: dailyActivity } },
+          { onConflict: 'user_id' }
+        )
+      if (error) console.error('[progress] persistMeta error:', error.message)
+    })
   },
 
   // ── resetDeck ─────────────────────────────────────────────────
@@ -282,4 +327,9 @@ export const useProgressStore = create((set, get) => ({
   },
 
   getLastStudiedTimestamp: (subspecialtyId) => get().meta.lastStudied[subspecialtyId] ?? 0,
+
+  getTodayActivity: () => {
+    const today = new Date().toISOString().slice(0, 10)
+    return get().meta.dailyActivity[today] ?? { total: 0, new: 0 }
+  },
 }))

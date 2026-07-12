@@ -70,58 +70,6 @@ function StreakStrip({ hasAccess, hasAnatomyAccess }) {
   )
 }
 
-function WeakSpotsSection({ hasAccess, hasAnatomyAccess }) {
-  const navigate = useNavigate()
-  const { getStatsForCards } = useProgressStore()
-
-  const weak = SUBSPECIALTIES
-    .map(sub => {
-      const cards = getAccessibleCardsBySubspecialty(sub.id, hasAccess, hasAnatomyAccess)
-      const stats = getStatsForCards(cards)
-      return { sub, stats }
-    })
-    .filter(x => x.stats.flagged > 0)
-    .sort((a, b) => b.stats.flagged - a.stats.flagged)
-    .slice(0, 3)
-
-  if (weak.length === 0) return null
-
-  return (
-    <div style={{ marginTop: '32px' }}>
-      <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px' }}>
-        Needs Attention
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        {weak.map(({ sub, stats }) => (
-          <div
-            key={sub.id}
-            onClick={() => navigate(`/decks/${sub.id}`)}
-            style={{
-              padding: '12px 16px', background: 'var(--bg-card)',
-              border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
-              display: 'flex', alignItems: 'center', gap: '12px',
-              cursor: 'pointer', transition: 'border-color var(--transition)',
-            }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent-amber)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-subtle)'}
-          >
-            <span style={{ fontSize: '18px' }}>{sub.icon}</span>
-            <span style={{ flex: 1, fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)' }}>{sub.label}</span>
-            <span style={{
-              fontSize: '12px', fontWeight: '700', color: 'var(--accent-amber)',
-              background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.2)',
-              borderRadius: '999px', padding: '2px 10px', whiteSpace: 'nowrap',
-            }}>
-              ⚑ {stats.flagged} flagged
-            </span>
-            <span style={{ fontSize: '13px', color: 'var(--accent-cyan)', fontWeight: '600' }}>Review →</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 // ============================================================
 // Continue Studying logic
 //
@@ -302,6 +250,43 @@ function ContinueStudyBanner({ hasAccess, hasAnatomyAccess }) {
   )
 }
 
+function DifferentialSprintBanner() {
+  const navigate = useNavigate()
+  return (
+    <div style={{
+      padding: '20px 24px',
+      background: 'linear-gradient(135deg, rgba(139,92,246,0.10), rgba(34,211,238,0.06))',
+      border: '1px solid rgba(139,92,246,0.3)',
+      borderRadius: 'var(--radius-lg)', marginBottom: '16px',
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      flexWrap: 'wrap', gap: '12px',
+    }}>
+      <div>
+        <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#8B5CF6', marginBottom: '4px' }}>
+          New · Differential Sprint
+        </div>
+        <div style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+          ⚡ Rapid Differential Practice
+        </div>
+        <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '2px' }}>
+          Board-style prompts, self-graded, all subspecialties
+        </div>
+      </div>
+      <button
+        onClick={() => navigate('/differential-sprint')}
+        style={{
+          padding: '10px 20px', borderRadius: 'var(--radius-md)',
+          background: '#8B5CF6', border: 'none',
+          color: '#fff', fontSize: '14px', fontWeight: '700',
+          cursor: 'pointer', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap',
+        }}
+      >
+        Start Sprint →
+      </button>
+    </div>
+  )
+}
+
 function ExpiredBanner({ subscription }) {
   const navigate = useNavigate()
   const { getStatsForCards } = useProgressStore()
@@ -399,7 +384,17 @@ export function DashboardPage() {
 
         <StreakStrip hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
+        <DifferentialSprintBanner />
+
         <ContinueStudyBanner hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
+
+        <div style={{
+          fontSize: '13px', fontWeight: '700', letterSpacing: '0.02em',
+          color: 'var(--text-secondary)', marginBottom: '16px', marginTop: '36px',
+          paddingBottom: '8px', borderBottom: '1px solid var(--border-subtle)',
+        }}>
+          Flashcards
+        </div>
 
         <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px' }}>
           Overall Progress
@@ -414,8 +409,6 @@ export function DashboardPage() {
             <SubspecialtyCard key={sub.id} sub={sub} hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
           ))}
         </div>
-
-        <WeakSpotsSection hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
       </div>
     </div>
   )

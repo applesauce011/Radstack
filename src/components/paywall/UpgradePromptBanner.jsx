@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { trackEvent } from '../../utils/analytics'
 
-export function UpgradePromptBanner({ compact = false }) {
+export function UpgradePromptBanner({ compact = false, title, description }) {
   const navigate = useNavigate()
   useEffect(() => {
     trackEvent('upgrade_banner_viewed', { context: compact ? 'compact' : 'banner' })
@@ -19,7 +19,7 @@ export function UpgradePromptBanner({ compact = false }) {
         gap: '12px', flexWrap: 'wrap',
       }}>
         <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-          🔒 Subscribe to unlock all decks
+          {title ?? '🔒 Subscribe to unlock all decks'}
         </span>
         <button
           onClick={() => navigate('/pricing')}
@@ -50,10 +50,10 @@ export function UpgradePromptBanner({ compact = false }) {
           fontSize: '14px', fontWeight: '700', color: 'var(--text-primary)',
           marginBottom: '4px',
         }}>
-          🔒 Subscribe to unlock this deck
+          {title ?? '🔒 Subscribe to unlock this deck'}
         </div>
         <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          Get full access to all 12 subspecialties. Plans from $49. 7-day money-back guarantee.
+          {description ?? 'Get full access to all 12 subspecialties. Plans from $49.'}
         </div>
       </div>
       <button

@@ -42,21 +42,21 @@ function PricingSection({ onSelect }) {
       price: '$49',
       highlight: false,
       badge: null,
-      features: ['Full access for 90 days', 'All 12 subspecialties', 'Progress tracking'],
+      features: ['Full access for 90 days', 'All 12 subspecialties', 'Unlimited Differential Sprint', 'Progress tracking'],
     },
     {
       label: '12 Months',
       price: '$99',
       highlight: true,
       badge: 'Most Popular',
-      features: ['Full access for 1 year', 'All 12 subspecialties', 'Best value for residency'],
+      features: ['Full access for 1 year', 'All 12 subspecialties', 'Unlimited Differential Sprint', 'Best value for residency'],
     },
     {
       label: 'Lifetime',
       price: '$149',
       highlight: false,
       badge: null,
-      features: ['Permanent access', 'All future content', 'Never pay again'],
+      features: ['Permanent access', 'All future content', 'Unlimited Differential Sprint', 'Never pay again'],
     },
   ]
 
@@ -156,8 +156,8 @@ export function LandingPage() {
   const { isAuthenticated } = useAuthStore()
 
   usePageMeta({
-    title: 'RadiologyStack — Radiology Flashcards for FRCPC & ABR Board Exam Prep',
-    description: 'High-yield radiology flashcards for Canadian Royal College (FRCPC) and ABR board exam prep. 1000+ cards across 12 subspecialties — neuro, chest, MSK, abdominal, and more. Free preview available.',
+    title: 'RadiologyStack — Radiology Board Study Platform for FRCPC & ABR',
+    description: 'The complete radiology board studying platform for Canadian Royal College (FRCPC) and ABR exam prep. 1000+ high-yield flashcards plus Differential Sprint, rapid board-style differential diagnosis practice, across 12 subspecialties. Free preview available.',
     canonical: 'https://radiologystack.com/',
   })
 
@@ -187,7 +187,7 @@ export function LandingPage() {
           fontWeight: '800', lineHeight: '1.1', letterSpacing: '-0.03em',
           color: 'var(--text-primary)', marginBottom: '20px',
         }}>
-          Radiology flashcards<br />
+          The radiology study platform<br />
           <span style={{
             background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -196,9 +196,9 @@ export function LandingPage() {
 
         <p style={{
           fontSize: '18px', color: 'var(--text-secondary)', lineHeight: '1.65',
-          maxWidth: '560px', margin: '0 auto 40px',
+          maxWidth: '580px', margin: '0 auto 40px',
         }}>
-          High-yield flashcards covering all radiology subspecialties. Designed for Canadian Royal College and ABR exam prep.
+          High-yield flashcards and rapid board-style differential diagnosis practice across every radiology subspecialty. Built for Canadian Royal College and ABR exam prep.
         </p>
 
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -285,13 +285,13 @@ export function LandingPage() {
               location: 'Toronto, Canada',
             },
             {
-              quote: 'Way better than building Anki decks from scratch. Everything is organized by subspecialty and tied to Radiopaedia — exactly how I think about cases.',
+              quote: 'Way better than building Anki decks from scratch. Everything is organized by subspecialty and tied to Radiopaedia, exactly how I think about cases.',
               initials: 'M.R.',
               role: 'Radiology Resident',
               location: 'Seattle, WA',
             },
             {
-              quote: 'I used RadiologyStack throughout residency to prep for the boards. The structured format made it easy to stay consistent even during busy rotations — it gave me real confidence going into exam day.',
+              quote: 'I used RadiologyStack throughout residency to prep for the boards. The structured format made it easy to stay consistent even during busy rotations; it gave me real confidence going into exam day.',
               initials: 'S.L.',
               role: 'Radiology Fellow',
               location: 'New York, NY',
@@ -394,7 +394,12 @@ export function LandingPage() {
             {
               icon: '💡',
               title: 'High-yield key facts',
-              desc: 'Each card surfaces the single most testable fact — exactly what you need to know for boards.',
+              desc: 'Each card surfaces the single most testable fact: exactly what you need to know for boards.',
+            },
+            {
+              icon: '⚡',
+              title: 'Differential Sprint',
+              desc: 'Rapid, board-style prompts tailored to mimic real exam thinking, sharpening differential diagnosis instincts, not just recall.',
             },
             {
               icon: '📊',
@@ -416,11 +421,6 @@ export function LandingPage() {
               title: 'Radiopaedia linked',
               desc: 'Every card links to the relevant Radiopaedia article for deeper reading.',
             },
-            {
-              icon: '🧪',
-              title: 'Physics & anatomy',
-              desc: 'Dedicated decks for imaging physics and anatomy — the sections most residents under-prepare.',
-            },
           ].map(f => (
             <div key={f.title} style={{
               padding: '24px', background: 'var(--bg-card)',
@@ -439,73 +439,99 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing section */}
-      <PricingSection onSelect={() => navigate('/pricing')} />
-
-      {/* CTA */}
+      {/* Start free preview — two paths, above pricing so visitors try
+          before they're asked to pay */}
       {!isAuthenticated && (
-        <section style={{
-          maxWidth: '600px', margin: '0 auto', padding: '0 24px 80px',
-          textAlign: 'center',
-        }}>
-          <div style={{
-            padding: '48px', background: 'var(--bg-card)',
-            border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)',
-            backgroundImage: 'radial-gradient(ellipse at top, rgba(34,211,238,0.05) 0%, transparent 60%)',
-          }}>
+        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px 80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <h2 style={{
-              fontFamily: 'var(--font-display)', fontSize: '28px',
-              fontWeight: '800', color: 'var(--text-primary)', marginBottom: '12px',
+              fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 4vw, 34px)',
+              fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-0.02em',
+              marginBottom: '10px',
             }}>
-              Start with the free preview
+              Start with a free preview
             </h2>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '8px', fontSize: '15px' }}>
-              Try a free deck from every subspecialty — no account required.
+            <p style={{ color: 'var(--text-muted)', fontSize: '15px' }}>
+              No account required. Pick a mode and try it right now.
             </p>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '28px', fontSize: '14px' }}>
-              Create a free account to save progress. Go premium to unlock every deck across all 12 subspecialties.
-            </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          </div>
+
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+            <div style={{
+              flex: 1, minWidth: '260px', padding: '32px 28px',
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-xl)', textAlign: 'center',
+            }}>
+              <div style={{ fontSize: '40px', marginBottom: '14px' }}>📇</div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontSize: '18px',
+                fontWeight: '800', color: 'var(--text-primary)', marginBottom: '8px',
+              }}>
+                Flashcards
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                Try a free deck from every subspecialty: {getPremiumCardCount()}+ cards total once unlocked.
+              </p>
               <button
                 onClick={() => navigate('/decks')}
                 style={{
-                  padding: '13px 28px', borderRadius: 'var(--radius-md)',
+                  width: '100%', padding: '12px', borderRadius: 'var(--radius-md)',
                   background: 'var(--accent-cyan)', border: 'none',
-                  color: 'var(--bg-primary)', fontSize: '15px', fontWeight: '700',
+                  color: 'var(--bg-primary)', fontSize: '14px', fontWeight: '700',
                   cursor: 'pointer', fontFamily: 'var(--font-display)',
-                  boxShadow: '0 0 24px rgba(34,211,238,0.25)',
                 }}
               >
-                Try Free Preview →
-              </button>
-              <button
-                onClick={() => navigate('/pricing')}
-                style={{
-                  padding: '13px 28px', borderRadius: 'var(--radius-md)',
-                  background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
-                  color: 'var(--text-primary)', fontSize: '15px', fontWeight: '600',
-                  cursor: 'pointer', fontFamily: 'var(--font-body)',
-                }}
-              >
-                See Pricing
+                Try Flashcards Free →
               </button>
             </div>
-            <p style={{ marginTop: '20px', fontSize: '13px', color: 'var(--text-muted)' }}>
-              Buying for your program?{' '}
+
+            <div style={{
+              flex: 1, minWidth: '260px', padding: '32px 28px',
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-xl)', textAlign: 'center',
+            }}>
+              <div style={{ fontSize: '40px', marginBottom: '14px' }}>⚡</div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontSize: '18px',
+                fontWeight: '800', color: 'var(--text-primary)', marginBottom: '8px',
+              }}>
+                Differential Sprint
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                Try up to 4 board-style differential questions across any subspecialty.
+              </p>
               <button
-                onClick={() => navigate('/group')}
+                onClick={() => navigate('/differential-sprint')}
                 style={{
-                  background: 'none', border: 'none', color: 'var(--accent-cyan)',
-                  cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600',
-                  padding: 0,
+                  width: '100%', padding: '12px', borderRadius: 'var(--radius-md)',
+                  background: '#8B5CF6', border: 'none',
+                  color: '#fff', fontSize: '14px', fontWeight: '700',
+                  cursor: 'pointer', fontFamily: 'var(--font-display)',
                 }}
               >
-                Group discounts available →
+                Try Differential Sprint Free →
               </button>
-            </p>
+            </div>
           </div>
+
+          <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '13px', color: 'var(--text-muted)' }}>
+            Subscribe to unlock full access and track your progress. Buying for your program?{' '}
+            <button
+              onClick={() => navigate('/group')}
+              style={{
+                background: 'none', border: 'none', color: 'var(--accent-cyan)',
+                cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600',
+                padding: 0,
+              }}
+            >
+              Group discounts available →
+            </button>
+          </p>
         </section>
       )}
+
+      {/* Pricing section */}
+      <PricingSection onSelect={() => navigate('/pricing')} />
 
     </div>
   )

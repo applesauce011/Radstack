@@ -9,7 +9,7 @@
 //   Everything else  — free for all users
 // ============================================================
 
-export const LAST_UPDATED = 'June 2026'
+export const LAST_UPDATED = 'July 2026'
 
 // ── Free sections ─────────────────────────────────────────────
 // These sections are accessible to all users (no account needed).

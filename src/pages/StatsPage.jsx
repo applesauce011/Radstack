@@ -1,10 +1,16 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useProgressStore } from '../store/progressStore'
+import React, { useEffect } from 'react'
+import { useProgressStore, CARD_STATE } from '../store/progressStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
+import { useAuthStore } from '../store/authStore'
+import { useDifferentialSprintProgressStore } from '../store/differentialSprintProgressStore'
+import { DS_STATUS } from '../data/differentialSprint/types'
+import { DIFFERENTIAL_SPRINT_QUESTION_BANK } from '../data/differentialSprint/questionBank'
+import { DIFFERENTIAL_SPRINT_SUBSPECIALTIES } from '../data/differentialSprint/subspecialties'
 import { SUBSPECIALTIES, getAccessibleCardsBySubspecialty, getAllAccessibleCards } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
-import { TriProgressBar } from '../components/ui/ProgressBar'
+import { DonutChart } from '../components/stats/DonutChart'
+import { BarChart } from '../components/stats/BarChart'
+import { TrendLineChart } from '../components/stats/TrendLineChart'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 // Returns the last N calendar days as YYYY-MM-DD strings, oldest first
@@ -18,13 +24,22 @@ function getLastNDays(n) {
   return days
 }
 
-function formatRelativeDate(ts) {
-  if (!ts) return 'Never'
-  const diff = Date.now() - ts
-  const days = Math.floor(diff / 86400000)
-  if (days === 0) return 'Today'
-  if (days === 1) return 'Yesterday'
-  return `${days} days ago`
+// Cumulative count of timestamps at N weekly checkpoints, oldest first.
+// Used to approximate "mastery over time" from card_progress.updated_at —
+// this is the last time a card's status changed, not literally the first
+// time it was marked got_it, but for a monotonic-ish trend it's a fair proxy.
+function buildWeeklyTrend(timestamps, weeksBack = 8) {
+  const now = new Date()
+  const points = []
+  for (let w = weeksBack - 1; w >= 0; w--) {
+    const weekEnd = new Date(now)
+    weekEnd.setDate(weekEnd.getDate() - w * 7)
+    weekEnd.setHours(23, 59, 59, 999)
+    const count = timestamps.filter(t => t <= weekEnd.getTime()).length
+    const label = weekEnd.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    points.push({ label, value: count })
+  }
+  return points
 }
 
 function HeroTile({ emoji, label, value, sub, color }) {
@@ -46,15 +61,61 @@ function HeroTile({ emoji, label, value, sub, color }) {
   )
 }
 
+function ChartCard({ title, children }) {
+  return (
+    <div style={{
+      flex: 1, minWidth: '280px', background: 'var(--bg-card)',
+      border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-lg)',
+      padding: '20px 24px',
+    }}>
+      <div style={{
+        fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em',
+        textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '16px',
+      }}>
+        {title}
+      </div>
+      {children}
+    </div>
+  )
+}
+
+// Non-clickable subspecialty row — same shape reused for both flashcards
+// and Differential Sprint so the two sections read consistently.
+function SubspecialtyRow({ icon, label, right }) {
+  return (
+    <div style={{
+      padding: '10px 16px', background: 'var(--bg-card)',
+      border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
+      display: 'flex', alignItems: 'center', gap: '10px',
+    }}>
+      <span style={{ fontSize: '16px', flexShrink: 0 }}>{icon}</span>
+      <span style={{ flex: 1, fontSize: '13px', fontWeight: '600', color: 'var(--text-primary)' }}>{label}</span>
+      {right}
+    </div>
+  )
+}
+
 export function StatsPage() {
-  const navigate = useNavigate()
-  const { getStatsForCards, getStreak, getStudyDates, getLastStudiedTimestamp } = useProgressStore()
+  const { getStatsForCards, getStreak, getStudyDates, getTodayActivity, progress, updatedAt } = useProgressStore()
   const { hasAccess, hasAnatomyAccess } = useSubscriptionStore()
+  const { user } = useAuthStore()
+  const {
+    loadForUser: loadDsProgress,
+    getStatsForQuestions: getDsStatsForQuestions,
+    progress: dsProgress,
+    updatedAt: dsUpdatedAt,
+  } = useDifferentialSprintProgressStore()
 
   usePageMeta({
     title: 'My Stats — RadiologyStack',
     description: 'Your personal study stats and progress across all radiology subspecialties.',
   })
+
+  // Loaded lazily here (not from the shared auth listener) — same isolation
+  // approach used by the Differential Sprint page itself.
+  useEffect(() => {
+    if (user?.id) loadDsProgress(user.id)
+  }, [user?.id])
 
   const allCards = getAllAccessibleCards(hasAccess, hasAnatomyAccess)
   const overall = getStatsForCards(allCards)
@@ -62,22 +123,48 @@ export function StatsPage() {
 
   const streak = getStreak()
   const studyDates = new Set(getStudyDates())
+  const todayActivity = getTodayActivity()
   const last14 = getLastNDays(14)
 
-  // Per-subspecialty stats, sorted by % mastered descending
+  // Per-subspecialty flashcard stats. Kept in canonical subspecialty order
+  // (not sorted by % mastered) so the row order matches the Differential
+  // Sprint section below for easy side-by-side comparison.
   const subStats = SUBSPECIALTIES.map(sub => {
     const cards = getAccessibleCardsBySubspecialty(sub.id, hasAccess, hasAnatomyAccess)
     const stats = getStatsForCards(cards)
     const pct = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
-    const lastStudied = getLastStudiedTimestamp(sub.id)
-    return { sub, stats, pct, lastStudied }
-  }).sort((a, b) => b.pct - a.pct)
+    return { sub, stats, pct }
+  })
 
-  // Weak spots: subspecialties with most flagged cards, exclude zero
-  const weakSpots = [...subStats]
-    .filter(x => x.stats.flagged > 0)
-    .sort((a, b) => b.stats.flagged - a.stats.flagged)
-    .slice(0, 5)
+  // Cards mastered over time, from card_progress.updated_at
+  const masteredTimestamps = allCards
+    .filter(c => progress[c.id] === CARD_STATE.GOT_IT)
+    .map(c => updatedAt[c.id])
+    .filter(Boolean)
+  const masteryTrend = buildWeeklyTrend(masteredTimestamps, 8)
+
+  // Differential Sprint stats — isolated from flashcard progress above,
+  // pulled from its own store/table. Kept in the same canonical
+  // subspecialty order as the flashcard section above (not sorted by %)
+  // so the two sections' rows line up.
+  const dsStats = getDsStatsForQuestions(DIFFERENTIAL_SPRINT_QUESTION_BANK)
+  const dsBySubspecialty = DIFFERENTIAL_SPRINT_SUBSPECIALTIES
+    .map(sub => {
+      const questions = DIFFERENTIAL_SPRINT_QUESTION_BANK.filter(q => q.subspecialties.includes(sub.id))
+      const stats = getDsStatsForQuestions(questions)
+      const pct = stats.total ? Math.round((stats.gotIt / stats.total) * 100) : 0
+      return { sub, stats, pct }
+    })
+    .filter(x => x.stats.total > 0)
+
+  // Questions done (any rating) and questions marked Got It over time,
+  // both from differential_sprint_progress.updated_at.
+  const dsRatedTrend = buildWeeklyTrend(Object.values(dsUpdatedAt), 8)
+  const dsGotItTimestamps = DIFFERENTIAL_SPRINT_QUESTION_BANK
+    .filter(q => dsProgress[q.id] === DS_STATUS.GOT_IT)
+    .map(q => dsUpdatedAt[q.id])
+    .filter(Boolean)
+  const dsGotItTrend = buildWeeklyTrend(dsGotItTimestamps, 8)
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
@@ -96,38 +183,6 @@ export function StatsPage() {
           <p style={{ color: 'var(--text-muted)', fontSize: '15px' }}>
             Your personal study progress across all radiology subspecialties.
           </p>
-        </div>
-
-        {/* Hero tiles */}
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '32px' }}>
-          <HeroTile
-            emoji="🔥"
-            label="Day Streak"
-            value={streak}
-            sub={streak === 0 ? 'Study today to start one!' : streak === 1 ? 'Keep it going' : 'Consistent!'}
-            color={streak > 0 ? 'var(--accent-amber)' : 'var(--text-muted)'}
-          />
-          <HeroTile
-            emoji="✓"
-            label="Cards Mastered"
-            value={overall.gotIt}
-            sub={`${overallPct}% of accessible cards`}
-            color="var(--accent-emerald)"
-          />
-          <HeroTile
-            emoji="🚩"
-            label="Flagged"
-            value={overall.flagged}
-            sub="needs review"
-            color={overall.flagged > 0 ? 'var(--accent-amber)' : 'var(--text-muted)'}
-          />
-          <HeroTile
-            emoji="📊"
-            label="Overall"
-            value={`${overallPct}%`}
-            sub={`${overall.unseen} cards unseen`}
-            color="var(--accent-cyan)"
-          />
         </div>
 
         {/* 14-day activity grid */}
@@ -151,14 +206,11 @@ export function StatsPage() {
                   title={`${label}${studied ? ' — studied' : ''}`}
                   style={{
                     width: '36px', height: '36px', borderRadius: 'var(--radius-sm)',
-                    background: studied
-                      ? 'var(--accent-cyan)'
-                      : 'var(--bg-elevated)',
+                    background: studied ? 'var(--accent-cyan)' : 'var(--bg-elevated)',
                     border: `1px solid ${studied ? 'var(--accent-cyan)' : 'var(--border-subtle)'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: '10px', color: studied ? 'var(--bg-primary)' : 'var(--text-muted)',
-                    fontWeight: '600', cursor: 'default',
-                    transition: 'all var(--transition)',
+                    fontWeight: '600', transition: 'all var(--transition)',
                   }}
                 >
                   {new Date(day + 'T12:00:00').getDate()}
@@ -171,119 +223,169 @@ export function StatsPage() {
           </div>
         </div>
 
-        {/* Weak spots */}
-        {weakSpots.length > 0 && (
-          <div style={{ marginBottom: '32px' }}>
-            <div style={{
-              fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em',
-              textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px',
-            }}>
-              Flagged for Review
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {weakSpots.map(({ sub, stats }) => (
-                <div
-                  key={sub.id}
-                  onClick={() => navigate(`/decks/${sub.id}`)}
-                  style={{
-                    padding: '14px 18px', background: 'var(--bg-card)',
-                    border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)',
-                    display: 'flex', alignItems: 'center', gap: '12px',
-                    cursor: 'pointer', transition: 'border-color var(--transition)',
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent-amber)'}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-subtle)'}
-                >
-                  <span style={{ fontSize: '20px' }}>{sub.icon}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)' }}>
-                      {sub.label}
-                    </div>
-                  </div>
-                  <div style={{
-                    fontSize: '13px', fontWeight: '700',
-                    color: 'var(--accent-amber)',
-                    background: 'rgba(251,191,36,0.1)',
-                    border: '1px solid rgba(251,191,36,0.25)',
-                    borderRadius: '999px', padding: '3px 12px',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    ⚑ {stats.flagged} flagged
-                  </div>
-                  <span style={{ fontSize: '13px', color: 'var(--accent-cyan)', fontWeight: '600' }}>
-                    Review →
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Subspecialty mastery grid */}
+        {/* ============================== */}
+        {/* Flashcards                     */}
+        {/* ============================== */}
         <div style={{
           fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em',
           textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px',
         }}>
-          Subspecialty Mastery
+          Flashcards
         </div>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '12px', marginBottom: '40px',
-        }}>
-          {subStats.map(({ sub, stats, pct, lastStudied }) => (
-            <div
+
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
+          <HeroTile
+            emoji="🔥"
+            label="Day Streak"
+            value={streak}
+            sub={streak === 0 ? 'Study today to start one!' : streak === 1 ? 'Keep it going' : 'Consistent!'}
+            color={streak > 0 ? 'var(--accent-amber)' : 'var(--text-muted)'}
+          />
+          <HeroTile
+            emoji="✓"
+            label="Cards Mastered"
+            value={overall.gotIt}
+            sub={`${overallPct}% of accessible cards`}
+            color="var(--accent-emerald)"
+          />
+          <HeroTile
+            emoji="🚩"
+            label="Flagged"
+            value={overall.flagged}
+            sub="needs review"
+            color={overall.flagged > 0 ? 'var(--accent-amber)' : 'var(--text-muted)'}
+          />
+          <HeroTile
+            emoji="📅"
+            label="Cards Done Today"
+            value={todayActivity.total}
+            sub={`${todayActivity.new} new`}
+            color="var(--accent-cyan)"
+          />
+        </div>
+
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '12px' }}>
+          <ChartCard title="Overall Mastery">
+            <DonutChart
+              centerValue={`${overallPct}%`}
+              centerLabel="mastered"
+              segments={[
+                { label: 'Got It', value: overall.gotIt, color: 'var(--accent-emerald)' },
+                { label: 'Flagged', value: overall.flagged, color: 'var(--accent-amber)' },
+                { label: 'Unseen', value: overall.unseen, color: 'var(--text-muted)' },
+              ]}
+            />
+          </ChartCard>
+          <ChartCard title="Mastery by Subspecialty">
+            <BarChart
+              items={subStats.map(({ sub, pct }) => ({
+                label: sub.label, icon: sub.icon, value: pct, max: 100, color: sub.color,
+              }))}
+              valueFormatter={v => `${v}%`}
+            />
+          </ChartCard>
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          <ChartCard title="Cards Mastered Over Time (8 Weeks)">
+            <TrendLineChart points={masteryTrend} color="var(--accent-emerald)" />
+          </ChartCard>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '40px' }}>
+          {subStats.map(({ sub, stats, pct }) => (
+            <SubspecialtyRow
               key={sub.id}
-              onClick={() => navigate(`/decks/${sub.id}`)}
-              style={{
-                background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-lg)', padding: '18px 20px',
-                cursor: 'pointer', transition: 'border-color var(--transition)',
-              }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = sub.color + '60'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border-subtle)'}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ fontSize: '20px' }}>{sub.icon}</span>
-                  <div>
-                    <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-primary)' }}>{sub.label}</div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '1px' }}>
-                      Last: {formatRelativeDate(lastStudied)}
-                    </div>
-                  </div>
-                </div>
-                <span style={{
-                  fontSize: '13px', fontWeight: '700', color: sub.color,
-                  background: sub.colorDim, padding: '2px 10px', borderRadius: '999px',
-                }}>
-                  {pct}%
-                </span>
-              </div>
-              <TriProgressBar gotIt={stats.gotIt} flagged={stats.flagged} total={stats.total} />
-              <div style={{ display: 'flex', gap: '10px', fontSize: '11px', marginTop: '6px' }}>
-                <span style={{ color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
-                <span style={{ color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
-                <span style={{ color: 'var(--text-muted)' }}>● {stats.unseen}</span>
-                <span style={{ color: 'var(--text-muted)', marginLeft: 'auto' }}>{stats.total} cards</span>
-              </div>
-            </div>
+              icon={sub.icon}
+              label={sub.label}
+              right={
+                <>
+                  <span style={{ fontSize: '12px', color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
+                  <span style={{ fontSize: '12px', color: 'var(--accent-amber)' }}>⚑ {stats.flagged}</span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>● {stats.unseen}</span>
+                  <span style={{
+                    fontSize: '12px', fontWeight: '700', color: sub.color,
+                    background: sub.colorDim, padding: '1px 8px', borderRadius: '999px',
+                  }}>
+                    {pct}%
+                  </span>
+                </>
+              }
+            />
           ))}
         </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <button
-            onClick={() => navigate('/decks')}
-            style={{
-              padding: '12px 28px', borderRadius: 'var(--radius-md)',
-              background: 'var(--accent-cyan)', border: 'none',
-              color: 'var(--bg-primary)', fontSize: '15px', fontWeight: '700',
-              cursor: 'pointer', fontFamily: 'var(--font-display)',
-            }}
-          >
-            Keep Studying →
-          </button>
+        {/* ============================== */}
+        {/* Differential Sprint            */}
+        {/* ============================== */}
+        <div style={{
+          fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em',
+          textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px',
+        }}>
+          Differential Sprint
         </div>
+
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
+          <HeroTile emoji="✓" label="Got It" value={dsStats.gotIt} color="var(--accent-emerald)" />
+          <HeroTile emoji="◐" label="Partial" value={dsStats.partial} color="var(--accent-amber)" />
+          <HeroTile emoji="✕" label="Missed" value={dsStats.missed} color="var(--accent-rose)" />
+          <HeroTile emoji="⚡" label="Unseen" value={dsStats.unseen} sub={`${dsStats.total} total questions`} color="var(--text-muted)" />
+        </div>
+
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '12px' }}>
+          <ChartCard title="Overall Mastery">
+            <DonutChart
+              centerValue={dsStats.total ? `${Math.round((dsStats.gotIt / dsStats.total) * 100)}%` : '—'}
+              centerLabel="got it"
+              segments={[
+                { label: 'Got It', value: dsStats.gotIt, color: 'var(--accent-emerald)' },
+                { label: 'Partial', value: dsStats.partial, color: 'var(--accent-amber)' },
+                { label: 'Missed', value: dsStats.missed, color: 'var(--accent-rose)' },
+                { label: 'Unseen', value: dsStats.unseen, color: 'var(--text-muted)' },
+              ]}
+            />
+          </ChartCard>
+          <ChartCard title="Mastery by Subspecialty">
+            <BarChart
+              items={dsBySubspecialty.map(({ sub, pct }) => ({
+                label: sub.label, icon: sub.icon, value: pct, max: 100, color: sub.color,
+              }))}
+              valueFormatter={v => `${v}%`}
+              emptyLabel="No Differential Sprint activity in any subspecialty yet."
+            />
+          </ChartCard>
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          <ChartCard title="Questions Over Time (8 Weeks)">
+            <TrendLineChart
+              series={[
+                { label: 'Done', color: 'var(--accent-cyan)', points: dsRatedTrend },
+                { label: 'Got It', color: 'var(--accent-emerald)', points: dsGotItTrend },
+              ]}
+            />
+          </ChartCard>
+        </div>
+
+        {dsBySubspecialty.length > 0 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {dsBySubspecialty.map(({ sub, stats }) => (
+              <SubspecialtyRow
+                key={sub.id}
+                icon={sub.icon}
+                label={sub.label}
+                right={
+                  <>
+                    <span style={{ fontSize: '12px', color: 'var(--accent-emerald)' }}>✓ {stats.gotIt}</span>
+                    <span style={{ fontSize: '12px', color: 'var(--accent-amber)' }}>◐ {stats.partial}</span>
+                    <span style={{ fontSize: '12px', color: 'var(--accent-rose)' }}>✕ {stats.missed}</span>
+                    <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>● {stats.unseen}</span>
+                  </>
+                }
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

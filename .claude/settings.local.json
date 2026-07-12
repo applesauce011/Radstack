@@ -22,7 +22,15 @@
       "Bash(npm i *)",
       "Bash(find /c/radstack/src/data/decks -name \"*.js\" -exec grep -l \"stroke\\\\|vascular\\\\|biliary\" {} \\\\;)",
       "Bash(grep -n \"^ *\\\\{$\" /c/radstack/src/data/decks/abdominal.js)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npm run *)",
+      "Skill(dataviz)",
+      "Skill(dataviz:*)",
+      "Bash(node --check src/data/differentialSprint/questionBank.js)",
+      "Bash(node -e \"require\\('esbuild'\\)\")",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(npx eslint *)"
     ]
   }
 }
