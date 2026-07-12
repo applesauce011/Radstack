@@ -2,35 +2,79 @@ import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
 
+function isPathActive(pathname, target) {
+  return pathname === target || pathname.startsWith(target + '/')
+}
+
+function TopNavLink({ label, active, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        background: 'none', border: 'none', cursor: 'pointer',
+        fontSize: '14px', fontFamily: 'var(--font-body)',
+        color: active ? 'var(--accent-cyan)' : 'var(--text-muted)',
+        fontWeight: active ? '600' : '400',
+        transition: 'color var(--transition)',
+        padding: '4px 8px', whiteSpace: 'nowrap',
+      }}
+      onMouseEnter={e => { if (!active) e.currentTarget.style.color = 'var(--text-secondary)' }}
+      onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'var(--text-muted)' }}
+    >
+      {label}
+    </button>
+  )
+}
+
 export function Navbar() {
   const { user, isAuthenticated, logout } = useAuthStore()
   const navigate  = useNavigate()
   const location  = useLocation()
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)     // desktop avatar dropdown
+  const [mobileOpen, setMobileOpen] = useState(false)  // mobile slide-down panel
 
   const handleLogout = async () => {
     setMenuOpen(false)
+    setMobileOpen(false)
     await logout()
     navigate('/')
   }
 
-  const isActive = (path) => location.pathname === path
+  const go = (path) => {
+    navigate(path)
+    setMenuOpen(false)
+    setMobileOpen(false)
+  }
+
+  const isActive = (path) => isPathActive(location.pathname, path)
 
   return (
-    <nav style={{
-      position: 'sticky', top: 0, zIndex: 100,
-      background: 'rgba(8,13,26,0.85)', backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid var(--border-subtle)',
-      padding: '0 24px', height: '64px',
-      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-    }}>
+    <nav style={{ position: 'sticky', top: 0, zIndex: 100, height: '64px' }}>
+      {/*
+        Blur lives on its own layer, not on <nav> itself — backdrop-filter
+        establishes a new CSS containing block for position:fixed descendants,
+        which would collapse the mobile-panel/dropdown click-outside overlays
+        (they'd size themselves against this 64px-tall nav instead of the
+        viewport). Keeping <nav> filter-free avoids that trap.
+      */}
+      <div style={{
+        position: 'absolute', inset: 0, zIndex: 0,
+        background: 'rgba(8,13,26,0.85)', backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid var(--border-subtle)',
+      }} />
+      <div style={{
+        position: 'relative', zIndex: 1, height: '100%',
+        padding: '0 16px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
       {/* Logo */}
       <button
         type="button"
-        onClick={() => navigate(isAuthenticated ? '/dashboard' : '/')}
+        onClick={() => go(isAuthenticated ? '/dashboard' : '/')}
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
-          display: 'flex', alignItems: 'center', gap: '10px',
+          display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0,
         }}
       >
         <div style={{
@@ -49,28 +93,18 @@ export function Navbar() {
         </span>
       </button>
 
-      {/* Right side */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        {/* Pricing link — always visible */}
-        <button
-          type="button"
-          onClick={() => navigate('/pricing')}
-          style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            fontSize: '14px', fontFamily: 'var(--font-body)',
-            color: isActive('/pricing') ? 'var(--accent-cyan)' : 'var(--text-muted)',
-            fontWeight: isActive('/pricing') ? '600' : '400',
-            transition: 'color var(--transition)',
-            padding: '4px 8px',
-          }}
-          onMouseEnter={e => { if (!isActive('/pricing')) e.currentTarget.style.color = 'var(--text-secondary)' }}
-          onMouseLeave={e => { if (!isActive('/pricing')) e.currentTarget.style.color = 'var(--text-muted)' }}
-        >
-          Pricing
-        </button>
+      {/* Desktop nav — hidden below the mobile breakpoint (see index.css) */}
+      <div className="navbar-desktop" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <TopNavLink label="Decks" active={isActive('/decks')} onClick={() => go('/decks')} />
+        <TopNavLink
+          label="Differential Sprint"
+          active={isActive('/differential-sprint')}
+          onClick={() => go('/differential-sprint')}
+        />
+        <TopNavLink label="Pricing" active={isActive('/pricing')} onClick={() => go('/pricing')} />
 
         {isAuthenticated ? (
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', marginLeft: '8px' }}>
             <button
               type="button"
               onClick={() => setMenuOpen(o => !o)}
@@ -118,32 +152,13 @@ export function Navbar() {
                       {user?.email}
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => { navigate('/dashboard'); setMenuOpen(false) }}
-                    style={menuItemStyle}
-                  >
+                  <button type="button" onClick={() => go('/dashboard')} style={menuItemStyle}>
                     Dashboard
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => { navigate('/stats'); setMenuOpen(false) }}
-                    style={menuItemStyle}
-                  >
+                  <button type="button" onClick={() => go('/stats')} style={menuItemStyle}>
                     My Stats
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => { navigate('/decks'); setMenuOpen(false) }}
-                    style={menuItemStyle}
-                  >
-                    Browse Decks
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => { navigate('/settings'); setMenuOpen(false) }}
-                    style={menuItemStyle}
-                  >
+                  <button type="button" onClick={() => go('/settings')} style={menuItemStyle}>
                     Settings
                   </button>
                   <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
@@ -160,10 +175,10 @@ export function Navbar() {
             )}
           </div>
         ) : (
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div style={{ display: 'flex', gap: '8px', marginLeft: '8px' }}>
             <button
               type="button"
-              onClick={() => navigate('/login')}
+              onClick={() => go('/login')}
               style={{
                 background: 'none', border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-md)', padding: '8px 16px',
@@ -175,7 +190,7 @@ export function Navbar() {
             </button>
             <button
               type="button"
-              onClick={() => navigate('/register')}
+              onClick={() => go('/register')}
               style={{
                 background: 'var(--accent-cyan)', border: 'none',
                 borderRadius: 'var(--radius-md)', padding: '8px 16px',
@@ -188,6 +203,89 @@ export function Navbar() {
           </div>
         )}
       </div>
+
+      {/* Mobile hamburger — hidden above the mobile breakpoint (see index.css) */}
+      <button
+        type="button"
+        className="navbar-mobile-toggle"
+        onClick={() => setMobileOpen(o => !o)}
+        aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+        style={{
+          background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
+          borderRadius: 'var(--radius-md)', width: '38px', height: '38px',
+          alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+          color: 'var(--text-primary)', fontSize: '18px', flexShrink: 0,
+        }}
+      >
+        {mobileOpen ? '✕' : '☰'}
+      </button>
+      </div>
+
+      {/* Mobile slide-down panel */}
+      {mobileOpen && (
+        <>
+          <div
+            style={{ position: 'fixed', inset: '64px 0 0 0', zIndex: 98, background: 'rgba(0,0,0,0.5)' }}
+            onClick={() => setMobileOpen(false)}
+          />
+          <div style={{
+            position: 'absolute', top: '100%', left: 0, right: 0,
+            background: 'var(--bg-card)', borderBottom: '1px solid var(--border-default)',
+            boxShadow: 'var(--shadow-lg)', zIndex: 99,
+            padding: '8px', display: 'flex', flexDirection: 'column', gap: '2px',
+            maxHeight: 'calc(100vh - 64px)', overflowY: 'auto',
+          }}>
+            <button type="button" onClick={() => go('/decks')} style={mobileMenuItemStyle}>
+              Decks
+            </button>
+            <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
+              Differential Sprint
+            </button>
+            <button type="button" onClick={() => go('/pricing')} style={mobileMenuItemStyle}>
+              Pricing
+            </button>
+
+            {isAuthenticated ? (
+              <>
+                <div style={{ borderTop: '1px solid var(--border-subtle)', margin: '6px 0' }} />
+                <div style={{ padding: '8px 14px', fontSize: '12px', color: 'var(--text-muted)' }}>
+                  Signed in as {user?.name}
+                </div>
+                <button type="button" onClick={() => go('/dashboard')} style={mobileMenuItemStyle}>
+                  Dashboard
+                </button>
+                <button type="button" onClick={() => go('/stats')} style={mobileMenuItemStyle}>
+                  My Stats
+                </button>
+                <button type="button" onClick={() => go('/settings')} style={mobileMenuItemStyle}>
+                  Settings
+                </button>
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  style={{ ...mobileMenuItemStyle, color: 'var(--accent-rose)' }}
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <div style={{ borderTop: '1px solid var(--border-subtle)', margin: '6px 0' }} />
+                <button type="button" onClick={() => go('/login')} style={mobileMenuItemStyle}>
+                  Sign In
+                </button>
+                <button
+                  type="button"
+                  onClick={() => go('/register')}
+                  style={{ ...mobileMenuItemStyle, color: 'var(--accent-cyan)', fontWeight: '600' }}
+                >
+                  Sign Up
+                </button>
+              </>
+            )}
+          </div>
+        </>
+      )}
     </nav>
   )
 }
@@ -197,4 +295,12 @@ const menuItemStyle = {
   textAlign: 'left', background: 'none', border: 'none',
   color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '14px',
   fontFamily: 'var(--font-body)', transition: 'background var(--transition)',
+}
+
+const mobileMenuItemStyle = {
+  display: 'block', width: '100%', padding: '12px 14px',
+  textAlign: 'left', background: 'none', border: 'none',
+  borderRadius: 'var(--radius-sm)',
+  color: 'var(--text-primary)', cursor: 'pointer', fontSize: '15px',
+  fontFamily: 'var(--font-body)', fontWeight: '500',
 }

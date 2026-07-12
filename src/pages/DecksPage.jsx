@@ -10,6 +10,7 @@ import { TriProgressBar } from '../components/ui/ProgressBar'
 import { StartStudyModal } from '../components/cards/StartStudyModal'
 import { Modal } from '../components/ui/Modal'
 import { Button } from '../components/ui/Button'
+import { UnlockPrompt } from '../components/paywall/UnlockPrompt'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 // ── SubsectionRow ─────────────────────────────────────────────
@@ -193,7 +194,7 @@ export function DecksPage() {
   const activeSub = SUBSPECIALTIES.find(s => s.id === subspecialtyId) || SUBSPECIALTIES[0]
 
   usePageMeta({
-    title: `${activeSub.label} Flashcards — RadiologyStack | FRCPC & ABR Board Prep`,
+    title: `${activeSub.label} Flashcards: RadiologyStack | FRCPC & ABR Board Prep`,
     description: `High-yield ${activeSub.label} flashcards for Canadian Royal College (FRCPC) and ABR board exam prep. Study key facts, track progress, and ace your radiology boards.`,
     canonical: `https://radiologystack.com/decks/${activeSub.id}`,
   })
@@ -329,40 +330,32 @@ export function DecksPage() {
 
         {/* Combined premium / sign-in prompt */}
         {hasPremiumLocked && (
-          <div style={{
-            padding: '14px 18px',
-            background: 'rgba(34,211,238,0.04)',
-            border: '1px solid rgba(34,211,238,0.2)',
-            borderRadius: 'var(--radius-md)',
-            fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap',
-          }}>
-            <span>
-              🔒 Most sections require a premium subscription — unlock {getPremiumCardCount()}+ cards across all 12 subspecialties.
-              {!isAuthenticated && (
-                <span>
-                  {' '}Already have an account?{' '}
-                  <button
-                    onClick={() => navigate('/login')}
-                    style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600', padding: 0 }}
-                  >
-                    Sign in
-                  </button>
-                </span>
-              )}
-            </span>
-            <button
-              onClick={() => navigate('/pricing')}
-              style={{
-                background: 'var(--accent-cyan)', border: 'none', color: 'var(--bg-primary)',
-                cursor: 'pointer', fontSize: '13px', fontWeight: '700',
-                fontFamily: 'var(--font-body)', padding: '7px 14px',
-                borderRadius: 'var(--radius-sm)', whiteSpace: 'nowrap',
-              }}
-            >
-              View Plans →
-            </button>
-          </div>
+          <UnlockPrompt
+            theme="blue"
+            icon="🔒"
+            title="This Is a Free Preview"
+            description={
+              <>
+                This is a free preview with access to one free deck per subspecialty. Subscribe to unlock {getPremiumCardCount()}+ cards across all 12 subspecialties.
+                {!isAuthenticated && (
+                  <>
+                    {' '}Already have an account?{' '}
+                    <button
+                      onClick={() => navigate('/login')}
+                      style={{
+                        background: 'none', border: 'none', color: 'var(--accent-cyan)',
+                        cursor: 'pointer', fontSize: 'inherit', fontFamily: 'inherit',
+                        fontWeight: '600', padding: 0, textDecoration: 'underline',
+                      }}
+                    >
+                      Sign in
+                    </button>
+                  </>
+                )}
+              </>
+            }
+            style={{ marginBottom: '24px' }}
+          />
         )}
 
         {/* Subsections */}

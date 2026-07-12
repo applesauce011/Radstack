@@ -17,6 +17,7 @@ import { PrivacyPage } from './pages/PrivacyPage'
 import { RedeemPage } from './pages/RedeemPage'
 import { AdminPage } from './pages/AdminPage'
 import { StatsPage } from './pages/StatsPage'
+import { DifferentialSprintPage } from './pages/DifferentialSprintPage'
 import { GroupPage } from './pages/GroupPage'
 import { GroupSuccessPage } from './pages/GroupSuccessPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
@@ -176,6 +177,10 @@ export default function App() {
       <Route path="/pricing"   element={<PricingPage />} />
       <Route path="/settings"  element={<RequireAuth><SettingsPage /></RequireAuth>} />
       <Route path="/stats"     element={<RequireAuth><StatsPage /></RequireAuth>} />
+      {/* Not RequireAuth-gated — anonymous visitors get a 4-question free
+          preview; access beyond that is gated on subscription (hasAccess)
+          inside the page itself, same pattern as flashcard decks. */}
+      <Route path="/differential-sprint" element={<DifferentialSprintPage />} />
       <Route path="/group"     element={<GroupPage />} />
       <Route path="/group/success" element={<GroupSuccessPage />} />
       <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
