@@ -45,7 +45,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'code and plan_type are required.' })
     }
 
-    const validPlans = ['3month', '12month', 'lifetime']
+    const validPlans = ['3month', '12month', '4year', 'lifetime']
     if (!validPlans.includes(plan_type)) {
       return res.status(400).json({ error: `plan_type must be one of: ${validPlans.join(', ')}` })
     }

@@ -146,7 +146,7 @@ export function SettingsPage() {
     }
   }
 
-  const planLabels = { '3month': '3-Month', '12month': '12-Month', lifetime: 'Lifetime' }
+  const planLabels = { '3month': '3-Month', '12month': '12-Month', '4year': '4-Year', lifetime: 'Lifetime' }
   const planLabel = subscription?.plan_type ? planLabels[subscription.plan_type] : null
 
   const formatDate = (iso) => {

@@ -36,7 +36,7 @@ export function UnlockPrompt({
   title,
   description,
   buttonText = 'View Plans →',
-  note = 'Plans from $49',
+  note = 'Plans from $59',
   onButtonClick,
   style: extraStyle,
 }) {

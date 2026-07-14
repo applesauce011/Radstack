@@ -53,7 +53,7 @@ export function UpgradePromptBanner({ compact = false, title, description }) {
           {title ?? '🔒 Subscribe to unlock this deck'}
         </div>
         <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          {description ?? 'Get full access to all 12 subspecialties. Plans from $49.'}
+          {description ?? 'Get full access to all 12 subspecialties. Plans from $59.'}
         </div>
       </div>
       <button

@@ -15,9 +15,10 @@ const PLANS = [
   {
     id: '3month',
     label: '3 Months',
-    price: '$49',
+    tagline: 'The Cram Protocol',
+    price: '$59',
     period: 'one-time',
-    perDay: '$0.54 / day',
+    perDay: '$0.66 / day',
     priceEnvKey: 'VITE_STRIPE_PRICE_3MONTH',
     badge: null,
     highlight: false,
@@ -27,15 +28,15 @@ const PLANS = [
       CARD_COUNT,
       'Unlimited Differential Sprint',
       'Progress tracking & flagging',
-      'All study modes',
     ],
   },
   {
     id: '12month',
     label: '12 Months',
-    price: '$99',
+    tagline: 'The Board Year',
+    price: '$149',
     period: 'one-time',
-    perDay: '$0.27 / day',
+    perDay: '$0.41 / day',
     priceEnvKey: 'VITE_STRIPE_PRICE_12MONTH',
     badge: 'Most Popular',
     highlight: true,
@@ -45,25 +46,24 @@ const PLANS = [
       CARD_COUNT,
       'Unlimited Differential Sprint',
       'Progress tracking & flagging',
-      'Best value for residency',
     ],
   },
   {
-    id: 'lifetime',
-    label: 'Lifetime',
-    price: '$149',
+    id: '4year',
+    label: '4 Years',
+    tagline: 'The Complete Study',
+    price: '$349',
     period: 'one-time',
-    perDay: 'pay once, yours forever',
-    priceEnvKey: 'VITE_STRIPE_PRICE_LIFETIME',
+    perDay: '$0.24 / day',
+    priceEnvKey: 'VITE_STRIPE_PRICE_4YEAR',
     badge: null,
     highlight: false,
     features: [
-      'Permanent access, no expiry',
+      'Full access for 4 years',
       'All 12 subspecialties',
       CARD_COUNT,
       'Unlimited Differential Sprint',
       'All future content included',
-      'Never pay again',
     ],
   },
 ]
@@ -72,7 +72,7 @@ function getPriceId(envKey) {
   const map = {
     VITE_STRIPE_PRICE_3MONTH:  import.meta.env.VITE_STRIPE_PRICE_3MONTH,
     VITE_STRIPE_PRICE_12MONTH: import.meta.env.VITE_STRIPE_PRICE_12MONTH,
-    VITE_STRIPE_PRICE_LIFETIME: import.meta.env.VITE_STRIPE_PRICE_LIFETIME,
+    VITE_STRIPE_PRICE_4YEAR:   import.meta.env.VITE_STRIPE_PRICE_4YEAR,
   }
   return map[envKey]
 }
@@ -88,7 +88,7 @@ export function PricingPage() {
 
   usePageMeta({
     title: 'Pricing: RadiologyStack | Flashcards & Differential Sprint',
-    description: 'Unlock all 12 radiology subspecialty decks plus unlimited Differential Sprint. One-time payment, no subscription. Plans from $49. Built for FRCPC and ABR board exam prep.',
+    description: 'Unlock all 12 radiology subspecialty decks plus unlimited Differential Sprint. One-time payment, no subscription. Plans from $59. Built for FRCPC and ABR board exam prep.',
     canonical: 'https://radiologystack.com/pricing',
   })
 
@@ -268,9 +268,9 @@ export function PricingPage() {
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                 {[
-                  { seats: '3–9 seats', discount: '20% off', price: '~$79 / resident' },
-                  { seats: '10–19 seats', discount: '30% off', price: '~$69 / resident' },
-                  { seats: '20+ seats', discount: '35% off', price: '~$64 / resident' },
+                  { seats: '3–9 seats', discount: '20% off', price: '~$119 / resident' },
+                  { seats: '10–19 seats', discount: '30% off', price: '~$104 / resident' },
+                  { seats: '20+ seats', discount: '35% off', price: '~$97 / resident' },
                 ].map(tier => (
                   <div key={tier.seats} style={{
                     display: 'flex', alignItems: 'center', gap: '12px',

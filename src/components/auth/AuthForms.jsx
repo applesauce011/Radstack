@@ -371,6 +371,7 @@ export function RegisterPage() {
   const [name,     setName]     = useState('')
   const [email,    setEmail]    = useState('')
   const [password, setPassword] = useState('')
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
   const [errors,   setErrors]   = useState({})
   const [formError, setFormError] = useState('')
   const [loading,  setLoading]  = useState(false)
@@ -381,6 +382,7 @@ export function RegisterPage() {
     if (!name.trim())          e.name     = 'Name is required'
     if (!email.includes('@'))  e.email    = 'Valid email required'
     if (password.length < 6)   e.password = 'Password must be at least 6 characters'
+    if (!agreedToTerms)        e.terms    = 'You must agree to the Terms of Service to continue'
     return e
   }
 
@@ -441,6 +443,27 @@ export function RegisterPage() {
           value={password} onChange={e => setPassword(e.target.value)}
           placeholder="Min. 6 characters" error={errors.password}
         />
+        <div style={{ marginBottom: '16px' }}>
+          <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', userSelect: 'none' }}>
+            <input
+              type="checkbox"
+              checked={agreedToTerms}
+              onChange={e => setAgreedToTerms(e.target.checked)}
+              style={{ accentColor: 'var(--accent-cyan)', width: '15px', height: '15px', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }}
+            />
+            <span style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+              I agree to the{' '}
+              <a href="/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)' }}>Terms of Service</a>
+              {' '}and{' '}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)' }}>Privacy Policy</a>
+            </span>
+          </label>
+          {errors.terms && (
+            <div style={{ fontSize: '12px', color: 'var(--accent-rose)', marginTop: '4px' }}>
+              {errors.terms}
+            </div>
+          )}
+        </div>
         <ErrorBanner message={formError} />
         <Button type="submit" fullWidth disabled={loading} size="lg">
           {loading ? 'Creating account…' : 'Create Account'}

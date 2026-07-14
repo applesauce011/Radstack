@@ -1,7 +1,7 @@
 import React from 'react'
 
 export function PricingCard({ plan, onSelect, loading }) {
-  const { label, price, period, perDay, features, highlight, badge } = plan
+  const { label, tagline, price, period, perDay, features, highlight, badge } = plan
 
   return (
     <div style={{
@@ -36,6 +36,11 @@ export function PricingCard({ plan, onSelect, loading }) {
         }}>
           {label}
         </div>
+        {tagline && (
+          <div style={{ fontSize: '12px', fontStyle: 'italic', color: 'var(--text-muted)', marginTop: '2px' }}>
+            {tagline}
+          </div>
+        )}
       </div>
 
       <div style={{ marginBottom: '24px' }}>
