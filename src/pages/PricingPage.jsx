@@ -3,79 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
 import { getPremiumCardCount } from '../data/index'
+import { PLANS } from '../data/plans'
 import { Navbar } from '../components/layout/Navbar'
 import { PricingCard } from '../components/paywall/PricingCard'
-import { supabase } from '../lib/supabase'
+import { startCheckout, storePendingPlan } from '../utils/checkout'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { trackEvent } from '../utils/analytics'
-
-const CARD_COUNT = `${getPremiumCardCount()}+ flashcards`
-
-const PLANS = [
-  {
-    id: '3month',
-    label: '3 Months',
-    tagline: 'The Cram Protocol',
-    price: '$59',
-    period: 'one-time',
-    perDay: '$0.66 / day',
-    priceEnvKey: 'VITE_STRIPE_PRICE_3MONTH',
-    badge: null,
-    highlight: false,
-    features: [
-      'Full access for 90 days',
-      'All 12 subspecialties',
-      CARD_COUNT,
-      'Unlimited Differential Sprint',
-      'Progress tracking & flagging',
-    ],
-  },
-  {
-    id: '12month',
-    label: '12 Months',
-    tagline: 'The Board Year',
-    price: '$149',
-    period: 'one-time',
-    perDay: '$0.41 / day',
-    priceEnvKey: 'VITE_STRIPE_PRICE_12MONTH',
-    badge: 'Most Popular',
-    highlight: true,
-    features: [
-      'Full access for 1 year',
-      'All 12 subspecialties',
-      CARD_COUNT,
-      'Unlimited Differential Sprint',
-      'Progress tracking & flagging',
-    ],
-  },
-  {
-    id: '4year',
-    label: '4 Years',
-    tagline: 'The Complete Study',
-    price: '$349',
-    period: 'one-time',
-    perDay: '$0.24 / day',
-    priceEnvKey: 'VITE_STRIPE_PRICE_4YEAR',
-    badge: null,
-    highlight: false,
-    features: [
-      'Full access for 4 years',
-      'All 12 subspecialties',
-      CARD_COUNT,
-      'Unlimited Differential Sprint',
-      'All future content included',
-    ],
-  },
-]
-
-function getPriceId(envKey) {
-  const map = {
-    VITE_STRIPE_PRICE_3MONTH:  import.meta.env.VITE_STRIPE_PRICE_3MONTH,
-    VITE_STRIPE_PRICE_12MONTH: import.meta.env.VITE_STRIPE_PRICE_12MONTH,
-    VITE_STRIPE_PRICE_4YEAR:   import.meta.env.VITE_STRIPE_PRICE_4YEAR,
-  }
-  return map[envKey]
-}
 
 export function PricingPage() {
   const navigate = useNavigate()
@@ -97,42 +30,21 @@ export function PricingPage() {
     trackEvent('pricing_plan_clicked', { plan_type: plan.id, price: plan.price })
 
     if (!isAuthenticated) {
+      storePendingPlan(plan.id)
       navigate('/register')
-      return
-    }
-
-    const priceId = getPriceId(plan.priceEnvKey)
-    if (!priceId) {
-      setError('Pricing is not yet configured. Please try again later.')
       return
     }
 
     setLoadingPlan(plan.id)
     try {
-      const { data: { session } } = await supabase.auth.getSession()
-      const token = session?.access_token
-      if (!token) {
-        navigate('/login')
-        return
-      }
-
-      const res = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({ priceId }),
-      })
-
-      const json = await res.json()
-      if (!res.ok) throw new Error(json.error || 'Checkout failed')
-
-      // Redirect to Stripe Checkout
-      window.location.href = json.url
+      await startCheckout(plan)
     } catch (err) {
       console.error('[pricing] checkout error:', err)
-      setError(err.message || 'Something went wrong. Please try again.')
+      if (err.message === 'Please sign in to continue.') {
+        navigate('/login')
+      } else {
+        setError(err.message || 'Something went wrong. Please try again.')
+      }
       setLoadingPlan(null)
     }
   }

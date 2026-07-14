@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/layout/Navbar'
+import { clearPendingPlan } from '../utils/checkout'
 
 export function CheckoutCancelPage() {
   const navigate = useNavigate()
+
+  useEffect(() => { clearPendingPlan() }, [])
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>

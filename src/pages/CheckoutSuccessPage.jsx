@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSubscriptionStore } from '../store/subscriptionStore'
 import { Navbar } from '../components/layout/Navbar'
+import { clearPendingPlan } from '../utils/checkout'
 
 export function CheckoutSuccessPage() {
   const navigate = useNavigate()
@@ -9,6 +10,7 @@ export function CheckoutSuccessPage() {
   const [status, setStatus] = useState('loading') // 'loading' | 'success' | 'pending'
 
   useEffect(() => {
+    clearPendingPlan()
     let attempts = 0
 
     const poll = async () => {
