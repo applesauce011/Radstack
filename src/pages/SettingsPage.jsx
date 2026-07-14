@@ -46,7 +46,7 @@ function FieldRow({ label, value, hint }) {
 
 export function SettingsPage() {
   const navigate = useNavigate()
-  const { user, logout } = useAuthStore()
+  const { user } = useAuthStore()
   const { subscription, hasAccess } = useSubscriptionStore()
 
   // Password change state
@@ -63,8 +63,6 @@ export function SettingsPage() {
 
   // Delete account state
   const [deleteOpen, setDeleteOpen] = useState(false)
-  const [deleteLoading, setDeleteLoading] = useState(false)
-  const [deleteError, setDeleteError] = useState(null)
 
   const handleChangePassword = async (e) => {
     e.preventDefault()
@@ -125,24 +123,6 @@ export function SettingsPage() {
       setPortalError(err.message)
     } finally {
       setPortalLoading(false)
-    }
-  }
-
-  const handleDeleteAccount = async () => {
-    setDeleteError(null)
-    setDeleteLoading(true)
-    try {
-      // Delete all user data via Supabase RPC (requires a DB function)
-      // For now, sign the user out and let them contact support.
-      // A proper delete_user_account RPC should be added via Supabase Edge Function.
-      const { error } = await supabase.rpc('delete_user_account')
-      if (error) throw error
-      await logout()
-      navigate('/')
-    } catch (err) {
-      // Fallback message if RPC not yet set up
-      setDeleteError('To delete your account, please email radiologystack@gmail.com with your registered email address.')
-      setDeleteLoading(false)
     }
   }
 
@@ -304,15 +284,14 @@ export function SettingsPage() {
             </div>
           ) : (
             <div>
-              <p style={{ fontSize: '14px', color: 'var(--accent-rose)', marginBottom: '20px', lineHeight: '1.5', fontWeight: '600' }}>
-                Are you sure? This will permanently delete all your progress data.
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: '1.5' }}>
+                To delete your account and all study progress, email{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>radiologystack@gmail.com</strong>{' '}
+                from your registered email address ({user?.email}). We'll process your request within 30 days.
               </p>
-              {deleteError && (
-                <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: '1.5' }}>{deleteError}</div>
-              )}
               <div style={{ display: 'flex', gap: '10px' }}>
                 <button
-                  onClick={() => { setDeleteOpen(false); setDeleteError(null) }}
+                  onClick={() => setDeleteOpen(false)}
                   style={{
                     padding: '10px 20px', borderRadius: 'var(--radius-md)',
                     background: 'var(--bg-elevated)', border: '1px solid var(--border-default)',
@@ -320,23 +299,21 @@ export function SettingsPage() {
                     cursor: 'pointer', fontFamily: 'var(--font-body)',
                   }}
                 >
-                  Cancel
+                  Close
                 </button>
-                {!deleteError && (
-                  <button
-                    onClick={handleDeleteAccount}
-                    disabled={deleteLoading}
-                    style={{
-                      padding: '10px 20px', borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-rose)', border: 'none',
-                      color: '#fff', fontSize: '14px', fontWeight: '700',
-                      cursor: deleteLoading ? 'wait' : 'pointer', fontFamily: 'var(--font-body)',
-                      opacity: deleteLoading ? 0.6 : 1,
-                    }}
-                  >
-                    {deleteLoading ? 'Deleting…' : 'Yes, Delete My Account'}
-                  </button>
-                )}
+                <a
+                  href={`mailto:radiologystack@gmail.com?subject=${encodeURIComponent('Delete my account')}&body=${encodeURIComponent(`Please delete my RadiologyStack account (${user?.email}) and all associated data.`)}`}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center',
+                    padding: '10px 20px', borderRadius: 'var(--radius-md)',
+                    background: 'var(--accent-rose)', border: 'none',
+                    color: '#fff', fontSize: '14px', fontWeight: '700',
+                    cursor: 'pointer', fontFamily: 'var(--font-body)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Email to Delete Account
+                </a>
               </div>
             </div>
           )}

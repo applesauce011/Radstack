@@ -275,12 +275,12 @@ export function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px 60px' }}>
+      <section style={{ maxWidth: '480px', margin: '0 auto', padding: '0 24px 60px' }}>
         <p style={{
           textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)',
           letterSpacing: '0.01em', marginBottom: '24px',
         }}>
-          Trusted by radiology residents across Canada and the US
+          What residents are saying
         </p>
         <div style={{
           display: 'grid',
@@ -289,22 +289,10 @@ export function LandingPage() {
         }}>
           {[
             {
-              quote: 'I was struggling to keep up with MSK and neuro. RadiologyStack\'s high-yield cards helped me focus on what actually shows up on the boards. Passed my RC exam first try.',
-              initials: 'A.K.',
+              quote: 'I was struggling to keep up with MSK and neuro. RadiologyStack\'s high-yield cards helped me focus on what actually shows up on the boards.',
+              initials: 'N.M.',
               role: 'Radiology Resident',
               location: 'Toronto, Canada',
-            },
-            {
-              quote: 'Way better than building Anki decks from scratch. Everything is organized by subspecialty and tied to Radiopaedia, exactly how I think about cases.',
-              initials: 'M.R.',
-              role: 'Radiology Resident',
-              location: 'Seattle, WA',
-            },
-            {
-              quote: 'I used RadiologyStack throughout residency to prep for the boards. The structured format made it easy to stay consistent even during busy rotations; it gave me real confidence going into exam day.',
-              initials: 'S.L.',
-              role: 'Radiology Fellow',
-              location: 'New York, NY',
             },
           ].map(t => (
             <div key={t.initials} style={{

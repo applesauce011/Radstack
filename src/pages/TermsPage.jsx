@@ -65,7 +65,7 @@ export function TermsPage() {
         <P>These Terms are governed by the laws of the Province of Ontario, Canada. Any disputes shall be resolved in the courts of Ontario.</P>
 
         <H2>11. Contact</H2>
-        <P>For questions about these Terms, email: radiologystack@gmail.com</P>
+        <P>RadiologyStack is operated as a sole proprietorship. For questions about these Terms, email: radiologystack@gmail.com</P>
 
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-subtle)' }}>
           <button
