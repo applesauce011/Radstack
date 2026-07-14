@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
 import { supabase } from '../../lib/supabase'
 import { Button } from '../ui/Button'
+import { getPlanById } from '../../data/plans'
+import { peekPendingPlanId, clearPendingPlan, startCheckout } from '../../utils/checkout'
 
 // ── Shared sub-components ─────────────────────────────────────
 
@@ -145,6 +147,19 @@ export function LoginPage() {
         localStorage.removeItem(REMEMBER_EMAIL_KEY)
         if (supportsCredentials()) {
           navigator.credentials.preventSilentAccess().catch(() => {})
+        }
+      }
+
+      const pendingPlan = getPlanById(peekPendingPlanId())
+      if (pendingPlan) {
+        try {
+          await startCheckout(pendingPlan)
+          return // browser is navigating to Stripe Checkout
+        } catch (err) {
+          console.error('[login] checkout error:', err)
+          clearPendingPlan()
+          navigate('/pricing', { replace: true })
+          return
         }
       }
       navigate('/dashboard', { replace: true })
@@ -377,6 +392,11 @@ export function RegisterPage() {
   const [loading,  setLoading]  = useState(false)
   const [needsConfirmation, setNeedsConfirmation] = useState(false)
 
+  // Set when the user arrived here from a pricing card ("Get Access")
+  // rather than a plain sign-up — lets us send them straight to
+  // checkout once their account exists instead of the dashboard.
+  const pendingPlan = getPlanById(peekPendingPlanId())
+
   const validate = () => {
     const e = {}
     if (!name.trim())          e.name     = 'Name is required'
@@ -398,6 +418,15 @@ export function RegisterPage() {
       if (result.needsConfirmation) {
         setNeedsConfirmation(true)
         setLoading(false)
+      } else if (pendingPlan) {
+        try {
+          await startCheckout(pendingPlan)
+          return // browser is navigating to Stripe Checkout
+        } catch (err) {
+          console.error('[register] checkout error:', err)
+          clearPendingPlan()
+          navigate('/pricing', { replace: true })
+        }
       } else {
         navigate('/dashboard', { replace: true })
       }
@@ -415,7 +444,10 @@ export function RegisterPage() {
           <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
             We sent a confirmation link to{' '}
             <strong style={{ color: 'var(--text-primary)' }}>{email}</strong>.
-            Click it to activate your account, then sign in.
+            Click it to activate your account, then sign in
+            {pendingPlan
+              ? <> — we'll take you straight to payment for the <strong style={{ color: 'var(--text-primary)' }}>{pendingPlan.label}</strong> plan.</>
+              : '.'}
           </p>
           <Button variant="primary" fullWidth onClick={() => navigate('/login')}>
             Go to Sign In
@@ -427,6 +459,17 @@ export function RegisterPage() {
 
   return (
     <AuthShell title="Create your account" subtitle="Start tracking your radiology study progress">
+      {pendingPlan && (
+        <div style={{
+          padding: '10px 14px', marginBottom: '20px', marginTop: '-8px',
+          background: 'var(--accent-cyan-dim)', border: '1px solid rgba(34,211,238,0.25)',
+          borderRadius: 'var(--radius-md)', fontSize: '13px', color: 'var(--text-secondary)',
+          lineHeight: '1.5', textAlign: 'center',
+        }}>
+          Create your free account, then you'll go straight to secure payment for the{' '}
+          <strong style={{ color: 'var(--text-primary)' }}>{pendingPlan.label}</strong> plan ({pendingPlan.price}).
+        </div>
+      )}
       <form onSubmit={handleSubmit} noValidate>
         <FormInput
           label="Full Name" type="text"

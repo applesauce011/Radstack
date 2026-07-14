@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { SUBSPECIALTIES, getPremiumCardCount } from '../data/index'
 import { LAST_UPDATED } from '../data/config'
+import { PLANS } from '../data/plans'
 import { Navbar } from '../components/layout/Navbar'
 import { usePageMeta } from '../hooks/usePageMeta'
-
-const CARD_COUNT = `${getPremiumCardCount()}+ flashcards`
+import { startCheckout, storePendingPlan } from '../utils/checkout'
+import { trackEvent } from '../utils/analytics'
 
 function StatPill({ value, label }) {
   return (
@@ -37,33 +38,33 @@ function SubspecialtyPill({ sub }) {
   )
 }
 
-function PricingSection({ onSelect }) {
-  const plans = [
-    {
-      label: '3 Months',
-      price: '$59',
-      perDay: '$0.66 / day',
-      highlight: false,
-      badge: null,
-      features: ['Full access for 90 days', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'Progress tracking & flagging'],
-    },
-    {
-      label: '12 Months',
-      price: '$149',
-      perDay: '$0.41 / day',
-      highlight: true,
-      badge: 'Most Popular',
-      features: ['Full access for 1 year', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'Progress tracking & flagging'],
-    },
-    {
-      label: '4 Years',
-      price: '$349',
-      perDay: '$0.24 / day',
-      highlight: false,
-      badge: null,
-      features: ['Full access for 4 years', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'All future content included'],
-    },
-  ]
+function PricingSection({ isAuthenticated, navigate }) {
+  const [loadingPlanId, setLoadingPlanId] = useState(null)
+  const [error, setError] = useState(null)
+
+  const handleSelectPlan = async (plan) => {
+    setError(null)
+    trackEvent('pricing_plan_clicked', { plan_type: plan.id, price: plan.price, source: 'landing' })
+
+    if (!isAuthenticated) {
+      storePendingPlan(plan.id)
+      navigate('/register')
+      return
+    }
+
+    setLoadingPlanId(plan.id)
+    try {
+      await startCheckout(plan)
+    } catch (err) {
+      console.error('[landing] checkout error:', err)
+      if (err.message === 'Please sign in to continue.') {
+        navigate('/login')
+      } else {
+        setError(err.message || 'Something went wrong. Please try again.')
+      }
+      setLoadingPlanId(null)
+    }
+  }
 
   return (
     <section style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px 80px' }}>
@@ -85,9 +86,9 @@ function PricingSection({ onSelect }) {
         justifyContent: 'center', alignItems: 'stretch',
         marginBottom: '28px',
       }}>
-        {plans.map(plan => (
+        {PLANS.map(plan => (
           <div
-            key={plan.label}
+            key={plan.id}
             style={{
               flex: 1, minWidth: '220px', maxWidth: '280px',
               padding: '28px 24px',
@@ -119,12 +120,10 @@ function PricingSection({ onSelect }) {
                 color: plan.highlight ? 'var(--accent-cyan)' : 'var(--text-primary)',
                 fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
               }}>{plan.price}</span>
-              <span style={{ fontSize: '13px', color: 'var(--text-muted)', marginLeft: '4px' }}>one-time</span>
-              {plan.perDay && (
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
-                  {plan.perDay}
-                </div>
-              )}
+              <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+                <span style={{ whiteSpace: 'nowrap' }}>{plan.period}</span>
+                {plan.perDay && <> · <span style={{ fontSize: '12px', whiteSpace: 'nowrap' }}>{plan.perDay}</span></>}
+              </div>
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
               {plan.features.map(f => (
@@ -138,21 +137,33 @@ function PricingSection({ onSelect }) {
               ))}
             </ul>
             <button
-              onClick={onSelect}
+              onClick={() => handleSelectPlan(plan)}
+              disabled={loadingPlanId === plan.id}
               style={{
                 width: '100%', padding: '11px',
                 background: plan.highlight ? 'var(--accent-cyan)' : 'var(--bg-elevated)',
                 border: plan.highlight ? 'none' : '1px solid var(--border-default)',
                 color: plan.highlight ? 'var(--bg-primary)' : 'var(--text-primary)',
                 borderRadius: 'var(--radius-md)', fontSize: '14px', fontWeight: '700',
-                cursor: 'pointer', fontFamily: 'var(--font-display)',
+                cursor: loadingPlanId === plan.id ? 'wait' : 'pointer',
+                fontFamily: 'var(--font-display)',
+                opacity: loadingPlanId === plan.id ? 0.6 : 1,
               }}
             >
-              Get Access →
+              {loadingPlanId === plan.id ? 'Redirecting…' : 'Get Access →'}
             </button>
           </div>
         ))}
       </div>
+
+      {error && (
+        <div style={{
+          textAlign: 'center', fontSize: '13px', color: 'var(--accent-rose)',
+          marginBottom: '16px',
+        }}>
+          {error}
+        </div>
+      )}
 
       <div style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)' }}>
         ✓ Secure payment via Stripe &nbsp;·&nbsp; ✓ No auto-renewal &nbsp;·&nbsp; ✓ Free preview always available
@@ -529,7 +540,7 @@ export function LandingPage() {
       )}
 
       {/* Pricing section */}
-      <PricingSection onSelect={() => navigate('/pricing')} />
+      <PricingSection isAuthenticated={isAuthenticated} navigate={navigate} />
 
     </div>
   )

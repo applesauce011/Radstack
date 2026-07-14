@@ -44,23 +44,21 @@ export function PricingCard({ plan, onSelect, loading }) {
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <span style={{
-          fontSize: '40px', fontWeight: '800', color: highlight ? 'var(--accent-cyan)' : 'var(--text-primary)',
-          fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
-        }}>
-          {price}
-        </span>
-        <span style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-muted)', marginLeft: '5px' }}>
-          USD
-        </span>
-        <span style={{ fontSize: '14px', color: 'var(--text-muted)', marginLeft: '6px' }}>
-          {period}
-        </span>
-        {perDay && (
-          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
-            {perDay}
-          </div>
-        )}
+        <div>
+          <span style={{
+            fontSize: '40px', fontWeight: '800', color: highlight ? 'var(--accent-cyan)' : 'var(--text-primary)',
+            fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
+          }}>
+            {price}
+          </span>
+          <span style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-muted)', marginLeft: '5px' }}>
+            USD
+          </span>
+        </div>
+        <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+          <span style={{ whiteSpace: 'nowrap' }}>{period}</span>
+          {perDay && <> · <span style={{ fontSize: '12px', whiteSpace: 'nowrap' }}>{perDay}</span></>}
+        </div>
       </div>
 
       <ul style={{
