@@ -18,7 +18,7 @@ export function SubscriptionBadge() {
     )
   }
 
-  const planLabels = { '3month': '3-Month', '12month': '12-Month', lifetime: 'Lifetime' }
+  const planLabels = { '3month': '3-Month', '12month': '12-Month', '4year': '4-Year', lifetime: 'Lifetime' }
   const label = planLabels[subscription.plan_type] ?? 'Pro'
   const isLifetime = subscription.plan_type === 'lifetime'
   const isActive = hasAccess

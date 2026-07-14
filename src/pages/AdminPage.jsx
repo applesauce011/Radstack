@@ -17,8 +17,8 @@ const EVENT_LABELS = {
   session_complete_upgrade_clicked: 'Post-Session Upgrade Clicks',
 }
 
-const PLAN_LABELS = { '3month': '3-Month', '12month': '12-Month', lifetime: 'Lifetime' }
-const PLAN_COLORS = { '3month': 'var(--accent-blue)', '12month': 'var(--accent-cyan)', lifetime: 'var(--accent-amber)' }
+const PLAN_LABELS = { '3month': '3-Month', '12month': '12-Month', '4year': '4-Year', lifetime: 'Lifetime' }
+const PLAN_COLORS = { '3month': 'var(--accent-blue)', '12month': 'var(--accent-cyan)', '4year': 'var(--accent-emerald)', lifetime: 'var(--accent-amber)' }
 
 function CodeRow({ row, onDeactivate }) {
   const used = row.uses
@@ -139,7 +139,7 @@ export function AdminPage() {
   const [loading, setLoading]     = useState(false)
   const [error, setError]         = useState(null)
   const [newCode, setNewCode]     = useState('')
-  const [newPlan, setNewPlan]     = useState('lifetime')
+  const [newPlan, setNewPlan]     = useState('12month')
   const [newMaxUses, setNewMaxUses] = useState(1)
   const [newExpiry, setNewExpiry] = useState('')
   const [newNote, setNewNote]     = useState('')
@@ -517,6 +517,7 @@ export function AdminPage() {
                 <select value={newPlan} onChange={e => setNewPlan(e.target.value)} style={inputStyle}>
                   <option value="3month">3-Month</option>
                   <option value="12month">12-Month</option>
+                  <option value="4year">4-Year</option>
                   <option value="lifetime">Lifetime</option>
                 </select>
               </div>

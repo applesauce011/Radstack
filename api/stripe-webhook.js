@@ -12,7 +12,7 @@
 //   STRIPE_WEBHOOK_SECRET
 //   STRIPE_PRICE_3MONTH
 //   STRIPE_PRICE_12MONTH
-//   STRIPE_PRICE_LIFETIME
+//   STRIPE_PRICE_4YEAR
 //   SUPABASE_SERVICE_ROLE_KEY
 //   VITE_SUPABASE_URL
 // ============================================================
@@ -92,7 +92,7 @@ function getPlanType(priceId) {
   const map = {
     [process.env.STRIPE_PRICE_3MONTH]:  '3month',
     [process.env.STRIPE_PRICE_12MONTH]: '12month',
-    [process.env.STRIPE_PRICE_LIFETIME]: 'lifetime',
+    [process.env.STRIPE_PRICE_4YEAR]:   '4year',
   }
   return map[priceId] ?? null
 }
@@ -101,6 +101,7 @@ function getPeriodEnd(planType) {
   const now = new Date()
   if (planType === '3month')  return new Date(now.getTime() + 90  * 24 * 60 * 60 * 1000).toISOString()
   if (planType === '12month') return new Date(now.getTime() + 365 * 24 * 60 * 60 * 1000).toISOString()
+  if (planType === '4year')   return new Date(now.getTime() + 4 * 365 * 24 * 60 * 60 * 1000).toISOString()
   if (planType === 'lifetime') return null  // no expiry
   return null
 }

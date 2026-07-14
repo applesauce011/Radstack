@@ -7,7 +7,7 @@ import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-const BASE_PRICE_CENTS = 9900  // $99 per seat (12-month plan, full price)
+const BASE_PRICE_CENTS = 14900  // $149 per seat (12-month plan, full price)
 
 const TIERS = [
   { min: 3,  max: 9,   discount: 0.20 },

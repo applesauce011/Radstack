@@ -21,6 +21,7 @@ function getPeriodEnd(planType) {
   const now = new Date()
   if (planType === '3month')  return new Date(now.getTime() + 90  * 24 * 60 * 60 * 1000).toISOString()
   if (planType === '12month') return new Date(now.getTime() + 365 * 24 * 60 * 60 * 1000).toISOString()
+  if (planType === '4year')   return new Date(now.getTime() + 4 * 365 * 24 * 60 * 60 * 1000).toISOString()
   return null  // lifetime → no expiry
 }
 
@@ -99,7 +100,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Error activating your access. Please contact support@radstack.io.' })
   }
 
-  const planLabels = { '3month': '3-Month', '12month': '12-Month', lifetime: 'Lifetime' }
+  const planLabels = { '3month': '3-Month', '12month': '12-Month', '4year': '4-Year', lifetime: 'Lifetime' }
   console.log(`[redeem] code=${promo.code} user=${user.id} plan=${planType}`)
 
   res.status(200).json({

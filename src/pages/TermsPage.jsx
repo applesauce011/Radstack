@@ -28,11 +28,11 @@ export function TermsPage() {
           Terms of Service
         </h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '36px' }}>
-          Last updated: April 2026
+          Last updated: July 2026
         </p>
 
         <H2>1. Acceptance of Terms</H2>
-        <P>By accessing or using RadiologyStack ("the Service"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</P>
+        <P>By accessing or using RadiologyStack ("the Service"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service. Creating an account, and/or checking the box confirming your agreement at registration, constitutes acceptance of these Terms.</P>
 
         <H2>2. Description of Service</H2>
         <P>RadiologyStack provides radiology flashcard content intended for educational purposes. Content is designed to support exam preparation for the Royal College of Physicians and Surgeons of Canada radiology examinations and the American Board of Radiology (ABR) examinations.</P>
@@ -40,8 +40,9 @@ export function TermsPage() {
         <H2>3. Not for Clinical Use</H2>
         <P>RadiologyStack content is strictly for educational and exam preparation purposes. It is NOT intended for use in clinical practice, patient care, or medical decision-making. Do not use RadiologyStack content to guide clinical decisions. Always rely on current clinical guidelines, peer-reviewed literature, and your institutional resources for patient care.</P>
 
-        <H2>4. Subscriptions and Billing</H2>
-        <P>RadiologyStack offers paid subscription plans that provide full access to all flashcard content. All plans are one-time payments — there is no automatic renewal. Your access period is specified at the time of purchase (3 months, 12 months, or lifetime).</P>
+        <H2>4. Subscriptions, Pricing, and Billing</H2>
+        <P>RadiologyStack offers paid access plans that provide full access to all flashcard content. All plans are one-time payments — there is no automatic renewal or recurring charge. Your access period is specified at the time of purchase (e.g. 3 months, 12 months, or 4 years).</P>
+        <P>Prices and plan offerings may change at any time without prior notice. Any such change applies only to new purchases made after the change takes effect. If you have already purchased a plan, the access period, features, and terms you paid for remain fully honored for their original duration — including any plan purchased with permanent ("lifetime") access, which continues indefinitely regardless of any future change to our pricing or plan structure.</P>
         <P>All payments are processed securely by Stripe. RadiologyStack does not store your payment card information.</P>
         <P>Prices are listed in USD and may be subject to applicable taxes depending on your location.</P>
 

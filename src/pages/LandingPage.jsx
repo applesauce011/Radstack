@@ -6,6 +6,8 @@ import { LAST_UPDATED } from '../data/config'
 import { Navbar } from '../components/layout/Navbar'
 import { usePageMeta } from '../hooks/usePageMeta'
 
+const CARD_COUNT = `${getPremiumCardCount()}+ flashcards`
+
 function StatPill({ value, label }) {
   return (
     <div style={{ textAlign: 'center' }}>
@@ -39,24 +41,27 @@ function PricingSection({ onSelect }) {
   const plans = [
     {
       label: '3 Months',
-      price: '$49',
+      price: '$59',
+      perDay: '$0.66 / day',
       highlight: false,
       badge: null,
-      features: ['Full access for 90 days', 'All 12 subspecialties', 'Unlimited Differential Sprint', 'Progress tracking'],
+      features: ['Full access for 90 days', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'Progress tracking & flagging'],
     },
     {
       label: '12 Months',
-      price: '$99',
+      price: '$149',
+      perDay: '$0.41 / day',
       highlight: true,
       badge: 'Most Popular',
-      features: ['Full access for 1 year', 'All 12 subspecialties', 'Unlimited Differential Sprint', 'Best value for residency'],
+      features: ['Full access for 1 year', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'Progress tracking & flagging'],
     },
     {
-      label: 'Lifetime',
-      price: '$149',
+      label: '4 Years',
+      price: '$349',
+      perDay: '$0.24 / day',
       highlight: false,
       badge: null,
-      features: ['Permanent access', 'All future content', 'Unlimited Differential Sprint', 'Never pay again'],
+      features: ['Full access for 4 years', 'All 12 subspecialties', CARD_COUNT, 'Unlimited Differential Sprint', 'All future content included'],
     },
   ]
 
@@ -115,6 +120,11 @@ function PricingSection({ onSelect }) {
                 fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
               }}>{plan.price}</span>
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', marginLeft: '4px' }}>one-time</span>
+              {plan.perDay && (
+                <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
+                  {plan.perDay}
+                </div>
+              )}
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', flex: 1 }}>
               {plan.features.map(f => (

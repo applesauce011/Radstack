@@ -100,7 +100,7 @@ export function SessionComplete({ onRestart, onExit, sectionId }) {
             title="That's Your Free Preview!"
             description={`Subscribe to unlock ${getPremiumCardCount()}+ flashcards across all 12 subspecialties, including everything you haven't seen yet.`}
             buttonText="Unlock Unlimited Access →"
-            note="Plans from $49"
+            note="Plans from $59"
             onButtonClick={() => {
               trackEvent('session_complete_upgrade_clicked', { section_id: effectiveSectionId })
               navigate('/pricing')
@@ -117,7 +117,7 @@ export function SessionComplete({ onRestart, onExit, sectionId }) {
             title="That's Your Free Preview!"
             description={`Subscribe to unlock ${getPremiumCardCount()}+ flashcards across all 12 subspecialties, track your progress, and flag cards for review.`}
             buttonText="Unlock Unlimited Access →"
-            note="Plans from $49"
+            note="Plans from $59"
             onButtonClick={() => navigate('/pricing')}
           />
           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '14px' }}>

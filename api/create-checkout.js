@@ -24,10 +24,8 @@ const supabaseAdmin = createClient(
 const VALID_PRICE_IDS = () => [
   process.env.STRIPE_PRICE_3MONTH,
   process.env.STRIPE_PRICE_12MONTH,
-  process.env.STRIPE_PRICE_LIFETIME,
+  process.env.STRIPE_PRICE_4YEAR,
 ].filter(Boolean)
-
-const LIFETIME_PRICE_ID = () => process.env.STRIPE_PRICE_LIFETIME
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -53,8 +51,6 @@ export default async function handler(req, res) {
     .select('stripe_customer_id')
     .eq('user_id', user.id)
     .maybeSingle()
-
-  const isLifetime = priceId === LIFETIME_PRICE_ID()
 
   let session
   try {
@@ -86,7 +82,7 @@ export default async function handler(req, res) {
   // Track checkout_started event (best-effort, non-blocking)
   const planKey = priceId === process.env.STRIPE_PRICE_3MONTH ? '3month'
     : priceId === process.env.STRIPE_PRICE_12MONTH ? '12month'
-    : 'lifetime'
+    : '4year'
   supabaseAdmin.from('analytics_events').insert({
     event_name: 'checkout_started',
     properties: { plan_type: planKey, price_id: priceId },
