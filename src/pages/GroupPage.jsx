@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/layout/Navbar'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -36,6 +37,7 @@ const labelStyle = {
 }
 
 export function GroupPage() {
+  const navigate = useNavigate()
   usePageMeta({
     title: 'Group Access for Residency Programs — RadiologyStack',
     description: 'Buy RadiologyStack access for your entire radiology residency program. Group discounts available for 3+ residents.',
@@ -50,6 +52,7 @@ export function GroupPage() {
     contactName: '',
     contactEmail: '',
   })
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -65,6 +68,7 @@ export function GroupPage() {
     e.preventDefault()
     setError(null)
     if (numSeats < 3) { setError('Minimum 3 seats for group purchase.'); return }
+    if (!agreedToTerms) { setError('You must agree to the Terms of Service and Privacy Policy to continue.'); return }
 
     setLoading(true)
     try {
@@ -270,19 +274,37 @@ export function GroupPage() {
             </div>
           )}
 
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer', userSelect: 'none' }}>
+              <input
+                type="checkbox"
+                checked={agreedToTerms}
+                onChange={e => setAgreedToTerms(e.target.checked)}
+                style={{ accentColor: 'var(--accent-cyan)', width: '15px', height: '15px', cursor: 'pointer', marginTop: '2px', flexShrink: 0 }}
+              />
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+                I agree to the{' '}
+                <button type="button" onClick={() => navigate('/terms')} style={{ background: 'none', border: 'none', padding: 0, color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', textDecoration: 'underline' }}>Terms of Service</button>
+                {' '}and{' '}
+                <button type="button" onClick={() => navigate('/privacy')} style={{ background: 'none', border: 'none', padding: 0, color: 'var(--accent-cyan)', cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', textDecoration: 'underline' }}>Privacy Policy</button>
+                , including on behalf of the program named above.
+              </span>
+            </label>
+          </div>
+
           <button
             type="submit"
-            disabled={loading || numSeats < 3}
+            disabled={loading || numSeats < 3 || !agreedToTerms}
             style={{
               width: '100%', padding: '14px',
               background: loading ? 'var(--bg-elevated)' : 'var(--accent-cyan)',
               border: 'none', borderRadius: 'var(--radius-md)',
               color: loading ? 'var(--text-muted)' : 'var(--bg-primary)',
               fontSize: '16px', fontWeight: '700',
-              cursor: loading || numSeats < 3 ? 'not-allowed' : 'pointer',
+              cursor: loading || numSeats < 3 || !agreedToTerms ? 'not-allowed' : 'pointer',
               fontFamily: 'var(--font-display)',
               transition: 'all var(--transition)',
-              opacity: numSeats < 3 ? 0.5 : 1,
+              opacity: numSeats < 3 || !agreedToTerms ? 0.5 : 1,
             }}
           >
             {loading ? 'Redirecting to checkout…' : `Purchase Group Access — ${fmt(totalCents)} →`}
