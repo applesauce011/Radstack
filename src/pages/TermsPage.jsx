@@ -47,7 +47,7 @@ export function TermsPage() {
         <P>Prices are listed in USD and may be subject to applicable taxes depending on your location.</P>
 
         <H2>5. Refund Policy</H2>
-        <P>Due to the digital nature of the content, all purchases are final. Refunds will not be issued after 48 hours from the time of purchase. If you experience a technical issue preventing access within 48 hours of purchase, contact radiologystack@gmail.com and we will resolve the issue or issue a refund at our discretion.</P>
+        <P>Due to the digital nature of the content, all purchases are final. Refunds will not be issued after 48 hours from the time of purchase. If you experience a technical issue preventing access within 48 hours of purchase, contact team@radiologystack.com and we will resolve the issue or issue a refund at our discretion.</P>
 
         <H2>6. Account Registration</H2>
         <P>You must create an account to save progress. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.</P>
@@ -65,7 +65,7 @@ export function TermsPage() {
         <P>These Terms are governed by the laws of the Province of Ontario, Canada. Any disputes shall be resolved in the courts of Ontario.</P>
 
         <H2>11. Contact</H2>
-        <P>RadiologyStack is operated as a sole proprietorship. For questions about these Terms, email: radiologystack@gmail.com</P>
+        <P>RadiologyStack is operated as a sole proprietorship. For questions about these Terms, email: team@radiologystack.com</P>
 
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-subtle)' }}>
           <button

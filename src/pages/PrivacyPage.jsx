@@ -50,7 +50,7 @@ export function PrivacyPage() {
         <P>RadiologyStack uses browser localStorage to persist your authentication session. We also use a first-party analytics system to record basic usage events (such as page views and button clicks), which may be linked to your account if you are signed in. We do not currently use third-party analytics or advertising cookies.</P>
 
         <H2>6. Your Rights</H2>
-        <P>You may request deletion of your account and all associated data at any time by emailing radiologystack@gmail.com from your registered email address. We will process deletion requests within 30 days.</P>
+        <P>You may request deletion of your account and all associated data at any time by emailing team@radiologystack.com from your registered email address. We will process deletion requests within 30 days.</P>
         <P>If you are a resident of Canada, you have rights under the Personal Information Protection and Electronic Documents Act (PIPEDA) regarding access to and correction of your personal information.</P>
 
         <H2>7. Children's Privacy</H2>
@@ -60,7 +60,7 @@ export function PrivacyPage() {
         <P>We may update this Privacy Policy. We will notify you of significant changes by email or a notice on the Service. Continued use after changes constitutes acceptance.</P>
 
         <H2>9. Contact</H2>
-        <P>RadiologyStack is operated as a sole proprietorship. For privacy questions or data deletion requests: radiologystack@gmail.com</P>
+        <P>RadiologyStack is operated as a sole proprietorship. For privacy questions or data deletion requests: team@radiologystack.com</P>
 
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-subtle)' }}>
           <button

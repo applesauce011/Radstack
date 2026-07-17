@@ -327,7 +327,7 @@ export function GroupPage() {
             ['You pay once for all seats', 'Enter your program details, choose your seat count, and complete checkout with a single card payment.'],
             ['Each resident gets a unique code', 'After payment, you\'ll see all the access codes immediately — one per resident. Each code is redeemed independently at radiologystack.com/redeem.'],
             ['Individual progress, not shared', 'Every resident has their own account with their own study progress, flagged cards, and streak. Nothing is shared between accounts.'],
-            ['Questions?', 'Email us at radiologystack@gmail.com — we\'re happy to help with invoicing, custom seat counts, or anything else.'],
+            ['Questions?', 'Email us at team@radiologystack.com — we\'re happy to help with invoicing, custom seat counts, or anything else.'],
           ].map(([q, a]) => (
             <div key={q} style={{ marginBottom: '20px' }}>
               <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '4px' }}>{q}</div>

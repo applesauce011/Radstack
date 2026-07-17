@@ -142,7 +142,7 @@ export function PricingPage() {
           display: 'flex', gap: '24px', justifyContent: 'center',
           flexWrap: 'wrap', fontSize: '13px', color: 'var(--text-muted)',
         }}>
-          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', 'Questions? radiologystack@gmail.com'].map(s => (
+          {['Secure payment via Stripe', 'One-time payment, no auto-renewal', 'Questions? team@radiologystack.com'].map(s => (
             <span key={s} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ color: 'var(--accent-cyan)' }}>✓</span>
               {s}

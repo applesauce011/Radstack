@@ -175,7 +175,7 @@ export function GroupSuccessPage() {
             </div>
 
             <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '20px' }}>
-              A copy of these codes has also been saved — contact radiologystack@gmail.com if you need them resent.
+              A copy of these codes has also been saved — contact team@radiologystack.com if you need them resent.
             </p>
           </>
         )}
@@ -192,8 +192,8 @@ export function GroupSuccessPage() {
             <p style={{ color: 'var(--text-secondary)', fontSize: '15px', marginBottom: '24px', lineHeight: '1.6' }}>
               Your codes are being generated — this usually takes under a minute.
               Please refresh this page, or email{' '}
-              <a href="mailto:radiologystack@gmail.com" style={{ color: 'var(--accent-cyan)' }}>
-                radiologystack@gmail.com
+              <a href="mailto:team@radiologystack.com" style={{ color: 'var(--accent-cyan)' }}>
+                team@radiologystack.com
               </a>
               {' '}with your order confirmation and we'll send them right away.
             </p>
@@ -222,8 +222,8 @@ export function GroupSuccessPage() {
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '15px' }}>
               Please email{' '}
-              <a href="mailto:radiologystack@gmail.com" style={{ color: 'var(--accent-cyan)' }}>
-                radiologystack@gmail.com
+              <a href="mailto:team@radiologystack.com" style={{ color: 'var(--accent-cyan)' }}>
+                team@radiologystack.com
               </a>
               {' '}with your payment confirmation and we'll get your codes to you immediately.
             </p>
