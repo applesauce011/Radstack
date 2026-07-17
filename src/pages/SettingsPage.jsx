@@ -286,7 +286,7 @@ export function SettingsPage() {
             <div>
               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: '1.5' }}>
                 To delete your account and all study progress, email{' '}
-                <strong style={{ color: 'var(--text-primary)' }}>radiologystack@gmail.com</strong>{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>team@radiologystack.com</strong>{' '}
                 from your registered email address ({user?.email}). We'll process your request within 30 days.
               </p>
               <div style={{ display: 'flex', gap: '10px' }}>
@@ -302,7 +302,7 @@ export function SettingsPage() {
                   Close
                 </button>
                 <a
-                  href={`mailto:radiologystack@gmail.com?subject=${encodeURIComponent('Delete my account')}&body=${encodeURIComponent(`Please delete my RadiologyStack account (${user?.email}) and all associated data.`)}`}
+                  href={`mailto:team@radiologystack.com?subject=${encodeURIComponent('Delete my account')}&body=${encodeURIComponent(`Please delete my RadiologyStack account (${user?.email}) and all associated data.`)}`}
                   style={{
                     display: 'inline-flex', alignItems: 'center',
                     padding: '10px 20px', borderRadius: 'var(--radius-md)',

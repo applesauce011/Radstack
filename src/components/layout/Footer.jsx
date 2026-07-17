@@ -40,10 +40,10 @@ export function Footer() {
           Privacy Policy
         </button>
         <a
-          href="mailto:radiologystack@gmail.com"
+          href="mailto:team@radiologystack.com"
           style={{ fontSize: '12px', color: 'var(--text-muted)', textDecoration: 'none' }}
         >
-          radiologystack@gmail.com
+          team@radiologystack.com
         </a>
       </div>
     </footer>
