@@ -525,16 +525,16 @@ export function LandingPage() {
 
           <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '13px', color: 'var(--text-muted)' }}>
             Subscribe to unlock full access and track your progress. Buying for your program?{' '}
-            <button
-              onClick={() => navigate('/group')}
+            <a
+              href={`mailto:team@radiologystack.com?subject=${encodeURIComponent('Group access for my program')}`}
               style={{
-                background: 'none', border: 'none', color: 'var(--accent-cyan)',
+                color: 'var(--accent-cyan)',
                 cursor: 'pointer', fontSize: '13px', fontFamily: 'inherit', fontWeight: '600',
-                padding: 0,
+                textDecoration: 'none',
               }}
             >
-              Group discounts available →
-            </button>
+              Email us for group access →
+            </a>
           </p>
         </section>
       )}

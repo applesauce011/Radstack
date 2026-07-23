@@ -14,12 +14,9 @@ import { CheckoutSuccessPage } from './pages/CheckoutSuccessPage'
 import { CheckoutCancelPage } from './pages/CheckoutCancelPage'
 import { TermsPage } from './pages/TermsPage'
 import { PrivacyPage } from './pages/PrivacyPage'
-import { RedeemPage } from './pages/RedeemPage'
 import { AdminPage } from './pages/AdminPage'
 import { StatsPage } from './pages/StatsPage'
 import { DifferentialSprintPage } from './pages/DifferentialSprintPage'
-import { GroupPage } from './pages/GroupPage'
-import { GroupSuccessPage } from './pages/GroupSuccessPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
@@ -30,7 +27,7 @@ const FOOTER_HIDDEN = [
   '/study', '/login', '/register',
   '/forgot-password', '/reset-password',
   '/checkout/success', '/checkout/cancel',
-  '/group/success', '/redeem', '/admin',
+  '/admin',
 ]
 
 function FooterWithGuard() {
@@ -181,13 +178,10 @@ export default function App() {
           preview; access beyond that is gated on subscription (hasAccess)
           inside the page itself, same pattern as flashcard decks. */}
       <Route path="/differential-sprint" element={<DifferentialSprintPage />} />
-      <Route path="/group"     element={<GroupPage />} />
-      <Route path="/group/success" element={<GroupSuccessPage />} />
       <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
       <Route path="/checkout/cancel"  element={<CheckoutCancelPage />} />
       <Route path="/terms"     element={<TermsPage />} />
       <Route path="/privacy"   element={<PrivacyPage />} />
-      <Route path="/redeem"    element={<RedeemPage />} />
       <Route path="/admin"     element={<AdminPage />} />
       <Route path="*"          element={<Navigate to="/" replace />} />
     </Routes>

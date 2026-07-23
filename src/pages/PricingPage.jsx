@@ -176,7 +176,7 @@ export function PricingPage() {
                 Group access for your whole program
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
-                Buying for 3 or more residents? We offer volume discounts: one payment, individual access codes delivered instantly.
+                Buying for 3 or more residents? We offer volume discounts — email us and we'll set your program up.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                 {[
@@ -199,18 +199,20 @@ export function PricingPage() {
                   </div>
                 ))}
               </div>
-              <button
-                onClick={() => navigate('/group')}
+              <a
+                href={`mailto:team@radiologystack.com?subject=${encodeURIComponent('Group access for my program')}`}
                 style={{
+                  display: 'inline-block',
                   padding: '11px 28px', borderRadius: 'var(--radius-md)',
                   background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
                   border: 'none', color: '#fff',
                   fontSize: '14px', fontWeight: '700',
                   cursor: 'pointer', fontFamily: 'var(--font-display)',
+                  textDecoration: 'none',
                 }}
               >
-                Get Group Access →
-              </button>
+                Email team@radiologystack.com →
+              </a>
             </div>
             <div style={{
               flex: '0 0 auto', fontSize: '64px', alignSelf: 'center',
@@ -219,25 +221,6 @@ export function PricingPage() {
               🏥
             </div>
           </div>
-        </div>
-
-        {/* Have a code? */}
-        <div style={{
-          textAlign: 'center', marginTop: '36px', paddingTop: '28px',
-          borderTop: '1px solid var(--border-subtle)',
-        }}>
-          <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
-            Have an access code?{' '}
-          </span>
-          <button
-            onClick={() => navigate('/redeem')}
-            style={{
-              background: 'none', border: 'none', color: 'var(--accent-cyan)',
-              cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit', fontWeight: '600',
-            }}
-          >
-            Redeem it here →
-          </button>
         </div>
 
         {/* Legal footer */}
