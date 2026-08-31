@@ -6,6 +6,8 @@ import { getPremiumCardCount } from '../data/index'
 import { PLANS } from '../data/plans'
 import { Navbar } from '../components/layout/Navbar'
 import { PricingCard } from '../components/paywall/PricingCard'
+import { Modal } from '../components/ui/Modal'
+import { Button } from '../components/ui/Button'
 import { startCheckout, storePendingPlan } from '../utils/checkout'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { trackEvent } from '../utils/analytics'
@@ -16,8 +18,12 @@ export function PricingPage() {
   const { hasAccess, subscription } = useSubscriptionStore()
   const [loadingPlan, setLoadingPlan] = useState(null)
   const [error, setError] = useState(null)
+  const [confirmPlan, setConfirmPlan] = useState(null)
 
   useEffect(() => { trackEvent('pricing_page_viewed') }, [])
+
+  const formatDate = (iso) =>
+    iso ? new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null
 
   usePageMeta({
     title: 'Pricing: RadiologyStack | Flashcards & Differential Sprint',
@@ -25,16 +31,7 @@ export function PricingPage() {
     canonical: 'https://radiologystack.com/pricing',
   })
 
-  const handleSelectPlan = async (plan) => {
-    setError(null)
-    trackEvent('pricing_plan_clicked', { plan_type: plan.id, price: plan.price })
-
-    if (!isAuthenticated) {
-      storePendingPlan(plan.id)
-      navigate('/register')
-      return
-    }
-
+  const proceedToCheckout = async (plan) => {
     setLoadingPlan(plan.id)
     try {
       await startCheckout(plan)
@@ -47,6 +44,33 @@ export function PricingPage() {
       }
       setLoadingPlan(null)
     }
+  }
+
+  const handleSelectPlan = (plan) => {
+    setError(null)
+    trackEvent('pricing_plan_clicked', { plan_type: plan.id, price: plan.price })
+
+    if (!isAuthenticated) {
+      storePendingPlan(plan.id)
+      navigate('/register')
+      return
+    }
+
+    // Already covered — confirm before starting a second payment, since
+    // they may genuinely want to switch/extend plans rather than having
+    // clicked by mistake.
+    if (hasAccess) {
+      setConfirmPlan(plan)
+      return
+    }
+
+    proceedToCheckout(plan)
+  }
+
+  const handleConfirmPurchase = () => {
+    const plan = confirmPlan
+    setConfirmPlan(null)
+    proceedToCheckout(plan)
   }
 
   return (
@@ -242,6 +266,23 @@ export function PricingPage() {
           {' '}Not for clinical use.
         </div>
       </div>
+
+      <Modal isOpen={!!confirmPlan} onClose={() => setConfirmPlan(null)} title="You already have access">
+        <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>
+          Your current plan is active
+          {subscription?.current_period_end && subscription.plan_type !== 'lifetime'
+            ? ` until ${formatDate(subscription.current_period_end)}`
+            : ''}
+          . Purchasing the <strong style={{ color: 'var(--text-primary)' }}>{confirmPlan?.label}</strong> plan will start a new payment.
+        </p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '24px' }}>
+          Only continue if you mean to extend or switch your plan.
+        </p>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <Button variant="secondary" onClick={() => setConfirmPlan(null)} fullWidth>Cancel</Button>
+          <Button variant="primary" onClick={handleConfirmPurchase} fullWidth>Continue to Payment</Button>
+        </div>
+      </Modal>
     </div>
   )
 }
