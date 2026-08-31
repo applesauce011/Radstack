@@ -9,7 +9,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
-    persistSession: false,      // Don't persist session across page reloads
+    persistSession: true,       // Keep the session across page reloads / new tabs
     autoRefreshToken: true,     // Silently refresh access tokens within a session
     detectSessionInUrl: true,   // Handle OAuth / magic-link redirects
     storageKey: 'radstack-auth-v1',
