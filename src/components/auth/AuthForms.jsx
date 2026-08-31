@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
+import { useSubscriptionStore } from '../../store/subscriptionStore'
 import { supabase } from '../../lib/supabase'
 import { Button } from '../ui/Button'
 import { getPlanById } from '../../data/plans'
@@ -152,6 +153,15 @@ export function LoginPage() {
 
       const pendingPlan = getPlanById(peekPendingPlanId())
       if (pendingPlan) {
+        // A pending-plan flag can linger from an earlier, interrupted checkout
+        // attempt. Check for existing access before sending an already-paid
+        // user back to Stripe for a second charge.
+        await useSubscriptionStore.getState().refresh()
+        if (useSubscriptionStore.getState().hasAccess) {
+          clearPendingPlan()
+          navigate('/dashboard', { replace: true })
+          return
+        }
         try {
           await startCheckout(pendingPlan)
           return // browser is navigating to Stripe Checkout
