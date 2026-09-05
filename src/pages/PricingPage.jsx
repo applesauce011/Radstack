@@ -204,9 +204,9 @@ export function PricingPage() {
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                 {[
-                  { seats: '3–9 seats', discount: '20% off', price: '~$119 / resident' },
-                  { seats: '10–19 seats', discount: '30% off', price: '~$104 / resident' },
-                  { seats: '20+ seats', discount: '35% off', price: '~$97 / resident' },
+                  { seats: '3–9 seats', discount: '20% off', price: '~$103 / resident' },
+                  { seats: '10–19 seats', discount: '30% off', price: '~$90 / resident' },
+                  { seats: '20+ seats', discount: '35% off', price: '~$84 / resident' },
                 ].map(tier => (
                   <div key={tier.seats} style={{
                     display: 'flex', alignItems: 'center', gap: '12px',

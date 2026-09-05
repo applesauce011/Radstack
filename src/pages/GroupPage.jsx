@@ -9,7 +9,7 @@ const TIERS = [
   { min: 10, max: 19,  discount: 0.30, label: '30% off' },
   { min: 20, max: Infinity, discount: 0.35, label: '35% off' },
 ]
-const BASE_PRICE_CENTS = 14900  // $149 per seat (12-month plan)
+const BASE_PRICE_CENTS = 12900  // $129 per seat (12-month plan)
 
 function getTier(n) {
   return TIERS.find(t => n >= t.min && n <= t.max) ?? null
