@@ -101,6 +101,7 @@ export function Navbar() {
           active={isActive('/differential-sprint')}
           onClick={() => go('/differential-sprint')}
         />
+        <TopNavLink label="Procedures" active={isActive('/procedures')} onClick={() => go('/procedures')} />
         <TopNavLink label="Pricing" active={isActive('/pricing')} onClick={() => go('/pricing')} />
 
         {isAuthenticated ? (
@@ -240,6 +241,9 @@ export function Navbar() {
             </button>
             <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
               Differential Sprint
+            </button>
+            <button type="button" onClick={() => go('/procedures')} style={mobileMenuItemStyle}>
+              Procedures
             </button>
             <button type="button" onClick={() => go('/pricing')} style={mobileMenuItemStyle}>
               Pricing

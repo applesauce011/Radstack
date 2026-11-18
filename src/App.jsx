@@ -17,6 +17,7 @@ import { PrivacyPage } from './pages/PrivacyPage'
 import { AdminPage } from './pages/AdminPage'
 import { StatsPage } from './pages/StatsPage'
 import { DifferentialSprintPage } from './pages/DifferentialSprintPage'
+import { ProceduresPage } from './pages/ProceduresPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
@@ -195,6 +196,7 @@ export default function App() {
           only fires for a real lapsed subscription, never for subscription == null);
           an expired user gets no free-preview fallback here, same as decks/study. */}
       <Route path="/differential-sprint" element={<RedirectIfExpired><DifferentialSprintPage /></RedirectIfExpired>} />
+      <Route path="/procedures" element={<ProceduresPage />} />
       <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
       <Route path="/checkout/cancel"  element={<CheckoutCancelPage />} />
       <Route path="/terms"     element={<TermsPage />} />
