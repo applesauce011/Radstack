@@ -123,18 +123,34 @@ export function PricingPage() {
           </div>
         )}
 
-        {/* Welcome-back discount banner for never-purchased accounts returning to Pricing */}
+        {/* Welcome-back discount banner for never-purchased accounts returning to Pricing.
+            Deliberately bigger and louder than the other banners here — this one exists
+            to convert, so it should be the first thing the eye catches on the page. */}
         {showWelcomeDiscount && (
           <div style={{
-            padding: '16px 20px', marginBottom: '32px',
-            background: 'rgba(34,211,238,0.06)', border: '1px solid rgba(34,211,238,0.3)',
-            borderRadius: 'var(--radius-lg)', textAlign: 'center',
+            padding: '24px 28px', marginBottom: '32px',
+            background: 'linear-gradient(135deg, rgba(34,211,238,0.14), rgba(251,191,36,0.10))',
+            border: '1px solid rgba(34,211,238,0.45)', borderRadius: 'var(--radius-lg)',
+            textAlign: 'center', boxShadow: '0 0 0 1px rgba(34,211,238,0.08), 0 8px 24px rgba(34,211,238,0.12)',
           }}>
-            <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--accent-cyan)', marginBottom: '4px' }}>
-              🎉 Welcome back — here's {WELCOME_DISCOUNT_PERCENT}% off
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: '6px',
+              padding: '4px 12px', borderRadius: '999px',
+              background: 'var(--accent-amber)', color: '#1a1200',
+              fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em', textTransform: 'uppercase',
+              marginBottom: '12px', animation: 'pulse 1.8s ease-in-out infinite',
+            }}>
+              ⏳ Limited-time offer
             </div>
-            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+            <div style={{
+              fontSize: '22px', fontWeight: '800', letterSpacing: '-0.01em',
+              color: 'var(--text-primary)', marginBottom: '6px',
+            }}>
+              Still not sure? Here's <span style={{ color: 'var(--accent-cyan)' }}>{WELCOME_DISCOUNT_PERCENT}% off</span> to help you decide
+            </div>
+            <div style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
               Pick any plan below and the discount is applied automatically at checkout — no code needed.
+              Don't wait too long, this offer won't stick around.
             </div>
           </div>
         )}
