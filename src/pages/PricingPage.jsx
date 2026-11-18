@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
-import { getPremiumCardCount } from '../data/index'
+import { useProgressStore } from '../store/progressStore'
+import { getPremiumCardCount, getAllAccessibleCards } from '../data/index'
 import { PLANS } from '../data/plans'
 import { Navbar } from '../components/layout/Navbar'
 import { PricingCard } from '../components/paywall/PricingCard'
@@ -11,16 +12,41 @@ import { Button } from '../components/ui/Button'
 import { startCheckout, storePendingPlan } from '../utils/checkout'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { trackEvent } from '../utils/analytics'
+import { PRICING_SEEN_KEY } from '../utils/welcomeDiscount'
+
+const WELCOME_DISCOUNT_PERCENT = 20
 
 export function PricingPage() {
   const navigate = useNavigate()
   const { isAuthenticated } = useAuthStore()
   const { hasAccess, subscription } = useSubscriptionStore()
+  const { getStatsForCards } = useProgressStore()
   const [loadingPlan, setLoadingPlan] = useState(null)
   const [error, setError] = useState(null)
   const [confirmPlan, setConfirmPlan] = useState(null)
+  const [eligibleForWelcomeDiscount, setEligibleForWelcomeDiscount] = useState(false)
 
-  useEffect(() => { trackEvent('pricing_page_viewed') }, [])
+  useEffect(() => {
+    trackEvent('pricing_page_viewed')
+
+    // Welcome-back discount: optimistic, cosmetic-only client check — the
+    // real gate is server-side in api/create-checkout.js (this localStorage
+    // flag is trivially spoofable, so it only controls whether the banner
+    // *shows*, never whether the discount is actually applied).
+    try {
+      const seenBefore = localStorage.getItem(PRICING_SEEN_KEY)
+      if (seenBefore) {
+        setEligibleForWelcomeDiscount(true)
+      } else {
+        localStorage.setItem(PRICING_SEEN_KEY, '1')
+      }
+    } catch {}
+  }, [])
+
+  const isExpiredUser = !hasAccess && !!subscription
+  const showWelcomeDiscount = isAuthenticated && !hasAccess && !subscription && eligibleForWelcomeDiscount
+
+  const expiredStats = isExpiredUser ? getStatsForCards(getAllAccessibleCards(true, false)) : null
 
   const formatDate = (iso) =>
     iso ? new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null
@@ -34,7 +60,7 @@ export function PricingPage() {
   const proceedToCheckout = async (plan) => {
     setLoadingPlan(plan.id)
     try {
-      await startCheckout(plan)
+      await startCheckout(plan, { applyWelcomeDiscount: showWelcomeDiscount })
     } catch (err) {
       console.error('[pricing] checkout error:', err)
       if (err.message === 'Please sign in to continue.') {
@@ -78,8 +104,8 @@ export function PricingPage() {
       <Navbar />
 
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 24px 80px' }}>
-        {/* Expired user banner */}
-        {!hasAccess && subscription && (
+        {/* Expired user banner — personalized with saved progress to maximize resubscribe conversion */}
+        {isExpiredUser && (
           <div style={{
             padding: '16px 20px', marginBottom: '32px',
             background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.25)',
@@ -89,7 +115,26 @@ export function PricingPage() {
               Your access has expired
             </div>
             <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              Pick a plan below to restore full access. Your progress and flagged cards are still saved.
+              {expiredStats?.flagged > 0
+                ? `You have ${expiredStats.flagged} flagged card${expiredStats.flagged !== 1 ? 's' : ''} and ${expiredStats.gotIt} completed. Resubscribe to pick up where you left off.`
+                : `You completed ${expiredStats?.gotIt ?? 0} card${expiredStats?.gotIt === 1 ? '' : 's'}. Resubscribe to continue studying all ${getPremiumCardCount()}+.`
+              }
+            </div>
+          </div>
+        )}
+
+        {/* Welcome-back discount banner for never-purchased accounts returning to Pricing */}
+        {showWelcomeDiscount && (
+          <div style={{
+            padding: '16px 20px', marginBottom: '32px',
+            background: 'rgba(34,211,238,0.06)', border: '1px solid rgba(34,211,238,0.3)',
+            borderRadius: 'var(--radius-lg)', textAlign: 'center',
+          }}>
+            <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--accent-cyan)', marginBottom: '4px' }}>
+              🎉 Welcome back — here's {WELCOME_DISCOUNT_PERCENT}% off
+            </div>
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              Pick any plan below and the discount is applied automatically at checkout — no code needed.
             </div>
           </div>
         )}
@@ -112,7 +157,7 @@ export function PricingPage() {
             fontWeight: '800', letterSpacing: '-0.03em', color: 'var(--text-primary)',
             marginBottom: '16px',
           }}>
-            {!hasAccess && subscription ? 'Renew your RadiologyStack access' : 'Unlock full access to RadiologyStack'}
+            {isExpiredUser ? 'Renew your RadiologyStack access' : 'Unlock full access to RadiologyStack'}
           </h1>
           <p style={{
             fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.6',
@@ -146,6 +191,7 @@ export function PricingPage() {
               plan={plan}
               onSelect={handleSelectPlan}
               loading={loadingPlan === plan.id}
+              discountPercent={showWelcomeDiscount ? WELCOME_DISCOUNT_PERCENT : null}
             />
           ))}
         </div>
