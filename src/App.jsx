@@ -59,6 +59,20 @@ function RedirectIfAuth({ children }) {
   return children
 }
 
+// Blocks content routes once a paid plan has lapsed, sending the user to
+// /pricing to resubscribe. subscriptionStore.isLoaded only ever becomes true
+// for an authenticated user (loadSubscription is never called for anonymous
+// visitors), so we must gate on auth state first — otherwise an anonymous
+// visitor to an unguarded route like /decks would be stuck on AppLoader forever.
+function RedirectIfExpired({ children }) {
+  const { isAuthenticated, isLoading: authLoading } = useAuthStore()
+  const { isExpired, isLoaded: subLoaded } = useSubscriptionStore()
+  if (authLoading) return <AppLoader />
+  if (isAuthenticated && !subLoaded) return <AppLoader />
+  if (isExpired) return <Navigate to="/pricing" replace />
+  return children
+}
+
 function AppLoader() {
   return (
     <div style={{
@@ -135,6 +149,9 @@ export default function App() {
           if (user && !isSynced) {
             loadForUser(user.id)
           }
+          // Re-check subscription expiry hourly too, not just at sign-in —
+          // otherwise a long-lived open tab never notices a plan lapsing.
+          if (user) loadSubscription(user.id)
           return
         }
 
@@ -167,17 +184,17 @@ export default function App() {
       <Route path="/register"         element={<RedirectIfAuth><RegisterPage /></RedirectIfAuth>} />
       <Route path="/forgot-password"  element={<ForgotPasswordPage />} />
       <Route path="/reset-password"   element={<ResetPasswordPage />} />
-      <Route path="/dashboard" element={<RequireAuth><DashboardPage /></RequireAuth>} />
+      <Route path="/dashboard" element={<RequireAuth><RedirectIfExpired><DashboardPage /></RedirectIfExpired></RequireAuth>} />
       <Route path="/decks"     element={<Navigate to={`/decks/${defaultDeck}`} replace />} />
-      <Route path="/decks/:subspecialtyId" element={<DecksPage />} />
-      <Route path="/study"     element={<StudyPage />} />
+      <Route path="/decks/:subspecialtyId" element={<RedirectIfExpired><DecksPage /></RedirectIfExpired>} />
+      <Route path="/study"     element={<RedirectIfExpired><StudyPage /></RedirectIfExpired>} />
       <Route path="/pricing"   element={<PricingPage />} />
       <Route path="/settings"  element={<RequireAuth><SettingsPage /></RequireAuth>} />
-      <Route path="/stats"     element={<RequireAuth><StatsPage /></RequireAuth>} />
-      {/* Not RequireAuth-gated — anonymous visitors get a 4-question free
-          preview; access beyond that is gated on subscription (hasAccess)
-          inside the page itself, same pattern as flashcard decks. */}
-      <Route path="/differential-sprint" element={<DifferentialSprintPage />} />
+      <Route path="/stats"     element={<RequireAuth><RedirectIfExpired><StatsPage /></RedirectIfExpired></RequireAuth>} />
+      {/* Anonymous visitors still get a 4-question free preview (RedirectIfExpired
+          only fires for a real lapsed subscription, never for subscription == null);
+          an expired user gets no free-preview fallback here, same as decks/study. */}
+      <Route path="/differential-sprint" element={<RedirectIfExpired><DifferentialSprintPage /></RedirectIfExpired>} />
       <Route path="/checkout/success" element={<RequireAuth><CheckoutSuccessPage /></RequireAuth>} />
       <Route path="/checkout/cancel"  element={<CheckoutCancelPage />} />
       <Route path="/terms"     element={<TermsPage />} />

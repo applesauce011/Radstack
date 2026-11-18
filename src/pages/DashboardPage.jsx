@@ -3,7 +3,7 @@ import { useNavigate, Navigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import { useProgressStore } from '../store/progressStore'
 import { useSubscriptionStore } from '../store/subscriptionStore'
-import { SUBSPECIALTIES, getAccessibleCardsBySubspecialty, getAllAccessibleCards, getPremiumCardCount } from '../data/index'
+import { SUBSPECIALTIES, getAccessibleCardsBySubspecialty, getAllAccessibleCards } from '../data/index'
 import { Navbar } from '../components/layout/Navbar'
 import { TriProgressBar } from '../components/ui/ProgressBar'
 
@@ -287,58 +287,9 @@ function DifferentialSprintBanner() {
   )
 }
 
-function ExpiredBanner({ subscription }) {
-  const navigate = useNavigate()
-  const { getStatsForCards } = useProgressStore()
-  // Show full history stats so the renewal CTA feels meaningful
-  const allCards = getAllAccessibleCards(true, false)
-  const stats = getStatsForCards(allCards)
-
-  const expiredOn = subscription?.current_period_end
-    ? new Date(subscription.current_period_end).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-    : null
-
-  return (
-    <div style={{
-      padding: '16px 20px',
-      background: 'rgba(239,68,68,0.06)',
-      border: '1px solid rgba(239,68,68,0.25)',
-      borderRadius: 'var(--radius-lg)',
-      marginBottom: '28px',
-      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      flexWrap: 'wrap', gap: '12px',
-    }}>
-      <div>
-        <div style={{ fontSize: '13px', fontWeight: '700', color: 'var(--accent-rose)', marginBottom: '4px' }}>
-          Your premium access has expired{expiredOn ? ` · ${expiredOn}` : ''}
-        </div>
-        <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          {stats.flagged > 0
-            ? `You have ${stats.flagged} flagged card${stats.flagged !== 1 ? 's' : ''} and ${stats.gotIt} completed. Renew to pick up where you left off.`
-            : `You completed ${stats.gotIt} card${stats.gotIt !== 1 ? 's' : ''}. Renew to continue studying all ${getPremiumCardCount()}+.`
-          }
-        </div>
-      </div>
-      <button
-        onClick={() => navigate('/pricing')}
-        style={{
-          padding: '10px 20px', borderRadius: 'var(--radius-md)',
-          background: 'var(--accent-rose)', border: 'none',
-          color: '#fff', fontSize: '14px', fontWeight: '700',
-          cursor: 'pointer', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap',
-        }}
-      >
-        Renew Access →
-      </button>
-    </div>
-  )
-}
-
 export function DashboardPage() {
   const { user } = useAuthStore()
   const { hasAccess, hasAnatomyAccess, subscription, isLoaded } = useSubscriptionStore()
-
-  const isExpired = !hasAccess && !!subscription
 
   // Wait for subscription state before deciding to redirect
   if (!isLoaded) {
@@ -352,14 +303,12 @@ export function DashboardPage() {
     )
   }
 
-  // New user: never subscribed — redirect to pricing
+  // Never subscribed — redirect to pricing. (An expired user with a lapsed
+  // subscription never reaches this page at all — RedirectIfExpired in
+  // App.jsx sends them straight to /pricing before Dashboard mounts.)
   if (!hasAccess && !subscription) {
     return <Navigate to="/pricing" replace />
   }
-
-  // Expired users see their full history on the dashboard — pass displayAccess=true
-  // so the stats and deck cards reflect all the work they've done, not just free cards.
-  const displayAccess = hasAccess || isExpired
 
   const hour = new Date().getHours()
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
@@ -369,8 +318,6 @@ export function DashboardPage() {
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
       <Navbar />
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '40px 24px' }}>
-        {isExpired && <ExpiredBanner subscription={subscription} />}
-
         <div style={{ marginBottom: '32px' }}>
           <h1 style={{
             fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 4vw, 32px)',
@@ -382,11 +329,11 @@ export function DashboardPage() {
           <p style={{ color: 'var(--text-muted)', fontSize: '15px' }}>Here's your study overview.</p>
         </div>
 
-        <StreakStrip hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
+        <StreakStrip hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
         <DifferentialSprintBanner />
 
-        <ContinueStudyBanner hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
+        <ContinueStudyBanner hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
         <div style={{
           fontSize: '13px', fontWeight: '700', letterSpacing: '0.02em',
@@ -399,14 +346,14 @@ export function DashboardPage() {
         <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px' }}>
           Overall Progress
         </div>
-        <OverallStats hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
+        <OverallStats hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
         <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '12px' }}>
           Subspecialty Decks
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
           {SUBSPECIALTIES.map(sub => (
-            <SubspecialtyCard key={sub.id} sub={sub} hasAccess={displayAccess} hasAnatomyAccess={hasAnatomyAccess} />
+            <SubspecialtyCard key={sub.id} sub={sub} hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
           ))}
         </div>
       </div>

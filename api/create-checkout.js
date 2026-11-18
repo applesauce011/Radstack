@@ -40,17 +40,37 @@ export default async function handler(req, res) {
   if (authError || !user) return res.status(401).json({ error: 'Unauthorized' })
 
   // Parse body (Vercel parses JSON bodies automatically)
-  const { priceId } = req.body
+  const { priceId, applyWelcomeDiscount } = req.body
   if (!priceId || !VALID_PRICE_IDS().includes(priceId)) {
     return res.status(400).json({ error: 'Invalid price ID' })
   }
 
-  // Check if this user already has a Stripe customer record
+  // Check if this user already has a Stripe customer record / subscription row
   const { data: existingSub } = await supabaseAdmin
     .from('subscriptions')
     .select('stripe_customer_id')
     .eq('user_id', user.id)
     .maybeSingle()
+
+  // Welcome-back discount eligibility is always re-derived here — the
+  // client's `applyWelcomeDiscount` flag (and the localStorage check behind
+  // it) is only a UI hint and is never trusted on its own. Eligible means:
+  // never purchased, AND has a `pricing_page_viewed` analytics event from
+  // more than ~2 minutes ago (so the very first visit, which just logged
+  // this same event, never qualifies).
+  let discountEligible = false
+  if (applyWelcomeDiscount && !existingSub && process.env.STRIPE_COUPON_WELCOME20) {
+    const twoMinutesAgo = new Date(Date.now() - 2 * 60 * 1000).toISOString()
+    const { data: priorView } = await supabaseAdmin
+      .from('analytics_events')
+      .select('id')
+      .eq('user_id', user.id)
+      .eq('event_name', 'pricing_page_viewed')
+      .lt('created_at', twoMinutesAgo)
+      .limit(1)
+      .maybeSingle()
+    discountEligible = !!priorView
+  }
 
   let session
   try {
@@ -69,7 +89,11 @@ export default async function handler(req, res) {
       // user_id is stored in metadata so the webhook can write the subscription row
       metadata: { user_id: user.id },
 
-      allow_promotion_codes: true,
+      // Stripe doesn't allow allow_promotion_codes together with discounts
+      // on the same session.
+      ...(discountEligible
+        ? { discounts: [{ coupon: process.env.STRIPE_COUPON_WELCOME20 }] }
+        : { allow_promotion_codes: true }),
 
       // Stripe Tax — requires Stripe Tax product to be enabled in dashboard
       automatic_tax: { enabled: true },

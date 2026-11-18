@@ -1,7 +1,12 @@
 import React from 'react'
 
-export function PricingCard({ plan, onSelect, loading }) {
+export function PricingCard({ plan, onSelect, loading, discountPercent }) {
   const { label, tagline, price, period, perDay, features, highlight, badge } = plan
+
+  const basePrice = parseInt(String(price).replace(/[^0-9]/g, ''), 10)
+  const discountedPrice = discountPercent
+    ? Math.round(basePrice * (1 - discountPercent / 100))
+    : null
 
   return (
     <div style={{
@@ -45,11 +50,19 @@ export function PricingCard({ plan, onSelect, loading }) {
 
       <div style={{ marginBottom: '24px' }}>
         <div>
+          {discountedPrice != null && (
+            <span style={{
+              fontSize: '20px', fontWeight: '700', color: 'var(--text-muted)',
+              textDecoration: 'line-through', marginRight: '8px',
+            }}>
+              {price}
+            </span>
+          )}
           <span style={{
             fontSize: '40px', fontWeight: '800', color: highlight ? 'var(--accent-cyan)' : 'var(--text-primary)',
             fontFamily: 'var(--font-display)', letterSpacing: '-0.03em',
           }}>
-            {price}
+            {discountedPrice != null ? `$${discountedPrice}` : price}
           </span>
           <span style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-muted)', marginLeft: '5px' }}>
             USD

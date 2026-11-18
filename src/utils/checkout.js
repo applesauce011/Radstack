@@ -20,7 +20,9 @@ export function clearPendingPlan() {
 
 // Creates a Stripe Checkout session for `plan` and redirects the browser
 // to it. Throws on failure; on success the page navigates away.
-export async function startCheckout(plan) {
+// `applyWelcomeDiscount` is only a hint — api/create-checkout.js always
+// re-verifies eligibility server-side before actually applying anything.
+export async function startCheckout(plan, { applyWelcomeDiscount = false } = {}) {
   const priceId = getPriceId(plan.priceEnvKey)
   if (!priceId) throw new Error('Pricing is not yet configured. Please try again later.')
 
@@ -34,7 +36,7 @@ export async function startCheckout(plan) {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     },
-    body: JSON.stringify({ priceId }),
+    body: JSON.stringify({ priceId, applyWelcomeDiscount }),
   })
 
   const json = await res.json()
