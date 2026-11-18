@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useSubscriptionStore } from '../store/subscriptionStore'
 import { Navbar } from '../components/layout/Navbar'
 import { clearPendingPlan } from '../utils/checkout'
+import { getPlanById } from '../data/plans'
+import { fireGoogleAdsPurchaseConversion } from '../utils/googleAds'
 
 export function CheckoutSuccessPage() {
   const navigate = useNavigate()
@@ -19,6 +21,15 @@ export function CheckoutSuccessPage() {
 
       if (active) {
         setStatus('success')
+
+        // Report the purchase to Google Ads. Uses the Stripe Checkout
+        // session_id as the dedupe key, so this never double-fires even
+        // though this poll can re-run or the page can be refreshed.
+        const sessionId = new URLSearchParams(window.location.search).get('session_id')
+        const plan = getPlanById(useSubscriptionStore.getState().subscription?.plan_type)
+        const value = plan ? parseFloat(plan.price.replace(/[^0-9.]/g, '')) : undefined
+        fireGoogleAdsPurchaseConversion({ transactionId: sessionId, value, currency: 'USD' })
+
         setTimeout(() => navigate('/dashboard'), 2500)
         return
       }
