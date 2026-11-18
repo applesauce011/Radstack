@@ -10,7 +10,7 @@ const CONVERSION_ID = 'AW-981487661'
 // Fill this in from the conversion action created in Google Ads:
 // Goals > Conversions > Summary > Purchase > "Use Google Tag" > the
 // event snippet shown there has send_to: 'AW-981487661/<THIS_PART>'.
-const PURCHASE_CONVERSION_LABEL = ''
+const PURCHASE_CONVERSION_LABEL = 'aKTiCM3R7rodEK2ggdQD'
 
 const FIRED_KEY_PREFIX = 'radstack-gads-conversion-'
 
