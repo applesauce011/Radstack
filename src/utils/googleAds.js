@@ -5,12 +5,9 @@
 // to gtag so Google Ads can dedupe server-side, and is also used as a
 // local dedupe key so a page refresh, the StrictMode double-render, or
 // the success-page poll retry never reports the same sale twice.
-const CONVERSION_ID = 'AW-981487661'
+const CONVERSION_ID = 'AW-18583310008'
 
-// Fill this in from the conversion action created in Google Ads:
-// Goals > Conversions > Summary > Purchase > "Use Google Tag" > the
-// event snippet shown there has send_to: 'AW-981487661/<THIS_PART>'.
-const PURCHASE_CONVERSION_LABEL = 'aKTiCM3R7rodEK2ggdQD'
+const PURCHASE_CONVERSION_LABEL = 'MGZiCJmSiLsdELidm51F'
 
 const FIRED_KEY_PREFIX = 'radstack-gads-conversion-'
 
