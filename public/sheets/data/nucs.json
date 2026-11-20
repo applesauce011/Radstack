@@ -1,0 +1,1795 @@
+{
+ "id": "nucs",
+ "title": "☢️ Nucs",
+ "schema": 1,
+ "sections": [
+  {
+   "layout": "grid",
+   "min": 300,
+   "cards": [
+    {
+     "title": "🔍 What scan is it?",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "nucs-whatscan"
+      },
+      {
+       "type": "mnemonic",
+       "html": "Spleen wins = WBC · Glands + gut = Gallium · Kidneys + spleen screaming = Somatostatin · No kidneys + heart = MIBG"
+      }
+     ]
+    },
+    {
+     "title": "☢️ Isotopes",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Isotope",
+        "keV",
+        "T½"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Tc-99m",
+          "140",
+          "<span class=\"rs-num\">6 h</span>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "I-123",
+          "159",
+          "<span class=\"rs-num\">13 h</span>"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "I-131",
+          "364 (+β)",
+          "<span class=\"rs-num\">8 d</span>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "In-111",
+          "171, 245",
+          "<span class=\"rs-num\">67 h</span>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Ga-67",
+          "93, 185, 300, 394",
+          "<span class=\"rs-num\">78 h</span>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Tl-201",
+          "69–83",
+          "<span class=\"rs-num\">73 h</span>"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Xe-133",
+          "81",
+          "<span class=\"rs-num\">5.3 d</span>"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "F-18",
+          "511",
+          "<span class=\"rs-num\">110 min</span>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Rb-82 · Ga-68",
+          "511 (generators)",
+          "<span class=\"rs-num\">75 s · 68 min</span>"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "heading",
+       "text": "Critical organ"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "MDP, FDG, MAG3, DTPA",
+         "a": "Bladder",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "DMSA",
+         "a": "Kidney",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gallium",
+         "a": "Colon",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "In-WBC, In-octreotide",
+         "a": "Spleen",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "HIDA",
+         "a": "GB wall",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "heading",
+       "text": "Particle size"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "MAA",
+         "a": "10–100 µm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Lymphoscint (filtered SC)",
+         "a": "<100 nm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Liver–spleen SC",
+         "a": "0.1–1 µm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Y-90 spheres",
+         "a": "20–40 µm",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layout": "grid",
+   "min": 300,
+   "cards": [
+    {
+     "title": "🟢 HIDA flow",
+     "hue": 100,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "nucs-hida"
+      }
+     ]
+    },
+    {
+     "title": "🫘 Renogram curves",
+     "hue": 170,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "nucs-renogram"
+      }
+     ]
+    },
+    {
+     "title": "❤️ Coronary territories",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "nucs-bullseye"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "layout": "columns",
+   "cards": [
+    {
+     "title": "🦴 Bone scan",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "No kidneys, everything hot",
+         "a": "Superscan",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "…+ hot skull, long bones",
+         "a": "Metabolic (HPT)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Solitary sternal lesion, breast CA",
+         "a": "80% met",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Solitary rib lesion",
+         "a": "10% met",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Ribs in a vertical line",
+         "a": "Fractures",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Worse 2 wk–3 mo after Rx",
+         "a": "Flare (good)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "H-shaped sacrum",
+         "a": "Insufficiency fx",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tram-track long bones",
+         "a": "HPOA → chest CT",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Double density",
+         "a": "Osteoid osteoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cold mets",
+         "a": "RCC, thyroid, myeloma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Liver uptake",
+         "a": "Excess Al³⁺",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Spleen uptake",
+         "a": "Sickle cell",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hot kidneys",
+         "a": "Chemo / obstruction",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hot muscles (runner)",
+         "a": "Rhabdo",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Elderly, neg at",
+         "a": "1 wk = no fx",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Equivocal lesion",
+         "a": "X-ray → MRI",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦴 3-phase",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Flow",
+        "Pool",
+        "Delay"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Cellulitis",
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          "—"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Osteomyelitis",
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Fracture",
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Shin splints",
+          "—",
+          "—",
+          {
+           "html": "linear",
+           "class": "rs-hot"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "CRPS",
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "↑",
+           "class": "rs-hot"
+          },
+          {
+           "html": "periarticular",
+           "class": "rs-hot"
+          }
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3,
+        4
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Prosthesis uptake normal for",
+         "a": "1 y cemented / 2 y not",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "AVN early → repair → late",
+         "a": "cold → hot → cold",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦠 Infection",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Spine osteo / discitis",
+         "a": "Ga-67 or FDG",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "WBC in spine",
+         "a": "False-negative (cold)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Abdominal abscess",
+         "a": "In-111 WBC",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Prosthesis / Charcot",
+         "a": "WBC + SC marrow",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "WBC hot, SC cold",
+         "a": "Infection",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Kids, hands/feet",
+         "a": "Tc-HMPAO WBC",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Image In-WBC at",
+         "a": "24 h",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Panda + λ sign (Ga)",
+         "a": "Sarcoid",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Diffuse lung Ga, immunocomp.",
+         "a": "PCP",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Tl",
+        "Ga"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Kaposi",
+          {
+           "html": "+",
+           "class": "rs-hot"
+          },
+          "−"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Lymphoma",
+          {
+           "html": "+",
+           "class": "rs-hot"
+          },
+          {
+           "html": "+",
+           "class": "rs-hot"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "TB / infection",
+          "−",
+          {
+           "html": "+",
+           "class": "rs-hot"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Toxo (brain)",
+          "−",
+          "±"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "KaT · TuG · Lymphoma likes both"
+      }
+     ]
+    },
+    {
+     "title": "🫁 V/Q",
+     "hue": 190,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "MAA particles",
+         "a": "200–600 k",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Shunt / pulm HTN / preg / kids",
+         "a": "↓ to ~100 k",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "…dose changed?",
+         "a": "No, same mCi",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Brain uptake",
+         "a": "R→L shunt",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Thyroid + stomach",
+         "a": "Free Tc",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hot clumps",
+         "a": "Blood in syringe",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Xe-133 done",
+         "a": "First (81 keV)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Xe washout retention",
+         "a": "Air trapping",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Xe in RUQ",
+         "a": "Fatty liver",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Whole lung absent Q, normal V",
+         "a": "Low prob → CT (mass)",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "PIOPED II",
+        "Finding"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "High",
+          "≥2 large mismatched segments"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Intermediate",
+          "Triple match <b>lower</b> zone"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Very low",
+          "Stripe sign · triple match upper zone · nonsegmental"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Normal",
+          "No Q defect = no PE"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦋 Thyroid",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Trapped",
+        "Organified"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "I-123 / I-131",
+          "✓",
+          "✓"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Tc-99m",
+          "✓",
+          "✗"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hot on Tc, cold on I-123",
+         "a": "Discordant → FNA",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Cold nodule cancer",
+         "a": "15–20%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hot nodule cancer",
+         "a": "<1%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Hyperthyroid + low uptake",
+         "a": "Thyroiditis / iodine load",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Homogeneous ↑ + pyramidal lobe",
+         "a": "Graves",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hot nodules, cold background",
+         "a": "Toxic MNG",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RAIU normal 24 h",
+         "a": "10–30%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Recent IV contrast →",
+         "a": "Use Tc (or wait 4–6 wk)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Breastfeed: Tc · I-123 · I-131",
+         "a": "1 d · 3 d · stop",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💊 I-131 therapy",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Graves",
+         "a": "10–15 mCi",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Toxic MNG",
+         "a": "25–30 mCi",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Toxic adenoma",
+         "a": "20–25 mCi",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Ca: remnant · nodes · mets",
+         "a": "30 · 100–150 · 200",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "TSH goal",
+         "a": ">30",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Release (NRC)",
+         "a": "≤33 mCi or ≤7 mR/h @1 m",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Liver uptake on iodine scan",
+         "a": "Post-therapy scan",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rising Tg, negative iodine scan",
+         "a": "FDG PET",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Avoid pregnancy",
+         "a": "6–12 mo",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Dialysis patient",
+         "a": "Dose after dialysis, ↓ dose",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Doesn't take up iodine",
+         "a": "Medullary, anaplastic",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔘 Parathyroid",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Adenoma · hyperplasia · CA",
+         "a": "85 · 12 · 3%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Sestamibi: retained on delay",
+         "a": "Adenoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common false +",
+         "a": "Thyroid nodule",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common false −",
+         "a": "Small adenoma, hyperplasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lymph nodes on MIBI",
+         "a": "Abnormal → US",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧠 Brain",
+     "hue": 60,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Disease",
+        "Hypometabolism"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Alzheimer",
+          "Post. cingulate + temporoparietal"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Lewy body",
+          "AD + occipital, cingulate spared"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "FTD",
+          "Frontal + anterior temporal"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Huntington",
+          "Caudate"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Multi-infarct",
+          "Scattered, asymmetric"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Seizure focus: ictal / interictal",
+         "a": "<span class=\"rs-hot\">hot</span> / <span class=\"rs-cold\">cold</span>",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ictal injection within",
+         "a": "30 s",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Diamox: at-risk territory",
+         "a": "Looks worse",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "DaTscan \"full stop\"",
+         "a": "Parkinson",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "DaTscan normal",
+         "a": "Essential tremor",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tumour vs radiation necrosis",
+         "a": "Tl hot = tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hot nose sign",
+         "a": "Brain death (2° sign)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Contralateral cerebellum ↓",
+         "a": "Crossed diaschisis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "NPH cisternogram",
+         "a": "Ventricles early + >24 h",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "CSF leak pledget : serum",
+         "a": ">1.5",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟢 HIDA",
+     "hue": 100,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rim sign",
+         "a": "Gangrenous GB",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Abnormal GBEF",
+         "a": "<38% (CCK over 60 min)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Fasting >24 h / TPN",
+         "a": "CCK first",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Neonate: bowel seen",
+         "a": "Excludes atresia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Phenobarb before neonatal HIDA",
+         "a": "5 mg/kg × 5 d",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bile leak: look at",
+         "a": "R paracolic gutter",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "High bilirubin agent",
+         "a": "Mebrofenin",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩸 GI",
+     "hue": 100,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "RBC scan vs angio sensitivity",
+         "a": "0.1 vs 1 mL/min",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Positive bleed",
+         "a": "Grows + moves",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gastric activity on RBC scan",
+         "a": "Check thyroid: free Tc",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Best RBC labeling",
+         "a": "In vitro (>95%)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Meckel tracer · booster",
+         "a": "TcO₄⁻ · H2 blocker",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gastric emptying abnormal",
+         "a": ">10% at 4 h",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hold before emptying study",
+         "a": "Prokinetics, opiates",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Liver lesion",
+        "Sulfur colloid"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "FNH",
+          {
+           "html": "Hot / normal (Kupffer)",
+           "class": "rs-hot"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Adenoma, HCC, mets, abscess",
+          {
+           "html": "Cold",
+           "class": "rs-cold"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Hemangioma",
+          "Cold; <b>RBC hot on delay</b>"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "HCC on gallium",
+          {
+           "html": "Hot",
+           "class": "rs-hot"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Spleen ≥ liver, ↑ marrow",
+          "Colloid shift (cirrhosis)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Lung uptake",
+          "Excess Al³⁺"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫘 Renal",
+     "hue": 170,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Agent",
+        "Measures"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "DTPA",
+          "GFR (filtered)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "MAG3",
+          "ERPF (secreted), poor function"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "DMSA",
+          "Cortex: pyelo / scar"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Lasix T½ clear · grey · obstructed",
+         "a": "<10 · 10–20 · >20 min",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "False + obstruction",
+         "a": "Dehydration, full bladder",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Captopril: unilateral worse",
+         "a": "RAS",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Split function normal",
+         "a": "45–55%",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Transplant",
+        "Flow",
+        "Excretion"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "ATN (days)",
+          "Normal",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Rejection",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Cyclosporine (later)",
+          "Normal",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          }
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Urinoma",
+          {
+           "html": "—",
+           "colspan": 1
+          },
+          {
+           "html": "Fills in",
+           "class": "rs-hot"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Lymphocele (4–8 wk)",
+          "—",
+          {
+           "html": "Stays cold",
+           "class": "rs-cold"
+          }
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔥 FDG PET",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Glucose limit",
+         "a": "<200 mg/dL",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Diffuse muscle",
+         "a": "Insulin",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Diffuse colon",
+         "a": "Metformin",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hot pacemaker / metal",
+         "a": "Check non-AC images",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Cold tumours",
+         "a": "Mucinous, AIS, carcinoid, RCC, HCC, prostate, MALT",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hot benign bone",
+         "a": "GCT, fibrous dysplasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Focal thyroid uptake",
+         "a": "US ± FNA",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Postmenopausal ovary uptake",
+         "a": "Pelvic US",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Wait after chemo / RT",
+         "a": "2–3 wk / 8–12 wk",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "PET+ mediastinal node",
+         "a": "EBUS before denying surgery",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Thymic rebound vs lymphoma",
+         "a": "Mild + triangular vs hot ball",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Deauville complete response",
+         "a": "1–3 (≤ liver)",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧬 Neuroendocrine",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Tumour",
+        "Best tracer"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Neuroblastoma",
+          "MIBG"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Adrenal pheo",
+          "MIBG"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Carcinoid, gastrinoma, paraganglioma",
+          "Octreotide / DOTATATE"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Medullary thyroid",
+          "Octreotide (then FDG)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Insulinoma",
+          "Poor on octreotide"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Poorly differentiated NET",
+          "FDG"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Before MIBG",
+         "a": "Block thyroid (SSKI)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common MIBG variant",
+         "a": "Brown fat",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Skeleton on MIBG",
+         "a": "Diffuse bone mets",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "DOTATATE > liver",
+         "a": "Eligible for Lu-177",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Hold before MIBG: LaCTeRS (Labetalol, CCB, TCA, Reserpine, Sympathomimetics)"
+      }
+     ]
+    },
+    {
+     "title": "📍 Sentinel node · MBI",
+     "hue": 215,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Lymphoscint particle ≥500 nm",
+         "a": "Always wrong",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Melanoma depth for SLNB",
+         "a": "~1–4 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Breast deep injection shows",
+         "a": "Internal mammary",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MBI tracer",
+         "a": "Sestamibi",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MBI lowest background",
+         "a": "Mid-cycle",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "❤️ Cardiac",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Reversible / fixed",
+         "a": "Ischemia / scar",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "TID",
+         "a": "LM / 3-vessel",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "↑ Lung uptake (Tl)",
+         "a": "Multivessel / LV dysfunction",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "LBBB false septal defect",
+         "a": "Use vasodilator",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Caffeine blocks",
+         "a": "Vasodilator stress",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Reversal agent",
+         "a": "Aminophylline",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Asthma/COPD stress",
+         "a": "Dobutamine",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Breast / diaphragm artifact",
+         "a": "Anterior / inferior",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MUGA: LA overlap / spleen bkg",
+         "a": "False ↓ / false ↑ EF",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PYP grade 2–3, no M-protein",
+         "a": "ATTR amyloid",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Perfusion",
+        "Motion",
+        "FDG"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Stunned",
+          "Normal",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          "+"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Hibernating",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          {
+           "html": "+",
+           "class": "rs-hot"
+          }
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Scar",
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          {
+           "html": "↓",
+           "class": "rs-cold"
+          },
+          "−"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3,
+        4
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Stunned = supplied but shocked · Hibernating = hungry but alive (eats FDG)"
+      }
+     ]
+    },
+    {
+     "title": "💉 Therapy",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Emitter",
+        "Key fact"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Sr-89",
+          "Pure β",
+          "Worst marrow"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Sm-153",
+          "β + 103 keV γ",
+          "Imageable"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Ra-223",
+          "α",
+          "Survival ↑, fecal excretion"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Lu-177 PSMA",
+          "β + γ",
+          "Needs PSMA+ PET"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Y-90 lung shunt: full · reduce · no",
+         "a": "<10 · 10–20 · >20%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Lung dose limit",
+         "a": "30 Gy / 50 Gy total",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "GI shunt on MAA",
+         "a": "Coil GDA etc.",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Bone agents need",
+         "a": "Blastic mets",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

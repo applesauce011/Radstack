@@ -18,6 +18,7 @@ import { AdminPage } from './pages/AdminPage'
 import { StatsPage } from './pages/StatsPage'
 import { DifferentialSprintPage } from './pages/DifferentialSprintPage'
 import { ProceduresPage } from './pages/ProceduresPage'
+import { CheatSheetsPage } from './pages/CheatSheetsPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
@@ -189,6 +190,10 @@ export default function App() {
       <Route path="/decks"     element={<Navigate to={`/decks/${defaultDeck}`} replace />} />
       <Route path="/decks/:subspecialtyId" element={<RedirectIfExpired><DecksPage /></RedirectIfExpired>} />
       <Route path="/study"     element={<RedirectIfExpired><StudyPage /></RedirectIfExpired>} />
+      {/* Access is checked per-sheet inside CheatSheetsPage (only `nucs` is free),
+          not by a route guard, since one route covers both free and locked sheets. */}
+      <Route path="/cheat-sheets"           element={<Navigate to="/cheat-sheets/nucs" replace />} />
+      <Route path="/cheat-sheets/:sheetId"  element={<CheatSheetsPage />} />
       <Route path="/pricing"   element={<PricingPage />} />
       <Route path="/settings"  element={<RequireAuth><SettingsPage /></RequireAuth>} />
       <Route path="/stats"     element={<RequireAuth><RedirectIfExpired><StatsPage /></RedirectIfExpired></RequireAuth>} />

@@ -96,6 +96,7 @@ export function Navbar() {
       {/* Desktop nav — hidden below the mobile breakpoint (see index.css) */}
       <div className="navbar-desktop" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
         <TopNavLink label="Decks" active={isActive('/decks')} onClick={() => go('/decks')} />
+        <TopNavLink label="Cheat Sheets" active={isActive('/cheat-sheets')} onClick={() => go('/cheat-sheets')} />
         <TopNavLink
           label="Differential Sprint"
           active={isActive('/differential-sprint')}
@@ -238,6 +239,9 @@ export function Navbar() {
           }}>
             <button type="button" onClick={() => go('/decks')} style={mobileMenuItemStyle}>
               Decks
+            </button>
+            <button type="button" onClick={() => go('/cheat-sheets')} style={mobileMenuItemStyle}>
+              Cheat Sheets
             </button>
             <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
               Differential Sprint

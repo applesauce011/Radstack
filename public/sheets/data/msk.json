@@ -1,0 +1,2881 @@
+{
+ "schema": 1,
+ "id": "msk",
+ "title": "🦴 MSK",
+ "sections": [
+  {
+   "title": "🦴 Anatomy & diagrams",
+   "subtitle": "very high yield",
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🦴 Pelvic avulsions",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-avulsion"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "ASIS",
+         "a": "Sartorius (± TFL)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "AIIS",
+         "a": "Rectus femoris (straight head)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ischial tuberosity",
+         "a": "Hamstrings",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lesser trochanter",
+         "a": "Iliopsoas",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Isolated lesser troch. avulsion, adult",
+         "a": "Pathologic fx → look for met",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "✋ Carpals & perilunate spectrum",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-carpals"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "SL gap (Terry Thomas)",
+         "a": ">3 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Next step if SL suspected, film normal",
+         "a": "Clenched-fist view",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Perilunate: lunate…",
+         "a": "stays on radius, rest dislocate",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lunate dislocation",
+         "a": "Spilled teacup · most severe",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Perilunate + scaphoid fx",
+         "a": "~60% (trans-scaphoid)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Chronic SL tear",
+         "a": "SLAC wrist (radioscaphoid first)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "📐 DISI vs VISI",
+     "hue": 270,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-sl-angle"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "DISI",
+         "a": "SL ligament (radial side) · common",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "VISI",
+         "a": "LT ligament (ulnar side) · rare/lax",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SL angle normal",
+         "a": "30–60°",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎯 Glenoid labrum",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-labrum"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common SLAP",
+         "a": "Type II (biceps anchor detached)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sublabral recess vs SLAP",
+         "a": "Smooth, follows glenoid vs ratty, lateral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Buford complex",
+         "a": "Absent anterosup. labrum + cord-like MGHL",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Perthes",
+         "a": "Labrum torn, periosteum intact (lifted)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ALPSA",
+         "a": "Medially displaced, rolled-up, scars down",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "HAGL",
+         "a": "IGHL off humerus · J sign",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌙 Meniscus",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-meniscus"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Red (vascular) zone",
+         "a": "Peripheral 1/3 · can heal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Horizontal cleavage tear",
+         "a": "Parameniscal cyst",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Radial tear consequence",
+         "a": "Loss of hoop strength → extrusion",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Double PCL sign",
+         "a": "Medial bucket handle (ACL intact)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Discoid",
+         "a": "Lateral · ≥3 bow ties · kids tear",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Humphry vs Wrisberg",
+         "a": "Anterior vs posterior to PCL",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦶 Ankle tendons",
+     "hue": 190,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-ankle"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Medial order (ant→post)",
+         "a": "TP, FDL, artery/vein/nerve, FHL",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Achilles",
+         "a": "No sheath → paratenonitis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🗺️ Where in the bone?",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-lesion-map"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Epiphysis mnemonic",
+         "a": "AIG: ABC, Infection, GCT, chondroblastoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Malignant epiphyseal, adult",
+         "a": "Clear cell chondrosarcoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Age <30",
+         "a": "EG, ABC, NOF, chondroblastoma, SBC",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Age >40",
+         "a": "Mets, myeloma (± lymphoma)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Best sign of aggressiveness",
+         "a": "Wide zone of transition",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "👶 Salter–Harris",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-salter"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common",
+         "a": "Type II",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Tillaux",
+         "a": "SH III, anterolateral distal tibia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Why Tillaux",
+         "a": "Distal tibial physis closes medial → lateral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Triplane",
+         "a": "SH IV (sag + axial + coronal planes)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🖐️ Hand arthritis maps",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-hand-arthritis"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Gull wing (central erosions), DIP",
+         "a": "Erosive OA",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pencil-in-cup, mouse ears",
+         "a": "Psoriatic",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Marginal erosions + osteopenia",
+         "a": "RA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hooked MCP osteophytes",
+         "a": "CPPD / hemochromatosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Reducible ulnar deviation, no erosions",
+         "a": "SLE / Jaccoud",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Subperiosteal resorption, radial 2nd–3rd middle phalanges",
+         "a": "Hyperparathyroidism",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🩹 Trauma & sports",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "⏱️ Healing & stress fractures",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Fracture line becomes more visible at",
+         "a": "7–14 days",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Non-union classic sites",
+         "a": "Scaphoid, ant. tibia, lat. femoral neck",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bisphosphonate (atypical) fx",
+         "a": "LATERAL subtroch. femoral cortex",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SONK",
+         "a": "Insufficiency fx, medial femoral condyle",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Stress fx",
+        "Risk"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Femoral neck — superolateral (tensile)",
+          "High"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Femoral neck — inferomedial (compressive)",
+          "Low"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Anterior mid-tibia (dreaded black line)",
+          "High"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Posteromedial tibia (most common, athletes)",
+          "Low"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Navicular · talus · 5th MT · sesamoid",
+          "High"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Calcaneus · 2nd–3rd MT (march)",
+          "Low"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "✋ Wrist & hand",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common carpal fx / site",
+         "a": "Scaphoid · waist (70%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Scaphoid AVN pole",
+         "a": "Proximal (retrograde supply)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Occult scaphoid fx next step",
+         "a": "MRI",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Normal volar tilt",
+         "a": "~11°",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "+ ulnar variance",
+         "a": "Ulnar impaction, TFCC tear, lunate cysts",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "– ulnar variance",
+         "a": "Kienböck (lunate AVN)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gamekeeper (UCL thumb) — complication",
+         "a": "Stener lesion (adductor aponeurosis)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gamekeeper next step",
+         "a": "MRI (no stress views)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Bennett vs Rolando",
+         "a": "1st MC base, non-comminuted vs comminuted",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hook of hamate fx / handlebars",
+         "a": "Guyon canal (ulnar n.)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Fx",
+        "Key"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Colles",
+          "Dorsal angulation, older (fall)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Smith",
+          "Volar angulation, younger"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Barton",
+          "Intra-artic. rim + radiocarpal dislocation"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🤚 Wrist tendons & tunnels",
+     "hue": 170,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "De Quervain compartment",
+         "a": "1st (APL + EPB)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "EPL compartment / landmark",
+         "a": "3rd · Lister tubercle",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Early RA tenosynovitis",
+         "a": "ECU (6th)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Carpal tunnel contents",
+         "a": "Median n. + FPL + 4 FDS + 4 FDP",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "NOT in carpal tunnel",
+         "a": "FCR, FCU, palmaris longus, FPB",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rice bodies in sheath",
+         "a": "TB (or end-stage RA)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💪 Elbow & forearm",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common elbow fx: adult / child",
+         "a": "Radial head / supracondylar",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior fat pad",
+         "a": "Always abnormal → occult fx",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UCL partial tear sign",
+         "a": "T sign (sublime tubercle)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Little leaguer",
+         "a": "Medial epicondyle apophysis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Posterolateral rotatory instability",
+         "a": "LUCL first",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Accessory muscle → cubital tunnel",
+         "a": "Anconeus epitrochlearis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tennis elbow tendon",
+         "a": "ECRB (common extensor)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Supracondylar (avian) spur",
+         "a": "Points to joint · median n.",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Eponym",
+        "Broken",
+        "Dislocated"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Monteggia",
+          "Ulna (proximal)",
+          "Radial head"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Galeazzi",
+          "Radius shaft",
+          "DRUJ"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Essex-Lopresti",
+          "Radial head",
+          "DRUJ + IOM tear"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "MUGR: <b>M</b>onteggia = <b>U</b>lna, <b>G</b>aleazzi = <b>R</b>adius"
+      }
+     ]
+    },
+    {
+     "title": "🏈 Shoulder",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Dislocation direction",
+         "a": "Anterior (~95%)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hill-Sachs",
+         "a": "Posterolateral head · internal rotation view",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Posterior dislocation signs",
+         "a": "Trough, rim, light bulb",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior dislocation cause",
+         "a": "Seizure / electrocution",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Luxatio erecta",
+         "a": "Axillary n. injury ~60%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Subscapularis tear",
+         "a": "Biceps dislocates medially",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Frozen shoulder",
+         "a": "RI fat obliterated · ↓ joint volume",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Normal AC / CC distance",
+         "a": "<5 mm / <11–13 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Reverse TSA needs",
+         "a": "Deltoid (cuff can be torn)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔄 Rotator cuff & impingement",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common tear",
+         "a": "Supraspinatus, 1–2 cm from footprint",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Partial tears: which surface",
+         "a": "Articular (≈3×)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Full-thickness on arthrogram",
+         "a": "Contrast into SASD bursa",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Partial tear → surgery",
+         "a": ">50% thickness",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Calcific tendinitis site",
+         "a": "Supraspinatus (HADD)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Impingement",
+        "Pinch",
+        "Damages"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Subacromial",
+          "CA arch / acromion",
+          "Supraspinatus"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Subcoracoid",
+          "Coracoid + lesser tuberosity",
+          "Subscapularis"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Posterosup. internal",
+          "Post-sup glenoid + GT (ABER, throwers)",
+          "Infraspinatus"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⚡ Nerve entrapment",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cyst at suprascapular notch",
+         "a": "Supra- + infraspinatus",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cyst at spinoglenoid notch",
+         "a": "Infraspinatus only",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Quadrilateral space (axillary n.)",
+         "a": "Teres minor atrophy",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "≥2 nerve territories, no mass",
+         "a": "Parsonage-Turner",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦵 Hip & pelvis",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cam vs pincer",
+         "a": "Young man (femur) vs middle-aged woman",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cam alpha angle",
+         "a": ">55°",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Pincer sign",
+         "a": "Crossover sign (+ coxa profunda / protrusio)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hip labral tear location",
+         "a": "Anterosuperior (+ paralabral cyst)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Internal snapping hip test",
+         "a": "Dynamic US (iliopsoas)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Posterior hip dislocation",
+         "a": "Dashboard · post. wall fx",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Iliopectineal / ilioischial lines",
+         "a": "Anterior / posterior column",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sacral insufficiency fx",
+         "a": "Honda / H sign",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "THA",
+        "Sign"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Loosening",
+          "Lucency <span class=\"rs-num\">>2 mm</span> or component migration"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Subsidence",
+          "<span class=\"rs-num\">>1 cm</span> or progressive"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Particle disease",
+          "Smooth endosteal scalloping, 1–5 y, no sclerosis"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦿 Knee",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Segond (lateral tibia)",
+         "a": "ACL tear (~75%)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Reverse Segond (medial)",
+         "a": "PCL + medial meniscus",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Arcuate sign (fibular head)",
+         "a": "PCL / posterolateral corner",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ACL kissing contusions",
+         "a": "Lat. fem. condyle + posterolat. tibia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "ACL mucoid degeneration",
+         "a": "Celery stalk (T2) / drumstick",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PCL tear / knee dislocation next",
+         "a": "Assess popliteal artery (CTA)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Missed injury → ACL graft failure",
+         "a": "Posterolateral corner",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Magic angle",
+         "a": "55° · short TE only (gone on T2)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Baker cyst neck",
+         "a": "Medial gastroc ↔ semimembranosus",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "ACL graft",
+        "Problem"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Tibial tunnel anterior to Blumensaat",
+          "Roof impingement"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Nodular scar ant. to graft (~16 wk)",
+          "Cyclops → ↓ extension"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Flat graft (peak risk 4–8 mo)",
+          "Tear"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔗 Patella",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Dislocation direction",
+         "a": "Lateral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Contusions",
+         "a": "Medial patella + lat. femoral condyle",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Torn ligament",
+         "a": "MPFL",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Patella alta",
+         "a": "Patellar tendon tear (SLE, steroids)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩰 Ankle & foot",
+     "hue": 190,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Weakest / most torn ligament",
+         "a": "ATFL (inversion)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Widened mortise → next step",
+         "a": "Image proximal fibula (Maisonneuve)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Bilateral calcaneal fx next step",
+         "a": "Image T12–L2 (Casanova)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Böhler angle",
+         "a": "Normal 20–40°, <20 = fx",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "5th MT: Jones",
+         "a": "1.5 cm distal to tuberosity → non-union",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Lisfranc ligament",
+         "a": "Medial cuneiform → 2nd MT base",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lisfranc clue",
+         "a": "Fleck sign · need weight-bearing film",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Acute flat foot",
+         "a": "Posterior tibial tendon tear",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Achilles tear site",
+         "a": "~4 cm above insertion",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bilateral thick Achilles",
+         "a": "Xanthoma (hyperlipidemia)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "'Achilles tear' but still plantarflexes",
+         "a": "Plantaris (tennis leg)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Os trigonum syndrome",
+         "a": "Ballet · FHL tenosynovitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Plantar fasciitis",
+         "a": ">4 mm, central band, morning pain",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧩 Foot mimics & coalitions",
+     "hue": 60,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Teardrop mass 3rd intermetatarsal",
+         "a": "Morton neuroma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Morton signal / position",
+         "a": "T1+T2 dark, below transverse lig.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Calcaneonavicular coalition",
+         "a": "Anteater sign (lateral)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Talocalcaneal coalition",
+         "a": "C sign, middle facet",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Charcot vs osteomyelitis",
+         "a": "Midfoot vs pressure points/ulcer",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🧪 Bone health, infection, marrow",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "📉 Bone density",
+     "hue": 210,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "T-score: normal / osteopenia / osteoporosis",
+         "a": ">−1 / −1 to −2.5 / ≤−2.5",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Z-score compares to",
+         "a": "Age-matched (Zame age)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Falsely ↑ BMD",
+         "a": "Osteophytes, compression fx, metal, Ca++",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "FRAX use",
+         "a": "Osteopenia (T −1 to −2.5), untreated",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "FRAX treat threshold (10 y)",
+         "a": "Hip ≥3% · major ≥20%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Looser zones",
+         "a": "⊥ cortex, femoral neck/pubic rami → osteomalacia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Transient osteoporosis (exam)",
+         "a": "3rd-trimester female, left hip",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⚫ Hip edema & vertebral collapse",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "MRI",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Transient osteoporosis",
+          "Diffuse edema, no line; film very lucent"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "AVN",
+          "Serpiginous line · double-line sign (T2)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Insufficiency fx",
+          "Line parallel to subchondral bone"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "AVN on film = imminent collapse",
+         "a": "Crescent sign (frog-leg)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Collapse",
+        "Benign",
+        "Malignant"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "T1",
+          "Band-like dark line, rest fatty",
+          "Diffuse replacement"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Posterior wall",
+          "Retropulsed fragment",
+          "Convex bulge, pedicle"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Marrow darker than disc/muscle on T1",
+         "a": "Abnormal (tumour/leukemia)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧒 Osteochondroses",
+     "hue": 40,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Name",
+        "Site",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Kienböck",
+          "Lunate",
+          "– ulnar variance"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Freiberg",
+          "2nd MT head",
+          "Adolescent girl"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Köhler",
+          "Navicular",
+          "Boy 4–6"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Panner",
+          "Whole capitellum",
+          "Age <span class=\"rs-num\">5–10</span>, no loose bodies"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Legg-Calvé-Perthes",
+          "Femoral head",
+          "4–8 y"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Scheuermann",
+          "T-spine",
+          "<span class=\"rs-num\">≥3</span> wedged levels, kyphosis <span class=\"rs-num\">>40°</span>"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Osgood-Schlatter",
+          "Tibial tubercle",
+          "Jumping/kicking teen"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Capitellar OCD",
+         "a": "12–16 y, throwers, loose bodies",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Knee OCD classic site",
+         "a": "Lateral aspect MEDIAL femoral condyle",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Unstable OCD",
+         "a": "T2 fluid line undercutting fragment",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦠 Osteomyelitis & infection",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Film lag",
+         "a": "7–10 days",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Child hematogenous site",
+         "a": "Metaphysis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sequestrum / involucrum / cloaca",
+         "a": "Dead bone / new shell / hole",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diabetic foot MRI",
+         "a": "T1 dark marrow by ulcer (specific)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "TB spine (Pott)",
+         "a": "Spares disc, skip levels, gibbus",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Calcified psoas abscess",
+         "a": "TB",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Unilateral SI / SC joint septic",
+         "a": "IV drug use",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gas in soft tissue",
+         "a": "Necrotizing fasciitis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌗 Marrow",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Red → yellow direction",
+         "a": "Peripheral → axial (hands/feet first)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Within long bone (conversion)",
+         "a": "Epiph → diaph → distal → prox. metaph",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Reconversion order",
+         "a": "Reverse (axial first, epiphyses last)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Red marrow on T1",
+         "a": "Brighter than muscle/disc (40% fat)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🏛️ Paget",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Wide bone + thick trabeculae",
+         "a": "Paget (pathognomonic)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lytic long bone edge",
+         "a": "Blade of grass / flame",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lytic skull",
+         "a": "Osteoporosis circumscripta",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Vertebra: all 4 margins",
+         "a": "Picture frame (vs rugger jersey: endplates)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common complication",
+         "a": "Deafness",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sarcoma risk / type",
+         "a": "~1% · osteosarcoma",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Malignant change vs active Paget",
+         "a": "Loss of T1 fat (T1 pre-con)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💀 Skull patterns",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hair-on-end",
+         "a": "Thalassemia > sickle (marrow expansion)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cotton wool / Tam o'Shanter",
+         "a": "Paget (both tables thick)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Osteoporosis circumscripta",
+         "a": "Paget lytic phase",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Salt & pepper",
+         "a": "Hyperparathyroidism",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Punched-out, no rim",
+         "a": "Myeloma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Beveled edge / button sequestrum",
+         "a": "EG (LCH)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ground glass, outer table",
+         "a": "Fibrous dysplasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thick frontal inner table, older woman",
+         "a": "Hyperostosis frontalis interna",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Spoke-wheel lucency",
+         "a": "Hemangioma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Wormian bones",
+         "a": "OI, cleidocranial, hypothyroid, Down",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩸 Systemic & dysplasias",
+     "hue": 350,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "H-shaped vertebra",
+         "a": "Sickle cell (else Gaucher)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Erlenmeyer flask",
+         "a": "Gaucher (also osteopetrosis)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hair-on-end + sinus obliteration",
+         "a": "Thalassemia (sickle spares sinuses)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rugger jersey spine",
+         "a": "Renal osteodystrophy (also osteopetrosis)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "HPT classic sites",
+         "a": "Radial 2–3 phalanges, tufts, clavicle, SI",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bone islands clustered at joints",
+         "a": "Osteopoikilosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "'Dripping candle wax' cortical hyperostosis, one limb",
+         "a": "Melorheostosis",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Tibial bowing",
+        "Direction"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "NF1",
+          "Anterolateral, pseudarthrosis"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Physiologic",
+          "Lateral, bilateral, 18 mo–2 y"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Blount",
+          "Varus, proximal medial tibia"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "OFD / adamantinoma",
+          "Anterior"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🎯 Tumours",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🔍 Lesion buzzwords",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Long lesion, long bone, ground glass",
+         "a": "Fibrous dysplasia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "FD + café-au-lait + precocious puberty",
+         "a": "McCune-Albright",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "FD + soft-tissue myxomas",
+         "a": "Mazabraud",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Night pain, aspirin, nidus <2 cm",
+         "a": "Osteoid osteoma",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Same, >2 cm / posterior elements",
+         "a": "Osteoblastoma",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Fallen fragment",
+         "a": "Simple bone cyst (central)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fluid–fluid levels",
+         "a": "ABC, telangiectatic OS, GCT",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Vertebra plana: kid / adult",
+         "a": "EG / mets (MELT)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lucent lesion in finger",
+         "a": "Enchondroma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Calcaneus fat + central calcification",
+         "a": "Intraosseous lipoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "NOF-like, anterior tibia, bowing",
+         "a": "OFD (≈ adamantinoma)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posteromedial distal femur scoop",
+         "a": "Cortical desmoid → don't touch",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧱 GCT & chondroid lesions",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "GCT rules",
+         "a": "Closed physis · abuts joint · no sclerotic rim",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "GCT lung mets",
+         "a": "~5% (benign mets)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Chondroblastoma",
+         "a": "Epiphysis, 5–25 y, rim, lots of edema",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Enchondroma matrix",
+         "a": "Arcs & rings (not in hands)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Multiple enchondromas (often one side)",
+         "a": "Ollier",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Enchondromas + soft-tissue hemangiomas (phleboliths)",
+         "a": "Maffucci (higher sarcoma risk)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Osteochondroma cap concern",
+         "a": ">1.5 cm",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Favors",
+        "Enchondroma",
+        "Chondrosarc."
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Pain",
+          "No",
+          "Yes"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Size",
+          "1–2 cm",
+          ">4–5 cm"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Endosteal scalloping",
+          "<2/3",
+          ">2/3 cortex"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔥 Malignant bone",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Osteosarcoma",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Conventional (85%)",
+          "10–20 y, metaphysis, sunburst/Codman"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Parosteal",
+          "Posterior distal femur, string sign, low grade"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Telangiectatic",
+          "Fluid levels, mimics ABC"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Myositis ossificans vs OS",
+         "a": "Peripheral vs central (reverse zoning)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Permeative diaphyseal lesion, child",
+         "a": "Ewing",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Chordoma",
+         "a": "Midline only: sacrum > clivus > C2",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Always lytic mets",
+         "a": "Renal, thyroid",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bone island vs prostate met — next",
+         "a": "Bone scan (island cold)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Myeloma imaging",
+         "a": "Bone scan cold · MRI most sensitive",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Mini-brain vertebra",
+         "a": "Plasmacytoma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧽 Soft-tissue masses",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Old, proximal limb, T2 dark, bleeds",
+         "a": "UPS (MFH)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Young, peripheral, near joint (not in), calcified",
+         "a": "Synovial sarcoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Synovial sarcoma signs",
+         "a": "Triple sign, bowl of grapes",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Flow voids + fat + phleboliths",
+         "a": "Hemangioma (next: X-ray)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "T1 darker than muscle, T2 bright",
+         "a": "Myxoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Liposarcoma clues",
+         "a": "Thick septa, nodules, deep, large",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Knee, blooming on GRE",
+         "a": "PVNS",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PVNS vs synovial chondromatosis",
+         "a": "Blooms, no Ca++ vs uniform calcified bodies",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Frond-like fat, suprapatellar",
+         "a": "Lipoma arborescens",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Don't touch",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Myositis ossificans",
+          "Peripheral rim calcification"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Cortical desmoid",
+          "Posteromedial distal femur"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🧭 Arthritis & procedures",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🧭 Arthritis patterns",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Distribution",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "OA",
+          "DIP, PIP, 1st CMC, medial knee",
+          "Osteophytes, asymmetric"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Erosive OA",
+          "DIP/PIP, older women",
+          "Gull wing, ankylosis"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "RA",
+          "MCP, carpals, 5th MT head first",
+          "Osteopenia, marginal erosions, uniform"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Psoriatic",
+          "DIP, ray, asymmetric",
+          "Proliferation, pencil-in-cup, sausage"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Reactive",
+          "Feet > hands",
+          "Like psoriatic, below waist"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "AS",
+          "SI (bilateral) → spine",
+          "Bamboo, shiny corners"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Gout",
+          "1st MTP, man >40",
+          "Overhanging edges, joint spared"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "CPPD",
+          "TFCC, PF, radiocarpal, 2–3 MCP",
+          "Chondrocalc., big cysts"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Hemochrom.",
+          "All MCPs",
+          "Hooked osteophytes"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "JIA / hemophilia",
+          "Knee",
+          "Epiphyseal overgrowth, wide notch"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hip OA vs RA migration",
+         "a": "Superolateral vs axial (medial)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Isolated PF / radiocarpal / talonavicular OA",
+         "a": "CPPD",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hooked MCP osteophytes: all vs 2–3",
+         "a": "Hemochromatosis vs CPPD",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Gout mimics — <b>A</b>merican <b>R</b>oentgen <b>R</b>ay <b>S</b>ociety <b>H</b>ooray: Amyloid, RA, Reticulohistiocytosis, Sarcoid, Hyperlipidemia"
+      }
+     ]
+    },
+    {
+     "title": "🍑 SI joints & spine",
+     "hue": 210,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Unilateral sacroiliitis",
+         "a": "Infection (IVDU)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral symmetric",
+         "a": "AS, IBD",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral asymmetric",
+         "a": "Psoriatic, reactive",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "AS / DISH + minor trauma",
+         "a": "CT whole spine",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "DISH",
+         "a": "ALL ≥4 levels, discs kept, SI normal",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "OPLL",
+         "a": "Cervical, Asian men, stenosis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💥 Neuropathic & crystals",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Neuropathic 'Ds'",
+         "a": "Density, destruction, debris, dislocation, deformity",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Neuropathic shoulder next step",
+         "a": "Image cervical cord (syrinx)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Charcot foot",
+         "a": "Midfoot, rocker-bottom",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💉 Procedures & joint trivia",
+     "hue": 160,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hip arthrogram target",
+         "a": "Superolateral head–neck junction",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Avoid in MR arthrogram",
+         "a": "Air (susceptibility)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Iodine allergy, needs steroid only",
+         "a": "Confirm with air",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Gad allergy, needs arthrogram",
+         "a": "CT arthrogram",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "GH ↔ SASD bursa",
+         "a": "Abnormal: full-thickness cuff tear",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ankle ↔ peroneal sheath",
+         "a": "Abnormal: CFL tear",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "US tendon looks dark but normal",
+         "a": "Anisotropy (angle beam)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🩻 Fracture eponyms",
+   "subtitle": "very high yield",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "✋ Wrist",
+     "hue": 200,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-wrist"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Normal volar tilt",
+         "a": "~11° (accept ≥ neutral)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Colles companion fx",
+         "a": "Ulnar styloid",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "👍 Hand & fingers",
+     "hue": 170,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-hand"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Thumb UCL injury next step",
+         "a": "MRI, not stress views",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💪 Forearm (ring)",
+     "hue": 280,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-forearm"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "One forearm bone broken",
+         "a": "Image elbow + wrist (2nd injury)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Mnemonic",
+         "a": "MUGR: Monteggia–Ulna, Galeazzi–Radius",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦶 Ankle",
+     "hue": 190,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-ankle"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Medial clear space abnormal",
+         "a": ">4 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Isolated medial malleolus / wide mortise",
+         "a": "Image whole fibula",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "👣 Foot",
+     "hue": 60,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-foot"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Suspected Lisfranc, normal film",
+         "a": "Weight-bearing film (or CT)",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦵 Knee",
+     "hue": 140,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-knee"
+      }
+     ]
+    },
+    {
+     "title": "🏈 Shoulder",
+     "hue": 45,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-shoulder"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rim sign (posterior dislocation)",
+         "a": "GH space >6 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Equivocal AP next step",
+         "a": "Axillary or scapular Y view",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦴 Spine",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-spine-fx"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "AS / DISH + minor trauma",
+         "a": "CT whole spine",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Hangman =",
+         "a": "Traumatic spondylolisthesis of C2",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚫ Osteonecrosis",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "⚫ Osteochondroses / osteonecrosis",
+     "hue": 30,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-osteochondroses"
+      }
+     ]
+    },
+    {
+     "title": "🦴 Femoral head AVN",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-avn"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most sensitive test",
+         "a": "MRI (double line)",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🔍 Patterns & classic looks",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "📐 Periosteum & destruction",
+     "hue": 280,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-periosteal"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Best single sign of aggressiveness",
+         "a": "Wide zone of transition",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔍 Classic lesions",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-lesions"
+      }
+     ]
+    },
+    {
+     "title": "🖐️ Arthritis close-ups",
+     "hue": 330,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-arthritis"
+      }
+     ]
+    },
+    {
+     "title": "🕯️ Paget, dysplasias, enchondromatoses",
+     "hue": 40,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-dysplasias"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Paget most common complication / sarcoma",
+         "a": "Deafness / osteosarcoma (~1%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Ollier vs Maffucci",
+         "a": "Maffucci adds hemangiomas, more malignancy",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💀 Skull vault patterns",
+     "hue": 300,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-skull"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hair-on-end spares",
+         "a": "Occiput below inion (no marrow)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Paget vs fibrous dysplasia skull",
+         "a": "Both tables vs outer table",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧱 Vertebral signs",
+     "hue": 210,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "msk-xr-spine-signs"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rugger jersey also seen in",
+         "a": "Osteopetrosis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

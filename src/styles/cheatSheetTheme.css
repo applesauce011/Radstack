@@ -1,0 +1,41 @@
+/* Cheat Sheets theme: maps the sheet package's --rs-* variables (see
+   public/sheets/template/sheet.css) onto RadStack's own palette.
+   Per README.md "Instructions for Claude Code": only --rs-* custom
+   properties are set here — sheet.css/sheet.js are never edited. */
+.rs-sheet {
+  --rs-font: var(--font-body);
+  --rs-bg: var(--bg-primary);
+  --rs-fg: var(--text-primary);
+  --rs-muted: var(--text-secondary);
+  --rs-card: var(--bg-elevated);
+  --rs-border: var(--border-default);
+  --rs-soft: var(--bg-hover);
+  --rs-accent: var(--accent-cyan);
+
+  --rs-red-bg: var(--accent-rose-dim);
+  --rs-red-fg: var(--accent-rose);
+  --rs-yel-bg: var(--accent-amber-dim);
+  --rs-yel-fg: var(--accent-amber);
+  --rs-blue-bg: var(--accent-blue-dim);
+  --rs-blue-fg: var(--accent-blue);
+  --rs-green-bg: var(--accent-emerald-dim);
+  --rs-green-fg: var(--accent-emerald);
+
+  --rs-hot: var(--accent-rose);
+  --rs-cold: var(--accent-blue);
+  --rs-heat1: rgba(245, 158, 11, 0.3);
+  --rs-heat2: #f59e0b;
+  --rs-heat3: #f43f5e;
+  --rs-quiz: #2a3348;
+
+  --rs-sticky-top: 64px;
+}
+
+/* Temporary highlight for a search result jumped to from the search bar. */
+.rs-sheet .cs-search-hit {
+  animation: cs-search-flash 2.4s ease-out;
+}
+@keyframes cs-search-flash {
+  0%, 35% { box-shadow: 0 0 0 2px var(--accent-cyan), var(--shadow-glow); }
+  100% { box-shadow: none; }
+}

@@ -178,7 +178,7 @@ export function LandingPage() {
 
   usePageMeta({
     title: 'RadiologyStack — Radiology Board Study Platform for FRCPC & ABR',
-    description: 'The complete radiology board studying platform for Canadian Royal College (FRCPC) and ABR exam prep. 1000+ high-yield flashcards plus Differential Sprint, rapid board-style differential diagnosis practice, across 12 subspecialties. Free preview available.',
+    description: 'The complete radiology board studying platform for Canadian Royal College (FRCPC) and ABR exam prep. 1000+ high-yield flashcards, Differential Sprint rapid board-style differential diagnosis practice, and Cheat Sheets for daily review, across 12 subspecialties. Free preview available.',
     canonical: 'https://radiologystack.com/',
   })
 
@@ -219,7 +219,7 @@ export function LandingPage() {
           fontSize: '18px', color: 'var(--text-secondary)', lineHeight: '1.65',
           maxWidth: '580px', margin: '0 auto 40px',
         }}>
-          High-yield flashcards and rapid board-style differential diagnosis practice across every radiology subspecialty. Built for Canadian Royal College and ABR exam prep.
+          High-yield flashcards, rapid board-style differential diagnosis practice, and daily-review Cheat Sheets across every radiology subspecialty. Built for Canadian Royal College and ABR exam prep.
         </p>
 
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -519,6 +519,42 @@ export function LandingPage() {
                 }}
               >
                 Try Differential Sprint Free →
+              </button>
+            </div>
+
+            <div style={{
+              flex: 1, minWidth: '260px', padding: '32px 28px',
+              background: 'var(--bg-card)', border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-xl)', textAlign: 'center',
+              position: 'relative',
+            }}>
+              <div style={{
+                position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)',
+                background: 'linear-gradient(135deg, #10B981, #22D3EE)',
+                color: '#fff', fontSize: '10px', fontWeight: '700', letterSpacing: '0.06em',
+                textTransform: 'uppercase', padding: '3px 12px', borderRadius: '999px',
+                whiteSpace: 'nowrap',
+              }}>New</div>
+              <div style={{ fontSize: '40px', marginBottom: '14px' }}>📋</div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontSize: '18px',
+                fontWeight: '800', color: 'var(--text-primary)', marginBottom: '8px',
+              }}>
+                Cheat Sheets
+              </h3>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                Compact daily-review sheets with quiz mode and ⭐ only. Try Nuclear Medicine free.
+              </p>
+              <button
+                onClick={() => navigate('/cheat-sheets')}
+                style={{
+                  width: '100%', padding: '12px', borderRadius: 'var(--radius-md)',
+                  background: '#10B981', border: 'none',
+                  color: '#fff', fontSize: '14px', fontWeight: '700',
+                  cursor: 'pointer', fontFamily: 'var(--font-display)',
+                }}
+              >
+                Try Cheat Sheets Free →
               </button>
             </div>
           </div>

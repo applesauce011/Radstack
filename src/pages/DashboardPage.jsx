@@ -250,6 +250,43 @@ function ContinueStudyBanner({ hasAccess, hasAnatomyAccess }) {
   )
 }
 
+function CheatSheetsBanner() {
+  const navigate = useNavigate()
+  return (
+    <div style={{
+      padding: '20px 24px',
+      background: 'linear-gradient(135deg, rgba(16,185,129,0.10), rgba(34,211,238,0.06))',
+      border: '1px solid rgba(16,185,129,0.3)',
+      borderRadius: 'var(--radius-lg)', marginBottom: '16px',
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      flexWrap: 'wrap', gap: '12px',
+    }}>
+      <div>
+        <div style={{ fontSize: '12px', fontWeight: '600', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#10B981', marginBottom: '4px' }}>
+          New · Cheat Sheets
+        </div>
+        <div style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+          📋 Compact Daily Review
+        </div>
+        <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '2px' }}>
+          Quiz mode, ⭐ only, and search — built for memorization
+        </div>
+      </div>
+      <button
+        onClick={() => navigate('/cheat-sheets')}
+        style={{
+          padding: '10px 20px', borderRadius: 'var(--radius-md)',
+          background: '#10B981', border: 'none',
+          color: '#fff', fontSize: '14px', fontWeight: '700',
+          cursor: 'pointer', fontFamily: 'var(--font-display)', whiteSpace: 'nowrap',
+        }}
+      >
+        Open Cheat Sheets →
+      </button>
+    </div>
+  )
+}
+
 function DifferentialSprintBanner() {
   const navigate = useNavigate()
   return (
@@ -332,6 +369,8 @@ export function DashboardPage() {
         <StreakStrip hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
         <DifferentialSprintBanner />
+
+        <CheatSheetsBanner />
 
         <ContinueStudyBanner hasAccess={hasAccess} hasAnatomyAccess={hasAnatomyAccess} />
 
