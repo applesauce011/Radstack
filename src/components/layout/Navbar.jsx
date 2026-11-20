@@ -77,13 +77,14 @@ export function Navbar() {
           display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0,
         }}
       >
-        <div style={{
-          width: '32px', height: '32px', borderRadius: '8px',
-          background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '16px', fontWeight: '800', color: '#fff',
-          fontFamily: 'var(--font-display)',
-        }}>R</div>
+        <img
+          src="/logo-mark.jpg"
+          alt="RadiologyStack"
+          style={{
+            width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover', flexShrink: 0,
+            border: '1.5px solid rgba(34,211,238,0.55)',
+          }}
+        />
         <span style={{
           fontFamily: 'var(--font-display)', fontWeight: '700',
           fontSize: '16px', letterSpacing: '-0.02em',
