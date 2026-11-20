@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) - Google Ads conversion tracking -->
+    <!-- Google tag (gtag.js) - Google Ads base tag, required before the
+         conversion event snippet in src/utils/googleAds.js can measure anything -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18583310008"></script>
+    <!-- Google Tag Manager container (separate from the Ads tag above) -->
     <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NS2MZ767"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag('config', 'AW-18583310008');
     </script>
 
     <meta charset="UTF-8" />
