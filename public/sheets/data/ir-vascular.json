@@ -1,0 +1,1906 @@
+{
+ "id": "ir-vascular",
+ "title": "🩸 IR + Vascular",
+ "schema": 1,
+ "sections": [
+  {
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "Aortic arch variants",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-arch"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common variant",
+         "a": "Common origin BCA + LCCA",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Aberrant RSA",
+         "a": "Dysphagia lusoria, Kommerell",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Celiac & hepatic arteries",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-celiac"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "\"Textbook\" celiac/hepatic anatomy",
+         "a": "~55–75%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Replaced vs accessory",
+         "a": "Sole supply vs extra vessel",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Vessel in fissure for lig. venosum",
+         "a": "Replaced/accessory LHA (from LGA)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "SMA / IMA & collaterals",
+     "hue": 140,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-mesenteric"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Celiac → SMA",
+         "a": "GDA → pancreaticoduodenal arcades",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "SMA → IMA (central / peripheral)",
+         "a": "Riolan / Drummond",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Origins: celiac · SMA · renals · IMA",
+         "a": "T12 · L1 · L1–2 · L3",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Internal iliac",
+     "hue": 30,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-iliac"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Uterine artery from",
+         "a": "Anterior division",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Sudden EIA occlusion, foot pulse intact",
+         "a": "Persistent sciatic a.",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Upper extremity",
+     "hue": 330,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-upper-limb"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Brachial begins at",
+         "a": "Lower border teres MAJOR",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Axillary begins at",
+         "a": "Lateral border 1st rib",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Lower extremity",
+     "hue": 45,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-lower-limb"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "EIA becomes CFA at",
+         "a": "Inferior epigastric (ing. lig.)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "First popliteal branch",
+         "a": "Anterior tibial",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most medial leg artery",
+         "a": "Posterior tibial",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Veins: variants & compression",
+     "hue": 215,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-veins"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Azygos continuation (no hepatic IVC)",
+         "a": "Polysplenia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Left SVC drains to",
+         "a": "Coronary sinus (~92%)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gastric varices fed by",
+         "a": "Left gastric (coronary) v.",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Spine & chest arteries",
+     "hue": 260,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Adamkiewicz origin",
+         "a": "Left, T9–T12 (~70%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Adamkiewicz angio look",
+         "a": "Hairpin turn",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bronchial arteries arise",
+         "a": "T5–T6 (L main bronchus)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Traumatic aortic injury site",
+         "a": "Isthmus (~90%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Rib notching (coarct)",
+         "a": "Ribs 3–8, spares 1–2",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "📐 Angio views & catheters",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Renal ostia view",
+         "a": "LAO (left renal)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Iliac bifurcation view",
+         "a": "Contralateral oblique",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CFA bifurcation view",
+         "a": "Ipsilateral oblique",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Acute angle (arch vessels)",
+         "a": "Angled: Berenstein, headhunter",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Obtuse (celiac/SMA/IMA)",
+         "a": "Recurve: SOS, Simmons",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "title": "🫀 Vascular anatomy",
+   "hue": 0,
+   "subtitle": "very high yield"
+  },
+  {
+   "title": "🩺 Vascular disease",
+   "hue": 350,
+   "layout": "columns",
+   "cards": [
+    {
+     "title": "🫀 Aorta: sizes & aneurysm",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Aneurysm definition",
+         "a": "≥1.5× normal",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "AAA repair",
+         "a": "≥5.5 cm (♀ 5.0)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "…or growth",
+         "a": ">0.5 cm/6 mo (1 cm/y)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Most specific impending rupture",
+         "a": "Hyperdense crescent",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Saccular abdominal aneurysm",
+         "a": "Mycotic until proven otherwise",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Aortoenteric fistula site",
+         "a": "3rd–4th duodenum",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Tulip bulb root",
+         "a": "Marfan",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⚡ Acute aortic syndromes",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Stanford A / B divide",
+         "a": "Left subclavian origin",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Type A · Type B treatment",
+         "a": "Surgery · BP control",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PAU tell",
+         "a": "Ulcer through intimal calcs",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "IMH tell",
+         "a": "Hyperdense crescent, non-con",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Floating viscera sign",
+         "a": "Branches off false lumen",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "",
+        "True lumen",
+        "False lumen"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Size / flow",
+          "Smaller, faster",
+          "Larger, slower"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Signs",
+          "Continuous with normal aorta",
+          "Beak, cobwebs"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Usually feeds",
+          "Celiac, SMA, R renal",
+          "L renal"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "\"False is Left\": the false lumen usually feeds the left renal."
+      }
+     ]
+    },
+    {
+     "title": "🎈 Visceral & peripheral aneurysms",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common visceral",
+         "a": "Splenic",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Treat splenic if",
+         "a": ">2 cm, PSA, pregnancy-age ♀",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SMA aneurysm",
+         "a": "Treat all",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pancreaticoduodenal aneurysm",
+         "a": "Celiac stenosis (MALS)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common peripheral",
+         "a": "Popliteal",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Popliteal: AAA · bilateral",
+         "a": "30–50% · 50–70%",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧩 Syndromes (buzzwords)",
+     "hue": 45,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Swollen left leg",
+         "a": "May-Thurner",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hematuria, L varicocele, ♀ 30s",
+         "a": "Nutcracker",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hooked celiac, worse on expiration",
+         "a": "Median arcuate lig.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Arms-up occlusion",
+         "a": "Thoracic outlet",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Young male, medial popliteal deviation",
+         "a": "Popliteal entrapment",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ulnar PSA, jackhammer",
+         "a": "Hypothenar hammer",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Smoker, corkscrew collaterals, digits",
+         "a": "Buerger",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Coarct look, no gradient/collaterals",
+         "a": "Pseudocoarctation",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "String of beads, young ♀",
+         "a": "FMD (PTA, no stent)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Multiple pulm + hepatic AVMs",
+         "a": "HHT → CT chest/liver + brain MRI",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Venous malformation + overgrowth",
+         "a": "KTS (low flow)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Right or non-decompressible varicocele",
+         "a": "CT abdomen",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍝 Mesenteric ischemia",
+     "hue": 100,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Wall",
+        "Dilated",
+        "Fat"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Arterial",
+          "Thin (thick after reperfusion)",
+          "No",
+          "Clean"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Venous",
+          "Thick",
+          "Moderate",
+          "Hazy, ascites"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Strangulation",
+          "Thick",
+          "Severe",
+          "Hazy, whirl"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Non-occlusive (shock)",
+          "Thick",
+          "No",
+          "Clean"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3,
+        4
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Embolus vs thrombus site",
+         "a": "Branch points vs ostium",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Chronic ischemia needs",
+         "a": "2 of 3 vessels + symptoms",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔥 Vasculitis",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Disease",
+        "Tell"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Takayasu",
+          "Young Asian ♀, aorta + branches, pulseless"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Giant cell",
+          "Elderly, \"armpit/crutch\" arteries, temporal"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "PAN",
+          "Man, renal microaneurysms, Hep B"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Kawasaki",
+          "Child, coronary aneurysms (>8 mm giant)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "GPA (Wegener)",
+          "Sinus + cavitary lung + kidney, c-ANCA"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "EGPA (Churg-Strauss)",
+          "Asthma, eosinophils, p-ANCA"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Microscopic polyangiitis",
+          "Pulmonary hemorrhage + kidney"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "HSP",
+          "Child, intussusception, scrotal edema"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Behçet",
+          "Turkish, oral/genital ulcers, PA aneurysm"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Buerger",
+          "Male smoker, digits, corkscrews"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Hand angiogram: look at the ULNAR artery first. Abnormal ulnar = hypothenar hammer; normal ulnar + dead digits = Buerger."
+      }
+     ]
+    },
+    {
+     "title": "🔊 Carotid & vascular Doppler",
+     "hue": 190,
+     "star": true,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "ICA stenosis",
+        "PSV",
+        "ICA/CCA",
+        "EDV"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "<50%",
+          "<125",
+          "<2",
+          "<40"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "50–69%",
+          "125–230",
+          "2–4",
+          "40–100"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "≥70%",
+          ">230",
+          ">4",
+          ">100"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3,
+        4
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "ICA vs ECA waveform",
+         "a": "Low vs high resistance",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Unilateral tardus parvus",
+         "a": "Proximal (innominate/CCA)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral tardus parvus",
+         "a": "Aortic stenosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral diastolic reversal",
+         "a": "Aortic regurgitation",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CCA looks like ECA",
+         "a": "ICA occlusion",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Retrograde vertebral flow",
+         "a": "Subclavian steal",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PSA on Doppler",
+         "a": "Yin-yang + to-and-fro neck",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🛠️ Interventional",
+   "hue": 215,
+   "layout": "columns",
+   "cards": [
+    {
+     "title": "📏 Tools & numbers",
+     "hue": 200,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "French → mm",
+         "a": "÷ 3",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Sheath size refers to",
+         "a": "INNER diameter",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Catheter / dilator / needle size",
+         "a": "OUTER diameter",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hole from a 6F sheath",
+         "a": "~8F ≈ 2.7 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Micropuncture needle → wire",
+         "a": "21G → 0.018\"",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Embolization catheter",
+         "a": "End-hole only",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lysability test · EVAR wire",
+         "a": "Bentson · Lunderquist",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎯 Access, labs, meds",
+     "hue": 140,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-femoral"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hypotension after femoral stick",
+         "a": "High stick → RP bleed",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Brachial hematoma risk",
+         "a": "Compartment syndrome",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Before radial access",
+         "a": "Allen test",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "High-risk procedure INR · plt",
+         "a": "≤1.5 · >50k",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hold clopidogrel",
+         "a": "5 days",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Reversal: heparin · warfarin · Xa",
+         "a": "Protamine · vit K/PCC · andexanet",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lidocaine max (± epi)",
+         "a": "4.5 (7) mg/kg",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Air embolus",
+         "a": "Left side down + O₂",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩹 Pseudoaneurysm (groin)",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Pain out of proportion after stick",
+         "a": "Ultrasound",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "First-line treatment",
+         "a": "US-guided thrombin",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Thrombin contraindications",
+         "a": "Wide neck, infection, AVF",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Infected / skin necrosis",
+         "a": "Surgery",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎈 PTA & stents",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Balloon size",
+         "a": "10–20% > normal vessel",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Technical success",
+         "a": "<30% residual",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Stent oversize",
+         "a": "1–2 mm wider, 1–2 cm longer",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Self-expanding where",
+         "a": "Compressible: carotid, SFA",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Balloon-expandable where",
+         "a": "Precise: renal ostium",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Vessel rupture",
+         "a": "Reinflate balloon (tamponade)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ostial athero RAS · FMD",
+         "a": "PTA + stent · PTA alone",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧱 Embolic agent: \"classic answer\"",
+     "hue": 300,
+     "star": true,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Situation",
+        "Agent"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Pulmonary AVM",
+          "Coils (plug), close to sac"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Hemoptysis (bronchial)",
+          "Particles >325 µm, NO coils"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Fibroids (UAE)",
+          "Particles 500–900 µm"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Trauma / postpartum bleed",
+          "Gelfoam (temporary)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "High-flow priapism",
+          "Autologous clot"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Big single high-flow vessel",
+          "Amplatzer plug"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Lower GI bleed",
+          "Microcoils (no alcohol)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "HCC (TACE)",
+          "Lipiodol + chemo + particles"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Stop particles at",
+         "a": "To-and-fro flow",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Post-embo syndrome lasts",
+         "a": "≤3 days",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "PSA in end organ",
+         "a": "Sandwich (distal + proximal)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧵 EVAR & endoleaks",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "ir-endoleak"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Neck: length · diameter · angle",
+         "a": "≥10 mm · <32 mm · <60°",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "EVAR vs open",
+         "a": "↓ 30-day death, ↑ reinterventions",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Paraplegia after TEVAR",
+         "a": "CSF drain",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Type II: when to treat",
+         "a": "Sac growing",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦵 Acute limb & PAD",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Rutherford",
+        "Sensory / motor",
+        "Doppler A / V",
+        "Do"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "I viable",
+          "None",
+          "+ / +",
+          "Elective"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "IIa",
+          "Toes / none",
+          "± / +",
+          "Prompt"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "IIb",
+          ">toes / partial",
+          "− / +",
+          "Immediate"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "III",
+          "Anesthetic / paralysis",
+          "− / −",
+          "Amputate"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3,
+        4
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Lysis beats surgery if occlusion",
+         "a": "<14 days",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Confusion on tPA",
+         "a": "Stop, CT head",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Inflow + outflow disease",
+         "a": "Fix inflow first",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ABI PAD · rest pain",
+         "a": "<0.9 · <0.3–0.4",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "ABI >1.3 (diabetic)",
+         "a": "Noncompressible → toe pressures",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SFA lesion access",
+         "a": "Ipsilateral antegrade CFA",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🕸️ IVC filters & DVT",
+     "hue": 215,
+     "star": true,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Indication",
+         "a": "VTE + can't anticoagulate / failed",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Standard position",
+         "a": "Infrarenal, apex at renal veins",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Suprarenal if",
+         "a": "Pregnancy, renal/gonadal clot",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Duplicated IVC",
+         "a": "Both IVCs or suprarenal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Circumaortic LRV",
+         "a": "Below lowest renal v.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Mega-cava",
+         "a": ">28 mm → Bird's nest (≤40) / bilat iliac",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Don't retrieve if clot",
+         "a": ">1 cm³",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Lysis to prevent PTS",
+         "a": "Iliofemoral DVT",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💉 Dialysis access",
+     "hue": 170,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Preferred access",
+         "a": "Fistula (lasts longer)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Graft stenosis site",
+         "a": "Venous anastomosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fistulogram if flow below",
+         "a": "500 (AVF) / 600 (AVG)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Arm/breast swelling, chest collaterals",
+         "a": "Central venous stenosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cold painful hand on dialysis",
+         "a": "Steal → DRIL",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Access <30 days with stenosis",
+         "a": "Back to surgeon",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Dialysis catheter site",
+         "a": "R IJ, tip at RA",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔀 TIPS vs BRTO",
+     "hue": 100,
+     "star": true,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "TIPS",
+        "BRTO"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Treats",
+          "Esophageal varices, ascites",
+          "Gastric varices"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Route",
+          "R IJ → R hepatic → R portal (turn anterior)",
+          "Gastrorenal shunt via L renal v."
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Worsens",
+          "Encephalopathy",
+          "Esophageal varices, ascites"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Absolute contraindication",
+         "a": "Right heart failure",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Target gradient",
+         "a": "<12 mmHg",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "High early mortality",
+         "a": "MELD >18, bili >3",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Stent velocity normal",
+         "a": "90–190 cm/s",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Malfunction",
+         "a": ">200 or <90 cm/s, Δ>50, PV branches flow away from stent",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟢 Biliary & liver",
+     "hue": 60,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "PTC entry",
+         "a": "Below 10th rib, top of rib",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rigors after injection",
+         "a": "Cholangitis (overinjection)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Commonest ductal variant",
+         "a": "R posterior → L hepatic duct",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cholecystostomy route",
+         "a": "Transhepatic (bare area)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Keep cholecystostomy tube",
+         "a": "≥2–6 wk",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Liver biopsy path",
+         "a": "≥2 cm normal liver",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Shoulder pain >5 min",
+         "a": "US for bleed",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Coagulopathy / ascites biopsy",
+         "a": "Transjugular, R hepatic v.",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🚑 Trauma & bleeding",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Unstable, multisystem",
+         "a": "OR, not angio",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Spleen: multiple bleeding sites",
+         "a": "Proximal splenic plug",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Spleen: focal bleed",
+         "a": "Selective distal embo",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pelvic bleed",
+         "a": "Gelfoam int. iliac (angio first)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Kidney (end arteries)",
+         "a": "Superselective coils",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "No bleed seen after PCN injury",
+         "a": "Remove PCN over wire, re-inject",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "UGI arterial bleed most often",
+         "a": "Left gastric (~85%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Duodenal ulcer bleed",
+         "a": "GDA, then check SMA",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "RBC · CTA · angio sensitivity",
+         "a": "0.1 · 0.3–0.5 · 0.5–1 mL/min",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Right colon, early draining vein",
+         "a": "Angiodysplasia",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎯 Tumour therapy",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "TACE absolute contraindication",
+         "a": "Decompensated liver",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "\"Chemical cholecystitis\"",
+         "a": "Injected before cystic a.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Before Y-90",
+         "a": "MAA shunt + coil GDA/R gastric",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Y-90 lung dose limit",
+         "a": "30 Gy (50 cumulative)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "RFA \"cure\" size · margin",
+         "a": "<3–4 cm · 0.5–1 cm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Heat sink vessels",
+         "a": "≥3 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Microwave vs RFA",
+         "a": "Hotter, faster, no ground pads",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cryo",
+         "a": "Less pain, more bleeding",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Nodular / eccentric rim enhancement",
+         "a": "Residual tumour",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧫 Drains",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Before needle in collection",
+         "a": "Color Doppler (PSA?)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Remove drain when",
+         "a": "<10 mL/d + resolved + no fistula",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Output suddenly spikes",
+         "a": "Fistula",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Transgluteal route",
+         "a": "Sacrospinous lig., medial, below piriformis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Diverticular abscess drain",
+         "a": ">2–3 cm, ≥10 F",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Don't drain",
+         "a": "Lung abscess (BPF)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fluid Cr = serum · Cr ↑",
+         "a": "Lymphocele · urinoma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫘 GU",
+     "hue": 170,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "PCN target",
+         "a": "Posterior lower-pole calyx",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Why posterior ~30°",
+         "a": "Brödel avascular zone",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Transplant PCN",
+         "a": "Anterolateral calyx",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Tube out, tract <1 wk",
+         "a": "New puncture",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "RAS stent vs meds (CORAL)",
+         "a": "Medical therapy",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Adrenal vein sampling hard side",
+         "a": "Right (short, into IVC)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫁 Chest",
+     "hue": 190,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Lung biopsy PTX · needs tube",
+         "a": "~25% · ~5%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "After biopsy, position",
+         "a": "Puncture side DOWN",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PAVM treat when feeder",
+         "a": "≥3 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "PAVM agent",
+         "a": "Coils (never particles)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Neg. bronchial angio + TB",
+         "a": "PA angio: Rasmussen",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "LBBB before pulmonary angio",
+         "a": "Temporary pacer",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "♀♂ Pelvic",
+     "hue": 320,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "UAE: best response",
+         "a": "Submucosal, enhancing, T2-bright",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UAE: poor response",
+         "a": "Pedunculated subserosal, cervical, broad lig.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UAE side",
+         "a": "Always bilateral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fever >3 d after UAE",
+         "a": "Infection work-up",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Pelvic congestion gonadal vein",
+         "a": "≥6–10 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Varicocele side",
+         "a": "Left ~90%",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

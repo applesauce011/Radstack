@@ -77,13 +77,14 @@ export function Navbar() {
           display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0,
         }}
       >
-        <div style={{
-          width: '32px', height: '32px', borderRadius: '8px',
-          background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '16px', fontWeight: '800', color: '#fff',
-          fontFamily: 'var(--font-display)',
-        }}>R</div>
+        <img
+          src="/logo-mark.jpg"
+          alt="RadiologyStack"
+          style={{
+            width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover', flexShrink: 0,
+            border: '1.5px solid rgba(34,211,238,0.55)',
+          }}
+        />
         <span style={{
           fontFamily: 'var(--font-display)', fontWeight: '700',
           fontSize: '16px', letterSpacing: '-0.02em',
@@ -96,6 +97,7 @@ export function Navbar() {
       {/* Desktop nav — hidden below the mobile breakpoint (see index.css) */}
       <div className="navbar-desktop" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
         <TopNavLink label="Decks" active={isActive('/decks')} onClick={() => go('/decks')} />
+        <TopNavLink label="Cheat Sheets" active={isActive('/cheat-sheets')} onClick={() => go('/cheat-sheets')} />
         <TopNavLink
           label="Differential Sprint"
           active={isActive('/differential-sprint')}
@@ -238,6 +240,9 @@ export function Navbar() {
           }}>
             <button type="button" onClick={() => go('/decks')} style={mobileMenuItemStyle}>
               Decks
+            </button>
+            <button type="button" onClick={() => go('/cheat-sheets')} style={mobileMenuItemStyle}>
+              Cheat Sheets
             </button>
             <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
               Differential Sprint

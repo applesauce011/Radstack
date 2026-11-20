@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) - Google Ads conversion tracking -->
+    <!-- Google tag (gtag.js) - Google Ads base tag, required before the
+         conversion event snippet in src/utils/googleAds.js can measure anything -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18583310008"></script>
+    <!-- Google Tag Manager container (separate from the Ads tag above) -->
     <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NS2MZ767"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag('config', 'AW-18583310008');
     </script>
 
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href="/logo-mark.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
     <title>RadiologyStack — Radiology Board Study Platform for FRCPC &amp; ABR</title>
-    <meta name="description" content="The complete radiology board studying platform for Canadian Royal College (FRCPC) and ABR exam prep. 1000+ high-yield flashcards plus Differential Sprint, rapid board-style differential diagnosis practice, across 12 subspecialties — neuro, chest, MSK, abdominal, and more. Free preview available." />
-    <meta name="keywords" content="radiology flashcards, radiology board study platform, radiology board review, radiology study resource, radiology practice questions, differential diagnosis practice, radiology question bank, FRCPC exam prep, ABR board exam, radiology board study, Royal College radiology, radiology resident study, radiology residency study resource, radiology mnemonics, diagnostic radiology boards, FRCPC radiology study guide, ABR core exam prep, ABR certifying exam prep, radiology fellow study guide" />
+    <meta name="description" content="The complete radiology board studying platform for Canadian Royal College (FRCPC) and ABR exam prep. 1000+ high-yield flashcards, Differential Sprint rapid board-style differential diagnosis practice, and Cheat Sheets for daily review, across 12 subspecialties — neuro, chest, MSK, abdominal, and more. Free preview available." />
+    <meta name="keywords" content="radiology flashcards, radiology board study platform, radiology board review, radiology study resource, radiology practice questions, differential diagnosis practice, radiology question bank, radiology cheat sheets, radiology review sheets, daily review radiology, FRCPC exam prep, ABR board exam, radiology board study, Royal College radiology, radiology resident study, radiology residency study resource, radiology mnemonics, diagnostic radiology boards, FRCPC radiology study guide, ABR core exam prep, ABR certifying exam prep, radiology fellow study guide" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://radiologystack.com/" />
 
@@ -24,7 +28,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://radiologystack.com/" />
     <meta property="og:title" content="RadiologyStack — Radiology Board Study Platform for FRCPC &amp; ABR" />
-    <meta property="og:description" content="The complete radiology board studying platform: 1000+ high-yield flashcards plus Differential Sprint practice for Canadian Royal College (FRCPC) and ABR exam prep, across 12 subspecialties. Free preview — no account required." />
+    <meta property="og:description" content="The complete radiology board studying platform: 1000+ high-yield flashcards, Differential Sprint practice, and Cheat Sheets for daily review, for Canadian Royal College (FRCPC) and ABR exam prep, across 12 subspecialties. Free preview — no account required." />
     <meta property="og:image" content="https://radiologystack.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -35,7 +39,7 @@
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="RadiologyStack — Radiology Board Study Platform for FRCPC &amp; ABR" />
-    <meta name="twitter:description" content="The complete radiology board studying platform: flashcards plus Differential Sprint practice for Canadian Royal College and ABR exam prep. 1000+ cards, 12 subspecialties. Free preview available." />
+    <meta name="twitter:description" content="The complete radiology board studying platform: flashcards, Differential Sprint practice, and Cheat Sheets for Canadian Royal College and ABR exam prep. 1000+ cards, 12 subspecialties. Free preview available." />
     <meta name="twitter:image" content="https://radiologystack.com/og-image.png" />
 
     <!-- Structured Data: WebSite (controls site name shown in Google search) -->
@@ -55,13 +59,13 @@
       "@type": "Organization",
       "name": "RadiologyStack",
       "url": "https://radiologystack.com",
-      "logo": "https://radiologystack.com/favicon.svg",
+      "logo": "https://radiologystack.com/logo-mark.jpg",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
         "email": "team@radiologystack.com"
       },
-      "description": "The complete radiology board studying platform — high-yield flashcards and Differential Sprint practice — for Canadian Royal College (FRCPC) and American Board of Radiology (ABR) board exam preparation."
+      "description": "The complete radiology board studying platform — high-yield flashcards, Differential Sprint practice, and Cheat Sheets for daily review — for Canadian Royal College (FRCPC) and American Board of Radiology (ABR) board exam preparation."
     }
     </script>
 
@@ -74,10 +78,11 @@
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web, iOS, Android",
       "url": "https://radiologystack.com",
-      "description": "A complete radiology board studying platform covering all 12 subspecialties for Canadian Royal College (FRCPC) and ABR board exam preparation. Includes high-yield flashcards, Differential Sprint rapid-fire differential diagnosis practice, progress tracking, smart study modes, and Radiopaedia integration.",
+      "description": "A complete radiology board studying platform covering all 12 subspecialties for Canadian Royal College (FRCPC) and ABR board exam preparation. Includes high-yield flashcards, Differential Sprint rapid-fire differential diagnosis practice, Cheat Sheets for daily review, progress tracking, smart study modes, and Radiopaedia integration.",
       "featureList": [
         "1000+ high-yield radiology flashcards across 12 subspecialties",
         "Differential Sprint: rapid board-style differential diagnosis practice",
+        "Cheat Sheets: compact daily-review sheets with quiz mode and starred-only filtering",
         "Progress tracking and personal study stats",
         "Smart spaced-repetition study modes",
         "Radiopaedia case integration",
@@ -173,7 +178,15 @@
           "name": "Is RadiologyStack just flashcards, or a full board study platform?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "RadiologyStack is a complete radiology board studying platform, not just flashcards. It combines high-yield flashcards with Differential Sprint differential-diagnosis practice, personal progress tracking and stats, and group access for residency programs, all mapped to the Royal College (FRCPC) and ABR exam objectives."
+            "text": "RadiologyStack is a complete radiology board studying platform, not just flashcards. It combines high-yield flashcards with Differential Sprint differential-diagnosis practice, Cheat Sheets for daily review, personal progress tracking and stats, and group access for residency programs, all mapped to the Royal College (FRCPC) and ABR exam objectives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are RadiologyStack's Cheat Sheets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cheat Sheets are compact, colour-coded daily-review sheets for quick memorization, with a built-in Quiz mode that turns answers and diagram labels into tap-to-reveal blanks, a starred-only filter for high-yield review, and search across every sheet. The Nuclear Medicine Cheat Sheet is free; the rest unlock with a paid plan."
           }
         }
       ]

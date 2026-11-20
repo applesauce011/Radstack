@@ -52,8 +52,8 @@ export function PricingPage() {
     iso ? new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : null
 
   usePageMeta({
-    title: 'Pricing: RadiologyStack | Flashcards & Differential Sprint',
-    description: 'Unlock all 12 radiology subspecialty decks plus unlimited Differential Sprint. One-time payment, no subscription. Plans from $59. Built for FRCPC and ABR board exam prep.',
+    title: 'Pricing: RadiologyStack | Flashcards, Differential Sprint & Cheat Sheets',
+    description: 'Unlock all 12 radiology subspecialty decks, unlimited Differential Sprint, and every Cheat Sheet. One-time payment, no subscription. Plans from $59. Built for FRCPC and ABR board exam prep.',
     canonical: 'https://radiologystack.com/pricing',
   })
 
@@ -179,8 +179,8 @@ export function PricingPage() {
             fontSize: '17px', color: 'var(--text-secondary)', lineHeight: '1.6',
             maxWidth: '540px', margin: '0 auto',
           }}>
-            {getPremiumCardCount()}+ high-yield flashcards across all 12 radiology subspecialties, plus unlimited Differential Sprint:
-            rapid board-style differential diagnosis practice. Built for Royal College and ABR exam prep.
+            {getPremiumCardCount()}+ high-yield flashcards across all 12 radiology subspecialties, unlimited Differential Sprint:
+            rapid board-style differential diagnosis practice, and every Cheat Sheet for daily review. Built for Royal College and ABR exam prep.
           </p>
         </div>
 
@@ -191,8 +191,9 @@ export function PricingPage() {
           fontSize: '13px', color: 'var(--text-muted)',
           marginBottom: '32px', textAlign: 'center',
         }}>
-          Not ready? Try a <strong style={{ color: 'var(--text-secondary)' }}>free deck from every subspecialty</strong>, plus{' '}
-          <strong style={{ color: 'var(--text-secondary)' }}>4 free Differential Sprint questions</strong>, no account required.
+          Not ready? Try a <strong style={{ color: 'var(--text-secondary)' }}>free deck from every subspecialty</strong>,{' '}
+          <strong style={{ color: 'var(--text-secondary)' }}>4 free Differential Sprint questions</strong>, and the{' '}
+          <strong style={{ color: 'var(--text-secondary)' }}>Nuclear Medicine Cheat Sheet</strong>, no account required.
         </div>
 
         {/* Pricing cards */}

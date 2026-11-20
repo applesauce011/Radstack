@@ -1,0 +1,2063 @@
+{
+ "schema": 1,
+ "id": "chest",
+ "title": "🫁 Chest",
+ "sections": [
+  {
+   "title": "🫁 Anatomy & patterns",
+   "subtitle": "very high yield",
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🫁 Lobar collapse",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-collapse"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "RUL collapse + central mass",
+         "a": "S sign of Golden",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lucent crescent beside arch",
+         "a": "Luftsichel (LUL collapse)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Loss of R heart border",
+         "a": "RML (RLL keeps it)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Retrocardiac triangle",
+         "a": "LLL collapse",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Upper lobe collapse diaphragm clue",
+         "a": "Juxtaphrenic peak",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Round atelectasis",
+         "a": "Comet tail + pleural thickening (asbestos)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Collapse beside effusion",
+         "a": "Passive (relaxation)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Collapse from TB / radiation scar",
+         "a": "Cicatricial",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Surfactant loss (RDS, ARDS)",
+         "a": "Adhesive",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧭 Mediastinal compartments",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-mediastinum"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Above clavicles, sharp margin",
+         "a": "Posterior (cervicothoracic sign)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hilar vessels seen through mass",
+         "a": "Not hilar (hilum overlay)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Air bronchogram / acute angle",
+         "a": "Lung origin (obtuse = mediastinal)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thymoma associations",
+         "a": "Myasthenia, red cell aplasia, hypogammaglob.",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Thymoma spread",
+         "a": "Drop mets to pleura → image abdomen",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Fat + calcium (teeth) anterior mass",
+         "a": "Teratoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thymic rebound vs lymphoma",
+         "a": "Rebound drops out on opposed phase",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "R cardiophrenic angle cyst",
+         "a": "Pericardial cyst",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Subcarinal water-density mass",
+         "a": "Bronchogenic cyst",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common posterior mass",
+         "a": "Neurogenic tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Calcified infiltrative mass, SVC obstr.",
+         "a": "Fibrosing mediastinitis (histo)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔬 Lobule & nodule patterns",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-lobule"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Perilymphatic",
+         "a": "Sarcoid, lymphangitic, silicosis/CWP",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Random / miliary",
+         "a": "Miliary TB, mets, fungal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Centrilobular ground-glass",
+         "a": "Subacute HP, RB-ILD",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tree-in-bud",
+         "a": "Infectious bronchiolitis (TB, MAC)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Smooth septal thickening",
+         "a": "Edema",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Nodular / asymmetric septal thickening",
+         "a": "Lymphangitic carcinomatosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Crazy paving (exam answer)",
+         "a": "PAP",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Consolidation vs ground glass",
+         "a": "Hides vessels vs vessels visible",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "❤️ Valves on CXR",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-valves"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most superior valve",
+         "a": "Pulmonic",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most anterior valve",
+         "a": "Tricuspid",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lateral: aortic vs mitral",
+         "a": "Aortic above/anterior to line",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Two rings — bigger one",
+         "a": "Mitral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pacer lead passes through it",
+         "a": "Tricuspid",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧩 Nodal stations",
+     "hue": 28,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-nodes"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "N1",
+         "a": "Ipsilateral hilar / intrapulmonary (10–14)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "N2",
+         "a": "Ipsilateral mediastinal or subcarinal (7)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "N3",
+         "a": "Contralateral, or any scalene/supraclavicular",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Station 1 vs 2 border",
+         "a": "Upper manubrium / clavicles",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Node abnormal (short axis)",
+         "a": ">1 cm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Best nodal staging",
+         "a": "PET-CT (CT unreliable)",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍄 Halo & crescent",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-halo"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Halo in neutropenic patient",
+         "a": "Angioinvasive aspergillus",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Air crescent means",
+         "a": "Recovery (neutrophils back)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ball moves with position",
+         "a": "Aspergilloma (Monod)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Asthma/CF + central bronchiectasis + finger-in-glove",
+         "a": "ABPA",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Reverse halo (atoll)",
+         "a": "Organizing pneumonia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fungus invading chest wall, diabetic",
+         "a": "Mucor",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫧 Cystic lung disease",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-cysts"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Young smoker, nodules → bizarre cysts, spares bases",
+         "a": "LCH",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Woman/TSC, uniform round cysts",
+         "a": "LAM",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "LAM high-yield association",
+         "a": "Chylothorax",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lower oval paramediastinal cysts + renal tumours",
+         "a": "Birt-Hogg-Dubé",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cysts + Sjögren (or HIV child)",
+         "a": "LIP",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "HIV: ground glass + cysts + PTX",
+         "a": "PCP",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Honeycomb vs paraseptal",
+         "a": "≥2 rows vs 1 row",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧱 Fibrosis distribution",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "chest-ild"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Definite UIP",
+         "a": "Basal subpleural honeycombing ± traction BE",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Histology 'heterogeneous'",
+         "a": "UIP",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Subpleural sparing, GGO",
+         "a": "NSIP (scleroderma)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fibrosis + air trapping ≥3 lobes / headcheese",
+         "a": "Chronic HP",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Sarcoid nodes",
+         "a": "1-2-3 (bilat. hila + R paratracheal)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sarcoid CXR stages",
+         "a": "0 nl · 1 nodes · 2 nodes+lung · 3 lung · 4 fibrosis",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Conglomerate nodule + satellites",
+         "a": "Galaxy sign (sarcoid)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Upper centrilobular GGN, smoker",
+         "a": "RB-ILD (DIP = lower diffuse GGO)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Peripheral upper consolidation, eosinophilia",
+         "a": "Chronic eosinophilic pneumonia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UIP lung cancer location",
+         "a": "Lower lobe, cyst/fibrosis interface",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🦠 Infection",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🦠 Bacterial pneumonia",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Bug",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Strep pneumo",
+          "Lobar consolidation; most common in AIDS"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Klebsiella",
+          "Bulging fissure, alcoholics, cavitates"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Staph aureus",
+          "Bronchopneumonia, abscess, pneumatoceles"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Pseudomonas",
+          "Ventilated, CF"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Legionella",
+          "Peripheral, X-ray lags recovery"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Actinomyces",
+          "Crosses fissures, chest wall / rib"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Anthrax",
+          "Haemorrhagic mediastinal nodes, effusion"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Mycoplasma",
+          "Reticular / tree-in-bud"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Aspiration — supine",
+         "a": "Posterior upper / superior lower lobes",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Aspiration — upright",
+         "a": "Basal lower lobes (R > L)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Jugular thrombosis + septic emboli",
+         "a": "Lemierre (Fusobacterium)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Septic emboli",
+         "a": "Peripheral, lower, cavitate, feeding vessel",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Empyema vs abscess",
+         "a": "Lentiform + split pleura vs round + acute angle",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Abscess drainage caveat",
+         "a": "No chest tube (BPF risk)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Empyema necessitans",
+         "a": "TB > actinomyces",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧫 TB & mycobacteria",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Primary TB",
+         "a": "Nodes (kids), consolidation, NO cavity",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ghon / Ranke",
+         "a": "Calcified granuloma / + calcified node",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Reactivation TB site",
+         "a": "Apical/post. upper + superior lower lobes",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Reactivation hallmark",
+         "a": "Cavitation (endobronchial spread)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PA pseudoaneurysm in TB cavity",
+         "a": "Rasmussen",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "HIV CD4 >200 / <200 TB look",
+         "a": "Reactivation / primary-type",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Started HAART, worse",
+         "a": "IRIS",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Old white man, COPD, cavity",
+         "a": "Classic MAC",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Old woman, RML/lingula bronchiectasis + TIB",
+         "a": "Lady Windermere (MAC)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hot tub",
+         "a": "HP pattern (MAC)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MAC in AIDS",
+         "a": "CD4 <100, mediastinal nodes",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Silicosis + cavity",
+         "a": "Silicotuberculosis (~3× risk)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧬 Immunocompromised",
+     "hue": 250,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "AIDS CD4",
+        "Think"
+       ],
+       "rows": [
+        {
+         "cells": [
+          ">200",
+          "Bacterial (strep), reactivation TB"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "<200",
+          "PCP, primary-type TB, fungal, Kaposi"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "<100",
+          "MAC, CMV, lymphoma"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "AIDS + perihilar GGO (± cysts)",
+         "a": "PCP",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Flame-shaped perihilar opacity",
+         "a": "Kaposi sarcoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Kaposi vs lymphoma on nucs",
+         "a": "Tl+ Ga− vs Tl+ Ga+",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "AIDS nodules + effusion + nodes",
+         "a": "Lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PTLD",
+         "a": "<1 y post-transplant, EBV",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Post BMT",
+        "Lung"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "0–30 d (neutropenic)",
+          "Edema, haemorrhage, angioinvasive fungus"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "30–100 d",
+          "CMV, PCP"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          ">100 d",
+          "Bronchiolitis obliterans, OP, chronic GVHD"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🎯 Nodules & cancer",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "📏 Screening & nodules",
+     "hue": 210,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Screening (USPSTF 2021)",
+         "a": "50–80 y, ≥20 pack-y, quit ≤15 y",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Screening dose",
+         "a": "CTDIvol ≤3 mGy",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Growth (Lung-RADS)",
+         "a": ">1.5 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Fleischner does NOT apply",
+         "a": "<35 y, cancer, immunosuppressed",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fleischner measure",
+         "a": "Mean of long + short axis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Benign calcification",
+         "a": "Diffuse, central, laminated, popcorn",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fat + popcorn Ca",
+         "a": "Hamartoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most suspicious morphology",
+         "a": "Part-solid (growing solid part)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Benign doubling time",
+         "a": "<20 d or >400 d",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Stable = benign",
+         "a": "Solid 2 y · subsolid 5 y",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Triangular nodule on fissure",
+         "a": "Perifissural node — no follow-up",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PET false negatives",
+         "a": "AIS/MIA, carcinoid, mucinous, <8 mm",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Fleischner solid (single)",
+        "Follow-up"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "<6 mm",
+          "None (high risk: optional 12 mo)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "6–8 mm",
+          "CT 6–12 mo"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          ">8 mm",
+          "CT 3 mo, PET or biopsy"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "GGN ≥6 mm",
+          "6–12 mo, then to 5 y"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Part-solid ≥6 mm",
+          "3–6 mo, then yearly to 5 y"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Lung-RADS (baseline solid)",
+        "Action"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "2: <6 mm (GGN <30 mm)",
+          "12 mo"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "3: 6–<8 mm",
+          "6 mo"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "4A: 8–<15 mm",
+          "3 mo (PET if ≥8 mm solid)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "4B: ≥15 mm",
+          "Diagnostic CT, PET / tissue"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎗️ Lung cancer types",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Type",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Adenocarcinoma",
+          "Peripheral, most common, non-smoker, fibrosis"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Squamous",
+          "Central, cavitates, PTH-rp ↑Ca"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Small cell",
+          "Central nodes, SVC, SIADH/ACTH, Lambert-Eaton"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Large cell",
+          "Peripheral, big (>4 cm)"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "<b>LA</b> is on the coast: <b>L</b>arge + <b>A</b>deno = peripheral"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "AIS / MIA",
+         "a": "≤3 cm lepidic · MIA invasion ≤5 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Growing solid part in GGN",
+         "a": "Invasive adenocarcinoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pancoast staging",
+         "a": "MRI (brachial plexus)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Pancoast: unresectable",
+         "a": "C8+ plexus, >50% VB, canal, phrenic",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Central vs peripheral symptoms",
+         "a": "Haemoptysis vs pleuritic pain",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cannonball mets",
+         "a": "RCC, choriocarcinoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Unilateral lymphangitic",
+         "a": "Lung primary",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cavitating mets",
+         "a": "Squamous",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Post-pneumonectomy space gets more air",
+         "a": "Bronchopleural fistula",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Radiation fibrosis vs recurrence",
+         "a": "Straight edges vs round growing",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧮 TNM (8th ed.)",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "T",
+        "Size / feature"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "T1",
+          "<span class=\"rs-num\">≤3 cm</span>"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "T2",
+          "<span class=\"rs-num\">>3–5 cm</span> · visceral pleura, main bronchus, atelectasis to hilum"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "T3",
+          "<span class=\"rs-num\">>5–7 cm</span> · chest wall, pericardium, phrenic, nodule same lobe"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "T4",
+          "<span class=\"rs-num\">>7 cm</span> · mediastinum, carina, diaphragm, nodule other ipsilat. lobe"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "M1a",
+          "Contralateral lung, pleural/pericardial disease or effusion"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "M1b / M1c",
+          "Single / multiple extrathoracic"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Subsolid T size",
+         "a": "Solid component only",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Unresectable stage",
+         "a": "IIIB (N3 or T4 + N2)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫧 Airway tumours & mimics",
+     "hue": 160,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Endobronchial enhancing mass, young, Ca++",
+         "a": "Carcinoid",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Carcinoid on FDG",
+         "a": "Can be cold → octreotide/DOTATATE",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Bronchial carcinoid valves",
+         "a": "Left-sided",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common tracheal malignancy",
+         "a": "Squamous",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "2nd tracheal, upper posterolateral, non-smoker",
+         "a": "Adenoid cystic",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Multiple papillomas",
+         "a": "HPV",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hilar 'nodule' + hyperlucent segment (LUL)",
+         "a": "Bronchial atresia (mucocele)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🌬️ Airways, occupational, systemic",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🌬️ Trachea & bronchi",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Disease",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Relapsing polychondritis",
+          "Spares post. membrane, no Ca++"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "TBO",
+          "Spares post. membrane, Ca++ nodules"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Amyloid",
+          "Involves post. membrane, Ca++"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "GPA",
+          "Subglottic, circumferential"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Post-intubation",
+          "Focal subglottic hourglass"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Saber-sheath trachea",
+         "a": "COPD (coronal <2/3 sagittal)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Trachea >3 cm",
+         "a": "Mounier-Kuhn",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Normal tracheal width",
+         "a": "≤2.5 cm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "CF vs PCD bronchiectasis",
+         "a": "Upper vs lower lobes",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PCD with situs inversus",
+         "a": "Kartagener (~50%)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tracheal (pig) bronchus",
+         "a": "Recurrent RUL pneumonia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Azygos fissure",
+         "a": "4 pleural layers",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫥 Emphysema & small airways",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Emphysema",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Centrilobular",
+          "Upper, smokers, central dot"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Panlobular",
+          "Lower, α1-AT (IV Ritalin)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Paraseptal",
+          "Subpleural, 1 row (vs honeycomb)"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most reliable CXR sign",
+         "a": "Flat hemidiaphragms",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Giant bullae ≥1/3 hemithorax",
+         "a": "Vanishing lung",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Small hyperlucent lung, air trapping",
+         "a": "Swyer-James",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Mosaic: air trapping vs vascular",
+         "a": "Expiratory CT; vessels small in both",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Air trapping post lung transplant",
+         "a": "Bronchiolitis obliterans",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Unilateral hyperlucent, absent pectoralis",
+         "a": "Poland",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⛏️ Pneumoconiosis & pleura",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Eggshell nodal calcification",
+         "a": "Silicosis (CWP)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Upper lobe masses + radiating strands",
+         "a": "PMF",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PMF vs cancer on MRI",
+         "a": "T2 dark vs bright",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Earliest asbestos finding",
+         "a": "Benign effusion",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Asbestos plaques spare",
+         "a": "Apices + CP angles",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Asbestosis vs IPF",
+         "a": "Parietal pleural thickening",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Mesothelioma",
+         "a": "Rind, medial pleura, fissures, >1 cm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Mesothelioma latency",
+         "a": "30–40 y, not dose-dependent",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Sarcoid-like, aerospace worker",
+         "a": "Berylliosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "IV drug user, hyperdense micronodules",
+         "a": "Talcosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SFTP",
+         "a": "Not asbestos · hypoglycemia, HOA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common pleural met primary",
+         "a": "Lung (adenocarcinoma)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⚕️ Systemic & alveolar",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Disease",
+        "Lung"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "SLE",
+          "Pleural effusion, shrinking lung"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "RA",
+          "UIP, nodules (Caplan + pneumoconiosis)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Scleroderma",
+          "NSIP + dilated oesophagus"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Sjögren",
+          "LIP (cysts)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "AS",
+          "Apical fibrobullous"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "GPA",
+          "Cavitating nodules, subglottic"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Goodpasture",
+          "Haemorrhage, young men"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Crazy paving + nocardia",
+         "a": "PAP (treat: lavage)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fat-density consolidation",
+         "a": "Lipoid pneumonia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cirrhotic, dyspnea when upright",
+         "a": "Hepatopulmonary (MAA brain uptake)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pulm AVM: think / treat",
+         "a": "HHT / feeder ≥3 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "OP vs infection",
+         "a": "Steroid responsive, peripheral",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫀 Transplant timeline",
+     "hue": 120,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Time",
+        "Complication"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "<24 h",
+          "Hyperacute rejection, size mismatch"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Peaks day 4",
+          "Reperfusion edema"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "1 wk–2 mo",
+          "Acute rejection (GGO, septal lines)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "2–4 mo",
+          "CMV, anastomotic stenosis"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          ">6 mo (50% at 5 y)",
+          "Chronic rejection = BO (air trapping)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "<1 y",
+          "PTLD (EBV)"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common recurrent disease",
+         "a": "Sarcoid",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🩸 Vessels, pleura, trauma, devices",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🩸 PE & pulmonary vessels",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Oligemia / big PA / peripheral wedge",
+         "a": "Westermark / Fleischner / Hampton",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "RV strain best CT sign",
+         "a": "RV:LV >1",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Massive vs submassive",
+         "a": "SBP <90 vs RV strain/troponin",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Pulmonary hypertension",
+         "a": "PA >29 mm or > aorta",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Segmental artery:bronchus",
+         "a": ">1 abnormal",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "PAH + normal wedge, septal lines",
+         "a": "PVOD",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PA aneurysm: ICU / Turkish ulcers",
+         "a": "Swan-Ganz / Behçet",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fat embolism",
+         "a": "1–2 d post femur fx, GGO, no filling defect",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Absent PA side",
+         "a": "Opposite the arch",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Opacity in retrotracheal (Raider) triangle",
+         "a": "Aberrant R subclavian",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "PE",
+        "Acute",
+        "Chronic"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Clot",
+          "Central, obtuse/occlusive",
+          "Eccentric, webs, Ca++"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Artery",
+          "Dilated",
+          "Small, collaterals"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Lung",
+          "Infarct, effusion",
+          "Mosaic perfusion"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "CHF stage",
+        "Wedge",
+        "Sign"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Redistribution",
+          "13–18",
+          "Cephalization"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Interstitial",
+          "18–25",
+          "Kerley B, cuffing"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Alveolar",
+          ">25",
+          "Airspace, effusion"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫗 Pleura & diaphragm",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Effusion visible: frontal / lateral",
+         "a": "~175 / ~75 mL",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Supine pneumothorax",
+         "a": "Deep sulcus sign",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Tension pneumothorax",
+         "a": "Flattened/inverted diaphragm, shift",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Subpulmonic effusion",
+         "a": "Lateral peak (R)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bochdalek vs Morgagni",
+         "a": "Posterior left vs anterior right",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diaphragm paralysis test",
+         "a": "Sniff: paradoxical up",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Pleural lipoma vs extrapleural fat",
+         "a": "Unilateral vs bilateral symmetric",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💥 Trauma",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Aortic injury site",
+         "a": "Isthmus",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ductus bump vs injury",
+         "a": "No haematoma, smooth",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diaphragm rupture side",
+         "a": "Left (3×)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Diaphragm rupture signs",
+         "a": "Collar sign, dependent viscera",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bronchial injury",
+         "a": "Within 2 cm carina, fallen lung",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pneumomediastinum in blunt trauma",
+         "a": "Macklin effect",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Contusion timing",
+         "a": "Appears <6 h, clears 72 h",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Laceration",
+         "a": "Pneumatocele ± blood-air level",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Flail chest",
+         "a": "≥3 ribs broken in ≥2 places",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Displaced extrapleural fat",
+         "a": "Extrapleural haematoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Haemothorax density",
+         "a": "35–70 HU",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔌 Lines & devices",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "ETT tip",
+         "a": "~5 cm above carina",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Flex neck → ETT",
+         "a": "Moves down (hose goes where nose goes)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Left paramediastinal central line",
+         "a": "Left SVC (→ coronary sinus) or arterial",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Abrupt tip curl at cavoatrial region",
+         "a": "Azygos",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "IABP tip",
+         "a": "Just below L subclavian origin",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pacer lead perforation",
+         "a": ">3 mm beyond myocardium",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "CRT LV lead",
+         "a": "Coronary sinus, posterior on lateral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Rotated generator, lead pulled back",
+         "a": "Twiddler",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lead fracture site",
+         "a": "Clavicle–1st rib",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
