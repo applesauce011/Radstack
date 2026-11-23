@@ -47,6 +47,15 @@ export function PromoBanner() {
         🔥 {ACTIVE_PROMO.label} Sale — {ACTIVE_PROMO.percentOff}% off any plan
       </span>
 
+      <span style={{
+        fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em',
+        textTransform: 'uppercase', color: '#B45309',
+        background: '#fff', padding: '3px 10px', borderRadius: '999px',
+        whiteSpace: 'nowrap',
+      }}>
+        ⏰ Limited time offer
+      </span>
+
       <button
         type="button"
         onClick={handleCopy}
@@ -69,7 +78,7 @@ export function PromoBanner() {
       </button>
 
       <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)' }}>
-        Apply at checkout →
+        Copy the code & paste it at checkout to apply your discount →
       </span>
     </div>
   )
