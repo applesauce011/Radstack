@@ -5,6 +5,7 @@ import { SUBSPECIALTIES, getPremiumCardCount } from '../data/index'
 import { LAST_UPDATED } from '../data/config'
 import { PLANS } from '../data/plans'
 import { Navbar } from '../components/layout/Navbar'
+import { PromoBanner } from '../components/layout/PromoBanner'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { startCheckout, storePendingPlan } from '../utils/checkout'
 import { trackEvent } from '../utils/analytics'
@@ -184,6 +185,7 @@ export function LandingPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
+      <PromoBanner />
       <Navbar />
 
       {/* Hero */}
