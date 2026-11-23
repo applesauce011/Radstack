@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuthStore } from '../../store/authStore'
+import { useSubscriptionStore } from '../../store/subscriptionStore'
 import { ACTIVE_PROMO, isPromoActive } from '../../data/promo'
 import { trackEvent } from '../../utils/analytics'
 
-// Shown at the top of the homepage for as long as the promo window is open
-// and the visitor isn't logged in. Set ACTIVE_PROMO.enabled to false in
-// src/data/promo.js to turn it off without removing this component.
+// Shown on every page for as long as the promo window is open, to anyone
+// without active paid access — anonymous visitors and logged-in free
+// accounts alike. Hides for anyone with an active plan. Set
+// ACTIVE_PROMO.enabled to false in src/data/promo.js to turn it off
+// without removing this component.
 export function PromoBanner() {
-  const { isAuthenticated } = useAuthStore()
+  const { hasAccess } = useSubscriptionStore()
   const navigate = useNavigate()
   const [copied, setCopied] = useState(false)
   const active = isPromoActive()
 
   useEffect(() => {
-    if (active && !isAuthenticated) trackEvent('promo_banner_viewed', { code: ACTIVE_PROMO.code })
-  }, [active, isAuthenticated])
+    if (active && !hasAccess) trackEvent('promo_banner_viewed', { code: ACTIVE_PROMO.code })
+  }, [active, hasAccess])
 
-  if (!active || isAuthenticated) return null
+  if (!active || hasAccess) return null
 
   const handleCopy = async (e) => {
     e.stopPropagation()
@@ -36,26 +38,30 @@ export function PromoBanner() {
         cursor: 'pointer',
         background: 'linear-gradient(135deg, #F59E0B, #F43F5E)',
         padding: '12px 16px',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        gap: '12px', flexWrap: 'wrap', textAlign: 'center',
+        display: 'flex', flexDirection: 'column', alignItems: 'center',
+        justifyContent: 'center', gap: '8px', textAlign: 'center',
       }}
     >
-      <span style={{
-        fontSize: '14px', fontWeight: '700', color: '#fff',
-        fontFamily: 'var(--font-display)', letterSpacing: '-0.01em',
-      }}>
-        🔥 {ACTIVE_PROMO.label} Sale — {ACTIVE_PROMO.percentOff}% off any plan
-      </span>
+      {/* Line 1 — headline */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <span style={{
+          fontSize: '14px', fontWeight: '700', color: '#fff',
+          fontFamily: 'var(--font-display)', letterSpacing: '-0.01em',
+        }}>
+          🔥 {ACTIVE_PROMO.label} Sale — {ACTIVE_PROMO.percentOff}% off any plan
+        </span>
 
-      <span style={{
-        fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em',
-        textTransform: 'uppercase', color: '#B45309',
-        background: '#fff', padding: '3px 10px', borderRadius: '999px',
-        whiteSpace: 'nowrap',
-      }}>
-        ⏰ Limited time offer
-      </span>
+        <span style={{
+          fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em',
+          textTransform: 'uppercase', color: '#B45309',
+          background: '#fff', padding: '3px 10px', borderRadius: '999px',
+          whiteSpace: 'nowrap',
+        }}>
+          ⏰ Limited time offer
+        </span>
+      </div>
 
+      {/* Line 2 — code */}
       <button
         type="button"
         onClick={handleCopy}
@@ -77,6 +83,7 @@ export function PromoBanner() {
         </span>
       </button>
 
+      {/* Line 3 — instructions */}
       <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)' }}>
         Copy the code & paste it at checkout to apply your discount →
       </span>

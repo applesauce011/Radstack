@@ -13,6 +13,7 @@ import { startCheckout, storePendingPlan } from '../utils/checkout'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { trackEvent } from '../utils/analytics'
 import { PRICING_SEEN_KEY } from '../utils/welcomeDiscount'
+import { isPromoActive } from '../data/promo'
 
 const WELCOME_DISCOUNT_PERCENT = 20
 
@@ -44,7 +45,11 @@ export function PricingPage() {
   }, [])
 
   const isExpiredUser = !hasAccess && !!subscription
-  const showWelcomeDiscount = isAuthenticated && !hasAccess && !subscription && eligibleForWelcomeDiscount
+  // Suppressed while a sitewide promo (e.g. Black Friday) is active — mirrors
+  // api/create-checkout.js, which does the same on the server. Showing a
+  // crossed-out 20% here while the Black Friday banner is advertising 40%
+  // would be confusing, and the 20% wouldn't even be the one that applies.
+  const showWelcomeDiscount = isAuthenticated && !hasAccess && !subscription && eligibleForWelcomeDiscount && !isPromoActive()
 
   const expiredStats = isExpiredUser ? getStatsForCards(getAllAccessibleCards(true, false)) : null
 
