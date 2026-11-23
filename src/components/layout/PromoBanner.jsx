@@ -38,26 +38,30 @@ export function PromoBanner() {
         cursor: 'pointer',
         background: 'linear-gradient(135deg, #F59E0B, #F43F5E)',
         padding: '12px 16px',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        gap: '12px', flexWrap: 'wrap', textAlign: 'center',
+        display: 'flex', flexDirection: 'column', alignItems: 'center',
+        justifyContent: 'center', gap: '8px', textAlign: 'center',
       }}
     >
-      <span style={{
-        fontSize: '14px', fontWeight: '700', color: '#fff',
-        fontFamily: 'var(--font-display)', letterSpacing: '-0.01em',
-      }}>
-        🔥 {ACTIVE_PROMO.label} Sale — {ACTIVE_PROMO.percentOff}% off any plan
-      </span>
+      {/* Line 1 — headline */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <span style={{
+          fontSize: '14px', fontWeight: '700', color: '#fff',
+          fontFamily: 'var(--font-display)', letterSpacing: '-0.01em',
+        }}>
+          🔥 {ACTIVE_PROMO.label} Sale — {ACTIVE_PROMO.percentOff}% off any plan
+        </span>
 
-      <span style={{
-        fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em',
-        textTransform: 'uppercase', color: '#B45309',
-        background: '#fff', padding: '3px 10px', borderRadius: '999px',
-        whiteSpace: 'nowrap',
-      }}>
-        ⏰ Limited time offer
-      </span>
+        <span style={{
+          fontSize: '11px', fontWeight: '800', letterSpacing: '0.05em',
+          textTransform: 'uppercase', color: '#B45309',
+          background: '#fff', padding: '3px 10px', borderRadius: '999px',
+          whiteSpace: 'nowrap',
+        }}>
+          ⏰ Limited time offer
+        </span>
+      </div>
 
+      {/* Line 2 — code */}
       <button
         type="button"
         onClick={handleCopy}
@@ -79,6 +83,7 @@ export function PromoBanner() {
         </span>
       </button>
 
+      {/* Line 3 — instructions */}
       <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)' }}>
         Copy the code & paste it at checkout to apply your discount →
       </span>
