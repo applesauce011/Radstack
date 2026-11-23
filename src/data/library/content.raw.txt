@@ -1,0 +1,1867 @@
+======================================================================
+FOUNDATIONS
+======================================================================
+
+----------------------------------------------------------------------
+SECTION: How radiology works
+----------------------------------------------------------------------
+What actually happens between ordering a study and a report landing in the chart.
+
+## How radiology works
+What actually happens between placing an order and a report appearing in the chart, and who does each part of it.
+
+Every study follows the same chain. You place an order. It gets scheduled. Someone protocols it, meaning a radiologist or a trained technologist decides the exact acquisition: contrast or no contrast, which phases, which sequences, which body part and how much of it. A technologist acquires the images. They land in PACS. The study appears on a worklist. A radiologist reads it and dictates. The report is signed and posts to the chart. When a study is "taking forever," the delay is almost always at protocolling or at worklist priority, and both of those respond to a phone call in a way that refreshing the chart does not.
+
+- Radiologic technologist: acquires the images, owns positioning and image quality. The person to ask about repeating a view or why the study looks limited.
+- Resident or registrar: reads first in a teaching hospital, dictates a preliminary report.
+- Fellow: subspecialty trainee, often the one covering a specific service like neuro or body.
+- Attending or consultant radiologist: reviews, edits, signs. The signed report is the legal document.
+- Radiology nurse: IV access, contrast reactions, sedation, pre-procedure checks.
+- Reading room coordinator or clerk: routes phone calls and finds the right radiologist faster than you will.
+
+The protocol is the part students never see and most often fight with. "CT abdomen" is not a study. Contrast timing changes what the study can answer: a non-contrast CT for a stone, portal venous phase for most abdominal pain, arterial and portal venous for liver lesions, a CT urogram with a delayed phase for hematuria. If a radiologist changed your order, they were matching the acquisition to the clinical question. If the question in the order was vague, they had to guess.
+
+[NOTE] A protocol change is not a rejection. It usually means the question you wrote could be answered better a different way. If the changed protocol will not answer what you actually need, call and say what you are looking for. That conversation takes ninety seconds.
+
+STAT / emergent:
+  - What it means in practice: Acquired and read within a defined short window, radiologist interrupted if needed
+  - What actually moves a study up: Correct priority flag plus a phone call for genuine emergencies
+Urgent / same-day:
+  - What it means in practice: Read the day it is acquired
+  - What actually moves a study up: An indication that makes the urgency obvious
+Routine:
+  - What it means in practice: Read in worklist order
+  - What actually moves a study up: Nothing. Do not flag routine studies STAT to jump the queue
+
+Preliminary reports matter clinically. Overnight, the first read may be a resident preliminary, sometimes called a wet read, and it is explicitly subject to change when an attending reviews it in the morning. Most discrepancies are minor. A few are not. Departments track them, and the amended report is the one that counts.
+
+[WARNING] If you are making a decision tonight based on a preliminary read, say so out loud to your team and document that the final is pending. Amended reports are a known source of missed follow-up, and the person who ordered the study is the one expected to see the amendment.
+
+  > How your study gets paid for and why that shapes what you can order
+    Imaging is one of the most heavily utilization-managed parts of medicine. Outpatient advanced imaging often requires prior authorization, which is why an outpatient MRI ordered on Friday is not happening Monday. Inpatient studies bypass this but are constrained by scanner time and staffing overnight, which is why some MRIs get deferred to the morning. Knowing this changes how you counsel a patient about timing, and it is a reliable topic when an attending asks why you did not just order the MRI.
+
+Glossary: PACS, DICOM, indication, comparison study, interval change
+
+## Error types in radiology
+Why competent radiologists miss findings, the named error patterns, and what a discrepancy actually means when a report is amended.
+
+Radiology has a measurable, irreducible error rate, and the specialty is unusual in how openly it studies it. The number quoted most often is a real-time day-to-day error rate in the low single digits, against a retrospective error rate of around thirty percent when studies with known abnormalities are re-reviewed. The gap between those two numbers is the entire point: findings that are obvious once you know they are there were not obvious prospectively. That is not incompetence, it is how visual search works.
+
+- Perceptual: the finding was on the image and was never seen. The majority of radiology errors are perceptual.
+- Cognitive or interpretive: the finding was seen but was misinterpreted, dismissed, or fitted into the wrong diagnosis.
+
+Satisfaction of search:
+  - What happens: The first finding is found, the search stops
+  - Classic example: Obvious femoral neck fracture found, the pubic rami fracture on the same film missed
+Satisfaction of report:
+  - What happens: The prior report's conclusion is accepted without re-looking
+  - Classic example: A nodule called scarring two years ago stays "scarring" while it grows
+Alliterative error:
+  - What happens: The prior radiologist's wording anchors the next one
+  - Classic example: Successive reports repeat "no acute finding" for a slowly enlarging mass
+Anchoring:
+  - What happens: The clinical history fixes the diagnosis before the images are read
+  - Classic example: "Rule out pneumonia" produces a pneumonia read on a film showing a mass
+Inattentional blindness:
+  - What happens: An unexpected finding in plain view is not registered
+  - Classic example: Free air under the diaphragm on a film ordered for line position
+Under-reading:
+  - What happens: The finding is within the image but outside the area being attended to
+  - Classic example: Lung base nodule on a lumbar spine CT
+Complacency:
+  - What happens: The finding is seen and misfiled as a normal variant
+  - Classic example: Subtle lytic lesion dismissed as a nutrient foramen
+
+[EXAM TIP] The second finding is the one that gets missed. Whenever you find something, deliberately restart your search pattern from the beginning rather than moving to the report. This is the single highest-yield habit in this app.
+
+Certain conditions raise error rates predictably: end of shift, high volume, interruptions, poor quality studies, and cases where the clinical history is absent or misleading. This is why the indication you write is not a formality. A radiologist reading a chest radiograph with the indication "SOB" is searching differently than one reading "post-op day 3, sudden hypoxia, central line placed yesterday."
+
+  > What departments do about it
+    Peer learning and peer review programs sample completed studies and score agreement, and most departments run regular discrepancy or quality assurance conferences where missed findings are presented without attribution. Some settings use double reading for high-stakes work such as screening mammography. If you are on an elective and a discrepancy conference is on the schedule, go. It is the most honest hour in the department and it is where you learn what actually gets missed. Being able to describe how a department handles discrepancy is a strong answer in a radiology interview.
+
+  > Hindsight bias and why "missed" is a loaded word
+    Once a finding is pointed out, it becomes nearly impossible to judge how visible it was prospectively. Studies asking reviewers to grade whether a finding "should have been seen" show that knowing the outcome reliably inflates that judgment. This is why radiology error is discussed in terms of discrepancy rather than negligence, and why prospective visibility is the standard that matters, not retrospective visibility.
+
+Q: Why does the radiologist keep asking me for more history?
+A: History changes search behavior and changes the differential for the same appearance. An indication is a clinical question, not a billing field.
+Q: If radiology has a thirty percent retrospective error rate, how is it useful?
+A: Because that figure comes from re-reviewing studies enriched for abnormalities, and most discrepancies are minor and do not change management. The useful conclusion is not that reports are unreliable, it is that a single read is a probabilistic statement and should be weighed against the clinical picture rather than treated as ground truth.
+
+----------------------------------------------------------------------
+SECTION: Radiologic diagnoses every student should know
+----------------------------------------------------------------------
+The pathology spine. Filter by system, modality, exam tag, or tier in the pathology browser.
+
+## Radiologic diagnoses every student should know
+Which findings you are expected to recognize unaided, grouped by how fast you have to act, and the order to learn them in.
+
+The pathology library has the individual entries. This module is the map: what to prioritize, in what order, and what standard you are actually being held to. Nobody expects a medical student to read a CT. What is expected is that you recognize a small set of findings on sight, know which ones mean somebody needs to be called right now, and can say what you are looking at in correct language.
+
+- Tier 1: call someone before you finish looking. These change management in minutes, and you should recognize every one of these on a plain film or a CT:
+- Tension pneumothorax
+- Pneumoperitoneum
+- Aortic dissection or a ruptured abdominal aortic aneurysm
+- Acute intracranial hemorrhage, and midline shift or herniation
+- Ischemic bowel and pneumatosis with portal venous gas
+- Cord compression
+- Free air or contrast leak after an anastomosis
+- Malpositioned endotracheal tube or a nasogastric tube in the airway
+- Ruptured ectopic pregnancy
+- Testicular or ovarian torsion
+- Epiglottitis, and midgut volvulus in a neonate
+
+- Tier 2: recognize on a film today. Frequent, expected, and directly tied to what you will be asked on rounds:
+- Lobar pneumonia and the silhouette sign
+- Pleural effusion, and how it differs from consolidation
+- Pulmonary edema, including Kerley B lines and the batwing pattern
+- Pneumothorax, including the deep sulcus sign on a supine film
+- Small and large bowel obstruction, and how to tell them apart
+- Sigmoid and cecal volvulus
+- The common fractures: Colles, scaphoid, femoral neck, ankle by Weber, supracondylar with fat pads
+- Dislocations: anterior and posterior shoulder, hip
+- Hydronephrosis and renal calculi
+- Cholelithiasis and cholecystitis on ultrasound
+- Lines, tubes, and devices, and their malpositions
+- Established infarct, and the hyperdense MCA sign
+
+- Tier 3: recognize the pattern, name the differential. You are not expected to make the diagnosis, you are expected to describe it correctly and generate a sensible list:
+- Aggressive versus non-aggressive bone lesion
+- Lytic versus blastic metastases
+- Solitary pulmonary nodule
+- Ring-enhancing intracranial lesion
+- Interstitial lung disease and honeycombing
+- Hilar and mediastinal adenopathy
+- Cavitary lung lesion
+- Renal and hepatic lesion, cyst versus mass
+
+[EXAM TIP] The description is the graded part, not the diagnosis. "There is a lucent lesion in the proximal humeral metaphysis with a wide zone of transition, cortical destruction, and periosteal reaction" earns more than "osteosarcoma" said quickly, because the first one shows you know why. If you can describe it correctly, the differential follows almost automatically.
+
+1. Week 1: normals. Normal chest radiograph, normal abdominal radiograph, normal CT head. You cannot see abnormal until normal is boring.
+2. Week 2: Tier 1. The emergencies. Small list, high stakes, and they are visually distinctive, which makes them easier than they sound.
+3. Week 3: Tier 2 by system. Chest first because it is the highest volume, then abdomen, then MSK.
+4. Week 4: Tier 3 patterns and description language. Move from naming things to describing them.
+
+One standard applies across all three tiers. Look at the whole study before you commit to anything, and go back to the beginning after you find something. Almost every finding on these lists has been missed by someone who found a different finding first and stopped looking.
+
+Q: How much am I actually expected to know as a student on a clinical rotation?
+A: Tier 1 on sight, Tier 2 with a moment's thought, and Tier 3 described correctly with a reasonable differential. That standard will make you noticeably better than average on any clinical service, and it is achievable in a few weeks of deliberate practice.
+Q: What if I see something I think is an emergency and I am not sure?
+A: Say so immediately, to a person, out loud. "I might be wrong, but this looks like free air to me" costs nothing if you are wrong and is the right call if you are right. Nobody has ever been criticized for escalating a suspected Tier 1 finding.
+
+## Incidentalomas and the Fleischner criteria
+What to do with the finding nobody was looking for, and the follow-up frameworks worth knowing by name.
+
+Cross-sectional imaging finds things nobody asked about. Incidental findings appear on a large proportion of CT studies, most are benign, and the harm from over-investigating them is real: anxiety, radiation from surveillance, invasive procedures on benign lesions, and cost. Managing them well is a genuine clinical skill and it comes up far more often in practice than any individual diagnosis on the pathology list.
+
+[NOTE] The Fleischner criteria apply to incidentally detected pulmonary nodules in adults from roughly age 35 upward. They do not apply to lung cancer screening, which uses Lung-RADS, and they do not apply to patients with known cancer or immunocompromise, who are managed on their own pathways. Applying the wrong framework is the commonest error here.
+
+Fleischner 2017, solid nodules, single. Intervals are ranges by design, to allow for risk and preference.
+
+Under 6 mm:
+  - Low risk: No routine follow-up
+  - High risk: Optional CT at 12 months
+6 to 8 mm:
+  - Low risk: CT at 6 to 12 months, then consider CT at 18 to 24 months
+  - High risk: CT at 6 to 12 months, then CT at 18 to 24 months
+Over 8 mm:
+  - Low risk: Consider CT at 3 months, PET-CT, or tissue sampling
+  - High risk: Consider CT at 3 months, PET-CT, or tissue sampling
+
+Fleischner 2017, subsolid nodules, single.
+
+Pure ground-glass, under 6 mm:
+  - Recommendation: No routine follow-up
+Pure ground-glass, 6 mm or more:
+  - Recommendation: CT at 6 to 12 months to confirm persistence, then CT every 2 years until 5 years
+Part-solid, under 6 mm:
+  - Recommendation: No routine follow-up
+Part-solid, 6 mm or more:
+  - Recommendation: CT at 3 to 6 months to confirm persistence, then annual CT for 5 years if unchanged. A solid component of 6 mm or more is suspicious
+
+- Multiple nodules are managed by the most suspicious one, not by applying the algorithm to each.
+- The 6 mm threshold exists because the estimated cancer risk below it falls under about 1 percent even in higher-risk patients.
+- Risk factors that push someone into the high-risk column include smoking and other carcinogen exposure, family history, upper lobe location, emphysema, and pulmonary fibrosis.
+- Measurement technique matters. Nodules are measured on thin slices in lung windows, and a 5 mm nodule measured carelessly becomes a 7 mm nodule and two extra CT scans.
+
+Other incidentalomas, and the one fact that resolves most of them.
+
+Adrenal nodule:
+  - The discriminator: Under 10 HU on non-contrast CT means a lipid-rich adenoma. Workup ends
+Renal lesion:
+  - The discriminator: Simple fluid density, no enhancement, no septations means a simple cyst. Complexity is graded by the Bosniak system
+Hepatic lesion:
+  - The discriminator: A small lesion in a non-cirrhotic liver with no risk factors is usually benign. In cirrhosis, everything changes and LI-RADS applies
+Thyroid nodule:
+  - The discriminator: Ultrasound is the next step, with size and sonographic features driving whether it is sampled
+Ovarian cyst:
+  - The discriminator: Simple, thin-walled, anechoic. Size thresholds and menopausal status determine follow-up
+Pancreatic cyst:
+  - The discriminator: Never dismissed. Has its own surveillance pathway, since some are premalignant
+
+The counseling matters as much as the algorithm. Patients hear "we found something on your scan" and stop listening. Lead with prevalence and the plan rather than the possibility: "Scans commonly show small spots like this, the great majority are nothing, and the standard approach is a repeat scan in six months to confirm it has not changed." That is accurate, it does not overpromise, and it does not create months of fear over a lesion that is almost certainly benign.
+
+  > The follow-up that never happens
+    A documented recommendation for follow-up imaging that nobody arranges is one of the most common and most preventable failures in the whole imaging pathway, and it is a recurring pattern in malpractice claims. It fails at handoffs: the patient was an inpatient and the recommendation was in a report the outpatient team never read, or the ordering clinician rotated off service. Departments increasingly run tracking systems for exactly this reason. As a student, an incidental finding on a patient you are discharging is a concrete thing you can own: make sure it is in the discharge summary in plain language with a named plan, not buried in an appended report.
+
+Q: A 4 mm nodule was found on a CT for trauma in a 30-year-old non-smoker. What follow-up?
+A: Careful, because Fleischner is intended for adults from about 35 upward. In a patient under that age the criteria do not directly apply and the decision is individual. Even where they do apply, a solid nodule under 6 mm in a low-risk patient needs no routine follow-up.
+Q: Why are the intervals given as ranges rather than fixed dates?
+A: Deliberately, so that risk factors, patient preference, and practical scheduling can shift the timing without anyone being out of compliance with a guideline. It reflects that these are recommendations rather than rules.
+
+----------------------------------------------------------------------
+SECTION: Classic signs and buzzwords
+----------------------------------------------------------------------
+The eponyms and named signs that show up in every shelf and Step question bank.
+
+## Classic signs and buzzwords
+A rapid index of the named signs exams test and attendings ask about, with what each one actually indicates.
+
+Named signs are how radiology compresses a visual pattern into a word, and exams love them because they are unambiguous to test. They are worth knowing, with one caveat that this module takes seriously: the sign is a recall shortcut, not a way of seeing. You find the finding by describing what is there, and then the name arrives. Working the other way around, searching an image for a sign you already have in mind, is how anchoring errors happen.
+
+[EXAM TIP] Describe first, name second. "There is gas outlining both sides of the bowel wall" then "which is Rigler's sign." Leading with the eponym sounds like a guess and leaves you stuck if it turns out to be something else. In a report, most of these names are used sparingly or not at all, because a description is unambiguous to every reader and an eponym is not.
+
+Chest.
+
+Silhouette sign (https://radiopaedia.org/articles/silhouette-sign-x-ray):
+  - What it indicates: Loss of a border between structures of the same density, localizing an opacity to a lobe
+Air bronchogram (https://radiopaedia.org/articles/air-bronchogram):
+  - What it indicates: Air-filled bronchi against opacified alveoli, meaning airspace disease rather than pleural fluid
+Deep sulcus sign (https://radiopaedia.org/articles/deep-sulcus-sign-chest):
+  - What it indicates: Pneumothorax on a supine film, seen as an abnormally deep lucent costophrenic angle
+Batwing or butterfly opacity (https://radiopaedia.org/articles/bat-wing-opacities-lungs):
+  - What it indicates: Perihilar airspace opacity, classically cardiogenic pulmonary edema
+Kerley B lines (https://radiopaedia.org/articles/septal-lines-in-lung-1):
+  - What it indicates: Thickened interlobular septa, interstitial edema
+Tree-in-bud (https://radiopaedia.org/articles/tree-in-bud-pattern):
+  - What it indicates: Small airway impaction, classically infection such as endobronchial TB
+Honeycombing (https://radiopaedia.org/articles/honeycombing-lungs):
+  - What it indicates: Clustered subpleural cystic spaces, established pulmonary fibrosis
+Water-bottle heart (https://radiopaedia.org/articles/water-bottle-sign-heart):
+  - What it indicates: Globular cardiac silhouette in a large pericardial effusion
+Golden S sign (https://radiopaedia.org/articles/golden-s-sign-lung):
+  - What it indicates: Right upper lobe collapse around a central mass, concerning for bronchogenic carcinoma
+Continuous diaphragm sign (https://radiopaedia.org/articles/continuous-diaphragm-sign):
+  - What it indicates: Pneumomediastinum
+Luftsichel sign (https://radiopaedia.org/articles/luftsichel-sign-lung):
+  - What it indicates: A crescent of hyperlucent lung against the aortic arch in left upper lobe collapse
+Thumbprint sign (lateral neck) (https://radiopaedia.org/articles/thumb-sign-epiglottitis-1):
+  - What it indicates: Swollen epiglottis, epiglottitis
+Steeple sign (https://radiopaedia.org/articles/steeple-sign-trachea):
+  - What it indicates: Subglottic narrowing, croup
+Hampton hump (https://radiopaedia.org/articles/hampton-hump-2):
+  - What it indicates: Peripheral wedge-shaped opacity, pulmonary infarct
+Westermark sign (https://radiopaedia.org/articles/westermark-sign-1):
+  - What it indicates: Regional oligemia distal to a pulmonary embolus
+Meniscus sign (https://radiopaedia.org/articles/meniscus-sign-of-pleural-effusion-upright-chest-radiograph):
+  - What it indicates: Pleural fluid tracking up the lateral chest wall
+
+Abdomen and GI.
+
+Rigler's sign (https://radiopaedia.org/articles/rigler-sign-bowel):
+  - What it indicates: Gas on both sides of the bowel wall, pneumoperitoneum
+Football sign (https://radiopaedia.org/articles/football-sign-pneumoperitoneum):
+  - What it indicates: Large pneumoperitoneum outlining the abdominal cavity, classically in neonates
+Coffee bean sign (https://radiopaedia.org/articles/coffee-bean-sign-sigmoid-colon-1):
+  - What it indicates: Sigmoid volvulus
+String of pearls (https://radiopaedia.org/articles/string-of-pearls-sign-gastrointestinal):
+  - What it indicates: Small gas bubbles trapped between valvulae in fluid-filled small bowel obstruction
+Thumbprinting (https://radiopaedia.org/articles/thumbprinting):
+  - What it indicates: Mucosal and submucosal edema, colitis or ischemia
+Lead-pipe colon (https://radiopaedia.org/articles/lead-pipe-sign-colon):
+  - What it indicates: Featureless, haustra-free colon in chronic ulcerative colitis
+Apple-core lesion (https://radiopaedia.org/articles/apple-core-sign-colon-1):
+  - What it indicates: Annular constricting colonic mass, colorectal carcinoma
+String sign (https://radiopaedia.org/articles/string-sign-bowel):
+  - What it indicates: Narrowed terminal ileal lumen in Crohn disease
+Double bubble (https://radiopaedia.org/articles/double-bubble-sign-duodenum):
+  - What it indicates: Duodenal atresia in a neonate
+Target or doughnut sign (https://radiopaedia.org/articles/target-sign-intussusception):
+  - What it indicates: Intussusception on ultrasound
+Bird's beak (https://radiopaedia.org/articles/bird-beak-sign-disambiguation):
+  - What it indicates: Tapered narrowing, in achalasia or at a volvulus
+Sentinel loop (https://radiopaedia.org/articles/sentinel-loop):
+  - What it indicates: Localized adynamic ileus adjacent to inflammation
+Colon cutoff sign (https://radiopaedia.org/articles/colon-cut-off-sign):
+  - What it indicates: Abrupt gas termination at the splenic flexure, pancreatitis
+Double duct sign (https://radiopaedia.org/articles/double-duct-sign):
+  - What it indicates: Dilated common bile duct and pancreatic duct, pancreatic head mass until proven otherwise
+Whirlpool sign (https://radiopaedia.org/articles/whirlpool-sign-mesentery):
+  - What it indicates: Twisted mesentery on CT, volvulus
+
+Neuro.
+
+Hyperdense MCA sign (https://radiopaedia.org/articles/hyperdense-mca-sign-brain-1):
+  - What it indicates: Acute thrombus in the middle cerebral artery
+Insular ribbon sign (https://radiopaedia.org/articles/loss-of-the-insular-ribbon-sign):
+  - What it indicates: Loss of grey-white differentiation at the insula, early MCA infarct
+Empty delta sign (https://radiopaedia.org/articles/empty-delta-sign-dural-venous-sinus-thrombosis):
+  - What it indicates: Filling defect in the superior sagittal sinus, venous sinus thrombosis
+Swirl sign (https://radiopaedia.org/articles/swirl-sign-intracranial-haemorrhage):
+  - What it indicates: Active bleeding within an acute hematoma
+Dawson's fingers (https://radiopaedia.org/articles/dawson-fingers):
+  - What it indicates: Periventricular demyelinating plaques perpendicular to the ventricles, multiple sclerosis
+Lemon and banana signs (https://radiopaedia.org/articles/lemon-sign-1):
+  - What it indicates: Frontal scalloping and cerebellar curvature on fetal ultrasound, Chiari II with open neural tube defect
+Mount Fuji sign (https://radiopaedia.org/articles/mount-fuji-sign-1):
+  - What it indicates: Tension pneumocephalus
+Cord sign (https://radiopaedia.org/articles/cord-sign-dural-sinus-thrombosis):
+  - What it indicates: Hyperdense thrombosed cortical vein
+Molar tooth sign (https://radiopaedia.org/articles/molar-tooth-sign-cns-1):
+  - What it indicates: Midbrain appearance in Joubert syndrome
+Hummingbird sign (https://radiopaedia.org/articles/hummingbird-sign-midbrain):
+  - What it indicates: Midbrain atrophy on sagittal MRI, progressive supranuclear palsy
+
+MSK.
+
+Codman triangle (https://radiopaedia.org/articles/codman-triangle-periosteal-reaction):
+  - What it indicates: Elevated periosteum at the margin of an aggressive bone lesion
+Sunburst pattern (https://radiopaedia.org/articles/sunburst-appearance-bone-1):
+  - What it indicates: Perpendicular spiculated periosteal reaction, classically osteosarcoma
+Onion-skin periosteal reaction (https://radiopaedia.org/articles/multilayered-periosteal-reaction):
+  - What it indicates: Layered periosteal reaction, classically Ewing sarcoma
+Sail sign and posterior fat pad (https://radiopaedia.org/articles/sail-sign-elbow-1):
+  - What it indicates: Elbow joint effusion, implying an occult fracture in trauma
+Fallen fragment sign (https://radiopaedia.org/articles/fallen-fragment-sign):
+  - What it indicates: Bone fragment settling in a fluid-filled simple bone cyst
+Segond fracture (https://radiopaedia.org/articles/segond-fracture):
+  - What it indicates: Lateral tibial avulsion, strongly associated with ACL rupture
+Bamboo spine (https://radiopaedia.org/articles/bamboo-spine-ankylosing-spondylitis):
+  - What it indicates: Fused syndesmophytes in ankylosing spondylitis
+Pencil-in-cup deformity (https://radiopaedia.org/articles/pencil-in-cup-deformity-1):
+  - What it indicates: Psoriatic arthritis
+Rat-bite erosions (https://radiopaedia.org/articles/rat-bite-erosions-gout):
+  - What it indicates: Gout, with overhanging edges and preserved joint space
+Punched-out lytic lesions (https://radiopaedia.org/articles/multiple-myeloma-1):
+  - What it indicates: Multiple myeloma
+Dinner fork deformity (https://radiopaedia.org/articles/dinner-fork-deformity-wrist):
+  - What it indicates: Dorsally angulated distal radius, Colles fracture
+Looser zones (https://radiopaedia.org/articles/looser-zones-1):
+  - What it indicates: Pseudofractures in osteomalacia
+Rugger jersey spine (https://radiopaedia.org/articles/rugger-jersey-spine-hyperparathyroidism-1):
+  - What it indicates: Endplate sclerosis in renal osteodystrophy
+Shepherd's crook deformity (https://radiopaedia.org/articles/shepherd-crook-deformity):
+  - What it indicates: Proximal femoral bowing in fibrous dysplasia
+
+Pediatrics, genitourinary, and vascular.
+
+Boot-shaped heart (https://radiopaedia.org/articles/boot-shaped-heart-4):
+  - What it indicates: Tetralogy of Fallot
+Snowman or figure-of-8 heart (https://radiopaedia.org/articles/snowman-sign-total-anomalous-pulmonary-venous-return-1):
+  - What it indicates: Total anomalous pulmonary venous return
+Rib notching (https://radiopaedia.org/articles/rib-notching):
+  - What it indicates: Collateral vessel erosion in coarctation of the aorta
+Target sign (https://radiopaedia.org/articles/target-sign-intussusception):
+  - What it indicates: Intussusception
+Staghorn calculus (https://radiopaedia.org/articles/staghorn-calculus-kidney):
+  - What it indicates: Branching struvite stone filling the renal collecting system
+Ring of fire (https://radiopaedia.org/articles/ring-of-fire-sign-adnexa):
+  - What it indicates: Peripheral vascularity around an adnexal mass on Doppler, ectopic pregnancy
+Snowstorm appearance (https://radiopaedia.org/articles/snowstorm-sign-complete-hydatiform-mole-2):
+  - What it indicates: Complete hydatidiform mole
+Bell-clapper deformity (https://radiopaedia.org/articles/bell-clapper-deformity):
+  - What it indicates: Anatomic predisposition to testicular torsion
+Cannonball metastases (https://radiopaedia.org/articles/cannonball-metastases-lungs):
+  - What it indicates: Multiple large round pulmonary metastases
+Whirlpool sign (testis) (https://radiopaedia.org/articles/whirlpool-sign-testicular-torsion):
+  - What it indicates: Twisted spermatic cord in torsion
+
+[WARNING] Two traps. First, several names are reused across systems: string of pearls means small bowel obstruction on an abdominal film and a different thing entirely on a polycystic ovary, whirlpool means both midgut volvulus and testicular torsion, and target sign appears in intussusception and elsewhere. Always state the system. Second, a sign is suggestive and not diagnostic. A hyperdense MCA is not present in every MCA occlusion, and a dense vessel can be an artifact of a high hematocrit.
+
+  > Why eponyms persist, and the argument against them
+    Named signs compress a complex visual pattern into one retrievable token, which is genuinely efficient for teaching and for exams. The case against them is that they are opaque to anyone outside the specialty, that many honor people with no connection to the finding, that some carry troubling historical associations, and that a plain description communicates more reliably to the clinician reading the report. The trend in structured reporting is toward description over eponym. Knowing both, and knowing when each is appropriate, is the useful position.
+
+----------------------------------------------------------------------
+SECTION: Lines, tubes and devices
+----------------------------------------------------------------------
+Reading a portable chest film full of hardware: what's where, and what's malpositioned.
+
+## Lines, tubes and devices
+The device check you run on every ICU film, where each device is supposed to sit, and the malpositions that hurt people.
+
+The daily chest radiograph in an intensive care unit is mostly a device check, and it is the single most common film a student is asked to interpret. It is also an unusually fair thing to ask, because the answer does not depend on subtle pattern recognition. Every device has a defined correct position and a small number of characteristic malpositions. Learn those and you can contribute meaningfully on a ward round in your first week.
+
+1. Identify every device on the film before interpreting any of them. Count them. Missing one entirely is more common than misjudging a position.
+2. Trace each device from where it enters the body to its tip. Follow the whole course, not just the end.
+3. Name the tip position against its landmark.
+4. Look for the complication of insertion: pneumothorax after a central line or chest tube, hemothorax, subcutaneous emphysema, lung collapse after a deep endotracheal tube.
+5. Compare with the previous film. Devices migrate. A tube that was correct yesterday may not be today, and interval change is the whole reason the film was taken.
+6. Then read the film for pathology, starting your search pattern from the beginning.
+
+Endotracheal tube:
+  - Correct position: Tip in mid-trachea, roughly 5 cm above the carina with the neck neutral
+  - Common malposition and its consequence: Too deep goes into the right main bronchus and collapses the left lung. Too high risks extubation. Esophageal placement is catastrophic and is a clinical diagnosis, not a radiographic one
+Tracheostomy tube:
+  - Correct position: Tip roughly midway between the stoma and the carina, cannula about half the tracheal width
+  - Common malposition and its consequence: Tip against the tracheal wall, or malposition in a pretracheal false passage
+Nasogastric or orogastric tube:
+  - Correct position: Tip well below the diaphragm in the stomach, with the side port past the gastroesophageal junction
+  - Common malposition and its consequence: Coiled in the esophagus risks aspiration. In the airway or lung, feeding through it is lethal
+Central venous catheter:
+  - Correct position: Tip at the cavoatrial junction or lower superior vena cava
+  - Common malposition and its consequence: Into the azygos vein, up the contralateral or ipsilateral internal jugular, or too deep into the right atrium or ventricle risking arrhythmia and perforation. Pneumothorax after insertion
+PICC line:
+  - Correct position: Same target as a central line
+  - Common malposition and its consequence: Malposition into a smaller tributary, or migration with arm movement
+Pulmonary artery catheter:
+  - Correct position: Tip in the main or proximal right or left pulmonary artery
+  - Common malposition and its consequence: Too distal risks pulmonary infarction and rupture. Coiled in the right ventricle
+Chest tube:
+  - Correct position: All side holes inside the pleural space, with the radiopaque line interruption inside the rib cage
+  - Common malposition and its consequence: Side hole outside the chest wall causes a persistent leak. Placement in a fissure or into lung parenchyma
+Intra-aortic balloon pump:
+  - Correct position: Tip just distal to the origin of the left subclavian artery
+  - Common malposition and its consequence: Too high occludes the subclavian or carotid. Too low occludes the renal or mesenteric arteries
+Pacemaker or ICD:
+  - Correct position: Right atrial appendage lead, right ventricular apex lead, left ventricular lead in a coronary sinus tributary
+  - Common malposition and its consequence: Lead fracture, displacement, or perforation. Count the leads and check each one against the device type
+Ventriculoperitoneal shunt:
+  - Correct position: Continuous catheter from ventricle to peritoneum
+  - Common malposition and its consequence: Disconnection or fracture, usually at a connector. A shunt series follows the whole course
+ECMO cannulae:
+  - Correct position: Position depends on configuration
+  - Common malposition and its consequence: Malposition compromises flow and is an emergency
+
+[CRITICAL] The nasogastric tube in the airway is the one that kills. A misplaced feeding tube that is used causes chemical pneumonitis and death, and it is a recognized never event in several health systems. Auscultation over the stomach does not confirm placement and never has. Confirm with a radiograph or an approved pH test before anything goes down the tube, and if the tube is not clearly below the diaphragm on the film, say so out loud rather than assuming somebody else checked.
+
+[NOTE] Two practical points about the endotracheal tube. Position moves with head position: the tip descends toward the carina with neck flexion and rises with extension, by a couple of centimeters in each direction, which is why the neutral neck qualifier matters. And a sudden loss of breath sounds on the left after a tube is manipulated is right main bronchus intubation until proven otherwise, which is a bedside diagnosis you can make before the film comes back.
+
+Some devices belong to the abdomen and are seen on abdominal films or CT: ureteric stents, which should curl in the renal pelvis and in the bladder, biliary drains and stents, gastrostomy tubes, inferior vena cava filters, and surgical drains. The same discipline applies. Identify it, trace it, name where the tip sits, and compare with the prior study.
+
+  > How to present a device check on rounds
+    Present devices in a fixed order and be explicit about each one, because the value of the answer is in the completeness rather than in finding one abnormality. "The endotracheal tube tip is about 4 cm above the carina, appropriate. The right internal jugular central line tip is at the cavoatrial junction. The nasogastric tube passes below the diaphragm with the side port beyond the gastroesophageal junction. There is no pneumothorax following the line insertion. Compared with yesterday, no change in device position." That takes fifteen seconds, covers everything, and is a genuinely useful contribution to a ward round rather than a performance.
+
+Q: The central line tip looks like it is in the right atrium. Does it need to be pulled back?
+A: Usually yes, and it is a simple bedside adjustment. A tip deep in the atrium or in the ventricle risks arrhythmia and, rarely, perforation with tamponade. Flag it, because it is easy to fix and easy to overlook.
+Q: A patient has a new pneumothorax after a line was placed. What do I do first?
+A: Assess the patient before the film. A small stable pneumothorax may be observed, while any hemodynamic compromise or increasing oxygen requirement means tension physiology and needs immediate decompression rather than another scan.
+
+======================================================================
+PHYSICS AND SAFETY
+======================================================================
+
+----------------------------------------------------------------------
+SECTION: Imaging physics: what's bright, what's dark
+----------------------------------------------------------------------
+The physics behind why bone is white and air is black, for every modality you'll actually use.
+
+## Imaging physics: what's bright, what's dark
+What physical property each modality is actually measuring, and the correct word for bright and dark in each one.
+
+Every modality answers a different physical question, and the greyscale means something different in each. Radiographs and CT measure how much tissue attenuates an X-ray beam. Ultrasound measures how much sound is reflected back from a tissue interface. MRI measures the behavior of hydrogen protons in a magnetic field after a radiofrequency pulse, which is why MRI has no single greyscale at all and depends entirely on the sequence. Using the wrong vocabulary for a modality is the fastest way to sound like you have not done a rotation.
+
+Radiograph:
+  - What forms the image: X-ray attenuation
+  - Bright means: More attenuating: bone, metal, fluid, soft tissue
+  - Dark means: Less attenuating: air, fat
+  - Correct adjectives: Opacity (white), lucency (black)
+CT:
+  - What forms the image: X-ray attenuation, calibrated to Hounsfield units
+  - Bright means: Higher HU
+  - Dark means: Lower HU
+  - Correct adjectives: Hyperdense or hyperattenuating, hypodense, isodense
+Ultrasound:
+  - What forms the image: Reflected sound at tissue interfaces
+  - Bright means: More reflective
+  - Dark means: Less reflective
+  - Correct adjectives: Hyperechoic, hypoechoic, anechoic, isoechoic
+MRI:
+  - What forms the image: Proton signal, sequence-dependent
+  - Bright means: High signal
+  - Dark means: Low signal
+  - Correct adjectives: Hyperintense, hypointense, signal void
+Nuclear medicine:
+  - What forms the image: Radiotracer distribution
+  - Bright means: More tracer uptake
+  - Dark means: Less or absent uptake
+  - Correct adjectives: Increased uptake, photopenic
+
+[EXAM TIP] "Bright" is meaningless without naming the modality, and on MRI it is meaningless without naming the sequence. "T2 hyperintense" is a description. "Bright on MRI" is not.
+
+- On a radiograph, describe a white area as an opacity, not a "density" and not a "shadow."
+- Infiltrate has fallen out of use because it means different things to different readers. Say consolidation, airspace opacity, or interstitial opacity depending on what you see.
+- Reserve lesion for something you have actually characterized. Until then it is an opacity, a nodule, or an area of abnormality.
+- Anechoic and hypoechoic are not interchangeable. A simple cyst is anechoic. A solid hypoechoic mass is not.
+
+One consequence of attenuation-based imaging is worth understanding early. Structures of the same density in direct contact have no visible border between them, because there is no attenuation difference to create an edge. That single fact is the entire basis of the silhouette sign, which is how you localize a chest opacity to a lobe without a lateral view.
+
+Glossary: attenuation, opacity, lucency, echogenic, hyperintense, hypointense, signal void, Hounsfield unit
+
+## The density ladder
+The five radiographic densities and the Hounsfield scale, plus the specific HU numbers that actually change management.
+
+A radiograph can distinguish five densities and no more: air, fat, soft tissue and water, bone and calcium, and metal. Water and soft tissue are indistinguishable on a radiograph, which is why a pleural effusion and a consolidation both look white and why you often cannot tell them apart without a decubitus view, an ultrasound, or a CT. CT solves this by subdividing that same attenuation range across a scale of several thousand values. That subdivision is the whole reason CT exists.
+
+[Image: The imaging density ladder, from air to metal.]
+
+- Air (radiograph: Black, CT HU: -1000)
+- Fat (radiograph: Dark grey, CT HU: -120 to -50)
+- Simple fluid / water (radiograph: Grey, indistinguishable from soft tissue, CT HU: -10 to +10)
+- Soft tissue and muscle (radiograph: Grey, CT HU: +20 to +70)
+- Acute clotted blood (radiograph: Grey, not distinguishable, CT HU: +50 to +70)
+- Contrast-enhanced vessel (radiograph: White, CT HU: +100 to +400)
+- Bone (cancellous) (radiograph: White, CT HU: +300 to +500)
+- Bone (cortical) (radiograph: Bright white, CT HU: +1000 and above)
+- Metal (radiograph: Bright white, often with streak, CT HU: +2000 and above)
+
+- Simple cyst: under 20 HU, no enhancement. This is how a renal cyst is separated from a renal mass.
+- Adrenal adenoma: under 10 HU on non-contrast CT is diagnostic of a lipid-rich adenoma and ends the workup.
+- Macroscopic fat: below -30 HU inside a lesion. Fat in a renal lesion means angiomyolipoma, in an adrenal lesion means myelolipoma, in an ovarian lesion means dermoid.
+- Acute blood: 50 to 70 HU, brighter than brain or muscle. It becomes progressively less dense over days, which is why a subacute subdural can be isodense to brain and nearly invisible.
+- Calcification: clearly above soft tissue, typically well over 100 HU. Distinguishing calcification from contrast on a single phase requires a non-contrast comparison.
+
+[NOTE] Two structures of the same density in contact lose the border between them. A right middle lobe opacity erases the right heart border. A right lower lobe opacity does not, because it sits behind the heart and touches the diaphragm instead. That is the silhouette sign, and it works on any radiograph anywhere in the body.
+
+[EXAM TIP] When you are asked "what is that," give the density first and the diagnosis second. "There is a hyperdense collection along the left convexity measuring around 60 HU" is a radiology answer. "That's a bleed" is a guess that happens to be right.
+
+  > Where the Hounsfield scale comes from, and where it lies to you
+    The scale is defined by calibration: water is 0 and air is -1000 by definition, with each unit representing a fixed fraction of water's attenuation. Because X-ray attenuation is energy-dependent, measured HU varies slightly with tube voltage, patient size, and scanner, which is why a lesion measuring 11 HU is not reliably different from one measuring 9. Small lesions also suffer from partial volume averaging, where the measured value is a blend of the lesion and surrounding tissue, so an ROI placed on a 6 mm structure is not trustworthy. Dual-energy CT exploits the energy dependence deliberately, using two tube voltages to separate materials that look identical at a single energy, which is how it distinguishes uric acid from calcium stones and iodine from hemorrhage.
+
+Glossary: Hounsfield unit, attenuation, window and level
+
+## Windowing
+Why the same CT looks completely different depending on the window, and which windows you are obligated to look at before you say a study is normal.
+
+A CT contains several thousand distinct attenuation values. A monitor displays a few hundred shades of grey, and the eye resolves far fewer than that. Windowing is the mapping between the two. The window level is the HU value at the center of the displayed range. The window width is how many HU are spread across black to white. Everything above the window displays as pure white, everything below as pure black, and all of that information is still in the data and is simply not being shown to you.
+
+- Narrow window equals high contrast, fewer distinguishable tissues, subtle differences exaggerated.
+- Wide window equals low contrast, more tissues visible at once, subtle differences flattened.
+- Changing the window changes nothing about the acquisition. You are not "enhancing" anything, you are choosing what to look at.
+
+Lung:
+  - Typical width / level: ~1500 / -600
+  - What it is for: Pneumothorax, nodules, interstitial disease, emphysema
+Soft tissue / mediastinum:
+  - Typical width / level: ~350 / 40
+  - What it is for: Organs, lymph nodes, fluid collections, most abdominal pathology
+Bone:
+  - Typical width / level: ~2000 / 400
+  - What it is for: Fractures, cortical destruction, sclerotic lesions
+Brain:
+  - Typical width / level: ~80 / 40
+  - What it is for: Grey-white differentiation, hemorrhage, mass effect
+Subdural:
+  - Typical width / level: ~200 / 60
+  - What it is for: Thin extra-axial collections lying against the skull
+Stroke:
+  - Typical width / level: ~35 / 35
+  - What it is for: Early loss of grey-white differentiation, insular ribbon
+Liver:
+  - Typical width / level: ~150 / 60
+  - What it is for: Low-contrast hepatic lesions
+
+[CRITICAL] You cannot exclude a pneumothorax, a lung nodule, or a rib fracture in soft tissue window. Every chest CT is read at least three times, in lung, soft tissue, and bone windows. A student who says "the CT is normal" after looking at one window has not read the CT.
+
+1. Soft tissue window, scroll top to bottom: mediastinum, hila, great vessels, nodes, pleural fluid.
+2. Lung window, scroll top to bottom again: parenchyma, airways, pleura, pneumothorax.
+3. Bone window: ribs, spine, sternum, shoulder girdle, lytic or sclerotic lesions.
+4. Coronal and sagittal reformats: anything running craniocaudally, which is where axial-only reading fails.
+
+[Image: Soft tissue window: organs, vessels, and fluid collections resolve, but the lung and bones flatten out.]
+
+[Image: Lung window: parenchyma and airways resolve, but soft tissue contrast is lost.]
+
+[Image: Bone window: cortex and trabecular detail resolve, at the cost of everything else.]
+
+[NOTE] The subdural window exists for one reason. A thin hyperdense subdural collection sitting against hyperdense skull is invisible on standard brain window because both saturate to white. Widening the window separates them. If a head CT is ordered for trauma and you look only at the standard brain window, this is the finding you will miss.
+
+[Image: Standard brain window: grey-white differentiation, ventricles, and mass effect.]
+
+[Image: Stroke window: the same slice, narrowed to accentuate early grey-white loss.]
+
+Q: Why does my window keep resetting when I scroll to the next series?
+A: Each series carries its own default window from the protocol. Most PACS bind presets to keyboard shortcuts, and learning three of them on day one saves you hours over a rotation.
+Q: Can I window a radiograph?
+A: Yes, digital radiographs have adjustable window and level too, and it is worth doing when looking for a subtle pneumothorax or a line tip against a dense mediastinum.
+
+## MRI sequences: what's bright on T1, T2, and DWI
+How to identify which sequence you are looking at in under two seconds, and what bright means on each one.
+
+MRI has no fixed greyscale. The same tissue is bright on one sequence and dark on the next, because each sequence weights a different property of the protons. Students get lost because they try to memorize what every tissue looks like on every sequence. Do the opposite: learn to identify the sequence first, then apply one rule to it.
+
+[EXAM TIP] Look at the CSF. Dark CSF means T1. Bright CSF means T2. Dark CSF with bright lesions means FLAIR. That reflex identifies the sequence on almost every brain MRI you will be shown.
+
+T1:
+  - CSF: Dark
+  - Fat: Bright
+  - What it is for: Anatomy, and the baseline before contrast
+  - Bright means: Fat, subacute blood, melanin, proteinaceous fluid, gadolinium
+T2:
+  - CSF: Bright
+  - Fat: Fairly bright
+  - What it is for: Pathology, because most pathology contains water
+  - Bright means: Edema, fluid, most tumors, inflammation, cysts
+FLAIR:
+  - CSF: Dark (suppressed)
+  - Fat: Fairly bright
+  - What it is for: Lesions next to CSF that T2 hides
+  - Bright means: Edema and gliosis, without CSF drowning them out
+STIR / T2 fat-sat:
+  - CSF: Bright
+  - Fat: Dark (suppressed)
+  - What it is for: MSK and spine, bone marrow edema
+  - Bright means: Edema, fracture, infection, tumor in marrow
+DWI:
+  - CSF: Variable
+  - Fat: Variable
+  - What it is for: Restricted diffusion
+  - Bright means: Acute infarct, abscess, dense cellular tumor, epidermoid
+ADC map:
+  - CSF: Bright
+  - Fat: Variable
+  - What it is for: Confirming DWI
+  - Bright means: High diffusion. True restriction is dark on ADC
+T1 post-gadolinium:
+  - CSF: Dark
+  - Fat: Bright unless suppressed
+  - What it is for: Enhancement
+  - Bright means: Breakdown of the blood-brain barrier, vascularity, active inflammation
+GRE / SWI:
+  - CSF: Variable
+  - Fat: Variable
+  - What it is for: Blood and calcium
+  - Bright means: Nothing useful. It is the dark blooming that matters
+
+- Water is white on T2. Almost every pathological process increases local water content, which is why T2 and FLAIR are where lesions live.
+- Restricted diffusion is bright on DWI and dark on ADC. DWI bright alone is not enough, because T2 shine-through produces a bright DWI with a bright ADC. Always check both.
+- Enhancement means the pre-contrast T1 was darker. A structure bright on post-contrast T1 that was already bright before contrast is not enhancing. It is fat or blood.
+- Suppression tells you what a tissue is. If a bright T1 lesion loses its signal on fat-saturated T1, that lesion contains fat.
+
+Two practical differences from CT are worth stating plainly. MRI takes far longer to acquire, so it is motion-sensitive and often not the right test in an uncooperative or unstable patient. And MRI has no ionizing radiation, which is why it is preferred for young patients, for pregnancy where imaging is needed, and for any disease requiring repeated imaging over years.
+
+  > Blood products on MRI
+    Hemorrhage changes signal predictably as hemoglobin degrades, and the sequence is a favorite question because it lets someone date a bleed from an image. In rough order: hyperacute is T1 iso to dark and T2 bright, acute is T1 iso and T2 dark, early subacute is T1 bright and T2 dark, late subacute is bright on both, and chronic hemosiderin is dark on both with blooming on GRE. The common mnemonic runs "IB, ID, BD, BB, DD" for T1 then T2 across those five stages. This is beyond what any shelf exam requires. It is worth having if you are on a neuro rotation or interviewing in radiology.
+
+Q: Why did they do the MRI without contrast when I asked for contrast?
+A: Contrast adds value when you are looking for enhancement: tumor, infection, active demyelination, abscess. It adds nothing for a routine lumbar disc, a straightforward meniscal tear, or most acute stroke protocols, and it carries a small cost and risk. If enhancement is the point, say so in the indication.
+Q: What does restricted diffusion actually mean?
+A: Water molecules are physically less able to move, most often because cells have swollen and the extracellular space has collapsed. That is why it appears within minutes of an infarct, and why it also appears in pus and in densely packed tumor.
+
+## Artifacts as findings
+How to recognize the common artifacts, and the handful of artifacts that are themselves the diagnosis.
+
+An artifact is anything in the image that does not correspond to the patient's anatomy. Most artifacts degrade a study. A few are diagnostic, because they are produced by a specific physical property of a specific pathology. Being able to name an artifact is the difference between saying "that looks weird" and saying "that is beam hardening from the shoulders, this part of the study is non-diagnostic."
+
+Rotation:
+  - Modality: Radiograph
+  - How to recognize it: Spinous processes not midway between the clavicular heads. Mediastinum looks falsely widened, one hilum falsely prominent
+Expiratory film:
+  - Modality: Radiograph
+  - How to recognize it: Fewer than 9 posterior ribs above the diaphragm. Crowded vessels mimic edema, heart looks falsely enlarged
+Lordotic projection:
+  - Modality: Radiograph
+  - How to recognize it: Clavicles project above the lung apices. Distorts the apices and the heart contour
+Skin fold:
+  - Modality: Radiograph
+  - How to recognize it: A line with lung markings on both sides, often continuing beyond the chest wall
+Hair braids, clothing, ECG leads:
+  - Modality: Radiograph
+  - How to recognize it: Superimposed opacities that cross anatomical boundaries
+Beam hardening / streak:
+  - Modality: CT
+  - How to recognize it: Dark and bright bands radiating from metal or dense bone, worst at the shoulders and posterior fossa
+Partial volume averaging:
+  - Modality: CT
+  - How to recognize it: A structure blurred with its neighbor because it is smaller than the slice, giving falsely intermediate HU
+Motion:
+  - Modality: CT
+  - How to recognize it: Blurred or doubled edges, stair-step discontinuity on reformats
+Cardiac pulsation:
+  - Modality: CT
+  - How to recognize it: Apparent line in the aortic root mimicking a dissection flap, not present on other phases
+Acoustic shadowing:
+  - Modality: Ultrasound
+  - How to recognize it: Dark band deep to a strongly reflective or absorbing structure
+Posterior acoustic enhancement:
+  - Modality: Ultrasound
+  - How to recognize it: Bright band deep to a fluid-filled structure
+Reverberation / comet tail:
+  - Modality: Ultrasound
+  - How to recognize it: Repeating parallel echoes deep to a strong interface
+Susceptibility / blooming:
+  - Modality: MRI
+  - How to recognize it: Signal dropout expanding beyond the true size of the object, worst on GRE
+Chemical shift:
+  - Modality: MRI
+  - How to recognize it: Bright and dark rim at fat-water interfaces, along the frequency-encoding direction
+Motion / ghosting:
+  - Modality: MRI
+  - How to recognize it: Repeated faint copies of a structure across the image, in the phase-encoding direction
+Gibbs / truncation:
+  - Modality: MRI
+  - How to recognize it: Parallel bright and dark bands next to a sharp high-contrast edge, classically mimicking a syrinx in the cord
+
+[NOTE] The artifacts that are diagnoses: acoustic shadowing behind an echogenic focus in the gallbladder equals a stone. Posterior acoustic enhancement behind an anechoic structure confirms it is fluid, not solid. Comet-tail artifact in the gallbladder wall equals cholesterol crystals in Rokitansky-Aschoff sinuses, meaning adenomyomatosis. Twinkle artifact on color Doppler over a renal echogenic focus supports a stone. Blooming on GRE or SWI equals blood products or calcium.
+
+[WARNING] The skin fold that looks like a pneumothorax is a classic and it has real consequences, because the response to a pneumothorax is a chest tube. A pneumothorax has a thin white visceral pleural line with no lung markings peripheral to it. A skin fold is a broader edge with lung markings on both sides, and it usually extends past the ribs. If you are not sure, ask for a repeat or an expiratory film before anyone reaches for a tube.
+
+Some artifacts tell you about the patient rather than the machine. Extensive streak artifact means hardware or dense contrast. Severe motion on a head CT in an elderly patient with an unclear history is itself clinical information. And an artifact that makes a region non-diagnostic should be stated in a report rather than quietly worked around, because the referring team needs to know the question was not answered.
+
+Q: The report says the study is "limited by streak artifact." Do I need to repeat it?
+A: Not automatically. Ask what specifically was obscured and whether it matters for your question. Often the limitation affects a region you do not care about. If it affects the region you do care about, a different modality usually beats a repeat of the same one.
+Q: How do I tell partial volume from a real subtle lesion on CT?
+A: Look at it on thinner slices and on a reformat in another plane. A partial volume effect disappears. A lesion does not.
+
+Glossary: artifact, window and level, echogenic, signal void
+
+----------------------------------------------------------------------
+SECTION: Contrast and safety
+----------------------------------------------------------------------
+Iodinated and gadolinium contrast: who can't have it, and what to do when a reaction happens.
+
+## Contrast and safety
+What the contrast agents are, what each one is for, and the screening questions that have to be answered before any of them go in.
+
+Contrast exists to create a difference where the tissue does not provide one. Iodinated agents attenuate X-rays, so they make vessels and vascular tissue bright on CT. Gadolinium shortens T1 relaxation, so it makes enhancing tissue bright on T1-weighted MRI. Barium and water-soluble agents coat the bowel lumen. Ultrasound microbubbles reflect sound. Each has a different risk profile, and the screening questions differ, so "contrast allergy" written in a chart is close to meaningless until you know which agent.
+
+Iodinated, non-ionic low-osmolar:
+  - Route: IV
+  - What it is for: CT angiography, organ enhancement, most body CT
+  - Main hazards: Allergic-like reaction, contrast-associated AKI, extravasation
+Iodinated, water-soluble:
+  - Route: Oral or rectal
+  - What it is for: Bowel opacification, suspected leak or perforation
+  - Main hazards: Aspiration pneumonitis if it reaches the lung
+Barium sulfate:
+  - Route: Oral or rectal
+  - What it is for: Fluoroscopic GI studies, best mucosal coating
+  - Main hazards: Barium peritonitis if it leaks. Never when perforation is suspected
+Gadolinium-based:
+  - Route: IV
+  - What it is for: MRI enhancement
+  - Main hazards: Allergic-like reaction, NSF in severe renal failure with older agents, retention
+Microbubble:
+  - Route: IV
+  - What it is for: Contrast-enhanced ultrasound, liver lesion characterization
+  - Main hazards: Very low. No nephrotoxicity, no radiation
+Carbon dioxide:
+  - Route: Intra-arterial
+  - What it is for: Angiography when iodinated contrast must be avoided
+  - Main hazards: Specialist use only
+
+- Prior reaction, and to which agent. A previous allergic-like reaction to the same class is the strongest single predictor of another one.
+- Renal function, in the patients who need it checked. Current ACR guidance has moved away from universal eGFR screening toward targeted screening of patients with a history of renal disease, dialysis, transplant, or albuminuria.
+- Metformin. Relevant only in specific circumstances.
+- Pregnancy and breastfeeding.
+- Thyroid. Iodinated contrast can precipitate thyrotoxicosis in patients with an autonomous nodule, and it affects radioiodine uptake, so it is avoided before thyroid scintigraphy or radioiodine therapy.
+
+[WARNING] Barium versus water-soluble is a decision with real consequences and it goes in both directions. If a perforation or an anastomotic leak is suspected, do not use barium, because barium in the peritoneum causes a severe chemical peritonitis. If aspiration is the risk, do not use a high-osmolar water-soluble agent, because it draws fluid into the lung and causes a pneumonitis. Suspected leak with aspiration risk means a non-ionic iso-osmolar water-soluble agent.
+
+Renal risk has been substantially reframed. The literature now separates contrast-associated AKI, which is any acute kidney injury occurring after contrast and may be coincidental, from contrast-induced AKI, which is the smaller causally attributable subset. Much of what was historically blamed on contrast reflected the underlying illness that prompted the scan. The 2020 ACR and National Kidney Foundation consensus set a single practical threshold at an eGFR below 30, with prophylaxis not routinely indicated above that.
+
+Metformin, which students are asked about constantly and which changed.
+
+eGFR 30 or above, no acute kidney injury:
+  - What happens to metformin: Continue. No hold before or after IV iodinated contrast, and no obligatory recheck of renal function afterward
+eGFR below 30, known AKI, or arterial catheter study risking renal emboli:
+  - What happens to metformin: Hold at the time of contrast and for 48 hours, restart after renal function is reassessed
+
+[NOTE] Metformin does not damage the kidney and contrast does not interact with metformin directly. The entire concern is one step removed: if contrast contributes to an unrecognized AKI, metformin accumulates, and accumulated metformin can cause lactic acidosis. That is why the hold applies only where AKI is present or likely. The older blanket 48-hour hold for everyone is no longer recommended.
+
+  > What actually prevents contrast-associated AKI
+    Isotonic saline is the only prophylactic intervention with consistent supporting evidence, and it is reserved for genuinely higher-risk patients rather than given routinely. N-acetylcysteine and sodium bicarbonate were widely used for years and have been downgraded in major guidelines after trials failed to show a benefit in patient-centered outcomes. If you are asked what to give before a contrast CT in a patient with mild chronic kidney disease, the correct answer in most cases is nothing beyond making sure they are not volume depleted.
+
+Q: The patient is allergic to shellfish. Can they have contrast?
+A: Yes. There is no relationship between shellfish allergy and iodinated contrast reactions, and the belief that iodine is the allergen is wrong. A history of any significant allergy or asthma raises baseline reaction risk slightly, but shellfish specifically carries no special weight.
+Q: Does oral contrast carry the same renal risk as IV?
+A: No. Oral iodinated contrast is minimally absorbed and does not carry meaningful nephrotoxic risk in an intact GI tract.
+
+Glossary: enhancement, attenuation, indication
+
+## Radiation dose in context
+What a study actually costs in radiation, in units a patient understands, plus ALARA and how to answer "is this safe."
+
+Patients ask whether a scan is safe and students usually answer badly, either dismissing the question or overstating the risk. The honest answer needs two things: a number in context, and a clear statement of what is and is not known. Effective dose in millisieverts lets you compare studies to each other and to natural background radiation, which is the comparison patients find useful.
+
+Approximate effective dose. Real values vary widely with protocol, scanner, and patient size.
+
+Chest radiograph:
+  - Effective dose (mSv): 0.02
+  - Roughly equivalent to: 2 to 3 days of background
+Extremity radiograph:
+  - Effective dose (mSv): under 0.01
+  - Roughly equivalent to: Under a day
+Mammogram:
+  - Effective dose (mSv): 0.4
+  - Roughly equivalent to: About 7 weeks
+Abdominal radiograph:
+  - Effective dose (mSv): 0.7
+  - Roughly equivalent to: About 3 months
+Lumbar spine radiograph:
+  - Effective dose (mSv): 1.5
+  - Roughly equivalent to: About 6 months
+CT head:
+  - Effective dose (mSv): 2
+  - Roughly equivalent to: About 8 months
+V/Q scan:
+  - Effective dose (mSv): 2
+  - Roughly equivalent to: About 8 months
+CTPA:
+  - Effective dose (mSv): 3 to 10
+  - Roughly equivalent to: 1 to 3 years
+Nuclear bone scan:
+  - Effective dose (mSv): 6
+  - Roughly equivalent to: About 2 years
+CT chest:
+  - Effective dose (mSv): 7
+  - Roughly equivalent to: About 2 years
+CT abdomen and pelvis:
+  - Effective dose (mSv): 8 to 10
+  - Roughly equivalent to: 3 years
+PET-CT:
+  - Effective dose (mSv): 14 to 25
+  - Roughly equivalent to: 5 to 8 years
+Natural background, US average:
+  - Effective dose (mSv): about 3 per year
+  - Roughly equivalent to:
+Transatlantic flight:
+  - Effective dose (mSv): 0.03 to 0.08
+  - Roughly equivalent to: A few days of background
+
+- Deterministic: there is a threshold, and above it severity scales with dose. Skin erythema, hair loss, cataract. Essentially confined to prolonged fluoroscopy and interventional procedures, not diagnostic CT.
+- Stochastic: no threshold is assumed, and dose changes the probability rather than the severity. Cancer induction. This is the risk that applies to diagnostic imaging.
+
+Stochastic risk at diagnostic doses is estimated using the linear no-threshold model, which extrapolates downward from high-dose data. The model is deliberately conservative and it is genuinely contested, because the risk at these doses is too small to measure directly against a background lifetime cancer risk that is already very large. What you can say confidently is that the risk from a single indicated CT is small, that it is not zero by assumption, and that the risk of not making a diagnosis is usually much larger.
+
+- Justification: the study must do more good than harm. This is the ordering clinician's job and it is where the largest dose savings happen, because the lowest-dose scan is the one not performed.
+- Optimization, which is ALARA (as low as reasonably achievable): keep dose to the minimum that still answers the question. This is the technologist's and radiologist's job, delivered through protocol selection, tube current modulation, iterative reconstruction, and limiting scan range and number of phases.
+- Dose limitation: applies to occupational and public exposure, not to patients receiving indicated medical imaging. There is no dose limit on a patient.
+
+[NOTE] For staff rather than patients, the three levers are time, distance, and shielding. Distance does the most work, because intensity falls with the square of distance. One step back roughly quarters your exposure. In fluoroscopy and interventional radiology, wear the lead, wear the dosimeter, and stand back when you are not needed at the table.
+
+  > Patient shielding, and why it is disappearing
+    Lead gonadal and fetal shielding on patients during radiography was standard for decades and has been formally recommended for discontinuation in several jurisdictions. The reasoning is that modern collimation and dose reduction have made the benefit negligible, that shields frequently obscure anatomy and force repeat exposures, and that they can interfere with automatic exposure control and paradoxically increase dose. Staff shielding is unchanged and remains essential. This is a good example of a safety practice that persisted because it looked protective rather than because it was.
+
+Q: A patient asks if their CT will give them cancer. What do you say?
+A: Give the comparison and the honest uncertainty. The dose is comparable to a few years of natural background radiation. Any added cancer risk is too small to measure directly and is estimated using a deliberately cautious model. It is not zero by assumption, and it is much smaller than the risk of missing what we are scanning for. Then say why this specific scan is needed.
+Q: Does MRI have radiation?
+A: No ionizing radiation. It has its own hazards, which are magnetic and thermal rather than radiological, and those are covered in MRI safety zones.
+Q: Why did the CT get repeated with a second phase, doubling the dose?
+A: Multiphase imaging is sometimes the only way to characterize a lesion, because the diagnosis is in how it enhances over time rather than in any single phase. It should be a deliberate protocol decision, and unnecessary extra phases are one of the commonest sources of avoidable dose.
+
+## Imaging in pregnancy
+Which studies are safe, what fetal doses actually are, and how to answer a pregnant patient asking whether the scan will hurt the baby.
+
+[CRITICAL] The governing principle, and the one to say out loud: a diagnostic imaging study that is needed to care for a pregnant patient should not be withheld because of the pregnancy. Delayed or missed diagnosis in the mother is a far larger threat to the pregnancy than any diagnostic-dose radiation exposure. The task is to choose the lowest-dose test that answers the question, not to avoid testing.
+
+- Ultrasound. No ionizing radiation. First line for almost every abdominal and pelvic question in pregnancy.
+- MRI without contrast. No ionizing radiation. Second line, and the answer for appendicitis when ultrasound is inconclusive.
+- Radiography and CT. Use when they are the test that answers the question. Dose is almost always far below any threshold of concern.
+- Contrast agents. A separate decision from the radiation decision, taken on its own merits.
+
+Background radiation over the whole pregnancy:
+  - Approximate fetal dose: about 1 mGy
+Chest radiograph:
+  - Approximate fetal dose: under 0.01 mGy
+Transatlantic flight:
+  - Approximate fetal dose: about 0.01 mGy
+CT head or chest (fetus outside the beam):
+  - Approximate fetal dose: very low, well under 1 mGy
+CTPA:
+  - Approximate fetal dose: low, generally well under 1 mGy to the fetus, though maternal breast dose is significant
+Abdominopelvic CT (fetus directly in the beam):
+  - Approximate fetal dose: the largest routine exposure, and still typically well under the 50 mGy threshold
+
+The threshold that matters is 50 mGy. Fetal anomalies, growth restriction, and pregnancy loss have not been reported below that level, and a single diagnostic study does not approach it. Central nervous system sensitivity is greatest between roughly 8 and 15 weeks, and the effects described in that window come from doses an order of magnitude above anything diagnostic imaging delivers. International guidance is explicit that termination is not justified on radiation grounds at diagnostic dose levels.
+
+[WARNING] The cumulative case is the one to watch. A single abdominopelvic CT is comfortably below threshold. A trauma patient who receives several over a short admission is a situation where the physics team should be asked to calculate the actual fetal dose rather than anyone estimating it.
+
+- Iodinated contrast: crosses the placenta. No confirmed fetal harm. Considered acceptable when the study is needed and the contrast is necessary to answer the question. Routine screening before iodinated contrast is not required in pregnancy, and contrast should not be withheld when clinically indicated.
+- Gadolinium: crosses the placenta and is handled more cautiously than iodinated contrast. Given only when the benefit clearly outweighs the risk. Most MRI questions in pregnancy are answerable without it.
+- Breastfeeding: interruption is no longer recommended for either iodinated contrast or gadolinium. The amount excreted into milk and then absorbed by the infant is minimal. Patients are still frequently told to pump and dump, and correcting that is a small, concrete thing a student can do well.
+
+  > How to actually have the conversation
+    Lead with what you are looking for and why it matters, then give the number with a comparison, then invite the question. Something close to: "I am worried about a clot in your lung, which is dangerous for both of you and treatable once we know. The scan gives your baby less radiation than you get naturally over the pregnancy. I would not suggest it if there were a safer way to answer this." Do not open with a risk disclaimer, and do not offer a choice you would not accept, because that reads as though you think the scan is dangerous.
+
+Q: Suspected PE in pregnancy. CTPA or V/Q?
+A: Both are acceptable and practice varies. CTPA delivers a low fetal dose but a substantial maternal breast dose. V/Q delivers a somewhat higher fetal dose but spares the breast. Availability, chest radiograph findings, and local protocol usually decide it, and the wrong answer is to do neither.
+Q: The pregnancy test is unknown and the patient needs a trauma CT now.
+A: Scan. In an unstable trauma patient the maternal indication overrides, and the fetal dose from an indicated scan is not the emergency in the room.
+
+## Contrast reactions and management
+How to tell a physiologic reaction from an allergic-like one, what to do at each severity, and what "contrast allergy" in a chart actually means.
+
+Contrast reactions divide into two categories that look different, are caused by different things, and are managed differently. Getting the category right is most of the clinical decision. Physiologic reactions are dose-related direct effects of the agent. Allergic-like reactions resemble anaphylaxis and are not truly IgE-mediated in most cases, which is why they are called allergic-like rather than allergic.
+
+Typical features:
+  - Physiologic: Warmth, flushing, metallic taste, nausea, vomiting, vasovagal bradycardia and hypotension, headache
+  - Allergic-like: Urticaria, itching, angioedema, bronchospasm, laryngeal edema, hypotension with tachycardia
+Mechanism:
+  - Physiologic: Direct chemotoxic and osmotic effect
+  - Allergic-like: Anaphylactoid, mostly non-IgE mediated
+Dose related:
+  - Physiologic: Yes
+  - Allergic-like: No
+Premedication helps:
+  - Physiologic: No
+  - Allergic-like: Partially
+Key clue:
+  - Physiologic: Bradycardia with hypotension points to vasovagal
+  - Allergic-like: Tachycardia with hypotension points to anaphylactoid
+
+- Mild: limited urticaria, itching, nausea, transient flushing. Observe. Most need nothing. Oral or IV antihistamine for bothersome urticaria.
+- Moderate: more extensive urticaria, mild bronchospasm, facial or laryngeal edema without airway compromise, symptomatic hypotension. Treat actively, get help, keep the IV in.
+- Severe: significant bronchospasm, laryngeal edema with stridor, profound hypotension, arrhythmia, arrest. Epinephrine, airway, call for the resuscitation team.
+
+[CRITICAL] Epinephrine is the treatment for a severe allergic-like reaction and delay in giving it is the main cause of bad outcomes. Adult dose is 0.3 to 0.5 mg of 1:1000 intramuscularly into the anterolateral thigh, repeated every 5 to 15 minutes as needed. Pediatric dose is 0.01 mg/kg IM to a maximum of 0.5 mg. Antihistamines and steroids do not treat airway compromise or shock and are not a substitute.
+
+- Beta-blockade blunts the response to epinephrine. Glucagon is the recognized adjunct in refractory reactions in beta-blocked patients.
+- Vasovagal reactions present with hypotension and bradycardia, and they respond to leg elevation, fluids, and atropine if persistent. Giving epinephrine for a vasovagal episode is a real error.
+- Delayed reactions occur hours to days later, usually as a self-limited rash. They are not a contraindication to future contrast in the way an acute reaction is, but they should be documented accurately.
+
+Premedication is used when a patient has had a previous allergic-like reaction to the same class of agent. Standard elective regimens combine a corticosteroid given over roughly 12 to 13 hours before the study with an antihistamine an hour before, with accelerated intravenous regimens available when the study cannot wait. Premedication reduces reaction rate but does not eliminate it, and breakthrough reactions occur in a meaningful minority of premedicated patients, tending to mirror the severity of the original reaction.
+
+[WARNING] Extravasation is the other thing that happens at the injection site. Most extravasations settle with elevation and cold compresses. Escalate immediately for a large volume, skin blistering, altered perfusion, worsening pain, or any sensory change, because compartment syndrome and skin ulceration are the complications that need surgical review.
+
+  > What "contrast allergy" in a chart usually means
+    A large proportion of documented contrast allergies turn out on questioning to be nausea, warmth, or a vasovagal episode, none of which is an allergic-like reaction and none of which requires premedication. Others are recorded without specifying the agent, so an iodinated reaction blocks a gadolinium study for years. Taking two minutes to ask what actually happened, when, and to which agent is genuinely useful clinical work, and it is a task a student can own completely. There is also no meaningful cross-reactivity between iodinated agents and gadolinium, so a reaction to one does not by itself contraindicate the other.
+
+Q: A patient becomes flushed and warm as the contrast goes in. Is this a reaction?
+A: It is an expected physiologic sensation, it is very common, and it settles in seconds. Warn patients about it beforehand and it stops being frightening. It does not need treatment and it is not a reason to record a contrast allergy.
+Q: Who should be in the room when contrast is given?
+A: Someone trained to recognize and start treating a reaction, with epinephrine and airway equipment immediately available, and a physician reachable. Departments have a defined supervision arrangement for exactly this reason.
+
+## Gadolinium classes
+Why gadolinium agents are not interchangeable, what NSF was and why it largely stopped, and what is known about gadolinium retention.
+
+Free gadolinium is toxic. Every gadolinium-based contrast agent is a gadolinium ion locked inside a chelating molecule, and the entire safety story of these agents is about how firmly that chelate holds on. Agents split by structure into linear, which are open-chain and less stable, and macrocyclic, which wrap the ion in a closed cage and are both thermodynamically more stable and kinetically more inert. That structural difference is not academic. It explains the disease.
+
+Nephrogenic systemic fibrosis is a scleroderma-like fibrosing condition affecting skin, joints, and internal organs, described in 2000 and linked to gadolinium exposure in 2006. It occurs almost exclusively in patients with severe renal impairment, where slow clearance gives the chelate time to dissociate. It can be disabling and it has no reliable treatment, which is why it changed practice so completely.
+
+The ACR classification, which is how gadolinium agents are actually discussed.
+
+Group I:
+  - Definition: Associated with the greatest number of NSF cases
+  - Structure: Mostly older linear agents
+  - Practical position: No longer marketed in the US. Avoid
+Group II:
+  - Definition: Few if any unconfounded NSF cases
+  - Structure: Macrocyclic agents, plus one linear ionic agent used for hepatobiliary work
+  - Practical position: The workhorse agents. Preferred in renal impairment
+Group III:
+  - Definition: Limited data on NSF risk, few if any unconfounded cases reported
+  - Structure: Newer agents
+  - Practical position: A small provisional category
+
+- Regulatory action and a shift to Group II agents have made NSF close to historical. Reported incidence with Group II agents in severe renal impairment is very low.
+- The 2021 ACR and National Kidney Foundation consensus made routine kidney function screening optional before a standard dose of a Group II agent, which is a substantial reversal of a decade of practice.
+- Hemodialysis clears gadolinium effectively, and a dialysis patient can receive a Group II agent with dialysis arranged afterward.
+- The practical answer to "can this patient with kidney disease have a contrast MRI" is now usually yes, with a Group II agent, rather than no.
+
+[NOTE] Gadolinium retention is a separate issue from NSF and applies to patients with normal kidneys. Trace gadolinium is deposited in the brain, notably the dentate nucleus and globus pallidus, visible as progressive T1 hyperintensity after repeated doses, and more pronounced with linear agents. To date no adverse biologic or clinical effect of this deposition has been demonstrated. It is nonetheless why linear agents were restricted in Europe, why a class warning exists in the US, and why repeat contrast MRI is not ordered casually.
+
+One further practical point. Gadolinium agents are not all doing the same job. Most are extracellular agents that distribute into the interstitium. Hepatobiliary agents are taken up by functioning hepatocytes and excreted into bile, which produces a delayed hepatobiliary phase used to characterize liver lesions and which underpins parts of LI-RADS. If a report mentions a hepatobiliary phase, that is why a specific agent was chosen.
+
+  > Symptoms attributed to gadolinium exposure
+    A number of patients with normal renal function report persistent symptoms they attribute to gadolinium, sometimes described as gadolinium deposition disease. This is an area where patient reports, regulatory caution, and the absence of an established causal mechanism sit uncomfortably together, and the evidence does not currently support a defined clinical entity. The defensible position is to take the symptoms seriously, be honest that the science is unsettled, and note that the response has been to prefer more stable agents and to avoid unnecessary repeat contrast, which is reasonable regardless of how the question resolves.
+
+Q: Does gadolinium cause kidney injury the way iodinated contrast can?
+A: Not at standard diagnostic doses. The renal concern with gadolinium runs the other direction: existing kidney failure is the risk factor for NSF, rather than the gadolinium causing the kidney failure.
+Q: The patient reacted to CT contrast. Can they have gadolinium?
+A: Usually yes. There is no meaningful cross-reactivity between the two classes. A prior reaction to one is not by itself a reason to premedicate for the other, though a general atopic history slightly raises baseline risk for both.
+
+## MRI safety zones
+The four-zone model, the screening questions that actually matter, and why the magnet is never off.
+
+[CRITICAL] The magnet is always on. It is on at night, on at the weekend, and on during a power failure. There is no switch that turns it off for a resuscitation, and the only way to remove the field in an emergency is a quench, which is itself hazardous. Every MRI safety rule follows from this one fact.
+
+- Zone I: freely accessible public area outside the MR environment.
+- Zone II: the interface where patients are greeted and screened. Supervised, but not yet controlled.
+- Zone III: restricted. Access controlled by MR personnel, physically secured. This is where the fringe field becomes dangerous and where uncleared people and objects must not go.
+- Zone IV: the scanner room itself. Entry only with a completed screen and direct MR personnel supervision.
+
+Personnel are classified alongside the zones. Level 1 MR personnel have had basic safety training and may move within Zone III. Level 2 MR personnel have had extended training and are cleared for the broader hazards, including screening others and entering Zone IV freely. As a student you are a visitor. You get screened exactly like a patient, every time, and you do not walk into Zone IV because a door happened to be open.
+
+Projectile:
+  - Mechanism: Ferromagnetic objects accelerate into the bore
+  - What it looks like in practice: Oxygen cylinders, IV poles, scissors, chairs, stethoscopes, keys, hairpins. This hazard has killed people
+Torque and displacement:
+  - Mechanism: The field twists or pulls an implanted object
+  - What it looks like in practice: Aneurysm clips, some older implants
+Heating and burns:
+  - Mechanism: Induced currents in conductive loops
+  - What it looks like in practice: Looped ECG or monitoring cables, wires, some transdermal patches with metallic backing, tattoos rarely
+Device malfunction:
+  - Mechanism: The field disrupts electronics
+  - What it looks like in practice: Pacemakers, ICDs, neurostimulators, insulin pumps, cochlear implants
+Acoustic noise:
+  - Mechanism: Gradient switching
+  - What it looks like in practice: Loud enough to require hearing protection for the patient and anyone in the room
+Quench:
+  - Mechanism: Sudden boil-off of liquid helium
+  - What it looks like in practice: Rapid gas expansion, oxygen displacement, risk of asphyxiation and of pressure preventing the door opening
+
+- Cardiac device: pacemaker, ICD, loop recorder. Many modern devices are MR conditional and can be scanned under a specific protocol, which is a change from a decade ago.
+- Neurostimulator, cochlear implant, insulin pump, programmable shunt valve.
+- Aneurysm clip, and specifically which one, since older clips and modern ones differ completely.
+- Metallic foreign body in the eye. Ask about metal working and grinding. If the history is suggestive, an orbital radiograph is obtained before the scan. A fragment moving in the globe causes blindness.
+- Retained shrapnel or bullets.
+- Recent surgery with unknown implanted hardware.
+- Pregnancy, which is not a contraindication but is documented.
+- What is in their pockets, in their hair, and on their skin. Patients change into a gown for this reason and not for modesty.
+
+[NOTE] Most orthopedic hardware, joint replacements, sternal wires, coronary stents, IVC filters, and modern heart valves are safe to scan or are MR conditional. The instinct that any metal blocks an MRI is wrong and delays care. What matters is the specific device and its labeling: MR safe, MR conditional, or MR unsafe. Conditional means it can be scanned under stated conditions, not that it is borderline.
+
+[WARNING] If a patient arrests inside the scanner, the response is to remove the patient from Zone IV first and resuscitate outside. The code team and their equipment do not come in. Knowing this before it happens is the difference between a clean response and a catastrophe, and it is worth asking about on your first day in an MRI department.
+
+  > Why the screening form is not a formality
+    Almost every serious MRI incident traces back to a screening failure or an unscreened person entering Zone IV, rather than to an unpredictable event. The controls are administrative because the physics offers no margin. When you are asked to fill in a screening form for a patient you are transporting, do it properly and hand over anything uncertain to the MR technologist rather than guessing. Being the person who flagged an unknown implant is a genuinely good contribution.
+
+Q: Can a patient with a pacemaker have an MRI?
+A: Often yes. Many current devices are MR conditional and are scanned under a defined protocol with cardiology involvement and device interrogation before and after. Older or abandoned leads are the harder problem. The decision belongs to the MR physician and cardiology together, not to the ordering team alone.
+Q: Are tattoos a problem?
+A: Rarely. Some older inks contain iron oxide and there are reports of local heating or irritation. It is a documented consideration, not a routine contraindication.
+
+======================================================================
+ORDERING AND COMMUNICATING
+======================================================================
+
+----------------------------------------------------------------------
+SECTION: Choosing the right study
+----------------------------------------------------------------------
+Which modality actually answers the clinical question, before radiation and cost even enter it.
+
+## Choosing the right study
+How to pick the study that answers your clinical question, and the default first test for the presentations you will actually be asked about.
+
+Students choose a study by pattern-matching to what they have seen ordered before. Radiologists choose by asking what question needs answering and which modality can answer it. Those give the same result most of the time and diverge exactly when it matters. Before you order anything, you should be able to say in one sentence what you are looking for and what you will do differently depending on the answer. If you cannot, the study is probably not indicated yet.
+
+- What is the question? Not the symptom. "Is there a stone causing obstruction" is a question. "Flank pain" is not.
+- Will the result change management? If the answer is no regardless of the result, the study is a delay, not a workup.
+- What is the least invasive test that can answer it? Ultrasound before CT, CT before MRI, when both can answer.
+- Is there a reason this patient cannot have the obvious test? Pregnancy, renal function, prior contrast reaction, a pacemaker, weight limits, claustrophobia, hemodynamic instability.
+
+Radiograph:
+  - Best at: Bone, lines and tubes, free air, pneumothorax, gross airspace disease
+  - Weak or blind: Poor soft tissue contrast, everything superimposed
+  - Practical constraints: Almost none. Fast, cheap, portable
+Ultrasound:
+  - Best at: Fluid versus solid, gallbladder, testes, ovaries, DVT, pediatrics, real-time and bedside
+  - Weak or blind: Blocked by gas and bone, limited by body habitus
+  - Practical constraints: Operator dependent. Quality varies by who held the probe
+CT:
+  - Best at: Speed, availability, trauma, whole-body coverage
+  - Weak or blind: Early stroke, bone marrow, internal joint derangement, soft tissue detail
+  - Practical constraints: Ionizing radiation, iodinated contrast
+MRI:
+  - Best at: Soft tissue contrast, marrow, brain, cord, joints
+  - Weak or blind: Cortical bone, acute hemorrhage detection speed, lung parenchyma
+  - Practical constraints: Slow, motion sensitive, implant screening, availability, claustrophobia
+Nuclear medicine / PET:
+  - Best at: Function and physiology, whole-body survey
+  - Weak or blind: Spatial resolution, specificity of uptake
+  - Practical constraints: Slow, needs a tracer, limited hours
+Fluoroscopy:
+  - Best at: Real-time dynamic function: swallow, GI transit, joint injection
+  - Weak or blind: Static anatomy, cross-sectional detail
+  - Practical constraints: Radiation dose scales with screening time
+
+Default first study by presentation. These are the common defaults, not a substitute for local protocol.
+
+Suspected pneumonia:
+  - Usual first study: Chest radiograph
+  - Note: CT only if the film is negative and suspicion stays high
+Suspected pulmonary embolism:
+  - Usual first study: CTPA
+  - Note: After Wells or PERC. V/Q if contrast is contraindicated
+Suspected aortic dissection:
+  - Usual first study: CT angiogram chest, abdomen, pelvis
+  - Note: Non-contrast phase first to see intramural hematoma
+Right upper quadrant pain:
+  - Usual first study: Ultrasound
+  - Note: The one place ultrasound clearly beats CT in an adult
+Undifferentiated acute abdominal pain, adult:
+  - Usual first study: CT abdomen and pelvis with IV contrast
+  - Note:
+Suspected appendicitis, adult:
+  - Usual first study: CT abdomen and pelvis with IV contrast
+  - Note: Ultrasound first in children and in pregnancy, MRI next in pregnancy
+Flank pain, suspected stone:
+  - Usual first study: Non-contrast CT, low dose
+  - Note: Ultrasound first in pregnancy and often in young or recurrent patients
+Suspected bowel obstruction:
+  - Usual first study: CT abdomen and pelvis with IV contrast
+  - Note: A radiograph is often obtained first but is far less sensitive
+Painless jaundice:
+  - Usual first study: Ultrasound first
+  - Note: Then CT or MRCP depending on what the ultrasound shows
+Acute stroke:
+  - Usual first study: Non-contrast CT head
+  - Note: Then CTA, then perfusion or MRI per local stroke protocol
+Head trauma:
+  - Usual first study: Non-contrast CT head
+  - Note: Apply the Canadian CT Head Rule rather than scanning everyone
+New seizure:
+  - Usual first study: CT head acutely, MRI brain for the full workup
+  - Note:
+Back pain with red flags or suspected cauda equina:
+  - Usual first study: Urgent MRI lumbar spine
+  - Note: Cauda equina is an emergency MRI, not a next-available slot
+Suspected osteomyelitis:
+  - Usual first study: MRI
+  - Note: Radiograph first, but it is normal early
+Suspected septic arthritis:
+  - Usual first study: Aspirate. Radiograph, ultrasound to guide
+  - Note: Imaging supports, it does not exclude
+Scaphoid tenderness, normal radiograph:
+  - Usual first study: MRI, or repeat radiograph in 10 to 14 days
+  - Note: Treat as fractured in the interim
+Suspected DVT:
+  - Usual first study: Compression ultrasound with Doppler
+  - Note:
+Acute testicular pain:
+  - Usual first study: Ultrasound with Doppler
+  - Note: Torsion is clinical. Do not let imaging delay the operation
+Pelvic pain, reproductive-age female:
+  - Usual first study: Transabdominal and transvaginal ultrasound
+  - Note: After a pregnancy test, always
+First-trimester bleeding:
+  - Usual first study: Ultrasound, interpreted alongside beta-hCG
+  - Note:
+
+[CRITICAL] Two studies are clinical diagnoses that imaging can support and must never delay: testicular torsion and cauda equina syndrome. If the clinical suspicion is high, the call to the surgeon or the spinal team comes first and the scan happens alongside it.
+
+[WARNING] Ask about pregnancy in every patient of reproductive age before any study using ionizing radiation. This is a habit, not a judgment about any individual patient, and forgetting it is one of the few genuinely avoidable errors in ordering.
+
+  > When to call instead of order
+    Call rather than order when the question is complex, when the patient has a contraindication you are not sure how to work around, when the previous study did not answer the question, or when you need something faster than the queue will give you. A thirty-second conversation that starts "I am not sure this is the right test, can I tell you the situation" is welcomed in almost every department and is the single behavior that most distinguishes a good referring clinician. It also means the radiologist protocols the study having heard the actual question, which usually produces a better study than the one you would have ordered.
+
+Q: Why is ultrasound first for right upper quadrant pain when CT sees more?
+A: Because the question is usually gallstones and gallbladder wall, and ultrasound is more sensitive than CT for stones, plus it has no radiation and gives you a sonographic Murphy sign. CT is better for almost everything else in the abdomen, which is the point of matching the test to the question.
+Q: The patient already had a CT last week. Do I need another?
+A: Look at the old one first, and read the report rather than the impression alone. Repeating a study inside its useful window is one of the most common forms of low-value imaging, and the prior often already answers the question.
+
+## ACR Appropriateness Criteria
+What the criteria are, how the ratings work, and how to use them in a conversation rather than as a lookup table.
+
+The ACR Appropriateness Criteria are evidence-based guidelines that rate imaging options for a specific clinical scenario. They are organized by topic, and each topic breaks into variants, which are precise clinical situations rather than broad complaints. They are free to access, revised on a rolling basis, and they are the thing a radiologist is quietly referring to when they tell you a study is not indicated.
+
+- Each procedure gets an integer rating from 1 to 9, set by an expert panel using a modified Delphi process.
+- 1 to 3: usually not appropriate. The risks outweigh the benefits for this scenario.
+- 4 to 6: may be appropriate. Reasonable in some circumstances, panel consensus is weaker.
+- 7 to 9: usually appropriate. Benefits outweigh risks.
+- Each procedure also carries a Relative Radiation Level, shown as a symbol scale, with no symbol for studies with no ionizing radiation such as ultrasound and MRI, rising to the highest band for studies in the 30 to 100 mSv range.
+
+The rating is not a rule and it is not a numeric prescription. It applies to the variant as written, and real patients often sit between variants. A rating of 5 does not mean "do not order," it means the panel did not reach strong consensus and the decision belongs to the clinical picture. Ratings also get revised, which is why you should cite the topic by name and describe the direction of the recommendation rather than quoting a number you read once.
+
+[WARNING] Do not quote a specific numeric rating from memory. Say "the ACR criteria for suspected appendicitis favor CT with contrast in adults and ultrasound first in pregnancy." That is accurate, useful, and does not go stale.
+
+Scenarios worth knowing the direction of, by topic name.
+
+Right Lower Quadrant Pain, Suspected Appendicitis:
+  - Gist of the recommendation: CT abdomen and pelvis with IV contrast usually appropriate in adults. Ultrasound first in children and in pregnancy, MRI without contrast as the next step in pregnancy
+Acute Nonlocalized Abdominal Pain:
+  - Gist of the recommendation: CT abdomen and pelvis with IV contrast usually appropriate
+Acute Onset Flank Pain, Suspicion of Stone Disease:
+  - Gist of the recommendation: Non-contrast CT usually appropriate. Ultrasound preferred in pregnancy
+Suspected Pulmonary Embolism:
+  - Gist of the recommendation: CTPA usually appropriate. V/Q an alternative where contrast or dose is the constraint
+Head Trauma:
+  - Gist of the recommendation: Non-contrast CT head usually appropriate in moderate and severe injury, and in minor injury with risk factors
+Low Back Pain:
+  - Gist of the recommendation: Imaging usually not appropriate in the first six weeks without red flags. This is the highest-yield one on the list
+Headache:
+  - Gist of the recommendation: Imaging usually not appropriate for uncomplicated primary headache. MRI favored when imaging is indicated
+Thyroid Nodule:
+  - Gist of the recommendation: Ultrasound with a risk stratification system
+Palpable Breast Mass:
+  - Gist of the recommendation: Ultrasound first in younger patients, mammography plus ultrasound from roughly age 30 upward
+
+The equivalents outside the US matter for this app's audience. Canada has the CAR Diagnostic Imaging Referral Guidelines. The UK has iRefer, published by the Royal College of Radiologists. Australia has the RANZCR guidance and, widely used in practice, Diagnostic Imaging Pathways. They are built on largely the same evidence and disagree mainly at the margins.
+
+[EXAM TIP] The most useful thing on this list is not a scan you should order, it is one you should not. Uncomplicated low back pain of less than six weeks with no red flags does not get imaged. Being able to say that, and name the red flags that change it, is worth more than memorizing twenty appropriate studies.
+
+  > Why appropriateness criteria exist at all
+    Utilization audits repeatedly find that a substantial minority of CT and MRI examinations do not meet appropriateness standards, and that inappropriate studies account for a disproportionate share of both radiation dose and cost. In the US, clinical decision support built on the ACR criteria has been tied to Medicare reimbursement policy for advanced imaging, which is why order entry systems increasingly show you an appropriateness score as you order. Understanding that the pop-up is a guideline and not an obstacle changes how you respond to it.
+
+Q: The decision support tool scored my order low. Now what?
+A: Read the variant it matched you to. Often it matched the wrong one because of how the indication was phrased, and rewriting the indication to describe the actual clinical situation resolves it. If the variant is right and the score is still low, that is worth a moment's thought about whether the study is needed.
+Q: Are the criteria the same as Choosing Wisely?
+A: Related but different. Choosing Wisely is a short list of specific low-value practices to avoid. The ACR criteria are a comprehensive rating of options across hundreds of scenarios. Choosing Wisely tells you what not to do, the criteria tell you what to do instead.
+
+----------------------------------------------------------------------
+SECTION: Ordering and communicating
+----------------------------------------------------------------------
+Writing an indication a radiologist can actually use, and what to do with a critical result.
+
+## Ordering and communicating
+How to write an indication that changes the read, and why the order you place is a clinical communication rather than a form.
+
+The indication is the only thing the radiologist knows about your patient. They are not in the room, they have not examined anyone, and in most cases they will not open the chart for a routine study. A vague indication produces a vague report, and then everyone blames the report. An indication is a clinical question with enough context to answer it, written for a colleague who wants to help you.
+
+- Who: age, sex, and the status that matters. Post-op day 3, immunosuppressed, known malignancy, pregnant, anticoagulated.
+- What: the symptom and how long. Duration is doing real work here.
+- Findings: the exam and lab findings that made you order this. A number or two.
+- The question: what you actually want to know.
+
+"Pain":
+  - What it produces: A generic read of everything
+  - Good indication: "RUQ pain 2 days, fever 38.6, WBC 16, positive Murphy sign. Cholecystitis?"
+"SOB":
+  - What it produces: Pneumonia looked for, PE not
+  - Good indication: "72M, POD 3 hemicolectomy, sudden hypoxia and tachycardia, unilateral calf swelling. PE?"
+"Rule out fracture":
+  - What it produces: A look at the obvious bone only
+  - Good indication: "Fall onto outstretched hand, snuffbox tenderness, radiographs negative. Occult scaphoid fracture?"
+"Abnormal LFTs":
+  - What it produces: A survey with no focus
+  - Good indication: "Painless jaundice, bilirubin 8, ALP 400, 6 kg weight loss. Biliary obstruction or pancreatic mass?"
+"Follow up":
+  - What it produces: A read with no idea what to follow
+  - Good indication: "Known 8 mm right lower lobe nodule on CT 12/2025. Fleischner interval follow-up"
+"Trauma":
+  - What it produces: An unfocused pan-scan
+  - Good indication: "MVC, restrained driver, GCS 14, left chest wall tenderness, seatbelt sign across the abdomen"
+"Altered mental status":
+  - What it produces: A head CT and nothing else considered
+  - Good indication: "84F on warfarin, unwitnessed fall 2 days ago, now drowsy and confused. Subdural?"
+"Cancer":
+  - What it produces: Wrong protocol, wrong phase
+  - Good indication: "Known colorectal cancer, restaging. Prior CT 3/2026. Assess liver metastases"
+
+[EXAM TIP] "Rule out X" is not a clinical question by itself, because it tells the radiologist your hypothesis but not your evidence. Write what made you suspect X. The difference between "rule out PE" and "sudden pleuritic pain, hypoxia, tachycardia, recent surgery" is the difference between a search and an informed search.
+
+- No indication, or an indication that is a billing code rather than a sentence.
+- Wrong modality for the question. Ordering an MRI for something a radiograph answers, or a radiograph for something only MRI shows.
+- Contrast question unresolved. No recent renal function where it was needed, unaddressed prior reaction.
+- No pregnancy status in a patient of reproductive age.
+- A duplicate of a study already performed or already ordered.
+- Requesting a study the patient physically cannot have: unstable for MRI, over the table weight limit, unable to lie flat or hold still without sedation that has not been arranged.
+
+Mention prior imaging, especially from another institution. A comparison study changes the report more than almost anything else you can supply, because the question is very often whether something is new. If the prior is on a disc or in another system, say so in the order and get it uploaded. A nodule that is unchanged over three years and a nodule seen for the first time are the same picture and completely different diagnoses.
+
+  > How to ask for something outside the usual pathway
+    Sometimes the study you need is not the one the system wants to give you. The approach that works is short and specific: say who you are, name the patient and the study, state the clinical question in one sentence, say what you have already done, and say what decision hangs on the result. "This is the medicine intern on ward 6. I have a 40-year-old with fever and back pain, raised inflammatory markers, and new leg weakness. I am worried about an epidural abscess and I think this needs an MRI tonight rather than tomorrow." That call gets answered. A call that starts with an apology and takes ninety seconds to reach the question does not.
+
+Q: Should I write my suspected diagnosis, or does that bias the read?
+A: Write it, along with the evidence. Anchoring is a real error, but the far more common failure is a radiologist searching without knowing what they are looking for. Give the hypothesis and the findings that generated it, and let them weigh it.
+Q: Is it acceptable to just copy the indication from the last order?
+A: No, and it is a recognizable habit. Copied indications are how a patient ends up with four scans all indicated "abdominal pain" and no one able to tell what changed between them.
+
+Glossary: indication, comparison study, interval change, differential diagnosis
+
+## Critical results communication
+What counts as a critical result, how the callback is supposed to work, and what you do when you are the person who receives it.
+
+A report posting to the chart is not communication. For findings where delay causes harm, the radiologist is expected to reach a responsible clinician directly, confirm they understood, and document that it happened. This is a defined professional obligation with accreditation weight behind it, and it is one of the places where radiology and the clinical team most often fail each other.
+
+Critical, communicate immediately:
+  - Timeframe: Minutes
+  - Examples: Tension pneumothorax, pneumoperitoneum, aortic dissection, acute intracranial hemorrhage with mass effect, ischemic bowel, ruptured ectopic, testicular torsion, cord compression, large pulmonary embolism, epiglottitis, midgut volvulus in a neonate
+Urgent, communicate same day or next:
+  - Timeframe: Hours to a day
+  - Examples: New unexpected mass, unsuspected pneumonia in an outpatient, unstable spine fracture already immobilized, significant device malposition
+Unexpected but not urgent:
+  - Timeframe: Days, but must not be lost
+  - Examples: Incidental findings needing follow-up, discrepancy with a prior report
+
+- The finding goes to a named person with responsibility for the patient, not to a ward phone or a general inbox.
+- The recipient reads it back or restates it.
+- The radiologist documents in the report who was told, by what method, and when.
+- If nobody can be reached, escalation continues until someone is. An unanswered page does not discharge the obligation.
+
+[CRITICAL] As a student you should not be the endpoint of a critical result. If you take the call, write down the finding, the patient identifiers, the name of the radiologist, and the time, read it back to confirm, then hand it directly to your resident or attending and confirm out loud that they have it. Do not put it on a list. Do not assume the report posting means the team has seen it. "I told the student" is not closed-loop communication, and being the person who closed the loop properly is remembered.
+
+Learn the phrasing, because a callback under pressure is easier when the structure is automatic. Identify yourself and your role, name the patient with two identifiers, state the finding in one sentence, state what it means, ask for read-back, and confirm what happens next. "This is the radiology resident. I am calling about Jane Smith, date of birth 4 March 1958, in bed 12. Her CT shows free intraperitoneal air consistent with a perforated viscus. Can you repeat that back to me, and can you tell me who is coming to see her?"
+
+- Stop what you are doing. Write it down as you hear it.
+- Read it back, including the patient's name.
+- Ask one question if you need it: what is the finding, and how urgent.
+- Escalate immediately to the person who can act, in person if they are reachable in person.
+- Document that you received it, from whom, at what time, and who you told.
+
+  > Why this is the highest-liability interface in imaging
+    A large share of radiology malpractice claims involve communication failure rather than misinterpretation. The finding was on the image, it was described correctly in the report, and it did not reach a person who acted. The two commonest patterns are an actionable incidental finding that nobody followed up, and a preliminary read that was amended without the ordering team noticing. Both are systems problems, and both are partially solved by the discipline of naming a recipient and confirming receipt. If you are asked in an interview what radiology could do better, this is a strong and honest answer.
+
+Q: The radiologist called about a finding on a patient who is not mine. What do I do?
+A: Take it properly anyway. Write it down, read it back, then find the responsible team and hand it over directly rather than redirecting the radiologist. The loop should not be reopened once someone has answered the phone.
+Q: I disagree with the report and I think the images show something else. What now?
+A: Call and say so, politely and specifically. Radiologists want this call. Discrepancies found by the clinical team are a recognized and valued safety mechanism, and the images are frequently reviewed on the spot with the clinical detail you have and they did not.
+
+## How to read a radiology report
+The anatomy of a report, what the hedging language actually means, and what a recommendation obligates you to do.
+
+You will read radiology reports every day for the rest of your career regardless of specialty, and nobody formally teaches you how. Reports have a fixed structure and a precise, deliberately graded vocabulary of certainty. Reading only the impression, which is what most people do, discards a lot of that.
+
+- Clinical history or indication: what the radiologist was told. Check it. If it is wrong or thin, that changes how much weight the read carries.
+- Comparison: which prior studies were reviewed. "No prior available" is a meaningful limitation, not boilerplate.
+- Technique: what was actually done. Contrast or not, which sequences, which phases. This is where you find out the study could not answer your question.
+- Findings: the observations, in anatomical order.
+- Impression: the synthesis and the answer to the clinical question. Usually numbered by priority.
+
+[EXAM TIP] Read the impression, then the comparison line, then the findings. The impression tells you the answer, the comparison line tells you how much to trust it, and the findings tell you what was actually seen rather than what it was interpreted to mean.
+
+The certainty ladder. These phrases are chosen deliberately and they are not interchangeable.
+
+Diagnostic of, characteristic of:
+  - Roughly means: This is the diagnosis, imaging is sufficient
+Consistent with, compatible with:
+  - Roughly means: Strongly supports it in the clinical context given
+Suggestive of, favored to represent:
+  - Roughly means: More likely than the alternatives, not established
+May represent, could reflect, differential considerations include:
+  - Roughly means: Genuinely uncertain, several possibilities remain open
+Cannot be excluded:
+  - Roughly means: Unlikely, but this study cannot rule it out. Often present for medicolegal completeness
+Of doubtful clinical significance:
+  - Roughly means: Seen, reported for completeness, probably nothing
+Clinical correlation is advised:
+  - Roughly means: The appearance is non-specific and the answer lives in the history, exam, or labs, not in more imaging
+No acute abnormality:
+  - Roughly means: Nothing needing action today. Not the same as normal
+
+"Clinical correlation is advised" is the most misread phrase in radiology, and it is not a brush-off. It means the imaging appearance has several possible causes that look identical, and the information that separates them is information you have and the radiologist does not. It is a request for the clinical detail that would let someone commit, which is often best answered by a phone call rather than by ignoring the line.
+
+[WARNING] If a report recommends a specific follow-up, that recommendation is now documented in the chart and the ordering clinician owns it. Failure to act on, communicate, or explicitly reject a documented imaging recommendation is one of the most common patterns in imaging-related litigation. Either arrange it, hand it over explicitly at transfer of care, or document why it is not being done.
+
+- Laterality. Cross-check side against your patient and your exam. Side errors happen, in both directions.
+- The comparison date. A report comparing to a study from 2019 when one from last month exists has missed the relevant interval.
+- Addenda and amendments. An amended report supersedes the original. Systems vary in how loudly they announce this, and some do not announce it at all.
+- Incidental findings in the findings section that never made it into the impression. They happen, and the impression is all most people read.
+
+  > Structured reporting, and why reports are changing
+    Reports are moving from free narrative toward structured templates with fixed headings, and for some conditions toward standardized classification systems: BI-RADS for breast, LI-RADS for liver, PI-RADS for prostate, TI-RADS for thyroid, Lung-RADS for lung cancer screening. The argument for structure is that it reduces omissions, makes reports comparable over time, and communicates a defined level of concern with a defined management recommendation attached. The argument against is that rigid templates can crowd out the synthesis that makes a report useful. Both are partly right, and having a view on it is a reasonable thing to be asked about.
+
+Q: The report says "no acute intracranial abnormality" but the patient has clear focal weakness. Is the report wrong?
+A: Probably not. An early ischemic stroke is frequently invisible on non-contrast CT for hours, and that phrase reflects it. The head CT in acute stroke is largely there to exclude hemorrhage, not to confirm infarct. The clinical picture outranks a normal early CT.
+Q: The impression says one thing and the findings say something I am worried about. Which do I trust?
+A: Neither in isolation. That gap is exactly when you call. It is usually either an emphasis decision you would make differently, or something the radiologist would want to look at again with your clinical detail in hand.
+
+## Writing a radiology report
+The anatomy of a report from the other side of the dictaphone: what goes in each section, and why the impression is the part that actually matters.
+
+A report has a fixed anatomy for the same reason a SOAP note does: a reader under time pressure needs to find a given piece of information in the same place every time. Six sections, in order: clinical history, technique, comparison, findings, impression, and — when it applies — a documented communication. Writing a good report is mostly a discipline of putting the right thing in the right section, not a talent for prose.
+
+- Clinical history: what you were told, verbatim or close to it. This is usually thin — "abdominal pain," "fall," "?PE" — because the person who placed the order was busy and the electronic order form rewards brevity.
+- Additional clinical history: what you found. Open the chart. Read the triage note, the most recent progress note, the vitals, the relevant labs. Add a second, more specific line under this heading that reflects what you actually learned, not just what was typed into the order.
+- This second line is not optional politeness. A report built on "abdominal pain" reads a normal appendix and a perforated one the same way. A report built on "24M, 18h of migratory RLQ pain, fever, WBC 14.8" is looking for something specific, and a reader can tell the difference.
+
+[EXAM TIP] You will not always find more in the chart. Sometimes the order really is all there is — a walk-in patient, an outside referral, a first presentation with no prior notes. That is fine; write the additional history you can honestly support, or state plainly that no further history was available. The expectation is that you looked, not that you always find something.
+
+Technique states what was actually done, in enough detail that a reader can judge whether the study could answer the question at all. Name the study, note contrast use and, if given, the phase (non-contrast, arterial, portal venous, delayed), and flag anything non-standard — limited by motion, a reduced sequence for a patient who could not tolerate the full protocol, an exam extended to cover an unexpected finding. If the technique cannot answer the clinical question, say so here rather than letting the impression discover it.
+
+Comparison is the section students underrate the most, and the one that changes an impression the most. "New" and "unchanged" are two of the most clinically useful words a report can contain, and neither means anything without a comparison.
+
+- Prefer the most recent prior study of the same modality and, ideally, the same region.
+- If no same-region prior of the same modality exists, a partial view from a different study can still help — a prior CT abdomen includes the lung bases and can speak to a nodule seen on today's chest CT, even though it was not the primary study.
+- If no same-modality prior exists at all, a different modality can sometimes still answer part of the question — a prior MRI can show whether a lesion seen on today's CT is new, even though direct comparison across modalities has real limits.
+- State explicitly which study you compared to, by date and type. If you used a partial or cross-modality comparison, say so — "limited comparison with the lung bases on the prior abdominal CT" is a real, useful sentence. If nothing at all is available, write "no prior imaging available for comparison" rather than leaving the section blank; a blank section reads as an oversight, not as an absence.
+
+Free-form findings:
+  - What it looks like: A narrative paragraph, organ by organ only where it reads naturally
+  - Verdict: Fine — many attendings prefer it for a normal or simple study
+Structured, organ-by-organ findings:
+  - What it looks like: A fixed heading per organ system, present or absent
+  - Verdict: Also fine — easier to audit for completeness, some institutions require it
+Either, done badly:
+  - What it looks like: An organ mentioned in two places with different descriptions, or never mentioned at all
+  - Verdict: Not fine — the format is a preference, internal consistency and completeness are not
+
+The interpretation — sometimes called the impression — is the section almost everyone reads and the one students most often get wrong, because it is easy to write it as a summary of the findings section rather than as an actual interpretation. It is not a summary. It is the answer to the clinical question, in the radiologist's own clinical judgment, built from the findings but not identical to them.
+
+- State the pertinent positives — the findings that actually bear on the clinical question, not every finding in the findings section repeated in the same order.
+- State the pertinent negatives explicitly. "No free air" in a patient worked up for possible perforation is doing real work; leaving it out because "it wasn't there" makes the reader wonder whether you looked.
+- Answer the clinical question directly, in the first line if you can. If the indication was "?appendicitis," the first line of the impression should make clear whether that's what this is.
+- Prioritize and number. The most urgent or most clinically relevant point goes first, incidental findings go last, and a reader skimming only the first line should still get the message that matters most.
+
+  > Why this trips people up more than the findings section
+    Findings are mostly a description task: you are naming what is in front of you, and there is a right answer. Interpretation is a judgment task: you are deciding what matters and what it means for this patient, and there is often a range of reasonable answers. Students who have only ever been graded on accuracy find this genuinely disorienting the first few times, because the skill being tested is different. The fix is the same one that works for differential diagnoses generally: state your reasoning, not just your conclusion, so a reader can follow how you got there even if they would have weighted something differently.
+
+[CRITICAL] If a finding needs to be acted on urgently, a line in the impression is not enough — see "Critical results communication" in this section for what a documented callback actually requires. The short version: name who you told, how, and when, inside the report itself.
+
+Q: Do I need an Additional Clinical History line on every report, even a normal chest X-ray for a pre-op clearance?
+A: The habit of checking is what matters, not that every report grows a second history line. If the order already tells you everything relevant, there is nothing to add — but you should still have looked before deciding that.
+Q: What if the findings and my own interpretation of them don't match what I expected from the history?
+A: Write what you see, not what you expected to see. The interpretation is where you reconcile the two — say the imaging doesn't support the leading clinical diagnosis, and say what it does support instead, rather than quietly bending the findings toward the expected answer.
+
+======================================================================
+CROSS-SECTIONAL ANATOMY
+======================================================================
+
+----------------------------------------------------------------------
+SECTION: Cross-sectional anatomy
+----------------------------------------------------------------------
+The axial slices every clerkship expects you to be able to name cold.
+
+## Cross-sectional anatomy
+How to orient yourself on any axial stack in a few seconds, and the landmark levels worth knowing by heart.
+
+The labeled slices live in the anatomy viewer. This module is the part the viewer cannot teach: how to find your position on a stack you have never seen, and which levels are worth committing to memory because everything else can be found from them. Cross-sectional anatomy is learned by scrolling, not by staring. A structure you cannot identify on one slice becomes obvious when you follow it up and down for ten slices and watch what it connects to.
+
+[EXAM TIP] Axial images are viewed as though you are standing at the foot of the bed looking up at the patient. The patient's left is on the right of your screen. Coronal images follow the same convention. This is the single most consequential orientation fact in imaging and it is where students make the error that matters most, because a side error follows a patient into the operating room.
+
+1. Find the vertebral body. It is posterior and midline. That fixes anterior, posterior, left, and right immediately.
+2. Find the aorta. Anterior and slightly left of the vertebral body. It runs the whole way down and is the reference point for almost everything else in the trunk.
+3. Find the air. Trachea and lungs in the chest, bowel gas in the abdomen. Air tells you which cavity you are in.
+4. Scroll. Move up and down until a landmark you do recognize appears, then count back. Nobody identifies a mid-abdominal slice cold, and pretending to is how errors start.
+
+- Thoracic inlet: clavicles, subclavian vessels, apices, thyroid.
+- Aortic arch: a single arch structure crossing left of the trachea. The cleanest orientation level in the chest.
+- Aortopulmonary window: below the arch, above the main pulmonary artery. A nodal station you will hear named constantly.
+- Carina: the trachea divides. Also the reference for endotracheal tube position.
+- Left atrium and four chambers: the heart at its widest.
+- Diaphragmatic hiatus: esophagus passing through, the top of the abdomen appearing.
+
+- Dome of the liver: liver and lung both present, the level where basal lung findings hide on an abdominal CT.
+- Celiac axis: the first anterior branch off the aorta, splitting into three.
+- SMA origin: the next anterior branch, roughly 1 to 2 cm below the celiac. Fat around it is a useful landmark.
+- Renal hila: renal veins and arteries. The left renal vein crossing anterior to the aorta and under the SMA is worth recognizing.
+- Aortic bifurcation: roughly at the L4 level, into common iliac arteries.
+- Iliac bifurcation: into internal and external iliac, the level where the pelvis begins in practice.
+- Femoral heads and pubic symphysis: the bottom of a standard abdomen and pelvis study.
+
+- Foramen magnum and medulla.
+- Pons and fourth ventricle: the fourth ventricle is a reliable midline marker.
+- Midbrain and quadrigeminal cistern: the cistern's shape is what effaces first in raised pressure.
+- Basal ganglia and third ventricle: the level shown for most stroke and hemorrhage teaching.
+- Bodies of the lateral ventricles.
+- Centrum semiovale, then the vertex: the level most often under-examined, and where parasagittal lesions hide.
+
+[NOTE] Reformats are not optional extras. Anything running head to foot is easier to see in coronal or sagittal: a ureter, the spinal canal, an aortic dissection flap, bowel course, a fracture line crossing a vertebral body. Reading a CT only in the axial plane is one of the most common reasons a student misses something the resident sees instantly.
+
+Three anatomical schemes come up more than anything else because reports are organized around them. Liver segments by the Couinaud system, because a report will say segment VII rather than posterior superior right lobe. Mediastinal compartments, because a mass's compartment drives the differential more than its appearance does. And retroperitoneal versus intraperitoneal location, because it determines the differential and often the surgical approach. Learn those three and a large fraction of report language stops being opaque.
+
+  > Vascular territories, and why they matter more than gyral anatomy
+    For brain imaging, the anatomy that earns its keep is vascular. An infarct is named and understood by territory: anterior cerebral for the medial surface and the leg, middle cerebral for the lateral surface, the face and arm, and language on the dominant side, posterior cerebral for the occipital lobe and vision, lenticulostriate perforators for the basal ganglia and internal capsule. If you can say which territory an abnormality sits in, you can predict the deficit and vice versa, which is exactly what an attending is testing when they hand you a head CT and ask what you expect on examination. Gyrus-by-gyrus naming is far less useful at this stage.
+
+Q: How do I actually learn this, rather than reading about it?
+A: Scroll through a normal study of each type before you look at any abnormal ones, and do it repeatedly. Ten minutes a day on normal anatomy beats an hour on interesting cases, because you cannot see an abnormality until you know what the normal looks like at that level.
+Q: Do I need to know slice-by-slice anatomy for the shelf?
+A: No. Shelf and board questions use landmark levels and vascular territories, not fine detail. The depth here is for the elective and the reading room.
+
+## CT head
+How to scan a head CT systematically: ventricles, cisterns, vascular territories, and the anatomy that decides whether there's herniation.
+
+A head CT is read through three windows, each doing a different job: brain window (soft tissue contrast for parenchyma, hemorrhage, and edema), bone window (skull, facial bones, temporal bone, and fractures), and a narrowed stroke or subdural window that boosts contrast between white and gray matter to unmask subtle extra-axial blood or early ischemia. The scan is worked through in the same order every time: ventricles, then midline structures, then gray-white differentiation, then the extra-axial spaces, then bone. Most pathology on a head CT is found by comparing left to right, not by recognizing a lesion in isolation - symmetry is the main tool.
+
+- Lateral ventricles: frontal (anterior) horns, bodies, atria (trigones) - where the choroid plexus is largest and often calcified, a useful internal landmark - occipital horns, and temporal horns.
+- Third ventricle: midline, between the thalami, connecting to the lateral ventricles via the foramina of Monro.
+- Cerebral aqueduct (of Sylvius): connects the third ventricle to the fourth. The classic bottleneck for obstructive hydrocephalus.
+- Fourth ventricle: in the posterior fossa, between the pons/medulla and the cerebellum.
+
+[NOTE] Ventricular size and shape is one of the fastest screens for hydrocephalus, and which segment is dilated - all four ventricles versus lateral and third only - tells you whether the obstruction is communicating or non-communicating, and roughly where it sits. Temporal horn dilation out of proportion to the rest of the system is often the earliest sign. Effacement of the ventricles, rather than dilation, points to mass effect or diffuse edema instead.
+
+- Basal cisterns are CSF-filled spaces at the skull base, compressed early in mass effect and herniation - often more useful than the ventricles for catching an evolving problem.
+- Suprasellar cistern: star- or pentagon-shaped on axial images, contains the circle of Willis and optic chiasm. Loss of the star shape is a classic early sign of uncal herniation.
+- Quadrigeminal cistern: behind the midbrain; effacement suggests posterior or central pressure, or early transtentorial herniation.
+- Ambient cisterns: run laterally around the midbrain, connecting the suprasellar and quadrigeminal cisterns; asymmetric effacement is an early uncal herniation sign.
+- Prepontine cistern: anterior to the pons.
+
+[EXAM TIP] Cistern effacement is graded and reported specifically because it answers the question every trauma or mass-effect CT is implicitly asked: is there impending herniation? It shows up well before obvious midline shift, which is why it's a core part of the report that standard gross anatomy courses skip.
+
+- MCA territory: most of the lateral hemisphere - frontal, parietal, and temporal opercula, basal ganglia via the lenticulostriate branches, and the insula.
+- ACA territory: medial frontal and parietal lobes, and the anterior corpus callosum.
+- PCA territory: occipital lobe, medial and inferior temporal lobe, and the thalamus via perforating branches.
+- Watershed zones: border areas between territories (MCA-ACA, MCA-PCA), vulnerable in global hypoperfusion - cardiac arrest, for example - rather than single-vessel occlusion.
+
+[NOTE] A hypodense region that doesn't respect a vascular territory is a red flag pointing away from arterial infarct toward another cause. A stroke that fits a territory perfectly supports an embolic or large-vessel process instead. This is the single most practical piece of vascular anatomy a non-radiology student can learn.
+
+Epidural:
+  - Space: Biconvex (lens-shaped), bounded by suture lines because dura is tightly adherent there
+  - Shape on CT: Usually arterial (middle meningeal artery), associated with skull fracture
+Subdural:
+  - Space: Crescent-shaped, spreads along the calvarial contour, can cross sutures but not the falx or tentorium
+  - Shape on CT: Usually venous (bridging veins), classically after acceleration-deceleration injury or in atrophic brains
+Subarachnoid:
+  - Space: Follows sulci and cisterns rather than forming a discrete collection - hyperdensity outlining sulci or filling cisterns
+  - Shape on CT: Aneurysmal rupture is a classic cause; blood concentrated in one cistern can suggest the culprit vessel
+
+[EXAM TIP] This is one of the clearest 'shape tells you the diagnosis' lessons in radiology: epidural is lens-shaped and crosses nothing, subdural is crescent-shaped and crosses sutures but not the falx, subarachnoid follows the sulci instead of forming a collection at all.
+
+- Basal ganglia: caudate (its head bulges into the frontal horn), putamen, and globus pallidus - together with the internal capsule they form the 'smiley face' appearance at the level of the foramen of Monro.
+- Thalamus: paired midline structures forming the walls of the third ventricle.
+- Internal capsule: anterior limb, genu, posterior limb - carries corticospinal fibers, so small deep infarcts or hemorrhages here have outsized clinical effects for their size.
+
+[NOTE] Hypertensive hemorrhages classically occur in the basal ganglia, thalamus, pons, or cerebellum - the 'typical' locations - while lobar hemorrhages raise suspicion for amyloid angiopathy in older patients or an underlying lesion. Location alone narrows the differential substantially.
+
+- Frontal, ethmoid, and sphenoid sinuses, and the mastoid air cells, are normally aerated (black); opacification suggests sinusitis, or in trauma, an adjacent fracture - fluid in the sphenoid sinus after trauma is a classic indirect sign of skull base fracture.
+- Sella turcica: houses the pituitary gland, bounded by the anterior and posterior clinoid processes.
+- Temporal bone: mastoid air cells, petrous ridge, internal auditory canal - relevant to trauma and hearing-related pathology, though fine temporal bone anatomy is its own subspecialty.
+
+[NOTE] Bone windows are easy to skip, but fluid in the sphenoid sinus after trauma is exactly the kind of indirect finding that should make you go back and check for a skull base fracture - a good example of why radiologists check things that seem unrelated at first.
+
+Midline shift is a concrete, measurable finding, not just descriptive anatomy: the distance between a chosen midline landmark (often the septum pellucidum) and the true anatomic midline, defined as a line drawn from the anterior to the posterior falx attachment. It ties together several of the structures above - ventricles, cisterns, gray-white architecture - into a single number that matters for management.
+
+1. Learn the normal ventricles and cisterns at two or three key axial levels before looking at anything abnormal.
+2. Overlay the vascular territories at the basal ganglia level and practice saying which territory a hypodensity sits in.
+3. Compare epidural, subdural, and subarachnoid hemorrhage side by side until the shapes are automatic.
+4. Label the basal ganglia/internal capsule 'smiley face' slice until you can find it without hunting.
+5. Practice measuring midline shift on a mass-effect case using the anterior-to-posterior falx line.
+
+## CT chest
+Lobes, fissures, mediastinal compartments, and the hilar and vascular anatomy a chest CT report is built from.
+
+Two windows do most of the work on a chest CT: lung window for airspaces, nodules, and interstitial disease, and mediastinal (soft tissue) window for vessels, nodes, and mediastinal masses. Bone windows are added for rib or spine detail when relevant. The two most common practical questions - where is this exactly, and what compartment does this mass belong to - are both pure applied anatomy questions, and they come up on almost every case.
+
+- Right lung: three lobes (upper, middle, lower), separated by the major (oblique) and minor (horizontal) fissures.
+- Left lung: two lobes (upper, lower), separated by a single major fissure - the lingula acts as the left's analog of the right middle lobe.
+- Bronchopulmonary segments: each lobe subdivides further (10 on the right, 8-10 on the left depending on counting convention), each with its own segmental bronchus and artery. Full memorization isn't necessary, but knowing the system exists - and that it's how nodules, pneumonia, and aspiration get localized - is high-yield.
+
+[NOTE] 'Right lower lobe pneumonia' versus 'posterior segment of the right lower lobe' is the difference between a general statement and a precise, clinically actionable localization - posterior/superior segment lower lobe consolidation in a bedridden patient, for instance, suggests aspiration. Fissures matter too, because effusions and pneumonia can be bounded by them, producing sharp, geometric borders.
+
+- Prevascular (anterior) compartment: bounded by the sternum anteriorly and the pericardium/great vessels posteriorly. Contains thymus (or thymic fat in adults), fat, and lymph nodes. Classic masses - the '4 Ts': thymoma, lymphoma, germ cell tumor, thyroid extension.
+- Visceral (middle) compartment: heart, pericardium, trachea, esophagus, great vessels, and mediastinal/hilar lymph nodes.
+- Paravertebral compartment: the space flanking the vertebral bodies posteriorly. Classic masses: neurogenic tumors arising from nerve roots or the sympathetic chain.
+
+[EXAM TIP] Compartment localization is often the very first sentence of a mediastinal mass report, because it narrows the differential before anything else is described. This three-compartment (ITMIG) framework is one of the cleanest, most teachable things in chest CT - and most students never encounter it.
+
+The hilum is where the mainstem bronchus, pulmonary artery, and pulmonary veins enter or exit each lung. On the right, the pulmonary artery sits anterior and lateral to the bronchus; on the left, the pulmonary artery arches over the left mainstem bronchus - a useful way to identify structures on axial slices even without contrast. Distinguishing vessels from bronchi and nodes is a core practical skill: vessels branch smoothly and enhance with contrast, bronchi have visible air-filled lumens with thin walls, and lymph nodes are discrete oval or round soft tissue structures.
+
+[NOTE] 'Hilar fullness' or 'hilar mass' is a common early red flag for lung cancer or lymphadenopathy. Telling an enlarged node from a normal vessel on a single axial slice is a genuinely practical skill, not just textbook anatomy.
+
+- N1 nodes: within the lung, around the hilum and intrapulmonary.
+- N2 nodes: mediastinal, same side as the tumor - paratracheal, subcarinal, for example.
+- N3 nodes: contralateral mediastinal/hilar, or supraclavicular.
+
+[NOTE] This simplified N1/N2/N3 framework is the basis of lung cancer staging. Even at this level of detail it explains why radiologists describe node location so specifically - it changes resectability and stage.
+
+Visceral pleura covers the lung surface; parietal pleura lines the chest wall, diaphragm, and mediastinum. Between them is a potential space that normally holds only a thin film of fluid. The costophrenic angles are the most dependent recesses of that space, and the most sensitive place to look for a small effusion in an upright or supine patient. Fluid, air, and blood in the pleural space each have characteristic appearances: effusion layers dependently, pneumothorax rises non-dependently, and hemothorax may show layering or clot.
+
+[NOTE] Checking the costophrenic angles first for a small effusion is a habit worth building deliberately - it's the most sensitive spot, not just a convenient one.
+
+The pericardium is a two-layered sac around the heart with a small amount of physiologic fluid between the layers. Pericardial recesses - the superior pericardial recess near the great vessels, for instance - are normal fluid-containing pouches that are frequently mistaken for pathology (adenopathy, dissection) by inexperienced readers. They show up on nearly every contrast chest CT, which makes this a genuinely high-yield 'normal anatomy that looks abnormal' lesson.
+
+- Aorta: ascending aorta, arch (branching into the brachiocephalic, left common carotid, and left subclavian arteries), and descending thoracic aorta. Roughly under 3.5-4 cm is normal for the ascending aorta, tapering further down - aortic size is one of the most commonly reported chest CT measurements.
+- SVC: formed by the brachiocephalic veins, drains into the right atrium.
+- Azygos vein: runs along the right side of the vertebral column and arches over the right mainstem bronchus to join the SVC - a useful landmark, and the site of the normal 'azygos fissure' variant.
+- Pulmonary trunk and arteries: comparing the main pulmonary artery diameter to the adjacent aorta is a quick, testable clue to pulmonary hypertension.
+
+A single axial slice shows basic four-chamber orientation: right atrium anterior right, adjacent to the SVC/IVC entry; right ventricle the most anterior chamber, sitting behind the sternum; left atrium the posterior-most chamber, adjacent to the esophagus (a helpful landmark); left ventricle posterior left, with the thickest myocardial wall. The interventricular and interatrial septa are useful dividing landmarks on that same slice. Chest CT increasingly comments on cardiac chambers incidentally - enlargement, thrombus - so knowing which chamber is which on a single image is a practical, often-skipped skill.
+
+The diaphragm is dome-shaped, with the right side normally slightly higher than the left because of the liver. The right hemidiaphragm sits above the liver, the left above the spleen and stomach fundus. The diaphragm crura are visible posteriorly on axial CT, flanking the aorta at the diaphragmatic hiatus - a common spot to mistake a crus for a lymph node or mass.
+
+[NOTE] Understanding the diaphragm's normal contour and relations underpins detection of subphrenic collections and diaphragmatic rupture, and is another 'looks abnormal but isn't' teaching point worth flagging early.
+
+1. Label lobes and fissures at two axial levels - carina level, and a lower level showing the minor fissure.
+2. Overlay the mediastinal compartment diagram on a single axial slice until prevascular/visceral/paravertebral is automatic.
+3. Label hilar structures - vessel versus bronchus versus node - on both the right and left sides.
+4. Label the aortic arch branches at the arch level.
+5. Label all four heart chambers on one axial slice.
+
+## CT abdomen and pelvis
+Couinaud liver segments, the peritoneal spaces disease actually spreads through, and the vascular landmarks that anchor every organ.
+
+Abdomen and pelvis CT is read organ by organ, then space by space: solid organs (liver, spleen, kidneys, pancreas, adrenals) are described individually, then the peritoneal spaces and bowel are assessed as a system, because fluid, infection, and tumor spread through those spaces in predictable ways. Contrast phase matters too - arterial, portal venous, and delayed phases exist because different organs and pathologies show up best at different times, which is a good way to understand why CT isn't just 'taking a picture.'
+
+The liver is divided into 8 functionally independent segments, each with its own portal inflow (portal vein branch, hepatic artery branch, bile duct) and hepatic venous outflow - meaning each segment can theoretically be resected on its own. The hepatic veins (right, middle, left) divide the liver into vertical thirds and are the primary landmarks separating segments on axial imaging; the portal vein bifurcation and its branches then divide each third into upper and lower segments. Roughly: segment I is the caudate lobe, unique because it drains directly into the IVC and can hypertrophy independently in cirrhosis; segments II/III are the left lateral section; segment IV is the left medial section (split into IVa/IVb); segments V-VIII make up the right lobe, arranged around the right and middle hepatic veins.
+
+[EXAM TIP] Couinaud segments are the universal language for describing a tumor's location before surgery or ablation - 'a lesion in segment VII' tells a surgeon exactly what would need to be resected and what vessels are at risk. This is arguably the single highest-value anatomy fact in this whole section.
+
+- Cortex: outer layer, contains glomeruli; enhances earliest and most intensely on contrast CT (corticomedullary phase).
+- Medulla: inner pyramids, contains the loops of Henle and collecting ducts; enhances later than cortex, useful for recognizing contrast phase.
+- Renal sinus: central fat-filled area containing the collecting system (calyces, renal pelvis), vessels, and lymphatics.
+- Poles: upper and lower pole terminology is used constantly to localize masses, cysts, and stones.
+- Columns of Bertin: cortical tissue dipping between pyramids - a common source of a pseudo-mass appearance, worth flagging even though it borders on variant anatomy.
+- Perinephric space and Gerota's fascia: the fibrous fascia and fat surrounding the kidney, defining how far infection or hemorrhage from the kidney can spread before reaching adjacent organs.
+
+[NOTE] Corticomedullary, nephrographic, and excretory phase terminology only make sense once cortex/medulla anatomy is understood, and 'upper pole versus lower pole versus interpolar' is the standard way every renal mass or stone gets localized in a report.
+
+The pancreatic head sits in the C-loop of the duodenum, anterior to the IVC. The neck is the narrow segment directly anterior to the superior mesenteric vein/portal vein confluence - a key surgical landmark, since tumors here are judged resectable largely on vascular involvement. The body crosses anterior to the aorta and the splenic vein, which runs along its posterior surface and is a reliable landmark for finding the pancreas on axial images. The tail extends to the splenic hilum. The main pancreatic duct (duct of Wirsung) runs the length of the gland, and dilation is an easily visible warning sign of obstruction - by a mass in the head, for instance.
+
+[EXAM TIP] Pancreatic head masses are described in direct relation to the SMA/SMV/portal confluence because vascular involvement, not just tumor size, determines whether a tumor is surgically resectable - a clean example of anatomy directly changing management.
+
+The spleen is the largest lymphoid organ, sitting in the left upper quadrant and protected by ribs 9-11. It relates to the diaphragm superiorly, the left kidney posteromedially, the splenic flexure of the colon inferiorly, the stomach medially, and the pancreatic tail at its hilum. Size is usually estimated by craniocaudal length, roughly up to 12-13 cm being normal in adults, though this varies with body habitus. Its close relation to the pancreatic tail and left kidney matters most in trauma - splenic laceration grading, and why left rib fractures raise suspicion for splenic injury.
+
+- Sit atop the upper pole of the kidney on the right, and anteromedial to it on the left.
+- Right adrenal: classic inverted-V or linear shape, tucked between the right diaphragmatic crus, liver, and IVC.
+- Left adrenal: inverted-Y or triangular shape, adjacent to the aorta, splenic vessels, and pancreatic tail.
+
+[NOTE] Adrenal nodules are an extremely common incidental finding. Knowing the normal shape and size of each gland helps distinguish a normal limb from a true nodule - a very practical 'don't overcall this' lesson.
+
+- The peritoneal cavity splits into the greater sac and the lesser sac (omental bursa), connected via the epiploic foramen (of Winslow).
+- Morrison's pouch (hepatorenal recess): the most dependent space in the peritoneal cavity in a supine patient - the classic first place free fluid or blood collects, and what the FAST ultrasound exam checks first.
+- Paracolic gutters: run along the ascending and descending colon. The right gutter communicates freely with the pelvis and subphrenic space, making it a common route for spread of infection (appendicitis to a right subphrenic abscess, for example) or malignant ascites.
+- Subphrenic spaces: right and left, below the diaphragm - common sites for postoperative abscess.
+- Pelvic peritoneal recesses: the rectouterine pouch (of Douglas) in females, the rectovesical pouch in males - the most dependent point of the peritoneal cavity in an upright or seated patient, and a common site for free fluid or drop metastases.
+
+[EXAM TIP] This framework directly explains things students are told without being shown why - why a burst appendix causes a right subphrenic abscess, why the pelvis always gets checked for free fluid. It's anatomy in service of a mechanism, not anatomy for its own sake.
+
+The mesentery suspends the small bowel from the posterior abdominal wall and carries its blood supply; its root runs obliquely from the left upper quadrant, near the ligament of Treitz, to the right lower quadrant, near the ileocecal junction. Intraperitoneal organs include the stomach, spleen, most of the liver, small bowel, and the transverse and sigmoid colon. Retroperitoneal organs are commonly remembered with 'SAD PUCKER': suprarenal (adrenal) glands, aorta/IVC, duodenum (2nd-4th parts), pancreas (except the tail), ureters, colon (ascending/descending), kidneys, esophagus (lower part), and rectum.
+
+[NOTE] Whether an organ is peritoneal or retroperitoneal changes how disease spreads and how it's approached surgically, and the distinction shows up constantly in report language - 'retroperitoneal lymphadenopathy,' 'free intraperitoneal air.'
+
+The ileocecal valve and cecum sit in the right lower quadrant and are the key landmark for locating the appendix, which arises from the posteromedial cecum but whose tip position is highly variable (retrocecal, pelvic, and others). The rectum is partially retroperitoneal - its upper third is intraperitoneal, its lower two-thirds extraperitoneal - which is why rectal cancer is staged differently (MRI-based, different T-stage criteria) from colon cancer.
+
+The bladder sits midline and is distensible, and its shape helps orient other pelvic structures on a single slice. The prostate has zonal anatomy worth introducing here even though it's best taught with MRI in mind: the peripheral zone (most of the gland's volume, the most common site of prostate cancer, positioned posteriorly and palpable on digital rectal exam), the transition zone (surrounds the urethra, the site of BPH enlargement), and the central zone. In females, the uterus sits midline posterior to the bladder and the ovaries lie laterally in the adnexa - CT is a secondary modality for these organs, with ultrasound and MRI doing most of the work. The pelvic floor and levator ani form the muscular floor separating pelvic and perineal contents.
+
+[EXAM TIP] Prostate zonal anatomy is the entire basis of PI-RADS, MRI prostate reporting, and explains why peripheral- versus transition-zone lesions get interpreted completely differently - a concept students essentially never see in medical school despite how common prostate cancer is.
+
+- Abdominal aorta: gives off the celiac trunk (T12), superior mesenteric artery (L1), renal arteries (L1-L2), and inferior mesenteric artery (L3), before bifurcating into the common iliac arteries around L4.
+- IVC: formed by the confluence of the common iliac veins, ascends to the right of the aorta, receives the renal and hepatic veins before piercing the diaphragm.
+- Celiac trunk branches: common hepatic, splenic, and left gastric arteries - the classic 'trident' appearance on a single axial slice.
+
+[NOTE] Vessel-level anatomy anchors localization for the pancreas, anchors bowel ischemia workups (SMA/SMV thrombosis), and the celiac trunk trifurcation's 'trident' look makes it a favorite quiz-style teaching point.
+
+1. Overlay liver segments at two levels - the hepatic vein level and the portal vein level.
+2. Label the kidney in coronal plane: cortex, medulla, sinus, poles.
+3. Label a pancreas slice showing the SMA/SMV/splenic vein relationship.
+4. Work through a peritoneal spaces diagram - Morrison's pouch, paracolic gutters, pelvic recesses - tracing how fluid would spread between them.
+5. Label the celiac trunk 'trident' on a single axial slice.
+6. Review a simplified prostate zonal anatomy schematic.
+
+## CT spine
+Vertebral building blocks, why the nerve root level and the vertebral level don't match, and how disc herniations get localized.
+
+Spine CT is primarily a bone-detail study - fractures, alignment, degenerative change - while disc and cord detail are better seen on MRI. Every report references two coordinate systems at once: the vertebral level (bone) and, where relevant, the neural level (nerve roots or cord segments). These are not the same thing, and confusing them is one of the most common errors students make.
+
+- Vertebral body: the weight-bearing anterior block; height and alignment are checked at every level for compression fractures.
+- Pedicles: paired posterior projections from the body. A fractured or eroded pedicle is a classic clue to metastatic disease.
+- Lamina: connects the pedicles posteriorly, forming the posterior wall of the spinal canal.
+- Spinous and transverse processes: posterior and lateral projections, muscle and ligament attachment points.
+- Facet (zygapophyseal) joints: paired synovial joints between adjacent vertebrae's articular processes; orientation changes by region - more coronal in the cervical spine, more sagittal in the lumbar spine - which affects the direction a vertebra can slip or dislocate.
+- Pars interarticularis: the bony segment between the superior and inferior articular facets - the classic site of spondylolysis, a stress fracture common in adolescent athletes, especially at L5.
+
+[NOTE] Nearly every spine report is built from this vocabulary. Describing a fracture requires naming which of these components is involved, because it changes the stability assessment - a posterior element fracture involving the facets and pedicles is more concerning for instability than an isolated anterior body compression fracture.
+
+In the cervical spine, nerve roots exit above their correspondingly numbered vertebra - the C5 root exits between C4 and C5 - except that C8 exits below C7, since there is no C8 vertebra, after which every level below shifts to exiting below its same-numbered vertebra. In the thoracic and lumbar spine, nerve roots exit below their same-numbered vertebra - the L4 root exits between L4 and L5. The spinal cord itself ends around L1-L2 (the conus medullaris) in adults, well above where the vertebral column ends; below this the canal contains only nerve roots traveling down to their exit foramina, collectively called the cauda equina.
+
+[EXAM TIP] This explains why a disc herniation at a given vertebral level can affect a nerve root with a different number than you'd naively expect, why lower lumbar and sacral pathology never involves the spinal cord directly (since the cord has already ended), and why a lumbar puncture is safely performed below L2 - all classic exam points that connect directly to imaging.
+
+- Central canal: the main thecal sac-containing space.
+- Subarticular zone (lateral recess): just lateral to the central canal, beneath the facet joint - a common site for a nerve root to be compressed by a herniated disc before it exits the foramen.
+- Neural foramen: where the exiting nerve root leaves the canal, bounded by the pedicles above and below, the disc anteriorly, and the facet joint posteriorly.
+- Extraforaminal (far lateral) zone: beyond the foramen.
+
+[NOTE] Which zone a disc herniation occupies determines which nerve root is affected and explains the patient's symptoms directly - a far lateral disc affects the exiting root at that level, while a central-to-subarticular disc more often affects the traversing root destined to exit one level lower. This zonal language is the anatomic backbone of every disc herniation report.
+
+The atlas (C1) is ring-shaped with no vertebral body, and articulates with the occipital condyles above. The axis (C2) carries the odontoid process (dens), around which C1 rotates - this articulation accounts for most head rotation. Basic alignment checkpoints at this junction are used to screen for craniocervical dissociation in trauma, a genuinely high-stakes and easily missed injury.
+
+[NOTE] The C1-C2 complex is anatomically and functionally unique compared to the rest of the spine, and trauma here is disproportionately dangerous - a good example of a small amount of anatomy explaining a large amount of clinical urgency.
+
+The spine alternates curves: cervical and lumbar lordosis (concave posteriorly), thoracic and sacral kyphosis (convex posteriorly). On CT, alignment is checked using continuous lines along the anterior and posterior vertebral body margins - a step-off suggests fracture or subluxation. Loss of normal lordosis, a very common and often incidental report phrase, can reflect muscle spasm, positioning, or underlying pathology, and is worth demystifying since students see it constantly without understanding it.
+
+Cervical:
+  - Region: Smaller vertebral bodies, a spinal canal large relative to cord size, transverse foramina transmitting the vertebral arteries
+  - Distinguishing anatomy: More room before cord compression occurs; vertebral artery injury is a specific concern in cervical trauma
+Thoracic:
+  - Region: Costovertebral and costotransverse joints connect each vertebra to its corresponding rib
+  - Distinguishing anatomy: Rib fractures and thoracic spine fractures often co-occur; the rib cage's restricted motion makes thoracic disc herniation less common
+Lumbar:
+  - Region: Largest vertebral bodies, more sagittally oriented facet joints
+  - Distinguishing anatomy: The region where disc herniation and degenerative disease are most commonly encountered clinically
+
+1. Label a typical vertebra on an axial slice: body, pedicles, lamina, spinous/transverse processes, facet joints.
+2. Compare the vertebral-level-versus-nerve-root-exit mismatch side by side for the cervical and lumbar spine.
+3. Work through the spinal canal zones - central, subarticular, foraminal, extraforaminal - with a disc herniation example placed in each.
+4. Find the conus medullaris ending around L1-L2 and trace the cauda equina below it on a sagittal image.
+5. Label a C1-C2 slice showing the dens articulation.
+
+======================================================================
+PRE-ROTATION PREP
+======================================================================
+
+----------------------------------------------------------------------
+SECTION: Pre-rotation prep
+----------------------------------------------------------------------
+Five short modules to get through before your first day of a radiology elective.
+
+## How radiology works in practice
+What a day on a radiology elective actually looks like, and what is expected of you at each part of it.
+
+Radiology does not look like any rotation you have done. There are no rounds, no patients to follow, and often no obvious task. Students who struggle are almost never struggling with the imaging. They are struggling because nobody told them what the day is or what they are supposed to do during it. This module is that briefing.
+
+Early morning:
+  - What happens: Overnight studies get finalized, the worklist builds
+  - What you should be doing: Arrive before your resident. Preview the list
+Morning readout:
+  - What happens: The resident reads and dictates, the attending reviews with them
+  - What you should be doing: Sit where you can see the screen. Watch, and ask between cases, not during dictation
+Morning conference:
+  - What happens: Case-based or didactic teaching
+  - What you should be doing: Attend everything. This is where the actual teaching happens
+Midday:
+  - What happens: Continuous reading, phone calls, protocolling
+  - What you should be doing: Preview cases before the resident opens them. Follow up cases from earlier
+Procedures:
+  - What happens: Biopsies, drains, arthrograms, fluoroscopy, interventional cases
+  - What you should be doing: Ask in advance to be called. You will not be found otherwise
+Multidisciplinary meetings:
+  - What happens: Tumor board, chest conference, MSK conference
+  - What you should be doing: Go at least once. It is where you see what the report is actually for
+Late afternoon:
+  - What happens: Finalizing, handover to evening cover
+  - What you should be doing: Ask your question now, when the list is short
+
+- Worklist: the queue of studies waiting to be read, filtered by modality, priority, and section.
+- Readout or sign-out: the session where a trainee presents their reads to an attending, who reviews and signs. The core teaching event of the rotation.
+- Previewing: looking at a study and forming your own read before the resident opens it. The single highest-value thing a student does.
+- Protocolling: deciding the acquisition parameters for a requested study.
+- Dictating: speaking the report, usually with voice recognition.
+- Prelim or wet read: a preliminary report issued before attending review.
+
+[NOTE] Radiology is quiet, and the quiet is work. A radiologist staring at a screen without speaking is concentrating, not available. Learn to read the difference between a pause between cases, which is an opening, and a pause inside a case, which is not. Getting this right is most of what makes a student easy to have around.
+
+1. Week 1: learn the software, the people, and the routine. Ask where to sit. Say yes to everything. Expect to understand very little of what you see, which is normal.
+2. Week 2: start previewing. Have an answer ready before the resident opens a case, even a wrong one. This is where learning accelerates.
+3. Week 3: commit out loud. Give a read, describe the finding in report language, and be wrong in public. Ask for your presentation topic if you have one.
+4. Week 4: work independently on a subset of the list, follow up on cases you saw earlier, and ask for feedback while there is still time to act on it.
+
+  > What actually earns a strong evaluation
+    Evaluations in radiology are written by whoever you sat next to most, and they turn on a small number of things: you were there early and you stayed, you previewed rather than watching passively, you asked questions that showed you had thought about the case, you were not on your phone, and you followed up on something. Almost nothing turns on how many diagnoses you got right, because nobody expects you to get them right. The trainees writing your evaluation were students recently and they remember exactly which behaviors were real effort.
+
+Q: I feel useless. Everyone is working and I am watching.
+A: That feeling is universal on this rotation and it is not a sign you are doing badly. The fix is previewing, because it converts watching into doing. Open the next case on the list yourself, form a read, then compare it with what the resident says.
+Q: How do I get to procedures?
+A: Ask a specific person on a specific day and give them a way to reach you. "Would you mind texting me if a biopsy comes up this week" works. Waiting to be invited does not, because nobody in a reading room knows where you are.
+
+## PACS survival
+The handful of PACS actions you need on day one, and the etiquette that keeps you out of trouble.
+
+[WARNING] Ask for your PACS login a week before the rotation starts, in writing, and chase it. Access requests routinely take days and involve a training module. A student who spends the first two days of a four-week elective unable to open a study has lost a substantial fraction of the rotation to paperwork.
+
+- Open and filter the worklist. By modality, by date, by priority, by reading section.
+- Open a study, and open the prior alongside it. The comparison is the most valuable click in the software.
+- Scroll a stack. Usually the mouse wheel or a click-drag. Learn which.
+- Change window and level, and use the presets. Learn the keyboard shortcuts for lung, soft tissue, bone, and brain. This alone will make you visibly faster.
+- Zoom and pan.
+- Measure. Linear distance, and an HU region of interest on CT.
+- Switch series and open reformats. Coronal and sagittal, and multiplanar reconstruction if the viewer supports it.
+- Link or sync two series so they scroll together. Essential for comparing with a prior.
+- Cine through a stack, and invert greyscale, which sometimes makes a subtle finding jump out.
+- Find the report pane and the prior reports.
+
+Hanging protocols are the layouts that decide which series appears in which pane when a study opens. They are configured per user and per study type, and when a study opens looking wrong it is usually the hanging protocol rather than the study. Ask someone to show you how yours are set on the first day, because fighting the layout on every case is a slow, invisible tax on your time.
+
+- Never dictate, edit, or sign anything. Not a draft, not a template, not as a favor. The report is a legal document under someone else's name.
+- Do not leave a study open under someone else's login, and log out when you leave the workstation.
+- Do not move, delete, or reassign studies. If you think something is filed wrong, tell the technologist.
+- Do not take over a workstation that is already logged in. Ask which one is free.
+- Do not close somebody's worklist, which may have taken them a while to filter.
+- Ask before you touch anything on a shared workstation. Reading rooms have territorial conventions that are real and unwritten.
+
+[CRITICAL] Do not photograph the screen. Not for your own study, not for a presentation, not with the patient details cropped out. Screen photography of patient studies is a data protection breach in every jurisdiction this app serves, and it is one of the few things on an elective that can end badly and permanently. If you need a case for teaching or a presentation, ask how the department's own de-identified teaching file works and use that route.
+
+  > Keeping a record of what you saw, safely
+    You will want to remember cases, and you should, because a rotation is a blur by the time interviews come around. Record the learning, never the patient. "Right lower lobe collapse, I called it an effusion, the difference was the position of the fissure" is a complete and useful note that contains nothing identifying. No names, no medical record numbers, no dates of study, no images. This is exactly what the rotation log book in this app is built to enforce structurally, and the same discipline applies to any notebook you keep.
+
+Q: The images look completely different on this workstation than on the one next door.
+A: Diagnostic monitors are calibrated to a display standard and are far better than a standard clinical or laptop screen. This is why reads are done at proper workstations and why judging a subtle finding on a ward computer is unreliable.
+Q: Should I use the department's viewer or the one in the electronic record?
+A: The department's viewer for anything you are seriously interpreting. The record viewer is generally cut down, with fewer tools and sometimes reduced resolution, and it is fine for orientation but not for a real read.
+
+Glossary: PACS, DICOM, window and level, comparison study
+
+## The vocabulary
+The words that make a description sound like radiology, and the formula that produces them in the right order.
+
+Radiology has a working vocabulary of a few dozen words used precisely. Students who sound lost usually know the pathology and lack the words, which is a much easier problem to fix. There is also a fixed order to a description, and following it makes you sound organized even when you are unsure of the diagnosis.
+
+1. Modality and study. "On the frontal chest radiograph."
+2. Location. Anatomically specific. Lobe, segment, compartment, zone. Never "up there."
+3. Size. Measure it. Two dimensions for most things.
+4. Shape and margin. Round, lobulated, spiculated, well-circumscribed, ill-defined, wide or narrow zone of transition.
+5. Density, echogenicity, or signal. In the right vocabulary for the modality.
+6. Associated features. Calcification, cavitation, enhancement, surrounding edema, mass effect, periosteal reaction.
+7. Change from prior. New, unchanged, enlarging, resolving, and over what interval.
+
+- Fracture: which bone, which part, open or closed, simple or comminuted, the fracture line direction, displacement, angulation, shortening or rotation, intra-articular extension, and the state of adjacent joints. "There is a transverse fracture of the distal radial metaphysis with dorsal angulation and mild impaction, extending to the articular surface."
+- Bone lesion: location within the bone, zone of transition, cortical involvement, periosteal reaction, matrix, and soft tissue component. Those six features separate aggressive from non-aggressive.
+- Mass or nodule: size, shape, margin, density or signal, enhancement pattern, and relationship to adjacent structures.
+
+Shadow:
+  - Say instead: Opacity
+  - Why: Shadow is not a radiological term and means nothing specific
+Infiltrate:
+  - Say instead: Consolidation, airspace opacity, or interstitial opacity
+  - Why: Infiltrate means different things to different readers
+Density (for a white area on a film):
+  - Say instead: Opacity
+  - Why: Density is a physical property, not a finding
+Questionable:
+  - Say instead: Either commit, or say what would resolve it
+  - Why: Hedging without a plan is not useful to anyone
+No obvious fracture:
+  - Say instead: No fracture identified on these views
+  - Why: The first sounds like you did not look hard
+It looks bad:
+  - Say instead: Describe the features that make it aggressive
+  - Why: The features are the reasoning, the impression is not
+Whited out:
+  - Say instead: Opacified, with or without volume loss
+  - Why: Say whether the mediastinum shifts toward or away, which is the actual question
+
+[EXAM TIP] Laterality out loud, every time, at the start of the sentence. Say "the right lower lobe" rather than "that lower lobe there." It feels excessive for about a week and then becomes automatic, and it is the habit that prevents the error with the worst consequences in the specialty.
+
+Learn to say you do not know in a way that keeps the conversation going. "I do not know" closes it. "I do not know what that is, but it looks aggressive because of the wide zone of transition and the periosteal reaction" opens it. "I would want to see the lateral before I commit" is a legitimate radiological answer, not a dodge. "I cannot exclude a small pneumothorax on this supine film" is exactly how a radiologist would phrase the same uncertainty.
+
+  > Hedging you are allowed to use, and hedging that sounds weak
+    Allowed, because they name the limitation: "the study is limited by motion in this region," "I would want a prior for comparison," "I cannot exclude X on this projection," "this appearance is non-specific, and the differential includes X and Y." Weak, because they name nothing: "maybe," "possibly," "something is going on there," "it could be anything." The difference is whether the uncertainty is attached to a reason. Uncertainty with a reason attached is expertise. Uncertainty without one is a shrug.
+
+Glossary: opacity, lucency, attenuation, enhancement, echogenic, hyperintense, hypointense, ground-glass opacity, consolidation, effusion, interval change, differential diagnosis
+
+## Being useful in the reading room
+What to say, what to do, and what not to touch, so you add something to the day rather than taking time out of it.
+
+The reading room is a small, quiet, high-concentration workspace with established conventions that nobody will explain to you. Being useful in it is a distinct skill from knowing radiology, and it is more learnable. Most of it is knowing when to speak and having something prepared when you do.
+
+1. Introduce yourself with your name, your year, and how long you are with them. Two sentences.
+2. Say what you want out of the rotation. "I am going into emergency medicine and I want to get better at reading my own films" tells them how to teach you.
+3. Ask where to sit.
+4. Ask if they mind you previewing cases before they open them.
+5. Then stop talking and watch for a while.
+
+- Preview. Open the next study yourself, form a read, and compare it to theirs. This is the whole rotation in one habit.
+- Have a question ready for the gap between cases, and make it about a case you both just saw rather than an abstract topic.
+- Take the phone if invited, write the message down accurately with the patient identifiers and the caller's name and callback number, and hand it over completely.
+- Bring back outcomes. Radiologists rarely learn what happened to the patient. A student who returns two days later with "that mediastinal mass was lymphoma on biopsy" is remembered for the rest of the rotation and beyond.
+- Ask for feedback at the midpoint, not at the end, when there is still time to change something.
+
+- Do not talk during dictation. Voice recognition picks up the room, and a stray comment ends up in a report.
+- Do not touch the dictaphone, the microphone, or the worklist of the person you are sitting with.
+- Do not ask a question that starts an explanation while a stat study is open. Note it and ask afterward.
+- Do not sit behind someone where they have to turn around to include you. Ask to pull up a chair beside them.
+- Do not be on your phone. In a dark quiet room, a lit screen is visible to everyone, and it is the most commonly cited negative on radiology evaluations.
+- Do not disappear without saying so. Say you are going to conference or to lunch and when you will be back.
+
+[NOTE] When you are handed the mouse, do not start naming findings. Say what the study is, what the indication says, and whether there is a comparison, then run your search pattern out loud. "This is a frontal chest radiograph in a 60-year-old with shortness of breath, comparison from March. Adequate inspiration, slightly rotated to the right. Starting with the airway." That opening buys you time, shows a system, and is what the attending is actually assessing.
+
+The physical reality is worth stating: it is a lot of sitting, in a dark room, for a long day. Bring water. Take a walk at lunch and get outside, because your first week will otherwise leave you exhausted in a way that feels like you are doing badly when you are only sedentary. Sit up. Ask someone to show you how to adjust the chair and the monitor height.
+
+  > What makes a student memorable
+    Ask people who write letters and the same answers come back. The student who previewed every case and had a read ready. The student who was wrong out loud, repeatedly and without embarrassment, and got visibly better over four weeks. The student who came back with the biopsy result. The student who asked a question that made the attending stop and think. Notably absent is the student who knew a lot of radiology on arrival, because that is not what a rotation is for and everyone knows it. Effort and trajectory are what get written about, because they are what a letter writer can honestly describe.
+
+Q: The resident seems annoyed. Have I done something wrong?
+A: Usually not, and usually it is the worklist rather than you. Radiology trainees are under continuous volume pressure that has nothing to do with whoever is sitting beside them. If it persists, ask directly and briefly: "Am I getting in your way? I am happy to work through cases on my own for a bit." That question is almost always received well.
+Q: I have been sitting for two hours and nobody has taught me anything.
+A: Then take it, politely. "Would you mind if I gave you my read on the next one before you open it?" turns a passive hour into a teaching session, and residents almost always say yes because it costs them nothing.
+
+## Anatomy refresh
+The anatomy you will actually be asked about on a radiology rotation, and the fastest way to get it back before day one.
+
+The anatomy that gets asked in a reading room is not the anatomy you were tested on in first year. Nobody will ask you to name a branch of the maxillary artery. They will ask which lobe an opacity is in, which vascular territory an infarct sits in, and which mediastinal compartment a mass occupies, because those are the questions where the answer changes the differential.
+
+- Chest: Lobes and fissures, and where each lobe touches the mediastinum and diaphragm. This is what makes the silhouette sign usable.
+- The three mediastinal compartments and the classic contents of each, because compartment drives the differential for a mediastinal mass.
+- Hilar structures and what makes a hilum abnormal.
+- The lung zones as used on a radiograph, which are not the same as lobes.
+
+- Abdomen: Liver segments by the Couinaud numbering, since reports use segment numbers.
+- Peritoneal versus retroperitoneal organs, which determines the differential and the surgical approach.
+- The major aortic branches in craniocaudal order: celiac, superior mesenteric, renals, inferior mesenteric, bifurcation.
+- Biliary anatomy and the normal caliber of the common bile duct.
+- The pancreas in parts, since head lesions behave completely differently from tail lesions.
+
+- Neuro: Vascular territories: anterior, middle, and posterior cerebral, and the lenticulostriate perforators. This is the highest-yield neuroanatomy in imaging by a wide margin.
+- The ventricular system in order, which is what you trace in hydrocephalus.
+- Extra-axial spaces: epidural, subdural, subarachnoid, and the shapes each collection makes.
+- Basic posterior fossa structures: cerebellum, brainstem, fourth ventricle.
+
+- MSK: Carpal bones in two rows, and specifically the scaphoid and lunate.
+- Elbow ossification centers in order of appearance, which is the pediatric elbow question.
+- Growth plate anatomy for Salter-Harris.
+- Ankle mortise and the syndesmosis, for Weber classification.
+- Spinal levels and the standard landmarks used to count them.
+
+[EXAM TIP] If you learn one thing from this list, learn cerebral vascular territories. An attending handing you a head CT and asking what deficit you expect, or describing a deficit and asking where the lesion is, is the most frequently repeated question in the specialty at student level, and it is entirely answerable from a diagram.
+
+1. Day 1: chest. Lobes and fissures, mediastinal compartments. Then scroll a normal CT chest.
+2. Day 2: abdomen. Liver segments, aortic branches, retroperitoneum. Then scroll a normal CT abdomen.
+3. Day 3: neuro. Vascular territories and ventricles. Then scroll a normal CT head.
+4. Day 4: MSK. Carpals, elbow ossification, growth plates, ankle mortise.
+5. Day 5: review the normal studies again, without notes, naming structures out loud as you scroll.
+
+Do this against images rather than against an atlas diagram. Cross-sectional anatomy learned from a labeled drawing does not transfer well to a greyscale CT, because the shapes are the same and the contrast is completely different. The anatomy viewer in this app is built for this, and scrolling a normal study while naming structures is worth several times the same amount of time spent reading.
+
+Q: Where do I start if my anatomy has completely gone?
+A: Normal chest radiograph and normal CT head, in that order. They are the two highest-volume studies you will see, and they anchor almost everything else you will be asked in the first week.
+Q: Do I need to relearn the brachial plexus?
+A: No. Detailed peripheral neuroanatomy comes up rarely at student level in imaging. Time spent on cerebral vascular territories returns far more.
