@@ -23,6 +23,7 @@ import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from '
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
 import { Footer } from './components/layout/Footer'
+import { PromoBanner } from './components/layout/PromoBanner'
 
 // ── Footer hidden on study page ──────────────────────────────
 const FOOTER_HIDDEN = [
@@ -180,6 +181,7 @@ export default function App() {
     <>
     <Analytics />
     <ScrollToTop />
+    <PromoBanner />
     <Routes>
       <Route path="/"          element={<LandingPage />} />
       <Route path="/login"            element={<RedirectIfAuth><LoginPage /></RedirectIfAuth>} />

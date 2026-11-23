@@ -12,6 +12,7 @@
 
 import Stripe from 'stripe'
 import { createClient } from '@supabase/supabase-js'
+import { isPromoActive } from '../src/data/promo.js'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -58,8 +59,13 @@ export default async function handler(req, res) {
   // never purchased, AND has a `pricing_page_viewed` analytics event from
   // more than ~2 minutes ago (so the very first visit, which just logged
   // this same event, never qualifies).
+  //
+  // Suppressed entirely while a sitewide promo (e.g. Black Friday) is
+  // active: Stripe can't combine `discounts` with `allow_promotion_codes`
+  // on one session, so an auto-applied welcome discount would hide the
+  // promo-code box from exactly the visitors the promo banner targets.
   let discountEligible = false
-  if (applyWelcomeDiscount && !existingSub && process.env.STRIPE_COUPON_WELCOME20) {
+  if (applyWelcomeDiscount && !existingSub && process.env.STRIPE_COUPON_WELCOME20 && !isPromoActive()) {
     const twoMinutesAgo = new Date(Date.now() - 2 * 60 * 1000).toISOString()
     const { data: priorView } = await supabaseAdmin
       .from('analytics_events')
