@@ -1,9 +1,11 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { LAST_UPDATED } from '../../data/config'
 
 export function Footer() {
   const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const isMedStudent = pathname.startsWith('/medstudents')
 
   return (
     <footer style={{
@@ -18,13 +20,27 @@ export function Footer() {
     }}>
       <div>
         <p style={{ margin: '0 0 2px', fontSize: '12px', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-          RadiologyStack · Built for radiology residents · Not for clinical use
+          {isMedStudent
+            ? 'RadiologyStack for Med Students · Not for clinical use'
+            : 'RadiologyStack · Built for radiology residents · Not for clinical use'}
         </p>
-        <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.5', opacity: 0.7 }}>
-          Cards continuously updated to reflect current literature · Last updated: {LAST_UPDATED}
-        </p>
+        {!isMedStudent && (
+          <p style={{ margin: 0, fontSize: '11px', color: 'var(--text-muted)', lineHeight: '1.5', opacity: 0.7 }}>
+            Cards continuously updated to reflect current literature · Last updated: {LAST_UPDATED}
+          </p>
+        )}
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+        <button
+          type="button"
+          onClick={() => navigate(isMedStudent ? '/' : '/medstudents')}
+          style={{
+            background: 'none', border: 'none', padding: 0, cursor: 'pointer',
+            fontSize: '12px', color: 'var(--text-muted)',
+          }}
+        >
+          {isMedStudent ? 'For residents' : 'For med students'}
+        </button>
         <button
           type="button"
           onClick={() => navigate('/terms')}

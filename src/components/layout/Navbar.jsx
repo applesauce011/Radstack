@@ -6,7 +6,7 @@ function isPathActive(pathname, target) {
   return pathname === target || pathname.startsWith(target + '/')
 }
 
-function TopNavLink({ label, active, onClick }) {
+function TopNavLink({ label, active, onClick, accent = 'var(--accent-cyan)' }) {
   return (
     <button
       type="button"
@@ -14,7 +14,7 @@ function TopNavLink({ label, active, onClick }) {
       style={{
         background: 'none', border: 'none', cursor: 'pointer',
         fontSize: '14px', fontFamily: 'var(--font-body)',
-        color: active ? 'var(--accent-cyan)' : 'var(--text-muted)',
+        color: active ? accent : 'var(--text-muted)',
         fontWeight: active ? '600' : '400',
         transition: 'color var(--transition)',
         padding: '4px 8px', whiteSpace: 'nowrap',
@@ -23,6 +23,30 @@ function TopNavLink({ label, active, onClick }) {
       onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'var(--text-muted)' }}
     >
       {label}
+    </button>
+  )
+}
+
+// A quiet single link, not a persistent two-way toggle — this is a pick-once
+// decision (resident vs. med student), not something visitors flip back and
+// forth on, so it shouldn't carry the same visual weight as the real nav
+// items. Label always names the OTHER track, i.e. where this link goes.
+function AudienceLink({ isMedStudent, onSelect, destinationAccent, style }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(!isMedStudent)}
+      style={{
+        background: 'none', border: 'none', cursor: 'pointer',
+        fontSize: '13px', fontFamily: 'var(--font-body)',
+        color: 'var(--text-muted)', whiteSpace: 'nowrap', padding: '4px 8px',
+        transition: 'color var(--transition)',
+        ...style,
+      }}
+      onMouseEnter={e => e.currentTarget.style.color = destinationAccent}
+      onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+    >
+      {isMedStudent ? 'For residents' : 'For med students'}
     </button>
   )
 }
@@ -48,6 +72,8 @@ export function Navbar() {
   }
 
   const isActive = (path) => isPathActive(location.pathname, path)
+  const isMedStudent = location.pathname.startsWith('/medstudents')
+  const accent = isMedStudent ? 'var(--accent-amber)' : 'var(--accent-cyan)'
 
   return (
     <nav style={{ position: 'sticky', top: 0, zIndex: 100, height: '64px' }}>
@@ -68,10 +94,10 @@ export function Navbar() {
         padding: '0 16px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-      {/* Logo */}
+      {/* Logo — goes "home" for whichever track you're currently on */}
       <button
         type="button"
-        onClick={() => go(isAuthenticated ? '/dashboard' : '/')}
+        onClick={() => go(isMedStudent ? '/medstudents' : (isAuthenticated ? '/dashboard' : '/'))}
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0,
@@ -82,7 +108,7 @@ export function Navbar() {
           alt="RadiologyStack"
           style={{
             width: '32px', height: '32px', borderRadius: '8px', objectFit: 'cover', flexShrink: 0,
-            border: '1.5px solid rgba(34,211,238,0.55)',
+            border: `1.5px solid ${isMedStudent ? 'rgba(245,158,11,0.55)' : 'rgba(34,211,238,0.55)'}`,
           }}
         />
         <span style={{
@@ -90,21 +116,38 @@ export function Navbar() {
           fontSize: '16px', letterSpacing: '-0.02em',
           color: 'var(--text-primary)',
         }}>
-          Radiology<span style={{ color: 'var(--accent-cyan)' }}>Stack</span>
+          Radiology<span style={{ color: accent }}>Stack</span>
         </span>
       </button>
 
       {/* Desktop nav — hidden below the mobile breakpoint (see index.css) */}
       <div className="navbar-desktop" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-        <TopNavLink label="Decks" active={isActive('/decks')} onClick={() => go('/decks')} />
-        <TopNavLink label="Cheat Sheets" active={isActive('/cheat-sheets')} onClick={() => go('/cheat-sheets')} />
-        <TopNavLink
-          label="Differential Sprint"
-          active={isActive('/differential-sprint')}
-          onClick={() => go('/differential-sprint')}
+        {isMedStudent ? (
+          <>
+            <TopNavLink label="Library" active={isActive('/medstudents/library')} onClick={() => go('/medstudents/library')} accent={accent} />
+            <TopNavLink label="Question Bank" active={isActive('/medstudents/questions')} onClick={() => go('/medstudents/questions')} accent={accent} />
+            <TopNavLink label="Cheat Sheets" active={isActive('/medstudents/cheat-sheets')} onClick={() => go('/medstudents/cheat-sheets')} accent={accent} />
+          </>
+        ) : (
+          <>
+            <TopNavLink label="Decks" active={isActive('/decks')} onClick={() => go('/decks')} />
+            <TopNavLink label="Cheat Sheets" active={isActive('/cheat-sheets')} onClick={() => go('/cheat-sheets')} />
+            <TopNavLink
+              label="Differential Sprint"
+              active={isActive('/differential-sprint')}
+              onClick={() => go('/differential-sprint')}
+            />
+            <TopNavLink label="Procedures" active={isActive('/procedures')} onClick={() => go('/procedures')} />
+            <TopNavLink label="Pricing" active={isActive('/pricing')} onClick={() => go('/pricing')} />
+          </>
+        )}
+
+        <AudienceLink
+          isMedStudent={isMedStudent}
+          onSelect={(toMed) => go(toMed ? '/medstudents' : '/')}
+          destinationAccent={isMedStudent ? 'var(--accent-cyan)' : 'var(--accent-amber)'}
+          style={{ marginLeft: '8px', borderLeft: '1px solid var(--border-subtle)', paddingLeft: '16px' }}
         />
-        <TopNavLink label="Procedures" active={isActive('/procedures')} onClick={() => go('/procedures')} />
-        <TopNavLink label="Pricing" active={isActive('/pricing')} onClick={() => go('/pricing')} />
 
         {isAuthenticated ? (
           <div style={{ position: 'relative', marginLeft: '8px' }}>
@@ -177,7 +220,7 @@ export function Navbar() {
               </>
             )}
           </div>
-        ) : (
+        ) : isMedStudent ? null : (
           <div style={{ display: 'flex', gap: '8px', marginLeft: '8px' }}>
             <button
               type="button"
@@ -195,7 +238,7 @@ export function Navbar() {
               type="button"
               onClick={() => go('/register')}
               style={{
-                background: 'var(--accent-cyan)', border: 'none',
+                background: accent, border: 'none',
                 borderRadius: 'var(--radius-md)', padding: '8px 16px',
                 color: 'var(--bg-primary)', cursor: 'pointer', fontSize: '14px',
                 fontWeight: '600', fontFamily: 'var(--font-body)',
@@ -238,21 +281,45 @@ export function Navbar() {
             padding: '8px', display: 'flex', flexDirection: 'column', gap: '2px',
             maxHeight: 'calc(100vh - 64px)', overflowY: 'auto',
           }}>
-            <button type="button" onClick={() => go('/decks')} style={mobileMenuItemStyle}>
-              Decks
-            </button>
-            <button type="button" onClick={() => go('/cheat-sheets')} style={mobileMenuItemStyle}>
-              Cheat Sheets
-            </button>
-            <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
-              Differential Sprint
-            </button>
-            <button type="button" onClick={() => go('/procedures')} style={mobileMenuItemStyle}>
-              Procedures
-            </button>
-            <button type="button" onClick={() => go('/pricing')} style={mobileMenuItemStyle}>
-              Pricing
-            </button>
+            {isMedStudent ? (
+              <>
+                <button type="button" onClick={() => go('/medstudents/library')} style={mobileMenuItemStyle}>
+                  Library
+                </button>
+                <button type="button" onClick={() => go('/medstudents/questions')} style={mobileMenuItemStyle}>
+                  Question Bank
+                </button>
+                <button type="button" onClick={() => go('/medstudents/cheat-sheets')} style={mobileMenuItemStyle}>
+                  Cheat Sheets
+                </button>
+              </>
+            ) : (
+              <>
+                <button type="button" onClick={() => go('/decks')} style={mobileMenuItemStyle}>
+                  Decks
+                </button>
+                <button type="button" onClick={() => go('/cheat-sheets')} style={mobileMenuItemStyle}>
+                  Cheat Sheets
+                </button>
+                <button type="button" onClick={() => go('/differential-sprint')} style={mobileMenuItemStyle}>
+                  Differential Sprint
+                </button>
+                <button type="button" onClick={() => go('/procedures')} style={mobileMenuItemStyle}>
+                  Procedures
+                </button>
+                <button type="button" onClick={() => go('/pricing')} style={mobileMenuItemStyle}>
+                  Pricing
+                </button>
+              </>
+            )}
+
+            <div style={{ borderTop: '1px solid var(--border-subtle)', margin: '6px 0' }} />
+            <AudienceLink
+              isMedStudent={isMedStudent}
+              onSelect={(toMed) => go(toMed ? '/medstudents' : '/')}
+              destinationAccent={isMedStudent ? 'var(--accent-cyan)' : 'var(--accent-amber)'}
+              style={{ textAlign: 'left', padding: '10px 14px', fontSize: '14px' }}
+            />
 
             {isAuthenticated ? (
               <>
@@ -277,7 +344,7 @@ export function Navbar() {
                   Sign Out
                 </button>
               </>
-            ) : (
+            ) : isMedStudent ? null : (
               <>
                 <div style={{ borderTop: '1px solid var(--border-subtle)', margin: '6px 0' }} />
                 <button type="button" onClick={() => go('/login')} style={mobileMenuItemStyle}>
@@ -286,7 +353,7 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => go('/register')}
-                  style={{ ...mobileMenuItemStyle, color: 'var(--accent-cyan)', fontWeight: '600' }}
+                  style={{ ...mobileMenuItemStyle, color: accent, fontWeight: '600' }}
                 >
                   Sign Up
                 </button>

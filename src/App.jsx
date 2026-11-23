@@ -20,6 +20,10 @@ import { DifferentialSprintPage } from './pages/DifferentialSprintPage'
 import { ProceduresPage } from './pages/ProceduresPage'
 import { CheatSheetsPage } from './pages/CheatSheetsPage'
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage } from './components/auth/AuthForms'
+import { MedStudentsLandingPage } from './pages/medstudents/MedStudentsLandingPage'
+import { LibraryIndexPage } from './pages/medstudents/LibraryIndexPage'
+import { LibraryArticlePage } from './pages/medstudents/LibraryArticlePage'
+import { ComingSoonPage } from './pages/medstudents/ComingSoonPage'
 import { SUBSPECIALTIES } from './data/index'
 import { Analytics } from '@vercel/analytics/react'
 import { Footer } from './components/layout/Footer'
@@ -39,10 +43,26 @@ function FooterWithGuard() {
   return <Footer />
 }
 
-// ── Scroll to top on every navigation ────────────────────────
-function ScrollToTop() {
+// The resident pricing promo has no equivalent on the med-student track
+// (there's nothing paid there yet) — showing it would advertise a resident
+// discount on a page with no resident content, so it's hidden there.
+function PromoBannerWithGuard() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  if (pathname.startsWith('/medstudents')) return null
+  return <PromoBanner />
+}
+
+// ── Scroll to top on every navigation (or to the #hash target, if any —
+// used by the med-student Library's group quick-jump chips) ────────────
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1))
+      if (el) { el.scrollIntoView(); return }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
 
@@ -181,7 +201,7 @@ export default function App() {
     <>
     <Analytics />
     <ScrollToTop />
-    <PromoBanner />
+    <PromoBannerWithGuard />
     <Routes>
       <Route path="/"          element={<LandingPage />} />
       <Route path="/login"            element={<RedirectIfAuth><LoginPage /></RedirectIfAuth>} />
@@ -209,6 +229,28 @@ export default function App() {
       <Route path="/terms"     element={<TermsPage />} />
       <Route path="/privacy"   element={<PrivacyPage />} />
       <Route path="/admin"     element={<AdminPage />} />
+
+      {/* Med-student track — a parallel section, no resident routes touched.
+          Nothing here is gated: Library is free, Question Bank/Cheat Sheets
+          are not built yet, so there's nothing to pay for or lock. */}
+      <Route path="/medstudents"                    element={<MedStudentsLandingPage />} />
+      <Route path="/medstudents/library"            element={<LibraryIndexPage />} />
+      <Route path="/medstudents/library/:slug"      element={<LibraryArticlePage />} />
+      <Route path="/medstudents/questions" element={
+        <ComingSoonPage
+          title="Question Bank"
+          description="Organ-system practice questions for shelf exams and USMLE Step 2, with full explanations. Coming soon."
+          icon="📝"
+        />
+      } />
+      <Route path="/medstudents/cheat-sheets" element={
+        <ComingSoonPage
+          title="Cheat Sheets"
+          description="High-yield, must-know quick-reference sheets for the wards. Coming soon."
+          icon="📋"
+        />
+      } />
+
       <Route path="*"          element={<Navigate to="/" replace />} />
     </Routes>
       <FooterWithGuard />
