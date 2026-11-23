@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuthStore } from '../../store/authStore'
+import { useSubscriptionStore } from '../../store/subscriptionStore'
 import { ACTIVE_PROMO, isPromoActive } from '../../data/promo'
 import { trackEvent } from '../../utils/analytics'
 
-// Shown at the top of the homepage for as long as the promo window is open
-// and the visitor isn't logged in. Set ACTIVE_PROMO.enabled to false in
-// src/data/promo.js to turn it off without removing this component.
+// Shown on every page for as long as the promo window is open, to anyone
+// without active paid access — anonymous visitors and logged-in free
+// accounts alike. Hides for anyone with an active plan. Set
+// ACTIVE_PROMO.enabled to false in src/data/promo.js to turn it off
+// without removing this component.
 export function PromoBanner() {
-  const { isAuthenticated } = useAuthStore()
+  const { hasAccess } = useSubscriptionStore()
   const navigate = useNavigate()
   const [copied, setCopied] = useState(false)
   const active = isPromoActive()
 
   useEffect(() => {
-    if (active && !isAuthenticated) trackEvent('promo_banner_viewed', { code: ACTIVE_PROMO.code })
-  }, [active, isAuthenticated])
+    if (active && !hasAccess) trackEvent('promo_banner_viewed', { code: ACTIVE_PROMO.code })
+  }, [active, hasAccess])
 
-  if (!active || isAuthenticated) return null
+  if (!active || hasAccess) return null
 
   const handleCopy = async (e) => {
     e.stopPropagation()
