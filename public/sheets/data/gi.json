@@ -1,0 +1,2076 @@
+{
+ "schema": 1,
+ "id": "abdominal",
+ "title": "🫃 GI — daily review",
+ "subtitle": "ABR & Royal College review",
+ "sections": [
+  {
+   "title": "🫃 Anatomy & diagrams",
+   "subtitle": "very high yield",
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🟤 Couinaud segments",
+     "hue": 10,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-couinaud"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cantlie line (R vs L lobe)",
+         "a": "MHV: IVC → GB fossa",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Right hepatic vein splits",
+         "a": "7/8 from 6/5",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Falciform / umbilical fissure splits",
+         "a": "4 from 2/3",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Portal vein plane splits",
+         "a": "Upper vs lower segments",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Caudate (1) special",
+         "a": "Own veins to IVC → spared in Budd-Chiari",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cirrhosis caudate:right lobe",
+         "a": ">0.75",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Most common arterial variant",
+         "a": "Replaced RHA from SMA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common biliary variant",
+         "a": "R posterior duct → left hepatic duct",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍽️ Esophagus rings & pouches",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-esophagus"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Zenker",
+         "a": "Posterior, Killian dehiscence, from hypopharynx",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Killian-Jamieson",
+         "a": "Anterolateral, below cricopharyngeus",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Symptomatic Schatzki (B) ring",
+         "a": "<13 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Epiphrenic vs paraesophageal hernia side",
+         "a": "Right vs left",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dysphagia lusoria",
+         "a": "Aberrant right subclavian",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⬆️ Hiatal hernia & fundoplication",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-hiatal"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common hiatal hernia",
+         "a": "Type I sliding (~95%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Higher incarceration risk",
+         "a": "Paraesophageal (type II)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Organoaxial vs mesenteroaxial",
+         "a": "Old woman + PEH vs kids, ischaemia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Slipped Nissen",
+         "a": "Narrowed segment >2 cm / recurrent reflux",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Cause of slipped wrap",
+         "a": "Short esophagus (fixed HH >5 cm)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Early post-op obstruction",
+         "a": "Oedema / tight wrap (~2 wk)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🕳️ Abdominal wall & internal hernias",
+     "hue": 40,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-hernias"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common groin hernia",
+         "a": "Indirect inguinal (lateral to IEA)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Femoral hernia",
+         "a": "Old woman, high strangulation risk",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Spigelian",
+         "a": "Semilunar line at arcuate line",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Richter / Littré / Amyand",
+         "a": "One wall / Meckel / appendix",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lumbar: superior vs inferior",
+         "a": "Grynfeltt (more) vs Petit",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common internal hernia",
+         "a": "Left paraduodenal (Landzert), IMV in sac",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gastric bypass internal hernia",
+         "a": "Petersen space",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟢 Choledochal cysts (Todani)",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-todani"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common",
+         "a": "Type I (fusiform CBD)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Choledochocele",
+         "a": "Type III",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Caroli (type V) association",
+         "a": "ARPKD, medullary sponge kidney",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Long common channel",
+         "a": "Pancreatitis + type I cysts",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Main long-term risk",
+         "a": "Cholangiocarcinoma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟡 Pancreatic duct variants",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-pancreas-ducts"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common pancreatic variant",
+         "a": "Divisum (dorsal duct → minor papilla)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Santorini drains",
+         "a": "Superior (minor) papilla",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Annular pancreas: kid vs adult",
+         "a": "Duodenal obstruction vs pancreatitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dorsal agenesis",
+         "a": "Diabetes, polysplenia",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "✂️ Post-op stomach",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-surgeries"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Billroth II classic complication",
+         "a": "Afferent loop syndrome",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rapid emptying symptoms",
+         "a": "Dumping (Billroth II)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gastric remnant cancer",
+         "a": "Years after Billroth (3–6×)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bypass + weight regain",
+         "a": "Gastrogastric fistula",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Whipple top complications",
+         "a": "Delayed emptying, pancreatic fistula",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Jejunum into stomach",
+         "a": "Jejunogastric intussusception",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🍽️ Esophagus & stomach",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🍽️ Esophagus",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Barrett on barium",
+         "a": "High stricture + hiatal hernia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Barrett mucosa buzzword",
+         "a": "Reticular pattern",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SCC vs adeno location",
+         "a": "Mid vs distal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Esophageal CA key CT stage",
+         "a": "T3 (adventitia) vs T4 (invades)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Candida",
+         "a": "Plaques; immunosuppressed or dysmotility",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Candida look-alike, asymptomatic elderly",
+         "a": "Glycogenic acanthosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Small ulcers with halo",
+         "a": "Herpes",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Giant flat ulcer",
+         "a": "CMV or HIV",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Uphill vs downhill varices",
+         "a": "Portal HTN (lower) vs SVC block (upper)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rings + young atopic man",
+         "a": "Eosinophilic esophagitis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bird's beak",
+         "a": "Achalasia (↑ SCC, candida)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Beak that never relaxes",
+         "a": "Pseudoachalasia (GEJ tumour) → CT",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Dilated aperistaltic + patulous LES + NSIP",
+         "a": "Scleroderma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Nutcracker esophagus",
+         "a": ">180 mmHg",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Long stricture DDx",
+         "a": "NG tube, radiation, caustic",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior mediastinal water cyst",
+         "a": "Duplication cyst (ileum #1)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pill esophagitis site",
+         "a": "Arch or distal",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫃 Stomach & duodenum",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Ulcer",
+        "Benign",
+        "Malignant"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Position",
+          "Projects beyond lumen",
+          "Within lumen"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Sign",
+          "Hampton line",
+          "Carman meniscus"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Folds",
+          "Smooth, radiate to crater",
+          "Nodular, stop short"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Shape",
+          "Depth > width",
+          "Width > depth"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Gastric ulcer cancer risk",
+         "a": "~5% (duodenal ~0)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "H. pylori / Crohn / Ménétrier site",
+         "a": "Antrum / antrum / fundus (spares antrum)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ménétrier labs",
+         "a": "Hypoalbuminaemia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "'Crosses the pylorus'",
+         "a": "Lymphoma (CA actually more often)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common extranodal NHL site",
+         "a": "Stomach",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Obstruction: lymphoma vs adenocarcinoma",
+         "a": "Rarely vs more likely",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "GIST",
+         "a": "Stomach 70%, exophytic, no nodes, liver mets",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Carney triad",
+         "a": "GIST, paraganglioma, pulm. chondroma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Leather bottle stomach",
+         "a": "Scirrhous CA, breast mets",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ovarian met from stomach",
+         "a": "Krukenberg",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Multiple post-bulbar / jejunal ulcers",
+         "a": "Zollinger-Ellison",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Multiple gastric ulcers",
+         "a": "Aspirin / NSAIDs",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior fundal 'adrenal mass'",
+         "a": "Gastric diverticulum",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Isolated gastric varices",
+         "a": "Splenic vein thrombosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common GI sarcoid site",
+         "a": "Stomach (antrum)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Duodenal web & cancer",
+         "a": "No increased risk",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧬 Polyposis syndromes",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Syndrome",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "FAP",
+          "100s adenomas, colon CA ~100%, desmoids"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Gardner",
+          "FAP + osteomas, desmoids, papillary thyroid"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Turcot",
+          "FAP + brain (medullo, glioma)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Lynch (HNPCC)",
+          "Few polyps, right colon, endometrial"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Peutz-Jeghers",
+          "Hamartomas, lip pigment, intussusception"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Cowden",
+          "Hamartomas, breast/thyroid, Lhermitte-Duclos"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Cronkhite-Canada",
+          "Hamartomas + nail/hair/skin changes"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🌀 Bowel & peritoneum",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🌀 Small bowel",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Normal fold thickness",
+         "a": "<3 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Thick straight folds, segmental",
+         "a": "Ischaemia, haemorrhage, radiation",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thick straight folds, diffuse",
+         "a": "Low protein, venous congestion",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thick nodular diffuse",
+         "a": "Whipple, lymphoma, lymphangiectasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fold reversal, moulage",
+         "a": "Celiac (↑ lymphoma, small spleen)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hidebound",
+         "a": "Scleroderma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ribbon bowel",
+         "a": "Graft-vs-host",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sand-like nodules + low-density nodes",
+         "a": "Whipple (MAI if CD4 <100)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "D3 obstruction after weight loss",
+         "a": "SMA syndrome",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Meckel bleeding scan",
+         "a": "Tc-99m pertechnetate (gastric mucosa)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Rigler triad",
+         "a": "Pneumobilia, SBO, ectopic stone",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Jejunal diverticulosis",
+         "a": "Bacterial overgrowth",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Distal ileum + spiculated Ca++ mesenteric mass",
+         "a": "Carcinoid",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Carcinoid heart",
+         "a": "Right valves; needs liver mets",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "SB lymphoma vs adenoCA",
+         "a": "Ileum, no obstruction vs duodenum, obstructs",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common SB met",
+         "a": "Melanoma (targets)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diffuse mucosal hyperenhancement + flat IVC",
+         "a": "Shock bowel",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bright adrenals, dark spleen",
+         "a": "Hypovolaemic shock complex",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Leak suspected",
+         "a": "Water-soluble, never barium",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Barium in vessels",
+         "a": "Intravasation (~50% fatal)",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟣 Crohn vs UC",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Crohn",
+        "UC"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Pattern",
+          "Skip, transmural",
+          "Continuous from rectum"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Terminal ileum",
+          "String sign",
+          "Backwash, gaping valve"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Fistula / abscess",
+          "Yes",
+          "Rare"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Nodes / fat",
+          "Nodes, creeping fat",
+          "Perirectal fat"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Late colon",
+          "Strictures",
+          "Lead pipe, ↑ cancer"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Associations",
+          "Gallstones, oxalate stones",
+          "PSC, sacroiliitis"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Earliest Crohn sign",
+         "a": "Aphthous ulcers / squared folds",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Enlarged node in old UC",
+         "a": "Think cancer",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧻 Colon",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Toxic megacolon",
+         "a": "Transverse >6 cm · NO enema",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Sigmoid vs cecal volvulus",
+         "a": "Old → RUQ vs young → LUQ",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Diffuse colonic dilation, no transition",
+         "a": "Ogilvie",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Neutropenic, cecum only",
+         "a": "Typhlitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Accordion sign",
+         "a": "C. difficile",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Coned cecum, TI spared",
+         "a": "Amoebiasis (TB involves TI)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ischaemia watershed points",
+         "a": "Splenic flexure (Griffiths), rectosigmoid (Sudeck)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fat oval + central dot, left",
+         "a": "Epiploic appendagitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Larger fatty mass, right",
+         "a": "Omental infarct",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Appendicitis size",
+         "a": ">6 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Pregnant, ?appendicitis",
+         "a": "MRI without contrast",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Appendix mucocele",
+         "a": "Onion skin; rupture → pseudomyxoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Adult colonic intussusception",
+         "a": "Malignancy until proven otherwise",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Right vs left colon CA",
+         "a": "Bleeds vs obstructs",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Rectal CA critical MRI stage",
+         "a": "T3 (mesorectal fat) → neoadjuvant",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Low rectal CA (<5 cm)",
+         "a": "APR (colostomy)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Villous adenoma + hypokalaemia",
+         "a": "McKittrick-Wheelock",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "2nd most common colonic tumour",
+         "a": "Lipoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diverticular bleeding vs fistula",
+         "a": "Diverticulosis bleeds; -itis fistulizes",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫙 Peritoneum & mesentery",
+     "hue": 160,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Scalloped liver, gelatinous ascites",
+         "a": "Pseudomyxoma (appendix)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common seeding site",
+         "a": "Retrovesical / pouch of Douglas",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bowel pushed off abdominal wall",
+         "a": "Omental cake",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Mass sandwiching mesenteric vessels",
+         "a": "Lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Peritoneal mesothelioma",
+         "a": "Asbestos, 30–40 y latency",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Retained sponge",
+         "a": "Gossypiboma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🟤 Liver",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🟤 Diffuse liver disease",
+     "hue": 10,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Fatty liver, unenhanced CT",
+         "a": "<40 HU",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Fatty liver, portal phase",
+         "a": "≥25 HU below spleen",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Fatty liver on US",
+         "a": "Brighter than right kidney",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fat vs iron on chemical shift",
+         "a": "Fat drops OUT-phase; iron drops IN-phase",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Primary vs secondary haemochromatosis",
+         "a": "Liver + pancreas vs liver + spleen",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cirrhosis morphology",
+         "a": "Caudate + left lateral ↑, right/4 ↓",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Budd-Chiari",
+         "a": "Caudate hypertrophy, flip-flop, nutmeg",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Nutmeg liver DDx",
+         "a": "Budd-Chiari, R heart failure, constriction",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Massive caudate DDx",
+         "a": "Budd-Chiari, PSC, PBC",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Regenerative → dysplastic → HCC",
+         "a": "T2 dark → T1 bright → T2 bright",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Nodule-in-nodule",
+         "a": "Early HCC in dysplastic nodule",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cirrhosis look after treated breast mets",
+         "a": "Pseudocirrhosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cavernous transformation",
+         "a": "Chronic PV thrombosis (~12 mo)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Wedge arterial blush, gone later",
+         "a": "THAD (arterial buffer)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gas within 2 cm of capsule",
+         "a": "Portal venous gas (pneumobilia central)",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎯 Liver masses",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common benign liver tumour",
+         "a": "Hemangioma (fills in, follows blood pool)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Giant hemangioma + DIC",
+         "a": "Kasabach-Merritt",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Stealth lesion, T2-bright enhancing scar",
+         "a": "FNH",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "FNH on hepatobiliary agent / sulfur colloid",
+         "a": "Iso-bright / takes up",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "OCP / steroids / GSD, fat, bleeds",
+         "a": "Adenoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Adenoma resect if",
+         "a": ">5 cm (bleed, HCC risk)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "HCC major features",
+         "a": "APHE, washout, capsule, growth",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Threshold growth",
+         "a": "≥50% in ≤6 mo",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bright on hepatobiliary phase but malignant",
+         "a": "Well-differentiated HCC",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "HCC vs cholangio and portal vein",
+         "a": "Invades vs encases",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Young, no cirrhosis, dark non-enhancing scar, Ca++",
+         "a": "Fibrolamellar HCC",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Delayed enhancement + capsular retraction",
+         "a": "Intrahepatic cholangiocarcinoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hilar cholangiocarcinoma",
+         "a": "Klatskin",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Thorotrast, vinyl chloride, arsenic",
+         "a": "Angiosarcoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common liver met source",
+         "a": "Colon",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Calcified liver mets",
+         "a": "Mucinous (colon, ovary)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hepatic AML",
+         "a": "Tuberous sclerosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hepatobiliary (Eovist) phase",
+         "a": "~20 min · bile leak, FNH, small mets",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Scar",
+        "FNH",
+        "Fibrolamellar"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "T2",
+          "Bright",
+          "Dark"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Delayed",
+          "Enhances",
+          "No"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Ca++",
+          "Rare",
+          "Common"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦠 Liver infection & transplant",
+     "hue": 120,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Pyogenic abscess on CT",
+         "a": "Double target",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Single vs multiple pyogenic",
+         "a": "Klebsiella vs E. coli",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Amoebic abscess, left lobe",
+         "a": "Drain (pericardial rupture)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Daughter cysts, water lily",
+         "a": "Hydatid",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bull's-eye microabscesses, neutropenic",
+         "a": "Candida",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tortoise-shell calcification",
+         "a": "Schistosomiasis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Liver capsule enhancement + PID",
+         "a": "Fitz-Hugh-Curtis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Starry sky US",
+         "a": "Acute hepatitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Blood-filled spaces (OCP, steroids, AIDS)",
+         "a": "Peliosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Transplant: most feared vessel problem",
+         "a": "Hepatic artery thrombosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "HA stenosis downstream",
+         "a": "Tardus parvus, RI <0.5",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "HA stenosis at site",
+         "a": "PSV >200 cm/s",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "〰️ Hepatic Doppler",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Doppler angle",
+         "a": "<60°",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "RI formula",
+         "a": "(PSV − EDV) / PSV",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Normal hepatic artery RI",
+         "a": "0.5–0.7",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Normal portal vein",
+         "a": "Hepatopetal 20–40 cm/s",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Pulsatile portal vein",
+         "a": "R heart failure, TR",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Slow / reversed portal flow",
+         "a": "Portal hypertension",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "HV ↑ pulsatility vs ↓",
+         "a": "TR vs cirrhosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Absent hepatic vein flow",
+         "a": "Budd-Chiari",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "TIPS stenosis velocity",
+         "a": "<90 or >190 cm/s (or Δ >50)",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🟢 Biliary, pancreas, spleen",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🟢 Bile ducts & gallbladder",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Beaded, withered tree, UC",
+         "a": "PSC (→ cholangiocarcinoma)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PSC-like + papillary stenosis, AIDS",
+         "a": "AIDS cholangiopathy",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pigment stones, left lobe, SE Asia",
+         "a": "Recurrent pyogenic cholangitis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Middle-aged woman, AMA+",
+         "a": "Primary biliary cholangitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common cause of jaundice (exam)",
+         "a": "Benign post-op stricture",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Malignant vs benign stricture",
+         "a": "Long, shouldered vs short, tapered",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cystic duct stone compressing CHD",
+         "a": "Mirizzi (↑ GB cancer)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Normal GB wall",
+         "a": "<3 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Comet-tail in GB wall",
+         "a": "Adenomyomatosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "GB polyp → cholecystectomy",
+         "a": "≥10 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Echogenic wall, clean shadow",
+         "a": "WES: GB full of stones",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gas in GB wall, diabetic",
+         "a": "Emphysematous cholecystitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Wall calcification",
+         "a": "Porcelain GB → cancer risk",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Post-cholecystectomy bile leak",
+         "a": "Duct of Luschka",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟡 Pancreas",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Pancreatic phase",
+         "a": "~40 s",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Hypoenhancing head mass + double duct",
+         "a": "Ductal adenocarcinoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Unresectable",
+         "a": "SMA / celiac encasement (GDA ok)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Most common neuroendocrine tumour",
+         "a": "Insulinoma (small, benign)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "MEN1 neuroendocrine + jejunal ulcers",
+         "a": "Gastrinoma (triangle)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Large calcified hypervascular",
+         "a": "Non-functional NET",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tail 'mass' that tiger-stripes like spleen",
+         "a": "Intrapancreatic accessory spleen",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Prove it is spleen",
+         "a": "Heat-damaged RBC / sulfur colloid",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Collections: no necrosis <4 / >4 wk",
+         "a": "APFC / pseudocyst",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Collections: necrosis <4 / >4 wk",
+         "a": "ANC / walled-off necrosis",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Worst prognosis factor",
+         "a": "Infected necrosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Isolated gastric varices after pancreatitis",
+         "a": "Splenic vein thrombosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pseudoaneurysm sites",
+         "a": "Splenic, GDA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Beaded duct + calcifications",
+         "a": "Chronic pancreatitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Duct >50% of gland width",
+         "a": "Favors cancer over CP",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Sausage gland + halo, IgG4",
+         "a": "Autoimmune (steroids)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Groove soft tissue + duodenal wall cysts",
+         "a": "Groove pancreatitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fatty pancreas, kid",
+         "a": "Cystic fibrosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pancreatic trauma key question",
+         "a": "Duct integrity → MRCP/ERCP",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Toddler with traumatic pancreatitis",
+         "a": "Non-accidental injury",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Cyst",
+        "Who / where",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Serous",
+          "Grandma, head",
+          "Microcystic, central scar Ca++"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Mucinous",
+          "Mother, body/tail",
+          "Unilocular, peripheral Ca++"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "SPEN",
+          "Daughter (young)",
+          "Solid-cystic, capsule, blood"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Side-branch IPMN",
+          "Older, head/uncinate",
+          "Communicates with duct"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Main-duct IPMN",
+          "Older",
+          "Duct ≥10 mm = high risk"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "IPMN worrisome",
+         "a": "≥3 cm, nodule <5 mm, MPD 5–9 mm, thick wall",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "IPMN high-risk",
+         "a": "Nodule ≥5 mm, MPD ≥10 mm, jaundice",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟣 Spleen",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most commonly injured solid organ",
+         "a": "Spleen",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common visceral aneurysm",
+         "a": "Splenic artery (pregnancy rupture)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Multiple calcified granulomas",
+         "a": "Histoplasmosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tiny T2/GRE dark foci, portal HTN",
+         "a": "Gamna-Gandy bodies",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Wedge infarct (exam)",
+         "a": "Sickle cell",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common benign / malignant",
+         "a": "Hemangioma / lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Primary splenic malignancy",
+         "a": "Angiosarcoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hypersplenism + multiple small lesions",
+         "a": "Littoral cell angioma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Splenic abscess bug",
+         "a": "Salmonella (sickle)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Splenosis after trauma",
+         "a": "Sulfur colloid / heat-damaged RBC",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Torsion-prone spleen",
+         "a": "Wandering spleen (lax ligaments)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common splenic met",
+         "a": "Melanoma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🩻 Luminal (barium)",
+   "subtitle": "very high yield",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🍽️ Esophagus",
+     "hue": 330,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-esophagus"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Shouldered stricture on barium",
+         "a": "Cancer until proven otherwise → endoscopy",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫃 Stomach & duodenum",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-stomach"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Malignant ulcer clue",
+         "a": "Carman meniscus (within lumen)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌀 Small bowel",
+     "hue": 200,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-small-bowel"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Adult intussusception",
+         "a": "Look for lead point",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧻 Colon",
+     "hue": 30,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-colon"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Toxic megacolon",
+         "a": "No barium enema (perforation)",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🟤 Liver, biliary, pancreas",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🎯 Liver lesions by phase",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-liver"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Liver window",
+         "a": "W 200 / L 100",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Late arterial phase timing",
+         "a": "~25–30 s",
+         "kind": "num",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟢 Ducts & pancreas",
+     "hue": 140,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gi-xr-bil-panc"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Ductal 'association' unsure?",
+         "a": "Pick cholangiocarcinoma",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
