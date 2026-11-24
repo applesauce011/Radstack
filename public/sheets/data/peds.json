@@ -1,0 +1,3078 @@
+{
+ "schema": 1,
+ "id": "pediatric",
+ "title": "🧸 Pediatrics — high-yield sheet",
+ "subtitle": "skull · chest · heart · GI · GU · MSK · neuro",
+ "sections": [
+  {
+   "title": "🧸 Anatomy & diagrams",
+   "subtitle": "very high yield",
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "💀 Craniosynostosis",
+     "hue": 28,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-sutures"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common synostosis",
+         "a": "Sagittal (scaphocephaly), normal IQ",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Metopic synostosis",
+         "a": "Trigonocephaly, most cognitive issues",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral coronal",
+         "a": "Brachycephaly → think syndrome",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Syndromic share",
+         "a": "~15% (Apert, Crouzon)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Apert clue",
+         "a": "Syndactyly ('mitten hand')",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Positional vs lambdoid: ipsilateral ear",
+         "a": "Anterior vs posterior",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Positional vs lambdoid: onset",
+         "a": "Weeks after birth vs at birth",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Best test",
+         "a": "CT with 3D reconstructions",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Cloverleaf skull",
+         "a": "Thanatophoric, severe Apert/Crouzon",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧢 Scalp & skull",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-scalp"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Dangerous scalp bleed",
+         "a": "Subgaleal (crosses sutures, blood loss)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Stops at sutures, may calcify",
+         "a": "Cephalohaematoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ping-pong fracture",
+         "a": "Birth, greenstick dent, benign",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Depressed fracture surgery",
+         "a": ">5 mm depression, epidural, infection",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Diastatic suture fracture",
+         "a": "Widening (>1 mm asymmetry), lambdoid",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Growing skull fracture",
+         "a": "Leptomeningeal cyst (dural tear)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Beveled lytic skull lesion",
+         "a": "LCH (button sequestrum)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Copper-beaten vs Lückenschädel",
+         "a": "↑ ICP vs Chiari II (at birth)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Wormian bones",
+         "a": ">10 → OI, cleidocranial (PORK-CHOP)",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "<b>PORK-CHOP</b> wormian: <b>P</b>yknodysostosis, <b>O</b>I, <b>R</b>ickets, <b>K</b>inky hair (Menkes), <b>C</b>leidocranial, <b>H</b>ypothyroid/phosphatasia, <b>O</b>topalatodigital, <b>P</b>rimary acro-osteolysis (+ Down)"
+      }
+     ]
+    },
+    {
+     "title": "💪 Pediatric elbow",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-elbow"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Commonest elbow fracture",
+         "a": "Supracondylar (~60%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Next commonest",
+         "a": "Lateral condyle (~20%) → unstable if >2 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Medial epicondyle (~10%)",
+         "a": "Extra-articular → may lack effusion",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Trochlea seen, no medial epicondyle",
+         "a": "Avulsed epicondyle trapped in joint",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Anterior humeral line",
+         "a": "Middle 1/3 capitellum (lateral)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Radiocapitellar line",
+         "a": "Hits capitellum on every view",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior fat pad",
+         "a": "Always abnormal → occult fracture",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pulled elbow",
+         "a": "Nursemaid's: radial head in annular lig.",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "<b>CRITOE</b> ≈ 1, 3, 5, 7, 9, 11 years"
+      }
+     ]
+    },
+    {
+     "title": "🦵 Hip",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-hip"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "DDH risk",
+         "a": "Female, breech, oligohydramnios, first-born",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "US alpha angle normal",
+         "a": ">60°",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Acetabular angle (X-ray)",
+         "a": "<30° newborn → ~22° at 1 y",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Avoid hip US in",
+         "a": "First week (maternal hormone laxity)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "SCFE",
+         "a": "Obese 12–15 y, Salter I, bilateral ~30%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "SCFE best view",
+         "a": "Frog-leg (Klein line)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Perthes",
+         "a": "Boys 5–8 y, small, bilateral ~10%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Septic hip (Kocher)",
+         "a": "Fever, no weight-bearing, ↑ESR, ↑WBC",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hip effusion workup",
+         "a": "US → aspirate (septic = emergency)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Short femur + varus, not DDH",
+         "a": "Proximal focal femoral deficiency",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍩 Vascular rings",
+     "hue": 350,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-rings"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Commonest symptomatic ring",
+         "a": "Double aortic arch",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Commonest arch anomaly",
+         "a": "Left arch, aberrant R subclavian",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dysphagia lusoria",
+         "a": "Aberrant subclavian",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Kommerell",
+         "a": "Aneurysmal origin of aberrant subclavian",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Only vessel between trachea & esophagus",
+         "a": "Pulmonary sling (L PA from R PA)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pulmonary sling association",
+         "a": "Tracheal stenosis, complete rings",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Anterior tracheal dent only",
+         "a": "Innominate artery compression",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Right arch mirror branching",
+         "a": "Congenital heart disease (TOF, truncus)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫧 Neonatal obstruction",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-bubbles"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Double bubble, no distal gas",
+         "a": "Duodenal atresia (Down ~30%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Jejunal / ileal atresia cause",
+         "a": "In-utero vascular insult (often multiple)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilious vomiting",
+         "a": "Midgut volvulus until proven → UGI",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Non-bilious vomiting, 2–12 wk",
+         "a": "Pyloric stenosis → US",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Low obstruction pattern",
+         "a": "Contrast enema first",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Long microcolon",
+         "a": "Meconium ileus (CF) or distal ileal atresia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Meconium ileus enema",
+         "a": "Pellets in TI · therapeutic",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Small left colon / meconium plug",
+         "a": "Diabetic mum, MgSO4 · NOT CF",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hirschsprung",
+         "a": "Rectosigmoid ratio <1, sawtooth, biopsy",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hirschsprung extras",
+         "a": "Boys 4:1, Down, total colonic → TI too",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Calcified abdominal rim at birth",
+         "a": "Meconium peritonitis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🫁 Chest, airway, heart",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "👶 Neonatal lungs",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Volume",
+        "Pattern / clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "RDS",
+          "Low",
+          "Granular, preterm, no effusion"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "GBS pneumonia",
+          "Low",
+          "Granular + effusion"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "TTN",
+          "Normal/high",
+          "Streaky, fissure fluid; C-section, gone 3 d"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Meconium",
+          "High",
+          "Ropy, asymmetric, PTX; post-term"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Non-GBS pneumonia",
+          "High",
+          "Patchy, effusions, term"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Normal CXR at 6 h",
+         "a": "Excludes RDS",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Hyperinflation",
+         "a": ">6 anterior / >8 posterior ribs",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Surfactant side effects",
+         "a": "↑ PDA, pulmonary haemorrhage",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Linear lucencies, week 1, ventilated",
+         "a": "PIE → affected side down",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Bubbly + bands after 3–4 wk",
+         "a": "BPD / chronic lung disease",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lungs white out on ECMO",
+         "a": "Expected, not worsening",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "VA ECMO cost",
+         "a": "R carotid ligated → stroke; head bleeds",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "UVC ideal tip",
+         "a": "IVC–RA junction (not portal vein)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UAC tip",
+         "a": "High T8–T10 or low L3–L5 (goes down first)",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫁 Congenital lung",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Intralobar sequestration",
+          "75%, teens, recurrent LLL pneumonia, pulmonary vein"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Extralobar sequestration",
+          "Infant, other anomalies, own pleura, systemic vein"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "CPAM",
+          "Airway-connected cysts, any lobe"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Congenital lobar emphysema",
+          "LUL ~40%, fluid then hyperlucent"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Bronchial atresia",
+          "Mucocele + hyperlucent segment"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Bronchogenic cyst",
+          "Middle mediastinum; gas = infected"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "'CPAM' with aortic feeder",
+         "a": "Sequestration (or hybrid)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CDH type",
+         "a": "Bochdalek: back, left",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CDH mortality depends on",
+         "a": "Pulmonary hypoplasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Right CDH association",
+         "a": "GBS pneumonia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CDH gut",
+         "a": "Always malrotated",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🗣️ Airway",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Age",
+        "Sign / bug"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Croup",
+          "6 mo–3 y",
+          "Steeple, parainfluenza"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Epiglottitis",
+          "~3.5 y (teens too)",
+          "Thumb, H. influenzae"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Exudative tracheitis",
+          "6–10 y",
+          "Linear membrane, S. aureus"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Retropharyngeal abscess",
+          "6–12 mo",
+          ">7 mm at C2 → CT"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Subglottic haemangioma",
+          "Infant",
+          "Asymmetric, left, PHACES"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Epiglottitis suspected",
+         "a": "Portable lateral, keep upright",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Fake prevertebral thickening",
+         "a": "Repeat in neck extension",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Asphyxia in epiglottitis from",
+         "a": "Aryepiglottic folds",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Airway grapes + cavitating nodules",
+         "a": "Papillomatosis (HPV from birth canal)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Radiolucent foreign body",
+         "a": "Expiratory / decubitus: air trapping",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "FB on fluoro expiration",
+         "a": "Mediastinum shifts away",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Can't pass NG, cyanosis improves crying",
+         "a": "Choanal atresia (CHARGE)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Mega-incisor, narrow nasal inlet",
+         "a": "Piriform aperture stenosis → image brain",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "<b>PHACES</b>: Posterior fossa, Haemangioma, Arterial, Coarctation/cardiac, Eye, Sternal/Subglottic"
+      }
+     ]
+    },
+    {
+     "title": "🧪 Child chest: other",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Round 'mass', <8 y, fever",
+         "a": "Round pneumonia → follow-up film, no CT",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "RSV classic",
+         "a": "Right upper lobe collapse",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Small hyperlucent lung",
+         "a": "Swyer-James (post-viral)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CF vs PCD bronchiectasis",
+         "a": "Upper vs lower lobes",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PCD + situs inversus",
+         "a": "Kartagener (~50%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Sickle cell: leading cause of death",
+         "a": "Acute chest (look for H-vertebrae)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Negative-HU consolidation",
+         "a": "Lipoid pneumonia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cystic lung mass <2 y",
+         "a": "Pleuropulmonary blastoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Big chest wall mass >10 y, rib destroyed",
+         "a": "Askin (Ewing family)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧱 Mediastinum",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Commonest mediastinal 'mass'",
+         "a": "Normal thymus (sail, wave, <5 y)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Thymus after chemo / steroids",
+         "a": "Rebound (can be PET-avid)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Anterior mass age <10 vs >10",
+         "a": "Thymus vs lymphoma (Hodgkin)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Ca++ in untreated anterior mass",
+         "a": "Teratoma, not lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Extragonadal germ cell tumour",
+         "a": "Klinefelter (~300×)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior mass <2 y",
+         "a": "Neuroblastoma (thoracic = better)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Round posterior mass, teen",
+         "a": "Ganglioneuroma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cyst + vertebral anomaly",
+         "a": "Neuroenteric cyst",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hilar nodes + splenomegaly, teen",
+         "a": "EBV: no contact sport ~3 wk",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "❤️ Congenital heart on CXR",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Lesion",
+        "Sign / association"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Tetralogy",
+          "Boot, ↓ flow; R arch 25%, DiGeorge"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "D-TGA",
+          "Egg on string; commonest cyanotic newborn"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "TAPVR supracardiac",
+          "Snowman"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "TAPVR infracardiac",
+          "Small heart + oedema (obstructed)"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Ebstein",
+          "Huge box heart; lithium"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Truncus",
+          "R arch ~35%"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Coarctation",
+          "Figure 3, rib notching; Turner, bicuspid"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "HLHS",
+          "Normal film early; Norwood → Glenn → Fontan"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cyanotic + ↓ pulmonary flow",
+         "a": "TOF, Ebstein, pulmonary atresia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest shunt",
+         "a": "VSD",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ASD types",
+         "a": "Secundum 60%; primum Down; SV → PAPVR",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Preterm with new oedema",
+         "a": "PDA (indomethacin closes)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "AV canal",
+         "a": "Down syndrome",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Neonatal CHF, normal heart",
+         "a": "Vein of Galen, hepatic haemangioma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Glenn shunt complication",
+         "a": "Pulmonary AVMs",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cardiac tumour, regresses",
+         "a": "Rhabdomyoma (TSC)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Single cardiac mass with Ca++",
+         "a": "Fibroma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Cyanotic + ↑ flow = <b>5 Ts</b>: TGA, Truncus, TAPVR, Tricuspid atresia, 'Tingle' ventricle"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🍼 GI",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🍼 EA / TEF & VACTERL",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-tef"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "No gas in abdomen + EA",
+         "a": "Pure atresia (type A)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Recurrent pneumonia, cough with feeds",
+         "a": "H-type fistula (prone UGI)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Must mention before repair",
+         "a": "Right aortic arch",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Post-repair stricture",
+         "a": "~30% (anastomotic)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "VACTERL diagnosis",
+         "a": "≥3 components",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "<b>VACTERL</b>: Vertebral, Anal, Cardiac (commonest), TE fistula, Renal, Limb (radial ray)"
+      }
+     ]
+    },
+    {
+     "title": "🌀 Malrotation & stomach",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Malrotation on UGI",
+         "a": "DJ flexure right of spine / low",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Malrotation on US / CT",
+         "a": "SMV left of SMA (normal: SMV right)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Corkscrew duodenum",
+         "a": "Midgut volvulus → surgery",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Whirlpool",
+         "a": "Mesentery twisting round SMA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Older child, intermittent duodenal block",
+         "a": "Ladd bands",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "False-positive malrotation",
+         "a": "Distal obstruction pushing duodenum",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pyloric stenosis numbers",
+         "a": "Wall ≥4 mm, length ≥14 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Pyloric stenosis age",
+         "a": "2–12 wk (not at birth, not >3 mo)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Pyloric mimic",
+         "a": "Pylorospasm (relaxes during exam)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Windsock duodenum",
+         "a": "Duodenal web (Down)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Annular pancreas: child vs adult",
+         "a": "Duodenal obstruction vs pancreatitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gastric volvulus in kids",
+         "a": "Mesenteroaxial (ischaemia)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🎯 Intussusception & older child",
+     "hue": 15,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Intussusception age",
+         "a": "3 mo–3 y (outside → lead point)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Ileocolic size",
+         "a": ">2.5 cm (small-bowel ones <2 cm reduce)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Lead points",
+         "a": "Meckel, duplication cyst, HSP, lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Reduction contraindications",
+         "a": "Free air, peritonitis",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Air enema max pressure",
+         "a": "120 mmHg",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Reduction success / perforation",
+         "a": "80–90% / ~0.5%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Perforation + tension pneumoperitoneum",
+         "a": "Needle decompression",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Appendicitis on US",
+         "a": ">6 mm, non-compressible",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Equivocal appendix US",
+         "a": "MRI",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Obstruction 1 mo–1 y, boy",
+         "a": "Inguinal hernia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Meckel",
+         "a": "Rule of 2s · ectopic gastric mucosa → Tc scan",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Cyst with gut signature",
+         "a": "Duplication cyst (ileum)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Teen with CF + distal obstruction",
+         "a": "DIOS",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RLQ nodes mimicking appendicitis",
+         "a": "Mesenteric adenitis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Older child obstruction <b>AIM</b>: Appendicitis/Adhesions, Intussusception/Inguinal hernia, Malrotation/Meckel"
+      }
+     ]
+    },
+    {
+     "title": "☠️ NEC & foreign bodies",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "NEC patient",
+         "a": "Preterm <1500 g, first 10 d; CHD",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Most specific NEC sign",
+         "a": "Pneumatosis → look for portal gas",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Fixed dilated loop on serial films",
+         "a": "NEC (unchanging gas pattern)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hirschsprung baby back at ~1 mo",
+         "a": "Enterocolitis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Coin with double ring",
+         "a": "Disc battery → urgent removal",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Two or more magnets",
+         "a": "Surgical consult (fistula, perforation)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Coin flat on AP",
+         "a": "Esophagus (trachea forces sagittal)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Duodenal haematoma / pancreatitis, toddler",
+         "a": "Abuse",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫃 Abdominal wall",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Gastroschisis",
+        "Omphalocele"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Membrane",
+          "No",
+          "Yes"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Side",
+          "Right of cord",
+          "Midline, in cord"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Anomalies",
+          "Rare (bowel atresia)",
+          "Common: cardiac, T18, BWS"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "AFP",
+          "Higher",
+          "Raised"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Pentalogy of Cantrell",
+         "a": "Omphalocele + ectopia cordis + 3 more",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟤 Liver, biliary, pancreas, spleen",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Tumour",
+        "Age",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Infantile haemangioma",
+          "<6 mo",
+          "CHF, aorta tapers below celiac, involutes"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Hepatoblastoma",
+          "<5 y",
+          "↑ AFP, Ca++, BWS / prematurity"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Mesenchymal hamartoma",
+          "<2 y",
+          "Multicystic, AFP normal"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Undifferentiated embryonal sarcoma",
+          "6–10 y",
+          "Cystic-looking, aggressive"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "HCC",
+          ">5 y",
+          "Cirrhosis (biliary atresia, GSD), ↑ AFP"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Fibrolamellar",
+          "Teen",
+          "T2-dark scar, no cirrhosis"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Jaundice >2 wk",
+         "a": "Biliary atresia vs neonatal hepatitis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Biliary atresia US",
+         "a": "Triangular cord, small/absent GB",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Biliary atresia HIDA",
+         "a": "No bowel activity at 24 h",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Biliary atresia surgery",
+         "a": "Kasai before ~3 mo",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Biliary atresia associations",
+         "a": "Polysplenia, trisomy 18",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Central dot sign",
+         "a": "Caroli (ARPKD, MSK)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest choledochal cyst",
+         "a": "Type I",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Child pancreatitis #1",
+         "a": "Trauma (too young? → abuse)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Teen girl pancreatic mass",
+         "a": "SPEN (solid pseudopapillary)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pancreatic mass at age 1",
+         "a": "Pancreatoblastoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gallstones in a child",
+         "a": "Sickle cell",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Big spleen + shock in sickle",
+         "a": "Splenic sequestration",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔄 Heterotaxy",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Asplenia",
+        "Polysplenia"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Sidedness",
+          "Bilateral right",
+          "Bilateral left"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Lungs",
+          "2 fissures both sides",
+          "1 fissure both sides"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "IVC",
+          "Aorta & IVC same side",
+          "Azygos continuation"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "CHD",
+          "Severe",
+          "Milder"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Other",
+          "—",
+          "Biliary atresia, no dorsal pancreas"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🫘 GU & pelvis",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🚽 Urinary tract",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Commonest neonatal GU anomaly",
+         "a": "UPJ obstruction (no hydroureter)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "UPJ: look for",
+         "a": "Crossing vessel before pyeloplasty",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Girl dribbling all day, dry voids",
+         "a": "Ectopic ureter (below sphincter)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest male urethral obstruction",
+         "a": "Posterior urethral valves",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PUV on VCUG",
+         "a": "Dilated posterior urethra, abrupt change",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "PUV fetal",
+         "a": "Keyhole bladder, hydro, oligohydramnios",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gold standard for valves / reflux",
+         "a": "VCUG",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Primary megaureter",
+         "a": "Distal adynamic segment, little hydro",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Prune belly triad",
+         "a": "Lax wall, hydroureteronephrosis, cryptorchid",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest palpable renal 'mass'",
+         "a": "Hydronephrosis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "↩️ Reflux",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-vur"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "VUR in children with UTI",
+         "a": "~50%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Usually resolves by",
+         "a": "5–6 y",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Echogenic mound at UVJ",
+         "a": "Deflux injection",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Hutch diverticulum",
+         "a": "Secondary reflux → surgery",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Chronic reflux damage",
+         "a": "Scarring → HTN, CKD",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧷 Urachus & bladder",
+     "hue": 50,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-urachus"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Midline bladder dome mass",
+         "a": "Urachal adenocarcinoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Manta ray pelvis",
+         "a": "Bladder exstrophy (adenoCA risk)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Common GU + GI opening, girl",
+         "a": "Cloacal malformation",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦀 Renal masses by age",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Age",
+        "Lesion",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Neonate (<3 mo)",
+          "Mesoblastic nephroma",
+          "Commonest neonatal; benign"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Infant",
+          "Nephroblastomatosis",
+          "Hypo rind; US q3 mo to ~7 y"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "~3–4 y",
+          "Wilms",
+          "Claw sign, invades vessels, lung mets"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "4 y boy / 40s woman",
+          "Cystic nephroma",
+          "Herniates into pelvis"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Teen",
+          "RCC (VHL), lymphoma",
+          ""
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Wilms never before",
+         "a": "2 months",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Wilms syndromes",
+         "a": "BWS, WAGR, Denys-Drash, hemihypertrophy",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral Wilms",
+         "a": "5–10% (nephroblastomatosis first)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Suspected Wilms biopsy?",
+         "a": "Never (seeds tract)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Wilms variant → bone mets",
+         "a": "Clear cell sarcoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Worst, <1 y, brain tumours",
+         "a": "Rhabdoid (subcapsular fluid)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧠 Neuroblastoma vs Wilms",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Neuroblastoma",
+        "Wilms"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Age",
+          "<2 y (in utero)",
+          "~3–4 y"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Calcification",
+          "~90%",
+          "<10%"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Vessels",
+          "Encases",
+          "Invades"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Margins",
+          "Ill-defined, crosses midline",
+          "Well-defined, claw"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Mets",
+          "Bone, marrow, liver, skin",
+          "Lung"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Stage 4S",
+         "a": "<1 y; skin, liver, marrow (not cortex)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Dancing eyes, dancing feet",
+         "a": "Opsoclonus-myoclonus",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Raccoon eyes in a toddler",
+         "a": "Orbital neuroblastoma mets",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Best for bone mets",
+         "a": "MIBG",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Neonatal adrenal mass",
+         "a": "Haemorrhage likely → follow-up US",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫘 Renal cystic & vascular",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Big bright kidneys, lost CMD",
+         "a": "ARPKD (hepatic fibrosis, inverse)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "MCDK",
+         "a": "Non-communicating cysts, no function",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MCDK contralateral kidney",
+         "a": "Abnormal ~50% (VUR, UPJ)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Neonatal RVT",
+         "a": "Big kidney, left, maternal DM / dehydration",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Neonatal renal artery thrombosis",
+         "a": "UAC → hypertension",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Horseshoe association",
+         "a": "Turner · ↑ Wilms",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Crossed fused ectopia",
+         "a": "Ectopic kidney is inferior",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🥚 Scrotum & pelvis",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Acute scrotum age 7–14",
+         "a": "Torsion of appendix testis (blue dot)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Torsed appendage size",
+         "a": ">5 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Testicular torsion cause",
+         "a": "Bell-clapper (bilateral → both pexied)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Isolated orchitis",
+         "a": "Mumps",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Testis mass <2 y, ↑ AFP",
+         "a": "Yolk sac tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Extratesticular mass, boy",
+         "a": "Paratesticular rhabdomyosarcoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral 'burnt-out' testes + lip freckles",
+         "a": "Sertoli (Peutz-Jeghers)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Scrotal oedema + rash",
+         "a": "HSP",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ovarian torsion in child",
+         "a": "Normal ovary possible; ≥3× other side",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Midline pelvic cystic mass, girl",
+         "a": "Hydrometrocolpos (imperforate hymen)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Commonest fetal / newborn tumour",
+         "a": "Sacrococcygeal teratoma (~80% benign)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "SCT most malignant type",
+         "a": "IV (entirely internal) · remove coccyx",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🦴 MSK",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🚨 Abuse (NAT)",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Highly specific fractures",
+         "a": "Posterior rib, metaphyseal corner",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Skull fracture less suspicious if",
+         "a": "Simple parietal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Suspicious fracture",
+         "a": "Full skeletal survey (not babygram)",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Periosteal reaction appears",
+         "a": "~7–10 days",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Heal without periosteal reaction",
+         "a": "Metaphyseal, skull, costochondral",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Abuse mimics",
+         "a": "OI, rickets (look at bone density, wormian)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Head: abuse clues",
+         "a": "SDH of mixed ages, retinal haem., retroclival",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Spiral tibia in non-walker",
+         "a": "Abuse (toddler fx is 9 mo–3 y)",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌱 Periosteal reaction & metabolic",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Cause",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Physiologic",
+          "3–6 mo, diaphysis, femur before tibia"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Prostaglandin",
+          "Baby with CHD (sternotomy wires)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Caffey",
+          "<6 mo, mandible"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Syphilis",
+          ">6–8 wk, Wimberger (medial tibia)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Rubella",
+          "First weeks, celery stalk"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Neuroblastoma mets",
+          "Only newborn tumour to bone"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rickets",
+         "a": "Cupped, frayed metaphyses; never newborn",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Rickets look in a newborn",
+         "a": "Hypophosphatasia (↓ ALP)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Scurvy",
+         "a": ">6 mo; Wimberger ring, Frankel, Pelkan spur",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dense metaphyseal band incl. fibula",
+         "a": "Lead",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "mnemonic",
+       "html": "Lucent metaphyseal bands <b>LINE</b>: Leukaemia, Infection (TORCH), Neuroblastoma, Endocrine (rickets, scurvy)"
+      }
+     ]
+    },
+    {
+     "title": "🔥 Infection & aggressive lesions",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Osteomyelitis site",
+         "a": "Metaphysis (hematogenous)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Infant osteomyelitis",
+         "a": "Crosses physis via vessels → joint",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "X-ray lag in osteomyelitis",
+         "a": "~10 days",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Multifocal migratory, clavicle",
+         "a": "CRMO (SAPHO)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "LCH skull / spine",
+         "a": "Beveled hole · vertebra plana",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pauciarticular JIA",
+         "a": "Young girls; ankylosis, overgrowth",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sickle dactylitis",
+         "a": "Hand-foot syndrome (infant)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦴 Fractures & overuse",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Kids bend",
+         "a": "Buckle, greenstick, plastic bowing",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Physeal bar",
+         "a": "Growth arrest → angulation",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Toddler fracture",
+         "a": "Oblique distal tibia, 9 mo–3 y",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Calcaneal stress fracture",
+         "a": "After cast removal",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Patellar lower pole traction",
+         "a": "Sinding-Larsen-Johansson",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tibial tubercle traction",
+         "a": "Osgood-Schlatter",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pelvic avulsions",
+         "a": "Common (tendons stronger than bone)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Teen athlete back pain",
+         "a": "L5 pars defect (Scotty collar)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧍 Skeletal dysplasia",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rhizo / meso / acro",
+         "a": "Proximal / middle / distal limb",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Commonest dysplasia",
+         "a": "Achondroplasia (FGFR3)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Achondroplasia spine",
+         "a": "Interpedicular distance narrows down",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Achondroplasia pelvis",
+         "a": "Tombstone ilia, trident hand",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest lethal dysplasia",
+         "a": "Thanatophoric (telephone receiver)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bell thorax, normal vertebrae",
+         "a": "Jeune",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dwarf with extra fingers",
+         "a": "Ellis-van Creveld",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Absent clavicles + wormian",
+         "a": "Cleidocranial dysostosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dense bones + acro-osteolysis",
+         "a": "Pyknodysostosis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Inferior vs central vertebral beak",
+         "a": "Hurler vs Morquio",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Erlenmeyer flask + AVN",
+         "a": "Gaucher",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Many bifid ribs + jaw cysts",
+         "a": "Gorlin",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Absent radius but thumb present",
+         "a": "TAR",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Anterolateral tibial bowing / pseudarthrosis",
+         "a": "NF1",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦶 Feet & legs",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Clubfoot",
+         "a": "Equinus + hindfoot varus",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Clubfoot overcorrection",
+         "a": "Rocker-bottom",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Vertical talus",
+         "a": "Rocker-bottom, myelomeningocele",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Talocalcaneal coalition",
+         "a": "C sign, talar beak (middle facet)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Calcaneonavicular coalition",
+         "a": "Anteater nose (oblique)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Blount",
+         "a": "Medial tibia; two sides, not before two",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🧠 Neuro, spine, head & neck",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🧠 Neonatal brain",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-gmh"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "GMH patient",
+         "a": "Preterm <32 wk, <1500 g",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "GMH timing",
+         "a": "~90% in first week → US then",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Bright blood in term baby's ventricle",
+         "a": "Choroid plexus bleed (not GMH)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PVL",
+         "a": "Periventricular brighter than choroid, >7 d",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cystic PVL at birth",
+         "a": "Insult ≥2 weeks before delivery",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PVL outcome",
+         "a": "Cerebral palsy (~50%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Wide frontal subarachnoid space <2 y",
+         "a": "BESSI (cortical vein sign)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Veins pushed from inner table",
+         "a": "Subdural collection",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Extra-axial too wide",
+         "a": ">5 mm",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧩 Malformations & phakomatoses",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Chiari I",
+         "a": "Tonsils ≥5 mm low; syrinx",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Chiari II",
+         "a": "Always myelomeningocele; tectal beak",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Big posterior fossa cyst, high torcula",
+         "a": "Dandy-Walker",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Molar tooth midbrain",
+         "a": "Joubert",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Racing-car ventricles",
+         "a": "Callosal agenesis",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Grey-matter-lined cleft",
+         "a": "Schizencephaly (± septo-optic)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Single incisor, fused ventricles",
+         "a": "Holoprosencephaly (alobar worst)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "NF1",
+         "a": "Optic glioma, sphenoid wing, T2 spots",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "NF2",
+         "a": "Bilateral vestibular schwannomas (MISME)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tuberous sclerosis",
+         "a": "Tubers, SEGA at Monro, AML, rhabdomyoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sturge-Weber",
+         "a": "Tram-track Ca++, V1 port-wine, atrophy",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦴 Spine",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Low conus",
+         "a": "Below L2",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Thick filum",
+         "a": ">2 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Dimple NOT needing US",
+         "a": "Below the gluteal crease",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Must screen spine",
+         "a": "Anal atresia, high dimple, hair tuft",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Myelomeningocele vs lipomyelomeningocele",
+         "a": "Chiari II vs no Chiari",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Maternal diabetes, blunt high cord",
+         "a": "Caudal regression",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Scimitar sacrum + presacral mass + anorectal",
+         "a": "Currarino triad",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Split cord",
+         "a": "Diastematomyelia (T9–S1)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Small cyst at conus",
+         "a": "Terminal ventricle (normal)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🗣️ Head & neck",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Midline neck cyst",
+         "a": "Thyroglossal duct cyst",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Before excising TGDC",
+         "a": "Confirm normal thyroid (US / nuc)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Enhancing nodule in TGDC",
+         "a": "Papillary carcinoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Commonest ectopic thyroid",
+         "a": "Lingual",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Lateral neck cyst, angle of jaw",
+         "a": "2nd branchial cleft (ICA/ECA notch)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "SCM 'mass' + torticollis, 2–4 wk",
+         "a": "Fibromatosis colli → US",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Infantile haemangioma",
+         "a": "Appears weeks, grows, involutes; propranolol",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Present at birth haemangioma",
+         "a": "Congenital (RICH / NICH)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Posterior neck cystic mass, fetus",
+         "a": "Lymphatic malformation (Turner)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Phleboliths / enhancing spaces",
+         "a": "Venous malformation",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Jugular thrombosis + lung emboli",
+         "a": "Lemierre (Fusobacterium)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Neck swelling only on Valsalva",
+         "a": "Jugular phlebectasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Painless proptosis, child",
+         "a": "Rhabdomyosarcoma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🫁 Chest",
+   "subtitle": "very high yield",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "👶 Neonatal chest",
+     "hue": 200,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-neo-chest"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "First question",
+         "a": "Lung volume high or low?",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "❤️ Heart & mediastinum",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-heart"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cyanotic + ↓ vessels",
+         "a": "TOF, Ebstein, pulmonary atresia",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🗣️ Airway",
+     "hue": 330,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-airway"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "AP neck vs lateral neck",
+         "a": "Croup / haemangioma vs epiglottitis / RPA",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🍼 Abdomen",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🌀 GI",
+     "hue": 30,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-gi"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Bilious vomiting",
+         "a": "UGI now",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫘 GU & pelvis",
+     "hue": 45,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-gu"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Ca++ + crosses midline",
+         "a": "Neuroblastoma",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🟤 Liver, adrenal, ovary",
+     "hue": 140,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-liver"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Liver mass + ↑ AFP, <5 y",
+         "a": "Hepatoblastoma",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🦴 Bones & brain",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🦴 MSK & abuse",
+     "hue": 20,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-msk"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Corner fracture in non-walker",
+         "a": "Abuse → skeletal survey",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧍 Dysplasias",
+     "hue": 280,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-dysplasia"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most dwarfs are",
+         "a": "Rhizomelic",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧠 Head & skull",
+     "hue": 260,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "peds-xr-neuro"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Bridging veins cross the fluid",
+         "a": "Benign wide subarachnoid space",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

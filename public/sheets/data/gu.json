@@ -1,0 +1,2310 @@
+{
+ "schema": 1,
+ "id": "gu",
+ "title": "🫘 GU — high-yield sheet",
+ "subtitle": "kidney · transplant · ureter · bladder · urethra · prostate · scrotum · adrenal",
+ "sections": [
+  {
+   "title": "🫘 Anatomy & diagrams",
+   "subtitle": "very high yield",
+   "layout": "grid",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🫘 Bosniak 2019 (cystic renal mass)",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-bosniak"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Simple cyst on CT",
+         "a": "<20 HU (≈0), thin wall, no enhancement",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Homogeneous ≥70 HU on unenhanced CT",
+         "a": "Benign (bleed / protein)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Enhancement thresholds",
+         "a": "≥20 definite · 10–19 equivocal",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bosniak III / IV malignancy",
+         "a": "~50% / ~90%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "IIF management",
+         "a": "Imaging follow-up (any change → worry)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Calcification alone",
+         "a": "No longer upgrades the category",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Best to separate IIF vs III",
+         "a": "MRI (sees septa / enhancement better)",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔀 Duplication & congenital",
+     "hue": 28,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-weigert"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Weigert-Meyer: upper moiety",
+         "a": "Ectopic low → ureterocele, obstructs",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Weigert-Meyer: lower moiety",
+         "a": "Normal insertion → reflux",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Drooping lily",
+         "a": "Upper pole mass pushes lower down",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pancake (lying-down) adrenal",
+         "a": "Congenital renal agenesis (not surgical)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Unilateral agenesis, female",
+         "a": "Müllerian anomaly ~70%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Unilateral agenesis, male",
+         "a": "SV cyst, absent vas (Zinner)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral agenesis",
+         "a": "Potter sequence → pulmonary hypoplasia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Horseshoe kidney traps under",
+         "a": "IMA · ↑ stones, TCC, Wilms, trauma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Crossed fused ectopia",
+         "a": "Both one side, normal ureter insertion",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧭 Retroperitoneum",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-retro"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "NOT retroperitoneal (trick)",
+         "a": "Pancreatic tail · lower 1/3 rectum",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Primary RP neoplasms malignant",
+         "a": "~75%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Most common RP malignancy",
+         "a": "Lymphoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fatty RP mass that looks benign",
+         "a": "Still liposarcoma until proven",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common primary RP sarcoma (adult)",
+         "a": "Liposarcoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Big fatty mass with Ca++, not clearly renal",
+         "a": "Liposarcoma over AML",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RP haemorrhage #1 cause",
+         "a": "Over-anticoagulation",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Mantle around aorta DDx",
+         "a": "Lymphoma, RP fibrosis, Erdheim-Chester",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lifts aorta off spine, above renal a.",
+         "a": "Lymphoma (not RPF)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Extramedullary haematopoiesis",
+         "a": "Paravertebral, haemoglobinopathy",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🚹 Male urethra & trauma",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-urethra"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Trauma + blood at meatus",
+         "a": "RUG before Foley",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Utricle sits in",
+         "a": "Verumontanum (Müllerian remnant)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RUG vs VCUG best shows",
+         "a": "Anterior vs posterior urethra",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Goldman",
+        "Injury",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "I",
+          "Posterior urethra stretched, intact",
+          "No leak"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "II",
+          "Tear above intact UG diaphragm",
+          "Pelvic leak only"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "III",
+          "Tear through UG diaphragm (commonest)",
+          "Pelvis + perineum / scrotum"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "IV",
+          "Bladder base into prostatic urethra",
+          "Extraperitoneal leak"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "V",
+          "Anterior (bulbar)",
+          "Straddle"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🌰 Prostate & PI-RADS",
+     "hue": 30,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-prostate"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Peripheral zone cancers",
+         "a": "~70% (up to 90%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "PZ dominant sequence",
+         "a": "DWI / ADC",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "TZ dominant sequence",
+         "a": "T2",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "DCE role",
+         "a": "Upgrades PZ 3 → 4 only",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "PI-RADS 4 vs 5",
+         "a": "<1.5 vs ≥1.5 cm (or EPE)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Any extraprostatic extension",
+         "a": "PI-RADS 5",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Clinically significant CA at PI-RADS 5",
+         "a": "~90%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "T3a vs T3b",
+         "a": "EPE vs seminal vesicle invasion",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MR spectroscopy",
+         "a": "↑ choline, ↓ citrate",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Prostatitis vs cancer",
+         "a": "Prostatitis less DWI restriction",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "T1 bright gland spares dark focus",
+         "a": "Haemorrhage exclusion sign → cancer",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Utricle vs Müllerian duct cyst",
+         "a": "Teens, hypospadias vs 30–40 y",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral SV agenesis",
+         "a": "Cystic fibrosis (kidneys normal)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🥚 Scrotal anatomy",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-scrotum"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Normal epididymal head",
+         "a": "≤10 mm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bell-clapper deformity",
+         "a": "Tunica wraps whole testis → torsion",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Hydrocele never at",
+         "a": "Bare area (testis attachment)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Intratesticular mass malignant",
+         "a": "~90–95%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Extratesticular mass",
+         "a": "Mostly benign (adult)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Testis mass found",
+         "a": "Image the retroperitoneum",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "RP nodes in young man",
+         "a": "Ultrasound the testes",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🫘 Kidney",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "📏 Normal & variants",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Normal renal length",
+         "a": "9–15 cm",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Kidney brighter than liver",
+         "a": "Medical renal disease",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fetal lobulation vs scar",
+         "a": "Notch between vs over pyramids",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Dromedary hump",
+         "a": "Left, from spleen",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Column of Bertin",
+         "a": "Enhances like cortex",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Big bright kidneys + nephrotic, HIV",
+         "a": "HIV nephropathy",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⏱️ Renal contrast phases",
+     "hue": 210,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Phase",
+        "Timing",
+        "Best for"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Corticomedullary",
+          "25–40 s",
+          "Tumour vs cortex enhancement, vessels, vein invasion"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Nephrographic",
+          "70–180 s (~80–100 s)",
+          "Detecting renal masses (most sensitive)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Excretory",
+          "3–8 min",
+          "Urothelium, papillae, leaks"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Prolonged CMP",
+         "a": "Poor function, RAS, obstruction, heart failure",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦀 Renal cell carcinoma",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Fat + calcification in renal mass",
+         "a": "RCC (AML doesn't calcify)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bone mets from RCC",
+         "a": "Always lytic, hypervascular",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pseudoenhancement",
+         "a": "<10 HU rise, small cysts",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Dialysis RCC risk threshold",
+         "a": ">3 years",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Clear cell in CM phase",
+         "a": "Enhances ≈ cortex, T2 bright",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Papillary in CM phase",
+         "a": "Enhances < cortex, T2 dark",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "Subtype",
+        "Association"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Clear cell (commonest)",
+          "VHL"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Papillary",
+          "Transplant kidney, hereditary papillary"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Chromophobe",
+          "Birt-Hogg-Dubé"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Medullary",
+          "Sickle cell trait (young, aggressive)"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "table",
+       "head": [
+        "T",
+        "Extent"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "T1 / T2",
+          "Kidney only, ≤7 / >7 cm"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "T3a",
+          "Renal vein or perinephric / sinus fat"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "T3b / T3c",
+          "IVC below / above diaphragm"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "T4",
+          "Beyond Gerota or ipsilateral adrenal"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍈 Benign & other masses",
+     "hue": 140,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common benign renal tumour",
+         "a": "AML (~95% macroscopic fat)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "AML bleed threshold",
+         "a": ">4 cm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Multiple bilateral AMLs",
+         "a": "Tuberous sclerosis (Bourneville)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Fat confirmation tricks",
+         "a": "Fat-sat drop, India-ink artefact",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "T2-dark renal lesion",
+         "a": "Lipid-poor AML, bleed cyst, papillary",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Central scar · US spoke-wheel · PET hot",
+         "a": "Oncocytoma (still treat as RCC)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral oncocytomas",
+         "a": "Birt-Hogg-Dubé",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Herniates into renal pelvis",
+         "a": "MLCN (boy <4, woman ~40)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bilateral cortical hypo nodules, nodes",
+         "a": "Lymphoma (keeps reniform shape)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RCC vs oncocytoma on FDG",
+         "a": "RCC colder than cortex",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫧 Cystic disease",
+     "hue": 260,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "ADPKD liver cysts",
+         "a": "~70% · berry aneurysm, SV cysts",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "ADPKD and RCC",
+         "a": "No intrinsic ↑ risk (only via dialysis)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ARPKD liver",
+         "a": "Congenital hepatic fibrosis (always)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "ARPKD inverse rule",
+         "a": "Worse liver ↔ better kidneys",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Acquired cystic disease",
+         "a": "~40% ESRD, ~90% after 5 y dialysis",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Acquired cystic disease cancer risk",
+         "a": "3–6×; cysts regress post-transplant",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Normal/small kidneys, tiny 2–5 mm cysts",
+         "a": "Lithium nephropathy",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "VHL kidney",
+         "a": "Cysts + clear cell RCC (25–50%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "TSC beyond kidney",
+         "a": "LAM, cardiac rhabdomyoma, SEGA",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Parapelvic vs peripelvic",
+         "a": "Parenchymal origin vs sinus (mimics hydro)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "MCDK vs hydro",
+         "a": "Non-communicating cysts, no function",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦠 Infection",
+     "hue": 120,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Striated nephrogram DDx",
+         "a": "Pyelo, obstruction, contusion, RVT",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Renal abscess drain",
+         "a": ">3 cm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Parenchymal gas, diabetic",
+         "a": "Emphysematous pyelo → nephrectomy",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Gas in collecting system only",
+         "a": "Emphysematous pyelitis (milder)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Infected obstructed system",
+         "a": "Pyonephrosis → nephrostomy",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Staghorn + bear paw, non-functioning",
+         "a": "XGP (Proteus)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Papillary necrosis #1 cause",
+         "a": "Diabetes (sickle, NSAIDs, TB)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Papillary necrosis signs",
+         "a": "Lobster claw, ball-on-tee, ring sign",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sickle cell papillary necrosis",
+         "a": "~50%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Earliest renal TB sign",
+         "a": "Moth-eaten calyx",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Renal TB later",
+         "a": "Phantom calyx, Kerr kink, putty kidney",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "CIN risk factors (not allergy)",
+         "a": "CKD, DM, CHF, dehydration, myeloma",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🪨 Stones & nephrocalcinosis",
+     "hue": 40,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common stone",
+         "a": "Calcium oxalate (~75%)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Stone invisible on CT",
+         "a": "Indinavir (HIV)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lucent on X-ray",
+         "a": "Uric acid",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Uric acid on CT / DECT",
+         "a": "<500 HU, little change 80 vs 140 kVp",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Uric acid treatment",
+         "a": "Alkalinise urine (medical)",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Passes vs won't pass",
+         "a": "≤5 mm vs ≥10 mm",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Where stones lodge",
+         "a": "UPJ, pelvic brim, UVJ",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Medullary nephrocalcinosis",
+         "a": "HyperPTH, MSK, RTA 1, furosemide",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cortical nephrocalcinosis",
+         "a": "Cortical necrosis, chronic GN",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Medullary sponge associations",
+         "a": "Ehlers-Danlos, Caroli, BWS",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩸 Vascular",
+     "hue": 350,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Subcapsular haematoma + HTN",
+         "a": "Page kidney",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "One kidney enhances late",
+         "a": "Delayed nephrogram (obstruction, Page)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Both kidneys dense hours later",
+         "a": "Persistent nephrogram (shock, ATN)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Infarct with thin enhancing rim",
+         "a": "Cortical rim sign (≥8 h)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Renal vein thrombosis cause",
+         "a": "Nephrotic (adult), UVC (baby)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RVT artery Doppler",
+         "a": "Reversed diastolic flow",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "💥 Renal trauma",
+     "hue": 15,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "AAST",
+        "Injury"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "I",
+          "Contusion / subcapsular haematoma (most)"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "II",
+          "Laceration ≤1 cm, perirenal haematoma"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "III",
+          "Laceration >1 cm, no urine leak"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "IV",
+          "Collecting system / segmental vessel / active bleed beyond Gerota"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "V",
+          "Main vessel avulsion, shattered or devascularised"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Trauma CT, ?collecting system injury",
+         "a": "Add delayed excretory images",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Fractured vs shattered",
+         "a": "Through-and-through vs ≥3 fragments",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Wedge perfusion defect",
+         "a": "Segmental artery injury",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🔁 Renal transplant",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "💧 Transplant collections",
+     "hue": 200,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Collection",
+        "When",
+        "Clue"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Haematoma",
+          "Immediate",
+          "Complex, echogenic early"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Urinoma",
+          "~1–2 weeks",
+          "Simple, growing; fluid Cr > serum"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Abscess",
+          "Weeks",
+          "Complex, fever"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Lymphocele",
+          "1–2 months",
+          "Medial, septa; leg oedema"
+         ],
+         "star": true
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common collection causing hydro",
+         "a": "Lymphocele",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Mild hydro in a transplant",
+         "a": "Normal (denervated ureter)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Normal transplant RI",
+         "a": "<0.7 (rising = bad, non-specific)",
+         "kind": "num",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🩺 Graft dysfunction",
+     "hue": 250,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "",
+        "Timing",
+        "MAG3"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "ATN",
+          "First week",
+          "Good flow, poor excretion"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Acute rejection",
+          "1–3 weeks",
+          "Poor flow and uptake"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Calcineurin toxicity",
+          "~1 month",
+          "Like ATN, but later"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Chronic rejection",
+          "Months–years",
+          "Poor all"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2,
+        3
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hyperacute rejection",
+         "a": "Immediate, rarely imaged",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Best predictor of delayed graft function",
+         "a": "Cold ischaemia time",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔌 Transplant vessels",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common vascular complication",
+         "a": "Renal artery stenosis (first year)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "RAS clinical clue",
+         "a": "Refractory hypertension",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RAS Doppler",
+         "a": "PSV >250 cm/s, ratio >1.8, tardus parvus",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Artery thrombosis timing",
+         "a": "Minutes–hours post-op (kink)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Vein thrombosis timing / Doppler",
+         "a": "First week · reversed diastolic flow",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Post-biopsy tissue vibration",
+         "a": "AV fistula (~20%, usually trivial)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Yin-yang, to-and-fro neck",
+         "a": "Pseudoaneurysm",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Absent cortical flow <2 h, big graft",
+         "a": "Allograft compartment syndrome",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧬 Transplant cancer",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "PTLD",
+         "a": "EBV, year 1 → ↓ immunosuppression",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "RCC after transplant",
+         "a": "~90% in native kidneys",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "RCC in the graft",
+         "a": "Papillary subtype",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "BK virus",
+         "a": "Urothelial cancer",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Cyclophosphamide",
+         "a": "↑ urothelial cancer",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🚰 Ureter & bladder",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "〰️ Ureter",
+     "hue": 45,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Medial ureteral deviation",
+         "a": "RPF, retrocaval (R), lipomatosis",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Lateral deviation",
+         "a": "Nodes, AAA, psoas hypertrophy",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "RP fibrosis aetiology",
+         "a": "Idiopathic ~75%, IgG4, methysergide",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Malignant RP fibrosis",
+         "a": "~10%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Active RPF on PET",
+         "a": "Hot (cold when burnt out)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Multiple tiny smooth filling defects",
+         "a": "Ureteritis cystica (chronic infection)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tiny ureteral outpouchings",
+         "a": "Pseudodiverticulosis (↑ CA)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Michaelis-Gutmann bodies",
+         "a": "Malakoplakia (not premalignant)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Leukoplakia",
+         "a": "Premalignant (→ SCC)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Dense thick pelvis wall, on warfarin",
+         "a": "Subepithelial haematoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Young, smooth, mobile pelvic defect",
+         "a": "Fibroepithelial polyp",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Ureteral wall Ca++",
+         "a": "TB or schistosomiasis",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍷 Urothelial carcinoma",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Goblet / champagne glass sign",
+         "a": "Urothelial CA (not stone)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Frequency order",
+         "a": "Bladder ≫ renal pelvis (2–3×) > ureter",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Ureteral TCC location",
+         "a": "Distal third ~75%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Upper tract → later bladder TCC",
+         "a": "~40%",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Bladder → later upper tract",
+         "a": "~4%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Bilateral ureteral TCC",
+         "a": "~5%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Risk factors",
+         "a": "Smoking, cyclophosphamide, Balkan, HNPCC",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gross haematuria ≥50 y",
+         "a": "CT urogram + cystoscopy",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Best CT phase for bladder tumour",
+         "a": "Delayed (white background)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫙 Bladder tumours",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "table",
+       "head": [
+        "Type",
+        "Clues"
+       ],
+       "rows": [
+        {
+         "cells": [
+          "Urothelial (~90%)",
+          "Base, papillary, 40% multifocal"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Squamous (~5–8%)",
+          "Schistosomiasis, chronic catheter, stones"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Adenocarcinoma (~2%)",
+          "Urachal: midline dome + Ca++; exstrophy"
+         ],
+         "star": true
+        },
+        {
+         "cells": [
+          "Rhabdomyosarcoma",
+          "Kids, botryoid 'grapes'"
+         ],
+         "star": false
+        },
+        {
+         "cells": [
+          "Leiomyoma",
+          "Most common benign, trigone"
+         ],
+         "star": false
+        }
+       ],
+       "quiz_cols": [
+        2
+       ]
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Tumour in a diverticulum",
+         "a": "Early perivesical spread (thin wall)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Diffuse smooth wall thickening",
+         "a": "Usually cystitis / outlet obstruction",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫧 Bladder: other",
+     "hue": 280,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Hutch diverticulum",
+         "a": "At UVJ → reflux (not PUV / neurogenic)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Bladder ears",
+         "a": "Transient inguinal bulge (hernia ~20%)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Pine cone bladder",
+         "a": "Neurogenic",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pear-shaped bladder",
+         "a": "Pelvic lipomatosis, haematoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Prune belly triad",
+         "a": "Lax wall, hydro, cryptorchid",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Colovesical / ileovesical / rectovesical",
+         "a": "Diverticulitis / Crohn / tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Gas in bladder wall",
+         "a": "Emphysematous cystitis (DM, E. coli)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Calcified bladder wall",
+         "a": "Schistosomiasis → SCC",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bladder pulled up to psoas",
+         "a": "Psoas hitch (short distal ureter)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common diversion complication",
+         "a": "Ileus (~25%)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Ileal conduit parastomal hernia",
+         "a": "~15%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Diversion stricture side",
+         "a": "Left (crosses mesentery)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🚑 Bladder trauma",
+     "hue": 0,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Cystography fill volume",
+         "a": "300–400 mL (else misses rupture)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Extraperitoneal rupture",
+         "a": "80–90% · conservative",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Molar tooth",
+         "a": "Contrast in space of Retzius",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Intraperitoneal rupture",
+         "a": "Dome → surgery",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Pelvic fracture → bladder rupture",
+         "a": "~10%",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "High creatinine, normal kidneys",
+         "a": "Pseudo-azotaemia (IP rupture)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🚹 Urethra, scrotum, penis, adrenal",
+   "layout": "columns",
+   "min": 400,
+   "cards": [
+    {
+     "title": "🧈 Adrenal mass workup",
+     "hue": 50,
+     "star": false,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-adrenal"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Lipid-rich adenoma",
+         "a": "≤10 HU unenhanced",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Absolute washout (adenoma)",
+         "a": ">60% = (E−D)/(E−U)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Relative washout (adenoma)",
+         "a": ">40% = (E−D)/E",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Washout timing",
+         "a": "60–75 s portal + 15 min delay",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Chemical shift MRI",
+         "a": "Signal drop out-of-phase = adenoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Macroscopic fat in adrenal",
+         "a": "Myelolipoma (benign)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "T2 'light bulb'",
+         "a": "Pheochromocytoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Pheo syndromes",
+         "a": "MEN2, VHL, NF1, SDH",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Extra-adrenal pheo classic site",
+         "a": "Organ of Zuckerkandl (aortic bifurcation)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Headache / syncope after voiding",
+         "a": "Bladder paraganglioma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Large (>4–6 cm), heterogeneous, Ca++",
+         "a": "Adrenocortical carcinoma",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Two tumours in one gland",
+         "a": "Collision tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common malignant adrenal mass",
+         "a": "Metastasis (lung)",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🚹 Urethral pathology",
+     "hue": 330,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Straddle injury",
+         "a": "Short bulbar stricture",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Gonococcal",
+         "a": "Long, irregular bulbar stricture",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Multiple small defects on RUG",
+         "a": "Condyloma (avoid instrumentation)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Male urethral CA",
+         "a": "SCC ~80% (prostatic: urothelial)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Cancer in a urethral diverticulum",
+         "a": "Adenocarcinoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Male urethral diverticulum",
+         "a": "Long-term Foley",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Female diverticulum",
+         "a": "Saddlebag, mid posterolateral",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Female diverticulum extras",
+         "a": "SUI ~60%, stones, adenoCA",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Urethrorectal fistula",
+         "a": "After brachytherapy",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🥚 Testicular masses",
+     "hue": 300,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Most common testicular malignancy",
+         "a": "Seminoma (homogeneous)",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "NSGCT look",
+         "a": "Heterogeneous, cysts, Ca++",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common NSGCT",
+         "a": "Mixed GCT (embryonal + teratoma)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Infant testis tumour, ↑ AFP",
+         "a": "Yolk sac tumour",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "hCG always ↑, haemorrhagic mets",
+         "a": "Choriocarcinoma",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Shadowing scar + RP mets",
+         "a": "Burnt-out GCT",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Older, bilateral, infiltrative",
+         "a": "Lymphoma / leukaemia",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Onion ring, avascular",
+         "a": "Epidermoid → enucleation",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Leydig cell tumour",
+         "a": "Gynaecomastia",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Sertoli cell tumour",
+         "a": "Peutz-Jeghers, Klinefelter",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Bilateral hypoechoic masses, CAH",
+         "a": "Adrenal rests",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Microlithiasis definition",
+         "a": "≥5 foci per image (no screening US)",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Testicular sarcoid",
+         "a": "Must still biopsy",
+         "kind": "next",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "⚡ Acute scrotum & other",
+     "hue": 20,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Torsion salvage",
+         "a": "<6 h excellent · >24 h poor",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Hyperacute torsion clue",
+         "a": "Whirlpool / torsion knot of cord",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Epididymitis vs torsion",
+         "a": "Normal testis flow",
+         "kind": "buzz",
+         "star": true
+        },
+        {
+         "q": "Wedge avascular area, 30s, sickle",
+         "a": "Segmental infarct (vs tumour → MRI)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Tunica albuginea disruption",
+         "a": "Testicular rupture → surgery",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Post-trauma hypoechoic lesion",
+         "a": "Follow up to exclude tumour",
+         "kind": "next",
+         "star": false
+        },
+        {
+         "q": "Subcutaneous gas, perineum",
+         "a": "Fournier gangrene → surgery",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Varicocele side",
+         "a": "Left ~85% (renal vein angle)",
+         "kind": "num",
+         "star": true
+        },
+        {
+         "q": "Varicocele size",
+         "a": ">2–3 mm, ↑ with Valsalva",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Isolated right varicocele",
+         "a": "Look for RP mass",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Most common extratesticular tumour",
+         "a": "Spermatic cord lipoma",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Most common epididymal tumour",
+         "a": "Adenomatoid tumour",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Cysts at mediastinum testis",
+         "a": "Tubular ectasia of rete (benign)",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Spermatocele vs epididymal cyst",
+         "a": "Can't tell on US",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🍆 Penis",
+     "hue": 340,
+     "star": false,
+     "blocks": [
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Penile fracture",
+         "a": "Tunica albuginea tear → surgery",
+         "kind": "next",
+         "star": true
+        },
+        {
+         "q": "Peyronie",
+         "a": "Dorsal tunica plaques ± Ca++, curvature",
+         "kind": "buzz",
+         "star": false
+        },
+        {
+         "q": "Penile cancer",
+         "a": "SCC >95%, glans",
+         "kind": "num",
+         "star": false
+        },
+        {
+         "q": "Glans vs shaft skin drainage",
+         "a": "Deep inguinal/iliac vs superficial",
+         "kind": "buzz",
+         "star": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🫘 Kidney",
+   "subtitle": "very high yield",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🦀 Renal masses (CT)",
+     "hue": 0,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-kidney"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Fat + Ca++ in renal mass",
+         "a": "Think RCC, not AML",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🦠 Infection & calcification",
+     "hue": 120,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-infection"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Parenchymal gas",
+         "a": "Emergency → nephrectomy / drain",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🚰 Collecting system, bladder, urethra",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "〰️ Urogram signs",
+     "hue": 45,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-urogram"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Pelvis filling defect default DDx",
+         "a": "Clot, calculus, cancer",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🫙 Bladder",
+     "hue": 200,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-bladder"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Rupture workup",
+         "a": "CT cystogram, 300–400 mL",
+         "kind": "next",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🚹 Urethra (RUG)",
+     "hue": 330,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-urethra"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Perineal / scrotal contrast",
+         "a": "UG diaphragm torn (Goldman III)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "🥚 Scrotum, prostate, adrenal",
+   "layout": "columns",
+   "min": 520,
+   "cards": [
+    {
+     "title": "🥚 Scrotal ultrasound",
+     "hue": 300,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-scrotum"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Intratesticular solid mass",
+         "a": "Malignant until proven otherwise",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🧲 Prostate & adrenal MRI",
+     "hue": 50,
+     "star": true,
+     "blocks": [
+      {
+       "type": "diagram",
+       "id": "gu-xr-mri"
+      },
+      {
+       "type": "list",
+       "items": [
+        {
+         "q": "Adrenal mass, any lipid",
+         "a": "Adenoma (≤10 HU or OOP drop)",
+         "kind": "buzz",
+         "star": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
